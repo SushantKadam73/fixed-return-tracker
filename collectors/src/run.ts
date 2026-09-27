@@ -17,8 +17,8 @@ import type { RateCard } from "../../lib/domain";
 import { fetchDoc } from "./fetch";
 import { adapters, loadSources } from "./registry";
 import { buildSnapshots } from "./snapshots";
-import { loadChecks, saveChecks, storeLiveCard } from "./store";
-import type { Runner, SourceDef } from "./types";
+import { loadChecks, saveChecks, storeLiveCard, storeTerms } from "./store";
+import type { ProductTerms, Runner, SourceDef } from "./types";
 
 interface Args {
   sources: string[];
@@ -84,9 +84,11 @@ async function runSource(src: SourceDef, args: Args, checks: ReturnType<typeof l
     return fail(`fetch: ${(e as Error).message}`, (e as { status?: number }).status);
   }
   let cards: RateCard[];
+  let terms: ProductTerms[] = [];
   const today = todayIST(now);
   try {
-    const out = await adapter({ source: src, doc, today, fetch: (url, format) => fetchDoc(url, format ?? "html") });
+    const out = await adapter({ source: src, doc, today, fetch: (url, format, init) => fetchDoc(url, format ?? "html", 3, init) });
+    terms = out.terms ?? [];
     // A pre-announced change (effective date in the future) must not become "current" early.
     // It is picked up automatically once its effective date arrives, because the page still shows it.
     const future = out.cards.filter((c) => c.effectiveFrom !== null && c.effectiveFrom > today);
@@ -111,6 +113,8 @@ async function runSource(src: SourceDef, args: Args, checks: ReturnType<typeof l
     }
   }
   if (rejected.length > 0) return fail(`validation: ${rejected.join(" | ")}`, doc.status);
+  // Deposit terms stated on the same page (senior premium, penalties, minimums...), kept per product.
+  if (!args.dryRun && terms.length > 0) storeTerms(args.root, src.bankSlug, { key: src.key, url: src.url }, terms, today);
   check.consecutiveFailures = 0;
   check.lastError = null;
   check.lastSuccessAt = now.toISOString();

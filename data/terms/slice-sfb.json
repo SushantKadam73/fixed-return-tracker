@@ -1,0 +1,15 @@
+{
+ "bankSlug": "slice-sfb",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "prematurePenalty": "1% over the interest rate applicable for the actual deposit period"
+   },
+   "sourceKey": "slice-sfb:fd",
+   "sourceUrl": "https://slice.bank.in/documents/imp/interest-rates.pdf",
+   "recordedOn": "2026-09-27",
+   "contentHash": "ebd7db5d1ac68af2"
+  }
+ }
+}

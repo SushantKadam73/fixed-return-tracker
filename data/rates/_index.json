@@ -302,6 +302,41 @@
    "to": "2026-05-07"
   },
   {
+   "bankSlug": "karnataka-bank",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-06-08",
+   "to": "2026-06-08"
+  },
+  {
+   "bankSlug": "karnataka-bank",
+   "product": "fd_bulk",
+   "cards": 1,
+   "from": "2026-06-08",
+   "to": "2026-06-08"
+  },
+  {
+   "bankSlug": "karnataka-bank",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-04-01",
+   "to": "2026-04-01"
+  },
+  {
+   "bankSlug": "nainital-bank",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-04-10",
+   "to": "2026-04-10"
+  },
+  {
+   "bankSlug": "nainital-bank",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-01-10",
+   "to": "2026-01-10"
+  },
+  {
    "bankSlug": "punjab-and-sind-bank",
    "product": "fd",
    "cards": 1,

@@ -1,0 +1,27 @@
+{
+ "bankSlug": "utkarsh-sfb",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.50% flat across all tenures",
+    "prematurePenalty": "1% deducted from the rate for the period actually held; nil if withdrawn within 7 days"
+   },
+   "sourceKey": "utkarsh-sfb:fd",
+   "sourceUrl": "https://www.utkarsh.bank.in/assests/pdf/Annexure_Domestic_Fixed_Deposit_Interest_Rates.pdf",
+   "recordedOn": "2026-09-27",
+   "contentHash": "af8188d9f3445e7b"
+  },
+  "rd": {
+   "terms": {
+    "seniorPremium": "+0.50% flat across all tenures",
+    "prematurePenalty": "1% deducted from the rate for the period actually held; nil for closure within a month",
+    "rdRules": "Minimum tenor 6 months, maximum 10 years; instalment must be a multiple of ₹100; tenure must be a multiple of 3 months"
+   },
+   "sourceKey": "utkarsh-sfb:rd",
+   "sourceUrl": "https://www.utkarsh.bank.in/assests/pdf/Annexure_Recurring_Deposit_Interest_Rates.pdf",
+   "recordedOn": "2026-09-27",
+   "contentHash": "8001df0f0344307c"
+  }
+ }
+}

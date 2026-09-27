@@ -1,0 +1,15 @@
+{
+ "bankSlug": "icici-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "seniorPremium": "Tenure-dependent; largest (+0.60pp) for 3yr1day–5yr",
+    "seniorPremiumCap": "Domestic deposits only — does not apply to NRE/NRO/FCNR"
+   },
+   "sourceKey": "icici-bank:fd",
+   "sourceUrl": "https://www.icici.bank.in/personal-banking/deposits/fixed-deposit/fd-interest-rates",
+   "recordedOn": "2026-09-27",
+   "contentHash": "4b44a66d98081dc9"
+  }
+ }
+}

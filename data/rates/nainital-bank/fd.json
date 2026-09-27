@@ -1,0 +1,180 @@
+{
+ "bankSlug": "nainital-bank",
+ "product": "fd",
+ "cards": [
+  {
+   "bankSlug": "nainital-bank",
+   "product": "fd",
+   "effectiveFrom": "2026-04-10",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.nainitalbank.bank.in/en/pages/interest-rate",
+   "confidence": "high",
+   "rows": [
+    {
+     "tenureMinDays": 7,
+     "tenureMaxDays": 14,
+     "tenureLabel": "7-14 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 3.25
+    },
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 30,
+     "tenureLabel": "15-30days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 3.25
+    },
+    {
+     "tenureMinDays": 31,
+     "tenureMaxDays": 45,
+     "tenureLabel": "31-45days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 3.25
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46-90 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 4.25
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91-179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 4.25
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 269,
+     "tenureLabel": "180 days and above but less than 270 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 4.95
+    },
+    {
+     "tenureMinDays": 270,
+     "tenureMaxDays": 364,
+     "tenureLabel": "270 days and above but less than -1- year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5.75
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 548,
+     "tenureLabel": "-1- year and above but less than or equal to 18 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.3
+    },
+    {
+     "tenureMinDays": 549,
+     "tenureMaxDays": 730,
+     "tenureLabel": "Above 18 months but less than or equal to -2- years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.5
+    },
+    {
+     "tenureMinDays": 444,
+     "tenureMaxDays": 444,
+     "tenureLabel": "Naini Samriddhi - 444 Days",
+     "special": true,
+     "schemeName": "Naini Samriddhi",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.6
+    },
+    {
+     "tenureMinDays": 731,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "Above -2 -years but less than or equal to -3- years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.25
+    },
+    {
+     "tenureMinDays": 1096,
+     "tenureMaxDays": 1825,
+     "tenureLabel": "Above -3- years but less than or equal to –5- years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5.75
+    },
+    {
+     "tenureMinDays": 1826,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "Above-5- years but less than or equal to upto 10 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5.35
+    }
+   ],
+   "notes": [
+    "No amount band is printed for this ladder (no separate bulk card is published) and no senior-citizen column applies to term deposits on this table.",
+    "RD rates not published on the official site: the Recurring Deposit product page states only \"The rates of interest are as fixed by the Bank from time to time\" — no table and no FD-rate-parity statement."
+   ],
+   "contentHash": "82f15eb5bbdb61c5"
+  }
+ ]
+}

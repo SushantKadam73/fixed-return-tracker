@@ -1,0 +1,25 @@
+{
+ "bankSlug": "canara-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.50% for deposits below ₹3 crore, tenor 180 days and above",
+    "prematurePenalty": "1.00% (RD); domestic <3cr extension waived if extended for a longer period than originally agreed"
+   },
+   "sourceKey": "canara-bank:fd",
+   "sourceUrl": "https://www.canarabank.bank.in/term-deposits-rate-of-interest-p.a.",
+   "recordedOn": "2026-09-27",
+   "contentHash": "6aa36a69c2d8db1a"
+  },
+  "fd_bulk": {
+   "terms": {
+    "bulkThreshold": 30000000
+   },
+   "sourceKey": "canara-bank:fd_bulk",
+   "sourceUrl": "https://www.canarabank.bank.in/term-deposits-rate-of-interest-p.a.",
+   "recordedOn": "2026-09-27",
+   "contentHash": "7c7d469e62b6cb77"
+  }
+ }
+}

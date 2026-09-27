@@ -1,0 +1,17 @@
+{
+ "bankSlug": "union-bank-of-india",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.50% up to ₹5 crore",
+    "seniorPremiumCap": "₹5 crore",
+    "superSeniorPremium": "+0.75% (+0.25% over senior), deposits opened/renewed on/after 01.12.2022"
+   },
+   "sourceKey": "union-bank-of-india:fd",
+   "sourceUrl": "https://www.unionbankofindia.bank.in/en/details/rate-of-interest",
+   "recordedOn": "2026-09-27",
+   "contentHash": "284b5e910e8abf9f"
+  }
+ }
+}

@@ -3,7 +3,7 @@
  * with backoff, and PDF text extraction. A real browser (Playwright) is used only for
  * sources marked `browser`, and only where it is installed (GitHub Actions / VPS).
  */
-import type { FetchedDoc, SourceFormat } from "./types";
+import type { FetchedDoc, FetchInit, SourceFormat } from "./types";
 
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36 FixedReturnTracker/1.0 (+https://github.com/SushantKadam73/fixed-return-tracker)";
@@ -64,17 +64,21 @@ async function browserFetch(url: string): Promise<FetchedDoc> {
   }
 }
 
-export async function fetchDoc(url: string, format: SourceFormat = "html", attempts = 3): Promise<FetchedDoc> {
+export async function fetchDoc(url: string, format: SourceFormat = "html", attempts = 3, init?: FetchInit): Promise<FetchedDoc> {
   if (format === "browser") return browserFetch(url);
   let lastErr: unknown;
   for (let i = 0; i < attempts; i++) {
     try {
       await politeWait(url);
       const res = await fetch(url, {
+        method: init?.method ?? "GET",
+        body: init?.body,
         headers: {
           "user-agent": UA,
           accept: format === "pdf" ? "application/pdf,*/*" : "text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8",
           "accept-language": "en-IN,en;q=0.9",
+          ...(init?.body ? { "content-type": "application/json" } : {}),
+          ...init?.headers,
         },
         redirect: "follow",
         signal: AbortSignal.timeout(45_000),

@@ -1,0 +1,16 @@
+{
+ "bankSlug": "uco-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.25% (<=1y) / +0.50% (>1y)",
+    "rdRules": "RD rate = domestic card rate for deposits below ₹2 crore"
+   },
+   "sourceKey": "uco-bank:fd",
+   "sourceUrl": "https://www.uco.bank.in/interest-rates-on-deposit-schemes",
+   "recordedOn": "2026-09-27",
+   "contentHash": "8fd4b2b34c2983e1"
+  }
+ }
+}

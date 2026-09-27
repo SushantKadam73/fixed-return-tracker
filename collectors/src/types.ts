@@ -48,13 +48,25 @@ export interface ProductTerms {
   other?: string[];
 }
 
+/**
+ * Optional request override for `AdapterContext.fetch`. Every existing call site omits this
+ * (defaulting to a plain GET), so adding it is backward compatible. It exists for the rare
+ * official endpoint that is a same-origin JSON POST rather than a GET (e.g. a bank's own
+ * "BFF" proxy route) — never for third-party/aggregator calls.
+ */
+export interface FetchInit {
+  method?: "GET" | "POST";
+  body?: string;
+  headers?: Record<string, string>;
+}
+
 export interface AdapterContext {
   source: SourceDef;
   doc: FetchedDoc;
   /** Today in IST, YYYY-MM-DD. */
   today: string;
-  /** Fetch a related document (e.g. a linked PDF) with the same polite client. */
-  fetch: (url: string, format?: SourceFormat) => Promise<FetchedDoc>;
+  /** Fetch a related document (e.g. a linked PDF, or a same-origin JSON POST endpoint) with the same polite client. */
+  fetch: (url: string, format?: SourceFormat, init?: FetchInit) => Promise<FetchedDoc>;
 }
 
 export interface AdapterOutput {

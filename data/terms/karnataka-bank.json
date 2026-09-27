@@ -1,0 +1,18 @@
+{
+ "bankSlug": "karnataka-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.25% p.a. for 7 days to below 1 year, +0.40% p.a. for 1 year to 10 years (domestic FD/ACC only)",
+    "seniorPremiumCap": "₹5 crore (senior premium withdrawn above this on domestic callable deposits w.e.f. 1 Sep 2019)",
+    "prematurePenalty": "Below ₹2 crore: 0.50%; ₹2 crore to ₹25 crore: 1.00%; above ₹25 crore: nil — deducted from the applicable rate of interest",
+    "rdRules": "RD rates not published on the official site."
+   },
+   "sourceKey": "karnataka-bank:fd",
+   "sourceUrl": "https://www.karnatakabank.bank.in/deposit-data",
+   "recordedOn": "2026-09-27",
+   "contentHash": "54f64e4bb3eec37f"
+  }
+ }
+}

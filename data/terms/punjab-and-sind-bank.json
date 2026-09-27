@@ -1,0 +1,19 @@
+{
+ "bankSlug": "punjab-and-sind-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.50% (<3cr, tenor >=180 days)",
+    "superSeniorPremium": "+0.15% over senior (named special tenures only)",
+    "other": [
+     "Non-callable variant (₹100.01 lakh-₹299.00 lakh) available on the 375/444/666/999-day tenures only."
+    ]
+   },
+   "sourceKey": "punjab-and-sind-bank:fd",
+   "sourceUrl": "https://punjabandsind.bank.in/content/interestdom",
+   "recordedOn": "2026-09-27",
+   "contentHash": "79cf268489998a7d"
+  }
+ }
+}

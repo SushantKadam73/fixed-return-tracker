@@ -1,0 +1,16 @@
+{
+ "bankSlug": "idfc-first-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.25pp on almost every tenure (bank's own note)",
+    "prematurePenalty": "1% flat, for FDs and RDs opened/renewed on or after 2 May 2019"
+   },
+   "sourceKey": "idfc-first-bank:fd",
+   "sourceUrl": "https://www.idfcfirst.bank.in/interest-rate",
+   "recordedOn": "2026-09-27",
+   "contentHash": "c1f32ded161a60d7"
+  }
+ }
+}

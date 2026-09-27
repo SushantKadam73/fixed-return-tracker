@@ -1,0 +1,26 @@
+{
+ "bankSlug": "central-bank-of-india",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.50% typical (varies slightly by tenure — compare the General Public and Senior Citizen columns for the exact slab)",
+    "superSeniorPremium": "+0.75% over general public on non-callable deposits (age 80+); staff +1%, senior-ex-staff +1.50%, super-senior-ex-staff +1.75% (non-callable scheme only, not modelled as separate rows here — see the bank's page)",
+    "prematurePenalty": "1% flat on premature withdrawal (no penalty if renewed for a longer period); non-callable deposits generally disallow premature withdrawal"
+   },
+   "sourceKey": "central-bank-of-india:fd",
+   "sourceUrl": "https://centralbank.bank.in/en/interest-rates-on-deposit",
+   "recordedOn": "2026-09-27",
+   "contentHash": "c8741e78571efb21"
+  },
+  "fd_bulk": {
+   "terms": {
+    "bulkThreshold": 30000000
+   },
+   "sourceKey": "central-bank-of-india:fd_bulk",
+   "sourceUrl": "https://centralbank.bank.in/en/interest-rates-on-deposit",
+   "recordedOn": "2026-09-27",
+   "contentHash": "7c7d469e62b6cb77"
+  }
+ }
+}

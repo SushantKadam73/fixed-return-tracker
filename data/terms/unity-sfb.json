@@ -1,0 +1,26 @@
+{
+ "bankSlug": "unity-sfb",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.50% flat, all tenures (not applicable to NRE/NRO)",
+    "prematurePenalty": "1% of the rate for the period the deposit has remained with the bank"
+   },
+   "sourceKey": "unity-sfb:fd",
+   "sourceUrl": "https://unity.bank.in/personal-banking/deposits/fixed-deposit",
+   "recordedOn": "2026-09-27",
+   "contentHash": "39b0eba293d601a9"
+  },
+  "fd_bulk": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "prematurePenalty": "Not permitted except bankruptcy/winding-up, court/regulator direction, or an operational error approved by Head Financial Markets & CRO (at 1% below the rate for the period held)"
+   },
+   "sourceKey": "unity-sfb:bulk",
+   "sourceUrl": "https://unity.bank.in/personal-banking/deposits/fixed-deposit",
+   "recordedOn": "2026-09-27",
+   "contentHash": "ce953105ac99ee0d"
+  }
+ }
+}

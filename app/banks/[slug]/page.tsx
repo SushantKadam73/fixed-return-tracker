@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { RateHistoryChart } from "@/components/charts/rate-history-chart";
 import { CoverageDetails } from "@/components/coverage-view";
 import { SavingsSlabTable, TermRateTable } from "@/components/rate-card-view";
+import { TermsList, type TermsBlock } from "@/components/terms-view";
 import { AsOf, Badge, Card, Notice, PageHeader, Section, SourceBadge } from "@/components/ui";
 import { GROUP_LABELS, formatFounded, getBankMaster, getCoverage, lineageOf } from "@/lib/banks";
 import type { BankCoverage } from "@/lib/coverage";
@@ -27,7 +28,7 @@ type ProductSummary = {
   current: (CardMeta & { rows: RateRow[]; savingsSlabs: SavingsSlab[] | null; slabMethod: string | null; notes: string[] }) | null;
   versions: Array<CardMeta & { isCurrent: boolean; general: Record<string, number | null> | null; senior: Record<string, number | null> | null; baseSavingsRate: number | null }>;
 };
-type BankSummary = { products: Record<string, ProductSummary> };
+type BankSummary = { products: Record<string, ProductSummary>; terms?: TermsBlock[] };
 type RangePoint = [string, number | null, number | null, string];
 
 const PRODUCT_LABELS: Record<string, string> = {
@@ -128,6 +129,7 @@ export default async function BankPage({ params }: PageProps<"/banks/[slug]">) {
   const fresh = freshAll[slug] ?? {};
   const coverage = coverageAll.banks.find((c) => c.slug === slug) ?? null;
   const products = summary?.payload?.products ?? {};
+  const termsByProduct = new Map((summary?.payload?.terms ?? []).map((t) => [t.product, t]));
   const lineage = lineageOf(slug, predecessors);
 
   return (
@@ -191,6 +193,7 @@ export default async function BankPage({ params }: PageProps<"/banks/[slug]">) {
                 <div className="mt-3">
                   <AsOf date={(fresh[product] ?? c.observedAt).slice(0, 10)} label="Last checked" />
                 </div>
+                {termsByProduct.get(product) ? <TermsList block={termsByProduct.get(product)!} /> : null}
               </Card>
             ) : bank ? (
               <Notice>Current rates from the bank&apos;s live page are not in yet (the daily collector adds them once it can read the page). The history below comes from the recorded sources shown.</Notice>

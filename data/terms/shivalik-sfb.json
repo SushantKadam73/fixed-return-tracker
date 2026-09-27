@@ -1,0 +1,26 @@
+{
+ "bankSlug": "shivalik-sfb",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.25% over the card rate",
+    "prematurePenalty": "1% of the interest earned for the period held"
+   },
+   "sourceKey": "shivalik-sfb:fd",
+   "sourceUrl": "https://shivalik.bank.in/interest-rate",
+   "recordedOn": "2026-09-27",
+   "contentHash": "97b459af35dc111b"
+  },
+  "rd": {
+   "terms": {
+    "seniorPremium": "+0.25% over the card rate",
+    "prematurePenalty": "1% of the interest earned for the period held"
+   },
+   "sourceKey": "shivalik-sfb:rd",
+   "sourceUrl": "https://shivalik.bank.in/interest-rate",
+   "recordedOn": "2026-09-27",
+   "contentHash": "f0499ff1ce54d834"
+  }
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "bankSlug": "indian-overseas-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.50% (age 60+)",
+    "superSeniorPremium": "+0.75% (age 80+)",
+    "prematurePenalty": "Nil up to ₹15,000; 0.50% for ₹15,001-5 lakh; 1.00% above ₹5 lakh and below ₹3 crore"
+   },
+   "sourceKey": "indian-overseas-bank:fd",
+   "sourceUrl": "https://www.iob.bank.in/en/domestic-nro-nre-retail-term-deposit-rates",
+   "recordedOn": "2026-09-27",
+   "contentHash": "ccdb2cb671eb6a86"
+  }
+ }
+}

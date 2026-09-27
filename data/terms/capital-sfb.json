@@ -1,0 +1,15 @@
+{
+ "bankSlug": "capital-sfb",
+ "products": {
+  "fd": {
+   "terms": {
+    "seniorPremium": "+0.50% p.a. flat across every slab and special tenure (60+ with proof of age)",
+    "prematurePenalty": "1% penal rate on premature closure"
+   },
+   "sourceKey": "capital-sfb:fd",
+   "sourceUrl": "https://www.capital.bank.in/interest-rates/callable-domestic-term-deposit",
+   "recordedOn": "2026-09-27",
+   "contentHash": "09819f66f1a7d7ca"
+  }
+ }
+}

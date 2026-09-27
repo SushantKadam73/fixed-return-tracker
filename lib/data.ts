@@ -26,35 +26,43 @@ async function readSnapshot<T>(name: string): Promise<T | null> {
   }
 }
 
+/** Convex summary by key; throws on transport errors so failures are never cached. */
 async function fromConvex<T>(key: string): Promise<{ payload: T; updatedAt: number } | null> {
   const url = process.env.NEXT_PUBLIC_CONVEX_URL;
   if (!url) return null;
-  try {
-    const client = new ConvexHttpClient(url);
-    const doc = await client.query(api.public.summary, { key });
-    return doc ? { payload: doc.payload as T, updatedAt: doc.updatedAt } : null;
-  } catch {
-    return null;
-  }
+  const client = new ConvexHttpClient(url);
+  const doc = await client.query(api.public.summary, { key });
+  return doc ? { payload: doc.payload as T, updatedAt: doc.updatedAt } : null;
 }
 
 type SummaryResult<T> = { payload: T; updatedAt: number | null; origin: "convex" | "snapshot" } | null;
 
-const cachedSummary = unstable_cache(
-  async (key: string): Promise<SummaryResult<unknown>> => {
-    const live = await fromConvex<unknown>(key);
-    if (live) return { ...live, origin: "convex" };
-    const snap = await readSnapshot<{ payload: unknown; updatedAt?: number }>(key);
-    if (snap) return { payload: snap.payload, updatedAt: snap.updatedAt ?? null, origin: "snapshot" };
-    return null;
-  },
-  ["summary-v1"],
-  { tags: [DATA_TAG], revalidate: DAY_SECONDS },
-);
+/**
+ * Convex reads are cached (tag-revalidated when Convex reports new data, otherwise daily). The
+ * cache key includes the deployment, because Next's data cache outlives deployments and a new
+ * deployment must never serve summaries cached by an older one.
+ */
+const DEPLOYMENT = process.env.VERCEL_DEPLOYMENT_ID ?? process.env.VERCEL_GIT_COMMIT_SHA ?? "local";
+const cachedConvex = unstable_cache(async (key: string) => fromConvex<unknown>(key), ["convex-summary-v2", DEPLOYMENT], {
+  tags: [DATA_TAG],
+  revalidate: DAY_SECONDS,
+});
 
-/** A summary document by key (e.g. "current:fd", "bank:sbi", "banks"), with its origin. */
+/**
+ * A summary document by key (e.g. "current:fd", "bank:sbi", "banks"), with its origin.
+ * Committed snapshots are read directly (cheap, and always the ones shipped with this deployment).
+ */
 export async function getSummary<T>(key: string): Promise<SummaryResult<T>> {
-  return (await cachedSummary(key)) as SummaryResult<T>;
+  if (process.env.NEXT_PUBLIC_CONVEX_URL) {
+    try {
+      const live = await cachedConvex(key);
+      if (live) return { payload: live.payload as T, updatedAt: live.updatedAt, origin: "convex" };
+    } catch {
+      /* Convex unreachable: fall back to the committed snapshot */
+    }
+  }
+  const snap = await readSnapshot<{ payload: T; updatedAt?: number }>(key);
+  return snap ? { payload: snap.payload, updatedAt: snap.updatedAt ?? null, origin: "snapshot" } : null;
 }
 
 /** A committed dataset file under /data (bank master list, scheme histories, macro series...). */

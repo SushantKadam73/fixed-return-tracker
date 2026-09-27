@@ -1,0 +1,17 @@
+{
+ "bankSlug": "au-sfb",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.50% p.a. on all tenures (resident Indian senior citizens with an existing AU relationship; not on non-callable deposits or ≥₹3 crore)",
+    "prematurePenalty": "1% on premature closure/withdrawal (incl. sweep-in and partial closures); no interest if withdrawn within 7 days of booking",
+    "interestCredit": "Compounding and payout frequency is on the deposit's anniversary basis"
+   },
+   "sourceKey": "au-sfb:fd",
+   "sourceUrl": "https://www.au.bank.in/interest-rates/fixed-deposit-interest-rates",
+   "recordedOn": "2026-09-27",
+   "contentHash": "19d816fb0e44a7ed"
+  }
+ }
+}

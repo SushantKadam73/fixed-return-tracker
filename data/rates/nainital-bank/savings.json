@@ -1,0 +1,26 @@
+{
+ "bankSlug": "nainital-bank",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "nainital-bank",
+   "product": "savings",
+   "effectiveFrom": "2026-01-10",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.nainitalbank.bank.in/en/pages/interest-rate",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": null,
+     "rate": 2.65,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "f2c1ccd4274e6133"
+  }
+ ]
+}

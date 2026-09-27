@@ -1,0 +1,14 @@
+{
+ "bankSlug": "nainital-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "rdRules": "RD rates not published on the official site."
+   },
+   "sourceKey": "nainital-bank:fd",
+   "sourceUrl": "https://www.nainitalbank.bank.in/en/pages/interest-rate",
+   "recordedOn": "2026-09-27",
+   "contentHash": "2dec7c54932348cf"
+  }
+ }
+}

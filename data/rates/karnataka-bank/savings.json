@@ -1,0 +1,62 @@
+{
+ "bankSlug": "karnataka-bank",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "karnataka-bank",
+   "product": "savings",
+   "effectiveFrom": "2026-04-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.karnatakabank.bank.in/savings-account-interest-rates",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 100001,
+     "rate": 2.25,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 100001,
+     "balanceMax": 500001,
+     "rate": 2.25,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 500001,
+     "balanceMax": 1000001,
+     "rate": 2.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000001,
+     "balanceMax": 2500001,
+     "rate": 2.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 2500001,
+     "balanceMax": 5000001,
+     "rate": 2.75,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 5000001,
+     "balanceMax": 10000001,
+     "rate": 3.25,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 10000001,
+     "balanceMax": null,
+     "rate": 3.75,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "1e927eca4f3cc3a7"
+  }
+ ]
+}

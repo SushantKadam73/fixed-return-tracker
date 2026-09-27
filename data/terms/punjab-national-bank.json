@@ -1,0 +1,16 @@
+{
+ "bankSlug": "punjab-national-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+50bps (<=5y) / +80bps (>5y)",
+    "superSeniorPremium": "+80bps across all maturities"
+   },
+   "sourceKey": "punjab-national-bank:fd",
+   "sourceUrl": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "recordedOn": "2026-09-27",
+   "contentHash": "a361e28188790af0"
+  }
+ }
+}

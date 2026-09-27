@@ -1,0 +1,16 @@
+{
+ "bankSlug": "sbi",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.50% (We-care: +1.00% for 5–10 years incl. 0.50% premium)",
+    "superSeniorPremium": "+0.10% over senior (80+)"
+   },
+   "sourceKey": "sbi:fd",
+   "sourceUrl": "https://sbi.bank.in/web/interest-rates/deposit-rates/retail-domestic-term-deposits",
+   "recordedOn": "2026-09-27",
+   "contentHash": "16f288c5e929a6ce"
+  }
+ }
+}

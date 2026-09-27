@@ -1,0 +1,16 @@
+{
+ "bankSlug": "hdfc-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.50pp across all tenures (bank's own column)",
+    "superSeniorPremium": "not offered — only General and Senior Citizen columns are published"
+   },
+   "sourceKey": "hdfc-bank:fd",
+   "sourceUrl": "https://www.hdfc.bank.in/interest-rates",
+   "recordedOn": "2026-09-27",
+   "contentHash": "def446024eb943bd"
+  }
+ }
+}

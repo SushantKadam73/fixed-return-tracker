@@ -3,13 +3,13 @@
  * in exactly the shape Convex summaries use, plus the history coverage report
  * (data/snapshots/coverage.json) for every bank and merged predecessor.
  */
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { bankCoverage, type BankCoverage } from "../../lib/coverage";
 import type { Product } from "../../lib/domain";
 import { todayIST } from "../../lib/format";
 import { currentEntry, productSummary, type StoredCard } from "../../lib/summary-build";
-import { allProductFiles } from "./store";
+import { allProductFiles, loadTerms } from "./store";
 
 type BankMeta = { slug: string; name: string; shortName: string; group: string; tracking?: string; founded: string | null };
 type PredecessorMeta = { slug: string; name: string; founded: string | null; mergedInto: string; mergedOn: string | null; relation: string };
@@ -87,7 +87,14 @@ export function buildSnapshots(root: string) {
       mergedOn: pred!.mergedOn,
       kind: "predecessor",
     };
-    writeSnapshot(path.join(out, `bank__${slug}.json`), { bank: bankPayload, products, terms: [] }, now);
+    const terms = Object.entries(loadTerms(root, slug).products).map(([product, e]) => ({ product, observedAt: e!.recordedOn, sourceUrl: e!.sourceUrl, terms: e!.terms }));
+    writeSnapshot(path.join(out, `bank__${slug}.json`), { bank: bankPayload, products, terms }, now);
+  }
+  // Index of stored terms files (used by the Convex dataset import).
+  const termsDir = path.join(root, "data", "terms");
+  if (existsSync(termsDir)) {
+    const termFiles = readdirSync(termsDir).filter((f) => f.endsWith(".json") && !f.startsWith("_")).map((f) => f.replace(/\.json$/, "")).sort();
+    writeFileSync(path.join(termsDir, "_index.json"), `${JSON.stringify({ banks: termFiles }, null, 1)}\n`);
   }
 
   // History coverage for every in-scope bank and every merged predecessor.

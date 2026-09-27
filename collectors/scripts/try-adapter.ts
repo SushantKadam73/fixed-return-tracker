@@ -27,7 +27,7 @@ async function main() {
     source: { key: `${bankSlug}:try`, bankSlug, products: [], url: target, format: format as SourceFormat, runner: "github", adapter: adapterName, cadence: "daily", active: true },
     doc,
     today: todayIST(),
-    fetch: (url, f) => fetchDoc(url, f ?? "html"),
+    fetch: (url, f, init) => fetchDoc(url, f ?? "html", 3, init),
   });
   for (const card of out.cards) {
     const issues = validateCard(card);

@@ -275,6 +275,35 @@ export const finalizeProductCards = internalMutation({
   },
 });
 
+const termsObject = v.object({
+  minAmount: v.optional(v.number()),
+  maxAmount: v.optional(v.number()),
+  bulkThreshold: v.optional(v.number()),
+  seniorPremium: v.optional(v.string()),
+  seniorPremiumCap: v.optional(v.string()),
+  superSeniorPremium: v.optional(v.string()),
+  prematurePenalty: v.optional(v.string()),
+  compounding: v.optional(v.string()),
+  interestCredit: v.optional(v.string()),
+  rdRules: v.optional(v.string()),
+  other: v.optional(v.array(v.string())),
+});
+
+/** Upsert a bank's deposit terms per product (from data/terms/<bank>.json). */
+export const upsertTerms = internalMutation({
+  args: { bankSlug: v.string(), entries: v.array(v.object({ product: productValidator, observedAt: v.string(), sourceUrl: v.string(), terms: termsObject })) },
+  handler: async (ctx, { bankSlug, entries }) => {
+    for (const e of entries) {
+      const row = await ctx.db
+        .query("productTerms")
+        .withIndex("by_bank_product", (q) => q.eq("bankSlug", bankSlug).eq("product", e.product))
+        .first();
+      if (row) await ctx.db.patch(row._id, { observedAt: e.observedAt, sourceUrl: e.sourceUrl, terms: e.terms });
+      else await ctx.db.insert("productTerms", { bankSlug, ...e });
+    }
+  },
+});
+
 type SeriesFile = { key: string; name: string; unit: string; frequency: string; publisher?: string; sourceUrl?: string; points: Array<[string, number | null, ...unknown[]]> };
 
 /** Import every committed series and every stored rate file, then refresh summaries. */
@@ -342,6 +371,26 @@ export const importSeriesAndRates = internalAction({
       }
     } catch (e) {
       console.warn(`rate files not imported: ${(e as Error).message}`);
+    }
+    // Deposit terms per bank (senior premium, penalties, minimums...).
+    try {
+      const tidx = await getJson<{ banks: string[] }>("terms/_index.json");
+      for (const bankSlug of tidx.banks) {
+        const path = `terms/${bankSlug}.json`;
+        const text = await getText(path);
+        const hash = hash64(text);
+        if (!force && known.get(path) === hash) {
+          skipped++;
+          continue;
+        }
+        const tf = JSON.parse(text) as { products: Record<string, { terms: Record<string, unknown>; sourceUrl: string; recordedOn: string }> };
+        const entries = Object.entries(tf.products).map(([product, e]) => ({ product: product as "fd", observedAt: e.recordedOn, sourceUrl: e.sourceUrl, terms: e.terms as never }));
+        await ctx.runMutation(internal.seed.upsertTerms, { bankSlug, entries });
+        await ctx.runMutation(internal.seed.setImportState, { path, hash });
+        changedBanks.add(bankSlug);
+      }
+    } catch (e) {
+      console.warn(`terms not imported: ${(e as Error).message}`);
     }
     if (force) await ctx.runMutation(internal.summaries.refreshAllBanks, {});
     else if (changedBanks.size > 0) await ctx.runMutation(internal.summaries.refreshBanks, { slugs: [...changedBanks] });

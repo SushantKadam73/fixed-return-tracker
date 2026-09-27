@@ -6,6 +6,7 @@
 import { mkdirSync, readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import path from "node:path";
 import type { Product, RateCard } from "../../lib/domain";
+import type { ProductTerms } from "./types";
 import { hash64 } from "../../lib/hash";
 import { canonicalRows, hasErrors, validateCard, type ValidationIssue } from "../../lib/validate";
 import { cardDate, type StoredCard } from "../../lib/summary-build";
@@ -140,4 +141,49 @@ export function allProductFiles(root: string): ProductFile[] {
     }
   }
   return out;
+}
+
+/**
+ * Deposit terms per bank and product (senior premium and its cap, minimum amount, premature
+ * withdrawal penalty, compounding, RD rules...) as stated on the bank's page:
+ * data/terms/<bank>.json. A product's entry changes (with a new recordedOn date) only when the
+ * terms themselves change, so daily runs do not rewrite the file.
+ */
+export interface TermsEntry {
+  terms: Omit<ProductTerms, "product">;
+  sourceKey: string;
+  sourceUrl: string;
+  recordedOn: string;
+  contentHash: string;
+}
+export interface TermsFile {
+  bankSlug: string;
+  products: Partial<Record<Product, TermsEntry>>;
+}
+
+const termsPath = (root: string, bankSlug: string) => path.join(root, "data", "terms", `${bankSlug}.json`);
+
+export function loadTerms(root: string, bankSlug: string): TermsFile {
+  const file = termsPath(root, bankSlug);
+  return existsSync(file) ? (JSON.parse(readFileSync(file, "utf8")) as TermsFile) : { bankSlug, products: {} };
+}
+
+export function storeTerms(root: string, bankSlug: string, source: { key: string; url: string }, terms: ProductTerms[], today: string): number {
+  const tf = loadTerms(root, bankSlug);
+  let changed = 0;
+  for (const t of terms) {
+    const { product, ...rest } = t;
+    const clean = Object.fromEntries(Object.entries(rest).filter(([, v]) => v !== undefined && v !== null && v !== "")) as Omit<ProductTerms, "product">;
+    if (Object.keys(clean).length === 0) continue;
+    const contentHash = hash64(JSON.stringify(clean, Object.keys(clean).sort()));
+    const prev = tf.products[product];
+    if (prev && prev.contentHash === contentHash && prev.sourceUrl === source.url) continue;
+    tf.products[product] = { terms: clean, sourceKey: source.key, sourceUrl: source.url, recordedOn: today, contentHash };
+    changed++;
+  }
+  if (changed > 0) {
+    mkdirSync(path.dirname(termsPath(root, bankSlug)), { recursive: true });
+    writeFileSync(termsPath(root, bankSlug), `${JSON.stringify(tf, null, 1)}\n`);
+  }
+  return changed;
 }

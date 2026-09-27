@@ -1,0 +1,26 @@
+{
+ "bankSlug": "bank-of-maharashtra",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.50% p.a. for Resident Senior Citizens, maturity slabs of 91 days and above only, on deposits up to ₹5 crore only (not applicable to non-resident deposits); not printed per tenure so no senior rows are derived here",
+    "prematurePenalty": "1.00% below the applicable rate for the period actually held; not permitted at all on non-callable deposits"
+   },
+   "sourceKey": "bank-of-maharashtra:fd",
+   "sourceUrl": "https://bankofmaharashtra.bank.in/domestic-term-deposits",
+   "recordedOn": "2026-09-27",
+   "contentHash": "537af4cb3a360dc0"
+  },
+  "fd_bulk": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "prematurePenalty": "1.00% below the applicable rate for the period actually held; not permitted at all on non-callable deposits"
+   },
+   "sourceKey": "bank-of-maharashtra:fd_bulk",
+   "sourceUrl": "https://bankofmaharashtra.bank.in/domestic-term-deposits",
+   "recordedOn": "2026-09-27",
+   "contentHash": "863ded1a92ecf7cf"
+  }
+ }
+}

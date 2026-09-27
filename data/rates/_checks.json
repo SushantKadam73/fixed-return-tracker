@@ -1,497 +1,532 @@
 {
  "au-sfb:fd": {
-  "lastAttemptAt": "2026-09-27T08:41:12.056Z",
-  "lastSuccessAt": "2026-09-27T08:41:12.056Z",
+  "lastAttemptAt": "2026-09-27T09:38:25.120Z",
+  "lastSuccessAt": "2026-09-27T09:38:25.120Z",
   "lastChangeAt": "2026-09-27T08:41:12.056Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "au-sfb:rd": {
-  "lastAttemptAt": "2026-09-27T08:41:12.351Z",
-  "lastSuccessAt": "2026-09-27T08:41:12.351Z",
+  "lastAttemptAt": "2026-09-27T09:38:25.337Z",
+  "lastSuccessAt": "2026-09-27T09:38:25.337Z",
   "lastChangeAt": "2026-09-27T08:41:12.351Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "au-sfb:savings": {
-  "lastAttemptAt": "2026-09-27T08:41:13.695Z",
-  "lastSuccessAt": "2026-09-27T08:41:13.695Z",
+  "lastAttemptAt": "2026-09-27T09:38:26.700Z",
+  "lastSuccessAt": "2026-09-27T09:38:26.700Z",
   "lastChangeAt": "2026-09-27T08:41:13.695Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "bank-of-baroda:fd": {
-  "lastAttemptAt": "2026-09-27T09:34:32.488Z",
-  "lastSuccessAt": "2026-09-27T09:34:32.488Z",
+  "lastAttemptAt": "2026-09-27T09:40:10.279Z",
+  "lastSuccessAt": "2026-09-27T09:40:10.279Z",
   "lastChangeAt": "2026-09-27T09:34:32.488Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "bank-of-baroda:fd_bulk": {
-  "lastAttemptAt": "2026-09-27T09:34:37.284Z",
-  "lastSuccessAt": "2026-09-27T09:34:37.284Z",
+  "lastAttemptAt": "2026-09-27T09:40:12.118Z",
+  "lastSuccessAt": "2026-09-27T09:40:12.118Z",
   "lastChangeAt": "2026-09-27T09:34:37.284Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "bank-of-baroda:savings": {
-  "lastAttemptAt": "2026-09-27T09:34:39.818Z",
-  "lastSuccessAt": "2026-09-27T09:34:39.818Z",
+  "lastAttemptAt": "2026-09-27T09:40:14.656Z",
+  "lastSuccessAt": "2026-09-27T09:40:14.656Z",
   "lastChangeAt": "2026-09-27T09:34:39.818Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "bank-of-baroda:tax_saver": {
-  "lastAttemptAt": "2026-09-27T09:34:41.369Z",
-  "lastSuccessAt": "2026-09-27T09:34:41.369Z",
+  "lastAttemptAt": "2026-09-27T09:40:16.598Z",
+  "lastSuccessAt": "2026-09-27T09:40:16.598Z",
   "lastChangeAt": "2026-09-27T09:34:41.369Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "bank-of-maharashtra:fd": {
-  "lastAttemptAt": "2026-09-27T09:34:44.292Z",
-  "lastSuccessAt": "2026-09-27T09:34:44.292Z",
+  "lastAttemptAt": "2026-09-27T09:40:17.433Z",
+  "lastSuccessAt": "2026-09-27T09:40:17.433Z",
   "lastChangeAt": "2026-09-27T09:34:44.292Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "bank-of-maharashtra:fd_bulk": {
-  "lastAttemptAt": "2026-09-27T09:34:46.544Z",
-  "lastSuccessAt": "2026-09-27T09:34:46.544Z",
+  "lastAttemptAt": "2026-09-27T09:40:19.469Z",
+  "lastSuccessAt": "2026-09-27T09:40:19.469Z",
   "lastChangeAt": "2026-09-27T09:34:46.544Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "bank-of-maharashtra:savings": {
-  "lastAttemptAt": "2026-09-27T09:34:47.101Z",
-  "lastSuccessAt": "2026-09-27T09:34:47.101Z",
+  "lastAttemptAt": "2026-09-27T09:40:20.037Z",
+  "lastSuccessAt": "2026-09-27T09:40:20.037Z",
   "lastChangeAt": "2026-09-27T09:34:47.101Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "canara-bank:fd": {
-  "lastAttemptAt": "2026-09-27T09:34:51.236Z",
-  "lastSuccessAt": "2026-09-27T09:34:51.236Z",
+  "lastAttemptAt": "2026-09-27T09:40:22.020Z",
+  "lastSuccessAt": "2026-09-27T09:40:22.020Z",
   "lastChangeAt": "2026-09-27T09:34:51.236Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "canara-bank:fd_bulk": {
-  "lastAttemptAt": "2026-09-27T09:34:53.239Z",
-  "lastSuccessAt": "2026-09-27T09:34:53.239Z",
+  "lastAttemptAt": "2026-09-27T09:40:23.794Z",
+  "lastSuccessAt": "2026-09-27T09:40:23.794Z",
   "lastChangeAt": "2026-09-27T09:34:53.239Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "canara-bank:savings": {
-  "lastAttemptAt": "2026-09-27T09:34:53.768Z",
-  "lastSuccessAt": "2026-09-27T09:34:53.768Z",
+  "lastAttemptAt": "2026-09-27T09:40:24.285Z",
+  "lastSuccessAt": "2026-09-27T09:40:24.285Z",
   "lastChangeAt": "2026-09-27T09:34:53.768Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "capital-sfb:fd": {
-  "lastAttemptAt": "2026-09-27T08:41:16.851Z",
-  "lastSuccessAt": "2026-09-27T08:41:16.851Z",
+  "lastAttemptAt": "2026-09-27T09:38:28.212Z",
+  "lastSuccessAt": "2026-09-27T09:38:28.212Z",
   "lastChangeAt": "2026-09-27T08:41:16.851Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "capital-sfb:savings": {
-  "lastAttemptAt": "2026-09-27T08:41:17.793Z",
-  "lastSuccessAt": "2026-09-27T08:41:17.793Z",
+  "lastAttemptAt": "2026-09-27T09:38:29.123Z",
+  "lastSuccessAt": "2026-09-27T09:38:29.123Z",
   "lastChangeAt": "2026-09-27T08:41:17.793Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "central-bank-of-india:fd": {
-  "lastAttemptAt": "2026-09-27T09:34:56.109Z",
-  "lastSuccessAt": "2026-09-27T09:34:56.109Z",
+  "lastAttemptAt": "2026-09-27T09:40:25.927Z",
+  "lastSuccessAt": "2026-09-27T09:40:25.927Z",
   "lastChangeAt": "2026-09-27T09:34:56.109Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "central-bank-of-india:fd_bulk": {
-  "lastAttemptAt": "2026-09-27T09:34:57.509Z",
-  "lastSuccessAt": "2026-09-27T09:34:57.509Z",
+  "lastAttemptAt": "2026-09-27T09:40:27.346Z",
+  "lastSuccessAt": "2026-09-27T09:40:27.346Z",
   "lastChangeAt": "2026-09-27T09:34:57.509Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "central-bank-of-india:savings": {
-  "lastAttemptAt": "2026-09-27T09:34:59.058Z",
-  "lastSuccessAt": "2026-09-27T09:34:59.058Z",
+  "lastAttemptAt": "2026-09-27T09:40:27.914Z",
+  "lastSuccessAt": "2026-09-27T09:40:27.914Z",
   "lastChangeAt": "2026-09-27T09:34:59.058Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "equitas-sfb:fd": {
-  "lastAttemptAt": "2026-09-27T08:41:19.396Z",
-  "lastSuccessAt": "2026-09-27T08:41:19.396Z",
+  "lastAttemptAt": "2026-09-27T09:38:30.144Z",
+  "lastSuccessAt": "2026-09-27T09:38:30.144Z",
   "lastChangeAt": "2026-09-27T08:41:19.396Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "equitas-sfb:rd": {
-  "lastAttemptAt": "2026-09-27T08:41:21.444Z",
-  "lastSuccessAt": "2026-09-27T08:41:21.444Z",
+  "lastAttemptAt": "2026-09-27T09:38:33.002Z",
+  "lastSuccessAt": "2026-09-27T09:38:33.002Z",
   "lastChangeAt": "2026-09-27T08:41:21.444Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "esaf-sfb:fd": {
-  "lastAttemptAt": "2026-09-27T08:41:22.536Z",
+  "lastAttemptAt": "2026-09-27T09:38:33.504Z",
   "lastSuccessAt": null,
   "lastChangeAt": null,
-  "consecutiveFailures": 1,
+  "consecutiveFailures": 2,
   "lastError": "fetch: HTTP 403"
  },
  "esaf-sfb:savings": {
-  "lastAttemptAt": "2026-09-27T08:41:22.616Z",
+  "lastAttemptAt": "2026-09-27T09:38:33.633Z",
   "lastSuccessAt": null,
   "lastChangeAt": null,
-  "consecutiveFailures": 1,
+  "consecutiveFailures": 2,
   "lastError": "fetch: HTTP 403"
  },
  "federal-bank:fd": {
-  "lastAttemptAt": "2026-09-27T08:51:08.214Z",
+  "lastAttemptAt": "2026-09-27T09:39:45.523Z",
   "lastSuccessAt": null,
   "lastChangeAt": null,
-  "consecutiveFailures": 3,
+  "consecutiveFailures": 4,
   "lastError": "fetch: blocked by Radware/ShieldSquare bot protection"
  },
  "federal-bank:savings": {
-  "lastAttemptAt": "2026-09-27T08:51:08.607Z",
+  "lastAttemptAt": "2026-09-27T09:39:46.516Z",
   "lastSuccessAt": null,
   "lastChangeAt": null,
-  "consecutiveFailures": 3,
+  "consecutiveFailures": 4,
   "lastError": "fetch: blocked by Radware/ShieldSquare bot protection"
  },
  "hdfc-bank:fd": {
-  "lastAttemptAt": "2026-09-27T08:49:22.525Z",
-  "lastSuccessAt": "2026-09-27T08:49:22.525Z",
+  "lastAttemptAt": "2026-09-27T09:39:47.359Z",
+  "lastSuccessAt": "2026-09-27T09:39:47.359Z",
   "lastChangeAt": "2026-09-27T08:49:22.525Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "hdfc-bank:fd_bulk": {
-  "lastAttemptAt": "2026-09-27T08:49:23.561Z",
-  "lastSuccessAt": "2026-09-27T08:49:23.561Z",
+  "lastAttemptAt": "2026-09-27T09:39:47.583Z",
+  "lastSuccessAt": "2026-09-27T09:39:47.583Z",
   "lastChangeAt": "2026-09-27T08:49:23.561Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "hdfc-bank:rd": {
-  "lastAttemptAt": "2026-09-27T08:49:24.249Z",
-  "lastSuccessAt": "2026-09-27T08:49:24.249Z",
+  "lastAttemptAt": "2026-09-27T09:39:48.988Z",
+  "lastSuccessAt": "2026-09-27T09:39:48.988Z",
   "lastChangeAt": "2026-09-27T08:49:24.249Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "hdfc-bank:savings": {
-  "lastAttemptAt": "2026-09-27T08:49:25.752Z",
-  "lastSuccessAt": "2026-09-27T08:49:25.752Z",
+  "lastAttemptAt": "2026-09-27T09:39:50.487Z",
+  "lastSuccessAt": "2026-09-27T09:39:50.487Z",
   "lastChangeAt": "2026-09-27T08:49:25.752Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "icici-bank:fd": {
-  "lastAttemptAt": "2026-09-27T08:49:28.210Z",
-  "lastSuccessAt": "2026-09-27T08:49:28.210Z",
+  "lastAttemptAt": "2026-09-27T09:39:51.994Z",
+  "lastSuccessAt": "2026-09-27T09:39:51.994Z",
   "lastChangeAt": "2026-09-27T08:49:28.210Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "icici-bank:rd": {
-  "lastAttemptAt": "2026-09-27T08:49:31.426Z",
-  "lastSuccessAt": "2026-09-27T08:49:31.426Z",
+  "lastAttemptAt": "2026-09-27T09:39:54.700Z",
+  "lastSuccessAt": "2026-09-27T09:39:54.700Z",
   "lastChangeAt": "2026-09-27T08:49:31.426Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "icici-bank:savings": {
-  "lastAttemptAt": "2026-09-27T08:49:33.273Z",
-  "lastSuccessAt": "2026-09-27T08:49:33.273Z",
+  "lastAttemptAt": "2026-09-27T09:39:57.189Z",
+  "lastSuccessAt": "2026-09-27T09:39:57.189Z",
   "lastChangeAt": "2026-09-27T08:49:33.273Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "idfc-first-bank:fd": {
-  "lastAttemptAt": "2026-09-27T08:49:42.011Z",
-  "lastSuccessAt": "2026-09-27T08:49:42.011Z",
+  "lastAttemptAt": "2026-09-27T09:40:02.275Z",
+  "lastSuccessAt": "2026-09-27T09:40:02.275Z",
   "lastChangeAt": "2026-09-27T08:49:42.011Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "idfc-first-bank:fd_bulk": {
-  "lastAttemptAt": "2026-09-27T08:49:45.106Z",
-  "lastSuccessAt": "2026-09-27T08:49:45.106Z",
+  "lastAttemptAt": "2026-09-27T09:40:04.964Z",
+  "lastSuccessAt": "2026-09-27T09:40:04.964Z",
   "lastChangeAt": "2026-09-27T08:49:45.106Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "idfc-first-bank:savings": {
-  "lastAttemptAt": "2026-09-27T08:49:47.665Z",
-  "lastSuccessAt": "2026-09-27T08:49:47.665Z",
+  "lastAttemptAt": "2026-09-27T09:40:07.487Z",
+  "lastSuccessAt": "2026-09-27T09:40:07.487Z",
   "lastChangeAt": "2026-09-27T08:49:47.665Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "indian-overseas-bank:fd": {
-  "lastAttemptAt": "2026-09-27T08:45:51.816Z",
-  "lastSuccessAt": "2026-09-27T08:45:51.816Z",
+  "lastAttemptAt": "2026-09-27T09:39:25.091Z",
+  "lastSuccessAt": "2026-09-27T09:39:25.091Z",
   "lastChangeAt": "2026-09-27T08:45:51.816Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "indian-overseas-bank:fd_bulk": {
-  "lastAttemptAt": "2026-09-27T08:45:53.579Z",
-  "lastSuccessAt": "2026-09-27T08:45:53.579Z",
+  "lastAttemptAt": "2026-09-27T09:39:26.852Z",
+  "lastSuccessAt": "2026-09-27T09:39:26.852Z",
   "lastChangeAt": "2026-09-27T08:45:53.579Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "indian-overseas-bank:savings": {
-  "lastAttemptAt": "2026-09-27T08:45:54.270Z",
-  "lastSuccessAt": "2026-09-27T08:45:54.270Z",
+  "lastAttemptAt": "2026-09-27T09:39:28.370Z",
+  "lastSuccessAt": "2026-09-27T09:39:28.370Z",
   "lastChangeAt": "2026-09-27T08:45:54.270Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "indusind-bank:fd": {
-  "lastAttemptAt": "2026-09-27T08:49:36.181Z",
-  "lastSuccessAt": "2026-09-27T08:49:36.181Z",
+  "lastAttemptAt": "2026-09-27T09:39:58.599Z",
+  "lastSuccessAt": "2026-09-27T09:39:58.599Z",
   "lastChangeAt": "2026-09-27T08:49:36.181Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "indusind-bank:fd_bulk": {
-  "lastAttemptAt": "2026-09-27T08:49:38.008Z",
-  "lastSuccessAt": "2026-09-27T08:49:38.008Z",
+  "lastAttemptAt": "2026-09-27T09:40:00.211Z",
+  "lastSuccessAt": "2026-09-27T09:40:00.211Z",
   "lastChangeAt": "2026-09-27T08:49:38.008Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "indusind-bank:savings": {
-  "lastAttemptAt": "2026-09-27T08:49:38.630Z",
-  "lastSuccessAt": "2026-09-27T08:49:38.630Z",
+  "lastAttemptAt": "2026-09-27T09:40:00.776Z",
+  "lastSuccessAt": "2026-09-27T09:40:00.776Z",
   "lastChangeAt": "2026-09-27T08:49:38.630Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "jana-sfb:bulk": {
-  "lastAttemptAt": "2026-09-27T08:43:47.376Z",
-  "lastSuccessAt": "2026-09-27T08:43:47.376Z",
+  "lastAttemptAt": "2026-09-27T09:39:07.121Z",
+  "lastSuccessAt": "2026-09-27T09:39:07.121Z",
   "lastChangeAt": "2026-09-27T08:43:47.376Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "jana-sfb:fd": {
-  "lastAttemptAt": "2026-09-27T08:43:46.008Z",
-  "lastSuccessAt": "2026-09-27T08:43:46.008Z",
+  "lastAttemptAt": "2026-09-27T09:39:05.941Z",
+  "lastSuccessAt": "2026-09-27T09:39:05.941Z",
   "lastChangeAt": "2026-09-27T08:43:46.008Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "jana-sfb:rd": {
-  "lastAttemptAt": "2026-09-27T08:43:48.681Z",
-  "lastSuccessAt": "2026-09-27T08:43:48.681Z",
+  "lastAttemptAt": "2026-09-27T09:39:08.270Z",
+  "lastSuccessAt": "2026-09-27T09:39:08.270Z",
   "lastChangeAt": "2026-09-27T08:43:48.681Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "jana-sfb:savings": {
-  "lastAttemptAt": "2026-09-27T08:43:49.864Z",
-  "lastSuccessAt": "2026-09-27T08:43:49.864Z",
+  "lastAttemptAt": "2026-09-27T09:39:09.694Z",
+  "lastSuccessAt": "2026-09-27T09:39:09.694Z",
   "lastChangeAt": "2026-09-27T08:43:49.864Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
+ "karnataka-bank:fd": {
+  "lastAttemptAt": "2026-09-27T09:47:49.446Z",
+  "lastSuccessAt": "2026-09-27T09:47:49.446Z",
+  "lastChangeAt": "2026-09-27T09:47:49.446Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "karnataka-bank:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T09:47:50.921Z",
+  "lastSuccessAt": "2026-09-27T09:47:50.921Z",
+  "lastChangeAt": "2026-09-27T09:47:50.921Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "karnataka-bank:savings": {
+  "lastAttemptAt": "2026-09-27T09:47:52.058Z",
+  "lastSuccessAt": "2026-09-27T09:47:52.058Z",
+  "lastChangeAt": "2026-09-27T09:47:52.058Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "nainital-bank:fd": {
+  "lastAttemptAt": "2026-09-27T09:47:55.916Z",
+  "lastSuccessAt": "2026-09-27T09:47:55.916Z",
+  "lastChangeAt": "2026-09-27T09:47:55.916Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "nainital-bank:savings": {
+  "lastAttemptAt": "2026-09-27T09:47:57.020Z",
+  "lastSuccessAt": "2026-09-27T09:47:57.020Z",
+  "lastChangeAt": "2026-09-27T09:47:57.020Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
  "punjab-and-sind-bank:fd": {
-  "lastAttemptAt": "2026-09-27T08:45:57.234Z",
-  "lastSuccessAt": "2026-09-27T08:45:57.234Z",
+  "lastAttemptAt": "2026-09-27T09:39:29.250Z",
+  "lastSuccessAt": "2026-09-27T09:39:29.250Z",
   "lastChangeAt": "2026-09-27T08:45:57.234Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "punjab-national-bank:fd": {
-  "lastAttemptAt": "2026-09-27T08:46:00.319Z",
-  "lastSuccessAt": "2026-09-27T08:46:00.319Z",
+  "lastAttemptAt": "2026-09-27T09:39:31.741Z",
+  "lastSuccessAt": "2026-09-27T09:39:31.741Z",
   "lastChangeAt": "2026-09-27T08:46:00.319Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "punjab-national-bank:fd_bulk": {
-  "lastAttemptAt": "2026-09-27T08:46:03.636Z",
-  "lastSuccessAt": "2026-09-27T08:46:03.636Z",
+  "lastAttemptAt": "2026-09-27T09:39:34.836Z",
+  "lastSuccessAt": "2026-09-27T09:39:34.836Z",
   "lastChangeAt": "2026-09-27T08:46:03.636Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "sbi:fd": {
-  "lastAttemptAt": "2026-09-27T08:51:10.683Z",
-  "lastSuccessAt": "2026-09-27T08:51:10.683Z",
+  "lastAttemptAt": "2026-09-27T09:38:21.207Z",
+  "lastSuccessAt": "2026-09-27T09:38:21.207Z",
   "lastChangeAt": "2026-09-27T07:57:06.107Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "sbi:fd_bulk": {
-  "lastAttemptAt": "2026-09-27T08:51:12.605Z",
-  "lastSuccessAt": "2026-09-27T08:51:12.605Z",
+  "lastAttemptAt": "2026-09-27T09:38:22.977Z",
+  "lastSuccessAt": "2026-09-27T09:38:22.977Z",
   "lastChangeAt": "2026-09-27T07:57:08.080Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "sbi:savings": {
-  "lastAttemptAt": "2026-09-27T08:51:16.136Z",
-  "lastSuccessAt": "2026-09-27T08:51:16.136Z",
+  "lastAttemptAt": "2026-09-27T09:38:23.718Z",
+  "lastSuccessAt": "2026-09-27T09:38:23.718Z",
   "lastChangeAt": "2026-09-27T07:57:09.701Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "shivalik-sfb:fd": {
-  "lastAttemptAt": "2026-09-27T08:43:51.870Z",
-  "lastSuccessAt": "2026-09-27T08:43:51.870Z",
+  "lastAttemptAt": "2026-09-27T09:39:11.235Z",
+  "lastSuccessAt": "2026-09-27T09:39:11.235Z",
   "lastChangeAt": "2026-09-27T08:43:51.870Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "shivalik-sfb:rd": {
-  "lastAttemptAt": "2026-09-27T08:43:52.956Z",
-  "lastSuccessAt": "2026-09-27T08:43:52.956Z",
+  "lastAttemptAt": "2026-09-27T09:39:12.217Z",
+  "lastSuccessAt": "2026-09-27T09:39:12.217Z",
   "lastChangeAt": "2026-09-27T08:43:52.956Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "shivalik-sfb:savings": {
-  "lastAttemptAt": "2026-09-27T08:43:53.723Z",
-  "lastSuccessAt": "2026-09-27T08:43:53.723Z",
+  "lastAttemptAt": "2026-09-27T09:39:13.097Z",
+  "lastSuccessAt": "2026-09-27T09:39:13.097Z",
   "lastChangeAt": "2026-09-27T08:43:53.723Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "slice-sfb:fd": {
-  "lastAttemptAt": "2026-09-27T08:43:41.880Z",
-  "lastSuccessAt": "2026-09-27T08:43:41.880Z",
+  "lastAttemptAt": "2026-09-27T09:39:02.294Z",
+  "lastSuccessAt": "2026-09-27T09:39:02.294Z",
   "lastChangeAt": "2026-09-27T08:43:41.880Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "slice-sfb:rd": {
-  "lastAttemptAt": "2026-09-27T08:43:42.891Z",
-  "lastSuccessAt": "2026-09-27T08:43:42.891Z",
+  "lastAttemptAt": "2026-09-27T09:39:03.655Z",
+  "lastSuccessAt": "2026-09-27T09:39:03.655Z",
   "lastChangeAt": "2026-09-27T08:43:42.891Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "slice-sfb:savings": {
-  "lastAttemptAt": "2026-09-27T08:43:44.812Z",
-  "lastSuccessAt": "2026-09-27T08:43:44.812Z",
+  "lastAttemptAt": "2026-09-27T09:39:04.458Z",
+  "lastSuccessAt": "2026-09-27T09:39:04.458Z",
   "lastChangeAt": "2026-09-27T08:43:44.812Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "suryoday-sfb:savings": {
-  "lastAttemptAt": "2026-09-27T08:41:24.676Z",
+  "lastAttemptAt": "2026-09-27T09:38:35.033Z",
   "lastSuccessAt": null,
   "lastChangeAt": null,
-  "consecutiveFailures": 1,
+  "consecutiveFailures": 2,
   "lastError": "fetch: HTTP 502"
  },
  "uco-bank:fd": {
-  "lastAttemptAt": "2026-09-27T08:46:09.761Z",
-  "lastSuccessAt": "2026-09-27T08:46:09.761Z",
+  "lastAttemptAt": "2026-09-27T09:39:38.901Z",
+  "lastSuccessAt": "2026-09-27T09:39:38.901Z",
   "lastChangeAt": "2026-09-27T08:46:09.761Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "uco-bank:fd_bulk": {
-  "lastAttemptAt": "2026-09-27T08:46:11.597Z",
-  "lastSuccessAt": "2026-09-27T08:46:11.597Z",
+  "lastAttemptAt": "2026-09-27T09:39:41.049Z",
+  "lastSuccessAt": "2026-09-27T09:39:41.049Z",
   "lastChangeAt": "2026-09-27T08:46:11.597Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "ujjivan-sfb:bulk": {
-  "lastAttemptAt": "2026-09-27T08:41:44.641Z",
-  "lastSuccessAt": "2026-09-27T08:41:44.641Z",
+  "lastAttemptAt": "2026-09-27T09:38:55.131Z",
+  "lastSuccessAt": "2026-09-27T09:38:55.131Z",
   "lastChangeAt": "2026-09-27T08:41:44.641Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "ujjivan-sfb:fd": {
-  "lastAttemptAt": "2026-09-27T08:41:41.334Z",
-  "lastSuccessAt": "2026-09-27T08:41:41.334Z",
+  "lastAttemptAt": "2026-09-27T09:38:51.792Z",
+  "lastSuccessAt": "2026-09-27T09:38:51.792Z",
   "lastChangeAt": "2026-09-27T08:41:41.334Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "ujjivan-sfb:rd": {
-  "lastAttemptAt": "2026-09-27T08:41:42.521Z",
-  "lastSuccessAt": "2026-09-27T08:41:42.521Z",
+  "lastAttemptAt": "2026-09-27T09:38:53.068Z",
+  "lastSuccessAt": "2026-09-27T09:38:53.068Z",
   "lastChangeAt": "2026-09-27T08:41:42.521Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "ujjivan-sfb:savings": {
-  "lastAttemptAt": "2026-09-27T08:41:43.414Z",
-  "lastSuccessAt": "2026-09-27T08:41:43.414Z",
+  "lastAttemptAt": "2026-09-27T09:38:53.817Z",
+  "lastSuccessAt": "2026-09-27T09:38:53.817Z",
   "lastChangeAt": "2026-09-27T08:41:43.414Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "union-bank-of-india:fd": {
-  "lastAttemptAt": "2026-09-27T08:46:14.064Z",
-  "lastSuccessAt": "2026-09-27T08:46:14.064Z",
+  "lastAttemptAt": "2026-09-27T09:39:42.598Z",
+  "lastSuccessAt": "2026-09-27T09:39:42.598Z",
   "lastChangeAt": "2026-09-27T08:46:14.064Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "union-bank-of-india:fd_bulk": {
-  "lastAttemptAt": "2026-09-27T08:46:16.270Z",
-  "lastSuccessAt": "2026-09-27T08:46:16.270Z",
+  "lastAttemptAt": "2026-09-27T09:39:44.959Z",
+  "lastSuccessAt": "2026-09-27T09:39:44.959Z",
   "lastChangeAt": "2026-09-27T08:46:16.270Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "unity-sfb:bulk": {
-  "lastAttemptAt": "2026-09-27T08:43:59.576Z",
-  "lastSuccessAt": "2026-09-27T08:43:59.576Z",
+  "lastAttemptAt": "2026-09-27T09:39:18.167Z",
+  "lastSuccessAt": "2026-09-27T09:39:18.167Z",
   "lastChangeAt": "2026-09-27T08:43:59.576Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "unity-sfb:fd": {
-  "lastAttemptAt": "2026-09-27T08:43:56.020Z",
-  "lastSuccessAt": "2026-09-27T08:43:56.020Z",
+  "lastAttemptAt": "2026-09-27T09:39:14.614Z",
+  "lastSuccessAt": "2026-09-27T09:39:14.614Z",
   "lastChangeAt": "2026-09-27T08:43:56.020Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "unity-sfb:savings": {
-  "lastAttemptAt": "2026-09-27T08:44:02.838Z",
-  "lastSuccessAt": "2026-09-27T08:44:02.838Z",
+  "lastAttemptAt": "2026-09-27T09:39:21.608Z",
+  "lastSuccessAt": "2026-09-27T09:39:21.608Z",
   "lastChangeAt": "2026-09-27T08:44:02.838Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "utkarsh-sfb:fd": {
-  "lastAttemptAt": "2026-09-27T08:43:36.060Z",
-  "lastSuccessAt": "2026-09-27T08:43:36.060Z",
+  "lastAttemptAt": "2026-09-27T09:38:58.035Z",
+  "lastSuccessAt": "2026-09-27T09:38:58.035Z",
   "lastChangeAt": "2026-09-27T08:43:36.060Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "utkarsh-sfb:rd": {
-  "lastAttemptAt": "2026-09-27T08:43:37.782Z",
-  "lastSuccessAt": "2026-09-27T08:43:37.782Z",
+  "lastAttemptAt": "2026-09-27T09:38:59.423Z",
+  "lastSuccessAt": "2026-09-27T09:38:59.423Z",
   "lastChangeAt": "2026-09-27T08:43:37.782Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "utkarsh-sfb:savings": {
-  "lastAttemptAt": "2026-09-27T08:43:39.183Z",
-  "lastSuccessAt": "2026-09-27T08:43:39.183Z",
+  "lastAttemptAt": "2026-09-27T09:39:00.887Z",
+  "lastSuccessAt": "2026-09-27T09:39:00.887Z",
   "lastChangeAt": "2026-09-27T08:43:39.183Z",
   "consecutiveFailures": 0,
   "lastError": null

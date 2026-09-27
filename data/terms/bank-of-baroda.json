@@ -1,0 +1,26 @@
+{
+ "bankSlug": "bank-of-baroda",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.50% (some tenure bands carry a further +0.10 to +0.60% for senior/super-senior — see the bank's own footnote markers on the rate table)",
+    "prematurePenalty": "No penalty up to ₹5 lakh held at least 12 months; not permitted at all on non-callable deposits"
+   },
+   "sourceKey": "bank-of-baroda:fd",
+   "sourceUrl": "https://bankofbaroda.bank.in/interest-rate-and-service-charges/deposits-interest-rates/fixed-deposits-callable-and-non-callable-upto-ten-crores",
+   "recordedOn": "2026-09-27",
+   "contentHash": "4cf5b050bd336d82"
+  },
+  "fd_bulk": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "prematurePenalty": "Not permitted on non-callable deposits"
+   },
+   "sourceKey": "bank-of-baroda:fd_bulk",
+   "sourceUrl": "https://bankofbaroda.bank.in/interest-rate-and-service-charges/deposits-interest-rates/fixed-deposits-callable-and-non-callable-upto-ten-crores",
+   "recordedOn": "2026-09-27",
+   "contentHash": "1db5139d4af1fdab"
+  }
+ }
+}

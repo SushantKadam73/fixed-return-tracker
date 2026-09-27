@@ -1,0 +1,28 @@
+{
+ "bankSlug": "ujjivan-sfb",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.50% p.a. on Domestic FD, all tenures; NOT applicable to Platina FD or NRE deposits",
+    "prematurePenalty": "Platina FD: none permitted (true non-callable, incl. no part-closure)"
+   },
+   "sourceKey": "ujjivan-sfb:fd",
+   "sourceUrl": "https://www.ujjivansfb.bank.in/interest-rates",
+   "recordedOn": "2026-09-27",
+   "contentHash": "2e809996ce4eba7e"
+  },
+  "fd_bulk": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "other": [
+     "Callable and Non-Callable rates differ; both are published as separate rows here (callable: true/false)."
+    ]
+   },
+   "sourceKey": "ujjivan-sfb:bulk",
+   "sourceUrl": "https://www.ujjivansfb.bank.in/interest-rates",
+   "recordedOn": "2026-09-27",
+   "contentHash": "b17c93b1b8b1dda3"
+  }
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "bankSlug": "indusind-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.50pp on most tenures; +0.75pp specifically on the 2–3 year tenure (bank's own note)",
+    "prematurePenalty": "1% penal rate, waived for resident senior citizens (<₹5cr) with tenure 1 year or more"
+   },
+   "sourceKey": "indusind-bank:fd",
+   "sourceUrl": "https://www.indusind.bank.in/in/en/personal/fixed-deposit-interest-rate.html",
+   "recordedOn": "2026-09-27",
+   "contentHash": "b81d2291cfbb11a9"
+  }
+ }
+}

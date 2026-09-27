@@ -1,0 +1,28 @@
+{
+ "banks": [
+  "au-sfb",
+  "bank-of-baroda",
+  "bank-of-maharashtra",
+  "canara-bank",
+  "capital-sfb",
+  "central-bank-of-india",
+  "hdfc-bank",
+  "icici-bank",
+  "idfc-first-bank",
+  "indian-overseas-bank",
+  "indusind-bank",
+  "jana-sfb",
+  "karnataka-bank",
+  "nainital-bank",
+  "punjab-and-sind-bank",
+  "punjab-national-bank",
+  "sbi",
+  "shivalik-sfb",
+  "slice-sfb",
+  "uco-bank",
+  "ujjivan-sfb",
+  "union-bank-of-india",
+  "unity-sfb",
+  "utkarsh-sfb"
+ ]
+}
