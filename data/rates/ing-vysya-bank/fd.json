@@ -1,0 +1,406 @@
+{
+ "bankSlug": "ing-vysya-bank",
+ "product": "fd",
+ "cards": [
+  {
+   "bankSlug": "ing-vysya-bank",
+   "product": "fd",
+   "effectiveFrom": "2003-04-21",
+   "observedAt": "2026-09-27",
+   "observedFrom": "2003-04-26",
+   "observedTo": "2003-04-26",
+   "sourceType": "web_archive",
+   "sourceUrl": "ingvysyabank.com/Interestrates_fr.shtml",
+   "archiveUrl": "https://web.archive.org/web/20030426031453id_/http://www.ingvysyabank.com:80/Interestrates_fr.shtml",
+   "confidence": "medium",
+   "rows": [
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days to 45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46 days to 90 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.25
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91 days to 179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.75
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 270,
+     "tenureLabel": "180 days to 270 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 271,
+     "tenureMaxDays": 364,
+     "tenureLabel": "271 days to 364 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.25
+    }
+   ],
+   "notes": [
+    "Reconstructed from Internet Archive copies of the bank's official page captured 2003-04-26 to 2003-04-26.",
+    "Table read: the one headed \"t in out deposit schemes Non Resident Ordinary Rupee Account (NRO) & Domestic (w.e.f. 27th Jan 2003)\".",
+    "found via discover; oldest lead for Vysya/ING Vysya Bank rate history. Interestrates.shtml (no _fr suffix) is a frameset shell with no content of its own -- <frame src=\"Interestrates_fr.shtml\">, confirmed by fetching a capture directly -- this is the actual content frame"
+   ],
+   "contentHash": "53014be33a7ae593"
+  },
+  {
+   "bankSlug": "ing-vysya-bank",
+   "product": "fd",
+   "effectiveFrom": "2003-12-15",
+   "observedAt": "2026-09-27",
+   "observedFrom": "2003-12-17",
+   "observedTo": "2003-12-17",
+   "sourceType": "web_archive",
+   "sourceUrl": "ingvysyabank.com/Interestrates_fr.shtml",
+   "archiveUrl": "https://web.archive.org/web/20031217155921id_/http://www.ingvysyabank.com:80/Interestrates_fr.shtml",
+   "confidence": "medium",
+   "rows": [
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days to 45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.25
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46 days to 90 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.5
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91 days to 179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.8
+    },
+    {
+     "tenureMinDays": 1,
+     "tenureMaxDays": 179,
+     "tenureLabel": "180 days to less than one year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.2
+    }
+   ],
+   "notes": [
+    "Reconstructed from Internet Archive copies of the bank's official page captured 2003-12-17 to 2003-12-17.",
+    "Table read: the one headed \"Non Resident Ordinary Rupee Account (NRO) & Domestic [upto Rs.One Crore] (w.e.f. 15th December 2003)\".",
+    "found via discover; oldest lead for Vysya/ING Vysya Bank rate history. Interestrates.shtml (no _fr suffix) is a frameset shell with no content of its own -- <frame src=\"Interestrates_fr.shtml\">, confirmed by fetching a capture directly -- this is the actual content frame"
+   ],
+   "contentHash": "76784dce64900f9d"
+  },
+  {
+   "bankSlug": "ing-vysya-bank",
+   "product": "fd",
+   "effectiveFrom": "2004-04-19",
+   "observedAt": "2026-09-27",
+   "observedFrom": "2004-04-20",
+   "observedTo": "2004-04-20",
+   "sourceType": "web_archive",
+   "sourceUrl": "ingvysyabank.com/Interestrates_fr.shtml",
+   "archiveUrl": "https://web.archive.org/web/20040420224624id_/http://www.ingvysyabank.com:80/Interestrates_fr.shtml",
+   "confidence": "medium",
+   "rows": [
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days to 45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.25
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46 days to 90 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.5
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91 days to 179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.7
+    },
+    {
+     "tenureMinDays": 1,
+     "tenureMaxDays": 179,
+     "tenureLabel": "180 days to less than one year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.1
+    }
+   ],
+   "notes": [
+    "Reconstructed from Internet Archive copies of the bank's official page captured 2004-04-20 to 2004-04-20.",
+    "Table read: the one headed \" Non Resident Ordinary Rupee Account (NRO) & Domestic [upto Rs.One Crore] (w.e.f. 27th January 2004)\".",
+    "found via discover; oldest lead for Vysya/ING Vysya Bank rate history. Interestrates.shtml (no _fr suffix) is a frameset shell with no content of its own -- <frame src=\"Interestrates_fr.shtml\">, confirmed by fetching a capture directly -- this is the actual content frame"
+   ],
+   "contentHash": "ff7eaa7382c13e0d"
+  },
+  {
+   "bankSlug": "ing-vysya-bank",
+   "product": "fd",
+   "effectiveFrom": "2005-05-03",
+   "observedAt": "2026-09-27",
+   "observedFrom": "2005-05-14",
+   "observedTo": "2005-08-17",
+   "sourceType": "web_archive",
+   "sourceUrl": "ingvysyabank.com/Interestrates_fr.shtml",
+   "archiveUrl": "https://web.archive.org/web/20050514064726id_/http://www.ingvysyabank.com:80/Interestrates_fr.shtml",
+   "confidence": "medium",
+   "rows": [
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days to 45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.5
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46 days to 90 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91 days to 179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 270,
+     "tenureLabel": "180 days to 270 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.5
+    },
+    {
+     "tenureMinDays": 1,
+     "tenureMaxDays": 270,
+     "tenureLabel": "271 days to less than one year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.75
+    },
+    {
+     "tenureMinDays": 1,
+     "tenureMaxDays": 1824,
+     "tenureLabel": "Three years to less than 5 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.25
+    }
+   ],
+   "notes": [
+    "Reconstructed from Internet Archive copies of the bank's official page captured 2005-05-14 to 2005-08-17.",
+    "Table read: the one headed \"ates on Domestic & NRI Deposits Interest Rates on Domestic and NRO Term Deposits from April 16, 2005\".",
+    "found via discover; oldest lead for Vysya/ING Vysya Bank rate history. Interestrates.shtml (no _fr suffix) is a frameset shell with no content of its own -- <frame src=\"Interestrates_fr.shtml\">, confirmed by fetching a capture directly -- this is the actual content frame"
+   ],
+   "contentHash": "48beadf92354b28d"
+  },
+  {
+   "bankSlug": "ing-vysya-bank",
+   "product": "fd",
+   "effectiveFrom": "2006-03-07",
+   "observedAt": "2026-09-27",
+   "observedFrom": "2006-03-16",
+   "observedTo": "2006-03-16",
+   "sourceType": "web_archive",
+   "sourceUrl": "ingvysyabank.com/Interestrates_fr.shtml",
+   "archiveUrl": "https://web.archive.org/web/20060316012024id_/http://www.ingvysyabank.com/Interestrates_fr.shtml",
+   "confidence": "medium",
+   "rows": [
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days to 45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.5
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46 days to 90 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91 days to 179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.25
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 270,
+     "tenureLabel": "180 days to 270 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 1,
+     "tenureMaxDays": 270,
+     "tenureLabel": "271 days to less than one year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 3650,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "Five years to 10 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.5
+    }
+   ],
+   "notes": [
+    "Reconstructed from Internet Archive copies of the bank's official page captured 2006-03-16 to 2006-03-16.",
+    "Table read: the one headed \"st Rates on Domestic & NRI Deposits Interest Rates on Domestic and NRO Term Deposits from 07.03.2006\".",
+    "found via discover; oldest lead for Vysya/ING Vysya Bank rate history. Interestrates.shtml (no _fr suffix) is a frameset shell with no content of its own -- <frame src=\"Interestrates_fr.shtml\">, confirmed by fetching a capture directly -- this is the actual content frame"
+   ],
+   "contentHash": "4a00b10d95fabfcb"
+  }
+ ]
+}

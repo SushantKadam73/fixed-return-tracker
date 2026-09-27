@@ -5,6 +5,44 @@
   {
    "bankSlug": "karur-vysya-bank",
    "product": "savings",
+   "effectiveFrom": "2020-11-16",
+   "observedAt": "2026-09-27",
+   "observedFrom": "2020-11-16",
+   "observedTo": "2020-11-16",
+   "sourceType": "web_archive",
+   "sourceUrl": "kvb.co.in/api/v1/savings-interest-rates",
+   "archiveUrl": "https://web.archive.org/web/20201116080841id_/https://www.kvb.co.in/api/v1/savings-interest-rates",
+   "confidence": "medium",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 100001,
+     "rate": 2.75,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 100001,
+     "balanceMax": 1000001,
+     "rate": 3.25,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000001,
+     "balanceMax": null,
+     "rate": 3.5,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "notes": [
+    "Reconstructed from an Internet Archive copy of the bank's own JSON rate API, captured 2020-11-16 to 2020-11-16."
+   ],
+   "contentHash": "54cf07374d8eee16"
+  },
+  {
+   "bankSlug": "karur-vysya-bank",
+   "product": "savings",
    "effectiveFrom": "2026-01-15",
    "observedAt": "2026-09-27",
    "sourceType": "bank_official",

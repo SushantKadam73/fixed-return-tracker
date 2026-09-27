@@ -23,7 +23,8 @@
    "amountMax": null,
    "from": "1998",
    "to": "2007",
-   "note": "1990s static rate page (history pilot)"
+   "parser": "south-indian-bank/domestic-term-deposit",
+   "note": "1990s-2000s static rate page (history pilot); domestic-term-deposit table has 1 tier in 1999-2000, then 3 unlabelled amount tiers from Aug 2000 -- see parser"
   },
   {
    "bankSlug": "south-indian-bank",
@@ -32,33 +33,25 @@
    "amountMax": null,
    "from": "2007",
    "to": "2026",
-   "note": "ASP.NET rate page used since 2007 (history pilot)"
-  },
-  {
-   "bankSlug": "idfc-first-bank",
-   "url": "https://www.idfcfirstbank.com/common-apply-now?lob=personal-banking&p=fd&icid=webhomepage-apply_fixeddeposit_n1-bankingproducts",
-   "product": "fd",
-   "amountMax": null,
-   "from": "2023",
-   "to": "2023",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "parser": "south-indian-bank/domestic-term-deposit",
+   "note": "ASP.NET rate page used since 2007 (history pilot); domestic deposits, general public + senior citizen, amount-tiered -- see parser"
   },
   {
    "bankSlug": "idfc-first-bank",
    "url": "https://www.idfcfirstbank.com/accounts-and-deposits/fixed-deposit-business.html",
    "product": "fd",
    "amountMax": null,
-   "from": "2019",
-   "to": "2019",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "2018",
+   "to": "2021",
+   "note": "candidate from Phase 1 survey; verify layout (business FD variant)"
   },
   {
    "bankSlug": "idfc-first-bank",
    "url": "https://www.idfcfirstbank.com/banking-products/accounts/fixed-deposit.html",
    "product": "fd",
    "amountMax": null,
-   "from": "2019",
-   "to": "2019",
+   "from": "2018",
+   "to": "2022",
    "note": "candidate from Phase 1 survey; verify layout"
   },
   {
@@ -66,26 +59,26 @@
    "url": "https://www.idfcfirstbank.com/banking-products/accounts/rate-of-interest.html",
    "product": "fd",
    "amountMax": null,
-   "from": "2020",
-   "to": "2020",
+   "from": "2018",
+   "to": "2022",
    "note": "candidate from Phase 1 survey; verify layout"
   },
   {
    "bankSlug": "idfc-first-bank",
    "url": "https://www.idfcfirstbank.com/banking-products/accounts/recurring-deposit-account.html",
-   "product": "fd",
+   "product": "rd",
    "amountMax": null,
-   "from": "2019",
-   "to": "2019",
+   "from": "2018",
+   "to": "2022",
    "note": "candidate from Phase 1 survey; verify layout"
   },
   {
    "bankSlug": "idfc-first-bank",
    "url": "https://www.idfcfirstbank.com/banking-products/accounts/sa-interest-rate.html",
-   "product": "fd",
+   "product": "savings",
    "amountMax": null,
-   "from": "2020",
-   "to": "2020",
+   "from": "2018",
+   "to": "2022",
    "note": "candidate from Phase 1 survey; verify layout"
   },
   {
@@ -93,62 +86,26 @@
    "url": "https://www.idfcfirstbank.com/business-banking/accounts-and-deposits/fixed-deposit-business.html",
    "product": "fd",
    "amountMax": null,
-   "from": "2020",
-   "to": "2020",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "idfc-first-bank",
-   "url": "https://www.idfcfirstbank.com/common-apply-now?lob=personal-banking&p=fd_sep&icid=fd_depositstab_applynow",
-   "product": "fd",
-   "amountMax": null,
-   "from": "2024",
-   "to": "2024",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "idfc-first-bank",
-   "url": "https://www.idfcfirstbank.com/common-apply-now?lob=personal-banking&p=fd_sep&icid=webhomepage-apply_fd_deposits1",
-   "product": "fd",
-   "amountMax": null,
-   "from": "2023",
+   "from": "2019",
    "to": "2023",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "karnataka-bank",
-   "url": "https://karnatakabank.com/apply-now?utm_source=X&utm_medium=Organic+&utm_campaign=+KBL_FEB26_Fixeddeposit_OO1",
-   "product": "fd",
-   "amountMax": null,
-   "from": "2026",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "karnataka-bank",
-   "url": "https://karnatakabank.com/apply-now?utm_source=X&utm_medium=Organic+&utm_campaign=+KBL_Nov_recurringdeposit001",
-   "product": "fd",
-   "amountMax": null,
-   "from": "2025",
-   "to": "2025",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "note": "candidate from Phase 1 survey; verify layout (business FD variant, redesigned URL)"
   },
   {
    "bankSlug": "karnataka-bank",
    "url": "https://karnatakabank.com/deposit-interest-rates",
    "product": "fd",
    "amountMax": null,
-   "from": "2024",
-   "to": "2024",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "2023",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout (current-era redesign)"
   },
   {
    "bankSlug": "karnataka-bank",
    "url": "http://www.karnatakabank.com:80/DepositIntrates.htm",
    "product": "fd",
    "amountMax": null,
-   "from": "2012",
-   "to": "2012",
+   "from": "2008",
+   "to": "2020",
    "note": "candidate from Phase 1 survey; verify layout"
   },
   {
@@ -156,80 +113,35 @@
    "url": "http://www.karnatakabank.com:80/deposits.htm",
    "product": "fd",
    "amountMax": null,
-   "from": "2002",
-   "to": "2002",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "kotak-mahindra-bank",
-   "url": "http://www.kotak.com:80/./.deposits/sitemap.html",
-   "product": "fd",
-   "amountMax": null,
-   "from": "2011",
-   "to": "2011",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "kotak-mahindra-bank",
-   "url": "https://www.kotak.com/811-savingsaccount-ZeroBalanceAccount/811-mob-1/assets/vectors/icon_getinterest.svg",
-   "product": "savings",
-   "amountMax": null,
-   "from": "2021",
-   "to": "2021",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "kotak-mahindra-bank",
-   "url": "https://www.kotak.com/811-savingsaccount-ZeroBalanceAccount/811-mob/assets/vectors/icon_deposits_spends.svg",
-   "product": "fd",
-   "amountMax": null,
-   "from": "2021",
-   "to": "2021",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "kotak-mahindra-bank",
-   "url": "https://www.kotak.com/811-savingsaccount-ZeroBalanceAccount/811/ahome2.action?Source=Bing&banner=Search_action&pubild=%2Bbank%20%2Binterest%20%2Brate&msclkid=8c61c6f1a3e5107e1f4da4d802e710d9",
-   "product": "savings",
-   "amountMax": null,
-   "from": "2022",
-   "to": "2022",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "kotak-mahindra-bank",
-   "url": "http://www.kotak.com/%3Clink%20rel%3D%22canonical%22%20href%3D%22http%3A/%252Fwww.kotak.com/personal/accounts-deposits/jifi-account/jifi-saver.html%22%20/%3E",
-   "product": "fd",
-   "amountMax": null,
-   "from": "2015",
-   "to": "2015",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "1998",
+   "to": "2010",
+   "note": "candidate from Phase 1 survey; verify layout -- oldest lead for pre-2008 Karnataka Bank history"
   },
   {
    "bankSlug": "kotak-mahindra-bank",
    "url": "http://www.kotak.com:80/bank/.../deposits/...deposits/ace-deposit.html",
    "product": "fd",
    "amountMax": null,
-   "from": "2011",
-   "to": "2011",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "2010",
+   "to": "2013",
+   "note": "candidate from Phase 1 survey; verify layout (Ace Deposit scheme page, URL likely mistranscribed by the survey's crawler -- re-derive the real path via discover/cdx)"
   },
   {
    "bankSlug": "nainital-bank",
    "url": "http://nainitalbank.co.in:80/deposits.htm",
    "product": "fd",
    "amountMax": null,
-   "from": "2008",
-   "to": "2008",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "2003",
+   "to": "2010",
+   "note": "candidate from Phase 1 survey; verify layout -- oldest lead for pre-2008 Nainital Bank history"
   },
   {
    "bankSlug": "nainital-bank",
    "url": "http://www.nainitalbank.co.in:80/english/interest_rate.aspx",
    "product": "fd",
    "amountMax": null,
-   "from": "2014",
-   "to": "2014",
+   "from": "2010",
+   "to": "2016",
    "note": "candidate from Phase 1 survey; verify layout"
   },
   {
@@ -237,8 +149,8 @@
    "url": "http://www.nainitalbank.co.in/english/interest_rate01.aspx",
    "product": "fd",
    "amountMax": null,
-   "from": "2015",
-   "to": "2015",
+   "from": "2014",
+   "to": "2018",
    "note": "candidate from Phase 1 survey; verify layout"
   },
   {
@@ -246,17 +158,17 @@
    "url": "http://www.nainitalbank.co.in/english/interest_rate1.aspx",
    "product": "fd",
    "amountMax": null,
-   "from": "2015",
-   "to": "2015",
+   "from": "2014",
+   "to": "2018",
    "note": "candidate from Phase 1 survey; verify layout"
   },
   {
    "bankSlug": "nainital-bank",
    "url": "http://www.nainitalbank.co.in:80/english/recurring_deposit.aspx",
-   "product": "fd",
+   "product": "rd",
    "amountMax": null,
-   "from": "2017",
-   "to": "2017",
+   "from": "2016",
+   "to": "2022",
    "note": "candidate from Phase 1 survey; verify layout"
   },
   {
@@ -264,135 +176,380 @@
    "url": "https://www.nainitalbank.co.in/english/term_deposit.aspx",
    "product": "fd",
    "amountMax": null,
-   "from": "2021",
-   "to": "2021",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "2019",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout (current-era page)"
   },
   {
-   "bankSlug": "nainital-bank",
-   "url": "http://www.nainitalbank.co.in/images/Banner%20deposit%2003-04-13.GIF",
+   "bankSlug": "karnataka-bank",
+   "url": "karnatakabank.com/deporates.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "1998",
+   "to": "2008",
+   "note": "found via discover; oldest lead for pre-2008 Karnataka Bank FD history"
+  },
+  {
+   "bankSlug": "karnataka-bank",
+   "url": "karnatakabank.com/kblFDrates.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2012",
+   "to": "2019",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "karnataka-bank",
+   "url": "karnatakabank.com/ktk/interestcharttd.jsp",
    "product": "fd",
    "amountMax": null,
    "from": "2014",
-   "to": "2014",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "to": "2019",
+   "note": "found via discover ('interest chart td' = term deposit)"
   },
   {
-   "bankSlug": "nainital-bank",
-   "url": "http://nainitalbank.co.in/images/Banner%20deposit.gif",
+   "bankSlug": "karnataka-bank",
+   "url": "karnatakabank.com/personal/term-deposits/interest-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2026",
+   "note": "found via discover; current-era CMS FD rate page"
+  },
+  {
+   "bankSlug": "jk-bank",
+   "url": "jkbank.com/others/common/intrates.php",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2005",
+   "to": "2020",
+   "parser": "jk-bank/current-revised-rate-table",
+   "note": "found via discover; consolidated old-site rate table. Prints an outgoing 'Current' and incoming 'Revised' rate side by side around each rate change -- see parser"
+  },
+  {
+   "bankSlug": "jk-bank",
+   "url": "jkbank.com/deposits/personal/fixedDepositsScheme.php",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2015",
+   "to": "2020",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "jk-bank",
+   "url": "jkbank.com/deposits/personal/recurringDeposit.php",
+   "product": "rd",
+   "amountMax": null,
+   "from": "2015",
+   "to": "2020",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "jk-bank",
+   "url": "jkbank.com/informations/rates-quick-glance",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2026",
+   "note": "found via discover; current-era rate page"
+  },
+  {
+   "bankSlug": "karur-vysya-bank",
+   "url": "kvb.co.in/deposit.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "1999",
+   "to": "2003",
+   "note": "found via discover; oldest lead for pre-2008 KVB history"
+  },
+  {
+   "bankSlug": "karur-vysya-bank",
+   "url": "kvb.co.in/scripts/depositrates.asp",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2003",
+   "to": "2010",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "karur-vysya-bank",
+   "url": "kvb.co.in/global/resident_domestic_deposits.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2009",
+   "to": "2017",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "karur-vysya-bank",
+   "url": "kvb.co.in/interest-rates/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2025",
+   "note": "found via discover; checked all 10 captures 2019-2025, every one is a JS app shell with zero <table> elements and no embedded JSON (no __NEXT_DATA__ etc) -- the generic reader cannot read this page as archived. The bank's own site does expose small JSON rate APIs under /api/v1/... (see the savings and bulk-deposit-json targets below); no equivalent retail-FD JSON endpoint was found in the time available -- lead not fully exhausted, try explore.ts discover again for 'api/v1' paths"
+  },
+  {
+   "bankSlug": "karur-vysya-bank",
+   "url": "kvb.co.in/interest-rates/interest-rate-for-saving-account/",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2025",
+   "note": "found via discover; likely JS-rendered like interest-rates/ above (not confirmed) -- superseded by the dedicated api/v1/savings-interest-rates JSON target, handled by backfill/karur-vysya-bank-savings-archive.ts, not this generic target"
+  },
+  {
+   "bankSlug": "karur-vysya-bank",
+   "url": "kvb.co.in/interest-rates/bulk-term-deposit-rates/",
+   "product": "fd_bulk",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2025",
+   "note": "found via discover; this is the human-facing HTML page (likely JS-rendered, not confirmed) -- superseded by the api/v1/bulk-deposit-rates JSON target below, which is what this page itself fetches its data from"
+  },
+  {
+   "bankSlug": "karur-vysya-bank",
+   "url": "kvb.co.in/api/v1/bulk-deposit-rates",
+   "product": "fd_bulk",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2025",
+   "parser": "karur-vysya-bank/bulk-deposit-json",
+   "note": "found via discover; the bank's own small JSON API behind the bulk-term-deposit-rates page above -- confirmed by fetching a capture directly (raw JSON, not HTML). Only 1 capture found (2020-05-28) -- see parser"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "url": "yesbank.in/fixeddeposit.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2004",
+   "to": "2008",
+   "note": "found via discover; oldest lead for YES Bank FD history (bank founded 2004)"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "url": "yesbank.in/branch-banking/personal/fixed-deposits.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2012",
+   "to": "2016",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "url": "yesbank.in/personal-banking/yes-individual/deposits/fixed-deposit-residents",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2016",
+   "to": "2022",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "url": "yesbank.in/savings.htm",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2004",
+   "to": "2008",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "url": "yesbank.in/branch-banking/personal/savings-account.html",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2012",
+   "to": "2016",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "url": "yesbank.in/personal-banking/yes-individual/savings-account",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2018",
+   "to": "2023",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "url": "yesbank.in/branch-banking/personal/recurring-deposits.html",
+   "product": "rd",
+   "amountMax": null,
+   "from": "2012",
+   "to": "2016",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "url": "yesbank.in/personal-banking/yes-individual/deposits/recurring-deposit",
+   "product": "rd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2023",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "rbl-bank",
+   "url": "rblbank.com/interest-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2026",
+   "note": "found via discover; consolidated modern rate hub (28 captures 2022-2025), matches the bank's current live rates page. No pre-2014 RBL/Ratnakar Bank web presence found -- ratnakarbank.in's only archived captures (2012-2013) are a domain-parking placeholder page, not a real site."
+  },
+  {
+   "bankSlug": "rbl-bank",
+   "url": "rblbank.com/interest-rates/savings",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2024",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "rbl-bank",
+   "url": "rblbank.com/interest-rates/rd-rates",
+   "product": "rd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2024",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "ing-vysya-bank",
+   "url": "ingvysyabank.com/Interestrates_fr.shtml",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2002",
+   "to": "2010",
+   "note": "found via discover; oldest lead for Vysya/ING Vysya Bank rate history. Interestrates.shtml (no _fr suffix) is a frameset shell with no content of its own -- <frame src=\"Interestrates_fr.shtml\">, confirmed by fetching a capture directly -- this is the actual content frame"
+  },
+  {
+   "bankSlug": "ing-vysya-bank",
+   "url": "ingvysyabank.com/scripts/fixeddeposit.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2006",
+   "to": "2012",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "ing-vysya-bank",
+   "url": "ingvysyabank.com/scripts/savingsbankaccount.aspx",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2006",
+   "to": "2012",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "ing-vysya-bank",
+   "url": "ingvysyabank.com/savingsbankaccount_fr.shtml",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2002",
+   "to": "2007",
+   "note": "found via discover; savingsbankaccount.shtml (no _fr suffix) is a frameset shell, same issue as Interestrates.shtml"
+  },
+  {
+   "bankSlug": "tamilnad-mercantile-bank",
+   "url": "tmb.in/interest_d.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2005",
+   "to": "2009",
+   "note": "found via discover; oldest lead for pre-2008 TMB history ('interest domestic')"
+  },
+  {
+   "bankSlug": "tamilnad-mercantile-bank",
+   "url": "tmb.in/d_fixeddeposit.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2006",
+   "to": "2010",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "tamilnad-mercantile-bank",
+   "url": "tmb.in/deposit_interest_rates",
    "product": "fd",
    "amountMax": null,
    "from": "2011",
-   "to": "2011",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "to": "2020",
+   "note": "found via discover; 2011-era CMS consolidated FD+savings rate page"
   },
   {
-   "bankSlug": "south-indian-bank",
-   "url": "https://www.southindianbank.com/blog/fixed-deposit",
+   "bankSlug": "tamilnad-mercantile-bank",
+   "url": "tmb.in/d_saving.htm",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2006",
+   "to": "2010",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "nainital-bank",
+   "url": "nainitalbank.co.in/roi8termdep.htm",
    "product": "fd",
    "amountMax": null,
-   "from": "2024",
-   "to": "2024",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "2009",
+   "to": "2012",
+   "note": "found via discover ('rate of interest term deposit')"
   },
   {
-   "bankSlug": "south-indian-bank",
-   "url": "https://www.southindianbank.com/blog/fixed-deposit/safe-simple--digital-fixed-deposits-with-a-digital-edge-for-gen-z",
+   "bankSlug": "nainital-bank",
+   "url": "nainitalbank.co.in/savingaccount.htm",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2009",
+   "to": "2012",
+   "note": "found via discover"
+  },
+  {
+   "bankSlug": "nainital-bank",
+   "url": "nainitalbank.co.in/english/saving_account.aspx",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2026",
+   "note": "found via discover; current-era savings page"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "idfcbank.com/personal-banking/personal-banking-fixed-deposit.html",
    "product": "fd",
    "amountMax": null,
-   "from": "2025",
-   "to": "2025",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "2015",
+   "to": "2016",
+   "note": "found via discover; idfcbank.com era (bank launched Oct 2015), oldest FD lead"
   },
   {
-   "bankSlug": "south-indian-bank",
-   "url": "https://www.southindianbank.com/blog/fixed-deposit/things-you-need-to-know-about-fixed-deposit",
+   "bankSlug": "idfc-first-bank",
+   "url": "idfcbank.com/personal-banking/fixed-deposit.html",
    "product": "fd",
    "amountMax": null,
-   "from": "2025",
-   "to": "2025",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "2016",
+   "to": "2018",
+   "note": "found via discover; idfcbank.com era, redesigned URL"
   },
   {
-   "bankSlug": "south-indian-bank",
-   "url": "https://www.southindianbank.com/blog/fixed-deposit/things-you-need-to-know-about-quick-fd",
-   "product": "fd",
-   "amountMax": null,
-   "from": "2025",
-   "to": "2025",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "yes-bank",
-   "url": "https://www.yesbank.in/.../yes.../deposits/fixed-deposit",
-   "product": "fd",
-   "amountMax": null,
-   "from": "2024",
-   "to": "2024",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "yes-bank",
-   "url": "https://www.yesbank.in/_cache_1516/_themesdelivery/Yes-Bank-MigrationTheme/assets/new-savings-page-assets-2/components/c-interestRate/c-interestRate.css",
+   "bankSlug": "idfc-first-bank",
+   "url": "idfcbank.com/personal-banking/savings-account/interest-rates.html",
    "product": "savings",
    "amountMax": null,
-   "from": "2024",
-   "to": "2024",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "2015",
+   "to": "2018",
+   "note": "found via discover; idfcbank.com era"
   },
   {
-   "bankSlug": "yes-bank",
-   "url": "https://www.yesbank.in/_cache_1e64/_themesdelivery/Yes-Bank-MigrationTheme/assets/new-savings-page-assets/components/c-interestRate/c-interestRate.css",
-   "product": "savings",
+   "bankSlug": "idfc-first-bank",
+   "url": "idfcbank.com/personal-banking/recurring-deposit-account.html",
+   "product": "rd",
    "amountMax": null,
-   "from": "2025",
-   "to": "2025",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "yes-bank",
-   "url": "https://www.yesbank.in/_cache_223b/_themesdelivery/Yes-Bank-MigrationTheme/assets/new-savings-page-assets-2/components/c-interestRate/c-interestRate.css",
-   "product": "savings",
-   "amountMax": null,
-   "from": "2024",
-   "to": "2024",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "yes-bank",
-   "url": "https://www.yesbank.in/_cache_223b/_themesdelivery/Yes-Bank-MigrationTheme/assets/new-savings-page-assets/components/c-interestRate/c-interestRate.css",
-   "product": "savings",
-   "amountMax": null,
-   "from": "2024",
-   "to": "2024",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "yes-bank",
-   "url": "https://www.yesbank.in/_cache_295b/_themesdelivery/Yes-Bank-MigrationTheme/assets/new-savings-page-assets/components/c-interestRate/c-interestRate.css",
-   "product": "savings",
-   "amountMax": null,
-   "from": "2025",
-   "to": "2025",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "yes-bank",
-   "url": "https://www.yesbank.in/_cache_3056/_themesdelivery/Yes-Bank-MigrationTheme/assets/new-savings-page-assets/components/c-interestRate/c-interestRate.css",
-   "product": "savings",
-   "amountMax": null,
-   "from": "2023",
-   "to": "2023",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "yes-bank",
-   "url": "https://www.yesbank.in/_cache_3205/_themesdelivery/Yes-Bank-MigrationTheme/assets/new-savings-page-assets/components/c-interestRate/c-interestRate.css",
-   "product": "savings",
-   "amountMax": null,
-   "from": "2025",
-   "to": "2025",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "2015",
+   "to": "2018",
+   "note": "found via discover; idfcbank.com era"
   }
  ]
 }
