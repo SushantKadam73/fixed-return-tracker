@@ -26,6 +26,9 @@ describe("headingScore", () => {
     expect(headingScore("2. For Senior Citizen (for amounts less than INR 2 Crore)", "fd")).toBeLessThan(0);
     expect(headingScore("1.a) Non-callable Rates for Retail Fixed deposits of INR >=1 Crore", "fd")).toBeLessThan(0);
     expect(headingScore("Interest Rates", "fd")).toBe(0);
+    // One table with general, senior and NRO columns is the domestic card, not a senior-only table.
+    expect(headingScore("Domestic / Seniors / NRO Term Deposits", "fd")).toBe(2);
+    expect(headingScore("3. For Domestic & NRO Retail Monthly Payout Fixed Deposits", "fd")).toBeLessThan(0);
   });
 });
 

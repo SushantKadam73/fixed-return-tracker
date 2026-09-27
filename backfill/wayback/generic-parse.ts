@@ -37,16 +37,22 @@ export function tableHeading(context: string): string {
 
 /** Words that mark a table as something other than the product's main card. */
 const OTHER: Partial<Record<Product, RegExp>> = {
-  fd: /mclr|marginal cost|lending|\bloans?\b|advances|\bb?plr\b|base rate|recurring|savings|\bs\.?b\.?\b|bulk|liquid|sweep|flexi|yield|senior|non[- ]?callable|without premature|monthly|payout|staff|tax[- ]?sav/i,
+  fd: /mclr|marginal cost|lending|\bloans?\b|advances|\bb?plr\b|base rate|recurring|savings|\bs\.?b\.?\b|bulk|liquid|sweep|flexi|yield|non[- ]?callable|without premature|monthly|payout|staff|tax[- ]?sav/i,
   tax_saver: /mclr|lending|\bloans?\b|recurring|savings|bulk|yield|senior|staff/i,
   rd: /mclr|lending|\bloans?\b|savings|bulk|yield|senior|staff/i,
   fd_bulk: /mclr|lending|\bloans?\b|recurring|savings|yield|senior|staff/i,
   nre: /mclr|lending|\bloans?\b|recurring|savings|yield|senior/i,
   nro: /mclr|lending|\bloans?\b|recurring|savings|yield|senior/i,
 };
-/** Non-resident wording: disqualifying for domestic products unless the title also says domestic/resident. */
+/**
+ * Wording that a combined table shares with its own general/domestic columns: non-resident and
+ * senior citizen. It disqualifies a table only when the title does not also say domestic, resident,
+ * general or public — "Domestic / Seniors / NRO Term Deposits" is one table with a senior column,
+ * while "For Senior Citizen" alone is a senior-only table the generic reader must not read.
+ */
 const NON_RESIDENT = /\bnre\b|\bnro\b|\bnri\b|non[- ]?resident|fcnr|\brfc\b/i;
-const DOMESTIC = /domestic|(?<!non[- ]?)\bresident/i;
+const SENIOR_ONLY = /senior/i;
+const DOMESTIC = /domestic|(?<!non[- ]?)\bresident|general|public/i;
 /** Words that positively identify the product's own table. */
 const THIS: Partial<Record<Product, RegExp>> = {
   fd: /domestic|(?<!non[- ]?)\bresident|fixed deposit|term deposit|retail/i,
@@ -69,8 +75,8 @@ export function headingScore(heading: string, product: Product): number {
   const title = heading.slice(-90);
   let score = THIS[product]?.test(title) ? 2 : 0;
   const domesticProduct = product === "fd" || product === "rd" || product === "tax_saver" || product === "fd_bulk";
-  const nonResidentHit = domesticProduct && NON_RESIDENT.test(title) && !DOMESTIC.test(title);
-  if (OTHER[product]?.test(title) || nonResidentHit) score -= 3;
+  const sharedWordHit = domesticProduct && (NON_RESIDENT.test(title) || SENIOR_ONLY.test(title)) && !DOMESTIC.test(title);
+  if (OTHER[product]?.test(title) || sharedWordHit) score -= 3;
   return score;
 }
 
