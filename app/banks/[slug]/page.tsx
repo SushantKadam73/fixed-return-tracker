@@ -113,7 +113,7 @@ export default async function BankPage({ params }: PageProps<"/banks/[slug]">) {
                 </div>
               </Card>
             ) : (
-              <Notice tone="warning">No current card: the latest read failed validation or the page is unavailable. History below is kept.</Notice>
+              <Notice>Current rates from the bank&apos;s live page are not in yet (the daily collector adds them once it can read the page). The history below comes from the recorded sources shown.</Notice>
             )}
             {p.versions.length > 1 ? (
               <Card className="mt-4">

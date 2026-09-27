@@ -1,0 +1,472 @@
+{
+ "bankSlug": "punjab-national-bank",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "savings",
+   "effectiveFrom": "2011-05-03",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": null,
+     "rate": 4,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "a3481fbc43f2253a"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "savings",
+   "effectiveFrom": "2017-08-19",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 5000001,
+     "rate": 3.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 5000001,
+     "balanceMax": null,
+     "rate": 4,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "724788fe4a4ce369"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "savings",
+   "effectiveFrom": "2019-09-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 500001,
+     "rate": 3.25,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 500001,
+     "balanceMax": 5000000,
+     "rate": 3.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 5000001,
+     "balanceMax": null,
+     "rate": 3.8,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "cb0bb9d929887b8e"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "savings",
+   "effectiveFrom": "2020-04-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 5000001,
+     "rate": 3.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 5000001,
+     "balanceMax": null,
+     "rate": 3.75,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "5bffd33e92466e4e"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "savings",
+   "effectiveFrom": "2020-07-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 5000001,
+     "rate": 3,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 5000001,
+     "balanceMax": null,
+     "rate": 3.25,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "ba0ced3c21e8087d"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "savings",
+   "effectiveFrom": "2020-09-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 5000001,
+     "rate": 3,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 5000001,
+     "balanceMax": null,
+     "rate": 3,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "5fa3e5084ff87a7b"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "savings",
+   "effectiveFrom": "2021-03-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 1000000000,
+     "rate": 3,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000000000,
+     "balanceMax": null,
+     "rate": 3.5,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "afcba3e35338e532"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "savings",
+   "effectiveFrom": "2021-07-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": null,
+     "rate": 3,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "833ad348b79f308d"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "savings",
+   "effectiveFrom": "2021-09-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": null,
+     "rate": 2.9,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "d468473985d96867"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "savings",
+   "effectiveFrom": "2021-12-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 1000000,
+     "rate": 2.8,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000000,
+     "balanceMax": null,
+     "rate": 2.85,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "c3d6c44ec7b10233"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "savings",
+   "effectiveFrom": "2022-01-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 1000000,
+     "rate": 2.8,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000000,
+     "balanceMax": 5000000000,
+     "rate": 2.85,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 5000000000,
+     "balanceMax": null,
+     "rate": 3.25,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "64e9578d41c232e8"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "savings",
+   "effectiveFrom": "2022-02-03",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 1000000,
+     "rate": 2.75,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000000,
+     "balanceMax": 5000000000,
+     "rate": 2.8,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 5000000000,
+     "balanceMax": null,
+     "rate": 3.25,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "6af3982260a770ad"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "savings",
+   "effectiveFrom": "2022-02-16",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 1000000,
+     "rate": 2.75,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000000,
+     "balanceMax": null,
+     "rate": 2.8,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "c549773280716b9b"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "savings",
+   "effectiveFrom": "2022-04-04",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 1000000,
+     "rate": 2.7,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000000,
+     "balanceMax": null,
+     "rate": 2.75,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "612abdd0f05588cc"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "savings",
+   "effectiveFrom": "2023-01-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 1000000,
+     "rate": 2.7,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000000,
+     "balanceMax": 1000000000,
+     "rate": 2.75,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000000000,
+     "balanceMax": null,
+     "rate": 3,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "c24a1435e73b0e54"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "savings",
+   "effectiveFrom": "2025-07-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 1000000001,
+     "rate": 2.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000000001,
+     "balanceMax": null,
+     "rate": 2.7,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "6764a84fca5cfc46"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "savings",
+   "effectiveFrom": "2025-10-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 1000000001,
+     "rate": 2.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000000001,
+     "balanceMax": 5000000001,
+     "rate": 2.7,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 5000000001,
+     "balanceMax": 10000000001,
+     "rate": 3.6,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 10000000001,
+     "balanceMax": 20000000001,
+     "rate": 3.75,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 20000000001,
+     "balanceMax": null,
+     "rate": 4.25,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "244584751d5d9f91"
+  }
+ ]
+}

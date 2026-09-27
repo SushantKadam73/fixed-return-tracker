@@ -33,13 +33,21 @@ export function cardMeta(c: StoredCard) {
   };
 }
 
+function dayBefore(date: string): string {
+  const d = new Date(`${date}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() - 1);
+  return d.toISOString().slice(0, 10);
+}
+
 export const cardDate = (c: Pick<RateCard, "effectiveFrom" | "observedFrom" | "observedAt">) => c.effectiveFrom ?? c.observedFrom ?? c.observedAt;
 
 export function productSummary(product: Product, cards: StoredCard[], current: StoredCard | null) {
-  const versions = [...cards]
-    .sort((a, b) => cardDate(a).localeCompare(cardDate(b)))
-    .map((c) => ({
+  const sorted = [...cards].sort((a, b) => cardDate(a).localeCompare(cardDate(b)));
+  const versions = sorted
+    .map((c, i) => ({
       ...cardMeta(c),
+      // A version without its own end date ends the day before the next dated revision.
+      validTo: c.validTo ?? (c.effectiveFrom && sorted[i + 1]?.effectiveFrom ? dayBefore(sorted[i + 1].effectiveFrom as string) : null),
       isCurrent: c === current,
       general: product === "savings" ? null : keyRates(c.rows, "general"),
       senior: product === "savings" ? null : keyRates(c.rows, "senior"),

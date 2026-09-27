@@ -1,0 +1,23 @@
+{
+ "sbi:fd": {
+  "lastAttemptAt": "2026-09-27T07:57:06.107Z",
+  "lastSuccessAt": "2026-09-27T07:57:06.107Z",
+  "lastChangeAt": "2026-09-27T07:57:06.107Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "sbi:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T07:57:08.080Z",
+  "lastSuccessAt": "2026-09-27T07:57:08.080Z",
+  "lastChangeAt": "2026-09-27T07:57:08.080Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "sbi:savings": {
+  "lastAttemptAt": "2026-09-27T07:57:09.701Z",
+  "lastSuccessAt": "2026-09-27T07:57:09.701Z",
+  "lastChangeAt": "2026-09-27T07:57:09.701Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ }
+}

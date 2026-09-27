@@ -49,10 +49,16 @@ function dayBefore(date: string): string {
   return d.toISOString().slice(0, 10);
 }
 
+/** Collapse stray whitespace/newlines in tenure labels (labels are not part of the content hash). */
+function normaliseLabels(card: RateCard): RateCard {
+  return { ...card, rows: card.rows.map((r) => ({ ...r, tenureLabel: r.tenureLabel.replace(/\s+/g, " ").trim() })) };
+}
+
 export type StoreOutcome = { outcome: "inserted" | "unchanged" | "rejected"; issues: ValidationIssue[] };
 
 /** Live card: becomes the latest version if rates changed and it passes validation. */
-export function storeLiveCard(root: string, card: RateCard): StoreOutcome {
+export function storeLiveCard(root: string, input: RateCard): StoreOutcome {
+  const card = normaliseLabels(input);
   const pf = loadProduct(root, card.bankSlug, card.product);
   const contentHash = hash64(canonicalRows(card));
   const live = pf.cards.filter((c) => c.sourceType === "bank_official");
@@ -67,7 +73,8 @@ export function storeLiveCard(root: string, card: RateCard): StoreOutcome {
 }
 
 /** Historical card (web archive, bank archive, RBI...): added unless an identical one exists for that date. */
-export function storeHistoricalCard(root: string, card: RateCard): StoreOutcome {
+export function storeHistoricalCard(root: string, input: RateCard): StoreOutcome {
+  const card = normaliseLabels(input);
   const pf = loadProduct(root, card.bankSlug, card.product);
   const contentHash = hash64(canonicalRows(card));
   if (pf.cards.some((c) => c.contentHash === contentHash && cardDate(c) === cardDate(card))) return { outcome: "unchanged", issues: [] };
