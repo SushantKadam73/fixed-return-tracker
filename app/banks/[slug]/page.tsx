@@ -5,7 +5,7 @@ import { RateHistoryChart } from "@/components/charts/rate-history-chart";
 import { SavingsSlabTable, TermRateTable } from "@/components/rate-card-view";
 import { AsOf, Badge, Card, Notice, PageHeader, Section, SourceBadge } from "@/components/ui";
 import { GROUP_LABELS, formatFounded, getBankMaster, lineageOf } from "@/lib/banks";
-import { getSummary } from "@/lib/data";
+import { getFreshness, getSummary } from "@/lib/data";
 import type { RateRow, SavingsSlab } from "@/lib/domain";
 import { formatDateIST } from "@/lib/format";
 
@@ -60,6 +60,7 @@ export default async function BankPage({ params }: PageProps<"/banks/[slug]">) {
   const bank = banks.find((b) => b.slug === slug);
   if (!bank) notFound();
   const summary = await getSummary<BankSummary>(`bank:${slug}`);
+  const fresh = (await getFreshness())[slug] ?? {};
   const products = summary?.payload?.products ?? {};
   const lineage = lineageOf(slug, predecessors);
 
@@ -108,7 +109,7 @@ export default async function BankPage({ params }: PageProps<"/banks/[slug]">) {
                 </div>
                 {product === "savings" && c.savingsSlabs ? <SavingsSlabTable slabs={c.savingsSlabs} method={c.slabMethod} /> : <TermRateTable rows={c.rows} />}
                 <div className="mt-3">
-                  <AsOf date={c.observedAt} label="Checked on" />
+                  <AsOf date={(fresh[product] ?? c.observedAt).slice(0, 10)} label="Last checked" />
                 </div>
               </Card>
             ) : (
@@ -128,8 +129,49 @@ export default async function BankPage({ params }: PageProps<"/banks/[slug]">) {
                         ]
                   }
                 />
-                <p className="mt-2 text-xs text-muted">{p.versions.length} recorded versions. Web-archive and RBI-era points are labelled on the full history table.</p>
+                <p className="mt-2 text-xs text-muted">{p.versions.length} recorded versions.</p>
               </Card>
+            ) : null}
+            {p.versions.length > 0 ? (
+              <details className="mt-3 rounded-lg border border-border p-4">
+                <summary className="cursor-pointer text-sm font-medium">All recorded versions ({p.versions.length})</summary>
+                <div className="scroll-x mt-3">
+                  <table className="w-full min-w-[640px] text-sm">
+                    <thead className="text-left text-xs uppercase tracking-wide text-muted">
+                      <tr>
+                        <th className="py-1 pr-4">In force</th>
+                        <th className="py-1 pr-4">{product === "savings" ? "Base rate" : "1 yr / 3 yr (general)"}</th>
+                        <th className="py-1 pr-4">Evidence</th>
+                        <th className="py-1 pr-4">Source</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[...p.versions].reverse().map((v, i) => (
+                        <tr key={`${v.effectiveFrom ?? v.observedFrom ?? v.observedAt}-${i}`} className="border-t border-border">
+                          <td className="num py-1.5 pr-4 whitespace-nowrap">
+                            {v.effectiveFrom
+                              ? `from ${formatDateIST(v.effectiveFrom)}${v.validTo ? ` to ${formatDateIST(v.validTo)}` : ""}`
+                              : v.observedFrom
+                                ? `seen ${formatDateIST(v.observedFrom)}${v.observedTo && v.observedTo !== v.observedFrom ? ` – ${formatDateIST(v.observedTo)}` : ""}`
+                                : `seen ${formatDateIST(v.observedAt)}`}
+                          </td>
+                          <td className="num py-1.5 pr-4">
+                            {product === "savings"
+                              ? v.baseSavingsRate !== null ? `${v.baseSavingsRate.toFixed(2)}%` : "—"
+                              : `${v.general?.["1y"] != null ? `${v.general["1y"].toFixed(2)}%` : "—"} / ${v.general?.["3y"] != null ? `${v.general["3y"].toFixed(2)}%` : "—"}`}
+                          </td>
+                          <td className="py-1.5 pr-4"><SourceBadge sourceType={v.sourceType} /></td>
+                          <td className="py-1.5 pr-4">
+                            <a className="text-accent hover:underline" href={v.archiveUrl ?? v.sourceUrl} target="_blank" rel="noopener noreferrer">
+                              {v.archiveUrl ? "archived copy" : "official page"}
+                            </a>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </details>
             ) : null}
           </Section>
         );

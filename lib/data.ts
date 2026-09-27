@@ -65,3 +65,28 @@ export async function readDataset<T>(relativePath: string): Promise<T | null> {
     return null;
   }
 }
+
+type Check = { lastSuccessAt: string | null; consecutiveFailures: number };
+type DirectoryBank = { slug: string; sources: Array<{ key: string; products: string[]; lastSuccessAt: number | null; failing: boolean }> };
+
+/**
+ * When each bank's pages were last read successfully, per product (ISO date strings).
+ * From Convex's directory summary when available, else the committed data/rates/_checks.json.
+ */
+export async function getFreshness(): Promise<Record<string, Record<string, string | null>>> {
+  const out: Record<string, Record<string, string | null>> = {};
+  const dir = await getSummary<{ banks: DirectoryBank[] }>("banks");
+  if (dir?.origin === "convex") {
+    for (const b of dir.payload.banks) {
+      for (const s of b.sources) for (const p of s.products) out[b.slug] = { ...(out[b.slug] ?? {}), [p]: s.lastSuccessAt ? new Date(s.lastSuccessAt).toISOString() : null };
+    }
+    return out;
+  }
+  const checks = (await readDataset<Record<string, Check>>("rates/_checks.json")) ?? {};
+  const sources = (await readDataset<{ sources: Array<{ key: string; bankSlug: string; products: string[] }> }>("sources/sources.json"))?.sources ?? [];
+  for (const s of sources) {
+    const c = checks[s.key];
+    for (const p of s.products) out[s.bankSlug] = { ...(out[s.bankSlug] ?? {}), [p]: c?.lastSuccessAt ?? null };
+  }
+  return out;
+}

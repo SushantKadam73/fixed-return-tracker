@@ -54,7 +54,10 @@ export function findEffectiveDate(text: string): string | null {
     const d = parseDate(m[2]);
     if (d) found.push(d);
   }
-  if (found.length === 0) return null;
+  // Ignore implausible dates (typos, far-future placeholders): keep those up to ~13 months ahead.
+  const horizon = new Date(Date.now() + 400 * 86_400_000).toISOString().slice(0, 10);
+  const plausible = found.filter((d) => d >= "1950-01-01" && d <= horizon);
+  if (plausible.length === 0) return null;
   // Pages often mention the previous and the revised date; the latest is the one in force.
-  return found.sort().at(-1) ?? null;
+  return plausible.sort().at(-1) ?? null;
 }

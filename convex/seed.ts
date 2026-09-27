@@ -8,6 +8,7 @@
 import { v } from "convex/values";
 import { internalAction, internalMutation } from "./_generated/server";
 import { internal } from "./_generated/api";
+import { product as productValidator, storedCard } from "./validators";
 
 const DEFAULT_BASE = "https://raw.githubusercontent.com/SushantKadam73/fixed-return-tracker/main/data";
 const base = () => process.env.DATASET_BASE_URL ?? DEFAULT_BASE;
@@ -80,9 +81,18 @@ export const importAll = internalAction({
       });
       schemeRows += s.periods.length;
     }
+    // Source registry (official pages the collectors read).
+    const reg = await getJson<{ sources: Array<{ key: string; bankSlug: string; products: string[]; url: string; format: string; runner: string; adapter: string; cadence: string; active: boolean; robotsAllowed?: boolean; termsNote?: string }> }>("sources/sources.json");
+    for (const s of reg.sources) {
+      await ctx.runMutation(internal.ingest.upsertSource, clean({
+        key: s.key, bankSlug: s.bankSlug, kind: "bank_page" as const, products: s.products, url: s.url, format: s.format,
+        runner: (["convex", "github", "vps", "disabled"].includes(s.runner) ? s.runner : "github") as "github",
+        adapter: s.adapter, cadence: s.cadence, active: s.active, robotsAllowed: s.robotsAllowed, termsNote: s.termsNote,
+      }));
+    }
     await ctx.runMutation(internal.summaries.refreshDirectory, {});
     await ctx.runMutation(internal.seed.refreshSchemesSummary, {});
-    return { banks: banks.banks.length, predecessors: banks.predecessors.length, schemes: index.schemes.length, schemeRows };
+    return { sources: reg.sources.length, banks: banks.banks.length, predecessors: banks.predecessors.length, schemes: index.schemes.length, schemeRows };
   },
 });
 
@@ -136,5 +146,137 @@ export const refreshSchemesSummary = internalMutation({
     const existing = await ctx.db.query("summaries").withIndex("by_key", (q) => q.eq("key", "schemes")).first();
     if (existing) await ctx.db.patch(existing._id, { payload: { schemes: out }, updatedAt: Date.now() });
     else await ctx.db.insert("summaries", { key: "schemes", payload: { schemes: out }, updatedAt: Date.now() });
+  },
+});
+
+// ── Macro series and repo rate files ─────────────────────────────────────────
+
+const seriesPoint = v.object({ date: v.string(), value: v.number() });
+
+/** Upsert a series' metadata and points (matched on date). */
+export const upsertSeries = internalMutation({
+  args: {
+    key: v.string(),
+    name: v.string(),
+    unit: v.string(),
+    frequency: v.union(v.literal("daily"), v.literal("monthly"), v.literal("quarterly"), v.literal("annual"), v.literal("fiscal_year"), v.literal("event")),
+    publisher: v.string(),
+    sourceUrl: v.string(),
+    points: v.array(seriesPoint),
+  },
+  handler: async (ctx, a) => {
+    const meta = { key: a.key, name: a.name, unit: a.unit, frequency: a.frequency, publisher: a.publisher, sourceUrl: a.sourceUrl, lastObservation: a.points.at(-1)?.date };
+    const existing = await ctx.db.query("series").withIndex("by_key", (q) => q.eq("key", a.key)).first();
+    if (existing) await ctx.db.patch(existing._id, meta);
+    else await ctx.db.insert("series", meta);
+    const current = await ctx.db.query("seriesPoints").withIndex("by_series_date", (q) => q.eq("series", a.key)).collect();
+    const byDate = new Map(current.map((p) => [p.date, p]));
+    let inserted = 0;
+    for (const p of a.points) {
+      const row = byDate.get(p.date);
+      if (!row) {
+        await ctx.db.insert("seriesPoints", { series: a.key, date: p.date, value: p.value });
+        inserted++;
+      } else if (row.value !== p.value) {
+        await ctx.db.patch(row._id, { value: p.value });
+      }
+    }
+    return { inserted };
+  },
+});
+
+/** Import a bank product's stored cards from the repo; the latest bank-website card becomes current. */
+export const importProductCards = internalMutation({
+  args: { bankSlug: v.string(), product: productValidator, cards: v.array(storedCard) },
+  handler: async (ctx, a) => {
+    const existing = await ctx.db
+      .query("rateCards")
+      .withIndex("by_bank_product_effective", (q) => q.eq("bankSlug", a.bankSlug).eq("product", a.product))
+      .collect();
+    const key = (hash: string, date: string | null | undefined) => `${hash}|${date ?? ""}`;
+    const have = new Set(existing.map((c) => key(c.contentHash, c.effectiveFrom ?? c.observedFrom ?? c.observedAt)));
+    let inserted = 0;
+    for (const c of a.cards) {
+      if (have.has(key(c.contentHash, c.effectiveFrom ?? c.observedFrom ?? c.observedAt))) continue;
+      await ctx.db.insert("rateCards", {
+        bankSlug: c.bankSlug,
+        product: c.product,
+        effectiveFrom: c.effectiveFrom ?? undefined,
+        validTo: c.validTo ?? undefined,
+        observedAt: c.observedAt,
+        observedFrom: c.observedFrom ?? undefined,
+        observedTo: c.observedTo ?? undefined,
+        isCurrent: false,
+        sourceType: c.sourceType,
+        sourceUrl: c.sourceUrl,
+        archiveUrl: c.archiveUrl ?? undefined,
+        confidence: c.confidence,
+        contentHash: c.contentHash,
+        rows: c.rows,
+        savingsSlabs: c.savingsSlabs,
+        slabMethod: c.slabMethod,
+        notes: c.notes,
+      });
+      inserted++;
+    }
+    // Make the newest bank-website card current (collector posts keep it fresh afterwards).
+    const all = await ctx.db
+      .query("rateCards")
+      .withIndex("by_bank_product_effective", (q) => q.eq("bankSlug", a.bankSlug).eq("product", a.product))
+      .collect();
+    const live = all.filter((c) => c.sourceType === "bank_official").sort((x, y) => (x.effectiveFrom ?? x.observedAt).localeCompare(y.effectiveFrom ?? y.observedAt));
+    const newest = live.at(-1);
+    for (const c of all) {
+      const shouldBe = newest !== undefined && c._id === newest._id;
+      if (c.isCurrent !== shouldBe) await ctx.db.patch(c._id, { isCurrent: shouldBe });
+    }
+    return { inserted };
+  },
+});
+
+type SeriesFile = { key: string; name: string; unit: string; frequency: string; publisher?: string; sourceUrl?: string; points: Array<[string, number | null, ...unknown[]]> };
+
+/** Import every committed series and every stored rate file, then refresh summaries. */
+export const importSeriesAndRates = internalAction({
+  args: {},
+  handler: async (ctx) => {
+    const idx = await getJson<{ series: Array<{ key: string }> }>("series/_index.json");
+    const freq = new Set(["daily", "monthly", "quarterly", "annual", "fiscal_year", "event"]);
+    let seriesCount = 0;
+    for (const { key } of idx.series) {
+      const s = await getJson<SeriesFile>(`series/${key}.json`);
+      const points = s.points.filter((p) => typeof p[1] === "number").map((p) => ({ date: String(p[0]), value: p[1] as number }));
+      for (let i = 0; i < points.length; i += 500) {
+        await ctx.runMutation(internal.seed.upsertSeries, {
+          key: s.key,
+          name: s.name,
+          unit: s.unit,
+          frequency: (freq.has(s.frequency) ? s.frequency : "event") as "event",
+          publisher: s.publisher ?? "",
+          sourceUrl: s.sourceUrl ?? "",
+          points: points.slice(i, i + 500),
+        });
+      }
+      seriesCount++;
+    }
+    let files = 0;
+    try {
+      const rates = await getJson<{ files: Array<{ bankSlug: string; product: string }> }>("rates/_index.json");
+      for (const f of rates.files) {
+        const pf = await getJson<{ bankSlug: string; product: string; cards: Array<Record<string, unknown>> }>(`rates/${f.bankSlug}/${f.product}.json`);
+        for (let i = 0; i < pf.cards.length; i += 40) {
+          await ctx.runMutation(internal.seed.importProductCards, {
+            bankSlug: pf.bankSlug,
+            product: pf.product as "fd",
+            cards: pf.cards.slice(i, i + 40) as never,
+          });
+        }
+        files++;
+      }
+    } catch (e) {
+      console.warn(`rate files not imported: ${(e as Error).message}`);
+    }
+    await ctx.runMutation(internal.summaries.refreshAllBanks, {});
+    return { series: seriesCount, rateFiles: files };
   },
 });

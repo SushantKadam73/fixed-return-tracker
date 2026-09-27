@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SavingsComparison, type BankSavings } from "@/components/savings/savings-comparison";
 import { Notice, PageHeader } from "@/components/ui";
-import { getSummary } from "@/lib/data";
+import { getFreshness, getSummary } from "@/lib/data";
 import type { SavingsSlab, SlabMethod } from "@/lib/domain";
 import { getSchemes, schemeStatus } from "@/lib/schemes";
 
@@ -14,9 +14,10 @@ type Entry = { name: string; group: BankSavings["group"]; effectiveFrom: string 
 
 export default async function SavingsPage() {
   const s = await getSummary<{ banks: Record<string, Entry> }>("current:savings");
+  const fresh = await getFreshness();
   const banks: BankSavings[] = Object.entries(s?.payload?.banks ?? {})
     .filter(([, e]) => e.savingsSlabs && e.savingsSlabs.length > 0)
-    .map(([slug, e]) => ({ slug, name: e.name, group: e.group, effectiveFrom: e.effectiveFrom, observedAt: e.observedAt, sourceUrl: e.sourceUrl, slabs: e.savingsSlabs ?? [], method: e.slabMethod ?? "unknown" }));
+    .map(([slug, e]) => ({ slug, name: e.name, group: e.group, effectiveFrom: e.effectiveFrom, observedAt: (fresh[slug]?.savings ?? e.observedAt).slice(0, 10), sourceUrl: e.sourceUrl, slabs: e.savingsSlabs ?? [], method: e.slabMethod ?? "unknown" }));
   const po = (await getSchemes()).find((x) => x.key === "po_sb");
   const poStatus = po ? schemeStatus(po) : null;
   const poRate = poStatus ? (poStatus.kind === "current" ? poStatus.rate : poStatus.lastRate) : null;

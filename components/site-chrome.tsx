@@ -6,7 +6,9 @@ const NAV = [
   { href: "/savings", label: "Savings" },
   { href: "/banks", label: "Banks" },
   { href: "/schemes", label: "Schemes" },
+  { href: "/compare", label: "Compare" },
   { href: "/real-value", label: "Real value" },
+  { href: "/history", label: "History" },
   { href: "/calculators", label: "Calculators" },
   { href: "/retirement", label: "Retirement" },
 ];

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { DepositComparison, type BankRates } from "@/components/deposits/deposit-comparison";
 import { Notice, PageHeader } from "@/components/ui";
-import { getSummary } from "@/lib/data";
+import { getFreshness, getSummary } from "@/lib/data";
 import type { RateRow } from "@/lib/domain";
 import { todayIST } from "@/lib/format";
 
@@ -12,14 +12,14 @@ export const metadata: Metadata = {
 
 type Entry = { name: string; shortName: string; group: BankRates["group"]; effectiveFrom: string | null; observedAt: string; sourceUrl: string; rows: RateRow[] };
 
-async function load(product: string): Promise<BankRates[]> {
+async function load(product: string, fresh: Record<string, Record<string, string | null>>): Promise<BankRates[]> {
   const s = await getSummary<{ banks: Record<string, Entry> }>(`current:${product}`);
   return Object.entries(s?.payload?.banks ?? {}).map(([slug, e]) => ({
     slug,
     name: e.name,
     group: e.group,
     effectiveFrom: e.effectiveFrom,
-    observedAt: e.observedAt,
+    observedAt: (fresh[slug]?.[product] ?? e.observedAt).slice(0, 10),
     sourceUrl: e.sourceUrl,
     // Resident depositors only on this page; NRE/NRO/FCNR have their own view.
     rows: e.rows.filter((r) => r.residency === "resident"),
@@ -27,7 +27,8 @@ async function load(product: string): Promise<BankRates[]> {
 }
 
 export default async function DepositsPage() {
-  const [fd, bulk, rd] = await Promise.all([load("fd"), load("fd_bulk"), load("rd")]);
+  const fresh = await getFreshness();
+  const [fd, bulk, rd] = await Promise.all([load("fd", fresh), load("fd_bulk", fresh), load("rd", fresh)]);
   // Merge bulk rows into each bank's FD rows; amount bands keep them apart.
   const bulkBySlug = new Map(bulk.map((b) => [b.slug, b.rows]));
   const fdMerged = fd.map((b) => ({ ...b, rows: [...b.rows, ...(bulkBySlug.get(b.slug) ?? [])] }));

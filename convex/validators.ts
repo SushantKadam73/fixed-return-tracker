@@ -96,3 +96,23 @@ export const rateCardInput = v.object({
 });
 
 export const runner = v.union(v.literal("convex"), v.literal("github"), v.literal("vps"), v.literal("disabled"));
+
+/** A card as stored in the repo (data/rates): the input shape plus its content hash and end date. */
+export const storedCard = v.object({
+  bankSlug: v.string(),
+  product: product,
+  effectiveFrom: v.union(v.string(), v.null()),
+  observedAt: v.string(),
+  observedFrom: v.optional(v.union(v.string(), v.null())),
+  observedTo: v.optional(v.union(v.string(), v.null())),
+  sourceType: sourceType,
+  sourceUrl: v.string(),
+  archiveUrl: v.optional(v.union(v.string(), v.null())),
+  confidence: confidence,
+  rows: v.array(rateRow),
+  savingsSlabs: v.optional(v.array(savingsSlab)),
+  slabMethod: v.optional(slabMethod),
+  notes: v.optional(v.array(v.string())),
+  contentHash: v.string(),
+  validTo: v.optional(v.union(v.string(), v.null())),
+});

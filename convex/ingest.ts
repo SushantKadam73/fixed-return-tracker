@@ -63,8 +63,7 @@ async function upsertCard(
     : null;
 
   if (current && current.contentHash === contentHash) {
-    // Same rates as before; just remember we saw them again.
-    await ctx.db.patch(current._id, { observedAt: card.observedAt });
+    // Same rates as before. Freshness lives on the source (lastSuccessAt), so the card is not rewritten.
     return "unchanged";
   }
 
@@ -127,11 +126,27 @@ export const recordSourceResult = internalMutation({
     cards: v.array(rateCardInput),
   },
   handler: async (ctx, a) => {
-    const source = await ctx.db
+    let source = await ctx.db
       .query("sources")
       .withIndex("by_key", (q) => q.eq("key", a.sourceKey))
       .first();
-    if (!source) throw new Error(`unknown source ${a.sourceKey}`);
+    if (!source) {
+      // First report from a source the daily registry import hasn't seen yet: register it minimally.
+      const id = await ctx.db.insert("sources", {
+        key: a.sourceKey,
+        bankSlug: a.sourceKey.split(":")[0],
+        kind: "bank_page",
+        products: [...new Set(a.cards.map((c) => c.product))],
+        url: a.cards[0]?.sourceUrl ?? "",
+        format: "html",
+        runner: "github",
+        adapter: "unknown",
+        cadence: "daily",
+        active: true,
+        consecutiveFailures: 0,
+      });
+      source = (await ctx.db.get(id))!;
+    }
 
     if (a.error) {
       const failures = source.consecutiveFailures + 1;

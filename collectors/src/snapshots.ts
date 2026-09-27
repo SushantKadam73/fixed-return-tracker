@@ -36,6 +36,11 @@ export function buildSnapshots(root: string) {
   for (const [product, banks] of Object.entries(current)) {
     writeFileSync(path.join(out, `current__${product}.json`), `${JSON.stringify({ payload: { banks }, updatedAt: now })}\n`);
   }
+  // Index of stored rate files (used by the Convex dataset import).
+  const index = files
+    .map((pf) => ({ bankSlug: pf.bankSlug, product: pf.product, cards: pf.cards.length, from: pf.cards[0] ? pf.cards[0].effectiveFrom ?? pf.cards[0].observedFrom ?? pf.cards[0].observedAt : null, to: pf.cards.at(-1)?.effectiveFrom ?? pf.cards.at(-1)?.observedAt ?? null }))
+    .sort((a, b) => `${a.bankSlug}/${a.product}`.localeCompare(`${b.bankSlug}/${b.product}`));
+  writeFileSync(path.join(root, "data", "rates", "_index.json"), `${JSON.stringify({ files: index }, null, 1)}\n`);
   for (const [slug, products] of byBank) {
     writeFileSync(path.join(out, `bank__${slug}.json`), `${JSON.stringify({ payload: { bank: meta.get(slug), products, terms: [] }, updatedAt: now })}\n`);
   }

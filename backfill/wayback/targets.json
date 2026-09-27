@@ -1,0 +1,2336 @@
+{
+ "note": "Official rate-page URLs (current and legacy domains) to rebuild from Internet Archive copies. Generated from the Phase 1 survey; refine per bank.",
+ "targets": [
+  {
+   "bankSlug": "bank-of-maharashtra",
+   "url": "https://bankofmaharashtra.in/blogs/competitive-interest-rate-for-new-vehicles",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://www.indianbank.in/departments/deposit-rates/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://www.indianbank.in/departments/deposit-rates/lib/REM-unit-polyfill/js/rem.min.js",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://www.indianbank.in/departments/deposit-rates/lib/selectivizr/selectivizr.js",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://www.indianbank.in/departments/interest-rate-for-agri-products/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://www.indianbank.in/departments/interest-rates-for-deposits-of-above-rs-5-00crore/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://www.indianbank.in/departments/interest-rates-for-small-savings-schemes/",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://www.indianbank.in/departments/rfc-term-deposit-rates/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://www.indianbank.in/departments/wp-content-uploads-2019-12-rural-banking-department-interest-rates-pdf/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://indianbank.in/deposit-rates-2/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://www.indianbank.in/HI/departments/deposit-rates/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-overseas-bank",
+   "url": "http://www.iob.in:80/1Retail-credit-interest-rates1",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-overseas-bank",
+   "url": "https://iob.in/@@uploads/CEDocuments/@@uploads/CEDocuments/Retail-credit-interest-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-overseas-bank",
+   "url": "https://iob.in/@@uploads/CEDocuments/Retail-credit-interest-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-overseas-bank",
+   "url": "https://iob.in/@@uploads/CEDocuments/upload/CEDocuments/Retail-credit-interest-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "url": "http://pnbindia.in/en/ui/depositinterestrates.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2016",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "url": "http://www.pnbindia.in:80/en/ui/interest-rates.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2011",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "url": "http://www.pnbindia.in:80/english_web/c_interestrates.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2009",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "url": "http://pnbindia.in:80/english_web/c_interestrates.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2009",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "url": "http://pnbindia.in/english_web/english_web/c_interestrates.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2010",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "url": "http://pnbindia.in:80/hn/ui/depositinterestrates.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2013",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "union-bank-of-india",
+   "url": "https://www.unionbankofindia.co.in/english/interest-rate.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "union-bank-of-india",
+   "url": "https://www.unionbankofindia.co.in/English/interest-rate.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "union-bank-of-india",
+   "url": "https://www.unionbankofindia.co.in/browser.htm?aspxerrorpath=/english/interest_rate.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "union-bank-of-india",
+   "url": "https://www.unionbankofindia.co.in/browser.htm?aspxerrorpath=/Hindi/interest-rate.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "union-bank-of-india",
+   "url": "https://www.unionbankofindia.co.in/browser.htm?aspxerrorpath=/hindi/interestrateHindi.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "union-bank-of-india",
+   "url": "https://www.unionbankofindia.co.in/browser.htm?aspxerrorpath=/interest_rate.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "bandhan-bank",
+   "url": "https://bandhanbank.com/fixed-deposit?utm_source=social_media&utm_medium=Twitter&utm_campaign=New_Fixed_Deposit_Rate",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "bandhan-bank",
+   "url": "https://bandhanbank.com/personal/fixed-deposits?utm_source=Social_Media&utm_medium=Twitter&utm_campaign=childrensdayFD",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2021",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "bandhan-bank",
+   "url": "https://bandhanbank.com/personal/fixed-deposits?utm_source=Social_Media&utm_medium=Twitter&utm_campaign=fdpost21/1/2022",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2022",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "bandhan-bank",
+   "url": "https://bandhanbank.com/personal/fixed-deposits?utm_source=Social_Media&utm_medium=Twitter&utm_campaign=fdpost31/1/2022",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2022",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "csb-bank",
+   "url": "http://csb.co.in:80/online%C2%A0fixedrecurring-deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "csb-bank",
+   "url": "http://www.csb.co.in:80/default.asphttp://www.sbhyd.com/interestrates.asp",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2012",
+   "to": "2012",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "csb-bank",
+   "url": "http://www.csb.co.in:80/general-fixed-deposit-income-scheme",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2016",
+   "to": "2016",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "csb-bank",
+   "url": "http://www.csb.co.in:80/interest-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2016",
+   "to": "2016",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "csb-bank",
+   "url": "https://www.csb.co.in/Interest-rates.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "csb-bank",
+   "url": "https://www.csb.co.in/nro-deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "csb-bank",
+   "url": "http://www.csb.co.in:80/acharya-deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "city-union-bank",
+   "url": "https://www.cityunionbank.com/cub-fd-fixed-deposit-at-best-interest-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "city-union-bank",
+   "url": "https://www.cityunionbank.com/cub-fd-flexifix-fixed-deposit-at-best-interest-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "city-union-bank",
+   "url": "https://cityunionbank.com/analytics/piwik.php?action_name=web.archive.org%2FDeposit%20Interest%20Rate&idsite=1&rec=1&r=203004&h=10&m=41&s=24&url=https%3A%2F%2Fweb.archive.org%2Fweb%2F20170605112856%2Fhttp%3A%2F%2Fwww.cityunionbank.com%3A80%2Fweb-page%2Fdeposit-interest-rate&urlref=https%3A%2F%2Fweb.archive.org%2Fweb%2F*%2Fhttps%3A%2F%2Fwww.cityunionbank.com%2Fweb-page%2Fdeposit-interest-rate&_id=473a9d3fa81f1846&_idts=1532063485&_idvc=1&_idn=0&_refts=0&_viewts=1532063485&send_image=1&pdf=1&qt=0&realp=0&wma=0&dir=0&fla=0&java=0&gears=0&ag=0&cookie=1&res=1366x768&gt_ms=1093&pv_id=hhEn07",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2018",
+   "to": "2018",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "city-union-bank",
+   "url": "https://cityunionbank.com/analytics/piwik.php?action_name=web.archive.org%2FDeposit%20Interest%20Rate&idsite=1&rec=1&r=745174&h=10&m=41&s=24&url=https%3A%2F%2Fweb.archive.org%2Fweb%2F20170605112856%2Fhttps%3A%2F%2Fwww.cityunionbank.com%2Fweb-page%2Fdeposit-interest-rate&urlref=https%3A%2F%2Fweb.archive.org%2Fweb%2F*%2Fhttps%3A%2F%2Fwww.cityunionbank.com%2Fweb-page%2Fdeposit-interest-rate&_id=473a9d3fa81f1846&_idts=1532063485&_idvc=1&_idn=0&_refts=0&_viewts=1532063485&send_image=1&pdf=1&qt=0&realp=0&wma=0&dir=0&fla=0&java=0&gears=0&ag=0&cookie=1&res=1366x768&gt_ms=2258&pv_id=3GMYIh",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2018",
+   "to": "2018",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "city-union-bank",
+   "url": "https://cityunionbank.com/analytics/piwik.php?action_name=web.archive.org%2FDeposit%20Interest%20Rate&idsite=1&rec=1&r=032631&h=22&m=40&s=52&url=https%3A%2F%2Fweb.archive.org%2Fweb%2F20170605112856%2Fhttp%3A%2F%2Fwww.cityunionbank.com%2Fweb-page%2Fdeposit-interest-rate&urlref=https%3A%2F%2Fweb.archive.org%2Fweb%2F20170605112856%2Fhttp%3A%2F%2Fwww.cityunionbank.com%2Fweb-page%2Fdeposit-interest-rate&_id=82948de6a8e4394b&_idts=1579214421&_idvc=1&_idn=0&_refts=0&_viewts=1579214421&send_image=1&pdf=1&qt=0&realp=0&wma=0&dir=0&fla=0&java=0&gears=0&ag=0&cookie=1&res=1366x768&gt_ms=192&pv_id=gwSVMS",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "city-union-bank",
+   "url": "https://cityunionbank.com/analytics/piwik.php?action_name=web.archive.org%2FDeposit%20Interest%20Rate&idsite=1&rec=1&r=170481&h=22&m=41&s=47&url=https%3A%2F%2Fweb.archive.org%2Fweb%2F20170605112856%2Fhttp%3A%2F%2Fwww.cityunionbank.com%2Fweb-page%2Fdeposit-interest-rate&urlref=https%3A%2F%2Fweb.archive.org%2Fweb%2F20190601000000*%2Fhttp%3A%2F%2Fwww.cityunionbank.com%2Fweb-page%2Fdeposit-interest-rate&_id=82948de6a8e4394b&_idts=1579214421&_idvc=1&_idn=0&_refts=0&_viewts=1579214421&send_image=1&pdf=1&qt=0&realp=0&wma=0&dir=0&fla=0&java=0&gears=0&ag=0&cookie=1&res=1366x768&gt_ms=348&pv_id=5c9vxt",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "city-union-bank",
+   "url": "https://cityunionbank.com/analytics/piwik.php?action_name=web.archive.org%2FDeposit%20Interest%20Rate&idsite=1&rec=1&r=988097&h=22&m=40&s=42&url=https%3A%2F%2Fweb.archive.org%2Fweb%2F20170605112856%2Fhttp%3A%2F%2Fwww.cityunionbank.com%2Fweb-page%2Fdeposit-interest-rate&urlref=https%3A%2F%2Fweb.archive.org%2Fweb%2F20170409161829%2Fhttps%3A%2F%2Fwww.cityunionbank.com%2Fweb-page%2Fdeposit-interest-rate&_id=82948de6a8e4394b&_idts=1579214421&_idvc=1&_idn=0&_refts=0&_viewts=1579214421&send_image=1&pdf=1&qt=0&realp=0&wma=0&dir=0&fla=0&java=0&gears=0&ag=0&cookie=1&res=1366x768&gt_ms=903&pv_id=EEgYDK",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "city-union-bank",
+   "url": "http://cityunionbank.com/analytics/piwik.php?action_name=web.archive.org%2FCorporate%20Fixed%20Deposit&idsite=1&rec=1&r=568049&h=21&m=37&s=43&url=https%3A%2F%2Fweb.archive.org%2Fweb%2F20170420093425%2Fhttp%3A%2F%2Fwww.cityunionbank.com%3A80%2Fweb-page%2Fcorporate-fixed-deposit&urlref=https%3A%2F%2Fweb.archive.org%2Fweb%2F20170504005911%2Fhttp%3A%2F%2Fwww.cityunionbank.com%3A80%2Fweb-page%2Fpersonal-fixed-deposit&_id=fb1bdb305fd066b4&_idts=1513008344&_idvc=1&_idn=0&_refts=0&_viewts=1513008344&send_image=1&pdf=0&qt=0&realp=0&wma=0&dir=0&fla=1&java=0&gears=0&ag=0&cookie=1&res=1360x768&gt_ms=1928&pv_id=ijukId",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "city-union-bank",
+   "url": "https://www.cityunionbank.com/cub-rd-recurring-deposit-at-best-interest-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dcb-bank",
+   "url": "https://www.dcbbank.com/rates/fixed-deposit-interest-rate",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dcb-bank",
+   "url": "https://dcbbank.com/rates/fixed-deposit-interest-rate?_rsc=10f9b",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dcb-bank",
+   "url": "https://dcbbank.com/rates/fixed-deposit-interest-rate?_rsc=1l969",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dcb-bank",
+   "url": "https://dcbbank.com/rates/fixed-deposit-interest-rate?_rsc=1wtp7",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dcb-bank",
+   "url": "https://www.dcbbank.com/rates/fixed-deposit-interest-rate?_rsc=j9bia",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dcb-bank",
+   "url": "https://dcbbank.com/rates/fixed-deposit-interest-rate?_rsc=p0e8y",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dcb-bank",
+   "url": "http://www.dcbbank.com:80/cms/showpage/page/dcb-fixed-deposits/ppage/deposit-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2015",
+   "to": "2015",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dcb-bank",
+   "url": "http://www.dcbbank.com:80/cms/showpage/page/dcb-fixed-deposits/ppage/deposit-ratesBe%20the%20first%20to%20commentLeave%20a%20ReplyLogged%20in%20as%20Suraj%20Tandon.%20Log%20out?",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dcb-bank",
+   "url": "http://www.dcbbank.com:80/cms/showpage/page/dcb-nro-tax-saver-fixed-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2016",
+   "to": "2016",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dcb-bank",
+   "url": "http://www.dcbbank.com:80/cms/showpage/page/open-fixed-deposit-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2015",
+   "to": "2015",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dhanlaxmi-bank",
+   "url": "https://www.dhanbank.com/_next/data/20231031a/interest-rates.json",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dhanlaxmi-bank",
+   "url": "https://www.dhanbank.com/_next/data/20250603a/interest-rates.json",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dhanlaxmi-bank",
+   "url": "https://www.dhanbank.com/_next/data/280720230100/interest-rates.json",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dhanlaxmi-bank",
+   "url": "http://www.dhanbank.com/asp/0100page.asp?pagename=corporate&linkname=0600faqs.asp%3Ffaqsec=Depository%20Service&pagetype=About%20Us",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2006",
+   "to": "2006",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dhanlaxmi-bank",
+   "url": "http://www.dhanbank.com/asp/0100page.asp?pagename=corporate&linkname=0600faqs.asp%3Ffaqsec=Depository%20Service&pagetype=Branches",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2006",
+   "to": "2006",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dhanlaxmi-bank",
+   "url": "http://www.dhanbank.com/asp/0100page.asp?pagename=corporate&linkname=0600faqs.asp%3Ffaqsec=Depository%20Service&pagetype=Contact%20Us",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2006",
+   "to": "2006",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dhanlaxmi-bank",
+   "url": "http://www.dhanbank.com/asp/0100page.asp?pagename=corporate&linkname=0600faqs.asp%3Ffaqsec=Depository%20Service&pagetype=Download",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2006",
+   "to": "2006",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dhanlaxmi-bank",
+   "url": "http://www.dhanbank.com/asp/0100page.asp?pagename=corporate&linkname=0600faqs.asp%3Ffaqsec=Depository%20Service&pagetype=Faq",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2006",
+   "to": "2006",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dhanlaxmi-bank",
+   "url": "http://www.dhanbank.com/asp/0100page.asp?pagename=corporate&linkname=0600faqs.asp%3Ffaqsec=Depository%20Service&pagetype=Investor%20Relations",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2006",
+   "to": "2006",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dhanlaxmi-bank",
+   "url": "http://www.dhanbank.com/asp/0100page.asp?pagename=corporate&linkname=0600faqs.asp%3Ffaqsec=Depository%20Service&pagetype=Site%20Map",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2006",
+   "to": "2006",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dhanlaxmi-bank",
+   "url": "http://www.dhanbank.com/asp/0100page.asp?mainlink=13&pagename=corporate&sublink=117&linkname=0600faqs%2Easp%3Ffaqsec%3DDepository+Service&pagetype=Investor%20Relations",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2006",
+   "to": "2006",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dhanlaxmi-bank",
+   "url": "http://www.dhanbank.com/asp/0100page.asp?mainlink=13&pagename=corporate&sublink=130&linkname=0600faqs%2Easp%3Ffaqsec%3DDepository+Service&pagetype=Investor%20Relations",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2006",
+   "to": "2006",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dhanlaxmi-bank",
+   "url": "http://www.dhanbank.com/asp/0100page.asp?mainlink=13&pagename=corporate&sublink=184&linkname=0600faqs%2Easp%3Ffaqsec%3DDepository+Service&pagetype=Investor%20Relations",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2006",
+   "to": "2006",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "dhanlaxmi-bank",
+   "url": "http://www.dhanbank.com/asp/0100page.asp?mainlink=13&pagename=corporate&sublink=75&linkname=0600faqs%2Easp%3Ffaqsec%3DDepository+Service&pagetype=Investor%20Relations",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2006",
+   "to": "2006",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "federal-bank",
+   "url": "http://www.federalbank.co.in:80/2DEEEFD831A2A70E51BD38F2BCA4A0BF.node2?p_p_id=InterestRateUser_WAR_InterestRateUserportlet&p_p_lifecycle=0&p_p_state=exclusive&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_InterestRateUser_WAR_InterestRateUserportlet_jspPage=%2Fhtml%2Ftest3%2FdepositDetails.jsp",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2013",
+   "to": "2013",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "federal-bank",
+   "url": "http://www.federalbank.co.in:80/3FE80141F702155AFBB5480BE1BF12CA.node1?p_p_id=InterestRateUser_WAR_InterestRateUserportlet&p_p_lifecycle=0&p_p_state=exclusive&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_InterestRateUser_WAR_InterestRateUserportlet_jspPage=%2Fhtml%2Ftest3%2FdepositDetails.jsp",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2014",
+   "to": "2014",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "federal-bank",
+   "url": "http://www.federalbank.co.in:80/7468359BCD127CA19223BF7CEA8821B3.node1?p_p_id=InterestRateUser_WAR_InterestRateUserportlet&p_p_lifecycle=0&p_p_state=exclusive&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_InterestRateUser_WAR_InterestRateUserportlet_jspPage=%2Fhtml%2Ftest3%2FdepositDetails.jsp",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2013",
+   "to": "2013",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "federal-bank",
+   "url": "http://www.federalbank.co.in:80/8D4936CEB320C419D03C17CEB8CC7783.node1?p_p_id=InterestRateUser_WAR_InterestRateUserportlet&p_p_lifecycle=0&p_p_state=exclusive&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_InterestRateUser_WAR_InterestRateUserportlet_jspPage=%2Fhtml%2Ftest3%2FdepositDetails.jsp",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2013",
+   "to": "2013",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "federal-bank",
+   "url": "http://www.federalbank.co.in:80/A15B341402E8B6266E9149743080DE69.node1?p_p_id=InterestRateUser_WAR_InterestRateUserportlet&p_p_lifecycle=0&p_p_state=exclusive&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_InterestRateUser_WAR_InterestRateUserportlet_jspPage=%2Fhtml%2Ftest3%2FdepositDetails.jsp",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2014",
+   "to": "2014",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "federal-bank",
+   "url": "http://www.federalbank.co.in:80/A5C56DC7BD30694222ABD2AEA198110D.node2?p_p_id=InterestRateUser_WAR_InterestRateUserportlet&p_p_lifecycle=0&p_p_state=exclusive&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_InterestRateUser_WAR_InterestRateUserportlet_jspPage=%2Fhtml%2Ftest3%2FdepositDetails.jsp",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2014",
+   "to": "2014",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "federal-bank",
+   "url": "https://www.federalbank.co.in/-/interest-rates-for-deposit-plus-scheme-resident-term-deposits-without-option-for-premature-withdrawal",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2021",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "federal-bank",
+   "url": "https://www.federalbank.co.in/-/millionaire-federal-savings-fund-recurring-deposit-plan",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "federal-bank",
+   "url": "https://www.federalbank.co.in/-/nro-fixed-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2021",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "icici-bank",
+   "url": "https://www.icicibank.com/about-us/awards?ITM=nli_fdInterestRates_deposits_fixedDeposit_fdInterestRates_headerComponent_5_CMS_about_about_awardsRecognition_NLI",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "icici-bank",
+   "url": "https://www.icicibank.com/about-us/invest-relations?ITM=nli_fdInterestRates_deposits_fixedDeposit_fdInterestRates_footer_7_CMS_investorCenter_NLI",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "icici-bank",
+   "url": "https://www.icicibank.com/about-us/invest-relations?ITM=nli_fdInterestRates_deposits_fixedDeposit_fdInterestRates_headerComponent_3_CMS_about_about_investorRelations_NLI",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "icici-bank",
+   "url": "https://www.icicibank.com/about-us/media-center?ITM=nli_fdInterestRates_deposits_fixedDeposit_fdInterestRates_footer_2_CMS_aboutUs_mediaCenter_NLI",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "icici-bank",
+   "url": "https://www.icicibank.com/about-us/notice?ITM=nli_fdInterestRates_deposits_fixedDeposit_fdInterestRates_footer_4_CMS_investorCenter_notice_NLI",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "icici-bank",
+   "url": "https://www.icicibank.com/about-us/notice?ITM=nli_fdInterestRates_deposits_fixedDeposit_fdInterestRates_footer_5_CMS_aboutUs_notices_NLI",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "icici-bank",
+   "url": "https://www.icicibank.com/about-us/qfr?ITM=nli_fdInterestRates_deposits_fixedDeposit_fdInterestRates_footer_3_CMS_investorCenter_quarterlyResults_NLI",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "icici-bank",
+   "url": "https://www.icicibank.com/about-us?ITM=nli_fdInterestRates_deposits_fixedDeposit_fdInterestRates_footer_8_CMS_aboutUs_NLI",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "icici-bank",
+   "url": "https://www.icicibank.com/?ITM=nli_rdInterestRates_deposits_recurringDeposits_rdInterestRates_footer_7_CMS_waysToBank_askIpal_NLI",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "icici-bank",
+   "url": "https://www.icicibank.com/about-us/board-of-directors?ITM=nli_createFixedDepositOnCorporateInternetBanking_iplay_createFixedDepositOnCorporateInternetBanking_footer_1_CMS_aboutUs_boardOfDirectors_NLI",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indusind-bank",
+   "url": "http://www.indusind.com/bin/indusind/load?pagePath=http%3A%2F%2Fweb.archive.org%2Fweb%2F20151025150520%2Fhttp%3A%2F%2Fwww.indusind.com%2Fpersonal-banking%2Fproducts%2Fdeposits%2Fflexi-recurring-deposit.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2016",
+   "to": "2016",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indusind-bank",
+   "url": "https://www.indusind.com/bin/indusind/load?pagePath=https%3A%2F%2Fweb.archive.org%2Fweb%2F20170319203609if_%2Fhttps%3A%2F%2Fwww.indusind.com%2Fpersonal-banking%2Fproducts%2Fdeposits%2Ffixed-deposit.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indusind-bank",
+   "url": "https://www.indusind.com/bin/indusind/load?pagePath=https%3A%2F%2Fweb.archive.org%2Fweb%2F20180220233133if_%2Fhttps%3A%2F%2Fwww.indusind.com%2Fpersonal-banking%2Fproducts%2Fdeposits%2Ffixed-deposit.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indusind-bank",
+   "url": "https://www.indusind.com/bin/indusind/load?pagePath=https%3A%2F%2Fweb.archive.org%2Fweb%2F20180313164534if_%2Fhttps%3A%2F%2Fwww.indusind.com%2Fpersonal-banking%2Fproducts%2Fdeposits%2Ffixed-deposit.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indusind-bank",
+   "url": "https://www.indusind.com/bin/getSCAll?type=fdrate",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indusind-bank",
+   "url": "http://www.indusind.com/bin/indusind/load?pagePath=http%3A%2F%2Fweb.archive.org%2Fweb%2F20150316103057%2Fhttp%3A%2F%2Fwww.indusind.com%2Fcontent%2Fhome%2Fcorporate-banking%2Fproducts%2Fglobal-markets%2Finterest-rate-swap.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2016",
+   "to": "2016",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "https://www.idfcfirstbank.com/common-apply-now?lob=personal-banking&p=fd&icid=webhomepage-apply_fixeddeposit_n1-bankingproducts",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "https://www.idfcfirstbank.com/accounts-and-deposits/fixed-deposit-business.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "https://www.idfcfirstbank.com/banking-products/accounts/fixed-deposit.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "https://www.idfcfirstbank.com/banking-products/accounts/rate-of-interest.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "https://www.idfcfirstbank.com/banking-products/accounts/recurring-deposit-account.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "https://www.idfcfirstbank.com/banking-products/accounts/sa-interest-rate.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "https://www.idfcfirstbank.com/business-banking/accounts-and-deposits/fixed-deposit-business.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "https://www.idfcfirstbank.com/common-apply-now?lob=personal-banking&p=fd_sep&icid=fd_depositstab_applynow",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "https://www.idfcfirstbank.com/common-apply-now?lob=personal-banking&p=fd_sep&icid=webhomepage-apply_fd_deposits1",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "karnataka-bank",
+   "url": "https://karnatakabank.com/apply-now?utm_source=X&utm_medium=Organic+&utm_campaign=+KBL_FEB26_Fixeddeposit_OO1",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2026",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "karnataka-bank",
+   "url": "https://karnatakabank.com/apply-now?utm_source=X&utm_medium=Organic+&utm_campaign=+KBL_Nov_recurringdeposit001",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "karnataka-bank",
+   "url": "https://karnatakabank.com/deposit-interest-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "karnataka-bank",
+   "url": "http://www.karnatakabank.com:80/DepositIntrates.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2012",
+   "to": "2012",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "karnataka-bank",
+   "url": "http://www.karnatakabank.com:80/deposits.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2002",
+   "to": "2002",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "au-sfb",
+   "url": "https://www.aubank.in/blogs/deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "au-sfb",
+   "url": "https://www.aubank.in/blogs/fixed-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2022",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "au-sfb",
+   "url": "https://www.aubank.in/blogs/recurring-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "au-sfb",
+   "url": "https://www.aubank.in/blogs/what-is-a-fixed-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "au-sfb",
+   "url": "https://www.aubank.in/blogs/future-of-fixed-deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "au-sfb",
+   "url": "https://www.aubank.in/blogs/what-is-recurring-deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "au-sfb",
+   "url": "https://www.aubank.in/blogs/5-key-benefits-of-fixed-deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2022",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "au-sfb",
+   "url": "https://www.aubank.in/blogs/different-types-of-fixed-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "au-sfb",
+   "url": "https://www.aubank.in/blogs/how-do-3-year-fixed-deposits-work",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "au-sfb",
+   "url": "https://www.aubank.in/blogs/how-do-5-year-fixed-deposits-work",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "au-sfb",
+   "url": "https://www.aubank.in/blogs/how-to-renew-fixed-deposit-account",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "au-sfb",
+   "url": "https://www.aubank.in/blogs/how-does-fixed-deposit-for-kids-work",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "au-sfb",
+   "url": "https://www.aubank.in/blogs/joint-fixed-deposits-au-0101-savings",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "au-sfb",
+   "url": "https://www.aubank.in/blogs/7-reasons-to-invest-in-fixed-deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "url": "http://capitalbank.co.in:80/interest-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2014",
+   "to": "2014",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "url": "https://www.capitalbank.co.in/term-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2021",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "url": "http://capitalbank.co.in:80/cb_deposits.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2007",
+   "to": "2007",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "url": "http://capitalbank.co.in:80/cb_deposits1.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2012",
+   "to": "2012",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "url": "http://www.capitalbank.co.in:80/fdeposits.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2004",
+   "to": "2004",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "url": "https://www.capitalbank.co.in/deposit-accounts",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2021",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "url": "https://www.capitalbank.co.in/nro-term-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2021",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "url": "http://capitalbank.co.in:80/cb_deposits_adv.swf",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2007",
+   "to": "2007",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "url": "http://www.capitalbank.co.in:80/cb_deposits4.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2009",
+   "to": "2009",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "url": "http://capitalbank.co.in:80/products/term-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2014",
+   "to": "2014",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "url": "http://www.capitalbank.co.in:80/term-deposit.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2018",
+   "to": "2018",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "url": "https://www.capitalbank.co.in/domestic-term-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "url": "http://www.capitalbank.co.in:80/interest-rates.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2018",
+   "to": "2018",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "url": "http://capitalbank.co.in:80/interest-rates/advances",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2014",
+   "to": "2014",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "equitas-sfb",
+   "url": "https://www.equitasbank.com/fixed-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "equitas-sfb",
+   "url": "https://www.equitasbank.com/fixed-deposit.php",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "equitas-sfb",
+   "url": "https://www.equitasbank.com/recurring-deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "equitas-sfb",
+   "url": "http://www.equitasbank.com/interest-rate-frame-",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "equitas-sfb",
+   "url": "https://www.equitasbank.com/recurring-deposits.php",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "equitas-sfb",
+   "url": "https://www.equitasbank.com/apply-fixed-deposit.php",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "equitas-sfb",
+   "url": "https://www.equitasbank.com/interest-rate-framework",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "equitas-sfb",
+   "url": "https://www.equitasbank.com/apply-recurring-deposit.php",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "equitas-sfb",
+   "url": "http://www.equitasbank.com/interest-rate-frame-work.php",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "equitas-sfb",
+   "url": "https://www.equitasbank.com/interest-rate-framework.php",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "esaf-sfb",
+   "url": "https://www.esafbank.com/deposit-policy/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "esaf-sfb",
+   "url": "http://www.esafbank.com:80/interest-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "esaf-sfb",
+   "url": "https://www.esafbank.com/account/deposits/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "esaf-sfb",
+   "url": "http://www.esafbank.com:80/accounts-deposits/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "esaf-sfb",
+   "url": "http://www.esafbank.com:80/account/fixed-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "esaf-sfb",
+   "url": "https://www.esafbank.com/interest-rates/?ver=6.4.5",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "esaf-sfb",
+   "url": "http://www.esafbank.com:80/account/hrudaya-deposit/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "esaf-sfb",
+   "url": "https://www.esafbank.com/account/fixed-deposit/feed/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "esaf-sfb",
+   "url": "https://www.esafbank.com/fixed-deposit-apply-online/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "esaf-sfb",
+   "url": "http://www.esafbank.com:80/account/recurring-deposit/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "esaf-sfb",
+   "url": "https://www.esafbank.com/account/hrudaya-deposit/feed/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "esaf-sfb",
+   "url": "https://www.esafbank.com/account/recurring-deposit/feed/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "esaf-sfb",
+   "url": "https://www.esafbank.com/recurring-deposit-apply-online/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "esaf-sfb",
+   "url": "https://www.esafbank.com/faqs/savings-bank-deposit-account/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "suryoday-sfb",
+   "url": "https://www.suryodaybank.com/deposit/pmjby",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "suryoday-sfb",
+   "url": "https://www.suryodaybank.com/deposit/pmsby",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "suryoday-sfb",
+   "url": "https://www.suryodaybank.com/rate-of-interest",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "suryoday-sfb",
+   "url": "https://www.suryodaybank.com/personal/deposits/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "suryoday-sfb",
+   "url": "https://www.suryodaybank.com/rate-of-interest/100",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "suryoday-sfb",
+   "url": "https://www.suryodaybank.com/rate-of-interest/0deg",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "suryoday-sfb",
+   "url": "https://www.suryodaybank.com/deposits/fixed-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "suryoday-sfb",
+   "url": "https://www.suryodaybank.com/deposits/recurring-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "suryoday-sfb",
+   "url": "https://www.suryodaybank.com/index.php/rate-of-interest",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "suryoday-sfb",
+   "url": "https://www.suryodaybank.com/deposits/fixed-deposit/upi_blog",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "suryoday-sfb",
+   "url": "https://www.suryodaybank.com/deposits/tax-saver-fixed-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "suryoday-sfb",
+   "url": "https://www.suryodaybank.com/index.php/deposits/fixed-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "suryoday-sfb",
+   "url": "https://www.suryodaybank.com/accounts/savings/rate-of-interest",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2021",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "url": "https://www.ujjivansfb.in/fixed-deposit/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "url": "https://www.ujjivansfb.in/category/deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "url": "https://www.ujjivansfb.in/en/rural-deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "url": "https://ujjivansfb.in/banking-blogs/deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "url": "https://www.ujjivansfb.in/fixed-deposit/faqs",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "url": "https://www.ujjivansfb.in/cash-deposit-machine",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2021",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "url": "https://www.ujjivansfb.in/en/personal-deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "url": "https://www.ujjivansfb.in/digital-fixed-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "url": "https://www.ujjivansfb.in/fixed-deposit/about-us",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "url": "https://www.ujjivansfb.in/fixed-deposit/overview",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "url": "https://www.ujjivansfb.in/fixed-deposit/security",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "url": "https://www.ujjivansfb.in/en/cash-deposit-machine",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "url": "https://www.ujjivansfb.in/fixed-deposit/bank-logo",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "url": "https://www.ujjivansfb.in/fixed-deposit/digitalfd",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "url": "https://www.ujjivansfb.in/fixed-deposit/agreements",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "utkarsh-sfb",
+   "url": "https://www.utkarsh.bank/deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2018",
+   "to": "2018",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "utkarsh-sfb",
+   "url": "https://www.utkarsh.bank/deposits/csr",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2021",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "utkarsh-sfb",
+   "url": "https://www.utkarsh.bank/fixed-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2018",
+   "to": "2018",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "utkarsh-sfb",
+   "url": "https://www.utkarsh.bank/apply/deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2022",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "utkarsh-sfb",
+   "url": "https://utkarsh.bank/deposits/disclaimer",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2022",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "utkarsh-sfb",
+   "url": "https://utkarsh.bank/account-and-deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2022",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "utkarsh-sfb",
+   "url": "https://utkarsh.bank/deposits/sitemap-web",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2022",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "utkarsh-sfb",
+   "url": "https://www.utkarsh.bank/utkarsh/deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "utkarsh-sfb",
+   "url": "https://www.utkarsh.bank/deposits/deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "utkarsh-sfb",
+   "url": "https://www.utkarsh.bank/payments/deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2021",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "utkarsh-sfb",
+   "url": "https://www.utkarsh.bank/recurring-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "utkarsh-sfb",
+   "url": "https://www.utkarsh.bank/deposits/index.php",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2021",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "utkarsh-sfb",
+   "url": "https://www.utkarsh.bank/fixed-deposit-plus",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "utkarsh-sfb",
+   "url": "https://utkarsh.bank/deposits/csr-activities",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2022",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "slice-sfb",
+   "url": "https://nesfb.com/deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "slice-sfb",
+   "url": "https://nesfb.com/fixdeposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "slice-sfb",
+   "url": "https://nesfb.com/fix_deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "slice-sfb",
+   "url": "http://nesfb.com:80/deposit.php",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2018",
+   "to": "2018",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "slice-sfb",
+   "url": "https://nesfb.com/fdchoice_intrate",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "slice-sfb",
+   "url": "http://nesfb.com:80/fix_deposit.php",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2018",
+   "to": "2018",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "slice-sfb",
+   "url": "https://nesfb.com/deposit_variants.php",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "slice-sfb",
+   "url": "https://nesfb.com/fdchoice_intrate.php",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "slice-sfb",
+   "url": "https://nesfb.com/fdchoice_intrate_main.php",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "slice-sfb",
+   "url": "http://www.nesfb.com:80/sainterest.php",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2018",
+   "to": "2018",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "jana-sfb",
+   "url": "https://www.janabank.com/deposits/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "jana-sfb",
+   "url": "https://www.janabank.com/deposits-ent/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "jana-sfb",
+   "url": "https://www.janabank.com/fixed-deposit/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "jana-sfb",
+   "url": "https://www.janabank.com/interest-rates/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "jana-sfb",
+   "url": "https://www.janabank.com/fixed-deposit-2/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2022",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "jana-sfb",
+   "url": "https://www.janabank.com/deposits/fd-plus/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "jana-sfb",
+   "url": "https://www.janabank.com/index.php/deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "jana-sfb",
+   "url": "https://www.janabank.com/nro-fixed-deposit/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2022",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "jana-sfb",
+   "url": "https://www.janabank.com/unclaimed-deposits/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "jana-sfb",
+   "url": "https://www.janabank.com/deposits/video-kyc-dep/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "jana-sfb",
+   "url": "http://janabank.com/deposits?trk=public_post-text",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "jana-sfb",
+   "url": "https://www.janabank.com/index.php/interest-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "jana-sfb",
+   "url": "https://www.janabank.com/deposits-ent/fd-plus-ent/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "jana-sfb",
+   "url": "https://www.janabank.com/liquid-plus-fixed-deposit/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "shivalik-sfb",
+   "url": "http://shivalikbank.com/deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "shivalik-sfb",
+   "url": "https://shivalikbank.com/interest-rate",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "shivalik-sfb",
+   "url": "http://shivalikbank.com:80/cash-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2015",
+   "to": "2015",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "shivalik-sfb",
+   "url": "http://shivalikbank.com:80/deposit-plus",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2015",
+   "to": "2015",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "shivalik-sfb",
+   "url": "http://shivalikbank.com/interest-rates/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "shivalik-sfb",
+   "url": "https://shivalikbank.com/deposits/index/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2022",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "shivalik-sfb",
+   "url": "http://shivalikbank.com:80/daily-deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2013",
+   "to": "2013",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "shivalik-sfb",
+   "url": "http://shivalikbank.com/deposits/savings/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "shivalik-sfb",
+   "url": "http://shivalikbank.com:80/fixed-deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2013",
+   "to": "2013",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "shivalik-sfb",
+   "url": "https://shivalikbank.com/service/deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "shivalik-sfb",
+   "url": "http://shivalikbank.com:80/deposit-products",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2013",
+   "to": "2013",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "shivalik-sfb",
+   "url": "https://shivalikbank.com/deposits/index.php",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2021",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "shivalik-sfb",
+   "url": "https://shivalikbank.com/interest-rates.php",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2021",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "shivalik-sfb",
+   "url": "https://shivalikbank.com/unclaimed-deposits",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "unity-sfb",
+   "url": "https://theunitybank.com/blog/fixed-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "unity-sfb",
+   "url": "https://theunitybank.com/fixed-deposits.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "unity-sfb",
+   "url": "https://theunitybank.com/fixed_deposits.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "unity-sfb",
+   "url": "https://theunitybank.com/blog/recurring-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "unity-sfb",
+   "url": "https://theunitybank.com/personal/fixed-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "unity-sfb",
+   "url": "https://theunitybank.com/recurring-deposits.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "unity-sfb",
+   "url": "https://theunitybank.com/recurring_deposits.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "unity-sfb",
+   "url": "https://theunitybank.com/category/fixed%20deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "unity-sfb",
+   "url": "https://theunitybank.com/blog/recurring-deposit-guide",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "unity-sfb",
+   "url": "https://theunitybank.com/category/recurring%20deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "unity-sfb",
+   "url": "https://theunitybank.com/fixed-deposits-vs-mutual-funds.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "unity-sfb",
+   "url": "https://theunitybank.com/blog/fixed-deposit-laddering-strategy",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "unity-sfb",
+   "url": "https://theunitybank.com/blog/fixed-deposit/fixed-deposit-guide",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "south-indian-bank",
+   "url": "southindianbank.com/interest.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "1998",
+   "to": "2007",
+   "note": "1990s static rate page (history pilot)"
+  },
+  {
+   "bankSlug": "south-indian-bank",
+   "url": "southindianbank.com/interestRate/interestRateDetails.aspx?irtID=1",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2007",
+   "to": "2026",
+   "note": "ASP.NET rate page used since 2007 (history pilot)"
+  },
+  {
+   "bankSlug": "hdfc-bank",
+   "url": "hdfcbank.com/RI/RI-FD-REG-interest.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2001",
+   "to": "2006",
+   "note": "2001\u20132006 FD page with amount tiers; needs a custom parser for tier columns"
+  },
+  {
+   "bankSlug": "sbi",
+   "url": "statebankofindia.com/interest.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "1998",
+   "to": "2001",
+   "note": "1990s SBI resident-deposit rate table (history pilot)"
+  }
+ ]
+}
