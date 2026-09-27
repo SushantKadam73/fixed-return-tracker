@@ -1,0 +1,257 @@
+{
+ "group": "psb-b",
+ "banks": [
+  "indian-bank",
+  "indian-overseas-bank",
+  "punjab-and-sind-bank",
+  "punjab-national-bank",
+  "uco-bank",
+  "union-bank-of-india"
+ ],
+ "predecessors": [
+  "new-bank-of-india",
+  "nedungadi-bank",
+  "oriental-bank-of-commerce",
+  "united-bank-of-india",
+  "global-trust-bank",
+  "andhra-bank",
+  "corporation-bank",
+  "allahabad-bank"
+ ],
+ "targets": [
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://www.indianbank.in/departments/deposit-rates/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://www.indianbank.in/departments/deposit-rates/lib/REM-unit-polyfill/js/rem.min.js",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://www.indianbank.in/departments/deposit-rates/lib/selectivizr/selectivizr.js",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://www.indianbank.in/departments/interest-rate-for-agri-products/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://www.indianbank.in/departments/interest-rates-for-deposits-of-above-rs-5-00crore/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://www.indianbank.in/departments/interest-rates-for-small-savings-schemes/",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://www.indianbank.in/departments/rfc-term-deposit-rates/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://www.indianbank.in/departments/wp-content-uploads-2019-12-rural-banking-department-interest-rates-pdf/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://indianbank.in/deposit-rates-2/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "https://www.indianbank.in/HI/departments/deposit-rates/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-overseas-bank",
+   "url": "http://www.iob.in:80/1Retail-credit-interest-rates1",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-overseas-bank",
+   "url": "https://iob.in/@@uploads/CEDocuments/@@uploads/CEDocuments/Retail-credit-interest-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-overseas-bank",
+   "url": "https://iob.in/@@uploads/CEDocuments/Retail-credit-interest-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "indian-overseas-bank",
+   "url": "https://iob.in/@@uploads/CEDocuments/upload/CEDocuments/Retail-credit-interest-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "url": "http://pnbindia.in/en/ui/depositinterestrates.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2016",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "url": "http://www.pnbindia.in:80/en/ui/interest-rates.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2011",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "url": "http://www.pnbindia.in:80/english_web/c_interestrates.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2009",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "url": "http://pnbindia.in:80/english_web/c_interestrates.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2009",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "url": "http://pnbindia.in/english_web/english_web/c_interestrates.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2010",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "url": "http://pnbindia.in:80/hn/ui/depositinterestrates.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2013",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "union-bank-of-india",
+   "url": "https://www.unionbankofindia.co.in/english/interest-rate.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "union-bank-of-india",
+   "url": "https://www.unionbankofindia.co.in/English/interest-rate.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "union-bank-of-india",
+   "url": "https://www.unionbankofindia.co.in/browser.htm?aspxerrorpath=/english/interest_rate.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "union-bank-of-india",
+   "url": "https://www.unionbankofindia.co.in/browser.htm?aspxerrorpath=/Hindi/interest-rate.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "union-bank-of-india",
+   "url": "https://www.unionbankofindia.co.in/browser.htm?aspxerrorpath=/hindi/interestrateHindi.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "union-bank-of-india",
+   "url": "https://www.unionbankofindia.co.in/browser.htm?aspxerrorpath=/interest_rate.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  }
+ ]
+}

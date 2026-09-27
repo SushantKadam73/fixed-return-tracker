@@ -1,0 +1,398 @@
+{
+ "group": "pvt-b",
+ "banks": [
+  "idfc-first-bank",
+  "jk-bank",
+  "karnataka-bank",
+  "karur-vysya-bank",
+  "kotak-mahindra-bank",
+  "nainital-bank",
+  "rbl-bank",
+  "south-indian-bank",
+  "tamilnad-mercantile-bank",
+  "yes-bank"
+ ],
+ "predecessors": [
+  "ing-vysya-bank"
+ ],
+ "targets": [
+  {
+   "bankSlug": "south-indian-bank",
+   "url": "southindianbank.com/interest.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "1998",
+   "to": "2007",
+   "note": "1990s static rate page (history pilot)"
+  },
+  {
+   "bankSlug": "south-indian-bank",
+   "url": "southindianbank.com/interestRate/interestRateDetails.aspx?irtID=1",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2007",
+   "to": "2026",
+   "note": "ASP.NET rate page used since 2007 (history pilot)"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "https://www.idfcfirstbank.com/common-apply-now?lob=personal-banking&p=fd&icid=webhomepage-apply_fixeddeposit_n1-bankingproducts",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "https://www.idfcfirstbank.com/accounts-and-deposits/fixed-deposit-business.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "https://www.idfcfirstbank.com/banking-products/accounts/fixed-deposit.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "https://www.idfcfirstbank.com/banking-products/accounts/rate-of-interest.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "https://www.idfcfirstbank.com/banking-products/accounts/recurring-deposit-account.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2019",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "https://www.idfcfirstbank.com/banking-products/accounts/sa-interest-rate.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "https://www.idfcfirstbank.com/business-banking/accounts-and-deposits/fixed-deposit-business.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2020",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "https://www.idfcfirstbank.com/common-apply-now?lob=personal-banking&p=fd_sep&icid=fd_depositstab_applynow",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "url": "https://www.idfcfirstbank.com/common-apply-now?lob=personal-banking&p=fd_sep&icid=webhomepage-apply_fd_deposits1",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "karnataka-bank",
+   "url": "https://karnatakabank.com/apply-now?utm_source=X&utm_medium=Organic+&utm_campaign=+KBL_FEB26_Fixeddeposit_OO1",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2026",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "karnataka-bank",
+   "url": "https://karnatakabank.com/apply-now?utm_source=X&utm_medium=Organic+&utm_campaign=+KBL_Nov_recurringdeposit001",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "karnataka-bank",
+   "url": "https://karnatakabank.com/deposit-interest-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "karnataka-bank",
+   "url": "http://www.karnatakabank.com:80/DepositIntrates.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2012",
+   "to": "2012",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "karnataka-bank",
+   "url": "http://www.karnatakabank.com:80/deposits.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2002",
+   "to": "2002",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "kotak-mahindra-bank",
+   "url": "http://www.kotak.com:80/./.deposits/sitemap.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2011",
+   "to": "2011",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "kotak-mahindra-bank",
+   "url": "https://www.kotak.com/811-savingsaccount-ZeroBalanceAccount/811-mob-1/assets/vectors/icon_getinterest.svg",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2021",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "kotak-mahindra-bank",
+   "url": "https://www.kotak.com/811-savingsaccount-ZeroBalanceAccount/811-mob/assets/vectors/icon_deposits_spends.svg",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2021",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "kotak-mahindra-bank",
+   "url": "https://www.kotak.com/811-savingsaccount-ZeroBalanceAccount/811/ahome2.action?Source=Bing&banner=Search_action&pubild=%2Bbank%20%2Binterest%20%2Brate&msclkid=8c61c6f1a3e5107e1f4da4d802e710d9",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2022",
+   "to": "2022",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "kotak-mahindra-bank",
+   "url": "http://www.kotak.com/%3Clink%20rel%3D%22canonical%22%20href%3D%22http%3A/%252Fwww.kotak.com/personal/accounts-deposits/jifi-account/jifi-saver.html%22%20/%3E",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2015",
+   "to": "2015",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "kotak-mahindra-bank",
+   "url": "http://www.kotak.com:80/bank/.../deposits/...deposits/ace-deposit.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2011",
+   "to": "2011",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "nainital-bank",
+   "url": "http://nainitalbank.co.in:80/deposits.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2008",
+   "to": "2008",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "nainital-bank",
+   "url": "http://www.nainitalbank.co.in:80/english/interest_rate.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2014",
+   "to": "2014",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "nainital-bank",
+   "url": "http://www.nainitalbank.co.in/english/interest_rate01.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2015",
+   "to": "2015",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "nainital-bank",
+   "url": "http://www.nainitalbank.co.in/english/interest_rate1.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2015",
+   "to": "2015",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "nainital-bank",
+   "url": "http://www.nainitalbank.co.in:80/english/recurring_deposit.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2017",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "nainital-bank",
+   "url": "https://www.nainitalbank.co.in/english/term_deposit.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2021",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "nainital-bank",
+   "url": "http://www.nainitalbank.co.in/images/Banner%20deposit%2003-04-13.GIF",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2014",
+   "to": "2014",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "nainital-bank",
+   "url": "http://nainitalbank.co.in/images/Banner%20deposit.gif",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2011",
+   "to": "2011",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "south-indian-bank",
+   "url": "https://www.southindianbank.com/blog/fixed-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "south-indian-bank",
+   "url": "https://www.southindianbank.com/blog/fixed-deposit/safe-simple--digital-fixed-deposits-with-a-digital-edge-for-gen-z",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "south-indian-bank",
+   "url": "https://www.southindianbank.com/blog/fixed-deposit/things-you-need-to-know-about-fixed-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "south-indian-bank",
+   "url": "https://www.southindianbank.com/blog/fixed-deposit/things-you-need-to-know-about-quick-fd",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "url": "https://www.yesbank.in/.../yes.../deposits/fixed-deposit",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "url": "https://www.yesbank.in/_cache_1516/_themesdelivery/Yes-Bank-MigrationTheme/assets/new-savings-page-assets-2/components/c-interestRate/c-interestRate.css",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "url": "https://www.yesbank.in/_cache_1e64/_themesdelivery/Yes-Bank-MigrationTheme/assets/new-savings-page-assets/components/c-interestRate/c-interestRate.css",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "url": "https://www.yesbank.in/_cache_223b/_themesdelivery/Yes-Bank-MigrationTheme/assets/new-savings-page-assets-2/components/c-interestRate/c-interestRate.css",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "url": "https://www.yesbank.in/_cache_223b/_themesdelivery/Yes-Bank-MigrationTheme/assets/new-savings-page-assets/components/c-interestRate/c-interestRate.css",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2024",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "url": "https://www.yesbank.in/_cache_295b/_themesdelivery/Yes-Bank-MigrationTheme/assets/new-savings-page-assets/components/c-interestRate/c-interestRate.css",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "url": "https://www.yesbank.in/_cache_3056/_themesdelivery/Yes-Bank-MigrationTheme/assets/new-savings-page-assets/components/c-interestRate/c-interestRate.css",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2023",
+   "to": "2023",
+   "note": "candidate from Phase 1 survey; verify layout"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "url": "https://www.yesbank.in/_cache_3205/_themesdelivery/Yes-Bank-MigrationTheme/assets/new-savings-page-assets/components/c-interestRate/c-interestRate.css",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2025",
+   "to": "2025",
+   "note": "candidate from Phase 1 survey; verify layout"
+  }
+ ]
+}

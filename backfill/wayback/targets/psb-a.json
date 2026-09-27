@@ -1,0 +1,49 @@
+{
+ "group": "psb-a",
+ "banks": [
+  "sbi",
+  "bank-of-baroda",
+  "bank-of-india",
+  "bank-of-maharashtra",
+  "canara-bank",
+  "central-bank-of-india"
+ ],
+ "predecessors": [
+  "bank-of-calcutta-bengal",
+  "bank-of-bombay",
+  "bank-of-madras",
+  "imperial-bank-of-india",
+  "state-bank-of-bikaner-and-jaipur",
+  "state-bank-of-hyderabad",
+  "state-bank-of-mysore",
+  "state-bank-of-patiala",
+  "state-bank-of-travancore",
+  "bharatiya-mahila-bank",
+  "state-bank-of-saurashtra",
+  "state-bank-of-indore",
+  "benares-state-bank",
+  "dena-bank",
+  "vijaya-bank",
+  "syndicate-bank"
+ ],
+ "targets": [
+  {
+   "bankSlug": "sbi",
+   "url": "statebankofindia.com/interest.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "1998",
+   "to": "2001",
+   "note": "1990s SBI resident-deposit rate table (history pilot)"
+  },
+  {
+   "bankSlug": "bank-of-maharashtra",
+   "url": "https://bankofmaharashtra.in/blogs/competitive-interest-rate-for-new-vehicles",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2024",
+   "to": "2026",
+   "note": "candidate from Phase 1 survey; verify layout"
+  }
+ ]
+}

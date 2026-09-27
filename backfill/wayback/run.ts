@@ -1,120 +1,220 @@
 /**
  * Rebuild a bank's historical rate cards from Internet Archive copies of its official pages.
  *
- *   npx tsx backfill/wayback/run.ts --bank south-indian-bank            # all targets for the bank
- *   npx tsx backfill/wayback/run.ts --bank sbi --dry-run --limit 10      # try without storing
+ *   npx tsx backfill/wayback/run.ts --group pvt-b --bank south-indian-bank --out ../private/history-staging/me
+ *   npx tsx backfill/wayback/run.ts --bank sbi --url deposit-rates --dry-run --verbose
  *
- * Targets (official URLs, product, amount band, optional custom parser) live in
- * backfill/wayback/targets.json. Consecutive monthly captures with identical rates are merged
- * into one card "in force at least between observedFrom and observedTo".
+ * Options:
+ *   --group <name>    only targets from backfill/wayback/targets/<name>.json
+ *   --bank <slug>     only targets for this bank
+ *   --url <substr>    only targets whose URL contains this text
+ *   --product <p>     only targets for this product
+ *   --out <dir>       where cards are stored (<dir>/data/rates/...); default: the repo itself.
+ *                     History work stores into a staging directory first; backfill/merge-staged.ts
+ *                     merges reviewed results into the repo.
+ *   --stride <n>      sampling stride for pages whose content changes every month (default 3)
+ *   --dry-run         parse and report, store nothing
+ *   --verbose         print every evaluated capture
+ *
+ * How captures are chosen (the archive is a shared public resource, so fetch as little as possible):
+ *   1. One CDX call lists the monthly captures (HTTP 200) with their content digests.
+ *   2. Identical digests mean identical bytes, so each distinct digest is fetched at most once.
+ *   3. If a page has few distinct digests (static pages, typical before ~2012) every digest is
+ *      read: exact month-level change detection at minimal cost.
+ *   4. Otherwise (pages with rotating banners change digest every capture) every <stride>-th month
+ *      is read, and wherever two neighbouring samples carry different rates the months between
+ *      them are bisected until the change is pinned to adjacent captures. A change that reverts
+ *      within one stride window can be missed; use --stride 1 for exhaustive reads.
+ * Consecutive captures with identical rates become one card "in force at least between
+ * observedFrom and observedTo". Re-running a target replaces that target's earlier archive cards,
+ * so parser fixes never leave duplicates behind.
  */
-import { readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
-import type { Product, RateCard, RateRow } from "../../lib/domain";
+import type { RateCard, RateRow } from "../../lib/domain";
 import { hash64 } from "../../lib/hash";
 import { canonicalRows } from "../../lib/validate";
-import { storeHistoricalCard } from "../../collectors/src/store";
-import { monthlyCaptures, snapshot, tsToDate } from "./cdx";
+import { replaceArchiveCards } from "../../collectors/src/store";
+import { archiveRequests, monthlyCaptures, snapshot, tsToDate, type Capture } from "./cdx";
 import { readTermTables } from "./generic-parse";
-import { customParsers } from "./parsers";
+import { customParsers } from "./parser-registry";
+import type { GenericResult, Target } from "./types";
 
-export interface Target {
-  bankSlug: string;
-  url: string;
-  product: Product;
-  amountMax?: number | null;
-  from?: string; // YYYY
-  to?: string; // YYYY
-  parser?: string; // key in customParsers; default generic
-  note?: string;
-}
+export type { Target } from "./types";
 
 const args = process.argv.slice(2);
 const opt = (k: string) => {
   const i = args.indexOf(k);
   return i >= 0 ? args[i + 1] : undefined;
 };
-const bank = opt("--bank");
-const dryRun = args.includes("--dry-run");
-const limit = Number(opt("--limit") ?? Infinity);
 const root = path.resolve(opt("--root") ?? process.cwd());
+const outRoot = path.resolve(opt("--out") ?? root);
+const dryRun = args.includes("--dry-run");
+const verbose = args.includes("--verbose");
+const stride = Math.max(1, Number(opt("--stride") ?? 3));
 
-const targets = (JSON.parse(readFileSync(path.join(root, "backfill", "wayback", "targets.json"), "utf8")) as { targets: Target[] }).targets.filter(
-  (t) => !bank || t.bankSlug === bank,
-);
+export function loadTargets(repoRoot: string, group?: string): Array<Target & { group: string }> {
+  const dir = path.join(repoRoot, "backfill", "wayback", "targets");
+  const files = existsSync(dir) ? readdirSync(dir).filter((f) => f.endsWith(".json")) : [];
+  const out: Array<Target & { group: string }> = [];
+  for (const f of files.sort()) {
+    const g = f.replace(/\.json$/, "");
+    if (group && g !== group) continue;
+    const data = JSON.parse(readFileSync(path.join(dir, f), "utf8")) as { targets: Target[] };
+    for (const t of data.targets ?? []) out.push({ ...t, group: g });
+  }
+  return out;
+}
 
-type Group = { hash: string; rows: RateRow[]; effectiveFrom: string | null; first: string; last: string; archiveUrl: string };
+type Eval = { idx: number; hash: string | null; result: GenericResult | null; archiveUrl: string; error?: string };
+
+async function parseCapture(t: Target, c: Capture): Promise<Omit<Eval, "idx">> {
+  let html: string;
+  let archiveUrl: string;
+  try {
+    ({ html, archiveUrl } = await snapshot(c));
+  } catch (e) {
+    return { hash: null, result: null, archiveUrl: "", error: `fetch ${(e as Error).message}` };
+  }
+  const parse = t.parser ? customParsers[t.parser] : undefined;
+  if (t.parser && !parse) throw new Error(`unknown parser "${t.parser}" (register it in backfill/wayback/parsers/<group>.ts)`);
+  let res: GenericResult;
+  try {
+    res = parse ? await parse(html, t) : readTermTables(html, { amountMax: t.amountMax ?? null });
+  } catch (e) {
+    return { hash: null, result: null, archiveUrl, error: `parse ${(e as Error).message}` };
+  }
+  if (res.rows.length === 0) return { hash: null, result: res, archiveUrl, error: res.skipped.slice(0, 2).join("; ") || "no table" };
+  return { hash: hash64(canonicalRows({ rows: res.rows } as RateCard)), result: res, archiveUrl };
+}
 
 async function runTarget(t: Target) {
-  const caps = (await monthlyCaptures(t.url, t.from ?? "1996", t.to ?? "2026")).slice(0, limit);
-  const parse = t.parser ? customParsers[t.parser] : undefined;
-  const groups: Group[] = [];
-  let ok = 0;
-  const skipped: string[] = [];
-  for (const c of caps) {
-    let html: string;
-    let archiveUrl: string;
-    try {
-      ({ html, archiveUrl } = await snapshot(c));
-    } catch (e) {
-      skipped.push(`${c.timestamp}: fetch ${(e as Error).message}`);
-      continue;
-    }
-    const res = parse ? parse(html, t) : readTermTables(html, { amountMax: t.amountMax ?? null });
-    if (res.rows.length === 0) {
-      skipped.push(`${c.timestamp}: ${res.skipped.slice(0, 2).join("; ") || "no table"}`);
-      continue;
-    }
-    ok++;
-    const card = { rows: res.rows } as Pick<RateCard, "rows">;
-    const hash = hash64(canonicalRows(card as RateCard));
-    const date = tsToDate(c.timestamp);
-    const prev = groups.at(-1);
-    if (prev && prev.hash === hash) {
-      prev.last = date;
-      prev.effectiveFrom = prev.effectiveFrom ?? res.effectiveFrom;
+  const before = archiveRequests();
+  const caps = await monthlyCaptures(t.url, t.from ?? "1996", t.to ?? "2026");
+  const evals = new Map<number, Eval>();
+  const byDigest = new Map<string, Omit<Eval, "idx">>();
+
+  const evaluate = async (i: number) => {
+    if (evals.has(i)) return evals.get(i)!;
+    const c = caps[i];
+    let e = c.digest ? byDigest.get(c.digest) : undefined;
+    if (!e) {
+      e = await parseCapture(t, c);
+      if (c.digest && !e.error?.startsWith("fetch")) byDigest.set(c.digest, e);
     } else {
-      groups.push({ hash, rows: res.rows, effectiveFrom: res.effectiveFrom, first: date, last: date, archiveUrl });
+      // Same bytes as an earlier capture: same rates; point the evidence at this capture.
+      e = { ...e, archiveUrl: `https://web.archive.org/web/${c.timestamp}id_/${c.original}` };
+    }
+    const ev = { idx: i, ...e };
+    evals.set(i, ev);
+    if (verbose) console.error(`  ${c.timestamp} ${ev.hash ?? "-"} ${ev.error ?? `${ev.result?.rows.length} rows`}`);
+    return ev;
+  };
+
+  const distinctDigests = new Set(caps.map((c) => c.digest)).size;
+  const exact = stride === 1 || distinctDigests <= Math.max(4, caps.length / 2);
+  if (exact) {
+    // Every capture is evaluated, but only the first capture of each digest is fetched.
+    for (let i = 0; i < caps.length; i++) await evaluate(i);
+  } else {
+    for (let i = 0; i < caps.length; i += stride) await evaluate(i);
+    if (caps.length > 0) await evaluate(caps.length - 1);
+    // Bisect between neighbouring samples whose rates differ.
+    for (let changed = true; changed; ) {
+      changed = false;
+      const idx = [...evals.keys()].sort((a, b) => a - b);
+      for (let k = 0; k + 1 < idx.length; k++) {
+        const a = evals.get(idx[k])!;
+        const b = evals.get(idx[k + 1])!;
+        if (b.idx - a.idx > 1 && a.hash !== b.hash) {
+          await evaluate(Math.floor((a.idx + b.idx) / 2));
+          changed = true;
+        }
+      }
     }
   }
-  let stored = 0;
-  let rejected = 0;
-  for (const g of groups) {
-    const card: RateCard = {
-      bankSlug: t.bankSlug,
-      product: t.product,
-      // A page's "w.e.f." date is only trusted if it is not after the capture date.
-      effectiveFrom: g.effectiveFrom && g.effectiveFrom <= g.first ? g.effectiveFrom : null,
-      observedAt: new Date().toISOString().slice(0, 10),
-      observedFrom: g.first,
-      observedTo: g.last,
-      sourceType: "web_archive",
-      sourceUrl: t.url,
-      archiveUrl: g.archiveUrl,
-      confidence: g.effectiveFrom ? "medium" : "low",
-      rows: g.rows,
-      notes: [`Reconstructed from Internet Archive copies of the bank's official page captured ${g.first} to ${g.last}.`, ...(t.note ? [t.note] : [])],
-    };
-    if (dryRun) continue;
-    const r = storeHistoricalCard(root, card);
-    if (r.outcome === "inserted") stored++;
-    if (r.outcome === "rejected") rejected++;
+
+  type Group = { hash: string; rows: RateRow[]; effectiveFrom: string | null; first: string; last: string; archiveUrl: string };
+  const groups: Group[] = [];
+  const skipped: string[] = [];
+  let parsed = 0;
+  for (const ev of [...evals.values()].sort((a, b) => a.idx - b.idx)) {
+    const date = tsToDate(caps[ev.idx].timestamp);
+    if (!ev.hash || !ev.result) {
+      skipped.push(`${caps[ev.idx].timestamp}: ${ev.error}`);
+      continue;
+    }
+    parsed++;
+    const prev = groups.at(-1);
+    if (prev && prev.hash === ev.hash) {
+      prev.last = date;
+      prev.effectiveFrom = prev.effectiveFrom ?? ev.result.effectiveFrom;
+    } else {
+      groups.push({ hash: ev.hash, rows: ev.result.rows, effectiveFrom: ev.result.effectiveFrom, first: date, last: date, archiveUrl: ev.archiveUrl });
+    }
   }
-  return { url: t.url, captures: caps.length, parsed: ok, groups: groups.length, stored, rejected, span: groups.length ? `${groups[0].first} → ${groups.at(-1)!.last}` : "-", skipped: skipped.slice(0, 5) };
+
+  const observedAt = new Date().toISOString().slice(0, 10);
+  const cards: RateCard[] = groups.map((g) => ({
+    bankSlug: t.bankSlug,
+    product: t.product,
+    // A page's "w.e.f." date is only trusted if it is not after the first capture showing it.
+    effectiveFrom: g.effectiveFrom && g.effectiveFrom <= g.first ? g.effectiveFrom : null,
+    observedAt,
+    observedFrom: g.first,
+    observedTo: g.last,
+    sourceType: "web_archive",
+    sourceUrl: t.url,
+    archiveUrl: g.archiveUrl,
+    confidence: g.effectiveFrom && g.effectiveFrom <= g.first ? "medium" : "low",
+    rows: g.rows,
+    notes: [`Reconstructed from Internet Archive copies of the bank's official page captured ${g.first} to ${g.last}.`, ...(t.note ? [t.note] : [])],
+  }));
+
+  let stored = 0;
+  let rejected: string[] = [];
+  if (!dryRun && cards.length > 0) {
+    const r = replaceArchiveCards(outRoot, t.bankSlug, t.product, t.url, cards);
+    stored = r.inserted;
+    rejected = r.rejected;
+  }
+  return {
+    url: t.url,
+    captures: caps.length,
+    distinctDigests,
+    mode: exact ? "exact" : `stride-${stride}`,
+    evaluated: evals.size,
+    archiveRequests: archiveRequests() - before,
+    parsed,
+    groups: groups.length,
+    stored,
+    rejected: rejected.slice(0, 5),
+    span: groups.length ? `${groups[0].first} → ${groups.at(-1)!.last}` : "-",
+    skipped: skipped.slice(0, 5),
+  };
 }
 
 async function main() {
+  const bank = opt("--bank");
+  const url = opt("--url");
+  const product = opt("--product");
+  const targets = loadTargets(root, opt("--group")).filter(
+    (t) => (!bank || t.bankSlug === bank) && (!url || t.url.includes(url)) && (!product || t.product === product),
+  );
+  if (targets.length === 0) console.error("no matching targets");
   for (const t of targets) {
     try {
       const r = await runTarget(t);
       console.log(JSON.stringify({ bank: t.bankSlug, product: t.product, ...r }));
     } catch (e) {
-      console.log(JSON.stringify({ bank: t.bankSlug, url: t.url, error: (e as Error).message }));
+      console.log(JSON.stringify({ bank: t.bankSlug, product: t.product, url: t.url, error: (e as Error).message }));
     }
   }
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+if (process.argv[1] && /wayback[\\/]run\.ts$/.test(process.argv[1])) {
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}

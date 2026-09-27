@@ -123,3 +123,32 @@ Per the research notes (`/agent/workspace/research/history/history_summary.md` a
 multi-year archive of any kind (inline on its live page). No other bank in scope publishes a
 comparable official archive — the remaining ~38 banks surveyed show only the current rate plus
 at most 1–3 prior revisions inline, which is not a distinct "archive" to script against.
+
+## Internet Archive backfill (`backfill/wayback/`)
+
+Rebuilds rate cards from Internet Archive copies of banks' own rate pages, for every bank and
+merged predecessor. Cards get `sourceType: "web_archive"`, `observedFrom`/`observedTo` (the first
+and last capture that showed those exact rates) and the capture's `archiveUrl` as evidence;
+`effectiveFrom` is kept only when the page states it and it is not later than the first capture.
+
+- **Targets** live per history group in `wayback/targets/<group>.json` (`psb-a`, `psb-b`, `pvt-a`,
+  `pvt-b`, `sfb`): `{ url, product, amountMax?, from?, to?, parser?, note? }`.
+- **Parsers**: `wayback/generic-parse.ts` reads plain "tenure | rate" tables and refuses anything
+  ambiguous. Layout-specific readers live in `wayback/parsers/<group>.ts` (key
+  `"<bankSlug>/<layout>"`, referenced from a target's `parser`), registered through
+  `wayback/parser-registry.ts`, each with a fixture test in `backfill/tests/`.
+- **Run**: `npx tsx backfill/wayback/run.ts --group <g> [--bank <slug>] [--url <text>] [--out <staging dir>] [--dry-run] [--verbose] [--stride 3]`.
+  One CDX call lists monthly captures with content digests. Identical digests are read once. Pages
+  with few distinct versions are read exactly, and pages whose bytes change every month are sampled
+  every `--stride` months, with bisection wherever neighbouring samples differ. Re-running a
+  target replaces its earlier archive cards, so parser fixes never leave duplicates.
+- **Politeness**: every request goes through `wayback/cdx.ts`, which enforces one request per
+  `WAYBACK_GAP_MS` (default 3 s) **across all processes** sharing the cache directory
+  (`/agent/workspace/private/wayback`, never committed), and makes every job back off together on
+  HTTP 429/5xx. Use `wayback/explore.ts` (`discover`, `captures`, `fetch`, `cdx`) for exploration so
+  it shares the same limit.
+- **Staging and merge**: history jobs store into a staging root (`--out`), outside the repo. After
+  review, `npx tsx backfill/merge-staged.ts --from <staging dir>` merges them into `data/rates/`,
+  re-validating every card. Archive cards replace earlier cards from the same URL, other historical
+  cards are de-duplicated by content and date, and live cards are never taken from staging.
+- **Notes**: each history group keeps a running source and gap log in `backfill/notes/<group>.md`.

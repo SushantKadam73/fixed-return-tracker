@@ -85,6 +85,38 @@ export function storeHistoricalCard(root: string, input: RateCard): StoreOutcome
   return { outcome: "inserted", issues };
 }
 
+/**
+ * Replace every web-archive card previously reconstructed from `sourceUrl` for this bank and
+ * product with a fresh set, so re-running a backfill target (e.g. after a parser fix) never
+ * leaves duplicates. Cards that fail validation are skipped and reported.
+ */
+export function replaceArchiveCards(
+  root: string,
+  bankSlug: string,
+  product: Product,
+  sourceUrl: string,
+  cards: RateCard[],
+): { inserted: number; removed: number; rejected: string[] } {
+  const pf = loadProduct(root, bankSlug, product);
+  const before = pf.cards.length;
+  pf.cards = pf.cards.filter((c) => !(c.sourceType === "web_archive" && c.sourceUrl === sourceUrl));
+  const removed = before - pf.cards.length;
+  const rejected: string[] = [];
+  let inserted = 0;
+  for (const input of cards) {
+    const card = normaliseLabels(input);
+    const issues = validateCard(card, null);
+    if (hasErrors(issues)) {
+      rejected.push(`${card.observedFrom ?? card.effectiveFrom ?? "?"}: ${issues.filter((i) => i.level === "error").map((i) => i.message).join("; ")}`);
+      continue;
+    }
+    pf.cards.push({ ...card, contentHash: hash64(canonicalRows(card)) });
+    inserted++;
+  }
+  if (inserted > 0 || removed > 0) saveProduct(root, pf);
+  return { inserted, removed, rejected };
+}
+
 export function loadChecks(root: string): Record<string, SourceCheck> {
   const file = path.join(ratesDir(root), "_checks.json");
   return existsSync(file) ? (JSON.parse(readFileSync(file, "utf8")) as Record<string, SourceCheck>) : {};

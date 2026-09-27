@@ -7,13 +7,9 @@ import type { CustomerType, RateRow } from "../../lib/domain";
 import { findEffectiveDate, parseRate } from "../../collectors/src/parse/common";
 import { extractTables, pageText, type Grid } from "../../collectors/src/parse/html-table";
 import { parseTenure } from "../../collectors/src/parse/tenure";
+import type { GenericResult } from "./types";
 
-export interface GenericResult {
-  rows: RateRow[];
-  effectiveFrom: string | null;
-  tablesRead: number;
-  skipped: string[];
-}
+export type { GenericResult } from "./types";
 
 function classifyColumn(header: string): CustomerType | "skip" | "general_default" {
   const h = header.toLowerCase();
