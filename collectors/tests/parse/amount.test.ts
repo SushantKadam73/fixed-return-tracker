@@ -83,3 +83,11 @@ describe("negative cases still refuse to guess", () => {
     expect(parseAmountBand(label)).toBeNull();
   });
 });
+
+describe("parseAmountBand: dates inside amount labels", () => {
+  it("ignores an embedded effective date", () => {
+    expect(parseAmountBand("Less than Rs. 15 lacs(w.e.f. 16.09.2002)")).toEqual({ min: 0, max: 1500000 });
+    expect(parseAmountBand("Rs.15 lacs and above but less than Rs. 5.0 crores (effective from 09.06.2003)")).toEqual({ min: 1500000, max: 50000000 });
+    expect(parseAmountBand("Below Rs 2 crore w.e.f. 01/04/2024")).toEqual({ min: 0, max: 20000000 });
+  });
+});

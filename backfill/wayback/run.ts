@@ -66,6 +66,13 @@ export function loadTargets(repoRoot: string, group?: string): Array<Target & { 
   return out;
 }
 
+/** The date window a target covers ("2002" → 2002-01-01; "2004" → 2004-12-31; "200406" → month bounds). */
+function targetWindow(t: Target): { from: string | null; to: string | null } {
+  const start = (v?: string) => (!v ? null : v.length === 4 ? `${v}-01-01` : v.length === 6 ? `${v.slice(0, 4)}-${v.slice(4)}-01` : v);
+  const end = (v?: string) => (!v ? null : v.length === 4 ? `${v}-12-31` : v.length === 6 ? `${v.slice(0, 4)}-${v.slice(4)}-31` : v);
+  return { from: start(t.from), to: end(t.to) };
+}
+
 type Eval = { idx: number; hash: string | null; result: GenericResult | null; archiveUrl: string; error?: string };
 
 async function parseCapture(t: Target, c: Capture): Promise<Omit<Eval, "idx">> {
@@ -178,7 +185,7 @@ async function runTarget(t: Target) {
   let stored = 0;
   let rejected: string[] = [];
   if (!dryRun && cards.length > 0) {
-    const r = replaceArchiveCards(outRoot, t.bankSlug, t.product, t.url, cards);
+    const r = replaceArchiveCards(outRoot, t.bankSlug, t.product, t.url, cards, targetWindow(t));
     stored = r.inserted;
     rejected = r.rejected;
   }

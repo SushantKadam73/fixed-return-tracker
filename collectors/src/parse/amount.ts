@@ -49,8 +49,20 @@ const INCLUSIVE_LOWER = /\band above\b|& above|≥/; // "X and above" / "X & abo
 const INCLUSIVE_UPPER = /\bupto\b|\bup to\b|\band including\b|\binclusive\b|≤/; // inclusive of X
 const LESS_WORDS_ONLY = /less than|below/; // guards the upper check against a plain exclusive upper
 
+/**
+ * Dates that sit inside amount labels ("Less than Rs. 15 lacs (w.e.f. 16.09.2002)") are not
+ * amounts: drop "w.e.f./effective from ..." clauses and dd.mm.yyyy-style dates before reading.
+ */
+export function stripDates(label: string): string {
+  return label
+    .replace(/\(?\s*(?:w\.?\s*e\.?\s*f\.?|with effect from|effective from|effective)\b[^)]*\)?/gi, " ")
+    .replace(/\b\d{1,2}[./-]\d{1,2}[./-]\d{2,4}\b/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 export function parseAmountBand(label: string): AmountBand | null {
-  const t = label.toLowerCase();
+  const t = stripDates(label).toLowerCase();
   const { matches, text: stripped } = findAmounts(t);
   if (matches.length === 0) return null;
   const below = BELOW_WORDS.test(t) || /[<≤]/.test(t);

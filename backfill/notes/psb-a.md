@@ -1,11 +1,49 @@
-# psb-a research log (Ledger)
+# psb-a research log (Ledger, continued by Ledger2)
 
 Group: SBI, Bank of Baroda, Bank of India, Bank of Maharashtra, Canara Bank, Central Bank of
 India, and their merged predecessors (SBI associates, Bharatiya Mahila Bank, Dena Bank, Vijaya
 Bank, Syndicate Bank, Imperial Bank / Presidency banks).
 
-Staging root: `/agent/workspace/private/history-staging/Ledger/`
-Scratch: `/agent/workspace/private/tmp/Ledger/`
+Staging root (Ledger): `/agent/workspace/private/history-staging/Ledger/`
+Scratch (Ledger): `/agent/workspace/private/tmp/Ledger/`
+
+Staging root (Ledger2): `/agent/workspace/private/history-staging/Ledger2/`
+Scratch (Ledger2): `/agent/workspace/private/tmp/Ledger2/`
+
+## Ledger2 pass -- summary of what changed
+
+Continues from where Ledger left off (see that pass's notes below, unedited except for this new
+top section and small in-place additions marked "Ledger2:" under each bank). Highlights, fullest
+detail under each bank's own section:
+- **Bank of India**: the "26 monthly captures 2012-2017" lead Ledger flagged turned out to be a
+  near-empty redirect wrapper (only 2-3 real snapshots) once checked directly -- but the SAME
+  domain has a much better, previously-unnoticed target: `bankofindia.co.in/Interestrate.aspx`
+  (root path, 2008-2012, many distinct digests) turned out itself to be a navigation hub with no
+  rate numbers, but its own nav links to the real table pages, `rupeetermdeposit.aspx` (fd/bulk,
+  2009-2012) and `savingbank.aspx` (savings, 2009-2012). A custom parser for
+  `rupeetermdeposit.aspx` is written and registered (see below); `savingbank.aspx` is logged as a
+  lead only, not run (see "Tooling / process notes" below on why `run.ts` cannot emit savings
+  cards at all).
+- **Bank of Baroda**: `bankofbaroda.com/interest.asp` -- Ledger's own candidate list -- is a real,
+  frequently-revised target across TWO distinct page layouts (2002 and mid-2003-on), both now
+  covered by custom parsers and added to `targets/psb-a.json`.
+- **Central Bank of India**: a union-association blog reproducing the bank's own Dec-2010 rate
+  circular verbatim (citing the bank's own page as its source) yields five new dated press cards
+  spanning Aug 2010 to Mar 2012 -- previously this bank had exactly one card (1999) in the whole
+  dataset.
+- **Dena Bank, Vijaya Bank**: first cards of any kind for both, via dated press (see their own
+  sections below); web-archive domains not yet reached in this pass.
+- **SBI**: two more dated press cards (2004-11-29, 2007-08-09) narrowing (not closing) the
+  2004-2007 gap; the 2000-09 to 2003-01 and 2011-savings gaps are unchanged in this pass (not yet
+  reached -- see "Leads not yet pursued" under SBI).
+- **Shared-code churn observed, not touched**: `backfill/wayback/generic-parse.ts` and
+  `collectors/src/parse/common.ts` were both being actively rewritten by another researcher
+  during this pass (uncommitted changes seen mid-edit, including a substantial new
+  product-aware table-scoring system and a generic amount-tiered-column reader in
+  generic-parse.ts). One `psb-a.test.ts` run briefly saw two of Ledger's own pre-existing
+  `sbi/2001-product-page` tests fail with a null `effectiveFrom`; re-running moments later (and
+  again after finishing this pass) they pass consistently, confirming it was that other edit
+  landing mid-file-write, not a real regression. See "Tooling / process notes" for detail.
 
 Convention below: for each source, record URL, era covered, captures/pages actually read, and
 cards produced (or why none were). "Gap" = looked, found nothing storable. "Lead" = found
@@ -144,6 +182,29 @@ out and this ambiguity is noted on the card rather than guessed at.
 - SBI legacy domains not yet explored: `sbi.bank.in`'s predecessor `sbi.co.in`
   `cmsuser/user.htm?action=rates` page (2009-2013 era, dynamic URL) -- see above.
 
+### Ledger2: two more press cards, narrowing (not closing) the 2004-2007 gap
+- Rediff, 27 Nov 2004, "SBI hikes home loan rates": buried in a home-loan-rate story, the article
+  states SBI "raised interest rates on domestic term deposits by 0.25 to 0.50 per cent across
+  various maturities effective from November 29", introduced a NEW 7-14 day bucket at 3.00% and a
+  NEW 5-years-and-above bucket at 6.25% (explicitly "to raise long term funds"), and gives 15-45
+  days (4.00%), 46-179 days (4.50%) and 180 days-<1yr (5.00%). The article states 1-3yr rates were
+  "raised by 0.50 per cent" but does not print the resulting number, so that row is not stored.
+  Card: `fd`, effectiveFrom 2004-11-29, 5 rows.
+- Oneindia (UNI), 6 Aug 2007, "SBI hikes deposit rates for maturity of 3 to 10 years": full
+  dated revision, effective 9 Aug 2007 -- 1yr-<2yr cut to 8.00% (from 8.25%), 2yr-<3yr unchanged
+  at 8.25% (printed as such, not inferred), 3-10yr raised to 8.50% (from 8.25%), plus two named
+  schemes: "Super Saver Term Deposit" (4-5yr) and "SBI Smart Deposit" (550 days), both cut to
+  9.25%. Card: `fd`, effectiveFrom 2007-08-09, 5 rows (3 general-tenor + 2 named-scheme rows).
+  Sits about 4 months before the already-stored 2007-12-17 card.
+- Both stored via `backfill/psb-a-fd-press-ledger2.ts` (a new file; Ledger's own
+  `psb-a-fd-press.ts` is not edited).
+- **Still open**: 2000-09 to 2003-01 and most of 2004-2007 remain silent for SBI FD; the
+  2011-10-25 (RBI savings deregulation) to 2019-05-01 SBI savings gap is unchanged; RD and
+  fd_bulk web-archive/press passes not started. None of these were reached in this pass --
+  archive-side effort this pass went to Bank of India/Bank of Baroda per the brief's priority
+  order, and Exa search effort went to Central Bank of India/Dena/Vijaya, which had far less
+  existing coverage to start from. All are still valid leads for a future pass.
+
 ## Bank of Baroda
 
 ### Press (sourceType `press`, confidence `low`)
@@ -175,6 +236,74 @@ See `backfill/psb-a-fd-press.ts`. Sources (Exa search + ExaContents full read):
   above found so far; web-archive candidates above not yet run.
 - Savings, RD, bulk: not started.
 
+### Ledger2: web archive -- `bankofbaroda.com/interest.asp` run, two eras/parsers, 4 years covered
+Ledger's own candidate list already named this URL; running it turned up TWO successive page
+layouts needing two separate custom parsers (both in `backfill/wayback/parsers/psb-a.ts`, keys
+`bank-of-baroda/2002-interest-asp` and `bank-of-baroda/2003-yield-table`; fixtures/tests under
+those same names in `backfill/fixtures/bank-of-baroda/` and `backfill/tests/psb-a.test.ts`):
+- **2002 layout** (`interest.asp`, captures 2002-02-04 to 2002-10-12 read this way -- see below):
+  one "DOMESTIC TERM DEPOSITS, NON-RESIDENT (ORDINARY) AND NON-RESIDENT SPECIAL RUPEE(NRSR)
+  DEPOSITS" table with a bare leading "Sr.No" column (not the tenure -- the generic reader
+  hardcodes column 0 as the tenure column and would reject this table outright, "first column is
+  not tenures") and two amount-banded rate columns ("Less than Rs. 15 lacs" / "Rs. 15 lacs to less
+  than Rs. 1 crore"). The heading states the schedule covers domestic AND non-resident-ordinary
+  deposits together, so identical rows are stored for both `fd` and `nro`. A one-line "SAVINGS
+  ACCOUNT INTEREST RATE (% p.a.) 4.00" elsewhere on the same page duplicates the RBI-prescribed
+  uniform savings rate for this era and is deliberately not stored (same reasoning as SBI's 1998
+  page). FCNR (currency-denominated) and NRNR (no Product value) are not parsed; NRE (amount-
+  banded, "Less than Rs. 1 crore" / "Rs. 1 crore & above") is a ready lead for a future pass, not
+  pursued here (lower priority than fd/savings/rd/bulk per the brief).
+- **2003+ layout** (same URL, `Domestic Term & NRO Deposits(Effective from ...)` heading):
+  restyled without the Sr.No column, the upper amount-band boundary moved from 1 crore to 5
+  crore (read from the header text itself, not assumed -- and worth re-checking on later
+  captures, since nothing here guarantees it stays 5 crore indefinitely), and each amount band
+  gained a derived "Annualised Yield" column that RateRow cannot represent (read and dropped,
+  same treatment as `state-bank-of-patiala/2003-portal`).
+- **A real bug found and fixed along the way, worked around locally, not in shared code**: the
+  2002-era table gained a third, open-ended "Rs. 5 crore & above" amount band at some point
+  within its own era (present by 2002-10-12; not yet present on 2002-02-04), and that capture's
+  header cells print a per-band effective date *inside* the same cell as the amount, e.g. "For
+  amount Less than Rs. 15 lacs(w.e.f. 16.09.2002)". `parseAmountBand`
+  (`collectors/src/parse/amount.ts`, shared, out of this lane) always takes the first two numbers
+  it finds anywhere in the header text for its "a to b" reading, with no idea that a
+  parenthesised note isn't part of the amount phrase -- so it read the date's "16.09" as if it
+  were a second rupee figure, producing a nonsense band. `validateCard` correctly rejected the
+  resulting card ("invalid amount band 1500000–16.09" etc.) so no wrong data reached storage, but
+  the capture's real numbers were lost. Worked around with a local `stripDateParentheticals`
+  helper in `psb-a.ts` (strips only a parenthetical that itself contains "w.e.f"/"effective" or a
+  date-shaped run of digits -- a blanket "drop anything in parentheses", which is what
+  `parseTenure` already does for tenure labels, is too aggressive here: the *later* 2003+ layout
+  wraps its *entire* band phrase in one pair of parentheses, e.g. "(For less than Rs. 15 lacs)",
+  which a blanket strip would delete outright -- confirmed by a regression test that checks both
+  shapes). The open-ended band is stored as `fd_bulk` (a third target added for it).
+- **Second real bug found and fixed: two targets sharing one URL for the same product clobber
+  each other.** Originally this was two separate targets (`bank-of-baroda/2002-interest-asp` and
+  `bank-of-baroda/2003-yield-table`) both pointed at the same `interest.asp` URL for `fd`/`nro`.
+  `collectors/src/store.ts`'s `replaceArchiveCards` (shared, out of this lane) identifies "this
+  target's earlier archive cards to replace" purely by `(bankSlug, product, sourceUrl)`, with no
+  notion of which parser produced them -- so running the 2002 target and then the 2003+ target
+  (file order) left ONLY the second one's 4 cards; the first one's 3 cards, stored moments
+  earlier by the exact same command, were silently gone. **This is a general trap, not specific
+  to this pass or this bank**: any group with a page whose layout changed over time at a fixed
+  URL, read by two different custom parsers as two different targets, will hit the same silent
+  data loss on every re-run. Fixed here by adding one combined wrapper parser,
+  `bank-of-baroda/interest-asp` (tries the 2002 shape, falls back to the 2003+ shape), and
+  pointing the actual `fd`/`nro`/`fd_bulk` targets at that single key instead -- the two original
+  parsers stay individually registered under their own keys too, for their own unit tests. See
+  also "Tooling / process notes" below.
+- **Confirmed final result** (`npx tsx backfill/wayback/run.ts --group psb-a --bank
+  bank-of-baroda --out <staging>`, all 3 targets, real run not dry-run): **7 `fd` cards + 7 `nro`
+  cards, 2002-02-04 -> 2004-11-11** (effectiveFrom dates: 2002-02-04, 2002-04-01, 2002-09-16,
+  2003-06-09, 2003-11-24, 2003-12-08, 2004-06-14), plus **1 `fd_bulk` card, 2002-09-16**. Every
+  capture from 2005-08 onward (through the range's own end, 2006-12/2007) reports "table not
+  found" under *both* sub-parsers -- a further, unread THIRD layout change, not investigated
+  this pass (see gap/lead note below).
+- Not investigated this pass: the THIRD layout the page evidently moves to by 2005-08 (still
+  30-plus monthly captures unread, 2005-08 through however far the page's archive history runs
+  past 2007), and Ledger's other 2002 BoB candidates (`personal/fixed_deposit.asp`,
+  `personal/savingsbankdeposit.asp` -- both have their own monthly-capture runs 2002-2004,
+  captures fetched via `explore.ts captures` in this pass but not yet read/parsed).
+
 ## Bank of India
 
 ### Press
@@ -200,6 +329,59 @@ See `backfill/psb-a-fd-press.ts`. Sources:
 ### Gap log / leads
 - Same as Bank of Baroda: web-archive candidates identified, not yet run through `run.ts`.
   This is the single best remaining lead in the whole group (26 monthly captures of one URL).
+
+### Ledger2: the "26 captures" lead re-checked -- it was mostly the redirect wrapper, but its
+### real neighbour URL (`Interestrate.aspx`, then `rupeetermdeposit.aspx`) is much better
+Checking `boi_tz/english/interestrate.aspx` directly (a plain CDX query, not `discover`, since
+the URL was already known): the exact URL 302-redirects every time it's crawled, and its
+`browser.htm?aspxerrorpath=...` wrapper (where the real rendered content actually lands) has
+only **2 real captures with content**, 2017-01-28 and 2017-10-20 (plus one more via a same-content,
+differently-spelled wrapper path on 2017-04-06) -- not the "26 monthly" Ledger's earlier pass
+inferred; that count likely came from a broader keyword match that also swept in unrelated
+images/redirects. **These 2-3 captures are still a valid, if thin, 2017 lead** -- not pursued
+further this pass in favour of a much better one found on the same domain:
+- `bankofindia.co.in/Interestrate.aspx` (root path, no `boi_tz` prefix) has **15 monthly
+  captures 2008-09-15 to 2012-08-14 with 8+ distinct digests** -- real rate changes throughout.
+  Fetching it, though, showed it is itself a navigation *hub* (a left-nav of links: "Saving Bank
+  Deposit Rate" -> `savingbank.aspx`, "Rupee Term Deposit Rate" -> `rupeetermdeposit.aspx", "NRI
+  Deposit Rate" -> `nritermdeposit.aspx`), not a rate table -- same dead-end pattern as Bank of
+  Maharashtra's `deposit_prod.asp` (see that bank's section). The two real pages it links to:
+  - **`rupeetermdeposit.aspx`** (7 captures, 2009-04-13 to 2012-03-15, all distinct digests):
+    one domestic-deposit table with **three** amount bands (<15 lacs / 15 lacs-<1 crore / >=1
+    crore) -- like state-bank-of-patiala/2003-portal and bank-of-baroda's parsers, this needs a
+    custom parser (RateRow can't hold 3 bands from one generic-reader pass). Several captures
+    additionally split each band into "(Existing) w.e.f. <old date>" / "Revised w.e.f. <new
+    date>" sub-columns (the page shows the just-superseded rate alongside the new one); only the
+    "Revised" sub-column is read, dated from that same cell's own printed date -- **not** from
+    the page's separate news-ticker blurb elsewhere on the page, which can (and in the one capture
+    checked by hand, does) carry a different, not-yet-tabulated date. Custom parser
+    `bank-of-india/2009-rupeetermdeposit` in `backfill/wayback/parsers/psb-a.ts`, fixture/tests
+    under the same name. The <15-lacs and 15-lacs-<1-crore bands are stored as `fd`; the >=1-crore
+    band as `fd_bulk`.
+  - **`savingbank.aspx`** (6 captures, 2009-09-23 to 2012-06-08): **not run** -- like every other
+    group's savings-web-archive leads (see `psb-b.json`'s own documented example), `run.ts`'s
+    `GenericResult`/card-building pipeline has no way to emit `savingsSlabs` (it is rows-only),
+    so a savings card needs a bespoke fetch-and-store script instead, not a `run.ts` target. Only
+    the 3 captures from 2012-03-15 onward would even be bank-specific-worthy (savings was still
+    RBI-regulated before 25 Oct 2011) -- modest value for the bespoke-script effort it would
+    take; logged as a lead, not built this pass.
+- **Confirmed final result** (`npx tsx backfill/wayback/run.ts --group psb-a --bank
+  bank-of-india --out <staging>`, real run not dry-run): **2 `fd` cards + 2 `fd_bulk` cards,
+  2009-01-19 -> 2010-02-10** (effectiveFrom dates read from each capture's own "Revised w.e.f."
+  cell, not the capture date itself -- the 2009-04-13 capture's rates were actually already in
+  force from 2009-01-19). By late 2011 the table's own shape changes again (checked by hand on
+  the 2011-10-06 capture): the domestic table splits into TWO tables by tenure range (a short-
+  tenor one keeping the "(Existing)/Revised" split but with the upper amount band's own boundary
+  changed AGAIN, this time to "Rs.1 crore and above but less than Rs.10 crore" rather than
+  open-ended, and a separate longer-tenor table reverting to the older two-band "Annualised
+  Rate of Return" style) -- **not pursued further this pass**; a third custom parser variant
+  would be needed to reach 2011-2012, logged as a lead rather than attempted, given the group's
+  remaining time budget.
+- Other candidates Ledger listed (`cardrate/ListcardRate.aspx`, `depositservice.aspx` variants,
+  `boisavings.aspx`, `depositsch.aspx` variants, `cardrate/Interestrate.aspx`) not re-checked
+  this pass -- `rupeetermdeposit.aspx`/`savingbank.aspx` look like the more central, longer-lived
+  pages (linked directly from the bank's own top-level `Interestrate.aspx` hub), so they were
+  prioritised first.
 
 ## Canara Bank
 
@@ -231,6 +413,33 @@ See `backfill/psb-a-fd-press.ts`. Sources:
   rate) and the 2007-08-01 scheme rate found so far.
 - Savings, RD: not started. Bulk: one 2013 card above; earlier bulk history not pursued.
 
+### Ledger2: keyword-free `canarabank.com` sample -- found a promising lead, not yet fetched
+Ran a plain `cdx` query on `canarabank.com/*` (no interest/deposit/rate keyword filter,
+`collapse=urlkey`, capped at 400 rows -- CDX's own sort order is roughly alphabetical by path, so
+400 rows only reaches as far as `English/scripts/B*`; a full survey would need a much higher cap
+or several keyword-scoped passes). Two findings:
+- The domain's only capture before 2003 is the bare root page (`canarabank.com/`, 1999-10-08);
+  everything else in 2003-2004 is SEO-spam/typosquat-era junk (`?term=casinos`,
+  `?term=car+financing`, etc. -- not the bank's real site at that time) or gambling-site clutter
+  (`7Sultans_Casino.html`) -- consistent with Ledger's own note that the domain may not have been
+  under the bank's control, or was parked, before its real 2006+ content shows up.
+- **`canarabank.com/English/downloads/FD-KD-RD-NNND-CARD.htm`** -- the filename alone ("FD-KD-RD"
+  = Fixed/Kisan/Recurring Deposit, "CARD" being this project's own term for a rate table) is a
+  strong candidate this project's own `discoverRateUrls` keyword filter would have caught had the
+  filename been lowercase (the filter regex is applied to the raw CDX `original` field, and this
+  URL's "FD"/"RD" are uppercase -- worth flagging as a possible reason other useful uppercase-
+  cased URLs across ANY bank/group could be silently missed by `discover`, though fixing the
+  shared `discoverRateUrls` filter itself is out of this group's lane). It has **20 monthly
+  captures, 2008-01-01 to 2012-10-29 -- but every single one shares the exact same content
+  digest.** That is a red flag, not a good sign: either the page is a static definitions/FAQ page
+  that was never live-updated (most likely, given the name pattered after other Canara
+  `*.htm` -Application-form-style static downloads seen in the same directory), or it is a
+  one-time archived brochure. **Not fetched/read in this pass** (would cost one more archive
+  request under heavy contention at the time) -- worth a quick `fetch` before writing it off
+  entirely, but the single-digest-across-5-years signal makes it a low-probability lead.
+- Not attempted: a `canarabank.co.in` legacy-domain check, or keyword-scoped passes deeper into
+  the alphabet (`C` onward) than this one 400-row sample reached.
+
 ## Central Bank of India
 
 ### Press
@@ -254,6 +463,41 @@ See `backfill/psb-a-fd-press.ts`. Source:
   confirm with the live collector's own coverage before treating pre-1999 as unrecoverable).
   Savings, RD, bulk: not started.
 
+### Ledger2: five more press cards (Aug 2010 - Mar 2012), all sourced from one union blog
+Found via Exa search (not the retried `centralbankofindia.co.in` discover above, which was not
+re-attempted this pass -- still an open lead). Source: Central Bank Officers' Association
+(Andhra Pradesh) blog, `cboaapunit.blogspot.com`, posted 1 Dec 2010, reproducing the bank's own
+w.e.f. 09.12.2010 rate circular **verbatim as a table**, explicitly citing the bank's own page as
+its source (`centralbankofindia.co.in/site/Interest.aspx` -- printed on the blog post itself,
+not independently confirmed via the Internet Archive in this pass, see below). Stored as
+`sourceType: "press"` / `confidence: "low"` like every other press card in this project (it is a
+secondary re-print, not the bank's own site), via `backfill/psb-a-fd-press-ledger2.ts`:
+- `fd_bulk` (>= Rs 1 crore), effectiveFrom 2010-08-09: the circular's own "Existing ... w.e.f
+  09.08.10" column for the bulk schedule (unchanged by the Dec revision, which only touched the
+  below-1-crore schedule) -- full 11-row table, 7 days to 7-years-and-above.
+- `fd` (< Rs 1 crore), effectiveFrom 2010-11-08: the circular's "Existing ... w.e.f 08.11.2010"
+  column -- full 11-row table, i.e. the schedule immediately before the Dec revision.
+- `fd` (< Rs 1 crore), effectiveFrom 2010-12-09: the circular's "Revised ... w.e.f 09.12.2010"
+  column -- the revision itself, full 11-row table, plus a named "Cent Super Plus" 555-day
+  scheme row (8.55%, up from an undated-but-mentioned 8.00% -- only the dated figure is stored).
+- `fd` (partial, 4 rows), effectiveFrom 2011-04-01: Economic Times (PTI), 4 Apr 2011, "Central
+  Bank of India slashes fixed deposit rates by up to 1%" -- cuts on 91-179d, 180-364d (merged
+  bucket, differs from the Dec-2010 circular's 180-269/270-364 split -- stored as printed, not
+  reconciled), 1yr-<2yr, and the Cent Super Plus scheme (9.25%, from 9.6%). The article notes the
+  bank "had last raised fixed deposit rates in the first week of March" 2011, so this card and
+  the Dec-2010 one are NOT adjacent revisions of each other -- Jan-Mar 2011 is a real gap.
+- `fd` (partial, 3 rows, short end only), effectiveFrom 2012-03-12: The Hindu Business Line, "Central
+  Bank of India hikes short-term rates" -- a sharp short-end-only hike (7-14d/15-45d/46-90d all
+  to 9%, from 2.5%/5%/5.25%) amid a system-wide liquidity crunch.
+- **Lead, not pursued**: `centralbankofindia.co.in/site/Interest.aspx` (the bank's own page cited
+  by the blog above) would upgrade these from press/low to web_archive/medium if the Internet
+  Archive holds captures of it -- not checked in this pass (the earlier `discover` attempt on
+  this domain, logged above, returned nothing but was flagged as possibly under-searched due to
+  contention; worth a direct `captures` call on this specific path rather than a fresh keyword
+  `discover`).
+- **Still a near-total gap**: 1999-01 to 2010-08 (11+ years) and 2012-03 onward until the live
+  collector's own coverage begins. Savings, RD not started.
+
 ## Bank of Maharashtra
 
 ### Press
@@ -275,6 +519,18 @@ See `backfill/psb-a-fd-press.ts`. Source:
 - Everything except the one 2010-12-15 press card is a gap. The web-archive leads above are not
   yet run through `run.ts`.
 
+### Ledger2: `deposit_prod.asp` checked and found to be a dead end (not a rate table)
+Fetched the earliest capture (2006-04-19). It is a scheme-*description* page (features,
+eligibility, minimum amounts for "Mahabank Yuva Yojana", "Fixed Deposit Scheme (FDR)",
+"Recurring Deposit Scheme", etc., each linked from an in-page nav as a same-page anchor
+`deposit_prod.asp#N`), not a rate table -- the whole page's text contains exactly two "%" figures
+and neither is a deposit rate (one is a 1% loan-processing-fee waiver, the other a 75%
+withdrawal-limit feature description). **Not pursued further under this URL.** `deposit.asp`
+(2008-09-22 onward, a different, later URL Ledger also found) was not checked this pass --
+worth trying next, since a bank splitting scheme-*descriptions* onto one URL and moving actual
+*rates* to a differently-named page is a common pattern (matches how SBI itself split
+`interest.htm` into per-product pages around 2000-2001, per that bank's own section above).
+
 ## Predecessors (SBI associates, Bharatiya Mahila Bank, Dena Bank, Vijaya Bank, Syndicate Bank,
 ## Imperial Bank / Presidency banks)
 
@@ -282,13 +538,31 @@ See `backfill/psb-a-fd-press.ts`. Source:
   days: 8.9% from 9.5%; 500 days-<2yr: 9% from 9.6%, both eff. 1 Aug 2007) -- see
   `backfill/psb-a-fd-press.ts` (stored under bankSlug `syndicate-bank`, kept in the same
   script as Canara/BoI since all three rates come from one article).
-- **Dena Bank, Vijaya Bank**: no dated primary/press source found yet with an explicit rate
-  *and* date (the multi-bank comparison table found, dsij.in 2013-10-29, reads like a
-  point-in-time rate-shopping round-up rather than a report of a specific bank announcement, and
-  its per-bank numbers are not corroborated elsewhere in this pass -- **not used**, logged as a
-  lead only, given the brief's instruction to avoid aggregator-style sources). No web-archive
-  domain pursued yet either (`denabank.com`/`vijayabank.com` not run through `discover` in this
-  pass -- **lead, not started**).
+- **Dena Bank, Vijaya Bank** (Ledger2): Ledger found no dated source with an explicit rate for
+  either (the dsij.in 2013-10-29 comparison table remains correctly unused, per the brief's rule
+  against aggregator-style round-ups). This pass found real newspaper/wire-service coverage for
+  both via Exa search, giving each its **first card of any kind** in this dataset, stored via
+  `backfill/psb-a-fd-press-ledger2.ts`:
+  - **Dena Bank** `fd`: Zee News (Bureau), 2 Jun 2003, "Dena Bank to cut interest rate on
+    domestic deposits by 0.25 pc" -- 91-179d 5.25%, 180d-<1yr 5.50%, 1yr-<3yr 6.00%, 3yr+ 6.25%,
+    explicitly no change to other buckets, eff. 5 Jun 2003 (4 rows). The Hindu Business Line,
+    24 Dec 2012, "Dena Bank hikes term deposit rates by 35 bps on 1-2 yr tenor" -- 1yr-<2yr 9.10%
+    (from 8.75%), eff. 22 Dec 2012 (1 row). Business Standard (PTI), 21 Nov 2016, "Dena Bank cuts
+    deposit rates by up to 50 basis points" -- 180-270d 6.50% (from 7.00%), 271d-<2yr 7.00%
+    (from 7.25%), eff. 21 Nov 2016 (2 rows).
+  - **Vijaya Bank** `fd`: The Hindu Business Line, 3 Apr 2012, "Vijaya Bank hikes domestic, NRE
+    term deposit rates" -- below Rs 5 crore, 180d-<1yr 8.50%, 1yr-<2yr 9.60%, 2yr-<3yr 9.50%,
+    3yr-<5yr 9.30%, 5yr+ 9.25%, eff. 1 Apr 2012 (5 rows; the article states the four 1yr+ rates
+    apply equally to NRE deposits, an unused but ready lead). The Hindu, 18 Oct 2014, "Vijaya
+    Bank to cut interest on special term deposit scheme" -- named "Vijaya 444" scheme (444-day),
+    9.05% (from 9.15%), eff. 20 Oct 2014 (1 row). Business Standard/Moneycontrol (PTI),
+    12 Apr 2016, "Vijaya Bank cuts term deposit interest rates by 25 bps" -- only the 1-year
+    tenor's resulting number is printed (7.50%, from 7.75%), eff. 12 Apr 2016 (1 row); the
+    article's own "different slabs from 91 days to above five years" phrasing is not turned into
+    other rows since no other resulting number is printed.
+  - **Not pursued this pass**: `denabank.com`/`vijayabank.com` web-archive `discover` (still a
+    lead -- a genuine archive capture of either bank's own page would be stronger evidence than
+    press, and might reach further back than 2003).
 - **State Bank of Mysore** (target `psb-a.json`, bankSlug `state-bank-of-mysore`, no custom
   parser needed): `mysorebank.com/int_rates.htm` has 8 monthly captures 2003-10-27..2004-12-12
   with several distinct digests. Page's "Interest Rates on Domestic Term Deposits" table is a
@@ -349,19 +623,53 @@ See `backfill/psb-a-fd-press.ts`. Source:
   `deposits.asp` (2006), `advances_termdepositreciepts.asp` (2006) and later Wordpress-era pages
   (2012+, mostly navigation/corporate-governance, one rate-comparison page
   "compare-our-savings-accounts") -- **leads, not yet fetched/read** in this pass.
-- **State Bank of Bikaner & Jaipur**: `sbbjbank.com` discover (completed late in this pass, not
-  yet followed up) found strong early candidates: `deposit.htm` (2001-03-01), `interest.htm`
-  (2001-03-02), `interest_nri.htm` (2001-03-02), `deposite.htm` (2001-04-30), and from a 2006
-  redesign `Tools/interest_rates.htm` (2006-09-02) and `P&SB/interest_old.htm` (2006-05-18, whose
-  name alone suggests an on-site historical-rates page, same pattern as the bank-archive scripts
-  elsewhere in this project) -- **strong leads, not yet fetched/read** in this pass.
+- **State Bank of Bikaner & Jaipur** (Ledger2, following up Ledger's own lead -- target
+  `psb-a.json`, parser `state-bank-of-bikaner-and-jaipur/2001-domestic-term-deposit`):
+  `sbbjbank.com/interest.htm` has **18 monthly captures, 2001-03-02..2006-05-05, 8+ distinct
+  digests**. One "Revised Interst Rate on Domestic Term Deposit" table (the bank's own
+  misspelling of "Interest", not a transcription typo introduced here), dated directly in its
+  own title row ("w.e.f. 12.02.2001" on the first capture). Four deposit-size bands: "Normal
+  Rates" (<15 lacs) plus three "Differential Rates on Single Deposits Only" bands (15
+  lacs-<1 crore, 1 crore-<5 crore, 5 crore & above) -- each differential cell prints the rate
+  *and* its delta over the Normal rate in one cell, e.g. "5.50 (0.50)"; the parenthesised delta
+  is stripped before reading the rate (a per-cell footnote-style suffix, distinct from the
+  shared amount-band-header bug found on Bank of Baroda's page -- see that bank's section).
+  Below-1-crore bands stored as `fd`; the two >=1-crore bands as `fd_bulk`. The title says
+  "Domestic Term Deposit" only (no NRO/NRE), so NRI rates are not read from this page --
+  `interest_nri.htm` (captured the same day, 2001-03-02) is a ready, unpursued lead for those.
+  **First predecessor bank in this whole group with any staged card.**
+  **Confirmed final result** (real run, not dry-run): **2 `fd` cards + 2 `fd_bulk` cards,
+  spanning 2001-03-02 -> 2002-04-18** (effectiveFrom 2001-02-12 for the first group; the second
+  group's own title text did not yield a readable date via `findEffectiveDate`, so that card is
+  correctly `confidence: "low"` with a null `effectiveFrom` and only an observed range,
+  2002-03-06 to 2002-04-18, rather than a guessed date). As with Bank of Baroda/Bank of India
+  above, the page's layout does **not** hold constant for the rest of its capture range: by
+  2002-06-16 the "Revised Interst Rate..." title and its clean 4-band table are gone, replaced
+  by a page mixing PLR/PTLR (lending rates) with a differently-organised deposit-rate section
+  (checked by hand; not pursued further into a third parser variant this pass -- logged as a
+  lead for 2002-06 onward, alongside the still-untried `deposit.htm`, `deposite.htm`,
+  `Tools/interest_rates.htm` and `P&SB/interest_old.htm` candidates below).
+  Other `sbbjbank.com` candidates Ledger found (`deposit.htm`, `deposite.htm`,
+  `Tools/interest_rates.htm`, `P&SB/interest_old.htm` -- the last name alone suggesting an
+  on-site historical-rates page) not re-checked this pass; `interest.htm` was the strongest
+  single lead and was prioritised first.
 - **State Bank of Travancore**: `sbtonline.in` checked (it is SBT's *netbanking* portal, not the
   public site) -- only login/security/FAQ pages found, no rate table in HTML; one image
   `sbijava/images/p_interest.png` (2014) looks like a rendered rate table but OCR is out of scope
   for these tools. No public-site domain for SBT identified/tried yet. **Lead, not otherwise
   pursued.**
-- **State Bank of Saurashtra, State Bank of Indore, Bharatiya Mahila Bank**: no candidate domain
-  identified yet for any of these three. **Leads, not started.**
+- **State Bank of Saurashtra, State Bank of Indore**: no candidate domain identified yet for
+  either. **Leads, not started.**
+- **Bharatiya Mahila Bank** (Ledger2): its own domain, `bmb.co.in` (confirmed via Wikipedia's own
+  citation of it, and the bank's IFSC-lookup listing on prokerala.com), is **now a parked
+  domain-for-sale page** (sedoparking.com placeholder) -- not conclusive proof the Internet
+  Archive holds nothing from when the bank was live (2013-2017), but a discouraging sign, and not
+  checked via `discover`/`captures` in this pass. Every dated-press search for BMB-specific rate
+  news returned only aggregator listing pages (Wishfin, Policybazaar, a `cibilp.blogspot.com`
+  post that reads current-as-of-publish rates rather than reporting a specific bank announcement)
+  -- none used, per the brief's rule against aggregator-style sources. **Lead, not otherwise
+  pursued**; BMB only existed 2013-2017 before merging into SBI, so the ceiling on how much
+  history there is to find here is low regardless.
 - Non-aggregator dated press coverage for any SBI associate was searched for (Exa) but not
   found: every associate-bank result was from an explicit aggregator (Wishfin, Policybazaar,
   CreditMantri) and excluded per the brief's rule against aggregator sources.
@@ -394,6 +702,35 @@ Hyderabad, Bikaner & Jaipur, Travancore, Saurashtra, Indore, Bharatiya Mahila Ba
 Vijaya Bank; Imperial Bank / Presidency banks) has no staged card yet -- see the gap/lead notes
 per bank above.
 
+## Ledger2 staged output summary (as of this pass)
+Everything below is under `/agent/workspace/private/history-staging/Ledger2/data/rates/` --
+a separate staging root from Ledger's own (above), never written into the repo directly, and not
+overlapping with anything Ledger staged (no bank/product pair below was already covered by
+Ledger's own table). All numbers below are from re-reading the actual staged JSON files after
+every card in this pass was stored for real (not from a dry run).
+
+| Bank | Product | Cards | Source types | Earliest -> latest (effectiveFrom) |
+| --- | --- | --- | --- | --- |
+| sbi | fd | 2 | press | 2004-11-29 -> 2007-08-09 |
+| bank-of-baroda | fd | 7 | web_archive | 2002-02-04 -> 2004-06-14 |
+| bank-of-baroda | nro | 7 | web_archive | 2002-02-04 -> 2004-06-14 |
+| bank-of-baroda | fd_bulk | 1 | web_archive | 2002-09-16 |
+| bank-of-india | fd | 2 | web_archive | 2009-01-19 -> 2009-11-27 |
+| bank-of-india | fd_bulk | 2 | web_archive | 2009-01-19 -> 2009-11-27 |
+| central-bank-of-india | fd | 4 | press | 2010-11-08 -> 2012-03-12 |
+| central-bank-of-india | fd_bulk | 1 | press | 2010-08-09 |
+| dena-bank | fd | 3 | press | 2003-06-05 -> 2016-11-21 |
+| vijaya-bank | fd | 3 | press | 2012-04-01 -> 2016-04-12 |
+| state-bank-of-bikaner-and-jaipur | fd | 2 | web_archive | 2001-02-12 -> (undated, observed 2002-03-06/2002-04-18) |
+| state-bank-of-bikaner-and-jaipur | fd_bulk | 2 | web_archive | 2001-02-12 -> (undated, observed 2002-03-06/2002-04-18) |
+
+These add to (never replace) Ledger's own cards for sbi/bank-of-baroda/bank-of-india, and are the
+first cards of any kind for dena-bank, vijaya-bank and state-bank-of-bikaner-and-jaipur (the
+first predecessor bank in this whole group with any staged card at all). Canara Bank and Bank of
+Maharashtra have no new staged cards this pass (both were investigated -- see their own sections
+above -- but every lead either turned out to be a dead end or was left as an unpursued lead, not
+a card).
+
 ## Tooling / process notes
 - The Internet Archive rate limit was heavily contended throughout this session by several other
   researchers' background jobs running in parallel (confirmed via `ps aux`, saw concurrent
@@ -413,3 +750,42 @@ per bank above.
   un-awaited possibly-`Promise` parser result. Confirmed none of this group's own files caused
   or are affected by it; left as-is since it is outside this group's lane and looked like another
   researcher's in-progress edit.
+
+### Ledger2 additions
+- **Archive contention was severe throughout this pass**, well beyond what Ledger describes --
+  `ps aux` regularly showed 20-40+ concurrent `explore.ts`/`run.ts` processes from other
+  researchers (Annal, Scribe/Scribe2, Tidemark, Vellum and others). At one point the shared
+  `/agent/workspace/private/wayback/.throttle.backoff` file was consistently set to a timestamp
+  *in the future* (checked directly), confirming the archive itself was returning enough
+  429/5xx responses that the shared backoff mechanism was genuinely active, not just the normal
+  per-request gap -- a plain `run.ts --dry-run` on one bank took several minutes wall-clock more
+  than once. This is the politeness mechanism working exactly as designed under real load, not a
+  bug; a future pass at a similarly contended time should expect the same and plan for
+  long-running background jobs rather than short foreground ones.
+- **Two shared-code findings from this pass, both worked around locally, neither fixed in shared
+  code (out of this group's lane)** -- full detail under Bank of Baroda's own section above:
+  1. `collectors/src/parse/amount.ts`'s `parseAmountBand` can misread a header cell that mixes an
+     amount with an unrelated parenthesised date (e.g. "Less than Rs. 15 lacs(w.e.f.
+     16.09.2002)"), taking the date's digits as if they were a second rupee figure. Confirmed on
+     a live bankofbaroda.com/interest.asp capture; `validateCard` caught the resulting nonsense
+     band before storage, but the capture's real data was lost until worked around.
+  2. `collectors/src/store.ts`'s `replaceArchiveCards` scopes "this target's earlier cards" by
+     `(bankSlug, product, sourceUrl)` only, with no notion of which parser produced them. Two
+     targets sharing one URL for the same product (needed here because bankofbaroda.com's
+     `interest.asp` changed layout, at a fixed URL, partway through the period being read) will
+     silently clobber each other's stored cards on every re-run, in file order -- confirmed live.
+     **Any group with a similarly long-lived, layout-changing-but-same-URL page should combine
+     eras into one wrapper parser under one target, not split them into separate targets**, or
+     risk losing data the same way.
+- `collectors/src/parse/common.ts` and `backfill/wayback/generic-parse.ts` were both being
+  actively rewritten by another researcher during this pass (uncommitted changes observed
+  mid-edit via `git diff`, including a new product-aware table-heading-scoring system and a
+  generic amount-tiered-column reader added to `generic-parse.ts` -- notably, a
+  shared-code-level version of the same "amount bands as separate columns" problem this group's
+  custom parsers had to solve by hand for Bank of Baroda/Bank of India; a future pass may find
+  the generic reader already handles some of what needed a custom parser here). `npx vitest run`
+  on this group's own test file twice showed 1-2 unrelated, pre-existing tests fail with a null
+  date where they normally pass; re-running secure moments later (and consistently thereafter)
+  showed all tests passing again both times, consistent with the other edit landing mid-file-write
+  rather than a real regression -- but it means a lone red test run during a period of visible
+  shared-file churn is worth a re-run before trusting it.

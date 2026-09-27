@@ -59,7 +59,10 @@ function main() {
       const summary = { bank: pf.bankSlug, product: pf.product, archiveUrls: archive.size, archiveCards: 0, removed: 0, otherInserted: 0, unchanged: 0, rejected: [] as string[], skippedLive: live };
       if (!dryRun) {
         for (const [url, list] of archive) {
-          const r = replaceArchiveCards(root, pf.bankSlug, pf.product, url, list);
+          // Replace only the span these staged cards cover (another era of the same URL stays).
+          const dates = list.map((c) => c.observedFrom ?? c.effectiveFrom ?? c.observedAt).sort();
+          const ends = list.map((c) => c.observedTo ?? c.observedFrom ?? c.effectiveFrom ?? c.observedAt).sort();
+          const r = replaceArchiveCards(root, pf.bankSlug, pf.product, url, list, { from: dates[0], to: ends.at(-1) });
           summary.archiveCards += r.inserted;
           summary.removed += r.removed;
           summary.rejected.push(...r.rejected);

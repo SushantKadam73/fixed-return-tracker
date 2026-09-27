@@ -5,6 +5,153 @@
   {
    "bankSlug": "central-bank-of-india",
    "product": "fd_bulk",
+   "effectiveFrom": "2010-08-09",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "http://cboaapunit.blogspot.com/2010/12/central-bank-of-india-revises-interest.html",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 7,
+     "tenureMaxDays": 14,
+     "tenureLabel": "7 days to 14 days",
+     "amountMin": 10000000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4
+    },
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days to 45 days",
+     "amountMin": 10000000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46 days to 90 days",
+     "amountMin": 10000000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.5
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91 days to 179 days",
+     "amountMin": 10000000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 269,
+     "tenureLabel": "180 days to 269 days",
+     "amountMin": 10000000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.25
+    },
+    {
+     "tenureMinDays": 270,
+     "tenureMaxDays": 364,
+     "tenureLabel": "270 days to 364 days",
+     "amountMin": 10000000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.5
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 year to less than 2 years",
+     "amountMin": 10000000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 years to less than 3 years",
+     "amountMin": 10000000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 1824,
+     "tenureLabel": "3 years to less than 5 years",
+     "amountMin": 10000000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7
+    },
+    {
+     "tenureMinDays": 1825,
+     "tenureMaxDays": 2554,
+     "tenureLabel": "5 years to less than 7 years",
+     "amountMin": 10000000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7
+    },
+    {
+     "tenureMinDays": 2555,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "7 years and above",
+     "amountMin": 10000000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7
+    }
+   ],
+   "notes": [
+    "Central Bank Officers' Association (Andhra Pradesh) blog, posted 1 Dec 2010, reproducing the bank's own w.e.f. 09.12.2010 revision circular (source cited on the post itself: centralbankofindia.co.in/site/Interest.aspx). This is the circular's 'Rates For Deposits Rs. 1 Crore and above, Existing Rates w.e.f 09.08.10' column -- i.e. the bulk-deposit schedule that was still in force (unchanged by the Dec 2010 revision, which only touched the below-Rs-1-crore schedule) immediately before this revision. Stored as fd_bulk, amountMin Rs 1 crore."
+   ],
+   "contentHash": "ff3422d91084bb3c"
+  },
+  {
+   "bankSlug": "central-bank-of-india",
+   "product": "fd_bulk",
    "effectiveFrom": null,
    "observedAt": "2026-09-27",
    "sourceType": "bank_official",

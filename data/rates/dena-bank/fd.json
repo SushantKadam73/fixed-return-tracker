@@ -1,0 +1,135 @@
+{
+ "bankSlug": "dena-bank",
+ "product": "fd",
+ "cards": [
+  {
+   "bankSlug": "dena-bank",
+   "product": "fd",
+   "effectiveFrom": "2003-06-05",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://zeenews.india.com/home/dena-bank-to-cut-interest-rate-on-domestic-deposits-by-025-pc_102321.html",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91 days to 179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.25
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 364,
+     "tenureLabel": "180 days to less than 1 year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.5
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "1 year to less than 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.25
+    }
+   ],
+   "notes": [
+    "Zee News (Bureau), 2 Jun 2003, \"Dena Bank to cut interest rate on domestic deposits by 0.25 pc\": cut of 0.25pp on maturities of 91 days and above, effective 5 Jun 2003. Explicitly states no change to other (shorter) maturity periods, so only these four rows are stored. This is Dena Bank's first card in this dataset."
+   ],
+   "contentHash": "f76c11c9c7d4c8cd"
+  },
+  {
+   "bankSlug": "dena-bank",
+   "product": "fd",
+   "effectiveFrom": "2012-12-22",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://www.thehindubusinessline.com/money-and-banking/dena-bank-hikes-term-deposit-rates-by-35-bps-on-1-2-yr-tenor/article23094748.ece",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 year to less than 2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 9.1
+    }
+   ],
+   "notes": [
+    "The Hindu Business Line, 24 Dec 2012, \"Dena Bank hikes term deposit rates by 35 bps on 1-2 yr tenor\": 1yr-<2yr raised 35bps to 9.10% (from 8.75%), effective 22 Dec 2012. Only this one tenor is given."
+   ],
+   "contentHash": "7a11190778f960c5"
+  },
+  {
+   "bankSlug": "dena-bank",
+   "product": "fd",
+   "effectiveFrom": "2016-11-21",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://www.business-standard.com/article/pti-stories/dena-bank-cuts-deposit-rates-by-up-to-50-basis-points-116112101086_1.html",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 270,
+     "tenureLabel": "180 days to 270 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.5
+    },
+    {
+     "tenureMinDays": 271,
+     "tenureMaxDays": 729,
+     "tenureLabel": "271 days to less than 2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7
+    }
+   ],
+   "notes": [
+    "Business Standard (PTI), 21 Nov 2016, \"Dena Bank cuts deposit rates by up to 50 basis points\": 180-270 days cut 50bps to 6.50% (from 7.00%), 271 days-<2yr cut 25bps to 7.00% (from 7.25%), both effective the article's own publication date (21 Nov 2016, 'with effect from today'). Only these two buckets are given."
+   ],
+   "contentHash": "5be0a62eca97cbbd"
+  }
+ ]
+}

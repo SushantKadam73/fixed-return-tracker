@@ -95,6 +95,76 @@
    "to": "2005",
    "parser": "state-bank-of-patiala/2003-portal",
    "note": "State Bank of Patiala's own 'Interest Rates on Deposits' table, 5 monthly captures 2003-04-14..2004-12-05 (a same-URL uppercase variant sbp.co.in/INTERESTRATE.HTM has 4 more captures interleaved across the same span, not pursued separately in this pass). This table splits rates by deposit amount (below/above Rs 15 lakh) plus a third derived-yield column -- see state-bank-of-patiala/2003-portal in backfill/wayback/parsers/psb-a.ts. The same page also carries housing-loan/PLR/agriculture-advance *lending* rates further down, out of scope here."
+  },
+  {
+   "bankSlug": "bank-of-baroda",
+   "url": "bankofbaroda.com/interest.asp",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2001",
+   "to": "2007",
+   "parser": "bank-of-baroda/interest-asp",
+   "note": "Bank of Baroda's own domestic-deposit table on this page, monthly captures 2002-02-04..2007+, spanning two layouts: 2002's 'DOMESTIC TERM DEPOSITS, NON-RESIDENT (ORDINARY) AND NON-RESIDENT SPECIAL RUPEE(NRSR) DEPOSITS' table (bare leading Sr.No column, amount bands below/15-lacs-to-1-crore, later expanding a third 5-crore-and-above band) and mid-2003's restyled 'Domestic Term & NRO Deposits' table (no Sr.No column, amount bands below/15-lacs-to-5-crore, a derived Annualised Yield column per band). IMPORTANT: this one target/parser combines both eras deliberately -- collectors/src/store.ts's replaceArchiveCards keys a target's stored cards purely by (bankSlug, product, sourceUrl), so two separate targets sharing this same URL/product would each wipe out the other's cards on every re-run (confirmed live). See bank-of-baroda/interest-asp in backfill/wayback/parsers/psb-a.ts (a thin wrapper trying the 2002 parser then the 2003+ one; both stay individually registered/tested under their own keys too)."
+  },
+  {
+   "bankSlug": "bank-of-baroda",
+   "url": "bankofbaroda.com/interest.asp",
+   "product": "nro",
+   "amountMax": null,
+   "from": "2001",
+   "to": "2007",
+   "parser": "bank-of-baroda/interest-asp",
+   "note": "Same captures/table/two-era wrapper as the fd target above; both layouts' headings state the schedule covers domestic (resident) AND non-resident-ordinary deposits together, so identical rows are also stored tagged residency nro."
+  },
+  {
+   "bankSlug": "bank-of-baroda",
+   "url": "bankofbaroda.com/interest.asp",
+   "product": "fd_bulk",
+   "amountMax": null,
+   "from": "2001",
+   "to": "2007",
+   "parser": "bank-of-baroda/interest-asp",
+   "note": "Same captures/table/two-era wrapper; the 2002-era layout's third, open-ended 'Rs. 5 crore & above' amount band (present by 2002-10-12, not yet present on 2002-02-04) is stored here as fd_bulk. Captures whose table only has finite-upper-bound bands (including the whole 2003+ era, which was not observed to carry a third band) correctly report no rows for this product, not an error."
+  },
+  {
+   "bankSlug": "bank-of-india",
+   "url": "bankofindia.co.in/rupeetermdeposit.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2009",
+   "to": "2013",
+   "parser": "bank-of-india/2009-rupeetermdeposit",
+   "note": "Bank of India's own domestic rupee term-deposit page, linked from the bank's top-level Interestrate.aspx hub (itself just a nav page, not a rate table). 7 monthly captures 2009-04-13..2012-03-15, all distinct digests. Table splits into three amount bands (<15 lacs / 15 lacs-<1 crore / >=1 crore) and several captures further split each band into '(Existing)'/'Revised' sub-columns -- only 'Revised' is read, dated from that cell's own w.e.f., not the page's separate news-ticker date. The below-1-crore bands are stored here as fd; see the fd_bulk target below for the >=1 crore band. See bank-of-india/2009-rupeetermdeposit in backfill/wayback/parsers/psb-a.ts."
+  },
+  {
+   "bankSlug": "bank-of-india",
+   "url": "bankofindia.co.in/rupeetermdeposit.aspx",
+   "product": "fd_bulk",
+   "amountMax": null,
+   "from": "2009",
+   "to": "2013",
+   "parser": "bank-of-india/2009-rupeetermdeposit",
+   "note": "Same captures and table as the fd target above; the table's own open-ended 'Rs.1 crore & above' band, stored separately as fd_bulk."
+  },
+  {
+   "bankSlug": "state-bank-of-bikaner-and-jaipur",
+   "url": "sbbjbank.com/interest.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2000",
+   "to": "2007",
+   "parser": "state-bank-of-bikaner-and-jaipur/2001-domestic-term-deposit",
+   "note": "State Bank of Bikaner & Jaipur's own 'Revised Interst Rate on Domestic Term Deposit' table (the bank's own misspelling), 18 monthly captures 2001-03-02..2006-05-05 with 8+ distinct digests. Four deposit-size bands (Normal Rates for <15 lacs, then three 'Differential Rates on Single Deposits Only' bands: 15 lacs-<1 crore, 1 crore-<5 crore, 5 crore & above), each differential cell printing the rate plus its delta over the Normal rate in one cell, e.g. '5.50 (0.50)' -- the delta suffix is stripped before reading the rate. Below-1-crore bands stored here as fd; see the fd_bulk target below for the two >=1 crore bands. First predecessor bank in this group with any staged card. See state-bank-of-bikaner-and-jaipur/2001-domestic-term-deposit in backfill/wayback/parsers/psb-a.ts."
+  },
+  {
+   "bankSlug": "state-bank-of-bikaner-and-jaipur",
+   "url": "sbbjbank.com/interest.htm",
+   "product": "fd_bulk",
+   "amountMax": null,
+   "from": "2000",
+   "to": "2007",
+   "parser": "state-bank-of-bikaner-and-jaipur/2001-domestic-term-deposit",
+   "note": "Same captures and table as the fd target above; the two 1-crore-and-above differential-rate bands, stored as fd_bulk."
   }
  ]
 }

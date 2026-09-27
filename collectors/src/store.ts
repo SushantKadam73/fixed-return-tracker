@@ -134,9 +134,9 @@ export function storeHistoricalCard(root: string, input: RateCard): StoreOutcome
 }
 
 /**
- * Replace every web-archive card previously reconstructed from `sourceUrl` for this bank and
- * product with a fresh set, so re-running a backfill target (e.g. after a parser fix) never
- * leaves duplicates. Cards that fail validation are skipped and reported.
+ * Replace the web-archive cards previously reconstructed from `sourceUrl` for this bank and
+ * product (within the given date window) with a fresh set, so re-running a backfill target (e.g.
+ * after a parser fix) never leaves duplicates. Cards that fail validation are skipped and reported.
  */
 export function replaceArchiveCards(
   root: string,
@@ -144,10 +144,19 @@ export function replaceArchiveCards(
   product: Product,
   sourceUrl: string,
   cards: RateCard[],
+  /**
+   * Only earlier cards whose date falls in this window are replaced (YYYY-MM-DD, inclusive), so two
+   * targets reading different eras of one long-lived URL never wipe each other's cards.
+   */
+  window?: { from?: string | null; to?: string | null },
 ): { inserted: number; removed: number; rejected: string[] } {
   const pf = loadProduct(root, bankSlug, product);
   const before = pf.cards.length;
-  pf.cards = pf.cards.filter((c) => !(c.sourceType === "web_archive" && c.sourceUrl === sourceUrl));
+  const inWindow = (c: StoredCard) => {
+    const d = c.observedFrom ?? c.effectiveFrom ?? c.observedAt;
+    return (!window?.from || d >= window.from) && (!window?.to || d <= window.to);
+  };
+  pf.cards = pf.cards.filter((c) => !(c.sourceType === "web_archive" && c.sourceUrl === sourceUrl && inWindow(c)));
   const removed = before - pf.cards.length;
   const rejected: string[] = [];
   let inserted = 0;

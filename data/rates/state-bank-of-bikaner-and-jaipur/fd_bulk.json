@@ -1,0 +1,236 @@
+{
+ "bankSlug": "state-bank-of-bikaner-and-jaipur",
+ "product": "fd_bulk",
+ "cards": [
+  {
+   "bankSlug": "state-bank-of-bikaner-and-jaipur",
+   "product": "fd_bulk",
+   "effectiveFrom": "2001-02-12",
+   "observedAt": "2026-09-27",
+   "observedFrom": "2001-03-02",
+   "observedTo": "2001-03-02",
+   "sourceType": "web_archive",
+   "sourceUrl": "sbbjbank.com/interest.htm",
+   "archiveUrl": "https://web.archive.org/web/20010302093738id_/http://sbbjbank.com:80/interest.htm",
+   "confidence": "medium",
+   "rows": [
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days & upto 45 Days",
+     "amountMin": 10000000,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.75
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 60,
+     "tenureLabel": "46 Days & upto 60 Days",
+     "amountMin": 10000000,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7.25
+    },
+    {
+     "tenureMinDays": 61,
+     "tenureMaxDays": 90,
+     "tenureLabel": "61 Days & upto 90 Days",
+     "amountMin": 10000000,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7.75
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91 Days and upto 179 Days",
+     "amountMin": 10000000,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8.25
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 364,
+     "tenureLabel": "180 Days & upto less than 1 years",
+     "amountMin": 10000000,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8.75
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 Year and upto less than 2 Years",
+     "amountMin": 10000000,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 9
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 Years and upto less than 3 Years",
+     "amountMin": 10000000,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 9.5
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 10000000,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 10.25
+    }
+   ],
+   "notes": [
+    "Reconstructed from Internet Archive copies of the bank's official page captured 2001-03-02 to 2001-03-02.",
+    "Same captures and table as the fd target above; the two 1-crore-and-above differential-rate bands, stored as fd_bulk."
+   ],
+   "contentHash": "e765be718339d74b"
+  },
+  {
+   "bankSlug": "state-bank-of-bikaner-and-jaipur",
+   "product": "fd_bulk",
+   "effectiveFrom": null,
+   "observedAt": "2026-09-27",
+   "observedFrom": "2002-03-06",
+   "observedTo": "2002-04-18",
+   "sourceType": "web_archive",
+   "sourceUrl": "sbbjbank.com/interest.htm",
+   "archiveUrl": "https://web.archive.org/web/20020306072100id_/http://www.sbbjbank.com:80/interest.htm",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 7,
+     "tenureMaxDays": 14,
+     "tenureLabel": "7 days & upto 14 Days",
+     "amountMin": 20000000,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days and upto 45 Days",
+     "amountMin": 20000000,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.5
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46 Days & upto 90 Days",
+     "amountMin": 20000000,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.5
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91 Days and upto 179 Days",
+     "amountMin": 20000000,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.75
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 364,
+     "tenureLabel": "180 Days & upto less than 1 year",
+     "amountMin": 20000000,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7.25
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 Year and upto less than 2 Years",
+     "amountMin": 20000000,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7.5
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 Years and upto less than 3 Years",
+     "amountMin": 20000000,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7.75
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 20000000,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8.25
+    }
+   ],
+   "notes": [
+    "Reconstructed from Internet Archive copies of the bank's official page captured 2002-03-06 to 2002-04-18.",
+    "Same captures and table as the fd target above; the two 1-crore-and-above differential-rate bands, stored as fd_bulk."
+   ],
+   "contentHash": "17b4c78f1abeb3a6"
+  }
+ ]
+}

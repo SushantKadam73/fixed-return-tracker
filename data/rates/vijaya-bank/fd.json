@@ -1,0 +1,137 @@
+{
+ "bankSlug": "vijaya-bank",
+ "product": "fd",
+ "cards": [
+  {
+   "bankSlug": "vijaya-bank",
+   "product": "fd",
+   "effectiveFrom": "2012-04-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://www.thehindubusinessline.com/money-and-banking/vijaya-bank-hikes-domestic-nre-term-deposit-rates/article23065307.ece",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 364,
+     "tenureLabel": "180 days to less than 1 year",
+     "amountMin": 0,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8.5
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 year to less than 2 years",
+     "amountMin": 0,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 9.6
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 years to less than 3 years",
+     "amountMin": 0,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 9.5
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 1824,
+     "tenureLabel": "3 years to less than 5 years",
+     "amountMin": 0,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 9.3
+    },
+    {
+     "tenureMinDays": 1825,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "5 years and above",
+     "amountMin": 0,
+     "amountMax": 50000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 9.25
+    }
+   ],
+   "notes": [
+    "The Hindu Business Line, 3 Apr 2012, \"Vijaya Bank hikes domestic, NRE term deposit rates\": domestic term-deposit rates below Rs 5 crore, effective 1 Apr 2012. The article states the 1yr-<2yr/2yr-<3yr/3yr-<5yr/5yr+ rates apply equally to NRE deposits (an nre card is not stored here, per this pass's fd-first priority, but the article is a ready-made lead for one). The article also states senior citizens get +50bps across categories, but does not print the resulting senior numbers, so no senior row is added. This is Vijaya Bank's first domestic fd card in this dataset."
+   ],
+   "contentHash": "b9da849c85aecbf6"
+  },
+  {
+   "bankSlug": "vijaya-bank",
+   "product": "fd",
+   "effectiveFrom": "2014-10-20",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://www.thehindu.com/business/vijaya-bank-to-cut-interest-on-special-term-deposit-scheme/article6514880.ece",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 444,
+     "tenureMaxDays": 444,
+     "tenureLabel": "444 days",
+     "special": true,
+     "schemeName": "Vijaya 444",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 9.05
+    }
+   ],
+   "notes": [
+    "The Hindu, 18 Oct 2014, \"Vijaya Bank to cut interest on special term deposit scheme\": the bank's named 'Vijaya 444' scheme (444-day tenor) cut to 9.05% from 9.15%, effective 20 Oct 2014."
+   ],
+   "contentHash": "460695d73415e2dd"
+  },
+  {
+   "bankSlug": "vijaya-bank",
+   "product": "fd",
+   "effectiveFrom": "2016-04-12",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://www.business-standard.com/article/pti-stories/vijaya-bank-cuts-term-deposit-interest-rates-by-25-bps-116041200414_1.html",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 365,
+     "tenureLabel": "1 year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7.5
+    }
+   ],
+   "notes": [
+    "Business Standard (PTI), 12 Apr 2016, \"Vijaya Bank cuts term deposit interest rates by 25 bps\": a 25bps cut 'applicable for term deposits of different slabs from 91 days to above five years maturity', effective 12 Apr 2016, but the article only prints the resulting number for one tenor: 'attractive rate of interest of 7.50% on deposits of one year maturity' (down from 7.75%, per the article's own point-change framing). Only this one row is stored."
+   ],
+   "contentHash": "a44f71072129fc30"
+  }
+ ]
+}
