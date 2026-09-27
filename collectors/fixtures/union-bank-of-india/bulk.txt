@@ -1,0 +1,58 @@
+Classification: Internal
+Interest rates for Bulk Deposit (Rs.3 Crores & Above) for 23.09.2026*
+Callable Deposit
+Tenor 3cr. Upto10
+cr.
+>10cr.upto
+25cr.
+>25cr.upto
+50cr.
+>50cr.upto
+100cr.
+>100cr.up
+to 500cr.
+>500cr.
+& above
+7-14 Days 2.70 3.00 3.50 3.50 3.50 3.50
+15-30 Days 2.80 3.00 3.50 3.50 3.50 3.50
+31-45 Days 2.95 3.00 3.50 3.50 3.50 3.50
+46-90 Days 3.75 3.75 4.00 4.00 4.00 4.00
+91- 120 Days 4.05 4.25 4.50 4.50 4.50 4.50
+121 - 180 Days 4.60 4.70 4.75 4.75 4.75 4.75
+6 Months to < 1 Year 5.40 5.50 4.80 4.80 4.80 4.80
+1 Year 6.00 6.00 5.00 5.00 5.00 6.83
+>1 Year to 2 years 6.00 6.00 5.00 5.00 5.00 5.00
+>2 Year to 996 Days 6.00 6.00 5.00 5.00 5.00 5.00
+997 Days 6.00 6.00 5.00 5.00 5.00 5.00
+998 Days to 3 years 6.00 6.00 5.00 5.00 5.00 5.00
+> 3 Years to 5 Years 5.75 5.80 5.00 5.00 5.00 5.00
+> 5 Years to 10 Years 5.75 5.80 5.00 5.00 5.00 5.00
+Notice Period Deposit
+32-45 Days 3.00 3.25 3.75 3.75 3.75 3.75
+46-90 Days 4.00 4.00 4.05 4.05 4.05 4.05
+91- 120 Days 4.20 4.40 4.55 4.55 4.55 4.55
+121 - 180 Days 4.75 5.00 4.80 4.80 4.80 4.80
+6 Months to < 1 Year 5.60 5.75 4.85 4.85 4.85 4.85
+1 Year 6.10 6.15 5.05 5.05 5.05 6.84
+>1 Year to 2 years 6.10 6.15 5.05 5.05 5.05 5.05
+>2 Year to 3 Years 6.10 6.10 5.05 5.05 5.05 5.05
+> 3 Years - 5 Years 5.90 5.90 5.05 5.05 5.05 5.05
+> 5 Years - 10 Years 5.90 5.90 5.05 5.05 5.05 5.05
+Non-Callable Deposit
+61 - 90 Days 4.10 4.25 4.10 4.10 4.10 4.10
+91 - 120 Days 4.30 4.50 4.60 4.60 4.60 4.60
+121 - 180 Days 4.90 5.25 4.85 4.85 4.85 4.85
+6 Months to < 1 Year 5.75 6.00 4.90 4.90 4.90 4.90
+1 Year 6.20 6.30 5.50 5.50 5.50 6.85
+> 1 Year to 2 Year 6.20 6.30 5.50 5.50 5.50 5.50
+>2 Year to 3 Years 6.15 6.25 5.50 5.50 5.50 5.50
+NRE Callable Deposit
+1 Year 6.00 6.00 5.00 5.00 5.00 6.83
+>1 Year to 2 years 6.00 6.00 5.00 5.00 5.00 5.00
+>2 Year to 996 Days 6.00 6.00 5.00 5.00 5.00 5.00
+997 Days 6.00 6.00 5.00 5.00 5.00 5.00
+998 Days to 3 years 6.00 6.00 5.00 5.00 5.00 5.00
+> 3 Years - 5 Years 5.75 5.80 5.00 5.00 5.00 5.00
+> 5 Years - 10 Years 5.75 5.80 5.00 5.00 5.00 5.00
+*Depositors are requested to confirm the rates with branches before placing the deposit in the above slabs
+*Rates are subject to change from time to time

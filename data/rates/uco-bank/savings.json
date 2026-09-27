@@ -1,0 +1,32 @@
+{
+ "bankSlug": "uco-bank",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "uco-bank",
+   "product": "savings",
+   "effectiveFrom": "2025-06-23",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.uco.bank.in/interest-rates-on-deposit-schemes",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 1000001,
+     "rate": 2.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000001,
+     "balanceMax": null,
+     "rate": 2.5,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "466e8f6e17fa9743"
+  }
+ ]
+}

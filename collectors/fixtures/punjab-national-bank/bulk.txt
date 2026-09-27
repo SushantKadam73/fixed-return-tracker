@@ -1,0 +1,83 @@
+Above Rs.10
+Crore to
+Rs.25 Crore
+Above Rs.25
+Crore to
+Rs.100 Crore
+Above Rs.100
+Crore to
+Rs.500 Crore
+Above Rs.500
+Crore to
+Rs.1000 Crore
+7-14 days 4.60 4.60 4.60 4.60 XXX
+15-21 days 4.60 4.60 4.60 4.60 XXX
+22-29 days 4.60 4.60 4.60 4.60 XXX
+30-45 days 4.60 4.60 4.60 4.60 XXX
+46-60 days 5.00 5.00 5.00 5.00 XXX
+61-75 days 5.50 5.50 5.50 5.50 XXX
+76-90 days 5.50 5.50 5.50 5.50 XXX
+91-120 days 5.60 5.60 5.60 5.60 XXX
+121-150 days 6.00 6.00 6.00 6.00 XXX
+151-179 days 6.00 6.00 6.00 6.00 XXX
+180-270 days 6.00 6.00 6.00 6.00 XXX
+271 days to less than 1 year 6.40 6.40 6.40 6.40 XXX
+1 year 6.40 6.40 6.40 6.40 6.40
+>1 year upto 15 months 6.40 6.40 6.40 6.40 XXX
+>15 months upto 2 years 6.25 6.25 6.25 6.25 XXX
+>2 year upto 3 years 6.25 6.25 6.25 6.25 XXX
+>3 years to 5 years 6.25 6.25 6.25 6.25 XXX
+>5 years upto 10 years 6.25 6.25 6.25 6.25 XXX
+Above Rs.10
+Crore to
+Rs.25 Crore
+Above Rs.25
+Crore to
+Rs.100 Crore
+Above Rs.100
+Crore to
+Rs.500 Crore
+Above Rs.500
+Crore to Rs.1000
+Crore
+5.60 5.60 5.60 5.60
+6.00 6.00 6.00 6.00
+6.00 6.00 6.00 6.00
+6.00 6.00 6.00 6.00
+6.40 6.40 6.40 6.40
+6.50 6.50 6.50 6.50
+6.50 6.50 6.50 6.50
+6.30 6.30 6.30 6.30
+6.30 6.30 6.30 6.30
+USD GBP EUR
+5.00 4.04 3.05
+3.48 2.79 1.81
+3.25 2.34 1.81
+2.96 2.24 1.81
+3.06 2.04 1.81
+4yr <5 yr
+5 Years Only
+FCNR(B) Deposits of 1 million and above (%) p.a w.e.f 27-09-2026
+Maturity Period
+1 yr < 2 yr
+2yr <3 yr
+3yr <4 yr
+Effective from 27-09-2026
+Interest Rates for Bulk/NRO Deposits (%) p.a. Interest Rates
+for NRE
+Deposits of
+above Rs.10
+Crore to Rs.100
+crore (%) p.a.
+Rate of Interest for Single deposit of Above Rs. 10 Crore (Non-Callable) w.e.f 27-09-2026
+Maturity Period
+Maturity Period
+>1 year upto 15 months
+>15 months upto 2 years
+>2 year upto 3 years
+1 year
+91-120 days
+121-150 days
+151-179 days
+180-270 days
+271 days to less than 1 year

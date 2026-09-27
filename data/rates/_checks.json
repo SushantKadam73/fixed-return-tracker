@@ -62,6 +62,27 @@
   "consecutiveFailures": 1,
   "lastError": "fetch: HTTP 403"
  },
+ "indian-overseas-bank:fd": {
+  "lastAttemptAt": "2026-09-27T08:45:51.816Z",
+  "lastSuccessAt": "2026-09-27T08:45:51.816Z",
+  "lastChangeAt": "2026-09-27T08:45:51.816Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "indian-overseas-bank:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T08:45:53.579Z",
+  "lastSuccessAt": "2026-09-27T08:45:53.579Z",
+  "lastChangeAt": "2026-09-27T08:45:53.579Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "indian-overseas-bank:savings": {
+  "lastAttemptAt": "2026-09-27T08:45:54.270Z",
+  "lastSuccessAt": "2026-09-27T08:45:54.270Z",
+  "lastChangeAt": "2026-09-27T08:45:54.270Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
  "jana-sfb:bulk": {
   "lastAttemptAt": "2026-09-27T08:43:47.376Z",
   "lastSuccessAt": "2026-09-27T08:43:47.376Z",
@@ -87,6 +108,27 @@
   "lastAttemptAt": "2026-09-27T08:43:49.864Z",
   "lastSuccessAt": "2026-09-27T08:43:49.864Z",
   "lastChangeAt": "2026-09-27T08:43:49.864Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "punjab-and-sind-bank:fd": {
+  "lastAttemptAt": "2026-09-27T08:45:57.234Z",
+  "lastSuccessAt": "2026-09-27T08:45:57.234Z",
+  "lastChangeAt": "2026-09-27T08:45:57.234Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "punjab-national-bank:fd": {
+  "lastAttemptAt": "2026-09-27T08:46:00.319Z",
+  "lastSuccessAt": "2026-09-27T08:46:00.319Z",
+  "lastChangeAt": "2026-09-27T08:46:00.319Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "punjab-national-bank:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T08:46:03.636Z",
+  "lastSuccessAt": "2026-09-27T08:46:03.636Z",
+  "lastChangeAt": "2026-09-27T08:46:03.636Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
@@ -160,6 +202,20 @@
   "consecutiveFailures": 1,
   "lastError": "fetch: HTTP 502"
  },
+ "uco-bank:fd": {
+  "lastAttemptAt": "2026-09-27T08:46:09.761Z",
+  "lastSuccessAt": "2026-09-27T08:46:09.761Z",
+  "lastChangeAt": "2026-09-27T08:46:09.761Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "uco-bank:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T08:46:11.597Z",
+  "lastSuccessAt": "2026-09-27T08:46:11.597Z",
+  "lastChangeAt": "2026-09-27T08:46:11.597Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
  "ujjivan-sfb:bulk": {
   "lastAttemptAt": "2026-09-27T08:41:44.641Z",
   "lastSuccessAt": "2026-09-27T08:41:44.641Z",
@@ -185,6 +241,20 @@
   "lastAttemptAt": "2026-09-27T08:41:43.414Z",
   "lastSuccessAt": "2026-09-27T08:41:43.414Z",
   "lastChangeAt": "2026-09-27T08:41:43.414Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "union-bank-of-india:fd": {
+  "lastAttemptAt": "2026-09-27T08:46:14.064Z",
+  "lastSuccessAt": "2026-09-27T08:46:14.064Z",
+  "lastChangeAt": "2026-09-27T08:46:14.064Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "union-bank-of-india:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T08:46:16.270Z",
+  "lastSuccessAt": "2026-09-27T08:46:16.270Z",
+  "lastChangeAt": "2026-09-27T08:46:16.270Z",
   "consecutiveFailures": 0,
   "lastError": null
  },

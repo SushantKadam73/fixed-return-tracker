@@ -493,6 +493,177 @@
    "active": true,
    "robotsAllowed": true,
    "notes": "3 balance slabs from the same discovered disclosure PDF; slabMethod recorded as 'unknown' because the PDF does not state whole-balance vs incremental. Verified live 2026-09-27."
+  },
+  {
+   "key": "indian-overseas-bank:fd",
+   "bankSlug": "indian-overseas-bank",
+   "products": [
+    "fd"
+   ],
+   "url": "https://www.iob.bank.in/en/domestic-nro-nre-retail-term-deposit-rates",
+   "format": "html",
+   "runner": "github",
+   "adapter": "indian-overseas-bank.fd",
+   "cadence": "daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "General-public rate only: the page states the senior (+0.50%, age 60+) and super-senior (+0.75%, age 80+) premiums as plain text, not as a printed column, so no per-row senior rate is published. The table's Non-Callable columns (minimum deposit >₹100 crore, printed as two successive dated revisions) are not read. Legacy iob.in is fully dead (404 on robots.txt and on the given rate-page URL, no redirect) — iob.bank.in is the only working domain."
+  },
+  {
+   "key": "indian-overseas-bank:fd_bulk",
+   "bankSlug": "indian-overseas-bank",
+   "products": [
+    "fd_bulk"
+   ],
+   "url": "https://www.iob.bank.in/en/domestic-nro-nre-retail-term-deposit-rates",
+   "format": "html",
+   "runner": "github",
+   "adapter": "indian-overseas-bank.bulk",
+   "cadence": "bulk_daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "Same page as the retail source; the Bulk Deposit table (≥₹3cr, callable + non-callable) is dated 'Interest Rate as on <today>' rather than a fixed revision date, so effectiveFrom will read as today on every run that shows no change to the underlying figures."
+  },
+  {
+   "key": "indian-overseas-bank:savings",
+   "bankSlug": "indian-overseas-bank",
+   "products": [
+    "savings"
+   ],
+   "url": "https://www.iob.bank.in/en/savings-interest-rates",
+   "format": "html",
+   "runner": "github",
+   "adapter": "indian-overseas-bank.savings",
+   "cadence": "daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "Not linked from the domestic-rates page's own navigation or from the /en/rates-at-a-glance index in this pass; found by trying the bank's own URL-naming convention directly (confirmed 200, and duplicated verbatim at /en/savings-bank-interest-rates). Two of the three slabs are repo-rate-linked and print the rate cell with the bank's own worked example, e.g. '2.20% (i.e. Repo Rate 5.25% minus 3.05%=2.20%)' — the adapter reads the leading percentage, not the worked example."
+  },
+  {
+   "key": "punjab-and-sind-bank:fd",
+   "bankSlug": "punjab-and-sind-bank",
+   "products": [
+    "fd",
+    "rd",
+    "savings"
+   ],
+   "url": "https://punjabandsind.bank.in/content/interestdom",
+   "format": "html",
+   "runner": "github",
+   "adapter": "punjab-and-sind-bank.fd",
+   "cadence": "daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "One page carries savings slabs and the domestic term-deposit table, whose own heading states it also sets the rate for NRO accounts, the Capital Gains Accounts Scheme 1988, the Recurring Deposit scheme and the Tax-Saver scheme — RD is derived from FD on that statement. No senior/super-senior column is printed (both premiums are page text, recorded in terms, not invented rows). No bulk (≥₹3cr) table was found on this page or discoverable from it in this pass. Legacy punjabandsindbank.co.in returns 502 on every path (broken host, not a redirect) — punjabandsind.bank.in is the only working domain."
+  },
+  {
+   "key": "punjab-national-bank:fd",
+   "bankSlug": "punjab-national-bank",
+   "products": [
+    "fd",
+    "savings"
+   ],
+   "url": "https://pnb.bank.in/Interest-Rates-Deposit.html",
+   "format": "html",
+   "runner": "github",
+   "adapter": "punjab-national-bank.fd",
+   "cadence": "daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "PNB's page wraps its entire body in one ASP.NET <form>, which the shared trim-fixture.ts script's blanket <form> removal deletes wholesale (fine for a stray search box on other banks, fatal here) — flagged for the collectors/scripts/trim-fixture.ts maintainers, not fixed by this agent. Savings table also carries a rate history back to 03.05.2011 (~15 dated revisions); not captured as extra historical cards in this pass. RD was not covered: no explicit statement that RD equals the FD card rate was found on this page."
+  },
+  {
+   "key": "punjab-national-bank:fd_bulk",
+   "bankSlug": "punjab-national-bank",
+   "products": [
+    "fd_bulk"
+   ],
+   "url": "https://pnb.bank.in/interest-rates-bulk-deposit.html",
+   "format": "html",
+   "runner": "github",
+   "adapter": "punjab-national-bank.bulk",
+   "cadence": "bulk_daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "Landing page's 'Click here to Download' link is a session-tokenised downloadprocess.aspx?fid=... URL that changes on every republish; the adapter re-derives it from the landing page on every run via ctx.fetch rather than hard-coding a fid. It also re-fetches the deposit page above for the ₹3-10cr band and merges both into one fd_bulk card (effectiveFrom taken from the ₹3-10cr table). Only the PDF's Callable >₹10cr rows are read: unpdf's text extraction does not keep the Non-Callable >₹10cr table's tenure labels aligned with its rates, and a 5th, unlabelled column (PNB's NRE rate, only populated at exactly '1 year' — NRE's RBI-mandated minimum tenor) is out of scope. The same landing-page fixture needed a locally-built href-preserving trim (trim-fixture.ts keeps only rowspan/colspan attributes, which drops the <a href> this adapter reads) — also flagged for the trim script's maintainers."
+  },
+  {
+   "key": "uco-bank:fd",
+   "bankSlug": "uco-bank",
+   "products": [
+    "fd",
+    "rd",
+    "savings"
+   ],
+   "url": "https://www.uco.bank.in/interest-rates-on-deposit-schemes",
+   "format": "html",
+   "runner": "github",
+   "adapter": "uco-bank.fd",
+   "cadence": "daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "One page carries savings, retail FD (<₹3cr, general customer only — additional interest for senior/staff/ex-staff is a separate text table, recorded in terms) and the ₹3-10cr/>₹10cr bulk tables. UCO's own 'UCO Sanchayika' RD product page states RD equals 'the bank's domestic card rate for normal term deposit (less than Rs.2 crore)' — note the ₹2 crore wording, narrower than the ₹3 crore retail band; the derived RD card's amount band is capped at ₹2 crore to match. Legacy ucobank.com returns 502 on every path (broken host, not a redirect)."
+  },
+  {
+   "key": "uco-bank:fd_bulk",
+   "bankSlug": "uco-bank",
+   "products": [
+    "fd_bulk"
+   ],
+   "url": "https://www.uco.bank.in/interest-rates-on-deposit-schemes",
+   "format": "html",
+   "runner": "github",
+   "adapter": "uco-bank.bulk",
+   "cadence": "bulk_daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "Merges the ₹3-10cr table (callable + non-callable) with the three amount bands above ₹10cr (10-50cr/50-100cr/>100cr), each also callable + non-callable. The >₹10cr non-callable table genuinely stops at '>1Y to 2Y' in the source for all three bands — no rate is invented for longer tenors there."
+  },
+  {
+   "key": "union-bank-of-india:fd",
+   "bankSlug": "union-bank-of-india",
+   "products": [
+    "fd",
+    "savings"
+   ],
+   "url": "https://www.unionbankofindia.bank.in/en/details/rate-of-interest",
+   "format": "html",
+   "runner": "github",
+   "adapter": "union-bank-of-india.fd",
+   "cadence": "daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "Domestic/NRO term deposits (<₹3cr callable + ₹1-3cr non-callable) and savings slabs on one page. No senior/super-senior column is printed — the page states +0.50% (up to ₹5 crore) and +0.75% (deposits from 01.12.2022) as plain text, recorded in terms. Savings slab labels use the bank's own 'Crs' abbreviation, which the shared parseAmountBand misreads (its 'rs' strip also eats the 'r' out of 'Crs', turning e.g. '50 Crs' into bare '50 rupees'); worked around locally by expanding 'Crs' to 'Crore' before calling the shared parser — the bank-of-baroda adapter in this same repo hit the identical bug."
+  },
+  {
+   "key": "union-bank-of-india:fd_bulk",
+   "bankSlug": "union-bank-of-india",
+   "products": [
+    "fd_bulk"
+   ],
+   "url": "https://www.unionbankofindia.bank.in/pdf/interest-rates-for-bulk-deposit.pdf",
+   "format": "pdf",
+   "runner": "github",
+   "adapter": "union-bank-of-india.bulk",
+   "cadence": "bulk_daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "Static filename (unlike PNB's tokenised link) already refreshed daily by the bank (dated inside the PDF text). Reads the Callable and Non-Callable sections across 6 amount bands (₹3-10cr up to >₹500cr); the PDF's Notice Period Deposit section (not a tracked product) and NRE Callable Deposit section (different residency) are read but not carried into the card."
+  },
+  {
+   "key": "bank-of-india:fd",
+   "bankSlug": "bank-of-india",
+   "products": [
+    "fd",
+    "fd_bulk"
+   ],
+   "url": "https://bankofindia.bank.in/interest-rate/rupee-term-deposit-rate",
+   "format": "browser",
+   "runner": "github",
+   "adapter": "bank-of-india.fd",
+   "active": false,
+   "cadence": "daily",
+   "notes": "Both bankofindia.bank.in and the legacy bankofindia.co.in return HTTP 403 to every automated client tried (bankofindia.co.in 403s even on its plain homepage; bankofindia.bank.in additionally serves a Cloudflare 'checking your browser' interstitial) — confirmed on two attempts per domain with a browser User-Agent on 2026-09-27, and independently via Exa's own web-crawler cache hitting the identical challenge page. No genuine live HTML or JSON endpoint could be found anywhere. The adapter was written and tested against a Wayback Machine snapshot of the bank's own page (captured 2025-07-09), per the brief's rule that a cache of the bank's OWN page may be used to build/test a parser but never as the live source — kept inactive until a browser-capable runner (GitHub Actions or a VPS with Playwright) can confirm it against a real render. The archived copy only exposed the general-public rate; a SENIOR CITIZEN tab referenced in the same page's markup was not present as static HTML."
   }
  ]
 }

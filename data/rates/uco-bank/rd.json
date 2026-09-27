@@ -1,0 +1,153 @@
+{
+ "bankSlug": "uco-bank",
+ "product": "rd",
+ "cards": [
+  {
+   "bankSlug": "uco-bank",
+   "product": "rd",
+   "effectiveFrom": "2026-05-21",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.uco.bank.in/interest-rates-on-deposit-schemes",
+   "confidence": "high",
+   "rows": [
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 365,
+     "tenureLabel": "1 year",
+     "amountMin": 0,
+     "amountMax": 20000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.1,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 366,
+     "tenureMaxDays": 443,
+     "tenureLabel": "Above 1 year-443 days",
+     "amountMin": 0,
+     "amountMax": 20000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.1,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 445,
+     "tenureMaxDays": 534,
+     "tenureLabel": "445 days to 534 days",
+     "amountMin": 0,
+     "amountMax": 20000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.1,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 536,
+     "tenureMaxDays": 730,
+     "tenureLabel": "536 days to 2 years",
+     "amountMin": 0,
+     "amountMax": 20000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.1,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 731,
+     "tenureMaxDays": 999,
+     "tenureLabel": "Above 2 years - 999 days",
+     "amountMin": 0,
+     "amountMax": 20000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 1001,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "1001 days to 3 years",
+     "amountMin": 0,
+     "amountMax": 20000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 1096,
+     "tenureMaxDays": 1825,
+     "tenureLabel": "Above 3 years - 5 years",
+     "amountMin": 0,
+     "amountMax": 20000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 1826,
+     "tenureMaxDays": 1999,
+     "tenureLabel": "Above 5 years - 1999 days",
+     "amountMin": 0,
+     "amountMax": 20000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 2001,
+     "tenureMaxDays": 2999,
+     "tenureLabel": "2001 days to 2999 days",
+     "amountMin": 0,
+     "amountMax": 20000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 3001,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "Above 3000 days",
+     "amountMin": 0,
+     "amountMax": 20000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    }
+   ],
+   "notes": [
+    "UCO: additional interest over the general-customer rate — senior citizens +0.25% (<=1y) / +0.50% (>1y); staff +1.00% / +1.00%; ex-staff & senior citizens +1.25% / +1.50%. Not printed as a per-row rate.",
+    "RD rates derived from the FD card because the bank states: \"UCO (\"UCO Sanchayika\" RD product page): \"the bank's domestic card rate for normal term deposit (less than Rs.2 crore)\"\"",
+    "RD amount band capped at ₹2 crore per the bank's own RD-specific wording, narrower than the ₹3 crore retail FD band."
+   ],
+   "contentHash": "7cfac9da7c8b7a55"
+  }
+ ]
+}

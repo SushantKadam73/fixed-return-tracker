@@ -1,0 +1,40 @@
+{
+ "bankSlug": "indian-overseas-bank",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "indian-overseas-bank",
+   "product": "savings",
+   "effectiveFrom": "2026-09-15",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.iob.bank.in/en/savings-interest-rates",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 100001,
+     "rate": 2.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 100001,
+     "balanceMax": 20000000000,
+     "rate": 2.2,
+     "residency": "resident",
+     "note": "Above Rs. 1 lakh and upto Rs. 2000 Crore (Linked to Repo Rate)"
+    },
+    {
+     "balanceMin": 20000000001,
+     "balanceMax": null,
+     "rate": 6.6,
+     "residency": "resident",
+     "note": "Above Rs. 2000 Crore (Linked to Repo Rate)"
+    }
+   ],
+   "slabMethod": "whole",
+   "contentHash": "3f300e680a5057dd"
+  }
+ ]
+}
