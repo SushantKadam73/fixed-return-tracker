@@ -1,0 +1,290 @@
+{
+  "scheme": "ppf",
+  "name": "Public Provident Fund (PPF)",
+  "category": "small_savings",
+  "checkedAt": "2026-09-27",
+  "conventions": {
+    "compounding": "Annual, credited at financial year-end",
+    "interestBasis": "Calculated monthly on the lowest balance between close of the 5th day and the end of the month; credited once a year",
+    "payout": "Accumulated, paid on maturity/closure; partial withdrawal allowed from 7th year",
+    "tenure": "15 years from end of FY of account opening, extendable in blocks of 5 years",
+    "depositLimitCurrent": "Rs 1,50,000 per financial year (since 2014-04-01); minimum Rs 500/yr",
+    "depositLimitSource": "https://www.financialexpress.com/money/public-provident-fund-ppf-interest-rate-history-till-april-2023-3044150/",
+    "administeredBy": "Department of Economic Affairs (DEA), National Savings Institute; operated via India Post and authorised banks",
+    "currentQuarter": {
+      "period": "2026-07-01 to 2026-09-30 (Q2 FY2026-27)",
+      "rate": 7.1,
+      "sourceUrl": "https://dea.gov.in/budget-division/475",
+      "sourceType": "primary",
+      "nextAnnouncement": "Q3 FY2026-27 (Oct-Dec 2026) rate expected via DEA Office Memorandum around 2026-09-30, i.e. within days of this research date (2026-09-27); not yet issued as of that date."
+    }
+  },
+  "periods": [
+    {
+      "effectiveFrom": "1968-04-01",
+      "effectiveTo": "1970-03-31",
+      "rate": 4.8,
+      "note": "Scheme launched 1 Apr 1968 (PPF Act 1968). Deposit ceiling Rs 15,000/yr.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "1970-04-01",
+      "effectiveTo": "1973-03-31",
+      "rate": 5.0,
+      "note": "Ceiling raised to Rs 20,000/yr from 1972-04-01 (FE table).",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.financialexpress.com/money/public-provident-fund-ppf-interest-rate-history-till-april-2023-3044150/"
+    },
+    {
+      "effectiveFrom": "1973-04-01",
+      "effectiveTo": "1974-03-31",
+      "rate": 5.3,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "1974-04-01",
+      "effectiveTo": "1974-07-31",
+      "rate": 5.8,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "1974-08-01",
+      "effectiveTo": "1975-03-31",
+      "rate": 7.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "1975-04-01",
+      "effectiveTo": "1977-03-31",
+      "rate": 7.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "1977-04-01",
+      "effectiveTo": "1980-03-31",
+      "rate": 7.5,
+      "note": "Ceiling raised to Rs 30,000/yr from 1978-04-01 (FE table).",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.financialexpress.com/money/public-provident-fund-ppf-interest-rate-history-till-april-2023-3044150/"
+    },
+    {
+      "effectiveFrom": "1980-04-01",
+      "effectiveTo": "1981-03-31",
+      "rate": 8.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "1981-04-01",
+      "effectiveTo": "1983-03-31",
+      "rate": 8.5,
+      "note": "Ceiling raised to Rs 40,000/yr from 1982-04-01 (FE table).",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.financialexpress.com/money/public-provident-fund-ppf-interest-rate-history-till-april-2023-3044150/"
+    },
+    {
+      "effectiveFrom": "1983-04-01",
+      "effectiveTo": "1984-03-31",
+      "rate": 9.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "1984-04-01",
+      "effectiveTo": "1985-03-31",
+      "rate": 9.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "1985-04-01",
+      "effectiveTo": "1986-03-31",
+      "rate": 10.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "1986-04-01",
+      "effectiveTo": "1999-03-31",
+      "rate": 12.0,
+      "note": "Ceiling raised to Rs 60,000/yr from 1988-04-01 (FE table).",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.financialexpress.com/money/public-provident-fund-ppf-interest-rate-history-till-april-2023-3044150/"
+    },
+    {
+      "effectiveFrom": "1999-04-01",
+      "effectiveTo": "2000-01-14",
+      "rate": 12.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2000-01-15",
+      "effectiveTo": "2001-02-28",
+      "rate": 11.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2001-03-01",
+      "effectiveTo": "2002-02-28",
+      "rate": 9.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2002-03-01",
+      "effectiveTo": "2003-02-28",
+      "rate": 9.0,
+      "note": "Ceiling raised to Rs 70,000/yr from 2002-04-01 (FE table).",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.financialexpress.com/money/public-provident-fund-ppf-interest-rate-history-till-april-2023-3044150/"
+    },
+    {
+      "effectiveFrom": "2003-03-01",
+      "effectiveTo": "2011-11-30",
+      "rate": 8.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2011-12-01",
+      "effectiveTo": "2012-03-31",
+      "rate": 8.6,
+      "note": "Ceiling raised to Rs 100,000/yr from 2011-04-01 (FE table).",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2012-04-01",
+      "effectiveTo": "2013-03-31",
+      "rate": 8.8,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2013-04-01",
+      "effectiveTo": "2016-03-31",
+      "rate": 8.7,
+      "note": "Ceiling raised to Rs 150,000/yr from 2014-04-01 (FE table).",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2016-04-01",
+      "effectiveTo": "2016-09-30",
+      "rate": 8.1,
+      "note": "Quarterly reset regime begins 1 Apr 2016 (DEA OM 16 Feb 2016).",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2016-10-01",
+      "effectiveTo": "2017-03-31",
+      "rate": 8.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2017-04-01",
+      "effectiveTo": "2017-06-30",
+      "rate": 7.9,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2017-07-01",
+      "effectiveTo": "2017-12-31",
+      "rate": 7.8,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2018-01-01",
+      "effectiveTo": "2018-09-30",
+      "rate": 7.6,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2018-10-01",
+      "effectiveTo": "2019-06-30",
+      "rate": 8.0,
+      "note": "NSI page shows this as '01.10.2018 TO 31.06.2019' (a date typo for 30.06.2019, corrected here).",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2019-07-01",
+      "effectiveTo": "2020-03-31",
+      "rate": 7.9,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2020-04-01",
+      "effectiveTo": "2026-09-30",
+      "rate": 7.1,
+      "note": "Unchanged for 26 consecutive quarters (10 years). NSI's own inception page currently reads 'TO 31.03.2026' because it was last refreshed then; continuation through Q2 FY2026-27 (Jul-Sep 2026) is confirmed by the 30.06.2026 DEA OM (F.No.1/4/2019-NS).",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+      "evidence": "primary",
+      "crossCheckUrl": "https://dea.gov.in/budget-division/475"
+    }
+  ],
+  "gaps": [
+    "Pre-1986 sub-annual breakpoints are grouped by NSI's own inception table into multi-year bands (e.g. 1986-99 all at 12%); Financial Express / PNB circular break these into the same rate over shorter deposit-limit sub-periods -- no rate disagreement found, only limit-change granularity.",
+    "Exact date and text of the individual DEA notifications for 1968-2011 periods (pre-internet era) were not retrieved individually in this pass; NSI's own 'Since Inception' page and PNB's compiled circular (cross-check) agree on all values."
+  ],
+  "notes": "Best-documented scheme in this set: a single primary NSI page gives the full 1968-2026 history, cross-checked line-by-line against an independent bank (PNB) compiled circular and Financial Express reporting with no rate disagreements found."
+}

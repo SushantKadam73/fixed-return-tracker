@@ -1,0 +1,233 @@
+{
+  "scheme": "pomis",
+  "name": "Post Office Monthly Income Scheme (POMIS / MIS)",
+  "category": "small_savings",
+  "checkedAt": "2026-09-27",
+  "conventions": {
+    "compounding": "Simple; interest paid out monthly, not compounded",
+    "payout": "Monthly, from completion of one month after opening",
+    "tenure": "5 years (was 6 years before Dec 2011)",
+    "depositLimitCurrent": "Max Rs 9,00,000 single account / Rs 15,00,000 joint account; min Rs 1,000 in multiples thereof",
+    "administeredBy": "DEA / National Savings Institute; India Post",
+    "currentQuarter": {
+      "period": "2026-07-01 to 2026-09-30 (Q2 FY2026-27)",
+      "rate": 7.4,
+      "sourceUrl": "https://dea.gov.in/budget-division/475",
+      "sourceType": "primary",
+      "nextAnnouncement": "Q3 FY2026-27 (Oct-Dec 2026) not yet announced as of 2026-09-27; expect DEA OM ~2026-09-30, mirrored at indiapost.gov.in within days."
+    }
+  },
+  "periods": [
+    {
+      "effectiveFrom": "1987-08-15",
+      "effectiveTo": "1992-04-23",
+      "rate": 12.0,
+      "note": "Scheme created by National Savings (Monthly Income Account) Rules 1987 (GSR 701(E)), in force from 15 Aug 1987.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=77",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.apnaplan.com/post-office-mis-interest/"
+    },
+    {
+      "effectiveFrom": "1992-04-24",
+      "effectiveTo": "1993-09-01",
+      "rate": 14.0,
+      "note": "Historical peak rate for this scheme.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.apnaplan.com/post-office-mis-interest/"
+    },
+    {
+      "effectiveFrom": "1993-09-02",
+      "effectiveTo": "1998-12-31",
+      "rate": 13.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.apnaplan.com/post-office-mis-interest/"
+    },
+    {
+      "effectiveFrom": "1999-01-01",
+      "effectiveTo": "2000-01-14",
+      "rate": 12.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.apnaplan.com/post-office-mis-interest/"
+    },
+    {
+      "effectiveFrom": "2000-01-15",
+      "effectiveTo": "2001-02-28",
+      "rate": 11.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.apnaplan.com/post-office-mis-interest/"
+    },
+    {
+      "effectiveFrom": "2001-03-01",
+      "effectiveTo": "2002-02-28",
+      "rate": 9.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.apnaplan.com/post-office-mis-interest/"
+    },
+    {
+      "effectiveFrom": "2002-03-01",
+      "effectiveTo": "2003-02-28",
+      "rate": 9.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.apnaplan.com/post-office-mis-interest/"
+    },
+    {
+      "effectiveFrom": "2003-03-01",
+      "effectiveTo": "2011-11-30",
+      "rate": 8.0,
+      "note": "Tenure was 6 years until Dec 2011.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.apnaplan.com/post-office-mis-interest/"
+    },
+    {
+      "effectiveFrom": "2011-12-01",
+      "effectiveTo": "2012-03-31",
+      "rate": 8.2,
+      "note": "Tenure shortened to 5 years from Dec 2011.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.apnaplan.com/post-office-mis-interest/"
+    },
+    {
+      "effectiveFrom": "2012-04-01",
+      "effectiveTo": "2013-03-31",
+      "rate": 8.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.apnaplan.com/post-office-mis-interest/"
+    },
+    {
+      "effectiveFrom": "2013-04-01",
+      "effectiveTo": "2014-03-31",
+      "rate": 8.4,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.apnaplan.com/post-office-mis-interest/"
+    },
+    {
+      "effectiveFrom": "2014-04-01",
+      "effectiveTo": "2016-03-31",
+      "rate": 8.4,
+      "note": "NSI's page-135 extract truncates before showing this row explicitly for MIS; value taken from NSI's own master quarterly/annual table (Id_Pk=132), which lists Monthly Income Account at 8.4 for both FY2014-15 and FY2015-16 -- still a primary NSI source.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.apnaplan.com/post-office-mis-interest/"
+    },
+    {
+      "effectiveFrom": "2016-04-01",
+      "effectiveTo": "2016-09-30",
+      "rate": 7.8,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2016-10-01",
+      "effectiveTo": "2017-03-31",
+      "rate": 7.7,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2017-04-01",
+      "effectiveTo": "2017-06-30",
+      "rate": 7.6,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2017-07-01",
+      "effectiveTo": "2017-12-31",
+      "rate": 7.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2018-01-01",
+      "effectiveTo": "2018-09-30",
+      "rate": 7.3,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2018-10-01",
+      "effectiveTo": "2019-06-30",
+      "rate": 7.7,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2019-07-01",
+      "effectiveTo": "2020-03-31",
+      "rate": 7.6,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2020-04-01",
+      "effectiveTo": "2022-09-30",
+      "rate": 6.6,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2022-10-01",
+      "effectiveTo": "2022-12-31",
+      "rate": 6.6,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2023-01-01",
+      "effectiveTo": "2023-03-31",
+      "rate": 7.1,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2023-04-01",
+      "effectiveTo": "2026-09-30",
+      "rate": 7.4,
+      "note": "Confirmed unchanged through Q2 FY2026-27 (Jul-Sep 2026) via India Post's own current-rates page and TOI/ET reporting of the 30.06.2026 DEA OM.",
+      "sourceUrl": "https://indiapost.gov.in/Financial/pages/content/post-office-saving-schemes.aspx",
+      "evidence": "primary",
+      "crossCheckUrl": "https://timesofindia.indiatimes.com/business/india-business/latest-small-savings-schemes-interest-rates-post-office-q2-fy-2026-2027-ppf-nsc-sukanya-samriddhi-yojana-time-deposit-scss-monthly-income-account-kisan-vikas-patra/articleshow/132090744.cms"
+    }
+  ],
+  "gaps": [
+    "2014-2016 rate sourced from NSI's master table rather than the dedicated 'upto 2016' page (which truncated before the MIS-specific row in this pass's retrieval) -- still primary/NSI, just a different page on the same site."
+  ],
+  "notes": "POMIS did not exist before 15 Aug 1987 (no earlier monthly-income postal scheme); this is a genuine inception date, not a data gap."
+}

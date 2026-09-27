@@ -1,0 +1,701 @@
+{
+  "scheme": "epf",
+  "name": "Employees' Provident Fund (EPF)",
+  "category": "provident_fund",
+  "checkedAt": "2026-09-27",
+  "conventions": {
+    "compounding": "Annual rate, credited on monthly running balance (compound effect via monthly balance method), credited to account at financial year-end",
+    "declaration": "Recommended annually by EPFO's Central Board of Trustees (CBT), typically Feb-Mar for the FY about to end; sent to Ministry of Finance for concurrence; officially notified by Ministry of Labour & Employment; often credited to accounts several months into the following FY after ratification",
+    "administeredBy": "Employees' Provident Fund Organisation (EPFO), Ministry of Labour & Employment, with Finance Ministry concurrence",
+    "currentQuarter": {
+      "note": "EPF rate is declared per FULL FINANCIAL YEAR, not quarterly. As of this research date (2026-09-27, within FY2026-27), the last declared/credited rate is FY2025-26 = 8.25% (CBT recommendation 2026-03-02, ratified by Finance Ministry June 2026). FY2026-27's rate is NOT yet declared -- expected to be recommended by CBT around Feb-Mar 2027 and ratified/credited months later, per the pattern of the last several years.",
+      "lastDeclaredRate": 8.25,
+      "lastDeclaredFY": "2025-26",
+      "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2234502",
+      "sourceType": "primary"
+    }
+  },
+  "periods": [
+    {
+      "effectiveFrom": "1952-04-01",
+      "effectiveTo": "1953-03-31",
+      "rate": 3.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1953-04-01",
+      "effectiveTo": "1954-03-31",
+      "rate": 3.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1954-04-01",
+      "effectiveTo": "1955-03-31",
+      "rate": 3.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1955-04-01",
+      "effectiveTo": "1956-03-31",
+      "rate": 3.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1956-04-01",
+      "effectiveTo": "1957-03-31",
+      "rate": 3.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1957-04-01",
+      "effectiveTo": "1958-03-31",
+      "rate": 3.75,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1958-04-01",
+      "effectiveTo": "1959-03-31",
+      "rate": 3.75,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1959-04-01",
+      "effectiveTo": "1960-03-31",
+      "rate": 3.75,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1960-04-01",
+      "effectiveTo": "1961-03-31",
+      "rate": 3.75,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1961-04-01",
+      "effectiveTo": "1962-03-31",
+      "rate": 3.75,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1962-04-01",
+      "effectiveTo": "1963-03-31",
+      "rate": 3.75,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1963-04-01",
+      "effectiveTo": "1964-03-31",
+      "rate": 4.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1964-04-01",
+      "effectiveTo": "1965-03-31",
+      "rate": 4.25,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1965-04-01",
+      "effectiveTo": "1966-03-31",
+      "rate": 4.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1966-04-01",
+      "effectiveTo": "1967-03-31",
+      "rate": 4.75,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1967-04-01",
+      "effectiveTo": "1968-03-31",
+      "rate": 5.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1968-04-01",
+      "effectiveTo": "1969-03-31",
+      "rate": 5.25,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1969-04-01",
+      "effectiveTo": "1970-03-31",
+      "rate": 5.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1970-04-01",
+      "effectiveTo": "1971-03-31",
+      "rate": 5.7,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1971-04-01",
+      "effectiveTo": "1972-03-31",
+      "rate": 5.8,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1972-04-01",
+      "effectiveTo": "1973-03-31",
+      "rate": 6.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1973-04-01",
+      "effectiveTo": "1974-03-31",
+      "rate": 6.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1974-04-01",
+      "effectiveTo": "1975-03-31",
+      "rate": 6.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1975-04-01",
+      "effectiveTo": "1976-03-31",
+      "rate": 7.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1976-04-01",
+      "effectiveTo": "1977-03-31",
+      "rate": 7.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1977-04-01",
+      "effectiveTo": "1978-03-31",
+      "rate": 8.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1978-04-01",
+      "effectiveTo": "1979-03-31",
+      "rate": 8.25,
+      "note": "Plus 0.5% Golden Jubilee bonus for members with no withdrawals in 1976-77 & 1977-78.",
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1979-04-01",
+      "effectiveTo": "1980-03-31",
+      "rate": 8.25,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1980-04-01",
+      "effectiveTo": "1981-03-31",
+      "rate": 8.25,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1981-04-01",
+      "effectiveTo": "1982-03-31",
+      "rate": 8.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1982-04-01",
+      "effectiveTo": "1983-03-31",
+      "rate": 8.75,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1983-04-01",
+      "effectiveTo": "1984-03-31",
+      "rate": 9.15,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1984-04-01",
+      "effectiveTo": "1985-03-31",
+      "rate": 9.9,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1985-04-01",
+      "effectiveTo": "1986-03-31",
+      "rate": 10.15,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1986-04-01",
+      "effectiveTo": "1987-03-31",
+      "rate": 11.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1987-04-01",
+      "effectiveTo": "1988-03-31",
+      "rate": 11.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1988-04-01",
+      "effectiveTo": "1989-03-31",
+      "rate": 11.8,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1989-04-01",
+      "effectiveTo": "1990-03-31",
+      "rate": 12.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1990-04-01",
+      "effectiveTo": "1991-03-31",
+      "rate": 12.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1991-04-01",
+      "effectiveTo": "1992-03-31",
+      "rate": 12.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1992-04-01",
+      "effectiveTo": "1993-03-31",
+      "rate": 12.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1993-04-01",
+      "effectiveTo": "1994-03-31",
+      "rate": 12.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1994-04-01",
+      "effectiveTo": "1995-03-31",
+      "rate": 12.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1995-04-01",
+      "effectiveTo": "1996-03-31",
+      "rate": 12.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1996-04-01",
+      "effectiveTo": "1997-03-31",
+      "rate": 12.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1997-04-01",
+      "effectiveTo": "1998-03-31",
+      "rate": 12.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1998-04-01",
+      "effectiveTo": "1999-03-31",
+      "rate": 12.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "1999-04-01",
+      "effectiveTo": "2000-03-31",
+      "rate": 12.0,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2000-04-01",
+      "effectiveTo": "2000-06-30",
+      "rate": 12.0,
+      "note": "On monthly running balance.",
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2000-07-01",
+      "effectiveTo": "2001-03-31",
+      "rate": 11.0,
+      "note": "Rate cut mid financial-year, effective July 2000, on monthly running balance.",
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2001-04-01",
+      "effectiveTo": "2002-03-31",
+      "rate": 9.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2002-04-01",
+      "effectiveTo": "2003-03-31",
+      "rate": 9.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2003-04-01",
+      "effectiveTo": "2004-03-31",
+      "rate": 9.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2004-04-01",
+      "effectiveTo": "2005-03-31",
+      "rate": 9.5,
+      "note": "Plus 0.5% Golden Jubilee bonus.",
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2005-04-01",
+      "effectiveTo": "2006-03-31",
+      "rate": 8.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2006-04-01",
+      "effectiveTo": "2007-03-31",
+      "rate": 8.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2007-04-01",
+      "effectiveTo": "2008-03-31",
+      "rate": 8.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2008-04-01",
+      "effectiveTo": "2009-03-31",
+      "rate": 8.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2009-04-01",
+      "effectiveTo": "2010-03-31",
+      "rate": 8.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2010-04-01",
+      "effectiveTo": "2011-03-31",
+      "rate": 9.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2011-04-01",
+      "effectiveTo": "2012-03-31",
+      "rate": 8.25,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2012-04-01",
+      "effectiveTo": "2013-03-31",
+      "rate": 8.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2013-04-01",
+      "effectiveTo": "2014-03-31",
+      "rate": 8.75,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2014-04-01",
+      "effectiveTo": "2015-03-31",
+      "rate": 8.75,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2015-04-01",
+      "effectiveTo": "2016-03-31",
+      "rate": 8.8,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2016-04-01",
+      "effectiveTo": "2017-03-31",
+      "rate": 8.65,
+      "note": "Confirmed by EPFO's own FAQ page (primary): 'For 2016-17 the interest declared was 8.65%.'",
+      "sourceUrl": "https://pmvbry.epfindia.gov.in/faq-epfo/",
+      "evidence": "primary",
+      "crossCheckUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/"
+    },
+    {
+      "effectiveFrom": "2017-04-01",
+      "effectiveTo": "2018-03-31",
+      "rate": 8.55,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2018-04-01",
+      "effectiveTo": "2019-03-31",
+      "rate": 8.65,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2019-04-01",
+      "effectiveTo": "2020-03-31",
+      "rate": 8.5,
+      "note": null,
+      "sourceUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2020-04-01",
+      "effectiveTo": "2021-03-31",
+      "rate": 8.5,
+      "note": null,
+      "sourceUrl": "https://dataful.in/datasets/14333/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/"
+    },
+    {
+      "effectiveFrom": "2021-04-01",
+      "effectiveTo": "2022-03-31",
+      "rate": 8.1,
+      "note": "Lowest rate in four decades at the time.",
+      "sourceUrl": "https://dataful.in/datasets/14333/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://7thpaycommissionnews.in/epfo-rate-of-interest/"
+    },
+    {
+      "effectiveFrom": "2022-04-01",
+      "effectiveTo": "2023-03-31",
+      "rate": 8.15,
+      "note": null,
+      "sourceUrl": "https://dataful.in/datasets/14333/",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://economictimes.indiatimes.com/wealth/invest/general-provident-fund-gpf-cpf-interest-rates-announced-for-july-september-2023-quarter/articleshow/101510252.cms"
+    },
+    {
+      "effectiveFrom": "2023-04-01",
+      "effectiveTo": "2024-03-31",
+      "rate": 8.25,
+      "note": null,
+      "sourceUrl": "https://dataful.in/datasets/14333/",
+      "evidence": "secondary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "2024-04-01",
+      "effectiveTo": "2025-03-31",
+      "rate": 8.25,
+      "note": "Confirmed by EPFO circular (primary): interest credited at 8.25% for 2024-25 per Ministry of Labour and Employment letter dated 22.05.2025.",
+      "sourceUrl": "https://www.epfindia.gov.in/site_docs/PDFs/Circulars/Y2025-2026/DeclarationOfROI_2024_25.pdf",
+      "evidence": "primary",
+      "crossCheckUrl": "https://dataful.in/datasets/14333/"
+    },
+    {
+      "effectiveFrom": "2025-04-01",
+      "effectiveTo": "2026-03-31",
+      "rate": 8.25,
+      "note": "CBT recommended 8.25% at its 239th meeting on 2026-03-02 (primary, PIB); Finance Ministry ratified in June 2026, credited to subscriber accounts that month -- third consecutive year at this rate.",
+      "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2234502",
+      "evidence": "primary",
+      "crossCheckUrl": "https://indianexpress.com/article/business/finance-ministry-epf-rate-upi-withdrawal-10746663/"
+    }
+  ],
+  "gaps": [
+    "The canonical EPFO master PDF ('Interest rate on PF accumulations since 1952', epfindia.gov.in/site_docs/PDFs/MiscPDFs/InterestRate_OnPFAccumulationsSince1952.pdf) could not be fetched directly in this research pass (returns HTTP 403 from this environment as of 2026-09-27, possibly a bot-protection block or the file having moved). The full 1952-2024 table is instead sourced from two secondary compilations (7thpaycommissionnews.in; dataful.in, which states it derives from that same EPFO PDF) that agree with each other on every value checked, plus direct primary confirmation for FY2016-17 (EPFO's own FAQ page), FY2024-25 (EPFO circular) and FY2025-26 (PIB/CBT press release). Recommend re-attempting the direct PDF fetch periodically for full primary-source coverage of 1952-2015.",
+    "The FY2000-01 mid-year rate change (12% to 11% from July 2001) is transcribed from the secondary source's own footnote and its exact effective date/FY boundary is ambiguous in that source; flagged in the relevant period's notes rather than silently normalised.",
+    "Declaration/notification dates (as distinct from the rate itself) are only reliably known for the last ~10 years; earlier years' CBT meeting dates and Gazette notification dates were not individually retrieved in this pass."
+  ],
+  "notes": "VPF (Voluntary Provident Fund) is not a separate scheme file: it is a voluntary additional contribution to the same EPF account and always earns the identical declared EPF rate -- see vpf.json, which mirrors this file with a pointer rather than duplicating the full history."
+}

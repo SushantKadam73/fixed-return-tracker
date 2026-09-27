@@ -1,0 +1,63 @@
+# Copy to .github/workflows/collect.yml
+# Reads every bank's official rate page, stores changes in data/rates, updates data/snapshots,
+# reports to Convex, and commits the data changes back to the repo (an auditable history).
+name: Collect rates
+
+on:
+  schedule:
+    - cron: "30 1 * * *" # 07:00 IST daily — all bank pages
+    - cron: "50 4 * * 1-6" # 10:20 IST Mon–Sat — bulk-deposit rates (RBI: posted by 10:10 AM each business day)
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: "all | bulk | <bank-slug>"
+        default: "all"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Install headless browser (for script-rendered bank pages)
+        run: |
+          npm install --no-save playwright@1
+          npx playwright install --with-deps chromium
+      - name: Run collectors
+        env:
+          CONVEX_SITE_URL: ${{ secrets.CONVEX_SITE_URL }}
+          INGEST_SECRET: ${{ secrets.INGEST_SECRET }}
+          SCOPE: ${{ inputs.scope }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          if [ "$SCHEDULE" = "50 4 * * 1-6" ] || [ "$SCOPE" = "bulk" ]; then
+            npx tsx collectors/src/run.ts --cadence bulk_daily
+          elif [ -n "$SCOPE" ] && [ "$SCOPE" != "all" ]; then
+            npx tsx collectors/src/run.ts --bank "$SCOPE"
+          else
+            npx tsx collectors/src/run.ts
+          fi
+      - name: Commit data changes
+        run: |
+          git config user.name "fixed-return-tracker-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/rates data/snapshots
+          if git diff --cached --quiet; then
+            echo "No rate changes."
+          else
+            git commit -m "data: rates $(TZ=Asia/Kolkata date +%F)"
+            git pull --rebase
+            git push
+          fi

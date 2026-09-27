@@ -14,4 +14,7 @@ crons.daily("check stale sources", { hourUTC: 3, minuteUTC: 30 }, internal.monit
 // 03:30 IST daily — trim the fetch log.
 crons.daily("prune fetch log", { hourUTC: 22, minuteUTC: 0 }, internal.monitor.pruneCaptures);
 
+// 05:30 IST daily — pull reviewed datasets (lineage, schemes, history) from the repo.
+crons.daily("import committed datasets", { hourUTC: 0, minuteUTC: 0 }, internal.seed.importAll);
+
 export default crons;

@@ -1,0 +1,111 @@
+{
+  "$schemaNote": "One entry per distinct RBI data series/publication relevant to deposit-rate tracking. Each 'downloadEndpoints' entry was individually curl-tested in this research pass unless tested=False (found via search but not independently fetched here).",
+  "series": [
+    {
+      "seriesId": "handbook_structure_of_interest_rates",
+      "name": "Structure of Interest Rates (Handbook of Statistics on Indian Economy / Handbook of Monetary Statistics of India)",
+      "description": "Annual, fiscal-year-end (as-at-end-March) snapshot of: call/notice money rate, 5-major-bank deposit rates (savings + 3 term-deposit buckets), 5-major-bank lending rates, MCLR, and (from FY2013-14) WALR/WADTDR for all SCBs excl. RRB/SFB.",
+      "frequency": "Annual",
+      "startDate": "1970-71 (fiscal year); savings-deposit column starts FY2007-08 in the editions checked",
+      "releaseTiming": "Each August-ish, as part of the annual Handbook of Statistics on Indian Economy release (current edition dated 2026-07-31)",
+      "downloadEndpoints": [
+        {
+          "label": "Current edition, Table 59 (XLSX)",
+          "url": "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/59T_HBIE31072026D622F6BAE6CC44E7BA37D5FF1CAF4A69.XLSX",
+          "format": "XLSX",
+          "tested": true,
+          "savedTo": "raw/handbook/Table59_StructureOfInterestRates_2026.xlsx"
+        },
+        {
+          "label": "2007-08 to 2025-26 edition, Table 62 (HTML view)",
+          "url": "https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23236",
+          "format": "HTML table (RBI renders XLSX content server-side; also offers XLSX/PDF download links on the same page)",
+          "tested": true,
+          "savedTo": null
+        },
+        {
+          "label": "2004-05 to 2021-22 edition, Table 64 (PDF)",
+          "url": "https://rbidocs.rbi.org.in/rdocs/Publications/PDFs/64TA7209BCEAE614655B88C0BD898C19EEF.PDF",
+          "format": "PDF",
+          "tested": false,
+          "savedTo": null
+        },
+        {
+          "label": "2003-04 to 2017-18 edition, Table 74 (HTML view)",
+          "url": "https://rbi.org.in/scripts/PublicationsView.aspx?id=17849",
+          "format": "HTML/XLSX/PDF",
+          "tested": false,
+          "savedTo": null
+        },
+        {
+          "label": "1970-71 to 2005-06, Handbook of Monetary Statistics of India, Table 39 (XLS + PDF)",
+          "url": "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/69099.xls",
+          "format": "XLS (legacy binary, needs xlrd) + PDF",
+          "tested": true,
+          "savedTo": "raw/handbook/HMSI_StructureOfInterestRates_69099.xls and .pdf"
+        },
+        {
+          "label": "Index of ALL annual editions",
+          "url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+          "format": "HTML index page listing every edition's Table-59-equivalent XLSX/PDF",
+          "tested": true,
+          "savedTo": "raw/handbook/hbsie_list_current.html"
+        }
+      ],
+      "scriptableConclusion": "YES - plain curl/requests with a browser-like User-Agent successfully fetched every URL tested above (HTML index pages, XLSX, legacy XLS, and PDF), no JS rendering needed.",
+      "notes": "The table NUMBER changes almost every edition (39 -> ... -> 74 -> 64 -> 62 -> 59 across the editions sampled) as RBI inserts/removes tables elsewhere in the Handbook; always locate by TITLE ('Structure of Interest Rates'), not by number. Older editions must be fetched individually from the index page above since only ~20 years of history appear in any single edition's table."
+    },
+    {
+      "seriesId": "wadtdr_walr_monthly_press_release",
+      "name": "Lending and Deposit Rates of Scheduled Commercial Banks (monthly press release + underlying Tables 1-9 workbook)",
+      "description": "Monthly bank-group-wise (Public Sector / Private Sector / Foreign / All SCB) Weighted Average Domestic Term Deposit Rate (WADTDR) on fresh AND outstanding rupee term deposits (Tables 3-4), plus WALR fresh/outstanding (Tables 1-2), bank-wise and bank-group-wise 1-year MCLR (Tables 5-6), floating-rate benchmark mix (Table 7), and sector-wise WALR (Tables 8-9). Excludes RRBs and SFBs.",
+      "frequency": "Monthly",
+      "startDate": "WADTDR/WALR bank-group time series in the workbook checked (July 2026 release) runs from March 2020 to the latest available month (June 2026 in that release, ~1-month publication lag); RBI's press-release TEXT summary (without the full workbook) goes back further in the RBI press-release archive but was not exhaustively checked in this pass.",
+      "releaseTiming": "End of each month (this release, covering data 'received during July 2026' i.e. reflecting June 2026 figures, was itself dated July 31, 2026); also feeds the 'monthly' section of https://www.rbi.org.in/SCRIPTs/Statistics.aspx",
+      "downloadEndpoints": [
+        {
+          "label": "July 2026 release: 1-page summary PDF",
+          "url": "https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR793C2A3A3F9CE5841C1A9A51EC509CA6D03.PDF",
+          "format": "PDF (text highlights only, no tables)",
+          "tested": true,
+          "savedTo": "raw/dbie/LendingDepositRates_Jul2026_PressRelease_and_Tables.pdf"
+        },
+        {
+          "label": "July 2026 release: full Tables 1-9 workbook",
+          "url": "https://rbidocs.rbi.org.in/rdocs/content/docs/MLDRSCB31072026E.xlsx",
+          "format": "XLSX, 10 sheets (Summary + 9 data tables)",
+          "tested": true,
+          "savedTo": "raw/dbie/MLDRSCB_Jul2026_Tables1to9.xlsx"
+        },
+        {
+          "label": "Index of ALL monthly releases (press-release PDFs; each release must be opened individually to find its own Tables-workbook link, filename pattern 'MLDRSCB' + date changes each month)",
+          "url": "https://www.rbi.org.in/Scripts/Pr_DataRelease.aspx?SectionID=369&DateFilter=Year",
+          "format": "HTML index",
+          "tested": true,
+          "savedTo": "raw/dbie/lending_deposit_rates_datarelease_index.html"
+        }
+      ],
+      "scriptableConclusion": "YES for a given month once its press-release HTML page is fetched (the Tables-workbook URL is embedded as a plain <a href> in that page, filename pattern like 'MLDRSCB<DDMMYYYY>E.xlsx' -- a script must parse each month's press-release detail page to discover that month's exact filename, since the hash-free filename still encodes the release date). The RBI press-release-detail URL for a given prid (e.g. prid=63271 for July 2026) must first be located via ExaSearch or the SectionID=369 index; sequential prid numbers are NOT reliably one-per-topic (a nearby prid, 63259, turned out to be an unrelated same-day press release about the Second Amendment Directions -- confirmed by direct fetch in this pass -- so prid guessing is unsafe).",
+      "notes": "This workbook does NOT contain a savings-deposit-rate range or bank-wise MEDIAN/MODAL term-deposit card-rate table as the task brief hypothesized -- only WADTDR (weighted-average, not median/modal) and MCLR. A median/modal card-rate series, if RBI publishes one, was not located in this pass; likely candidates for follow-up are the RBI Bulletin's 'Current Statistics' section and the discontinued/renamed Basic Statistical Return (BSR) publications -- both out of time budget this pass."
+    },
+    {
+      "seriesId": "dbie_portal",
+      "name": "Database on Indian Economy (DBIE) - RBI's general statistical data warehouse",
+      "description": "Web portal exposing (per RBI's own description) all RBI-published statistics including deposit/lending rates, organized under 'Financial Sector' etc., with Excel/CSV/PDF export per report.",
+      "frequency": "Varies by underlying report",
+      "startDate": "Portal itself dates to 2001 per re3data.org metadata; underlying series have their own start dates",
+      "releaseTiming": "Varies by underlying report",
+      "downloadEndpoints": [
+        {
+          "label": "DBIE portal root",
+          "url": "https://data.rbi.org.in/DBIE/",
+          "format": "Angular single-page application (JavaScript-rendered)",
+          "tested": true,
+          "savedTo": "raw/dbie/dbie_root.html"
+        }
+      ],
+      "scriptableConclusion": "NO (for this research pass) - a plain curl/requests GET on the portal root returns only the Angular app shell (empty <app-root>, JS bundle references, a `<base href=\"#\">`), confirmed by direct inspection of the raw HTML in this pass. Actual report data loads via client-side JS calling internal APIs not identified in this pass. A script would need either (a) a headless browser, or (b) reverse-engineered JSON API endpoints (not investigated -- out of scope per the task's Browser-tool time limit).",
+      "notes": "RBI's monthly press releases (see wadtdr_walr_monthly_press_release above) and the annual Handbook (see handbook_structure_of_interest_rates above) are far more practical machine-fetchable sources for the same underlying data than DBIE itself. Recommend building the tracker's pipeline against those two, and treating DBIE as a human-browsable cross-check only."
+    }
+  ]
+}

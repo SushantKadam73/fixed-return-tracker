@@ -1,0 +1,36 @@
+{
+  "scheme": "mssc",
+  "name": "Mahila Samman Savings Certificate (MSSC)",
+  "category": "small_savings",
+  "checkedAt": "2026-09-27",
+  "conventions": {
+    "compounding": "Quarterly, credited to account (not paid out until maturity)",
+    "tenure": "2 years from date of each individual deposit",
+    "eligibility": "Any woman/girl, single-holder account only",
+    "depositLimitCurrent": "Min Rs 1,000 in multiples of Rs 100; max Rs 2,00,000 per account/across accounts per holder (3-month gap required between accounts)",
+    "withdrawal": "Up to 40% of eligible balance permitted once after 1 year, before maturity",
+    "status": "DISCONTINUED for new deposits from 2025-04-01 (DEA letter F.No.14/1/2019-NS-Part(1) dated 27.03.2025; India Post SB Order 03/2025 dated 28.03.2025). Existing accounts continue to maturity unaffected.",
+    "administeredBy": "DEA / National Savings Institute; India Post and authorised banks",
+    "currentQuarter": {
+      "period": "N/A -- scheme closed to new deposits since 2025-04-01",
+      "rate": null,
+      "sourceUrl": "https://www.potoolsblog.in/2025/03/government-of-india-notification.html",
+      "sourceType": "primary"
+    }
+  },
+  "periods": [
+    {
+      "effectiveFrom": "2023-04-01",
+      "effectiveTo": "2025-03-31",
+      "rate": 7.5,
+      "note": "Only rate this scheme ever had -- fixed at 7.5% p.a. for its entire life, compounded quarterly and credited to the account (not paid out); set by Gazette notification G.S.R. 237(E) dated 31 Mar 2023 under the Government Savings Promotion Act 1873. Window for opening NEW accounts was 2023-04-01 to 2025-03-31; each account has its own independent 2-year maturity running from its opening date (so accounts opened in March 2025 mature March 2027).",
+      "sourceUrl": "https://www.igecorner.com/wp-content/uploads/2023/04/ECE_7730_SB.pdf",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2025/03/government-of-india-notification.html"
+    }
+  ],
+  "gaps": [
+    "None -- short-lived, single-rate scheme with clean primary documentation for both launch and discontinuation."
+  ],
+  "notes": "Never revised: 7.5% was the rate at launch (Budget 2023 announcement) and remained so for the entire life of the scheme."
+}

@@ -1,0 +1,325 @@
+{
+  "scheme": "po_rd",
+  "name": "Post Office Recurring Deposit (RD), 5-year",
+  "category": "small_savings",
+  "checkedAt": "2026-09-27",
+  "conventions": {
+    "compounding": "Quarterly compounding",
+    "tenure": "5 years; extendable by a further 5 years with or without continued deposits",
+    "depositLimitCurrent": "Min Rs 100/month in multiples of Rs 10; no maximum",
+    "premature": "Closure after 3 years earns Post Office Savings Account rate on the balance",
+    "administeredBy": "DEA / National Savings Institute; India Post",
+    "currentQuarter": {
+      "period": "2026-07-01 to 2026-09-30 (Q2 FY2026-27)",
+      "rate": 6.7,
+      "sourceUrl": "https://dea.gov.in/budget-division/475",
+      "sourceType": "primary",
+      "nextAnnouncement": "Q3 FY2026-27 (Oct-Dec 2026) not yet announced as of 2026-09-27; expect DEA OM ~2026-09-30."
+    }
+  },
+  "periods": [
+    {
+      "effectiveFrom": "1976-10-01",
+      "effectiveTo": "1978-02-28",
+      "rate": 9.0725,
+      "note": "Non-round nominal figure as tabulated by the source (a quarterly-compounding-derived headline yield typical of that era's RD quotation convention); exact scheme start date for RD uncertain, this is the earliest dated row located.",
+      "sourceUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://www.saposts.com/2024/11/post-office-savings-schemes-interest.html"
+    },
+    {
+      "effectiveFrom": "1978-03-01",
+      "effectiveTo": "1979-09-30",
+      "rate": 9.0725,
+      "note": "Unchanged from prior period per source.",
+      "sourceUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://www.saposts.com/2024/11/post-office-savings-schemes-interest.html"
+    },
+    {
+      "effectiveFrom": "1979-10-01",
+      "effectiveTo": "1982-03-31",
+      "rate": 9.953,
+      "note": null,
+      "sourceUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://www.saposts.com/2024/11/post-office-savings-schemes-interest.html"
+    },
+    {
+      "effectiveFrom": "1982-04-01",
+      "effectiveTo": "1983-02-28",
+      "rate": 10.368,
+      "note": null,
+      "sourceUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://www.saposts.com/2024/11/post-office-savings-schemes-interest.html"
+    },
+    {
+      "effectiveFrom": "1983-03-01",
+      "effectiveTo": "1987-03-31",
+      "rate": 11.338,
+      "note": "Secondary blog carries this 11.338% figure through to 31 Mar 1987, i.e. right up to the point NSI's own primary table takes over (see next period, which instead states 11.0% from 1987-04-01) -- a small disagreement at the handover boundary, resolved in favour of NSI (primary) for 1987-04-01 onward.",
+      "sourceUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://www.saposts.com/2024/11/post-office-savings-schemes-interest.html"
+    },
+    {
+      "effectiveFrom": "1987-04-01",
+      "effectiveTo": "1991-03-31",
+      "rate": 11.0,
+      "note": "NSI primary table's first RD row: 1 Apr 1987-31 Mar 1991 = 11.0.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html"
+    },
+    {
+      "effectiveFrom": "1991-04-01",
+      "effectiveTo": "1991-09-30",
+      "rate": 11.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html"
+    },
+    {
+      "effectiveFrom": "1991-10-01",
+      "effectiveTo": "1991-12-15",
+      "rate": 13.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html"
+    },
+    {
+      "effectiveFrom": "1991-12-16",
+      "effectiveTo": "1993-09-01",
+      "rate": 13.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html"
+    },
+    {
+      "effectiveFrom": "1993-09-02",
+      "effectiveTo": "1998-12-31",
+      "rate": 12.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html"
+    },
+    {
+      "effectiveFrom": "1999-01-01",
+      "effectiveTo": "2000-01-14",
+      "rate": 11.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html"
+    },
+    {
+      "effectiveFrom": "2000-01-15",
+      "effectiveTo": "2001-02-28",
+      "rate": 10.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html"
+    },
+    {
+      "effectiveFrom": "2001-03-01",
+      "effectiveTo": "2002-02-28",
+      "rate": 9.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html"
+    },
+    {
+      "effectiveFrom": "2002-03-01",
+      "effectiveTo": "2003-02-28",
+      "rate": 8.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html"
+    },
+    {
+      "effectiveFrom": "2003-03-01",
+      "effectiveTo": "2011-11-30",
+      "rate": 7.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html"
+    },
+    {
+      "effectiveFrom": "2011-12-01",
+      "effectiveTo": "2012-03-31",
+      "rate": 8.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html"
+    },
+    {
+      "effectiveFrom": "2012-04-01",
+      "effectiveTo": "2013-03-31",
+      "rate": 8.4,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html"
+    },
+    {
+      "effectiveFrom": "2013-04-01",
+      "effectiveTo": "2014-03-31",
+      "rate": 8.3,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html"
+    },
+    {
+      "effectiveFrom": "2014-04-01",
+      "effectiveTo": "2016-03-31",
+      "rate": 8.4,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html"
+    },
+    {
+      "effectiveFrom": "2016-04-01",
+      "effectiveTo": "2016-09-30",
+      "rate": 7.4,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2016-10-01",
+      "effectiveTo": "2017-03-31",
+      "rate": 7.3,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2017-04-01",
+      "effectiveTo": "2017-06-30",
+      "rate": 7.2,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2017-07-01",
+      "effectiveTo": "2017-12-31",
+      "rate": 7.1,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2018-01-01",
+      "effectiveTo": "2018-09-30",
+      "rate": 6.9,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2018-10-01",
+      "effectiveTo": "2019-06-30",
+      "rate": 7.3,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2019-07-01",
+      "effectiveTo": "2020-03-31",
+      "rate": 7.2,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2020-04-01",
+      "effectiveTo": "2022-06-30",
+      "rate": 5.8,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2022-07-01",
+      "effectiveTo": "2022-09-30",
+      "rate": 5.8,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2022-10-01",
+      "effectiveTo": "2022-12-31",
+      "rate": 5.8,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2023-01-01",
+      "effectiveTo": "2023-03-31",
+      "rate": 6.2,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2023-04-01",
+      "effectiveTo": "2023-06-30",
+      "rate": 6.2,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2023-07-01",
+      "effectiveTo": "2023-09-30",
+      "rate": 6.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.potoolsblog.in/2023/07/post-office-savings-schemes-and.html"
+    },
+    {
+      "effectiveFrom": "2023-10-01",
+      "effectiveTo": "2026-09-30",
+      "rate": 6.7,
+      "note": "Confirmed unchanged through Q2 FY2026-27 via India Post's current-rates page and TOI/ET reporting of the 30.06.2026 DEA OM.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://timesofindia.indiatimes.com/business/india-business/latest-small-savings-schemes-interest-rates-post-office-q2-fy-2026-2027-ppf-nsc-sukanya-samriddhi-yojana-time-deposit-scss-monthly-income-account-kisan-vikas-patra/articleshow/132090744.cms"
+    }
+  ],
+  "gaps": [
+    "Pre-1987 figures (1976-1987) are secondary-sourced only (potoolsblog.in/saposts.com shared lineage) and include non-round nominal percentages (e.g. 9.0725%, 9.953%, 10.368%, 11.338%) that could not be cross-verified against a primary Gazette/DEA table in this pass.",
+    "Exact RD scheme launch date before Oct 1976 not established; earlier existence/rate of RD (if any, 1968-1976) is an open gap.",
+    "A minor rate discontinuity appears at the secondary-to-primary source boundary (1 Apr 1987): the blog shows 11.338% continuing, NSI's own table states 11.0% from 1 Apr 1987. Both recorded; NSI (primary) governs from that date."
+  ],
+  "notes": "5-year RD is the only post office recurring-deposit tenor offered; no other tenors exist so there is nothing further to disambiguate on tenure."
+}

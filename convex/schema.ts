@@ -139,10 +139,12 @@ export default defineSchema({
     scheme: v.string(),
     effectiveFrom: v.string(),
     effectiveTo: v.optional(v.string()),
-    rate: v.number(),
+    rate: v.optional(v.number()), // absent when only a maturity period was published (e.g. early KVP)
+    maturityMonths: v.optional(v.number()),
     note: v.optional(v.string()),
     sourceUrl: v.string(),
-    sourceType: sourceType,
+    evidence: v.union(v.literal("primary"), v.literal("secondary")),
+    crossCheckUrl: v.optional(v.string()),
   }).index("by_scheme_from", ["scheme", "effectiveFrom"]),
 
   /** Macro series: CPI, CPI-IW, policy rates, bond yields, gold price, income, FX... */

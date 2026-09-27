@@ -1,0 +1,185 @@
+{
+ "checkedAt": "2026-09-27",
+ "series": [
+  {
+   "key": "cpi_combined_annual",
+   "name": "CPI Combined (All-India), fiscal-year average, base 2012=100",
+   "unit": "index (2012=100)",
+   "frequency": "fiscal_year",
+   "publisher": "MoSPI (via RBI Handbook of Statistics)",
+   "from": "2011-12",
+   "to": "2025-26",
+   "count": 15
+  },
+  {
+   "key": "cpi_combined_monthly_2024base",
+   "name": "CPI Combined (All-India), base 2024=100",
+   "unit": "index (2024=100)",
+   "frequency": "monthly",
+   "publisher": "MoSPI",
+   "from": "2025-01",
+   "to": "2026-06",
+   "count": 18
+  },
+  {
+   "key": "cpi_iw_chained",
+   "name": "CPI for Industrial Workers (All-India), chained to base 2016=100",
+   "unit": "index (2016=100)",
+   "frequency": "monthly",
+   "publisher": "Labour Bureau, Ministry of Labour & Employment",
+   "from": "1968-08",
+   "to": "2026-05",
+   "count": 683
+  },
+  {
+   "key": "gold_mumbai_annual",
+   "name": "Gold price, Mumbai (standard gold), fiscal-year average",
+   "unit": "\u20b9 per 10 grams",
+   "frequency": "fiscal_year",
+   "publisher": "RBI Handbook of Statistics",
+   "from": "1972-73",
+   "to": "2025-26",
+   "count": 54
+  },
+  {
+   "key": "gsec_yield_annual",
+   "name": "Weighted average yield on Central Government dated securities",
+   "unit": "% p.a.",
+   "frequency": "fiscal_year",
+   "publisher": "RBI Handbook of Statistics",
+   "from": "1995-96",
+   "to": "2025-26",
+   "count": 31
+  },
+  {
+   "key": "percapita_nni_annual",
+   "name": "Per-capita net national income at current prices",
+   "unit": "\u20b9 per person per year",
+   "frequency": "fiscal_year",
+   "publisher": "NSO/MoSPI (Economic Survey table 1.1)",
+   "from": "1950-51",
+   "to": "2025-26",
+   "count": 76
+  },
+  {
+   "key": "rbi_bank_rate",
+   "name": "RBI Bank Rate",
+   "unit": "% p.a.",
+   "frequency": "event",
+   "publisher": "Reserve Bank of India",
+   "from": "1935-07-05",
+   "to": "2025-12-05",
+   "count": 65
+  },
+  {
+   "key": "rbi_crr",
+   "name": "Cash Reserve Ratio",
+   "unit": "% of NDTL",
+   "frequency": "event",
+   "publisher": "Reserve Bank of India",
+   "from": "1962-09-16",
+   "to": "2025-11-29",
+   "count": 78
+  },
+  {
+   "key": "rbi_msf_rate",
+   "name": "Marginal Standing Facility rate",
+   "unit": "% p.a.",
+   "frequency": "event",
+   "publisher": "Reserve Bank of India",
+   "from": "2011-05-03",
+   "to": "2025-12-05",
+   "count": 41
+  },
+  {
+   "key": "rbi_repo_rate",
+   "name": "RBI policy repo rate (LAF)",
+   "unit": "% p.a.",
+   "frequency": "event",
+   "publisher": "Reserve Bank of India",
+   "from": "2008-06-12",
+   "to": "2025-12-05",
+   "count": 56
+  },
+  {
+   "key": "rbi_reverse_repo_rate",
+   "name": "RBI reverse repo rate (LAF)",
+   "unit": "% p.a.",
+   "frequency": "event",
+   "publisher": "Reserve Bank of India",
+   "from": "2008-12-08",
+   "to": "2020-05-22",
+   "count": 42
+  },
+  {
+   "key": "rbi_savings_rate",
+   "name": "RBI-prescribed savings deposit rate (all banks, until deregulation on 25 Oct 2011)",
+   "unit": "% p.a.",
+   "frequency": "event",
+   "publisher": "Reserve Bank of India",
+   "from": "1977-07-01",
+   "to": "2011-10-25",
+   "count": 11
+  },
+  {
+   "key": "rbi_sdf_rate",
+   "name": "Standing Deposit Facility rate",
+   "unit": "% p.a.",
+   "frequency": "event",
+   "publisher": "Reserve Bank of India",
+   "from": "2022-04-08",
+   "to": "2025-12-05",
+   "count": 11
+  },
+  {
+   "key": "rbi_slr",
+   "name": "Statutory Liquidity Ratio",
+   "unit": "% of NDTL",
+   "frequency": "event",
+   "publisher": "Reserve Bank of India",
+   "from": "1949-03-16",
+   "to": "2020-04-11",
+   "count": 39
+  },
+  {
+   "key": "rbi_td_1_3y",
+   "name": "RBI-prescribed term deposit rate, 1 to 3 years (all scheduled commercial banks)",
+   "unit": "% p.a. (min, max)",
+   "frequency": "fiscal_year",
+   "publisher": "Reserve Bank of India",
+   "from": "1971-03-31",
+   "to": "1998-03-31",
+   "count": 28
+  },
+  {
+   "key": "rbi_td_3_5y",
+   "name": "RBI-prescribed term deposit rate, Over 3 years & up to 5 years (all scheduled commercial banks)",
+   "unit": "% p.a. (min, max)",
+   "frequency": "fiscal_year",
+   "publisher": "Reserve Bank of India",
+   "from": "1971-03-31",
+   "to": "1998-03-31",
+   "count": 28
+  },
+  {
+   "key": "rbi_td_5y_plus",
+   "name": "RBI-prescribed term deposit rate, Above 5 years (all scheduled commercial banks)",
+   "unit": "% p.a. (min, max)",
+   "frequency": "fiscal_year",
+   "publisher": "Reserve Bank of India",
+   "from": "1971-03-31",
+   "to": "1998-03-31",
+   "count": 28
+  },
+  {
+   "key": "usdinr_annual",
+   "name": "Rupee\u2013US dollar exchange rate, fiscal-year average",
+   "unit": "\u20b9 per US$",
+   "frequency": "fiscal_year",
+   "publisher": "RBI Handbook of Statistics",
+   "from": "1976-77",
+   "to": "2025-26",
+   "count": 50
+  }
+ ]
+}

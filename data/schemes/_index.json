@@ -1,0 +1,141 @@
+{
+  "checkedAt": "2026-09-27",
+  "schemes": [
+    {
+      "scheme": "epf",
+      "name": "Employees' Provident Fund (EPF)",
+      "category": "provident_fund",
+      "periods": 75,
+      "from": "1952-04-01",
+      "latestRate": 8.25
+    },
+    {
+      "scheme": "frsb_2020",
+      "name": "RBI Floating Rate Savings Bonds, 2020 (Taxable) -- FRSB 2020 (T)",
+      "category": "bond",
+      "periods": 6,
+      "from": "2020-07-01",
+      "latestRate": 8.05
+    },
+    {
+      "scheme": "gpf",
+      "name": "General Provident Fund (GPF), Central Government",
+      "category": "provident_fund",
+      "periods": 36,
+      "from": "1956-04-01",
+      "latestRate": 7.1
+    },
+    {
+      "scheme": "kvp",
+      "name": "Kisan Vikas Patra (KVP)",
+      "category": "small_savings",
+      "periods": 19,
+      "from": "1988-03-23",
+      "latestRate": 7.5
+    },
+    {
+      "scheme": "mssc",
+      "name": "Mahila Samman Savings Certificate (MSSC)",
+      "category": "small_savings",
+      "periods": 1,
+      "from": "2023-04-01",
+      "latestRate": 7.5
+    },
+    {
+      "scheme": "nsc",
+      "name": "National Savings Certificate (NSC), primarily VIII Issue",
+      "category": "small_savings",
+      "periods": 19,
+      "from": "1989-05-08",
+      "latestRate": 7.7
+    },
+    {
+      "scheme": "po_rd",
+      "name": "Post Office Recurring Deposit (RD), 5-year",
+      "category": "small_savings",
+      "periods": 33,
+      "from": "1976-10-01",
+      "latestRate": 6.7
+    },
+    {
+      "scheme": "po_sb",
+      "name": "Post Office Savings Account (POSB / SB)",
+      "category": "small_savings",
+      "periods": 2,
+      "from": "1968-04-01",
+      "latestRate": 4.0
+    },
+    {
+      "scheme": "po_td_1y",
+      "name": "Post Office Time Deposit -- 1 year",
+      "category": "small_savings",
+      "periods": 43,
+      "from": "1973-08-01",
+      "latestRate": 6.9
+    },
+    {
+      "scheme": "po_td_2y",
+      "name": "Post Office Time Deposit -- 2 years",
+      "category": "small_savings",
+      "periods": 43,
+      "from": "1973-08-01",
+      "latestRate": 7.0
+    },
+    {
+      "scheme": "po_td_3y",
+      "name": "Post Office Time Deposit -- 3 years",
+      "category": "small_savings",
+      "periods": 43,
+      "from": "1973-08-01",
+      "latestRate": 7.1
+    },
+    {
+      "scheme": "po_td_5y",
+      "name": "Post Office Time Deposit -- 5 years",
+      "category": "small_savings",
+      "periods": 42,
+      "from": "1973-08-01",
+      "latestRate": 7.5
+    },
+    {
+      "scheme": "pomis",
+      "name": "Post Office Monthly Income Scheme (POMIS / MIS)",
+      "category": "small_savings",
+      "periods": 23,
+      "from": "1987-08-15",
+      "latestRate": 7.4
+    },
+    {
+      "scheme": "ppf",
+      "name": "Public Provident Fund (PPF)",
+      "category": "small_savings",
+      "periods": 29,
+      "from": "1968-04-01",
+      "latestRate": 7.1
+    },
+    {
+      "scheme": "scss",
+      "name": "Senior Citizens' Savings Scheme (SCSS)",
+      "category": "small_savings",
+      "periods": 14,
+      "from": "2004-08-02",
+      "latestRate": 8.2
+    },
+    {
+      "scheme": "ssy",
+      "name": "Sukanya Samriddhi Account / Yojana (SSY)",
+      "category": "small_savings",
+      "periods": 13,
+      "from": "2014-12-03",
+      "latestRate": 8.2
+    },
+    {
+      "scheme": "vpf",
+      "name": "Voluntary Provident Fund (VPF)",
+      "category": "provident_fund",
+      "periods": 1,
+      "from": "1952-04-01",
+      "latestRate": null
+    }
+  ]
+}

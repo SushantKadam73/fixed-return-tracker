@@ -15,6 +15,7 @@ import type * as ingest from "../ingest.js";
 import type * as monitor from "../monitor.js";
 import type * as notify from "../notify.js";
 import type * as public_ from "../public.js";
+import type * as seed from "../seed.js";
 import type * as summaries from "../summaries.js";
 import type * as validators from "../validators.js";
 
@@ -33,6 +34,7 @@ import type * as validators from "../validators.js";
 "monitor": typeof monitor,
 "notify": typeof notify,
 "public": typeof public_,
+"seed": typeof seed,
 "summaries": typeof summaries,
 "validators": typeof validators,
   }>;

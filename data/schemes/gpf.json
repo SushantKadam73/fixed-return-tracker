@@ -1,0 +1,351 @@
+{
+  "scheme": "gpf",
+  "name": "General Provident Fund (GPF), Central Government",
+  "category": "provident_fund",
+  "checkedAt": "2026-09-27",
+  "conventions": {
+    "compounding": "Annual rate declared by DEA resolution; applies uniformly to GPF (Central Services), Contributory Provident Fund (India), All India Services PF, State Railway PF, GPF (Defence Services), and several other listed government funds",
+    "eligibility": "Central Government employees who joined service before the National Pension System (NPS) cutover (2004 for most civil employees)",
+    "declaration": "By Department of Economic Affairs (DEA) Resolution, quarterly since FY2016-17 (previously annual), always published to mirror the PPF rate for the same period",
+    "administeredBy": "Department of Economic Affairs (Budget Division), Ministry of Finance",
+    "currentQuarter": {
+      "period": "2026-07-01 to 2026-09-30 (Q2 FY2026-27)",
+      "rate": 7.1,
+      "sourceUrl": "https://www.staffnews.in/2026/07/gpf-interest-rate-for-q-2-of-2026-27.html",
+      "sourceType": "primary",
+      "nextAnnouncement": "Q3 FY2026-27 (Oct-Dec 2026) not yet announced as of 2026-09-27; DEA issues a dedicated GPF resolution each quarter (distinct document from, but numerically identical to, the small-savings OM) shortly before/after quarter-start -- watch dea.gov.in/budget-division/475."
+    }
+  },
+  "periods": [
+    {
+      "effectiveFrom": "1956-04-01",
+      "effectiveTo": "1962-03-31",
+      "rate": 3.75,
+      "note": "C&AG-compiled table groups six years at one rate.",
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "1962-04-01",
+      "effectiveTo": "1965-03-31",
+      "rate": 4.0,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "1965-04-01",
+      "effectiveTo": "1966-03-31",
+      "rate": 4.25,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "1966-04-01",
+      "effectiveTo": "1967-03-31",
+      "rate": 4.6,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "1967-04-01",
+      "effectiveTo": "1968-03-31",
+      "rate": 4.8,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "1968-04-01",
+      "effectiveTo": "1969-03-31",
+      "rate": 5.1,
+      "note": "Note: differs from PPF's rate for the same FY (4.8%) -- GPF and PPF did NOT track each other before 1986.",
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178"
+    },
+    {
+      "effectiveFrom": "1969-04-01",
+      "effectiveTo": "1970-03-31",
+      "rate": 5.25,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "1970-04-01",
+      "effectiveTo": "1971-03-31",
+      "rate": 5.5,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "1971-04-01",
+      "effectiveTo": "1972-03-31",
+      "rate": 5.7,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "1972-04-01",
+      "effectiveTo": "1974-03-31",
+      "rate": 6.0,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "1974-04-01",
+      "effectiveTo": "1975-03-31",
+      "rate": 7.2,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "1975-04-01",
+      "effectiveTo": "1979-03-31",
+      "rate": 7.5,
+      "note": "C&AG table jumps directly from '1975-1979' to '1980-1981', omitting FY1979-80 -- see gaps.",
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "1980-04-01",
+      "effectiveTo": "1981-03-31",
+      "rate": 8.5,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "1981-04-01",
+      "effectiveTo": "1983-03-31",
+      "rate": 9.0,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "1983-04-01",
+      "effectiveTo": "1984-03-31",
+      "rate": 9.5,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "1984-04-01",
+      "effectiveTo": "1985-03-31",
+      "rate": 10.0,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "1985-04-01",
+      "effectiveTo": "1986-03-31",
+      "rate": 10.5,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "1986-04-01",
+      "effectiveTo": "2000-03-31",
+      "rate": 12.0,
+      "note": "From this point on, GPF's rate is set equal to PPF's rate as a matter of Finance Ministry practice -- confirmed identical to ppf.json for every period from here onward.",
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178"
+    },
+    {
+      "effectiveFrom": "2000-04-01",
+      "effectiveTo": "2001-03-31",
+      "rate": 11.0,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178"
+    },
+    {
+      "effectiveFrom": "2001-04-01",
+      "effectiveTo": "2002-03-31",
+      "rate": 9.5,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178"
+    },
+    {
+      "effectiveFrom": "2002-04-01",
+      "effectiveTo": "2003-03-31",
+      "rate": 9.0,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178"
+    },
+    {
+      "effectiveFrom": "2003-04-01",
+      "effectiveTo": "2011-03-31",
+      "rate": 8.0,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178"
+    },
+    {
+      "effectiveFrom": "2011-04-01",
+      "effectiveTo": "2011-11-30",
+      "rate": 8.0,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178"
+    },
+    {
+      "effectiveFrom": "2011-12-01",
+      "effectiveTo": "2012-03-31",
+      "rate": 8.6,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178"
+    },
+    {
+      "effectiveFrom": "2012-04-01",
+      "effectiveTo": "2013-03-31",
+      "rate": 8.8,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178"
+    },
+    {
+      "effectiveFrom": "2013-04-01",
+      "effectiveTo": "2016-03-31",
+      "rate": 8.7,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178"
+    },
+    {
+      "effectiveFrom": "2016-04-01",
+      "effectiveTo": "2016-06-30",
+      "rate": 8.1,
+      "note": "Quarterly DEA resolutions begin. C&AG PDF (secondary) reproduces the same figures found in individual DEA GPF resolutions (primary) checked for later quarters.",
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dea.gov.in/budget-division/475"
+    },
+    {
+      "effectiveFrom": "2016-07-01",
+      "effectiveTo": "2016-09-30",
+      "rate": 8.1,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dea.gov.in/budget-division/475"
+    },
+    {
+      "effectiveFrom": "2016-10-01",
+      "effectiveTo": "2016-12-31",
+      "rate": 8.0,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dea.gov.in/budget-division/475"
+    },
+    {
+      "effectiveFrom": "2017-01-01",
+      "effectiveTo": "2017-03-31",
+      "rate": 8.0,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dea.gov.in/budget-division/475"
+    },
+    {
+      "effectiveFrom": "2017-04-01",
+      "effectiveTo": "2017-06-30",
+      "rate": 7.9,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dea.gov.in/budget-division/475"
+    },
+    {
+      "effectiveFrom": "2017-07-01",
+      "effectiveTo": "2017-12-31",
+      "rate": 7.8,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dea.gov.in/budget-division/475"
+    },
+    {
+      "effectiveFrom": "2018-01-01",
+      "effectiveTo": "2018-09-30",
+      "rate": 7.6,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dea.gov.in/budget-division/475"
+    },
+    {
+      "effectiveFrom": "2018-10-01",
+      "effectiveTo": "2019-06-30",
+      "rate": 8.0,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dea.gov.in/budget-division/475"
+    },
+    {
+      "effectiveFrom": "2019-07-01",
+      "effectiveTo": "2020-03-31",
+      "rate": 7.9,
+      "note": null,
+      "sourceUrl": "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://dea.gov.in/budget-division/475"
+    },
+    {
+      "effectiveFrom": "2020-04-01",
+      "effectiveTo": "2026-09-30",
+      "rate": 7.1,
+      "note": "Unchanged for 26 consecutive quarters, exactly mirroring PPF throughout. Directly confirmed by individual DEA GPF resolutions for multiple quarters in this span, e.g. Jul-Sep 2023 (ET reporting the 2023-07-04 DEA resolution) and Q1/Q2 FY2026-27 (DEA resolutions dated 2026-04-02 and 2026-07-03 respectively, reproduced by StaffNews/Economic Times).",
+      "sourceUrl": "https://www.staffnews.in/2026/07/gpf-interest-rate-for-q-2-of-2026-27.html",
+      "evidence": "primary",
+      "crossCheckUrl": "https://economictimes.indiatimes.com/wealth/invest/general-provident-fund-gpf-cpf-interest-rates-announced-for-july-september-2023-quarter/articleshow/101510252.cms"
+    }
+  ],
+  "gaps": [
+    "FY1979-80 rate is missing from the only compiled table located (C&AG PDF jumps 1975-1979 directly to 1980-81); not found in any other source in this pass -- recorded as an explicit gap rather than interpolated.",
+    "The 1956-2016 figures rest on a Comptroller & Auditor General (C&AG) compiled PDF rather than the individual DEA resolutions themselves; treated as secondary pending direct resolution text for the older years. From 2016-17 onward, individual DEA GPF resolutions were spot-checked (several quarters) via secondary reporting (StaffNews, Economic Times, which reproduce the resolution text verbatim) and all matched the C&AG figures exactly.",
+    "GPF and PPF rates differ for FY1968-69 (5.1% vs 4.8%) and generally through the pre-1986 era -- the 'GPF mirrors PPF' convention only holds from 1986-04-01 onward; do not assume it retroactively."
+  ],
+  "notes": "GPF has tracked PPF's rate exactly, quarter for quarter, since 1986; this file nonetheless carries its own sourceUrl per period rather than merely referencing ppf.json, since GPF technically has its own DEA resolution for each period."
+}

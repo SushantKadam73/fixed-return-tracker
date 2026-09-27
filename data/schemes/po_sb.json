@@ -1,0 +1,43 @@
+{
+  "scheme": "po_sb",
+  "name": "Post Office Savings Account (POSB / SB)",
+  "category": "small_savings",
+  "checkedAt": "2026-09-27",
+  "conventions": {
+    "compounding": "Annual",
+    "payout": "Credited annually; first Rs 10,000 interest/year exempt under Sec 80TTA",
+    "depositLimitCurrent": "Min Rs 500 to open (Rs 50 minimum balance for non-cheque accounts per current rules); no maximum balance limit",
+    "administeredBy": "DEA / National Savings Institute; India Post and IPPB",
+    "currentQuarter": {
+      "period": "2026-07-01 to 2026-09-30 (Q2 FY2026-27)",
+      "rate": 4.0,
+      "sourceUrl": "https://dea.gov.in/budget-division/475",
+      "sourceType": "primary",
+      "nextAnnouncement": "Q3 FY2026-27 (Oct-Dec 2026) not yet announced as of 2026-09-27; expect DEA OM ~2026-09-30, though POSB has not moved off 4.0% since Dec 2011."
+    }
+  },
+  "periods": [
+    {
+      "effectiveFrom": "1968-04-01",
+      "effectiveTo": "2011-11-30",
+      "rate": 3.5,
+      "note": "Flat 3.5% for over four decades. Secondary-sourced for the full span (potoolsblog.in/saposts.com); the rate is widely corroborated across many compilations with no disagreement found.",
+      "sourceUrl": "https://www.potoolsblog.in/2024/11/post-office-interest-rate-from-1968.html",
+      "evidence": "secondary",
+      "crossCheckUrl": "https://www.saposts.com/2024/11/post-office-savings-schemes-interest.html"
+    },
+    {
+      "effectiveFrom": "2011-12-01",
+      "effectiveTo": "2026-09-30",
+      "rate": 4.0,
+      "note": "Raised to 4.0% w.e.f. 1 Dec 2011 and unchanged in every quarterly DEA notification since, including through Q2 FY2026-27 (confirmed by NSI master table 132 and India Post's current-rates page).",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+      "evidence": "primary",
+      "crossCheckUrl": "https://indiapost.gov.in/Financial/pages/content/post-office-saving-schemes.aspx"
+    }
+  ],
+  "gaps": [
+    "The full 1968-2011 flat-3.5% span rests on secondary compilations only; a primary Gazette/DEA confirmation of the exact 1968 launch rate was not independently located in this pass, though multiple secondary sources agree without exception."
+  ],
+  "notes": "Simplest rate history of any scheme covered: only one change (3.5% to 4.0%) in 43+ years."
+}

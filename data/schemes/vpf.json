@@ -1,0 +1,29 @@
+{
+  "scheme": "vpf",
+  "name": "Voluntary Provident Fund (VPF)",
+  "category": "provident_fund",
+  "checkedAt": "2026-09-27",
+  "conventions": {
+    "compounding": "Identical to EPF -- same annual rate, same crediting method",
+    "structure": "VPF is a voluntary top-up contribution (beyond the statutory 12%) to a member's own EPF account, permitted up to 100% of basic pay + DA; it is NOT a separate account or separate interest rate",
+    "administeredBy": "EPFO (same infrastructure as EPF)",
+    "currentQuarter": {
+      "note": "Tracks EPF exactly -- see epf.json 'currentQuarter'."
+    }
+  },
+  "periods": [
+    {
+      "effectiveFrom": "1952-04-01",
+      "effectiveTo": "2026-03-31",
+      "rate": null,
+      "note": "VPF is not a distinct interest-bearing instrument: voluntary contributions are simply added to the member's EPF account and earn exactly the EPF rate declared for each financial year. See epf.json for the full dated rate history; do not duplicate -- read from epf.json programmatically.",
+      "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2234502",
+      "evidence": "primary",
+      "crossCheckUrl": null
+    }
+  ],
+  "gaps": [
+    "By design, no separate rate history exists or is needed; consumers of this dataset should join VPF balances to epf.json's periods rather than expect a distinct table here."
+  ],
+  "notes": "Deliberately a thin pointer file. All dated rates live in epf.json."
+}

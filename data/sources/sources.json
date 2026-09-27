@@ -1,0 +1,8 @@
+{
+  "note": "Official pages read by the collectors. adapter = name in collectors/src/registry.ts. runner = where it runs.",
+  "sources": [
+    { "key": "sbi:fd", "bankSlug": "sbi", "products": ["fd", "rd"], "url": "https://sbi.bank.in/web/interest-rates/deposit-rates/retail-domestic-term-deposits", "format": "html", "runner": "github", "adapter": "sbi.retail", "cadence": "daily", "active": true },
+    { "key": "sbi:fd_bulk", "bankSlug": "sbi", "products": ["fd_bulk"], "url": "https://sbi.bank.in/web/interest-rates/deposit-rates/domestic-bulk-term-deposits", "format": "html", "runner": "github", "adapter": "sbi.bulk", "cadence": "bulk_daily", "active": true },
+    { "key": "sbi:savings", "bankSlug": "sbi", "products": ["savings"], "url": "https://sbi.bank.in/web/interest-rates/savings-bank-deposits", "format": "html", "runner": "github", "adapter": "sbi.savings", "cadence": "daily", "active": true }
+  ]
+}

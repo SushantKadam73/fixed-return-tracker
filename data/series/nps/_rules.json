@@ -1,0 +1,430 @@
+{
+  "evidence_checked_date": "2026-09-27",
+  "core_design_principle": {
+    "rule": "NPS returns are market-linked, not fixed. No official fixed 'NPS rate' exists; a simulator must derive returns from actual historical NAV series per scheme/PFM.",
+    "citation": {
+      "quote": "NPS does not offer any fixed returns. The returns under NPS are market-linked.",
+      "url": "https://npstrust.org.in/weekly-snapshot-nps-schemes",
+      "publisher": "NPS Trust",
+      "date_checked": "2026-09-27"
+    }
+  },
+  "scheme_universe": {
+    "asset_classes": [
+      {
+        "code": "E",
+        "name": "Equity and related instruments"
+      },
+      {
+        "code": "C",
+        "name": "Corporate Debt and related instruments"
+      },
+      {
+        "code": "G",
+        "name": "Government Securities and related instruments"
+      },
+      {
+        "code": "A",
+        "name": "Alternative Investment Funds (REITs, InvITs, CMBS, MBS, AIFs etc.), capped at 5% of a subscriber's allocation"
+      }
+    ],
+    "asset_class_citation": {
+      "url": "https://www.pfrda.org.in/documents/33652/203559/Handbook%2BMerged%2B31.05.2025.pdf",
+      "publisher": "PFRDA (NPS/APY Statistics Handbook)",
+      "date_checked": "2026-09-27"
+    },
+    "pension_fund_managers_current": {
+      "count": 10,
+      "list": [
+        "SBI Pension Funds Pvt. Ltd. (PFM001)",
+        "UTI Pension Fund Ltd. (PFM002)",
+        "LIC Pension Fund Ltd. (PFM003)",
+        "Kotak Mahindra Pension Fund Ltd. (PFM005)",
+        "ICICI Prudential Pension Fund Mgmt Co. Ltd. (PFM007)",
+        "HDFC Pension Management Co. Ltd. (PFM008)",
+        "Aditya Birla Sun Life Pension Management Ltd. (PFM010)",
+        "Tata Pension Management Ltd. (PFM011)",
+        "Axis Pension Fund Management Ltd. (PFM013)",
+        "DSP Pension Fund Managers Pvt. Ltd. (PFM014)"
+      ],
+      "note": "Max Life Pension Fund Management Ltd. (PFM012) schemes were discontinued w.e.f. 18-04-2025 per regulatory direction; excluded from current NAV feeds (confirmed absent from live nav-report-excel dump taken 2026-09-27).",
+      "citation": {
+        "url": "https://pfrda.org.in/intermediaries/registered-intermediaries/pension-funds",
+        "date_checked": "2026-09-27"
+      }
+    },
+    "scheme_types_by_sector": {
+      "government_sector": [
+        "CG (Central Govt default)",
+        "SG (State Govt default)",
+        "Corporate CG (legacy, closed to new corporate subscribers)",
+        "NPS Lite / Swavalamban (informal sector, largely superseded by APY)",
+        "APY (Atal Pension Yojana)",
+        "UPS CG / UPS Pool CG (Unified Pension Scheme, from 1 April 2025)"
+      ],
+      "all_citizen_and_corporate": [
+        "E/C/G/A Tier I (Active Choice)",
+        "E/C/G Tier II (Active Choice, plus Tier II Tax Saver Scheme 'TTS' for Central Govt employees only)",
+        "Auto Choice / Lifecycle common schemes: Life Cycle 25-Low, Life Cycle 50-Moderate, Life Cycle 75-High, Life Cycle-Aggressive (renamed from LC25/LC50/LC75/BLC, see lifecycle_funds below)",
+        "NPS Sanchay (composite, govt-sector-like allocation, for informal-sector/other subscribers)",
+        "Multiple Scheme Framework (MSF) schemes - ~20 PFM-branded schemes approved from Sept 2025 (e.g. SBI NPS Jeevan Swarna Retirement Yojana, SBI NPS Akshay Dhara, HDFC PF NPS Equity Advantage/Surakshit Income, ICICI NPS DREAM/MFMF, UTI Dynamic Asset Allocator/Wealth Builder, Tata Smart Retirement, Axis NPS Gold, DSP NPS Long Term Equity, Kotak NPS K...)",
+        "NPS Vatsalya (minors, from Sept 2024)"
+      ],
+      "citation": {
+        "url": "https://pfrda.org.in/intermediaries/registered-intermediaries/pension-funds",
+        "date_checked": "2026-09-27",
+        "additional_url": "https://www.pfrda.org.in/documents/33652/154008/Standardised+framework+for+classification+and+presentation+of+Schemes+under+the+NPS.pdf"
+      }
+    },
+    "scheme_code_format": {
+      "pattern": "SMxxxxxx (e.g. SM001003 = SBI Pension Fund Scheme E Tier I). First 3 digits after 'SM' = PFM number (001=SBI, 002=UTI, 003=LIC, 005=Kotak, 007=ICICI, 008=HDFC, 010=Aditya Birla, 011=Tata, 012=Max Life[discontinued], 013=Axis, 014=DSP). Confirmed directly against live NPS Trust data, not just third-party listings.",
+      "citation": {
+        "url": "https://npstrust.org.in/nav-report-excel",
+        "date_checked": "2026-09-27"
+      }
+    },
+    "unified_pension_scheme_ups": {
+      "effective_date": "1 April 2025",
+      "eligibility": "Central Govt employees under NPS as of 1 April 2025; new CG recruits from that date; certain retirees who superannuated/retired on or before 31 March 2025 with >=10 years qualifying service.",
+      "contribution_structure": "Employee 10% of Basic Pay+DA; Government matching 10%; additional Government contribution ~8.5% of Basic Pay+DA into a pooled 'Pool Corpus'.",
+      "assured_payout": "50% of last-12-month average basic pay at superannuation after >=25 years qualifying service (proportionate for 10-25 years); minimum guaranteed payout Rs 10,000/month after 10 years service; family payout = 60% of subscriber's payout.",
+      "investment_choice": "Individual corpus invested in NPS-style schemes (LC25/LC50/Default originally; LC75 and Balanced-LC extended to UPS in Oct 2025); benchmark-corpus mechanism compares individual-corpus outcome against assured payout, shortfall must be replenished by subscriber to receive the assured payout.",
+      "has_nav": true,
+      "nav_evidence": "UPS CG SCHEME (SM001017) and UPS POOL CG SCHEME (SM001018) for SBI PFM confirmed present with live NAVs (10.4998 and 10.3793 respectively) in nav-report-excel data pulled 2026-09-27.",
+      "citation": {
+        "url": "https://pfrda.org.in/schemes/national-pension-system/unified-pension-scheme",
+        "date_checked": "2026-09-27",
+        "additional_url": "https://www.pfrda.org.in/documents/33652/178014/1_250325.pdf"
+      }
+    },
+    "nps_vatsalya": {
+      "launched": "18 September 2024 (Guidelines 2025 formally issued/press-released 9 January 2026, superseding the original Sept-2024 circular)",
+      "eligibility": "Any Indian citizen (incl. NRI/OCI minors) under 18; account opened and operated by guardian; minor is sole beneficiary; PRAN in minor's name.",
+      "contribution": {
+        "note_on_conflicting_figures": "Two different minimum-contribution figures found in official sources and NOT reconciled in the time available - FLAGGED AS A GAP.",
+        "figure_A_older_faq": {
+          "min_initial": "Rs 1000",
+          "min_annual": "Rs 1000",
+          "citation_url": "https://pfrda.org.in/w/faqs/nps-vatsalya"
+        },
+        "figure_B_2025_guidelines_press_release": {
+          "min_initial": "Rs 250",
+          "min_annual": "Rs 250",
+          "citation_url": "https://www.pfrda.org.in/documents/33652/86710/Press+Release+-+PFRDA+issues+NPS+Vatsalya+Scheme+Guidelines+2025.pdf",
+          "note": "Dated 9 Jan 2026 - more recent than figure_A; RECOMMEND using this figure but verify against live PFRDA site before shipping."
+        }
+      },
+      "on_majority_18yo": "Continues under Vatsalya up to age 21 unless subscriber opts to exit or shift; fresh KYC required; if corpus <= Rs 8 lakh: full withdrawal option; if corpus > Rs 8 lakh: up to 80% lump sum, minimum 20% annuity. If no option exercised by 21, account auto-shifts to a higher-equity MSF variant and is thereafter governed by the standard Exit Regulations.",
+      "note_on_older_exit_figure": "An older FAQ page states a different exit threshold (corpus <= Rs 2.5 lakh for full withdrawal, else minimum 80% annuity) - superseded by the Dec-2025 Exit Regulations amendment and the newer scheme page; use the Rs 8 lakh / 80:20 figures above.",
+      "partial_withdrawal": "After 3 years from account opening; up to 25% of own contributions (excluding returns); for minor's education, treatment of specified illness, or disability >75%; max twice before 18 and twice more between 18-21.",
+      "tax": {
+        "old_regime": "Contribution deductible up to Rs 50,000 under Section 80CCD(1B) when made by parent/guardian; partial withdrawal up to 25% of own contribution exempt under Section 10(12BA); lump-sum on exit up to 60% of corpus exempt.",
+        "new_regime": "No deduction on contribution."
+      },
+      "citation": {
+        "url": "https://pfrda.org.in/schemes/national-pension-system/nps-vatsalya",
+        "date_checked": "2026-09-27"
+      }
+    },
+    "tier2_tax_saver_scheme_tts": {
+      "eligibility": "Central Government employees only.",
+      "min_contribution": "Rs 1,000 to activate; Rs 250 minimum subsequent contribution.",
+      "lock_in": "3 years from the date of credit of EACH contribution (rolling lock-in per contribution, not per account); cannot be assigned/pledged/hypothecated during lock-in.",
+      "tax_treatment": "Deduction under Section 80C (i.e. within the standard Rs 1.5 lakh 80C/80CCE ceiling, NOT under 80CCD) - notified as 'National Pension Scheme Tier II - Tax Saver Scheme, 2020' under Section 80C(2)(xxv) of the Income-tax Act.",
+      "citation": {
+        "url": "https://taxnotice.vittsphere.com/caselaw/notification/2020/45-2020/",
+        "publisher": "Reproduces MoF Notification No. 45/2020",
+        "date_checked": "2026-09-27"
+      }
+    }
+  },
+  "contribution_rules": {
+    "tier1_all_citizen_model": {
+      "min_at_opening": "Rs 500",
+      "min_per_subsequent_contribution": "Rs 500",
+      "min_annual_total": "Rs 1,000 (else account is 'frozen' until reactivated with minimum contribution + Rs 100/year-of-default penalty)",
+      "min_contributions_per_year": 1,
+      "max_contribution": "No upper limit.",
+      "entry_age": "18 to 70 years for individual (All Citizen Model) at account opening.",
+      "citation": {
+        "url": "https://pfrda.org.in/documents/33652/217954/NPS+All+Citizen+Model.pdf",
+        "date_checked": "2026-09-27"
+      }
+    },
+    "tier2_all_citizen_model": {
+      "min_at_opening": "Rs 1,000",
+      "min_per_subsequent_contribution": "Rs 250",
+      "min_annual_total": "None (no minimum annual balance/contribution requirement).",
+      "prerequisite": "Active Tier I account required before opening Tier II.",
+      "tax_treatment": "None - no deduction on contribution, no special tax treatment on gains; taxed at subscriber's marginal rate; withdrawal unrestricted at any time.",
+      "one_way_transfer": "Tier II -> Tier I transfer allowed; Tier I -> Tier II NOT allowed.",
+      "citation": {
+        "url": "https://pfrda.org.in/documents/33652/217954/NPS+All+Citizen+Model.pdf",
+        "date_checked": "2026-09-27"
+      }
+    },
+    "corporate_model": {
+      "min_at_opening": "Rs 500 (Tier I) / Rs 1,000 (Tier II)",
+      "min_annual_total_tier1": "Rs 1,000",
+      "employer_contribution_variants": [
+        "Equal employer/employee contribution",
+        "Unequal employer/employee contribution",
+        "Employer-only or employee-only contribution"
+      ],
+      "employer_contribution_tax_treatment": {
+        "for_employer": "Employer's own contribution deductible as a business expense under Section 36(1)(iva) of the Income-tax Act, up to 10% of Basic+DA.",
+        "for_employee": "Employer's contribution to the employee's NPS account is deductible by the EMPLOYEE under Section 80CCD(2), separate from and in addition to the Rs 1.5 lakh 80CCE ceiling (see tax_treatment section for current % limits)."
+      },
+      "citation": {
+        "url": "https://npstrust.org.in/sites/default/files/inline-images/07-Corp-FAQ.pdf",
+        "date_checked": "2026-09-27"
+      }
+    },
+    "government_sector_standard_nps": {
+      "employee_contribution": "10% of Basic Pay + DA.",
+      "government_matching_contribution": "14% of Basic Pay + DA (raised from 10% to 14% for Central Govt employees effective 1 April 2019).",
+      "citation": {
+        "url": "https://www.pfrda.org.in/documents/33652/217954/A+Guide+to+Tax+Savings+Through+NPS.pdf",
+        "date_checked": "2026-09-27"
+      },
+      "note": "Distinct from the Unified Pension Scheme (UPS) contribution structure - see scheme_universe.unified_pension_scheme_ups."
+    }
+  },
+  "tax_treatment": {
+    "note": "Only what official/near-official sources state for FY2025-26 (AY2026-27); Income-tax Act 2025 (effective AY2026-27) renumbers Section 80CCD as Section 124 but keeps the same substance per secondary tax-guide sources - not independently verified against the Act text itself (GAP).",
+    "own_contribution_80ccd1": {
+      "old_regime_only": true,
+      "limit": "10% of salary (Basic+DA) for salaried employees, or 20% of gross total income for self-employed individuals; counts INSIDE the overall Rs 1.5 lakh ceiling of Section 80CCE (shared with 80C/80CCC).",
+      "new_regime": "NOT available."
+    },
+    "additional_own_contribution_80ccd1b": {
+      "old_regime_only": true,
+      "limit": "Additional Rs 50,000, exclusively for NPS Tier I (and APY) contributions, over and above the Rs 1.5 lakh 80CCE ceiling.",
+      "new_regime": "NOT available."
+    },
+    "employer_contribution_80ccd2": {
+      "available_in": "BOTH old and new tax regime - the only NPS-related deduction that survives in the new regime.",
+      "limit_government_employees": "14% of salary (Basic+DA), both regimes.",
+      "limit_private_sector_employees": {
+        "old_regime": "10% of salary (Basic+DA).",
+        "new_regime": "14% of salary (Basic+DA) - raised from 10% by Budget/Finance Act 2024, effective FY2025-26 (AY2026-27), to align with government employees."
+      },
+      "rupee_cap": "None (pure percentage of salary), but subject to the aggregate-perquisite rule below.",
+      "aggregate_perquisite_rule": "If the EMPLOYER's combined annual contribution to EPF + NPS + superannuation fund exceeds Rs 7.5 lakh, the excess AND notional interest/growth on the excess is taxable as a perquisite under Section 17(2)(vii).",
+      "citation": {
+        "url": "https://www.allindiaitr.com/nps-tax-benefit-section-80ccd",
+        "date_checked": "2026-09-27",
+        "cross_checked_against": "https://www.pfrda.org.in/documents/33652/217954/A+Guide+to+Tax+Savings+Through+NPS.pdf (official PFRDA guide, describes the pre-Budget-2024 10%/14% baseline; does not yet reflect the FY2025-26 14%-for-private-sector-new-regime change, so the tax-guide sites were used for that specific recent change)"
+      }
+    },
+    "exit_taxation_all_citizen_tier1": {
+      "lump_sum_at_exit": "Up to 60% of total corpus withdrawn as lump sum at exit is exempt under Section 10(12A) of the Income-tax Act (this is the LEGACY 60% figure tied to the pre-Dec-2025 60:40 default; with the Dec-2025 amendment allowing up to 80% lump sum for non-government subscribers, verify whether Section 10(12A)'s exemption cap has been correspondingly updated to 80% - NOT independently confirmed in the time available, FLAGGED AS A GAP).",
+      "annuity_purchase_amount": "Amount used to purchase the annuity is not taxed at the time of purchase; the periodic annuity/pension income received later is taxed as income in the year of receipt.",
+      "citation": {
+        "url": "https://www.pfrda.org.in/documents/33652/109556/NPS-All%2Bcitizen%2BModel.pdf",
+        "date_checked": "2026-09-27"
+      }
+    }
+  },
+  "exit_rules": {
+    "effective_regulation": "PFRDA (Exits and Withdrawals under the NPS) Regulations, 2015, as last amended 20 July 2026 (consolidated text); major overhaul via the PFRDA (Exits and Withdrawals under the NPS) (Amendment) Regulations, 2025, notified 12 December 2025.",
+    "gap_note": "A further amendment dated 20 July 2026 exists (title only found: 'PFRDA (Exits and Withdrawals under the National Pension System) (Amendment) Regulations, 2026') - its specific incremental changes beyond the Dec-2025 overhaul were NOT itemised in the time available. The rule figures below are as stated in the Dec-2025 amendment press release and sector FAQ PDFs; always re-check the live consolidated PDF before relying on these figures for the simulator.",
+    "definitions": {
+      "normal_exit": "All Citizen Model: on completing 15 years of subscription OR reaching 60 years of age, whichever is EARLIER (changed from 'only at 60' by the Dec-2025 amendment). Government/Corporate Sector: on superannuation/retirement.",
+      "vesting_period": "Subscription period required to become eligible for normal exit.",
+      "premature_exit": "Exit before completing the vesting period.",
+      "lock_in_period": "Subscription period required to become eligible for premature exit (typically 3 years for All Citizen Model)."
+    },
+    "normal_exit_at_60_or_superannuation": {
+      "government_sector": {
+        "lump_sum": "up to 60%",
+        "annuity_minimum": "40%",
+        "unchanged_by_2025_amendment": true,
+        "corpus_le_8_lakh": "100% lump-sum option available",
+        "corpus_gt_8_le_12_lakh": "up to Rs 6 lakh lump sum, balance via Systematic Unit Redemption (SUR, min. 6 years) or annuity, or the standard 60:40 split"
+      },
+      "all_citizen_and_corporate_sector": {
+        "lump_sum": "up to 80% (RAISED from 60% by Dec-2025 amendment)",
+        "annuity_minimum": "20% (LOWERED from 40%)",
+        "corpus_le_8_lakh": "100% lump-sum option available",
+        "corpus_gt_8_le_12_lakh": "up to Rs 6 lakh lump sum + balance via SUR/annuity, OR the 80:20 split"
+      },
+      "citation": {
+        "url": "https://www.pfrda.org.in/documents/33652/86710/Press%2BRelease%2B-%2BKey%2Bchanges%2B-%2BExit%2BRegulations%2B.pdf",
+        "date_checked": "2026-09-27"
+      }
+    },
+    "deferment": {
+      "rule": "Subscriber may defer lump-sum withdrawal and/or annuity purchase up to age 85 (RAISED from 75 by the Dec-2025 amendment) by submitting a request to NPS Trust/authorized intermediary; may exit any time during deferment.",
+      "citation": {
+        "url": "https://indianexpress.com/article/explained/explained-economics/new-nps-norms-withdrawal-age-limit-10428974/",
+        "publisher": "Indian Express, reporting the PFRDA amendment",
+        "date_checked": "2026-09-27",
+        "cross_checked_against": "https://www.pfrda.org.in/documents/33652/184762/PFRDA%2BExits%2Band%2BWithdrawals%2Bunder%2Bthe%2BNPS%2BRegulations%2B2015%2B_Last%2Bamended%2Bon%2B20%2BJuly%2B2026_%2B(1).pdf"
+      }
+    },
+    "premature_voluntary_exit_before_60_all_citizen": {
+      "vesting_period_before_normal_exit": "None specifically for 'voluntary' exit category beyond the general 3-year lock-in from account opening.",
+      "corpus_le_5_lakh": "100% lump-sum option available.",
+      "corpus_gt_5_lakh": "up to 20% lump sum; minimum 80% must be annuitised.",
+      "note": "This restrictive 20:80 split for early/voluntary exit appears UNCHANGED by the Dec-2025 amendment (which focused on normal exit and post-60 joiners) - the 80:20 liberalisation applies to NORMAL exit (60/15yr) and to individuals joining after 60, not to early voluntary exit before the vesting period.",
+      "citation": {
+        "url": "https://pfrda.org.in/documents/33652/676426/Exits%2Band%2BWithdrawals%2Bunder%2BNPS%2Bfor%2BAll%2BCitizen%2BModel.pdf",
+        "date_checked": "2026-09-27"
+      }
+    },
+    "individuals_joining_after_age_60": {
+      "vesting_period": "REMOVED entirely by the Dec-2025 amendment (previously 3 years).",
+      "lump_sum": "up to 80% (raised from 60%)",
+      "annuity_minimum": "20% (lowered from 40%)",
+      "corpus_le_12_lakh": "100% lump-sum option available (raised from a Rs 5 lakh threshold).",
+      "citation": {
+        "url": "https://www.pfrda.org.in/documents/33652/86710/Press%2BRelease%2B-%2BKey%2Bchanges%2B-%2BExit%2BRegulations%2B.pdf",
+        "date_checked": "2026-09-27"
+      }
+    },
+    "partial_withdrawal": {
+      "before_60_or_before_superannuation": {
+        "eligibility": "after 3 years from date of subscription",
+        "frequency": "up to 4 times",
+        "min_interval": "4 years between withdrawals",
+        "amount": "up to 25% of OWN contributions, excluding any appreciation/returns"
+      },
+      "after_60_or_after_superannuation": {
+        "eligibility": "immediately, subject to 3-year subscription already completed",
+        "frequency": "unlimited, until age 85",
+        "min_interval": "3 years between withdrawals",
+        "amount": "up to 25% (excluding returns) of the relevant contribution stream(s)"
+      },
+      "citation": {
+        "url": "https://pfrda.org.in/documents/33652/676426/Exits+and+Withdrawals+under+NPS+for+Corporate+Sector.pdf",
+        "date_checked": "2026-09-27"
+      }
+    },
+    "payout_mechanisms": [
+      "Lump sum (one-time)",
+      "Systematic Lump-sum Withdrawal (SLW)",
+      "Systematic Unit Redemption (SUR) - minimum 6 years, used for the 'balance after Rs 6 lakh lump sum' band",
+      "Annuity via PFRDA-empanelled Annuity Service Providers (ASPs)"
+    ],
+    "annuity_mandatory": "Yes, in general, except in the small-corpus 100%-lump-sum exception bands noted above. Default annuity choice is only mandatory for death/missing-presumed-dead exits; otherwise subscriber selects ASP and annuity type freely.",
+    "citation_general": {
+      "url": "https://pfrda.org.in/documents/33652/676426/Exits+and+Withdrawals+under+NPS+for+Corporate+Sector.pdf",
+      "date_checked": "2026-09-27"
+    }
+  },
+  "lifecycle_funds": {
+    "renaming_circular": {
+      "circular_no": "PFRDA/2025/16/Reg-PF/02",
+      "date": "17 October 2025",
+      "url": "https://npstrust.org.in/sites/default/files/circulars-documents/Circular-1.pdf",
+      "date_checked": "2026-09-27"
+    },
+    "framework_note": "Auto Choice and Active Choice were together renamed 'Common Schemes (CS)' by circular PFRDA/2025/09/REG-PF/01 dated 16 September 2025, as part of the Multiple Scheme Framework (MSF) rollout.",
+    "renamed_funds": [
+      {
+        "new_name": "Life Cycle 25 - Low (5E/55Y)",
+        "old_name": "LC 25 Conservative Life Cycle Fund"
+      },
+      {
+        "new_name": "Life Cycle 50 - Moderate (10E/55Y)",
+        "old_name": "LC 50 Moderate Life Cycle Fund"
+      },
+      {
+        "new_name": "Life Cycle 75 - High (15E/55Y)",
+        "old_name": "LC 75 Aggressive Life Cycle Fund"
+      },
+      {
+        "new_name": "Life Cycle - Aggressive (35E/55Y)",
+        "old_name": "Balanced Life Cycle Fund (BLC)"
+      }
+    ],
+    "glide_path_asset_allocation": {
+      "note": "E=Equity, C=Corporate Bonds, G=Government Securities. Percentages at key ages, per PIB press release 24 Oct 2025 Annexure (extending LC75/BLC to Central Govt employees under NPS & UPS).",
+      "up_to_35_years": {
+        "LC25_Low": "E:25%, C:45%, G:30%",
+        "LC50_Moderate": "E:50%, C:30%, G:20%",
+        "LC75_High": "E:75%, C:10%, G:15%",
+        "LC_Aggressive_BLC": "E:50%, C:30%, G:20% (tapering starts later, at 45, than LC75)"
+      },
+      "at_45_years": {
+        "LC25_Low": "E:15%, C:25%, G:60% (approx, tapering already underway)",
+        "LC50_Moderate": "E:35%, C:20%, G:45%",
+        "LC75_High": "approx E:55%, C:15%, G:30%",
+        "LC_Aggressive_BLC": "still near peak equity (tapering begins at 45)"
+      },
+      "at_55_years_and_beyond": {
+        "LC25_Low": "E:5%, C:5%, G:90%",
+        "LC50_Moderate": "E:10%, C:10%, G:80%",
+        "LC75_High": "E:15%, C:10%, G:75%",
+        "LC_Aggressive_BLC": "E:35%, C:10%, G:55%"
+      },
+      "citation": {
+        "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2182253",
+        "publisher": "Press Information Bureau, Govt of India, reporting PFRDA/DoPPW decision",
+        "date_checked": "2026-09-27",
+        "date_published": "24 October 2025"
+      },
+      "gap": "The full year-by-year tapering matrix (age 35 through 55, one row per year) is published as an image/chart in the official PFRDA circular (npstrust.org.in/sites/default/files/circulars-documents/Circular-1.pdf, Annexure II) but was extracted as raw chart-axis numbers, not a clean age->allocation table, in the time available - a production simulator needs to re-derive/digitize the exact per-year glide path from that PDF's chart rather than rely on the 3 milestone-age snapshots captured here."
+    },
+    "default_scheme_asset_allocation_government_sector": {
+      "government_securities": "up to 65%",
+      "corporate_bonds_debt": "up to 45%",
+      "equity": "up to 25% (increased from a lower cap effective 1 April 2025)",
+      "short_term_debt_money_market": "up to 10%",
+      "asset_class_A": "up to 5%",
+      "citation": {
+        "url": "https://www.pfrda.org.in/documents/33652/154008/1122025+Circular+on+Enhancement+of+Investment+Choice+Options+for+CG+subscribers.pdf",
+        "date_checked": "2026-09-27"
+      }
+    },
+    "active_choice_caps": {
+      "equity_E": "up to 75% (Tier I) / up to 100% (Tier II)",
+      "corporate_bonds_C": "up to 100%",
+      "government_securities_G": "up to 100%",
+      "alternative_A": "up to 5%",
+      "total_cap": "E+C+G+A allocation cannot exceed 100%",
+      "citation": {
+        "url": "https://pfrda.org.in/intermediaries/registered-intermediaries/pension-funds",
+        "date_checked": "2026-09-27"
+      }
+    }
+  },
+  "multiple_nav_framework_2026": {
+    "effective_date": "1 April 2026",
+    "reason": "Differentiated Investment Management Fee (IMF) for Government vs Non-Government subscribers (per circular PFRDA/2026/15/REG-PF/04 dated 6 March 2026), and Point-of-Presence (POP) distributor charges for common schemes (incl. NPS Vatsalya, NPS Lite) now adjusted directly through NAV rather than charged separately (per circulars PFRDA/2026/16/REG-POP/01 and PFRDA/2026/17/REG-POP/02 dated 10 March 2026).",
+    "effect": "A single underlying scheme can now have MULTIPLE parallel NAVs depending on subscriber channel/category (e.g. 'DIRECT'/e-NPS vs 'POP'-distributed, and Government vs Non-Government). Empirically confirmed: SBI Scheme E Tier I NAV series is continuous in value across 31-March-2026 -> 1-April-2026 but the scheme code/name changes from SM001003 'SBI PENSION FUND SCHEME E - TIER I' to SM001025 'NPS TRUST A/C SBI PENSION FUND SCHEME E - TIER I DIRECT'.",
+    "simulator_implication": "The simulator must pick ONE consistent NAV series per scheme going forward (recommend the 'DIRECT'/e-NPS series, since that is what a self-directed retail user opening an account online would be on) and document that pre-April-2026 history and post-April-2026 'DIRECT' history are being spliced together as one continuous series.",
+    "citation": {
+      "url": "https://www.npscra.proteantech.in/download/Public%20Notice%20-%20Implementation%20of%20multiple%20NAVs%20framework%20wef%2001.04.2026.pdf",
+      "publisher": "PFRDA (via Protean CRA mirror)",
+      "date_checked": "2026-09-27",
+      "date_published": "24 March 2026"
+    }
+  },
+  "other_notable_2025_2026_changes": [
+    {
+      "change": "Multiple Scheme Framework (MSF) for non-government subscribers introduced.",
+      "citation": {
+        "circular_no": "PFRDA/2025/09/REG-PF/01",
+        "date": "16 September 2025",
+        "url": "https://pfrda.org.in/intermediaries/registered-intermediaries/pension-funds",
+        "date_checked": "2026-09-27"
+      }
+    },
+    {
+      "change": "Standardised classification/naming framework for all schemes (Categories A-E by equity-exposure band) mandated for subscriber-facing interfaces.",
+      "citation": {
+        "url": "https://www.pfrda.org.in/documents/33652/154008/Standardised+framework+for+classification+and+presentation+of+Schemes+under+the+NPS.pdf",
+        "date_checked": "2026-09-27"
+      }
+    },
+    {
+      "change": "Six Auto-Choice investment options now available to Central Government subscribers (expanded from 4), per Gazette Notification 13 Nov 2025.",
+      "citation": {
+        "url": "https://www.cgspublicationindia.com/PDFOM/Rn,%20NPS_01-12-25.pdf",
+        "date_checked": "2026-09-27"
+      }
+    }
+  ]
+}

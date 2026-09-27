@@ -1,0 +1,201 @@
+{
+  "scheme": "kvp",
+  "name": "Kisan Vikas Patra (KVP)",
+  "category": "small_savings",
+  "checkedAt": "2026-09-27",
+  "conventions": {
+    "compounding": "Annual compounding (post-2014 relaunch); accrued and paid at maturity",
+    "quotedAs": "KVP is conventionally quoted by its DOUBLING PERIOD (months for principal to double) rather than a headline annual %; an annualised rate is only explicitly published by DEA/NSI from the 2014 relaunch onward",
+    "tenure": "Fixed maturity = current doubling period (115 months as of 2026); premature encashment allowed after 2 years 6 months lock-in, then in 6-month blocks",
+    "depositLimitCurrent": "No maximum; min Rs 1,000 in multiples of Rs 100 (denominations of 1000/5000/10000/50000 at relaunch)",
+    "administeredBy": "DEA / National Savings Institute; India Post and (since relaunch) authorised banks",
+    "currentQuarter": {
+      "period": "2026-07-01 to 2026-09-30 (Q2 FY2026-27)",
+      "rate": 7.5,
+      "doublingPeriodMonths": 115,
+      "sourceUrl": "https://dea.gov.in/budget-division/475",
+      "sourceType": "primary",
+      "nextAnnouncement": "Q3 FY2026-27 (Oct-Dec 2026) not yet announced as of 2026-09-27; expect DEA OM ~2026-09-30."
+    }
+  },
+  "periods": [
+    {
+      "effectiveFrom": "1988-03-23",
+      "effectiveTo": "1998-12-31",
+      "rate": null,
+      "note": "Original KVP. NSI's inception page dates this period from 23-03-1988; PIB's 2014 relaunch release instead states the scheme 'was launched by the Government on 1st April, 1988' -- a primary-source date disagreement, both recorded. Doubling/maturity period: 5 years 6 months. No annualised % published by NSI for this era (KVP was always quoted by doubling period, not APR).",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+      "evidence": "primary",
+      "crossCheckUrl": "https://pib.gov.in/newsite/PrintRelease.aspx?relid=111494"
+    },
+    {
+      "effectiveFrom": "1999-01-01",
+      "effectiveTo": "2000-01-14",
+      "rate": null,
+      "note": "Doubling/maturity period: 6 years. No % published.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+      "evidence": "primary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "2000-01-15",
+      "effectiveTo": "2001-02-28",
+      "rate": null,
+      "note": "Doubling/maturity period: 6 years 6 months. No % published.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+      "evidence": "primary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "2001-03-01",
+      "effectiveTo": "2002-02-28",
+      "rate": null,
+      "note": "Doubling/maturity period: 7 years 3 months. No % published.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+      "evidence": "primary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "2002-03-01",
+      "effectiveTo": "2003-02-28",
+      "rate": null,
+      "note": "Doubling/maturity period: 7 years 8 months. No % published.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+      "evidence": "primary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "2003-03-01",
+      "effectiveTo": "2011-11-30",
+      "rate": 8.41,
+      "note": "Doubling/maturity period: 8 years 7 months (NSI, primary). The 8.41% annualised figure for the final part of this period is from a secondary compilation (Arthapedia/IES) describing conditions 'in 2011' at closure, not a rate NSI itself tabulates numerically for the full 2003-2011 span -- recorded as secondary-sourced.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+      "evidence": "primary",
+      "crossCheckUrl": "https://ies.gov.in/arthapedia/concept/kisan-vikas-patra-kvp"
+    },
+    {
+      "effectiveFrom": "2011-12-01",
+      "effectiveTo": "2014-11-17",
+      "rate": null,
+      "note": "SCHEME DISCONTINUED. No new KVP certificates issued 2011-12-01 to 2014-11-17, following the Shyamala Gopinath Committee (report 7 June 2011) recommendation that KVP be discontinued as an easily-transferable bearer-like instrument vulnerable to AML/CFT misuse. Existing certificates continued to earn their contracted rate to maturity.",
+      "sourceUrl": "https://pib.gov.in/newsite/PrintRelease.aspx?relid=111494",
+      "evidence": "primary",
+      "crossCheckUrl": "https://ies.gov.in/arthapedia/concept/kisan-vikas-patra-kvp"
+    },
+    {
+      "effectiveFrom": "2014-11-18",
+      "effectiveTo": "2016-03-31",
+      "rate": 8.7,
+      "note": "Relaunched with a 100-month (8y4m) doubling period. NSI's own inception page instead dates the relaunch from 23-09-2014, conflicting with PIB's press release and the Arthapedia/IES narrative both stating the relaunch 'was implemented with effect from 18 November 2014' -- recorded as a primary-source date disagreement.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+      "evidence": "primary",
+      "crossCheckUrl": "https://ies.gov.in/arthapedia/concept/kisan-vikas-patra-kvp"
+    },
+    {
+      "effectiveFrom": "2016-04-01",
+      "effectiveTo": "2016-09-30",
+      "rate": 7.8,
+      "note": "Doubling period 110 months. Confirmed by India Post SB Order 2016 circular.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.indiapost.gov.in/VAS/DOP_RTI/SBOrders2016.pdf"
+    },
+    {
+      "effectiveFrom": "2016-10-01",
+      "effectiveTo": "2017-03-31",
+      "rate": 7.7,
+      "note": "Doubling period 112 months.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+      "evidence": "primary",
+      "crossCheckUrl": "https://stableinvestor.com/2020/09/kisan-vikas-patra-kvp-interest-rate-history.html"
+    },
+    {
+      "effectiveFrom": "2017-04-01",
+      "effectiveTo": "2017-06-30",
+      "rate": 7.6,
+      "note": "Doubling period 113 months.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+      "evidence": "primary",
+      "crossCheckUrl": "https://stableinvestor.com/2020/09/kisan-vikas-patra-kvp-interest-rate-history.html"
+    },
+    {
+      "effectiveFrom": "2017-07-01",
+      "effectiveTo": "2017-12-31",
+      "rate": 7.5,
+      "note": "Doubling period 115 months.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+      "evidence": "primary",
+      "crossCheckUrl": "https://stableinvestor.com/2020/09/kisan-vikas-patra-kvp-interest-rate-history.html"
+    },
+    {
+      "effectiveFrom": "2018-01-01",
+      "effectiveTo": "2018-09-30",
+      "rate": 7.3,
+      "note": "Doubling period 118 months.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+      "evidence": "primary",
+      "crossCheckUrl": "https://stableinvestor.com/2020/09/kisan-vikas-patra-kvp-interest-rate-history.html"
+    },
+    {
+      "effectiveFrom": "2018-10-01",
+      "effectiveTo": "2019-06-30",
+      "rate": 7.7,
+      "note": "Doubling period 112 months.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+      "evidence": "primary",
+      "crossCheckUrl": "https://stableinvestor.com/2020/09/kisan-vikas-patra-kvp-interest-rate-history.html"
+    },
+    {
+      "effectiveFrom": "2019-07-01",
+      "effectiveTo": "2020-03-31",
+      "rate": 7.6,
+      "note": "Doubling period 113 months.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+      "evidence": "primary",
+      "crossCheckUrl": "https://stableinvestor.com/2020/09/kisan-vikas-patra-kvp-interest-rate-history.html"
+    },
+    {
+      "effectiveFrom": "2020-04-01",
+      "effectiveTo": "2022-09-30",
+      "rate": 6.9,
+      "note": "Doubling period 124 months.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+      "evidence": "primary",
+      "crossCheckUrl": "https://apoliticaldigitalconsulting.com/kisan-vikas-patra-calculator-2025/"
+    },
+    {
+      "effectiveFrom": "2022-10-01",
+      "effectiveTo": "2022-12-31",
+      "rate": 7.0,
+      "note": "Doubling period 123 months.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+      "evidence": "primary",
+      "crossCheckUrl": "https://apoliticaldigitalconsulting.com/kisan-vikas-patra-calculator-2025/"
+    },
+    {
+      "effectiveFrom": "2023-01-01",
+      "effectiveTo": "2023-03-31",
+      "rate": 7.2,
+      "note": "Doubling period 120 months.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+      "evidence": "primary",
+      "crossCheckUrl": "https://apoliticaldigitalconsulting.com/kisan-vikas-patra-calculator-2025/"
+    },
+    {
+      "effectiveFrom": "2023-04-01",
+      "effectiveTo": "2026-09-30",
+      "rate": 7.5,
+      "note": "Doubling period 115 months. NSI page reads 'TO 31.03.2026'; continuation through Q2 FY2026-27 confirmed by TOI/ET/bankbazaar reporting of 30.06.2026 DEA OM.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.bankbazaar.com/saving-schemes/kisan-vikas-patra.html"
+    }
+  ],
+  "gaps": [
+    "No annualised % is available (from NSI or any source found) for the original KVP era 1988-2003; only the officially published doubling/maturity period is on record. Recorded with rate=null rather than backing out an implied rate, per the no-estimation standard.",
+    "Exact original-launch date disputed between primary sources: NSI inception page says 23 March 1988; PIB's 2014 press release says 1 April 1988. Both cited, not resolved.",
+    "Relaunch date disputed similarly: NSI says 23 September 2014; PIB press release and IES/Arthapedia narrative say 18 November 2014 (matching the date the Finance Minister and Communications Minister jointly relaunched it, per contemporaneous Hindu BusinessLine coverage). Both cited.",
+    "8.41% figure for 2011 (pre-discontinuation) is secondary-sourced only (Arthapedia); no primary numeric confirmation located."
+  ],
+  "notes": "KVP is unusual among these schemes in that its primary published parameter is a doubling/maturity period, not a percentage; percentages shown here from 2014 onward are DEA/NSI's own published annualised equivalent, used consistently for cross-scheme comparability."
+}

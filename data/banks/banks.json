@@ -1,0 +1,2579 @@
+{
+  "checkedAt": "2026-09-27",
+  "source": "RBI Banks in India page plus primary sources per bank (see evidenceUrls)",
+  "banks": [
+    {
+      "slug": "sbi",
+      "name": "State Bank of India",
+      "shortName": "SBI",
+      "group": "sbi_nationalised",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1955-07-01",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "sbi.bank.in",
+      "legacyDomains": [
+        "sbi.co.in",
+        "onlinesbi.com"
+      ],
+      "hq": "Mumbai",
+      "nseSymbol": "SBIN",
+      "history": [
+        {
+          "date": "1806-06-02",
+          "event": "Bank of Calcutta established; chartered as Bank of Bengal on 2 Jan 1809",
+          "evidenceUrl": "https://aus.statebank/documents/535657/536090/EVOLUTION+OF+SBI.pdf"
+        },
+        {
+          "date": "1840-04-15",
+          "event": "Bank of Bombay incorporated",
+          "evidenceUrl": "https://aus.statebank/documents/535657/536090/EVOLUTION+OF+SBI.pdf"
+        },
+        {
+          "date": "1843-07-01",
+          "event": "Bank of Madras incorporated",
+          "evidenceUrl": "https://aus.statebank/documents/535657/536090/EVOLUTION+OF+SBI.pdf"
+        },
+        {
+          "date": "1921-01-27",
+          "event": "Bank of Bengal, Bank of Bombay and Bank of Madras amalgamated into the Imperial Bank of India",
+          "evidenceUrl": "https://rbidocs.rbi.org.in/rdocs/content/PDFs/89634.pdf"
+        },
+        {
+          "date": "1955-07-01",
+          "event": "State Bank of India Act, 1955 (Act 23 of 1955, enacted 8 May 1955) came into force; Imperial Bank of India's undertaking transferred to newly constituted State Bank of India",
+          "evidenceUrl": "https://www.indiacode.nic.in/handle/123456789/1553?locale=en"
+        },
+        {
+          "date": "1959",
+          "event": "State Bank of India (Subsidiary Banks) Act, 1959 (Act 38 of 1959) enacted, enabling SBI to take over 8 former state-associated banks as subsidiaries (later called Associates)",
+          "evidenceUrl": "https://aus.statebank/documents/535657/536090/EVOLUTION+OF+SBI.pdf"
+        },
+        {
+          "date": "2017-04-01",
+          "event": "State Bank of Bikaner & Jaipur, State Bank of Hyderabad, State Bank of Mysore, State Bank of Patiala, State Bank of Travancore and Bharatiya Mahila Bank merged into SBI",
+          "evidenceUrl": "https://rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=39884"
+        }
+      ],
+      "evidenceUrls": [
+        "https://en.wikipedia.org/wiki/State_Bank_of_India",
+        "https://www.indiacode.nic.in/handle/123456789/1553?locale=en"
+      ],
+      "notes": "Full lineage traced 1806-1955-2017. Founding date used (1955-07-01) is the constitution of SBI itself; the bank's own material traces continuous heritage to 1806 via predecessor Presidency Banks / Imperial Bank of India (see history array and Imperial Bank of India predecessor entry)."
+    },
+    {
+      "slug": "bank-of-baroda",
+      "name": "Bank of Baroda",
+      "shortName": "Bank of Baroda",
+      "group": "sbi_nationalised",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1908-07-20",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "bankofbaroda.bank.in",
+      "legacyDomains": [
+        "bankofbaroda.in",
+        "bankofbaroda.com"
+      ],
+      "hq": "Vadodara",
+      "nseSymbol": "BANKBARODA",
+      "history": [
+        {
+          "date": "1908-07-20",
+          "event": "Set up at Baroda by Maharaja Sayajirao Gaekwad III under the Companies Act of 1897, paid-up capital Rs 10 lakh",
+          "evidenceUrl": "https://bankofbaroda.bank.in/about-us/history"
+        },
+        {
+          "date": "1969-07-19",
+          "event": "Nationalised (one of 14 banks); 'The Bank of Baroda Ltd.' became 'Bank of Baroda'",
+          "evidenceUrl": "https://www.advocatekhoj.com/library/bareacts/bankingcompanies/firstschedule.php?STitle=The+First+Schedule&Title=Banking+Companies+%28Acquisition+and+Transfer+of+Undertakings%29+Act%2C+1970"
+        },
+        {
+          "date": "2002",
+          "event": "Benares State Bank amalgamated (RBI-directed rescue)",
+          "evidenceUrl": "https://timesofindia.indiatimes.com/business/india-business/benares-state-bank-bob-pact-okayed/articleshow/13583495.cms"
+        },
+        {
+          "date": "2019-04-01",
+          "event": "Dena Bank and Vijaya Bank amalgamated into Bank of Baroda (mega-merger)",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Bank_of_Baroda"
+        }
+      ],
+      "evidenceUrls": [
+        "https://bankofbaroda.bank.in/about-us/history",
+        "https://en.wikipedia.org/wiki/Bank_of_Baroda"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "bank-of-india",
+      "name": "Bank of India",
+      "shortName": "Bank of India",
+      "group": "sbi_nationalised",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1906-09-07",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "bankofindia.bank.in",
+      "legacyDomains": [
+        "bankofindia.co.in"
+      ],
+      "hq": "Mumbai",
+      "nseSymbol": "BANKINDIA",
+      "history": [
+        {
+          "date": "1906-09-07",
+          "event": "Co-founded in Mumbai by a group of Indian merchants including Ramnarain Ruia, Sassoon J. David and Ratanjee Dadabhoy Tata; paid-up capital Rs 50 lakh, 50 employees",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Bank_of_India"
+        },
+        {
+          "date": "1969-07-19",
+          "event": "Nationalised (one of 14 banks)",
+          "evidenceUrl": "https://www.advocatekhoj.com/library/bareacts/bankingcompanies/firstschedule.php?STitle=The+First+Schedule&Title=Banking+Companies+%28Acquisition+and+Transfer+of+Undertakings%29+Act%2C+1970"
+        }
+      ],
+      "evidenceUrls": [
+        "https://en.wikipedia.org/wiki/Bank_of_India"
+      ],
+      "notes": "Founding date sourced from Wikipedia (secondary) because bankofindia.bank.in's own About Us page is behind a bot/reCAPTCHA check that blocked automated retrieval; not independently confirmed via a primary BOI source in this pass."
+    },
+    {
+      "slug": "bank-of-maharashtra",
+      "name": "Bank of Maharashtra",
+      "shortName": "Bank of Maharashtra",
+      "group": "sbi_nationalised",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1935-09-16",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "bankofmaharashtra.bank.in",
+      "legacyDomains": [
+        "bankofmaharashtra.in"
+      ],
+      "hq": "Pune",
+      "nseSymbol": "MAHABANK",
+      "history": [
+        {
+          "date": "1935-09-16",
+          "event": "Registered under the Indian Companies Act at Poona (Pune)",
+          "evidenceUrl": "https://bankofmaharashtra.bank.in/milestone"
+        },
+        {
+          "date": "1936-02-08",
+          "event": "Commenced operations in Pune",
+          "evidenceUrl": "https://bankofmaharashtra.bank.in/milestone"
+        },
+        {
+          "date": "1969-07-19",
+          "event": "Nationalised (one of 14 banks)",
+          "evidenceUrl": "https://www.advocatekhoj.com/library/bareacts/bankingcompanies/firstschedule.php?STitle=The+First+Schedule&Title=Banking+Companies+%28Acquisition+and+Transfer+of+Undertakings%29+Act%2C+1970"
+        }
+      ],
+      "evidenceUrls": [
+        "https://bankofmaharashtra.bank.in/milestone",
+        "https://en.wikipedia.org/wiki/Bank_of_Maharashtra"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "canara-bank",
+      "name": "Canara Bank",
+      "shortName": "Canara Bank",
+      "group": "sbi_nationalised",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1906-07-01",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "canarabank.bank.in",
+      "legacyDomains": [
+        "canarabank.com"
+      ],
+      "hq": "Bengaluru",
+      "nseSymbol": "CANBK",
+      "history": [
+        {
+          "date": "1906-07-01",
+          "event": "Established as Canara Hindu Permanent Fund in Mangalore by Ammembal Subba Rao Pai",
+          "evidenceUrl": "https://www.canarabank.bank.in/pages/profile"
+        },
+        {
+          "date": "1910",
+          "event": "Renamed Canara Bank Ltd.",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Canara_Bank"
+        },
+        {
+          "date": "1969-07-19",
+          "event": "Nationalised (one of 14 banks)",
+          "evidenceUrl": "https://www.advocatekhoj.com/library/bareacts/bankingcompanies/firstschedule.php?STitle=The+First+Schedule&Title=Banking+Companies+%28Acquisition+and+Transfer+of+Undertakings%29+Act%2C+1970"
+        },
+        {
+          "date": "2020-04-01",
+          "event": "Syndicate Bank amalgamated into Canara Bank",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Syndicate_Bank"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.canarabank.bank.in/pages/profile",
+        "https://www.iimb.ac.in/sites/default/files/2018-10/WP%20No.%20577.pdf"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "central-bank-of-india",
+      "name": "Central Bank of India",
+      "shortName": "Central Bank of India",
+      "group": "sbi_nationalised",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1911-12-21",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "centralbank.bank.in",
+      "legacyDomains": [
+        "centralbankofindia.co.in"
+      ],
+      "hq": "Mumbai",
+      "nseSymbol": "CENTRALBK",
+      "history": [
+        {
+          "date": "1911-12-21",
+          "event": "Established by Sir Sorabji Pochkhanawala with Sir Pherozeshah Mehta as first chairman; first fully Indian-owned and managed commercial bank in India",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Central_Bank_of_India"
+        },
+        {
+          "date": "1969-07-19",
+          "event": "Nationalised (one of 14 banks)",
+          "evidenceUrl": "https://www.advocatekhoj.com/library/bareacts/bankingcompanies/firstschedule.php?STitle=The+First+Schedule&Title=Banking+Companies+%28Acquisition+and+Transfer+of+Undertakings%29+Act%2C+1970"
+        }
+      ],
+      "evidenceUrls": [
+        "https://centralbank.bank.in/en/about-us/profile",
+        "http://presidentofindia.nic.in/smt-pratibha-devisingh-patil/speeches/speech-her-excellency-president-india-shrimati-pratibha-100"
+      ],
+      "notes": "A 1911 Bankipedia-sourced Wikipedia biography of Sorabji Pochkhanawala gives 11 Dec 1911 as the date the bank 'commenced business'; the bank's own site, the 2011 Presidential speech at its centenary, and current Wikipedia infobox all use 21 Dec 1911 as the founding date, which is used here."
+    },
+    {
+      "slug": "indian-bank",
+      "name": "Indian Bank",
+      "shortName": "Indian Bank",
+      "group": "sbi_nationalised",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1907-03-05",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "indianbank.bank.in",
+      "legacyDomains": [
+        "indianbank.in"
+      ],
+      "hq": "Chennai",
+      "nseSymbol": "INDIANB",
+      "history": [
+        {
+          "date": "1907-03-05",
+          "event": "Incorporated under the Indian Companies Act, 1882 as 'Indian Bank Limited', authorised capital Rs 20 lakh",
+          "evidenceUrl": "https://indianbank.bank.in/en/history"
+        },
+        {
+          "date": "1907-08-15",
+          "event": "Commenced business, head office at Parry's Building, Madras",
+          "evidenceUrl": "https://indianbank.bank.in/en/history"
+        },
+        {
+          "date": "1969-07-19",
+          "event": "Nationalised (one of 14 banks)",
+          "evidenceUrl": "https://www.advocatekhoj.com/library/bareacts/bankingcompanies/firstschedule.php?STitle=The+First+Schedule&Title=Banking+Companies+%28Acquisition+and+Transfer+of+Undertakings%29+Act%2C+1970"
+        },
+        {
+          "date": "1990",
+          "event": "Bank of Thanjavur Ltd (157 branches) amalgamated",
+          "evidenceUrl": "https://indianbank.bank.in/en/bank-s-profile"
+        },
+        {
+          "date": "2020-04-01",
+          "event": "Allahabad Bank amalgamated into Indian Bank",
+          "evidenceUrl": "https://indianbank.bank.in/en/history"
+        }
+      ],
+      "evidenceUrls": [
+        "https://indianbank.bank.in/en/history",
+        "https://www.cnbctv18.com/market/stocks/indian-bank-share-price/IB04/"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "indian-overseas-bank",
+      "name": "Indian Overseas Bank",
+      "shortName": "Indian Overseas Bank",
+      "group": "sbi_nationalised",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1937-02-10",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "iob.bank.in",
+      "legacyDomains": [],
+      "hq": "Chennai",
+      "nseSymbol": "IOB",
+      "history": [
+        {
+          "date": "1937-02-10",
+          "event": "Founded by M. Ct. M. Chidambaram Chettyar; started business simultaneously at Karaikudi, Chennai and Rangoon (Burma), specialising in foreign exchange",
+          "evidenceUrl": "https://www.iob.bank.in/en/genesis"
+        },
+        {
+          "date": "1969-07-19",
+          "event": "Nationalised (one of 14 banks)",
+          "evidenceUrl": "https://www.advocatekhoj.com/library/bareacts/bankingcompanies/firstschedule.php?STitle=The+First+Schedule&Title=Banking+Companies+%28Acquisition+and+Transfer+of+Undertakings%29+Act%2C+1970"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.iob.bank.in/en/genesis",
+        "https://www.iob.bank.in/en/about-us"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "punjab-and-sind-bank",
+      "name": "Punjab & Sind Bank",
+      "shortName": "Punjab & Sind Bank",
+      "group": "sbi_nationalised",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1908-06-24",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "punjabandsind.bank.in",
+      "legacyDomains": [
+        "punjabandsindbank.co.in"
+      ],
+      "hq": "New Delhi",
+      "nseSymbol": "PSB",
+      "history": [
+        {
+          "date": "1908",
+          "event": "Founded under the vision of Bhai Vir Singh, Sir Sunder Singh Majitha and Sardar Tarlochan Singh, on the principle of social commitment to the weaker sections",
+          "evidenceUrl": "https://punjabandsindbank.co.in/content/history"
+        },
+        {
+          "date": "1980-04-15",
+          "event": "Nationalised (one of 6 banks)",
+          "evidenceUrl": "https://rbi.org.in/history/Brief_Chro1968to1985.html"
+        }
+      ],
+      "evidenceUrls": [
+        "https://en.wikipedia.org/wiki/Punjab_and_Sind_Bank",
+        "https://punjabandsind.bank.in/system/uploads/document/2150_2024070310082135916.pdf"
+      ],
+      "notes": "Exact incorporation date 24 Jun 1908 per Wikipedia infobox (secondary); bank's own history page and its BRSR disclosure filing confirm only the year 1908 as primary evidence."
+    },
+    {
+      "slug": "punjab-national-bank",
+      "name": "Punjab National Bank",
+      "shortName": "PNB",
+      "group": "sbi_nationalised",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1894-05-19",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "pnb.bank.in",
+      "legacyDomains": [
+        "pnbindia.in"
+      ],
+      "hq": "New Delhi",
+      "nseSymbol": "PNB",
+      "history": [
+        {
+          "date": "1894-05-19",
+          "event": "Memorandum and Articles of Association filed/registered under Act VI of 1882 (Indian Companies Act); India's first Swadeshi bank",
+          "evidenceUrl": "https://pnb.bank.in/origin-of-PNB.html"
+        },
+        {
+          "date": "1895-04-12",
+          "event": "Commenced operations from Lahore with authorised capital Rs 2 lakh",
+          "evidenceUrl": "https://pnb.bank.in/profile.html"
+        },
+        {
+          "date": "1969-07-19",
+          "event": "Nationalised (one of 14 banks)",
+          "evidenceUrl": "https://www.advocatekhoj.com/library/bareacts/bankingcompanies/firstschedule.php?STitle=The+First+Schedule&Title=Banking+Companies+%28Acquisition+and+Transfer+of+Undertakings%29+Act%2C+1970"
+        },
+        {
+          "date": "1993-09-04",
+          "event": "New Bank of India (nationalised 1980) amalgamated into PNB",
+          "evidenceUrl": "https://sooperkanoon.com/case/createfile/467033/tp:pd"
+        },
+        {
+          "date": "2003-01-31",
+          "event": "Nedungadi Bank Ltd amalgamated into PNB",
+          "evidenceUrl": "https://pnb.bank.in/downloadprocess.aspx?fid=Z9uQN2KlmlhZ5Hoqq8SwuQ%3D%3D"
+        },
+        {
+          "date": "2020-04-01",
+          "event": "Oriental Bank of Commerce and United Bank of India amalgamated into PNB",
+          "evidenceUrl": "https://pnb.bank.in/Amalgamation.html"
+        }
+      ],
+      "evidenceUrls": [
+        "https://pnb.bank.in/origin-of-PNB.html",
+        "https://pnb.bank.in/heritage.html"
+      ],
+      "notes": "PNB's own 'Heritage' page states 7 (later 9, per Profile page) private-sector-bank mergers historically; earlier mergers include Bharat Bank (1951), Universal Bank of India (1961), Indo-Commercial Bank (1962) and Hindustan Commercial Bank (1986) -- included in notes only, not as separate predecessor entries, since not explicitly requested and less rigorously dated in the time available."
+    },
+    {
+      "slug": "uco-bank",
+      "name": "UCO Bank",
+      "shortName": "UCO Bank",
+      "group": "sbi_nationalised",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1943-01-06",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "uco.bank.in",
+      "legacyDomains": [
+        "ucobank.com"
+      ],
+      "hq": "Kolkata",
+      "nseSymbol": "UCOBANK",
+      "history": [
+        {
+          "date": "1943-01-06",
+          "event": "The United Commercial Bank Ltd founded in Kolkata; idea conceived by G.D. Birla",
+          "evidenceUrl": "https://www.uco.bank.in/history"
+        },
+        {
+          "date": "1969-07-19",
+          "event": "Nationalised (one of 14 banks)",
+          "evidenceUrl": "https://www.advocatekhoj.com/library/bareacts/bankingcompanies/firstschedule.php?STitle=The+First+Schedule&Title=Banking+Companies+%28Acquisition+and+Transfer+of+Undertakings%29+Act%2C+1970"
+        },
+        {
+          "date": "1985",
+          "event": "Renamed UCO Bank by Act of Parliament (to avoid confusion with a Bangladeshi 'United Commercial Bank PLC')",
+          "evidenceUrl": "https://www.uco.bank.in/history"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.uco.bank.in/history",
+        "https://en.wikipedia.org/wiki/UCO_Bank"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "union-bank-of-india",
+      "name": "Union Bank of India",
+      "shortName": "Union Bank of India",
+      "group": "sbi_nationalised",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1919-11-11",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "unionbankofindia.bank.in",
+      "legacyDomains": [],
+      "hq": "Mumbai",
+      "nseSymbol": "UNIONBANK",
+      "history": [
+        {
+          "date": "1919-11-11",
+          "event": "Registered as a limited company in Bombay; inception led by Seth Sitaram Poddar",
+          "evidenceUrl": "https://www.unionbankofindia.bank.in/en/common/profile"
+        },
+        {
+          "date": "1921",
+          "event": "Head office in Bombay inaugurated by Mahatma Gandhi",
+          "evidenceUrl": "https://www.unionbankofindia.bank.in/en/common/profile"
+        },
+        {
+          "date": "1969-07-19",
+          "event": "Nationalised (one of 14 banks)",
+          "evidenceUrl": "https://www.advocatekhoj.com/library/bareacts/bankingcompanies/firstschedule.php?STitle=The+First+Schedule&Title=Banking+Companies+%28Acquisition+and+Transfer+of+Undertakings%29+Act%2C+1970"
+        },
+        {
+          "date": "2020-04-01",
+          "event": "Andhra Bank and Corporation Bank amalgamated into Union Bank of India",
+          "evidenceUrl": "https://www.unionbankofindia.bank.in/en/common/profile"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.unionbankofindia.bank.in/en/common/profile"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "axis-bank",
+      "name": "Axis Bank",
+      "shortName": "Axis Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1993-12-03",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "axis.bank.in",
+      "legacyDomains": [
+        "axisbank.com"
+      ],
+      "hq": "Mumbai",
+      "nseSymbol": "AXISBANK",
+      "history": [
+        {
+          "date": "1993-12-03",
+          "event": "Founded as UTI Bank, promoted by Unit Trust of India (UTI)/SUUTI, LIC, GIC and other insurers",
+          "evidenceUrl": "https://www.axis.bank.in/about-us/corporate-profile"
+        },
+        {
+          "date": "1994-04-02",
+          "event": "First branch inaugurated in Ahmedabad by Finance Minister Manmohan Singh",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Axis_Bank_Ltd"
+        },
+        {
+          "date": "2007-07-30",
+          "event": "Renamed from 'UTI Bank Ltd' to 'Axis Bank Ltd' in the Second Schedule to the RBI Act, 1934",
+          "evidenceUrl": "https://rbi.org.in/Scripts/BS_CircularIndexDisplay.aspx?Id=3910"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.axis.bank.in/about-us/corporate-profile",
+        "https://rbi.org.in/Scripts/BS_CircularIndexDisplay.aspx?Id=3910"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "bandhan-bank",
+      "name": "Bandhan Bank",
+      "shortName": "Bandhan Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "2014-12-23",
+      "licenceDate": "2015-06-17",
+      "operationsCommenced": "2015-08-23",
+      "website": "bandhan.bank.in",
+      "legacyDomains": [],
+      "hq": "Kolkata",
+      "nseSymbol": "BANDHANBNK",
+      "history": [
+        {
+          "date": "2001",
+          "event": "Bandhan set up as a not-for-profit society for financial inclusion / microfinance in rural Bengal",
+          "evidenceUrl": "https://bandhan.bank.in/Our-Story"
+        },
+        {
+          "date": "2006",
+          "event": "Bandhan acquired an NBFC, creating Bandhan Financial Services Pvt Ltd",
+          "evidenceUrl": "https://bandhan.bank.in/Our-Story"
+        },
+        {
+          "date": "2014-04",
+          "event": "RBI in-principle approval for a universal banking licence",
+          "evidenceUrl": "https://bandhan.bank.in/sites/default/files/2021-01/Annual-Report-FY-17-18.pdf"
+        },
+        {
+          "date": "2014-12-23",
+          "event": "Bandhan Bank Limited incorporated as wholly owned subsidiary of Bandhan Financial Holdings Ltd",
+          "evidenceUrl": "https://bandhan.bank.in/sites/default/files/2021-01/Annual-Report-FY-17-18.pdf"
+        },
+        {
+          "date": "2015-06-17",
+          "event": "RBI granted final universal banking licence",
+          "evidenceUrl": "https://bandhan.bank.in/sites/default/files/2021-01/Annual-Report-FY-17-18.pdf"
+        },
+        {
+          "date": "2015-08-23",
+          "event": "Commenced banking operations; first bank set up in eastern India post-Independence",
+          "evidenceUrl": "https://bandhan.bank.in/Our-Story"
+        }
+      ],
+      "evidenceUrls": [
+        "https://bandhan.bank.in/Our-Story"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "csb-bank",
+      "name": "CSB Bank",
+      "shortName": "CSB Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1920-11",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "csb.bank.in",
+      "legacyDomains": [],
+      "hq": "Thrissur",
+      "nseSymbol": "CSBBANK",
+      "history": [
+        {
+          "date": "1920-11",
+          "event": "Founded in Thrissur as The Catholic Syrian Bank; oldest private sector bank in Kerala",
+          "evidenceUrl": "https://csb.bank.in/about-us"
+        },
+        {
+          "date": "2018-02-20",
+          "event": "Fairfax India agreed to acquire 51% equity stake",
+          "evidenceUrl": "https://www.fairfaxindia.ca/press-releases/fairfax-india-to-acquire-51-of-the-catholic-syrian-bank-ltd-2018-02-20/"
+        },
+        {
+          "date": "2019-06-10",
+          "event": "Renamed from 'The Catholic Syrian Bank Limited' to 'CSB Bank Limited' in the Second Schedule to the RBI Act, 1934",
+          "evidenceUrl": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11714&Mode=0"
+        }
+      ],
+      "evidenceUrls": [
+        "https://csb.bank.in/about-us",
+        "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11714&Mode=0"
+      ],
+      "notes": "Exact founding day not stated by any source found; primary source (bank's own site) gives only 'November 1920'."
+    },
+    {
+      "slug": "city-union-bank",
+      "name": "City Union Bank",
+      "shortName": "City Union Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1904-10-31",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "cityunionbank.bank.in",
+      "legacyDomains": [
+        "cityunionbank.com"
+      ],
+      "hq": "Kumbakonam",
+      "nseSymbol": "CUB",
+      "history": [
+        {
+          "date": "1904-10-31",
+          "event": "Incorporated as 'The Kumbakonam Bank Limited'",
+          "evidenceUrl": "https://www.cityunionbank.com/history-of-cub"
+        },
+        {
+          "date": "1965-04",
+          "event": "Amalgamated with City Forward Bank Ltd and Union Bank Ltd; renamed 'The Kumbakonam City Union Bank Limited'",
+          "evidenceUrl": "https://www.cityunionbank.com/history-of-cub"
+        },
+        {
+          "date": "1987-11-02",
+          "event": "Renamed 'City Union Bank Limited'",
+          "evidenceUrl": "https://cityunionbank.com/assets/frontend/pdf/others/Moa-Aoa-23082023.pdf"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.cityunionbank.com/history-of-cub"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "dcb-bank",
+      "name": "DCB Bank",
+      "shortName": "DCB Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1930s",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "dcb.bank.in",
+      "legacyDomains": [
+        "dcbbank.com"
+      ],
+      "hq": "Mumbai",
+      "nseSymbol": "DCBBANK",
+      "history": [
+        {
+          "date": "1930s",
+          "event": "Origin from merger of Ismailia Co-operative Bank Ltd and Masalawala Co-operative Bank forming Development Co-operative Bank (exact date not disclosed by the bank)",
+          "evidenceUrl": "https://www.dcb.bank.in/about-us/overview"
+        },
+        {
+          "date": "1995-05-31",
+          "event": "Granted scheduled commercial bank licence by RBI as 'Development Credit Bank'",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/DCB_Bank"
+        },
+        {
+          "date": "2013-10-24",
+          "event": "Renamed from 'Development Credit Bank Limited' to 'DCB Bank Limited' in the Second Schedule to the RBI Act, 1934",
+          "evidenceUrl": "https://www.rbi.org.in/commonman/Upload/English/Notification/PDFs/DCB100114NF.pdf"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.dcb.bank.in/about-us/overview",
+        "https://www.rbi.org.in/commonman/Upload/English/Notification/PDFs/DCB100114NF.pdf"
+      ],
+      "notes": "DCB Bank's own website states only 'since its inception in 1930s' with no exact date; the Aga Khan Fund for Economic Development (AKFED) is promoter."
+    },
+    {
+      "slug": "dhanlaxmi-bank",
+      "name": "Dhanlaxmi Bank",
+      "shortName": "Dhanlaxmi Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1927",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "dhan.bank.in",
+      "legacyDomains": [
+        "dhanbank.com"
+      ],
+      "hq": "Thrissur",
+      "nseSymbol": "DHANBANK",
+      "history": [
+        {
+          "date": "1927",
+          "event": "Incorporated at Thrissur, Kerala",
+          "evidenceUrl": "https://www.dhanbank.com/pdf/financials/Investor_Presentation_June_2020.pdf"
+        },
+        {
+          "date": "1977",
+          "event": "Designated a scheduled commercial bank by RBI",
+          "evidenceUrl": "https://www.dhanbank.com/pdf/financials/Investor_Presentation_June_2020.pdf"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.dhanbank.com/pdf/financials/Investor_Presentation_June_2020.pdf"
+      ],
+      "notes": "Exact day/month of 1927 incorporation not found in sources checked."
+    },
+    {
+      "slug": "federal-bank",
+      "name": "Federal Bank",
+      "shortName": "Federal Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1931-04-23",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "federal.bank.in",
+      "legacyDomains": [],
+      "hq": "Aluva, Kochi",
+      "nseSymbol": "FEDERALBNK",
+      "history": [
+        {
+          "date": "1931-04-23",
+          "event": "Incorporated as 'The Travancore Federal Bank Limited' at Nedumpuram, near Tiruvalla",
+          "evidenceUrl": "https://www.federal.bank.in/milestones"
+        },
+        {
+          "date": "1949-12-02",
+          "event": "Renamed 'The Federal Bank Limited'",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Federal_Bank"
+        },
+        {
+          "date": "1970-07-20",
+          "event": "Became a Scheduled Commercial Bank",
+          "evidenceUrl": "https://www.federal.bank.in/annual-report-2020-21/about-us.html"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.federal.bank.in/milestones"
+      ],
+      "notes": "Between 1963-1970, Federal Bank absorbed several small Kerala banks (Chalakudy Public Bank, Cochin Union Bank, Alleppey Bank, St. George Union Bank, Marthandam Commercial Bank) per Wikipedia; not added as separate predecessor entries as these were not independently verified against a primary Federal Bank source in this pass."
+    },
+    {
+      "slug": "hdfc-bank",
+      "name": "HDFC Bank",
+      "shortName": "HDFC Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1994-08",
+      "licenceDate": "1995-01",
+      "operationsCommenced": null,
+      "website": "hdfc.bank.in",
+      "legacyDomains": [
+        "hdfcbank.com"
+      ],
+      "hq": "Mumbai",
+      "nseSymbol": "HDFCBANK",
+      "history": [
+        {
+          "date": "1994-08",
+          "event": "Incorporated as 'HDFC Bank Limited' after HDFC Ltd received RBI in-principle approval to set up a private-sector bank",
+          "evidenceUrl": "https://www.hdfc.bank.in/about-us/who-we-are"
+        },
+        {
+          "date": "1995-01",
+          "event": "Received banking licence and commenced operations as a Scheduled Commercial Bank",
+          "evidenceUrl": "https://www.hdfc.bank.in/about-us/who-we-are"
+        },
+        {
+          "date": "2000-02-26",
+          "event": "Times Bank Limited merged into HDFC Bank (first friendly merger of two new private banks)",
+          "evidenceUrl": "https://www.hdfc.bank.in/about-us/who-we-are"
+        },
+        {
+          "date": "2008-05-23",
+          "event": "Centurion Bank of Punjab amalgamation approved by RBI, completing the acquisition",
+          "evidenceUrl": "https://www.hdfc.bank.in/about-us/who-we-are"
+        },
+        {
+          "date": "2023-07-01",
+          "event": "HDFC Limited merged into HDFC Bank (India's largest-ever M&A, transformational merger announced 4 Apr 2022)",
+          "evidenceUrl": "https://www.hdfc.bank.in/press-release/2023/q2/hdfc-ltd-to-merge-into-hdfc-bank-effective-july-1-2023"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.hdfc.bank.in/about-us/who-we-are",
+        "https://en.wikipedia.org/wiki/HDFC_Bank"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "icici-bank",
+      "name": "ICICI Bank",
+      "shortName": "ICICI Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1994-01",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "icici.bank.in",
+      "legacyDomains": [
+        "icicibank.com"
+      ],
+      "hq": "Mumbai",
+      "nseSymbol": "ICICIBANK",
+      "history": [
+        {
+          "date": "1955-01-05",
+          "event": "Parent, the Industrial Credit and Investment Corporation of India (ICICI), established as a development finance institution (World Bank/GoI/industry joint venture)",
+          "evidenceUrl": "https://www.icici.bank.in/about-us/history"
+        },
+        {
+          "date": "1994-01",
+          "event": "ICICI Bank incorporated (as ICICI Banking Corporation Ltd) at Baroda, wholly owned subsidiary of ICICI",
+          "evidenceUrl": "https://www.icici.bank.in/about-us/history"
+        },
+        {
+          "date": "1999-09-10",
+          "event": "Renamed from 'ICICI Banking Corporation Limited' to 'ICICI Bank Limited'",
+          "evidenceUrl": "https://www.moneycontrol.com/company-facts/icicibank/history/ICi02"
+        },
+        {
+          "date": "2001-03-10",
+          "event": "Bank of Madura merged into ICICI Bank",
+          "evidenceUrl": "https://www.moneycontrol.com/company-facts/icicibank/history/ICi02"
+        },
+        {
+          "date": "2002-05-03",
+          "event": "Parent ICICI Ltd (and its subsidiaries ICICI Personal Financial Services and ICICI Capital Services) reverse-merged into ICICI Bank",
+          "evidenceUrl": "https://www.icici.bank.in/about-us/history"
+        },
+        {
+          "date": "2007-04-19",
+          "event": "The Sangli Bank Limited amalgamated into ICICI Bank",
+          "evidenceUrl": "https://www.moneycontrol.com/company-facts/icicibank/history/ICi02"
+        },
+        {
+          "date": "2010-08-12",
+          "event": "Bank of Rajasthan amalgamated into ICICI Bank (effective close of business)",
+          "evidenceUrl": "https://www.sgssl.co.in/market/company-profile/history/5418"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.icici.bank.in/about-us/history"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "indusind-bank",
+      "name": "IndusInd Bank",
+      "shortName": "IndusInd Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1994-04-17",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "indusind.bank.in",
+      "legacyDomains": [],
+      "hq": "Mumbai",
+      "nseSymbol": "INDUSINDBK",
+      "history": [
+        {
+          "date": "1994-04",
+          "event": "Conceived and promoted by Srichand P. Hinduja (Hinduja Group) with NRI shareholders; one of nine 'new generation' banks licensed in 1994",
+          "evidenceUrl": "https://www.indusind.bank.in/in/en/about-us.html"
+        },
+        {
+          "date": "1994-04-17",
+          "event": "Commenced operations; first branch at Opera House, Mumbai; inaugurated by Finance Minister Manmohan Singh",
+          "evidenceUrl": "https://www.indusind.bank.in/in/en/microsites/just25.html"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.indusind.bank.in/in/en/about-us.html"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "idfc-first-bank",
+      "name": "IDFC FIRST Bank",
+      "shortName": "IDFC FIRST Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "2015-10-19",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "idfcfirst.bank.in",
+      "legacyDomains": [],
+      "hq": "Mumbai",
+      "nseSymbol": "IDFCFIRSTB",
+      "history": [
+        {
+          "date": "1997",
+          "event": "IDFC Limited set up to finance infrastructure",
+          "evidenceUrl": "https://www.idfcfirst.bank.in/about-us/our-history"
+        },
+        {
+          "date": "2014",
+          "event": "RBI in-principle approval to IDFC Limited to set up a new bank in the private sector",
+          "evidenceUrl": "https://www.idfcfirst.bank.in/about-us/our-history"
+        },
+        {
+          "date": "2015-10-19",
+          "event": "IDFC Bank launched via demerger of IDFC Limited's infrastructure-lending business; inaugurated by PM Narendra Modi",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/IDFC_First_Bank"
+        },
+        {
+          "date": "2018-12-18",
+          "event": "IDFC Bank merged with Capital First Limited; combined entity renamed IDFC FIRST Bank",
+          "evidenceUrl": "https://www.idfcfirst.bank.in/about-us/news-and-media/press-releases/idfc-bank-capital-first-merged-on-Dec-18"
+        },
+        {
+          "date": "2024-10-01",
+          "event": "Parent IDFC Limited reverse-merged into IDFC FIRST Bank",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/IDFC_First_Bank"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.idfcfirst.bank.in/about-us/our-history"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "jk-bank",
+      "name": "Jammu & Kashmir Bank",
+      "shortName": "J&K Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1938-10-01",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "jkb.bank.in",
+      "legacyDomains": [
+        "jkbank.com",
+        "jkbank.net"
+      ],
+      "hq": "Srinagar",
+      "nseSymbol": "J&KBANK",
+      "history": [
+        {
+          "date": "1938-10-01",
+          "event": "Founded under letters patent issued by Maharaja Hari Singh of Jammu & Kashmir",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Jammu_%26_Kashmir_Bank"
+        },
+        {
+          "date": "1939-07-04",
+          "event": "Commenced banking business; first state-owned semi-state bank of its kind in India",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Jammu_%26_Kashmir_Bank"
+        },
+        {
+          "date": "1971",
+          "event": "Acquired status of Scheduled Bank",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Jammu_%26_Kashmir_Bank"
+        }
+      ],
+      "evidenceUrls": [
+        "https://jkb.bank.in/about-us"
+      ],
+      "notes": "1939 commencement and 1971 scheduled-bank status are secondary (Wikipedia); official jkb.bank.in About Us page confirms only 'incorporated in 1938'."
+    },
+    {
+      "slug": "karnataka-bank",
+      "name": "Karnataka Bank",
+      "shortName": "Karnataka Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1924-02-18",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "karnatakabank.bank.in",
+      "legacyDomains": [],
+      "hq": "Mangaluru",
+      "nseSymbol": "KTKBANK",
+      "history": [
+        {
+          "date": "1924-02-18",
+          "event": "Incorporated at Mangaluru",
+          "evidenceUrl": "https://www.karnatakabank.bank.in/about/bank"
+        },
+        {
+          "date": "1924-05-23",
+          "event": "Commenced business at Dongerkery, Mangaluru",
+          "evidenceUrl": "https://www.karnatakabank.bank.in/about/bank"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.karnatakabank.bank.in/about/bank"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "karur-vysya-bank",
+      "name": "Karur Vysya Bank",
+      "shortName": "KVB",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1916-07-01",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "kvb.bank.in",
+      "legacyDomains": [
+        "kvb.co.in"
+      ],
+      "hq": "Karur",
+      "nseSymbol": "KARURVYSYA",
+      "history": [
+        {
+          "date": "1916",
+          "event": "Set up in Karur by M. A. Venkatarama Chettiar and Athi Krishna Chettiar with initial capital of Rs 1 lakh",
+          "evidenceUrl": "https://www.kvb.bank.in/about-us/history-kvb/"
+        },
+        {
+          "date": "1916-07-01",
+          "event": "Began business",
+          "evidenceUrl": "https://www.kvb.bank.in/about-us/history-kvb/"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.kvb.bank.in/about-us/history-kvb/"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "kotak-mahindra-bank",
+      "name": "Kotak Mahindra Bank",
+      "shortName": "Kotak Mahindra Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1985-11-21",
+      "licenceDate": "2003-02",
+      "operationsCommenced": "2003-03-22",
+      "website": "kotak.bank.in",
+      "legacyDomains": [
+        "kotak.com"
+      ],
+      "hq": "Mumbai",
+      "nseSymbol": "KOTAKBANK",
+      "history": [
+        {
+          "date": "1985-11-21",
+          "event": "Incorporated as 'Kotak Capital Management Finance Limited'",
+          "evidenceUrl": "https://www.kotak.bank.in/en/investor-relations/investor-information.html"
+        },
+        {
+          "date": "1986-04-08",
+          "event": "Renamed 'Kotak Mahindra Finance Limited' after Harish and Anand Mahindra took a stake",
+          "evidenceUrl": "https://www.sgssl.co.in/market/company-profile/history/2330"
+        },
+        {
+          "date": "2003-02",
+          "event": "Granted banking licence by RBI -- first NBFC in India to convert into a bank",
+          "evidenceUrl": "https://www.kotak.bank.in/en/about-us.html"
+        },
+        {
+          "date": "2003-03-22",
+          "event": "Renamed 'Kotak Mahindra Bank Limited'; commenced banking operations",
+          "evidenceUrl": "https://www.sgssl.co.in/market/company-profile/history/2330"
+        },
+        {
+          "date": "2015-04-01",
+          "event": "ING Vysya Bank Ltd merged into Kotak Mahindra Bank",
+          "evidenceUrl": "https://www.kotak.bank.in/en/about-us.html"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.kotak.bank.in/en/investor-relations/investor-information.html"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "nainital-bank",
+      "name": "Nainital Bank",
+      "shortName": "Nainital Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1922",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "nainitalbank.bank.in",
+      "legacyDomains": [],
+      "hq": "Nainital",
+      "nseSymbol": null,
+      "history": [
+        {
+          "date": "1922",
+          "event": "Established by Pandit Govind Ballabh Pant to cater to banking needs of the Nainital/Kumaon region",
+          "evidenceUrl": "https://www.nainitalbank.bank.in/english/About_Us.aspx"
+        },
+        {
+          "date": "1973",
+          "event": "RBI directed Bank of Baroda to manage the affairs of Nainital Bank; BoB became majority (~98.6%) shareholder and subsidiary parent",
+          "evidenceUrl": "https://bankofbaroda.bank.in/subsidiaries"
+        }
+      ],
+      "evidenceUrls": [
+        "https://bankofbaroda.bank.in/subsidiaries",
+        "https://www.nainitalbank.bank.in/english/About_Us.aspx"
+      ],
+      "notes": "Nainital Bank is an unlisted subsidiary of Bank of Baroda -- no NSE/BSE symbol found; set to null rather than guessed."
+    },
+    {
+      "slug": "rbl-bank",
+      "name": "RBL Bank",
+      "shortName": "RBL Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1943-06-14",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "rbl.bank.in",
+      "legacyDomains": [
+        "rblbank.com"
+      ],
+      "hq": "Mumbai",
+      "nseSymbol": "RBLBANK",
+      "history": [
+        {
+          "date": "1943-06-14",
+          "event": "Granted certificate of incorporation as 'The Ratnakar Bank Limited' in Kolhapur district",
+          "evidenceUrl": "https://economictimes.indiatimes.com/rbl-bank-ltd/infocompanyhistory/companyid-7750.cms"
+        },
+        {
+          "date": "1943-07-05",
+          "event": "Certificate of commencement of business granted by Registrar of Joint Stock Companies, Kolhapur State",
+          "evidenceUrl": "https://economictimes.indiatimes.com/rbl-bank-ltd/infocompanyhistory/companyid-7750.cms"
+        },
+        {
+          "date": "2014-11-24",
+          "event": "Renamed 'RBL Bank Limited' (fresh certificate of incorporation; RBI no-objection dated 8 Aug 2014, shareholder resolution 26 Aug 2014)",
+          "evidenceUrl": "https://economictimes.indiatimes.com/rbl-bank-ltd/infocompanyhistory/companyid-7750.cms"
+        }
+      ],
+      "evidenceUrls": [
+        "https://economictimes.indiatimes.com/rbl-bank-ltd/infocompanyhistory/companyid-7750.cms"
+      ],
+      "notes": "Wikipedia gives an alternate founding date of 6 Aug 1943 for the informal start of business in Kolhapur/Sangli; the dates used here are from the bank's own prospectus-derived company-history record (economictimes, sourced to RBL's IPO prospectus)."
+    },
+    {
+      "slug": "south-indian-bank",
+      "name": "South Indian Bank",
+      "shortName": "South Indian Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1929-01-29",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "southindianbank.bank.in",
+      "legacyDomains": [
+        "southindianbank.com"
+      ],
+      "hq": "Thrissur",
+      "nseSymbol": "SOUTHBANK",
+      "history": [
+        {
+          "date": "1929",
+          "event": "Registered under the Companies Act at Thrissur, in the erstwhile State of Cochin",
+          "evidenceUrl": "https://www.southindianbank.bank.in/about-us/about-sib"
+        },
+        {
+          "date": "1929-01-29",
+          "event": "Commenced operations at Round South, Thrissur",
+          "evidenceUrl": "https://www.southindianbank.bank.in/about-us/about-sib"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.southindianbank.bank.in/about-us/about-sib"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "tamilnad-mercantile-bank",
+      "name": "Tamilnad Mercantile Bank",
+      "shortName": "Tamilnad Mercantile Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1921-05-11",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "tmb.bank.in",
+      "legacyDomains": [
+        "tmb.in"
+      ],
+      "hq": "Thoothukudi",
+      "nseSymbol": "TMB",
+      "history": [
+        {
+          "date": "1921-05-11",
+          "event": "Incorporated as 'The Nadar Bank Limited' at Thoothukudi (Tuticorin)",
+          "evidenceUrl": "https://d2un9pqbzgw43g.cloudfront.net/main/TMB-DRHP_20210906115852.pdf"
+        },
+        {
+          "date": "1921-11-11",
+          "event": "Commenced business at Thoothukudi",
+          "evidenceUrl": "https://d2un9pqbzgw43g.cloudfront.net/main/TMB-DRHP_20210906115852.pdf"
+        },
+        {
+          "date": "1935-05-11",
+          "event": "Became a Scheduled Bank under the RBI Act",
+          "evidenceUrl": "https://www.thehindubusinessline.com/todays-paper/tp-others/tp-editorial-feature/the-history-of-tamilnad-mercantile-bank/article60863986.ece"
+        },
+        {
+          "date": "1962-11-27",
+          "event": "Renamed 'Tamilnad Mercantile Bank Limited'",
+          "evidenceUrl": "https://d2un9pqbzgw43g.cloudfront.net/main/TMB-DRHP_20210906115852.pdf"
+        }
+      ],
+      "evidenceUrls": [
+        "https://d2un9pqbzgw43g.cloudfront.net/main/TMB-DRHP_20210906115852.pdf"
+      ],
+      "notes": "Rename date given as 27 Nov 1962 in the bank's own DRHP (primary); The Hindu Business Line gives 26 Nov 1962 (secondary) -- minor one-day discrepancy, DRHP used as authoritative."
+    },
+    {
+      "slug": "yes-bank",
+      "name": "YES Bank",
+      "shortName": "YES Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "2003-11-21",
+      "licenceDate": "2004-05-24",
+      "operationsCommenced": null,
+      "website": "yes.bank.in",
+      "legacyDomains": [
+        "yesbank.in",
+        "yesbank.co.in"
+      ],
+      "hq": "Mumbai",
+      "nseSymbol": "YESBANK",
+      "history": [
+        {
+          "date": "2003-11-21",
+          "event": "Incorporated as a public limited company under the Companies Act, 1956, by Rana Kapoor and Ashok Kapur",
+          "evidenceUrl": "https://www.chittorgarh.net/reports/ipo_notes/yes-bank-ipo-final-pro.pdf"
+        },
+        {
+          "date": "2004-05-24",
+          "event": "Obtained licence to carry on banking business from RBI under Section 22(1) of the Banking Regulation Act, 1949",
+          "evidenceUrl": "https://www.chittorgarh.net/reports/ipo_notes/yes-bank-ipo-final-pro.pdf"
+        },
+        {
+          "date": "2004-08",
+          "event": "Commenced Corporate & Institutional Banking and Business Banking operations",
+          "evidenceUrl": "https://www.chittorgarh.net/reports/ipo_notes/yes-bank-ipo-final-pro.pdf"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.chittorgarh.net/reports/ipo_notes/yes-bank-ipo-final-pro.pdf",
+        "https://en.wikipedia.org/wiki/Yes_Bank"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "idbi-bank",
+      "name": "IDBI Bank",
+      "shortName": "IDBI Bank",
+      "group": "private",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1964-07-01",
+      "licenceDate": null,
+      "operationsCommenced": null,
+      "website": "idbi.bank.in",
+      "legacyDomains": [],
+      "hq": "Mumbai",
+      "nseSymbol": "IDBI",
+      "history": [
+        {
+          "date": "1964-07-01",
+          "event": "Industrial Development Bank of India (IDBI) constituted under the IDBI Act, 1964 as a wholly owned subsidiary of RBI (a development finance institution)",
+          "evidenceUrl": "https://www.idbi.bank.in/pdf/history-of-idbi-.pdf"
+        },
+        {
+          "date": "1976",
+          "event": "Ownership transferred from RBI to Government of India",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/IDBI_Bank"
+        },
+        {
+          "date": "2004-10-01",
+          "event": "IDBI transformed into a banking company, 'Industrial Development Bank of India Limited' (IDBI Ltd), under the IDBI (Transfer of Undertaking and Repeal) Act, 2003",
+          "evidenceUrl": "https://www.idbi.bank.in/pdf/history-of-idbi-.pdf"
+        },
+        {
+          "date": "2005-04-02",
+          "event": "IDBI Bank Ltd (the commercial-banking subsidiary, itself set up 1994) amalgamated into IDBI Ltd",
+          "evidenceUrl": "https://www.idbi.bank.in/pdf/history-of-idbi-.pdf"
+        },
+        {
+          "date": "2006-10-03",
+          "event": "United Western Bank Ltd (Satara) amalgamated into IDBI Ltd",
+          "evidenceUrl": "https://www.idbi.bank.in/pdf/history-of-idbi-.pdf"
+        },
+        {
+          "date": "2008-05-07",
+          "event": "Renamed 'IDBI Bank Limited'",
+          "evidenceUrl": "https://www.idbi.bank.in/pdf/history-of-idbi-.pdf"
+        },
+        {
+          "date": "2019-01-21",
+          "event": "Re-categorised as a 'Private Sector Bank' after Life Insurance Corporation of India acquired 51% of paid-up equity capital",
+          "evidenceUrl": "https://www.idbi.bank.in/about-us.aspx"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.idbi.bank.in/pdf/history-of-idbi-.pdf"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "au-sfb",
+      "name": "AU Small Finance Bank",
+      "shortName": "AU SFB",
+      "group": "sfb",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1996-01-10",
+      "licenceDate": "2016-12-20",
+      "operationsCommenced": "2017-04-19",
+      "website": "au.bank.in",
+      "legacyDomains": [],
+      "hq": "Jaipur (registered); Mumbai (corporate office)",
+      "nseSymbol": "AUBANK",
+      "history": [
+        {
+          "date": "1996-01-10",
+          "event": "Incorporated as 'L.N. Finco Gems Private Limited'",
+          "evidenceUrl": "https://www.citigroup.com/rcs/citigpa/storage/public/India/regulatory-disclosures/AuFinanciers-DRHP.pdf"
+        },
+        {
+          "date": "2005-05-24",
+          "event": "Renamed 'Au Financiers (India) Private Limited', vehicle finance company founded by Sanjay Agarwal in Jaipur",
+          "evidenceUrl": "https://www.citigroup.com/rcs/citigpa/storage/public/India/regulatory-disclosures/AuFinanciers-DRHP.pdf"
+        },
+        {
+          "date": "2015-10-07",
+          "event": "RBI in-principle approval to set up a Small Finance Bank",
+          "evidenceUrl": "https://www.citigroup.com/rcs/citigpa/storage/public/India/regulatory-disclosures/AUSmallFinance-Prospectus.pdf"
+        },
+        {
+          "date": "2016-12-20",
+          "event": "RBI final approval to establish an SFB",
+          "evidenceUrl": "https://www.citigroup.com/rcs/citigpa/storage/public/India/regulatory-disclosures/AUSmallFinance-Prospectus.pdf"
+        },
+        {
+          "date": "2017-04-13",
+          "event": "Renamed 'AU Small Finance Bank Limited'",
+          "evidenceUrl": "https://www.citigroup.com/rcs/citigpa/storage/public/India/regulatory-disclosures/AUSmallFinance-Prospectus.pdf"
+        },
+        {
+          "date": "2017-04-19",
+          "event": "Commenced banking operations; surrendered NBFC registration",
+          "evidenceUrl": "https://www.sgssl.co.in/market/company-profile/history/34695"
+        },
+        {
+          "date": "2024-04-01",
+          "event": "Fincare Small Finance Bank amalgamated into AU SFB",
+          "evidenceUrl": "https://www.sgssl.co.in/market/company-profile/history/34695"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.au.bank.in/about-us",
+        "https://www.citigroup.com/rcs/citigpa/storage/public/India/regulatory-disclosures/AUSmallFinance-Prospectus.pdf"
+      ],
+      "notes": "AU SFB has received in-principle RBI approval to transition to a Universal Bank (per au.bank.in), the first SFB to do so; transition not yet completed as of research date."
+    },
+    {
+      "slug": "capital-sfb",
+      "name": "Capital Small Finance Bank",
+      "shortName": "Capital SFB",
+      "group": "sfb",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1999-05-28",
+      "licenceDate": "2016-03-04",
+      "operationsCommenced": "2016-04-24",
+      "website": "capital.bank.in",
+      "legacyDomains": [],
+      "hq": "Jalandhar",
+      "nseSymbol": "CAPITALSFB",
+      "history": [
+        {
+          "date": "1999-05-28",
+          "event": "Predecessor 'Capital Local Area Bank Limited' incorporated in Jalandhar, Punjab",
+          "evidenceUrl": "https://www.capital.bank.in/assets/ipo/Capital_Bank_Memorandum_And_Articles_Of_Association.pdf"
+        },
+        {
+          "date": "2016-03-04",
+          "event": "RBI granted SFB licence (No. MUM:116) under Section 22(1) of the Banking Regulation Act, 1949",
+          "evidenceUrl": "https://www.capital.bank.in/assets/ipo/Capital_Bank_RBI_License.pdf"
+        },
+        {
+          "date": "2016-04-15",
+          "event": "Renamed 'Capital Small Finance Bank Limited'",
+          "evidenceUrl": "https://www.capital.bank.in/assets/ipo/Capital_Bank_Memorandum_And_Articles_Of_Association.pdf"
+        },
+        {
+          "date": "2016-04-24",
+          "event": "Commenced operations; became India's first Small Finance Bank to go live; Capital Local Area Bank Ltd ceased to exist",
+          "evidenceUrl": "https://www.rbi.org.in/commonman/English/Scripts/PressReleases.aspx?Id=1781"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.rbi.org.in/commonman/English/Scripts/PressReleases.aspx?Id=1781",
+        "https://www.capital.bank.in/assets/ipo/Capital_Bank_Memorandum_And_Articles_Of_Association.pdf"
+      ],
+      "notes": "Wikipedia states Capital Local Area Bank was 'founded in 2000'; the bank's own Memorandum of Association (certificate of incorporation) is dated 28-05-1999 and its CIN begins U65110PB1999PLC022634, both confirming 1999 -- used here in preference to the secondary 2000 claim."
+    },
+    {
+      "slug": "equitas-sfb",
+      "name": "Equitas Small Finance Bank",
+      "shortName": "Equitas SFB",
+      "group": "sfb",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1993-06-21",
+      "licenceDate": "2016-06-30",
+      "operationsCommenced": "2016-09-05",
+      "website": "equitas.bank.in",
+      "legacyDomains": [],
+      "hq": "Chennai",
+      "nseSymbol": "EQUITASBNK",
+      "history": [
+        {
+          "date": "1993-06-21",
+          "event": "Bank entity originally incorporated in Madras as 'V.A.P. Finance Private Limited'",
+          "evidenceUrl": "https://www.sgssl.co.in/market/company-profile/history/43685"
+        },
+        {
+          "date": "2007",
+          "event": "Equitas Microfinance business started (as UPDB Micro Finance, renamed Equitas); first loan disbursed 15 Dec 2007",
+          "evidenceUrl": "https://www.forbesindia.com/article/work-in-progress/how-equitas-survived-the-mfi-crisis-to-become-a-small-finance-bank/47479/1"
+        },
+        {
+          "date": "2015-10-07",
+          "event": "RBI in-principle approval for an SFB",
+          "evidenceUrl": "https://www.sgssl.co.in/market/company-profile/history/43685"
+        },
+        {
+          "date": "2016-06-30",
+          "event": "RBI final approval to establish an SFB",
+          "evidenceUrl": "https://www.rbi.org.in/CommonPerson/english/scripts/PressReleases.aspx?Id=1870"
+        },
+        {
+          "date": "2016-09-02",
+          "event": "Equitas Micro Finance Ltd and Equitas Housing Finance Ltd amalgamated into the bank entity, renamed 'Equitas Small Finance Bank Limited'",
+          "evidenceUrl": "https://www.sgssl.co.in/market/company-profile/history/43685"
+        },
+        {
+          "date": "2016-09-05",
+          "event": "Commenced SFB operations",
+          "evidenceUrl": "https://www.rbi.org.in/CommonPerson/english/scripts/PressReleases.aspx?Id=1870"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.rbi.org.in/CommonPerson/english/scripts/PressReleases.aspx?Id=1870",
+        "https://en.wikipedia.org/wiki/Equitas_Small_Finance_Bank"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "esaf-sfb",
+      "name": "ESAF Small Finance Bank",
+      "shortName": "ESAF SFB",
+      "group": "sfb",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "2016-05-05",
+      "licenceDate": "2016-11-18",
+      "operationsCommenced": "2017-03-10",
+      "website": "esaf.bank.in",
+      "legacyDomains": [],
+      "hq": "Thrissur (Mannuthy)",
+      "nseSymbol": "ESAFSFB",
+      "history": [
+        {
+          "date": "1992-03-11",
+          "event": "Evangelical Social Action Forum (ESAF) founded as an NGO in Thrissur district by K. Paul Thomas",
+          "evidenceUrl": "https://esaffoundation.org/our-journey/"
+        },
+        {
+          "date": "2008",
+          "event": "Transformed into ESAF Microfinance and Investments Pvt Ltd (NBFC)",
+          "evidenceUrl": "https://esaffoundation.org/our-journey/"
+        },
+        {
+          "date": "2016-05-05",
+          "event": "ESAF Small Finance Bank Limited incorporated as a public limited company",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/ESAF_Small_Finance_Bank"
+        },
+        {
+          "date": "2016-11-18",
+          "event": "RBI final SFB licence granted (Licence No. MUM:124)",
+          "evidenceUrl": "https://www.esafbank.com/pdf/IPO-Documents/material-documents/4.%20ESFB%20Banking%20License.pdf"
+        },
+        {
+          "date": "2017-03-10",
+          "event": "Commenced banking operations; first RBI-approved bank from Kerala since Independence",
+          "evidenceUrl": "https://www.esaf.bank.in/about-us/"
+        },
+        {
+          "date": "2018-11-12",
+          "event": "Became a Scheduled Bank",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/ESAF_Small_Finance_Bank"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.esafbank.com/pdf/IPO-Documents/material-documents/4.%20ESFB%20Banking%20License.pdf",
+        "https://www.esaf.bank.in/about-us/"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "suryoday-sfb",
+      "name": "Suryoday Small Finance Bank",
+      "shortName": "Suryoday SFB",
+      "group": "sfb",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "2008-11-10",
+      "licenceDate": null,
+      "operationsCommenced": "2017-01-23",
+      "website": "suryoday.bank.in",
+      "legacyDomains": [],
+      "hq": "Navi Mumbai",
+      "nseSymbol": "SURYODAY",
+      "history": [
+        {
+          "date": "2008-11-10",
+          "event": "Incorporated as 'Suryoday Micro Finance Private Limited'",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Suryoday_Small_Finance_Bank"
+        },
+        {
+          "date": "2015-09",
+          "event": "RBI in-principle approval for an SFB",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Suryoday_Small_Finance_Bank"
+        },
+        {
+          "date": "2017-01-23",
+          "event": "Commenced operations as a Small Finance Bank",
+          "evidenceUrl": "https://www.rbi.org.in/commonperson/English/Scripts/PressReleases.aspx?Id=2079"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.rbi.org.in/commonperson/English/Scripts/PressReleases.aspx?Id=2079"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "ujjivan-sfb",
+      "name": "Ujjivan Small Finance Bank",
+      "shortName": "Ujjivan SFB",
+      "group": "sfb",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "2005",
+      "licenceDate": "2016-11-11",
+      "operationsCommenced": "2017-02-01",
+      "website": "ujjivansfb.bank.in",
+      "legacyDomains": [],
+      "hq": "Bengaluru",
+      "nseSymbol": "UJJIVANSFB",
+      "history": [
+        {
+          "date": "2005",
+          "event": "Ujjivan Financial Services founded by Samit Ghosh as an NBFC-MFI",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Ujjivan_Small_Finance_Bank"
+        },
+        {
+          "date": "2015-10-07",
+          "event": "RBI in-principle approval for an SFB",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Ujjivan_Small_Finance_Bank"
+        },
+        {
+          "date": "2016-11-11",
+          "event": "RBI final banking licence granted",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Ujjivan_Small_Finance_Bank"
+        },
+        {
+          "date": "2017-02-01",
+          "event": "Commenced operations as a Small Finance Bank",
+          "evidenceUrl": "https://rbi.org.in/commonman/english/scripts/PressReleases.aspx?Id=2093"
+        },
+        {
+          "date": "2017-08",
+          "event": "Received Scheduled Bank status",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Ujjivan_Small_Finance_Bank"
+        }
+      ],
+      "evidenceUrls": [
+        "https://rbi.org.in/commonman/english/scripts/PressReleases.aspx?Id=2093"
+      ],
+      "notes": "In Feb 2025 Ujjivan applied to RBI for a Universal Banking Licence (per its own FY2024-25 annual-report 'Journey' page); pending as of research date."
+    },
+    {
+      "slug": "utkarsh-sfb",
+      "name": "Utkarsh Small Finance Bank",
+      "shortName": "Utkarsh SFB",
+      "group": "sfb",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "2016-04-30",
+      "licenceDate": "2016-11-25",
+      "operationsCommenced": "2017-01-23",
+      "website": "utkarsh.bank.in",
+      "legacyDomains": [],
+      "hq": "Varanasi",
+      "nseSymbol": "UTKARSHBNK",
+      "history": [
+        {
+          "date": "2009-09",
+          "event": "Utkarsh Micro Finance began microfinance operations in Varanasi",
+          "evidenceUrl": "https://www.utkarsh.bank.in/uploads/pdf/our-policy/template_ten/1_Utkarsh_SFB_AR_FY16_17.pdf"
+        },
+        {
+          "date": "2016-04-30",
+          "event": "Utkarsh Small Finance Bank Limited incorporated",
+          "evidenceUrl": "https://www.utkarsh.bank.in/about-us"
+        },
+        {
+          "date": "2016-11-25",
+          "event": "RBI final SFB licence granted (Licence No. MUM:125)",
+          "evidenceUrl": "https://www.utkarsh.bank.in/assests/pdf/Licence_Covering_Letter_Utkarsh_terms_and_condition.pdf"
+        },
+        {
+          "date": "2017-01-23",
+          "event": "Commenced banking operations",
+          "evidenceUrl": "https://www.rbi.org.in/commonman/english/scripts/PressReleases.aspx?Id=2080"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.utkarsh.bank.in/about-us",
+        "https://www.rbi.org.in/commonman/english/scripts/PressReleases.aspx?Id=2080"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "slice-sfb",
+      "name": "slice Small Finance Bank",
+      "shortName": "slice SFB",
+      "group": "sfb",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "2016-07",
+      "licenceDate": null,
+      "operationsCommenced": "2017-10",
+      "website": "slice.bank.in",
+      "legacyDomains": [],
+      "hq": "Guwahati",
+      "nseSymbol": null,
+      "history": [
+        {
+          "date": "1995",
+          "event": "Origin: Rashtriya Gramin Vikas Nidhi (RGVN) society begins microfinance operations with support from IDBI, IFCI, NABARD and Dorabji Tata Trust",
+          "evidenceUrl": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/NorthEastSmallFinanceBankLimited_November%2007_%202024_RR_355403.html"
+        },
+        {
+          "date": "2008",
+          "event": "RGVN (North East) Microfinance Limited incorporated",
+          "evidenceUrl": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/NorthEastSmallFinanceBankLimited_November%2007_%202024_RR_355403.html"
+        },
+        {
+          "date": "2015",
+          "event": "RBI in-principle approval to set up a Small Finance Bank",
+          "evidenceUrl": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/NorthEastSmallFinanceBankLimited_November%2007_%202024_RR_355403.html"
+        },
+        {
+          "date": "2016-07",
+          "event": "North East Small Finance Bank Limited (NESFB) incorporated as wholly owned subsidiary of RGVN (North East) Microfinance Ltd",
+          "evidenceUrl": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/NorthEastSmallFinanceBankLimited_November%2007_%202024_RR_355403.html"
+        },
+        {
+          "date": "2017-10",
+          "event": "Commenced operations as a Small Finance Bank, headquartered in Guwahati",
+          "evidenceUrl": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/NorthEastSmallFinanceBankLimited_November%2007_%202024_RR_355403.html"
+        },
+        {
+          "date": "2019",
+          "event": "Granted Scheduled Commercial Bank status",
+          "evidenceUrl": "https://connect.acuite.in/fcompany-details/SLICE%20SMALL%20FINANCE%20BANK%20LIMITED%20(ERSTWHILE%20NORTH%20EAST%20SMALL%20FINANCE%20BANK%20LIMITED)/26th_Feb_26"
+        },
+        {
+          "date": "2024-10-27",
+          "event": "slice group (Garagepreneurs Internet, Quadrillion Finance, Intergalactory Foundry) merged into NESFB; RGVN (North East) Microfinance Ltd reverse-merged into NESFB same date",
+          "evidenceUrl": "https://www.prnewswire.com/in/news-releases/slice-and-north-east-small-finance-bank-announce-successful-completion-of-the-merger-302289904.html"
+        },
+        {
+          "date": "2025-05-14",
+          "event": "RBI notified renaming of 'North East Small Finance Bank Limited' to 'slice Small Finance Bank Limited' in the Second Schedule to the RBI Act, 1934 (Gazette 16 May 2025)",
+          "evidenceUrl": "https://www.fortuneindia.com/personal-finance/banking/north-east-small-finance-bank-renamed-to-slice-small-finance-bank-rbi-issuesnotification/123318"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/NorthEastSmallFinanceBankLimited_November%2007_%202024_RR_355403.html",
+        "https://www.fortuneindia.com/personal-finance/banking/north-east-small-finance-bank-renamed-to-slice-small-finance-bank-rbi-issuesnotification/123318"
+      ],
+      "notes": "Not listed on NSE/BSE (privately held) -- nseSymbol left null. RBI's own 'Banks in India' listing at the time of the brief still shows 'slice (formerly North East SFB)'; this entry documents that lineage."
+    },
+    {
+      "slug": "jana-sfb",
+      "name": "Jana Small Finance Bank",
+      "shortName": "Jana SFB",
+      "group": "sfb",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "2006-07-24",
+      "licenceDate": "2017-04-28",
+      "operationsCommenced": "2018-03-28",
+      "website": "jana.bank.in",
+      "legacyDomains": [
+        "janabank.com"
+      ],
+      "hq": "Bengaluru",
+      "nseSymbol": "JSFB",
+      "history": [
+        {
+          "date": "2000-10",
+          "event": "Origin in Sanghamitra Rural Financial Services (SRFS, set up by NGO Myrada); first urban microfinance group loan in India",
+          "evidenceUrl": "https://www.jana.bank.in/about-us/who-we-are/history/our-story/"
+        },
+        {
+          "date": "2006-07-24",
+          "event": "Incorporated as 'Janalakshmi Financial Services Private Limited' in Bengaluru",
+          "evidenceUrl": "https://static.paytmmoney.com/data/forms/ipo/JSFB.pdf"
+        },
+        {
+          "date": "2013-09-05",
+          "event": "Converted into an NBFC-MFI",
+          "evidenceUrl": "https://static.paytmmoney.com/data/forms/ipo/JSFB.pdf"
+        },
+        {
+          "date": "2015-10-07",
+          "event": "RBI in-principle approval for an SFB",
+          "evidenceUrl": "https://static.paytmmoney.com/data/forms/ipo/JSFB.pdf"
+        },
+        {
+          "date": "2017-04-28",
+          "event": "RBI final SFB approval (Licence No. MUM:134)",
+          "evidenceUrl": "https://static.paytmmoney.com/data/forms/ipo/JSFB.pdf"
+        },
+        {
+          "date": "2018-01-29",
+          "event": "Renamed 'Jana Small Finance Bank Limited'",
+          "evidenceUrl": "https://static.paytmmoney.com/data/forms/ipo/JSFB.pdf"
+        },
+        {
+          "date": "2018-03-28",
+          "event": "Commenced business as an SFB",
+          "evidenceUrl": "https://www.jana.bank.in/about-us/media/our-press-release/97-jana-small-finance-bank-commences-operations-to-continue/"
+        }
+      ],
+      "evidenceUrls": [
+        "https://static.paytmmoney.com/data/forms/ipo/JSFB.pdf",
+        "https://www.jana.bank.in/about-us/media/our-press-release/97-jana-small-finance-bank-commences-operations-to-continue/"
+      ],
+      "notes": null
+    },
+    {
+      "slug": "shivalik-sfb",
+      "name": "Shivalik Small Finance Bank",
+      "shortName": "Shivalik SFB",
+      "group": "sfb",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "1997",
+      "licenceDate": "2021-01-01",
+      "operationsCommenced": "2021-04-26",
+      "website": "shivalik.bank.in",
+      "legacyDomains": [],
+      "hq": "Noida (head office); New Delhi (registered office)",
+      "nseSymbol": null,
+      "history": [
+        {
+          "date": "1997",
+          "event": "Predecessor Shivalik Mercantile Co-operative Bank Ltd (SMCB) incorporated",
+          "evidenceUrl": "https://shivalik.bank.in/assets/upload/mediacentre/Press-Release-Shivalik-Small-Finance-Bank-receives-license-from-RBI.pdf"
+        },
+        {
+          "date": "1998-09",
+          "event": "SMCB commenced business as a district-level Urban Co-operative Bank (UCB) in Saharanpur, Uttar Pradesh",
+          "evidenceUrl": "https://shivalik.bank.in/assets/upload/mediacentre/Press-Release-Shivalik-Small-Finance-Bank-receives-license-from-RBI.pdf"
+        },
+        {
+          "date": "2020-01-06",
+          "event": "RBI granted 'in-principle' approval for SMCB's voluntary transition into a Small Finance Bank",
+          "evidenceUrl": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=49079"
+        },
+        {
+          "date": "2021-01-01",
+          "event": "RBI granted SFB licence under Section 22(1) of the Banking Regulation Act, 1949",
+          "evidenceUrl": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=52624"
+        },
+        {
+          "date": "2021-04-26",
+          "event": "Shivalik Small Finance Bank Limited commenced operations; SMCB's co-operative bank licence was cancelled on transition",
+          "evidenceUrl": "https://rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=51476"
+        }
+      ],
+      "evidenceUrls": [
+        "https://rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=51476",
+        "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=52624"
+      ],
+      "notes": "First Urban Co-operative Bank in India to transition to an SFB under RBI's voluntary transition scheme. Not listed on NSE/BSE as of research date."
+    },
+    {
+      "slug": "unity-sfb",
+      "name": "Unity Small Finance Bank",
+      "shortName": "Unity SFB",
+      "group": "sfb",
+      "status": "active",
+      "tracking": "tracked",
+      "founded": "2021",
+      "licenceDate": "2021-10-12",
+      "operationsCommenced": "2021-11-01",
+      "website": "unity.bank.in",
+      "legacyDomains": [
+        "theunitybank.com"
+      ],
+      "hq": "New Delhi (registered); Mumbai (operating)",
+      "nseSymbol": null,
+      "history": [
+        {
+          "date": "2021-06-18",
+          "event": "RBI 'in-principle' approval to Centrum Financial Services Ltd to set up a Small Finance Bank",
+          "evidenceUrl": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=52496"
+        },
+        {
+          "date": "2021-10-12",
+          "event": "RBI granted SFB licence; promoted 51% by Centrum Financial Services and 49% by Resilient Innovations (BharatPe) as joint investor",
+          "evidenceUrl": "https://centrum.co.in/sites/default/files/reports/Reg%2030%20Scheme%20of%20Amalgamation%20-%20PMC%20USFB.pdf"
+        },
+        {
+          "date": "2021-11-01",
+          "event": "Commenced operations as a Small Finance Bank",
+          "evidenceUrl": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=52496"
+        },
+        {
+          "date": "2022-01-25",
+          "event": "Punjab and Maharashtra Co-operative Bank Ltd (PMC Bank) amalgamated into Unity SFB per Government of India-notified Scheme",
+          "evidenceUrl": "https://centrum.co.in/sites/default/files/reports/Reg%2030%20Scheme%20of%20Amalgamation%20-%20PMC%20USFB.pdf"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=52496",
+        "https://centrum.co.in/sites/default/files/reports/Reg%2030%20Scheme%20of%20Amalgamation%20-%20PMC%20USFB.pdf"
+      ],
+      "notes": "Not listed on NSE/BSE as of research date."
+    },
+    {
+      "slug": "airtel-payments-bank",
+      "name": "Airtel Payments Bank",
+      "shortName": "Airtel Payments Bank",
+      "group": "payments",
+      "status": "active",
+      "tracking": "deferred",
+      "founded": "2016-04-11",
+      "licenceDate": "2016-04-11",
+      "operationsCommenced": "2016-11-23",
+      "website": "airtelpayments.bank.in",
+      "legacyDomains": [],
+      "hq": "New Delhi",
+      "nseSymbol": null,
+      "history": [
+        {
+          "date": "2015-08-19",
+          "event": "Airtel M Commerce Services Ltd received RBI in-principle approval (1 of 11 applicants) to set up a payments bank",
+          "evidenceUrl": "https://www.rbi.org.in/commonperson/english/Scripts/PressReleases.aspx?Id=1975"
+        },
+        {
+          "date": "2016-04-11",
+          "event": "First entity in India to receive a Payments Bank licence from RBI; 80:20 partnership between Bharti Airtel and Kotak Mahindra Bank",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Airtel_Payments_Bank"
+        },
+        {
+          "date": "2016-11-23",
+          "event": "Commenced operations as a payments bank (pilot in Rajasthan)",
+          "evidenceUrl": "https://www.rbi.org.in/commonperson/english/Scripts/PressReleases.aspx?Id=1975"
+        },
+        {
+          "date": "2022-01-05",
+          "event": "Granted Scheduled Bank status under the Second Schedule to the RBI Act, 1934",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Airtel_Payments_Bank"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.rbi.org.in/commonperson/english/Scripts/PressReleases.aspx?Id=1975"
+      ],
+      "notes": "Subsidiary of Bharti Airtel; not separately listed on NSE/BSE."
+    },
+    {
+      "slug": "india-post-payments-bank",
+      "name": "India Post Payments Bank",
+      "shortName": "India Post Payments Bank",
+      "group": "payments",
+      "status": "active",
+      "tracking": "deferred",
+      "founded": "2016-08-17",
+      "licenceDate": "2017-01-30",
+      "operationsCommenced": "2017-01-30",
+      "website": "ippbonline.bank.in",
+      "legacyDomains": [],
+      "hq": "New Delhi",
+      "nseSymbol": null,
+      "history": [
+        {
+          "date": "2015-08-19",
+          "event": "Department of Posts received RBI in-principle approval (1 of 11 applicants)",
+          "evidenceUrl": "https://ippbonline.bank.in/web/ippb/history"
+        },
+        {
+          "date": "2016-08-17",
+          "event": "India Post Payments Bank incorporated as a 100% Government of India-owned company under the Department of Posts",
+          "evidenceUrl": "https://ippbonline.bank.in/web/ippb/history"
+        },
+        {
+          "date": "2017-01-30",
+          "event": "Received payments bank licence and commenced pilot operations (Raipur and Ranchi branches)",
+          "evidenceUrl": "https://www.rbi.org.in/CommonPerson/English/Scripts/PressReleases.aspx?Id=2145"
+        },
+        {
+          "date": "2018-09-01",
+          "event": "Full-scale nationwide launch, with 650 branches and 3,250 post offices as access points",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/India_Post_Payments_Bank"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.rbi.org.in/CommonPerson/English/Scripts/PressReleases.aspx?Id=2145",
+        "https://ippbonline.bank.in/web/ippb/history"
+      ],
+      "notes": "Wholly Government of India owned (Department of Posts); not listed on NSE/BSE."
+    },
+    {
+      "slug": "fino-payments-bank",
+      "name": "Fino Payments Bank",
+      "shortName": "Fino Payments Bank",
+      "group": "payments",
+      "status": "active",
+      "tracking": "deferred",
+      "founded": "2007",
+      "licenceDate": "2017-03-30",
+      "operationsCommenced": "2017-06-30",
+      "website": "fino.bank",
+      "legacyDomains": [],
+      "hq": "Navi Mumbai",
+      "nseSymbol": "FINOPB",
+      "history": [
+        {
+          "date": "2015-09",
+          "event": "Fino PayTech Limited received RBI in-principle approval for a payments bank",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Fino_Payments_Bank"
+        },
+        {
+          "date": "2017-03-30",
+          "event": "RBI granted final Payments Bank licence (No. MUM:131) to the subsidiary, then named 'Fino Fintech Limited'",
+          "evidenceUrl": "https://dyvmwwyqozzzb.cloudfront.net/main/fino-paytech-annual-report-2017-2018.pdf"
+        },
+        {
+          "date": "2017-04-04",
+          "event": "Renamed 'Fino Payments Bank Limited'",
+          "evidenceUrl": "https://dyvmwwyqozzzb.cloudfront.net/main/fino-paytech-annual-report-2017-2018.pdf"
+        },
+        {
+          "date": "2017-06-30",
+          "event": "Commenced operations as a payments bank",
+          "evidenceUrl": "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=40915"
+        },
+        {
+          "date": "2021-11",
+          "event": "Listed on NSE and BSE following IPO",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Fino_Payments_Bank"
+        }
+      ],
+      "evidenceUrls": [
+        "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=40915",
+        "https://dyvmwwyqozzzb.cloudfront.net/main/fino-paytech-annual-report-2017-2018.pdf"
+      ],
+      "notes": "Official domain is fino.bank (not a .bank.in domain, unlike most other current banks in this list). Parent Fino PayTech traces to 2006/2007 per secondary sources; RBI in December 2025 gave in-principle approval for Fino to convert to a Small Finance Bank (not yet completed as of research date)."
+    },
+    {
+      "slug": "jio-payments-bank",
+      "name": "Jio Payments Bank",
+      "shortName": "Jio Payments Bank",
+      "group": "payments",
+      "status": "active",
+      "tracking": "deferred",
+      "founded": "2016-11-10",
+      "licenceDate": "2015-08-19",
+      "operationsCommenced": "2018-04-03",
+      "website": "jiopayments.bank.in",
+      "legacyDomains": [],
+      "hq": "Navi Mumbai",
+      "nseSymbol": null,
+      "history": [
+        {
+          "date": "2015-08-19",
+          "event": "Reliance Industries received RBI in-principle approval for a payments bank",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Jio_Payments_Bank"
+        },
+        {
+          "date": "2016-11-10",
+          "event": "Jio Payments Bank Limited registered as a public limited company, an 82.17:17.83 joint venture of Reliance Industries and State Bank of India",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Jio_Payments_Bank"
+        },
+        {
+          "date": "2018-04-03",
+          "event": "Commenced operations as the sixth payments bank in India",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Jio_Payments_Bank"
+        },
+        {
+          "date": "2025-06-18",
+          "event": "Jio Financial Services acquired SBI's 17.83% stake, taking full (100%) ownership",
+          "evidenceUrl": "https://en.wikipedia.org/wiki/Jio_Payments_Bank"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.jiopayments.bank.in/about-us/",
+        "https://en.wikipedia.org/wiki/Jio_Payments_Bank"
+      ],
+      "notes": "CIN U65999MH2016PLC287584 (from jiopayments.bank.in) confirms 2016 incorporation. Wholly owned subsidiary of Jio Financial Services; not separately listed on NSE/BSE."
+    },
+    {
+      "slug": "nsdl-payments-bank",
+      "name": "NSDL Payments Bank",
+      "shortName": "NSDL Payments Bank",
+      "group": "payments",
+      "status": "active",
+      "tracking": "deferred",
+      "founded": "2018",
+      "licenceDate": "2018-10-29",
+      "operationsCommenced": "2018-10-29",
+      "website": "nsdlpayments.bank.in",
+      "legacyDomains": [],
+      "hq": "Mumbai",
+      "nseSymbol": null,
+      "history": [
+        {
+          "date": "2015-08-19",
+          "event": "National Securities Depository Limited (NSDL) received RBI in-principle approval for a payments bank",
+          "evidenceUrl": "https://www.rbi.org.in/commonman/english/scripts/PressReleases.aspx?Id=2761"
+        },
+        {
+          "date": "2018-10-29",
+          "event": "NSDL Payments Bank Limited commenced operations",
+          "evidenceUrl": "https://www.rbi.org.in/commonman/english/scripts/PressReleases.aspx?Id=2761"
+        }
+      ],
+      "evidenceUrls": [
+        "https://www.rbi.org.in/commonman/english/scripts/PressReleases.aspx?Id=2761"
+      ],
+      "notes": "Some secondary press reports (Business Standard, Financial Express, Oct 2018) mistakenly say the in-principle approval was 'November 2014'; RBI's own contemporaneous press releases for the other 10 payments-bank applicants consistently confirm the in-principle approval round was announced 19 Aug 2015, which is used here. Subsidiary of NSDL; not separately listed on NSE/BSE."
+    }
+  ],
+  "predecessors": [
+    {
+      "slug": "bank-of-calcutta-bengal",
+      "name": "Bank of Calcutta / Bank of Bengal",
+      "founded": "1806-06-02",
+      "relation": "merged",
+      "mergedInto": "sbi",
+      "mergedOn": "1921-01-27",
+      "legacyDomains": [],
+      "evidenceUrl": "https://aus.statebank/documents/535657/536090/EVOLUTION+OF+SBI.pdf",
+      "evidence": "primary",
+      "notes": "Bank of Calcutta founded 2 Jun 1806; rechartered as Bank of Bengal 2 Jan 1809. One of 3 Presidency Banks amalgamated into Imperial Bank of India 27 Jan 1921, which in turn became SBI 1 Jul 1955."
+    },
+    {
+      "slug": "bank-of-bombay",
+      "name": "Bank of Bombay",
+      "founded": "1840-04-15",
+      "relation": "merged",
+      "mergedInto": "sbi",
+      "mergedOn": "1921-01-27",
+      "legacyDomains": [],
+      "evidenceUrl": "https://aus.statebank/documents/535657/536090/EVOLUTION+OF+SBI.pdf",
+      "evidence": "primary",
+      "notes": "Presidency Bank; amalgamated into Imperial Bank of India 1921."
+    },
+    {
+      "slug": "bank-of-madras",
+      "name": "Bank of Madras",
+      "founded": "1843-07-01",
+      "relation": "merged",
+      "mergedInto": "sbi",
+      "mergedOn": "1921-01-27",
+      "legacyDomains": [],
+      "evidenceUrl": "https://aus.statebank/documents/535657/536090/EVOLUTION+OF+SBI.pdf",
+      "evidence": "primary",
+      "notes": "Presidency Bank; amalgamated into Imperial Bank of India 1921."
+    },
+    {
+      "slug": "imperial-bank-of-india",
+      "name": "Imperial Bank of India",
+      "founded": "1921-01-27",
+      "relation": "renamed_or_converted",
+      "mergedInto": "sbi",
+      "mergedOn": "1955-07-01",
+      "legacyDomains": [],
+      "evidenceUrl": "https://www.indiacode.nic.in/handle/123456789/1553?locale=en",
+      "evidence": "primary",
+      "notes": "Formed 1921 from amalgamation of the 3 Presidency Banks; became State Bank of India 1 Jul 1955 under the SBI Act, 1955."
+    },
+    {
+      "slug": "state-bank-of-bikaner-and-jaipur",
+      "name": "State Bank of Bikaner & Jaipur",
+      "founded": "1963-01-01",
+      "relation": "merged",
+      "mergedInto": "sbi",
+      "mergedOn": "2017-04-01",
+      "legacyDomains": [],
+      "evidenceUrl": "https://rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=39884",
+      "evidence": "primary",
+      "notes": "Formed 1 Jan 1963 by merger of Bank of Bikaner (est. 1944 by Maharaja Ganga Singh) and Bank of Jaipur (est. 1943); both became SBI subsidiaries in 1960. Merged into SBI 1 Apr 2017 (Gazette notification 22 Feb 2017)."
+    },
+    {
+      "slug": "state-bank-of-hyderabad",
+      "name": "State Bank of Hyderabad",
+      "founded": "1941-08-08",
+      "relation": "merged",
+      "mergedInto": "sbi",
+      "mergedOn": "2017-04-01",
+      "legacyDomains": [],
+      "evidenceUrl": "https://en.wikipedia.org/wiki/State_Bank_of_Hyderabad",
+      "evidence": "secondary",
+      "notes": "Founded as Hyderabad State Bank by the 7th Nizam, Mir Osman Ali Khan, under the Hyderabad State Bank Act, 1941 (first branch opened 5 Apr 1942). Renamed State Bank of Hyderabad 1956 when RBI took it over as first subsidiary; became SBI subsidiary 1 Oct 1959. Merged into SBI 1 Apr 2017 (RBI press release prid=39884 confirms merger date; founding history is secondary/Wikipedia, corroborated by contemporary press e.g. Hindu Business Line and Gulf News/IANS)."
+    },
+    {
+      "slug": "state-bank-of-mysore",
+      "name": "State Bank of Mysore",
+      "founded": "1913-05-19",
+      "relation": "merged",
+      "mergedInto": "sbi",
+      "mergedOn": "2017-04-01",
+      "legacyDomains": [],
+      "evidenceUrl": "https://en.wikipedia.org/wiki/State_Bank_of_Mysore",
+      "evidence": "secondary",
+      "notes": "Established as 'The Bank of Mysore Ltd' 19 May 1913 (commenced business 2 Oct 1913) under patronage of Maharaja Krishna Raja Wadiyar IV, at the instance of Sir M. Visvesvaraya. Became SBI subsidiary 10 Sep 1959 (per Wikipedia; a secondary source gives 1 Mar 1960). Merged into SBI 1 Apr 2017."
+    },
+    {
+      "slug": "state-bank-of-patiala",
+      "name": "State Bank of Patiala",
+      "founded": "1917-11-17",
+      "relation": "merged",
+      "mergedInto": "sbi",
+      "mergedOn": "2017-04-01",
+      "legacyDomains": [],
+      "evidenceUrl": "https://en.wikipedia.org/wiki/State_Bank_of_Patiala",
+      "evidence": "secondary",
+      "notes": "Founded as Patiala State Bank by Maharaja Bhupinder Singh, 17 Nov 1917. Reorganised as 'Bank of Patiala' 1948 (PEPSU formation); absorbed Bank of Faridkot and Jind Cooperative Bank 1949. Became SBI subsidiary 1 Apr 1960, renamed State Bank of Patiala, absorbed Kalsia State Bank same month. Merged into SBI 1 Apr 2017."
+    },
+    {
+      "slug": "state-bank-of-travancore",
+      "name": "State Bank of Travancore",
+      "founded": "1945-09-12",
+      "relation": "merged",
+      "mergedInto": "sbi",
+      "mergedOn": "2017-04-01",
+      "legacyDomains": [],
+      "evidenceUrl": "https://en.wikipedia.org/wiki/State_Bank_of_Travancore",
+      "evidence": "secondary",
+      "notes": "Established 1945 as Travancore Bank Ltd at the initiative of Diwan C.P. Ramaswami Iyer. Became SBI subsidiary 1960 under the SBI (Subsidiary Banks) Act 1959, renamed State Bank of Travancore. Merged into SBI 1 Apr 2017."
+    },
+    {
+      "slug": "bharatiya-mahila-bank",
+      "name": "Bharatiya Mahila Bank",
+      "founded": "2013-11-19",
+      "relation": "merged",
+      "mergedInto": "sbi",
+      "mergedOn": "2017-04-01",
+      "legacyDomains": [],
+      "evidenceUrl": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=39915",
+      "evidence": "primary",
+      "notes": "India's first bank exclusively for women; inaugurated 19 Nov 2013 by PM Manmohan Singh, announced in the Feb 2013 Union Budget. Merged into SBI 1 Apr 2017 per Gazette notification dated 20 Mar 2017 under Section 35(2) of the SBI Act, 1955."
+    },
+    {
+      "slug": "state-bank-of-saurashtra",
+      "name": "State Bank of Saurashtra",
+      "founded": "1950-07-01",
+      "relation": "merged",
+      "mergedInto": "sbi",
+      "mergedOn": "2008-08-13",
+      "legacyDomains": [],
+      "evidenceUrl": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=18967",
+      "evidence": "primary",
+      "notes": "Formed 1950 under the Saurashtra State Banks (Amalgamation) Ordinance, 1950 from Bhavnagar Darbar Bank (est. 1902) plus 4 smaller Darbar banks (Rajkot, Porbandar, Palitana, Vadia), merged with effect from 1 Jul 1950. Became an SBI subsidiary in 1960 under the SBI (Subsidiary Banks) Act, 1959. Merged into SBI effective 13 Aug 2008 per Gazette notification dated 13 Aug 2008 (Acquisition of State Bank of Saurashtra Order, 2008)."
+    },
+    {
+      "slug": "state-bank-of-indore",
+      "name": "State Bank of Indore",
+      "founded": null,
+      "relation": "merged",
+      "mergedInto": "sbi",
+      "mergedOn": "2010-08-26",
+      "legacyDomains": [],
+      "evidenceUrl": "https://indiacode.ecourtsindia.com/doc/f66381a0-82eb-45c2-9839-f5327f31c03c.pdf",
+      "evidence": "primary",
+      "notes": "Founding year not independently verified in this pass (a secondary blog gives 1920 as 'Bank of Indore'); set to null per standards. Merged into SBI with effect from close of business 26 Aug 2010 (Gazette notification dated 28 Jul 2010, 'Acquisition of State Bank of Indore Order, 2010'; SBI's own Sep-2010 results notes confirm 26 Aug 2010 as effective date)."
+    },
+    {
+      "slug": "benares-state-bank",
+      "name": "Benares State Bank",
+      "founded": "1946",
+      "relation": "merged",
+      "mergedInto": "bank-of-baroda",
+      "mergedOn": "2002-06-20",
+      "legacyDomains": [],
+      "evidenceUrl": "https://timesofindia.indiatimes.com/business/india-business/benares-state-bank-bob-pact-okayed/articleshow/13583495.cms",
+      "evidence": "secondary",
+      "notes": "Established 1946 (Wikipedia/Bank of Baroda's own history page says BSB 'traced its origins back to 1871' as treasury office of Benares state, formally established as a bank 1946). Acquired Bareilly Bank (1964) and Lucknow Bank (1968). Amalgamated with Bank of Baroda per Government notification; PTI wire report (dated 20 Jun 2002, a Thursday) states the Union government approved the amalgamation and that it 'comes into effect from today'. Exact Gazette effective date not independently re-confirmed from the Gazette text itself in this pass -- treat the day-level date as moderately confident, not primary-certain."
+    },
+    {
+      "slug": "dena-bank",
+      "name": "Dena Bank",
+      "founded": "1938-05-26",
+      "relation": "merged",
+      "mergedInto": "bank-of-baroda",
+      "mergedOn": "2019-04-01",
+      "legacyDomains": [],
+      "evidenceUrl": "https://www.bseindia.com/downloads/ipo/20171010182048PPD_DENABANK.pdf",
+      "evidence": "primary",
+      "notes": "Founded 26 May 1938 as Devkaran Nanjee Banking Company by sons of Devkaran Nanjee; renamed Dena Bank Dec 1939. Nationalised 19 Jul 1969 (Dena Bank's own BSE-filed prospectus confirms 'constituted under the Banking Companies Act, 1970 on July 19, 1969'). Merged into Bank of Baroda 1 Apr 2019 together with Vijaya Bank."
+    },
+    {
+      "slug": "vijaya-bank",
+      "name": "Vijaya Bank",
+      "founded": "1931-10-23",
+      "relation": "merged",
+      "mergedInto": "bank-of-baroda",
+      "mergedOn": "2019-04-01",
+      "legacyDomains": [],
+      "evidenceUrl": "https://en.wikipedia.org/wiki/Vijaya_Bank",
+      "evidence": "secondary",
+      "notes": "Established 23 Oct 1931 (Vijayadashami day) in Mangalore by A.B. Shetty and 14 Bunt community members. Nationalised 15 Apr 1980 (one of 6 banks). Merged into Bank of Baroda 1 Apr 2019 together with Dena Bank."
+    },
+    {
+      "slug": "new-bank-of-india",
+      "name": "New Bank of India",
+      "founded": "1936-12-21",
+      "relation": "merged",
+      "mergedInto": "punjab-national-bank",
+      "mergedOn": "1993-09-04",
+      "legacyDomains": [],
+      "evidenceUrl": "https://sooperkanoon.com/case/createfile/467033/tp:pd",
+      "evidence": "primary",
+      "notes": "Incorporated 21 Dec 1936 in Lahore as 'The New Bank Limited' by Mulk Raj Kohli; renamed 'The New Bank of India Limited' 4 Nov 1941 (per successor NBFC entity's own company-profile page, nbi-india.co.in). Nationalised 1980 (one of 6 banks). Amalgamated into PNB per the 'New Bank of India (Amalgamation and Transfer of Undertaking) Scheme, 1993', notified 4 Sep 1993 under Section 9 of the Banking Companies (Acquisition and Transfer of Undertakings) Act, 1980."
+    },
+    {
+      "slug": "nedungadi-bank",
+      "name": "Nedungadi Bank",
+      "founded": null,
+      "relation": "merged",
+      "mergedInto": "punjab-national-bank",
+      "mergedOn": "2003-01-31",
+      "legacyDomains": [],
+      "evidenceUrl": "https://pnb.bank.in/downloadprocess.aspx?fid=Z9uQN2KlmlhZ5Hoqq8SwuQ%3D%3D",
+      "evidence": "primary",
+      "notes": "Oldest private-sector bank in Kerala (per Wikipedia/PNB); founding year not independently verified in this pass, set to null. Placed under RBI moratorium ~Nov 2002; amalgamated into PNB pursuant to the Scheme of Amalgamation notified by the Government of India on 31 Jan 2003 (per PNB's own official document). PNB physically took over branches on 1 Feb 2003 per contemporaneous PTI wire report. NOTE: the research brief's mention of a '2005' merger date for Nedungadi Bank does not match any primary source found; 31 Jan 2003 (PNB's own notification date) is used here."
+    },
+    {
+      "slug": "oriental-bank-of-commerce",
+      "name": "Oriental Bank of Commerce",
+      "founded": "1943-02-19",
+      "relation": "merged",
+      "mergedInto": "punjab-national-bank",
+      "mergedOn": "2020-04-01",
+      "legacyDomains": [],
+      "evidenceUrl": "https://en.wikipedia.org/wiki/Oriental_Bank_of_Commerce",
+      "evidence": "secondary",
+      "notes": "Founded 19 Feb 1943 in Lahore by Rai Bahadur Lala Sohan Lal; registered office shifted to India after Partition. Nationalised 15 Apr 1980 (confirmed via apraca.org bank profile PDF). Amalgamated into PNB 1 Apr 2020 together with United Bank of India (announced 30 Aug 2019, Cabinet approval 4 Mar 2020)."
+    },
+    {
+      "slug": "united-bank-of-india",
+      "name": "United Bank of India",
+      "founded": "1950-01-01",
+      "relation": "merged",
+      "mergedInto": "punjab-national-bank",
+      "mergedOn": "2020-04-01",
+      "legacyDomains": [],
+      "evidenceUrl": "https://indiankanoon.org/doc/1488592/",
+      "evidence": "primary",
+      "notes": "Formed by RBI-assisted amalgamation of 4 Bengal-based banks -- Comilla Banking Corporation (est. 1914), Bengal Central Bank (est. 1918, renamed United Bank of India Ltd), Comilla Union Bank (est. 1922) and Hooghly Bank (est. 1932) -- after all four suffered runs following the 1938 failure of Nath Bank. RBI sanctioned the scheme by order dated 18 Dec 1950, effective retroactively from 1 Jan 1950 (Calcutta High Court income-tax judgment citing the RBI order). Nationalised 19 Jul 1969. Amalgamated into PNB 1 Apr 2020 together with Oriental Bank of Commerce."
+    },
+    {
+      "slug": "global-trust-bank",
+      "name": "Global Trust Bank",
+      "founded": "1994-10-21",
+      "relation": "merged",
+      "mergedInto": "oriental-bank-of-commerce",
+      "mergedOn": "2004-08-14",
+      "legacyDomains": [],
+      "evidenceUrl": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=10486",
+      "evidence": "secondary",
+      "notes": "Founded 21 Oct 1994 at Secunderabad by Ramesh Gelli and others (Wikipedia; founding date not independently confirmed via a primary GTB source since the bank no longer exists). Placed under RBI Moratorium from close of business 24 Jul 2004; amalgamated into Oriental Bank of Commerce with effect from 14 Aug 2004 per Government of India-sanctioned Scheme (RBI press release, primary). OBC subsequently amalgamated into PNB 1 Apr 2020, so GTB's chain of succession is GTB -> OBC (2004) -> PNB (2020)."
+    },
+    {
+      "slug": "andhra-bank",
+      "name": "Andhra Bank",
+      "founded": "1923-11-28",
+      "relation": "merged",
+      "mergedInto": "union-bank-of-india",
+      "mergedOn": "2020-04-01",
+      "legacyDomains": [],
+      "evidenceUrl": "https://en.wikipedia.org/wiki/Andhra_Bank",
+      "evidence": "secondary",
+      "notes": "Founded by Bhogaraju Pattabhi Sitaramayya; registered 20 Nov 1923, commenced business 28 Nov 1923 in Machilipatnam. Nationalised 15 Apr 1980 (one of 6 banks). Amalgamated into Union Bank of India 1 Apr 2020 together with Corporation Bank."
+    },
+    {
+      "slug": "corporation-bank",
+      "name": "Corporation Bank",
+      "founded": "1906-03-12",
+      "relation": "merged",
+      "mergedInto": "union-bank-of-india",
+      "mergedOn": "2020-04-01",
+      "legacyDomains": [],
+      "evidenceUrl": "https://en.wikipedia.org/wiki/Corporation_Bank",
+      "evidence": "secondary",
+      "notes": "Founded 12 Mar 1906 in Udupi as 'Canara Banking Corporation (Udipi) Ltd' by Khan Bahadur Haji Abdullah Haji Kasim Saheb Bahadur, with Rs 5,000 capital. Nationalised 15 Apr 1980. Amalgamated into Union Bank of India 1 Apr 2020 together with Andhra Bank."
+    },
+    {
+      "slug": "syndicate-bank",
+      "name": "Syndicate Bank",
+      "founded": "1925-10-20",
+      "relation": "merged",
+      "mergedInto": "canara-bank",
+      "mergedOn": "2020-04-01",
+      "legacyDomains": [],
+      "evidenceUrl": "https://en.wikipedia.org/wiki/Syndicate_Bank",
+      "evidence": "secondary",
+      "notes": "Founded 20 Oct 1925 in Udupi as 'Canara Industrial and Banking Syndicate Limited' by T.M.A. Pai, Upendra Ananth Pai and Vaman Srinivas Kudva; renamed Syndicate Bank 1964, HQ shifted to Manipal. Nationalised 19 Jul 1969 (one of 14 banks). Amalgamated into Canara Bank 1 Apr 2020 (announced 30 Aug 2019)."
+    },
+    {
+      "slug": "allahabad-bank",
+      "name": "Allahabad Bank",
+      "founded": "1865-04-24",
+      "relation": "merged",
+      "mergedInto": "indian-bank",
+      "mergedOn": "2020-04-01",
+      "legacyDomains": [],
+      "evidenceUrl": "https://indianbank.bank.in/en/e-allahabad-bank-journey",
+      "evidence": "primary",
+      "notes": "Founded 24 Apr 1865 at Allahabad (Prayagraj) by a group of Europeans; oldest joint-stock bank in India (155 years) until its merger. Nationalised 19 Jul 1969 (one of 14 banks). Amalgamated into Indian Bank 1 Apr 2020 (announced 30 Aug 2019)."
+    },
+    {
+      "slug": "times-bank",
+      "name": "Times Bank",
+      "founded": "1994-07-06",
+      "relation": "merged",
+      "mergedInto": "hdfc-bank",
+      "mergedOn": "2000-02-26",
+      "legacyDomains": [],
+      "evidenceUrl": "https://en.wikipedia.org/wiki/Times_Bank",
+      "evidence": "secondary",
+      "notes": "RBI in-principle approval to Bennett, Coleman & Co (Times Group) Dec 1993; incorporated 6 Jul 1994, certificate of commencement of business 22 Aug 1994, banking licence Apr 1995, first branch (D.N. Road, Mumbai) opened 8 Jun 1995. Merged into HDFC Bank effective 26 Feb 2000 (HDFC Bank's own site confirms the merger date as primary; Times Bank's own founding/incorporation dates are corroborated by a detailed secondary account -- bankerstrust.in column by Tamal Bandyopadhyay -- rather than a surviving primary Times Bank source)."
+    },
+    {
+      "slug": "centurion-bank-of-punjab",
+      "name": "Centurion Bank of Punjab",
+      "founded": null,
+      "relation": "merged",
+      "mergedInto": "hdfc-bank",
+      "mergedOn": "2008-05-23",
+      "legacyDomains": [],
+      "evidenceUrl": "https://www.hdfc.bank.in/about-us/who-we-are",
+      "evidence": "primary",
+      "notes": "Formed 2005-06 from the merger of Centurion Bank (est. 1994) and Bank of Punjab (est. 1995); this predecessor lineage (Centurion Bank <-> Bank of Punjab formation) was not independently verified against a primary source in this pass and is therefore omitted from 'founded'/history, left as null -- flagged for follow-up. What is confirmed (primary, HDFC Bank's own site): Lord Krishna Bank merged into Centurion Bank of Punjab 29 Aug 2007, and HDFC Bank's acquisition/amalgamation of Centurion Bank of Punjab was approved by RBI 23 May 2008 for ₹9,510 crore, the then-largest such merger in Indian financial services."
+    },
+    {
+      "slug": "lord-krishna-bank",
+      "name": "Lord Krishna Bank",
+      "founded": null,
+      "relation": "merged",
+      "mergedInto": "centurion-bank-of-punjab",
+      "mergedOn": "2007-08-29",
+      "legacyDomains": [],
+      "evidenceUrl": "https://www.livemint.com/Companies/6o7gkZ7tkEckuTVnIYPhPK/RBI-approves-Centurion-Bank-Lord-Krishna-Bank-merger.html",
+      "evidence": "secondary",
+      "notes": "Kerala-based old private bank; founding year not independently verified in this pass (set to null). RBI sanctioned the amalgamation of Lord Krishna Bank Ltd with Centurion Bank of Punjab under Section 44A of the Banking Regulation Act, 1949, effective 29 Aug 2007 (appointed date retroactive to 1 Apr 2006), following AGM approvals in Sep 2006 and dismissal of a shareholder challenge by the Kerala High Court. Chain: Lord Krishna Bank -> Centurion Bank of Punjab (2007) -> HDFC Bank (2008)."
+    },
+    {
+      "slug": "hdfc-ltd",
+      "name": "HDFC Limited (Housing Development Finance Corporation Ltd)",
+      "founded": "1977",
+      "relation": "merged",
+      "mergedInto": "hdfc-bank",
+      "mergedOn": "2023-07-01",
+      "legacyDomains": [
+        "hdfc.com"
+      ],
+      "evidenceUrl": "https://www.hdfc.bank.in/press-release/2023/q2/hdfc-ltd-to-merge-into-hdfc-bank-effective-july-1-2023",
+      "evidence": "primary",
+      "notes": "India's largest housing finance company, founded 1977 by H.T. Parekh; also HDFC Bank's founding promoter/parent (1994). Merger with HDFC Bank announced 4 Apr 2022, NCLT-approved 17 Mar 2023, effective 1 Jul 2023 -- India's largest-ever M&A deal."
+    },
+    {
+      "slug": "bank-of-madura",
+      "name": "Bank of Madura",
+      "founded": null,
+      "relation": "merged",
+      "mergedInto": "icici-bank",
+      "mergedOn": "2001-03-10",
+      "legacyDomains": [],
+      "evidenceUrl": "https://www.moneycontrol.com/company-facts/icicibank/history/ICi02",
+      "evidence": "secondary",
+      "notes": "Old private-sector bank based in Madurai, Tamil Nadu; founding year not independently verified in this pass (set to null). Merged into ICICI Bank effective 10 Mar 2001, share-exchange ratio 2 ICICI Bank shares for every 1 Bank of Madura share."
+    },
+    {
+      "slug": "sangli-bank",
+      "name": "The Sangli Bank",
+      "founded": "1916",
+      "relation": "merged",
+      "mergedInto": "icici-bank",
+      "mergedOn": "2007-04-19",
+      "legacyDomains": [],
+      "evidenceUrl": "https://en.wikipedia.org/wiki/ICICI_Bank",
+      "evidence": "secondary",
+      "notes": "Founded 1916, headquartered in Sangli, Maharashtra; ~30% owned by the Bhate family; 198 branches (158 Maharashtra, 31 Karnataka) at time of merger. All-stock amalgamation approved by both banks' boards 9 Dec 2006, RBI approval effective 19 Apr 2007."
+    },
+    {
+      "slug": "bank-of-rajasthan",
+      "name": "Bank of Rajasthan",
+      "founded": "1943-05-08",
+      "relation": "merged",
+      "mergedInto": "icici-bank",
+      "mergedOn": "2010-08-12",
+      "legacyDomains": [
+        "bankofrajasthan.com"
+      ],
+      "evidenceUrl": "https://web.archive.org/web/20101212003512/bankofrajasthan.com/bor/wcms/en/home/about-us/history/index.html",
+      "evidence": "primary",
+      "notes": "Established at Udaipur on 8 May 1943 (Akshaya Tritiya) with initial capital Rs 10 lakh; founder chairman Seth Govind Ram Seksaria; promoted by the Mansingka brothers of Bhilwara at the urging of Mewar finance minister Rai Bahadur P.C. Chatterji. The state of Rajasthan is said to be named partly after this bank. Amalgamated into ICICI Bank with effect from close of business 12 Aug 2010 (announced May 2010, share-swap 25 ICICI Bank shares for every 118 Bank of Rajasthan shares). Evidence sourced from the Wayback Machine capture (Dec 2010) of the bank's own website, taken shortly after the merger -- treated as primary/first-party content."
+    },
+    {
+      "slug": "uti-bank",
+      "name": "UTI Bank (pre-rename identity of Axis Bank)",
+      "founded": "1993-12-03",
+      "relation": "renamed_or_converted",
+      "mergedInto": "axis-bank",
+      "mergedOn": "2007-07-30",
+      "legacyDomains": [],
+      "evidenceUrl": "https://rbi.org.in/Scripts/BS_CircularIndexDisplay.aspx?Id=3910",
+      "evidence": "primary",
+      "notes": "Not a merger of two distinct banks -- this is a corporate rename of the same legal entity ('UTI Bank Ltd' to 'Axis Bank Ltd', effective 30 Jul 2007 per RBI Second Schedule notification). Included here only to make the lineage/rename explicit for the tracker; mergedOn reflects the rename date, not an amalgamation date."
+    },
+    {
+      "slug": "ing-vysya-bank",
+      "name": "ING Vysya Bank (Vysya Bank)",
+      "founded": "1930",
+      "relation": "merged",
+      "mergedInto": "kotak-mahindra-bank",
+      "mergedOn": "2015-04-01",
+      "legacyDomains": [],
+      "evidenceUrl": "https://en.wikipedia.org/wiki/Vysya_Bank",
+      "evidence": "secondary",
+      "notes": "Vysya Bank incorporated 1930 in Bangalore, serving the Vysya trading community; RBI licence 1958. Dutch ING Group acquired an equity stake starting 1998-2002 (raised to 44% in 2002); renamed ING Vysya Bank 2003. Merged into Kotak Mahindra Bank effective 1 Apr 2015 (announced 20 Nov 2014, RBI-approved 1 Apr 2015, integration completed 15 May 2016) -- the first merger of an Indian bank with a foreign-owned bank's Indian arm structured this way."
+    },
+    {
+      "slug": "united-western-bank",
+      "name": "United Western Bank",
+      "founded": "1936",
+      "relation": "merged",
+      "mergedInto": "idbi-bank",
+      "mergedOn": "2006-10-03",
+      "legacyDomains": [
+        "uwbankindia.com"
+      ],
+      "evidenceUrl": "https://www.idbi.bank.in/pdf/history-of-idbi-.pdf",
+      "evidence": "primary",
+      "notes": "Founded 1936 in Satara, Maharashtra by Annasaheb Chirmule (who earlier founded Satara Swadeshi Commercial Bank in 1907); incorporated 1936, commenced operations 8 Mar 1937. Became a Scheduled Bank 1951; acquired Union Bank of Kolhapur (1956) and Satara Swadeshi Commercial Bank (1961). Placed under RBI moratorium 2 Sep 2006 after losses eroded capital; amalgamated into IDBI Ltd (now IDBI Bank) with effect from 3 Oct 2006 under Section 45 of the Banking Regulation Act, 1949 -- confirmed via IDBI Bank's own official history document."
+    },
+    {
+      "slug": "fincare-sfb",
+      "name": "Fincare Small Finance Bank",
+      "founded": null,
+      "relation": "merged",
+      "mergedInto": "au-sfb",
+      "mergedOn": "2024-04-01",
+      "legacyDomains": [],
+      "evidenceUrl": "https://www.sgssl.co.in/market/company-profile/history/34695",
+      "evidence": "secondary",
+      "notes": "Founding year not independently verified in this pass (set to null); Fincare SFB began as a microfinance-origin Small Finance Bank licensed in the 2017 SFB cohort. Scheme of Amalgamation of Fincare SFB into AU SFB became effective 1 Apr 2024; Fincare shareholders received 579 AU SFB shares for every 2,000 Fincare SFB shares held."
+    },
+    {
+      "slug": "capital-local-area-bank",
+      "name": "Capital Local Area Bank Limited (pre-conversion identity of Capital SFB)",
+      "founded": "1999-05-28",
+      "relation": "renamed_or_converted",
+      "mergedInto": "capital-sfb",
+      "mergedOn": "2016-04-24",
+      "legacyDomains": [],
+      "evidenceUrl": "https://www.capital.bank.in/assets/ipo/Capital_Bank_Memorandum_And_Articles_Of_Association.pdf",
+      "evidence": "primary",
+      "notes": "Not a merger of two distinct banks -- this is the same legal entity converting from a Local Area Bank licence to a Small Finance Bank licence (renamed 15 Apr 2016, commenced SFB business 24 Apr 2016, per RBI's own press release the Local Area Bank licence was surrendered/ceased on that date). Included for lineage clarity per the research brief."
+    },
+    {
+      "slug": "shivalik-mercantile-cooperative-bank",
+      "name": "Shivalik Mercantile Co-operative Bank Limited (pre-conversion identity of Shivalik SFB)",
+      "founded": "1997",
+      "relation": "renamed_or_converted",
+      "mergedInto": "shivalik-sfb",
+      "mergedOn": "2021-04-26",
+      "legacyDomains": [],
+      "evidenceUrl": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=52624",
+      "evidence": "primary",
+      "notes": "Not a merger of two distinct banks -- an Urban Co-operative Bank voluntarily transitioning to a Small Finance Bank under RBI's Sep-2018 transition scheme; the co-operative banking licence was cancelled on transition (RBI press release prid=52624, dated 26 Nov 2021, confirms cancellation 'upon its transition' with the SFB licence dated 1 Jan 2021 and operations from 26 Apr 2021). Included for lineage clarity."
+    },
+    {
+      "slug": "north-east-sfb-pre-rename",
+      "name": "North East Small Finance Bank Limited (pre-rename identity of slice SFB)",
+      "founded": "2016-07",
+      "relation": "renamed_or_converted",
+      "mergedInto": "slice-sfb",
+      "mergedOn": "2025-05-14",
+      "legacyDomains": [],
+      "evidenceUrl": "https://www.fortuneindia.com/personal-finance/banking/north-east-small-finance-bank-renamed-to-slice-small-finance-bank-rbi-issuesnotification/123318",
+      "evidence": "secondary",
+      "notes": "Not a merger of two distinct banks -- the slice fintech group (Garagepreneurs Internet, Quadrillion Finance, Intergalactory Foundry) merged INTO North East SFB on 27 Oct 2024, after which the combined entity (retaining NESFB's banking licence) was renamed 'slice Small Finance Bank Limited' effective per RBI notification dated 14 May 2025. See slice-sfb current-bank entry for full lineage/history array."
+    },
+    {
+      "slug": "pmc-bank",
+      "name": "Punjab and Maharashtra Co-operative Bank (PMC Bank)",
+      "founded": null,
+      "relation": "merged",
+      "mergedInto": "unity-sfb",
+      "mergedOn": "2022-01-25",
+      "legacyDomains": [],
+      "evidenceUrl": "https://centrum.co.in/sites/default/files/reports/Reg%2030%20Scheme%20of%20Amalgamation%20-%20PMC%20USFB.pdf",
+      "evidence": "primary",
+      "notes": "Multi-state urban co-operative bank; founding year not independently verified in this pass (set to null). RBI superseded PMC Bank's board and imposed withdrawal restrictions Sep 2019 after HDIL-linked financial irregularities were discovered. Amalgamated into Unity Small Finance Bank under a Government of India-notified Scheme with effect from 25 Jan 2022; upheld against a depositor legal challenge by the Bombay High Court in Mar 2026 per Wikipedia."
+    }
+  ],
+  "notes": "Compiled 2026-09-27 by web research (RBI press releases/notifications/history pages, bank official 'About us'/'History' pages, Gazette-derived primary-law texts via indiacode.nic.in/advocatekhoj/indiankanoon, and corroborating secondary press) using ExaSearch/ExaContents and curl against rbi.org.in. Standards followed: no invented values (unverifiable fields are null with a note in the entry); Wikipedia used only as a lead and, where flagged sourceType/notes say so, as the operative secondary source when no primary source could be retrieved (mostly for pre-independence founder/founding-day detail on defunct predecessor banks). Two explicit corrections vs. the research brief's assumptions: (1) Nedungadi Bank's amalgamation into PNB is dated 31 Jan 2003 by PNB's own published notice, not 2005; (2) Central Bank of India's founding is dated 21 Dec 1911 (bank's own site, 2011 Presidential centenary speech, current Wikipedia infobox) rather than the 11 Dec 1911 date given in one secondary biography. Not attempted/left for follow-up: exhaustive verification of every SFB/payments-bank MFI-to-SFB predecessor beyond the ones named in the brief; Centurion Bank of Punjab's own pre-2005 formation (Centurion Bank + Bank of Punjab) founding dates; a handful of exact day-level founding dates for banks whose own current websites give only a year (CSB Bank, Dhanlaxmi Bank, DCB Bank, Nedungadi Bank, Bank of Madura, Lord Krishna Bank, PMC Bank, State Bank of Indore, Fincare SFB, Centurion Bank of Punjab -- all left null rather than guessed)."
+}

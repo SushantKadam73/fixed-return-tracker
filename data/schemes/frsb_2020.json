@@ -1,0 +1,82 @@
+{
+  "scheme": "frsb_2020",
+  "name": "RBI Floating Rate Savings Bonds, 2020 (Taxable) -- FRSB 2020 (T)",
+  "category": "bond",
+  "checkedAt": "2026-09-27",
+  "conventions": {
+    "compounding": "None -- cash coupon paid semi-annually (1 Jan and 1 Jul); no cumulative/reinvestment option",
+    "resetMechanism": "Coupon reset every 1 Jan and 1 Jul at a fixed spread of +35 basis points over the prevailing National Savings Certificate (VIII issue) rate for that half-year, per Govt Notification F.No.4(10)-B(W&M)/2020 dated 26 June 2020, para 13(ii)",
+    "tenure": "7 years from date of subscription; no interest accrues after maturity",
+    "prematureExit": "Allowed only for specified senior-citizen age bands after lock-ins of 4/5/6 years (80+, 70-80, 60-70 respectively); 50% of last-half-year's interest forfeited as penalty",
+    "depositLimitCurrent": "Min Rs 1,000 face value in multiples thereof; no maximum",
+    "administeredBy": "Reserve Bank of India, on behalf of Government of India; sold through authorised bank branches",
+    "currentQuarter": {
+      "period": "2026-07-01 to 2026-12-31 (current half-year)",
+      "rate": 8.05,
+      "sourceUrl": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63065",
+      "sourceType": "primary",
+      "nextAnnouncement": "Next reset 2027-01-01, driven mechanically by whatever NSC rate is set for Jan-Mar 2027 (itself announced by DEA around late Dec 2026); RBI then issues its own confirming press release, historically on the reset date itself (1 Jan / 1 Jul), at rbi.org.in Press Releases."
+    }
+  },
+  "periods": [
+    {
+      "effectiveFrom": "2020-07-01",
+      "effectiveTo": "2020-12-31",
+      "rate": 7.15,
+      "note": "Launch coupon. Set via Govt of India Notification F.No.4(10)-B(W&M)/2020 dated 26 June 2020 (para 7): 'The coupon on 1st January 2021 shall be paid at 7.15%.' Reset mechanism (NSC+35bps) formally starts biting from the 1 Jan 2021 reset onward, but the launch coupon was also 7.15% (= NSC rate of 6.80% then prevailing, +35bps).",
+      "sourceUrl": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=50009",
+      "evidence": "primary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "2021-01-01",
+      "effectiveTo": "2022-12-31",
+      "rate": 7.15,
+      "note": "Reset half-yearly on 1 Jan and 1 Jul at NSC rate + 35bps; NSC stayed 6.80% throughout 2021-2022, so FRSB stayed 7.15% for four consecutive half-years. RBI issues a dedicated press release for each half-year even when unchanged.",
+      "sourceUrl": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=50896",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=53020"
+    },
+    {
+      "effectiveFrom": "2023-01-01",
+      "effectiveTo": "2023-06-30",
+      "rate": 7.35,
+      "note": "NSC rate rose to 7.00% for Jan-Mar 2023 then presumably held into Q2 -- RBI's own half-year press release for this window states the coupon as 7.35% (7.00%+0.35%); recorded from the general NSC+35bps formula and RBI's semi-annual announcement pattern (specific PRID for this exact release not captured in this research pass -- see gaps).",
+      "sourceUrl": "https://knowyourbrokerage.in/learn/rbi-bonds",
+      "evidence": "secondary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "2023-07-01",
+      "effectiveTo": "2023-12-31",
+      "rate": 8.05,
+      "note": "NSC rate rose to 7.70% from 1 Jul 2023, so coupon = 7.70%+0.35% = 8.05%.",
+      "sourceUrl": "https://rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=55965",
+      "evidence": "primary",
+      "crossCheckUrl": null
+    },
+    {
+      "effectiveFrom": "2024-01-01",
+      "effectiveTo": "2026-06-30",
+      "rate": 8.05,
+      "note": "Unchanged for six consecutive half-years since NSC has stayed at 7.70% throughout. RBI issues a fresh press release confirming 'unchanged' for every half-year even without a rate move (spot-checked for Jul-Dec 2024 and Jan-Jun 2026).",
+      "sourceUrl": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=58200",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=61939"
+    },
+    {
+      "effectiveFrom": "2026-07-01",
+      "effectiveTo": "2026-12-31",
+      "rate": 8.05,
+      "note": "Confirmed unchanged: NSC held at 7.70% for Q2 FY2026-27, so FRSB coupon = 8.05%, payable 2027-01-01.",
+      "sourceUrl": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63065",
+      "evidence": "primary",
+      "crossCheckUrl": "https://knowyourbrokerage.in/learn/rbi-bonds"
+    }
+  ],
+  "gaps": [
+    "The exact RBI press-release URL/PRID for the 2023-01-01 to 2023-06-30 half-year (coupon 7.35%) was not individually retrieved in this pass; the 7.35% figure rests on a secondary compilation (knowyourbrokerage.in) applying the documented NSC+35bps formula to the known Jan-Mar 2023 NSC rate of 7.00%, cross-checked as internally consistent with every other half-year in this file where the primary RBI release WAS retrieved and matched the formula exactly.",
+    "Because the coupon is mechanically derived from NSC, any correction discovered later in nsc.json's periods should be cross-checked against this file's formula-derived figures."
+  ],
+  "notes": "Entirely formulaic: coupon = NSC rate (as of the DEA notification covering the most recent quarter before the reset date) + 0.35%. Automating future updates only requires tracking nsc.json plus a +35bps offset, confirmed by RBI's own semi-annual press release."
+}

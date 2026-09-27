@@ -1,0 +1,59 @@
+{
+ "key": "rbi_sdf_rate",
+ "checkedAt": "2026-09-27",
+ "name": "Standing Deposit Facility rate",
+ "unit": "% p.a.",
+ "frequency": "event",
+ "publisher": "Reserve Bank of India",
+ "sourceUrl": "https://rbidocs.rbi.org.in/rdocs/Publications/PDFs/0HSIE31072026042B2753EC8F4B9EA7081AF75B56AA20.PDF",
+ "textual": [],
+ "notes": [
+  "Per cent per annum, Standing Deposit Facility rate (change date, from Apr 2022)"
+ ],
+ "points": [
+  [
+   "2022-04-08",
+   3.75
+  ],
+  [
+   "2022-05-04",
+   4.15
+  ],
+  [
+   "2022-06-08",
+   4.65
+  ],
+  [
+   "2022-08-05",
+   5.15
+  ],
+  [
+   "2022-09-30",
+   5.65
+  ],
+  [
+   "2022-12-07",
+   6.0
+  ],
+  [
+   "2023-02-08",
+   6.25
+  ],
+  [
+   "2025-02-07",
+   6.0
+  ],
+  [
+   "2025-04-09",
+   5.75
+  ],
+  [
+   "2025-06-06",
+   5.25
+  ],
+  [
+   "2025-12-05",
+   5.0
+  ]
+ ]
+}

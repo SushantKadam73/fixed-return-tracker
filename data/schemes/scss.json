@@ -1,0 +1,154 @@
+{
+  "scheme": "scss",
+  "name": "Senior Citizens' Savings Scheme (SCSS)",
+  "category": "small_savings",
+  "checkedAt": "2026-09-27",
+  "conventions": {
+    "compounding": "Simple, non-compounding; interest computed quarterly",
+    "payout": "Paid out quarterly (1 Apr/Jul/Oct/Jan); not reinvested/compounded",
+    "tenure": "5 years, extendable once by 3 years",
+    "eligibility": "60+ years (55+ for those retired under VRS/special VRS, 50+ for retired defence personnel)",
+    "depositLimitCurrent": "Rs 30,00,000 per individual (raised from Rs 15,00,000 w.e.f. FY2023-24); min Rs 1,000",
+    "depositLimitSource": "https://preprod.financialexpress.com/money/senior-citizen-savings-scheme-scss-interest-rate-history-from-2004-to-may-2023-3091586/",
+    "administeredBy": "DEA / National Savings Institute; India Post and authorised banks",
+    "currentQuarter": {
+      "period": "2026-07-01 to 2026-09-30 (Q2 FY2026-27)",
+      "rate": 8.2,
+      "sourceUrl": "https://dea.gov.in/budget-division/475",
+      "sourceType": "primary",
+      "nextAnnouncement": "Q3 FY2026-27 (Oct-Dec 2026) not yet announced as of 2026-09-27; expect DEA OM ~2026-09-30."
+    }
+  },
+  "periods": [
+    {
+      "effectiveFrom": "2004-08-02",
+      "effectiveTo": "2012-03-31",
+      "rate": 9.0,
+      "note": "Scheme launched 2004-08-02 under Govt Savings Banks Act 1873; original tenure 5 years, extendable by 3 years.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=181",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.rbi.org.in/commonperson/english/Scripts/Notification.aspx?Id=231"
+    },
+    {
+      "effectiveFrom": "2012-04-01",
+      "effectiveTo": "2013-03-31",
+      "rate": 9.3,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=181",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2013-04-01",
+      "effectiveTo": "2015-03-31",
+      "rate": 9.2,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=181",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2015-04-01",
+      "effectiveTo": "2016-03-31",
+      "rate": 9.3,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=181",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2016-04-01",
+      "effectiveTo": "2016-09-30",
+      "rate": 8.6,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=181",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2016-10-01",
+      "effectiveTo": "2017-03-31",
+      "rate": 8.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=181",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2017-04-01",
+      "effectiveTo": "2017-06-30",
+      "rate": 8.4,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=181",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2017-07-01",
+      "effectiveTo": "2018-09-30",
+      "rate": 8.3,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=181",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2018-10-01",
+      "effectiveTo": "2019-06-30",
+      "rate": 8.7,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=181",
+      "evidence": "primary",
+      "crossCheckUrl": "https://pnb.bank.in/downloadprocess.aspx?fid=R+9u0PI13fpBDE9ics9SIQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2019-07-01",
+      "effectiveTo": "2020-03-31",
+      "rate": 8.6,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=181",
+      "evidence": "primary",
+      "crossCheckUrl": "https://pnb.bank.in/downloadprocess.aspx?fid=R+9u0PI13fpBDE9ics9SIQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2020-04-01",
+      "effectiveTo": "2022-09-30",
+      "rate": 7.4,
+      "note": "NSI groups 1.4.2020-30.9.2022 as one row @7.4; PNB circular confirms 7.4 for every quarter in this span including a brief anomaly where a Jan-Mar2022 sub-row shows 7.6 in the PNB table (likely a transcription slip, since NSI, TOI/ET reporting and the NSI master table 132 all show 7.4 unbroken through Sep 2022) -- flagged as a secondary-source disagreement, primary NSI value (7.4) used.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=181",
+      "evidence": "primary",
+      "crossCheckUrl": "https://pnb.bank.in/downloadprocess.aspx?fid=R+9u0PI13fpBDE9ics9SIQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2022-10-01",
+      "effectiveTo": "2022-12-31",
+      "rate": 7.6,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=181",
+      "evidence": "primary",
+      "crossCheckUrl": "https://pnb.bank.in/downloadprocess.aspx?fid=R+9u0PI13fpBDE9ics9SIQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2023-01-01",
+      "effectiveTo": "2023-03-31",
+      "rate": 8.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=181",
+      "evidence": "primary",
+      "crossCheckUrl": "https://pnb.bank.in/downloadprocess.aspx?fid=R+9u0PI13fpBDE9ics9SIQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2023-04-01",
+      "effectiveTo": "2026-09-30",
+      "rate": 8.2,
+      "note": "Deposit ceiling raised to Rs 30,00,000 (from Rs 15,00,000) w.e.f. FY2023-24 (Budget 2023). NSI page reads 'TO 31.03.2026'; continuation through Q2 FY2026-27 confirmed by TOI/ET reporting of 30.06.2026 DEA OM.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=181",
+      "evidence": "primary",
+      "crossCheckUrl": "https://preprod.financialexpress.com/money/senior-citizen-savings-scheme-scss-interest-rate-history-from-2004-to-may-2023-3091586/"
+    }
+  ],
+  "gaps": [
+    "One secondary compilation (PNB circular) shows a possible one-quarter transcription anomaly (7.6% for Jan-Mar 2022) inconsistent with three other sources (NSI, Financial Express, contemporaneous ET/TOI reports) that show 7.4% continuing unbroken through Sep 2022; resolved in favour of the primary NSI page, disagreement recorded rather than silently dropped."
+  ],
+  "notes": "Scheme's own primary NSI history page plus the original 2004 RBI launch notification anchor this file; SCSS is quarterly-PAID (never compounded), unlike PPF/NSC/KVP which compound before payout at maturity."
+}

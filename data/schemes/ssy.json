@@ -1,0 +1,145 @@
+{
+  "scheme": "ssy",
+  "name": "Sukanya Samriddhi Account / Yojana (SSY)",
+  "category": "small_savings",
+  "checkedAt": "2026-09-27",
+  "conventions": {
+    "compounding": "Annual, credited at financial year-end",
+    "interestBasis": "Calculated on lowest balance between close of 5th day and end of calendar month",
+    "payout": "Accumulated; withdrawals permitted for higher education after account holder turns 18; matures/closes at 21 years from opening",
+    "tenure": "Deposits for 15 years from account opening; account matures 21 years from opening or on girl's marriage after age 18",
+    "eligibility": "Girl child under age 10 at account opening; account opened by parent/legal guardian",
+    "depositLimitCurrent": "Min Rs 250/yr (originally Rs 1,000, reduced 2018), Max Rs 1,50,000/yr",
+    "administeredBy": "DEA / National Savings Institute; India Post and authorised banks",
+    "currentQuarter": {
+      "period": "2026-07-01 to 2026-09-30 (Q2 FY2026-27)",
+      "rate": 8.2,
+      "sourceUrl": "https://dea.gov.in/budget-division/475",
+      "sourceType": "primary",
+      "nextAnnouncement": "Q3 FY2026-27 (Oct-Dec 2026) not yet announced as of 2026-09-27; expect DEA OM ~2026-09-30."
+    }
+  },
+  "periods": [
+    {
+      "effectiveFrom": "2014-12-03",
+      "effectiveTo": "2015-03-31",
+      "rate": 9.1,
+      "note": "Scheme notified 2014-12-02 (G.S.R.), account interest effective from 3 Dec 2014; public launch by PM under Beti Bachao Beti Padhao on 22 Jan 2015.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=179",
+      "evidence": "primary",
+      "crossCheckUrl": "https://pnb.bank.in/downloadprocess.aspx?fid=R+9u0PI13fpBDE9ics9SIQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2015-04-01",
+      "effectiveTo": "2016-03-31",
+      "rate": 9.2,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=179",
+      "evidence": "primary",
+      "crossCheckUrl": "https://pnb.bank.in/downloadprocess.aspx?fid=R+9u0PI13fpBDE9ics9SIQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2016-04-01",
+      "effectiveTo": "2016-09-30",
+      "rate": 8.6,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=179",
+      "evidence": "primary",
+      "crossCheckUrl": "https://pnb.bank.in/downloadprocess.aspx?fid=R+9u0PI13fpBDE9ics9SIQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2016-10-01",
+      "effectiveTo": "2017-03-31",
+      "rate": 8.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=179",
+      "evidence": "primary",
+      "crossCheckUrl": "https://pnb.bank.in/downloadprocess.aspx?fid=R+9u0PI13fpBDE9ics9SIQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2017-04-01",
+      "effectiveTo": "2017-06-30",
+      "rate": 8.4,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=179",
+      "evidence": "primary",
+      "crossCheckUrl": "https://pnb.bank.in/downloadprocess.aspx?fid=R+9u0PI13fpBDE9ics9SIQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2017-07-01",
+      "effectiveTo": "2017-12-31",
+      "rate": 8.3,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=179",
+      "evidence": "primary",
+      "crossCheckUrl": "https://pnb.bank.in/downloadprocess.aspx?fid=R+9u0PI13fpBDE9ics9SIQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2018-01-01",
+      "effectiveTo": "2018-09-30",
+      "rate": 8.1,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=179",
+      "evidence": "primary",
+      "crossCheckUrl": "https://pnb.bank.in/downloadprocess.aspx?fid=R+9u0PI13fpBDE9ics9SIQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2018-10-01",
+      "effectiveTo": "2019-06-30",
+      "rate": 8.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=179",
+      "evidence": "primary",
+      "crossCheckUrl": "https://pnb.bank.in/downloadprocess.aspx?fid=R+9u0PI13fpBDE9ics9SIQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2019-07-01",
+      "effectiveTo": "2019-12-31",
+      "rate": 8.4,
+      "note": "NSI groups Jul2019-Mar2020 as one row @8.4; PNB circular splits identically at 8.4 for both Jul-Dec19 and Jan-Mar20 sub-rows -- no disagreement, kept as one period per NSI.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=179",
+      "evidence": "primary",
+      "crossCheckUrl": "https://pnb.bank.in/downloadprocess.aspx?fid=R+9u0PI13fpBDE9ics9SIQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2020-01-01",
+      "effectiveTo": "2020-03-31",
+      "rate": 8.4,
+      "note": "Independently confirmed for the 12 Dec 2019-31 Mar 2020 tail by the Sukanya Samriddhi Account Scheme 2019 rules, para 5(1): deposits in that window earn 8.4% p.a.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=179",
+      "evidence": "primary",
+      "crossCheckUrl": "http://www.nsiindia.gov.in/writereaddata/SchemeRules/SukanyaSamriddhiAccountSchemeRule.pdf"
+    },
+    {
+      "effectiveFrom": "2020-04-01",
+      "effectiveTo": "2023-03-31",
+      "rate": 7.6,
+      "note": "Confirmed by Scheme 2019 para 5(1A) as inserted by amendment G.S.R. 288(E) dated 05/05/2020: 'deposit made on or after 1 April 2020 ... 7.6% per annum'.",
+      "sourceUrl": "http://www.nsiindia.gov.in/writereaddata/SchemeRules/SukanyaSamriddhiAccountSchemeRule.pdf",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=179"
+    },
+    {
+      "effectiveFrom": "2023-04-01",
+      "effectiveTo": "2023-12-31",
+      "rate": 8.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=179",
+      "evidence": "primary",
+      "crossCheckUrl": "https://pnb.bank.in/downloadprocess.aspx?fid=R+9u0PI13fpBDE9ics9SIQ%3D%3D"
+    },
+    {
+      "effectiveFrom": "2024-01-01",
+      "effectiveTo": "2026-09-30",
+      "rate": 8.2,
+      "note": "NSI page reads 'TO 31.03.2026' (last refresh date); continuation through Q2 FY2026-27 confirmed by TOI/ET reporting of the 30.06.2026 DEA OM.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=179",
+      "evidence": "primary",
+      "crossCheckUrl": "https://timesofindia.indiatimes.com/business/india-business/latest-small-savings-schemes-interest-rates-post-office-q2-fy-2026-2027-ppf-nsc-sukanya-samriddhi-yojana-time-deposit-scss-monthly-income-account-kisan-vikas-patra/articleshow/132090744.cms"
+    }
+  ],
+  "gaps": [
+    "None material; NSI inception page, the 2019 Scheme Gazette text and PNB's compiled circular all agree."
+  ],
+  "notes": "Rate history fully corroborated by the Sukanya Samriddhi Account Scheme, 2019 Gazette notification (G.S.R. 914(E) as amended by G.S.R. 288(E)) for the 2019-2020 transition, in addition to NSI's own table."
+}

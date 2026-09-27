@@ -1,0 +1,52 @@
+{
+  "note": "Sample NAV histories (SBI Pension Fund, Tier I). The collector refreshes and extends these automatically from NPS Trust.",
+  "series": {
+    "sbi_scheme_e_tieri": {
+      "rows": 4260,
+      "from": "2009-05-05",
+      "to": "2026-09-25",
+      "schemeCodes": [
+        "SM001003",
+        "SM001025"
+      ],
+      "sourceUrls": [
+        "https://npstrust.org.in/scheme-wise-nav-report-excel?navcatdataxls=PFM001&navyearselxls=all&navsubdataxls=SM001003"
+      ]
+    },
+    "sbi_scheme_c_tieri": {
+      "rows": 4260,
+      "from": "2009-05-05",
+      "to": "2026-09-25",
+      "schemeCodes": [
+        "SM001004",
+        "SM001026"
+      ],
+      "sourceUrls": [
+        "https://npstrust.org.in/scheme-wise-nav-report-excel?navcatdataxls=PFM001&navyearselxls=all&navsubdataxls=SM001004"
+      ]
+    },
+    "sbi_scheme_g_tieri": {
+      "rows": 4260,
+      "from": "2009-05-05",
+      "to": "2026-09-25",
+      "schemeCodes": [
+        "SM001005",
+        "SM001024"
+      ],
+      "sourceUrls": [
+        "https://npstrust.org.in/scheme-wise-nav-report-excel?navcatdataxls=PFM001&navyearselxls=all&navsubdataxls=SM001005"
+      ]
+    },
+    "sbi_scheme_a_tieri": {
+      "rows": 2421,
+      "from": "2016-10-10",
+      "to": "2026-09-25",
+      "schemeCodes": [
+        "SM001012"
+      ],
+      "sourceUrls": [
+        "https://npstrust.org.in/scheme-wise-nav-report-excel?navcatdataxls=PFM001&navyearselxls=all&navsubdataxls=SM001012"
+      ]
+    }
+  }
+}

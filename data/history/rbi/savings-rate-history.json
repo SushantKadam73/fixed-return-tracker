@@ -1,0 +1,132 @@
+{
+  "$schemaNote": "One row per effective-date interval for the RBI-prescribed (all-bank) domestic resident savings deposit interest rate, 1977 to deregulation (Oct 25, 2011). Earlier than 1977 not found in this research pass (gap).",
+  "gapsAndCaveats": [
+    "No rate levels located for the savings deposit rate before July 1, 1977. The RBI Handbook 'Structure of Interest Rates' tables examined in this pass (Table 39 of the Handbook of Monetary Statistics of India, and successor Handbook of Statistics on Indian Economy editions) carry a 'Savings' column only from FY2003-04 onward in the editions retrieved; earlier editions of that same table (1970-71 onward) in this pass did not include a savings-deposit column at all -- only term-deposit buckets. The 1977-2003 rate levels above come from a secondary source (IIT Bombay technical report) that itself cites RBI Credit Policy statements; treat as needing primary-source (RBI Annual Report / Credit Policy statement text) verification before publishing, per Standard #2.",
+    "Two small (1-day) date discrepancies between sources are flagged in the 'note' fields above (March 1 vs 2, 1978; March 1 vs 2, 2003) and NOT resolved -- do not silently pick one.",
+    "The exact date NRE/NRO savings deposits (as opposed to resident domestic savings deposits) were deregulated is inconsistently reported across RBI's own circulars for different bank categories (commercial banks: Dec 16 and Dec 28, 2011 respectively for NRE and NRO; Urban Co-op Bank Master Circular Annex: Nov 25 and Dec 28, 2011). Flagged in the last row's note.",
+    "Effective yield vs declared rate: prior to April 1, 2010, RBI calculated savings interest on the MINIMUM balance between the 10th and last day of each calendar month, which produced an effective yield below the declared rate. Both are reported where the source states both; the fixed_return tracker should clearly label which figure (declared vs effective) it displays."
+  ],
+  "rows": [
+    {
+      "effectiveFrom": "1977-07-01",
+      "effectiveTo": "1978-03-01",
+      "rate": null,
+      "rateNote": "Savings-with-cheque-facility 3.0%; savings-without-cheque-facility 5.0% (RBI Credit Policy of May 27, 1977, split the single savings account into two categories effective July 1, 1977)",
+      "sourceUrl": "https://www.rbi.org.in/Scripts/bs_viewcontent.aspx?Id=2344",
+      "sourcePointer": "RBI 'Deregulation of Savings Bank Deposit Interest Rate - A Historical Account' (Box 1 / discussion paper), paragraph on the 1977 Credit Policy",
+      "dateKind": "exact",
+      "appliesTo": "All banks (RBI-prescribed); two sub-categories of savings deposit",
+      "note": "Two-tier savings rate; superseded when the two account types were merged, see next row."
+    },
+    {
+      "effectiveFrom": "1978-03-02",
+      "effectiveTo": "1979-09-12",
+      "rate": 4.5,
+      "rateNote": "Declared 4.5% p.a.; effective yield ~3.8% p.a. per IIT-Bombay technical note (due to pre-2010 interest-calculation method: minimum balance between 10th and last day of month)",
+      "sourceUrl": "http://www.math.iitb.ac.in/~ashish/workshop/TechReport_SBratederegulation.pdf",
+      "sourcePointer": "Table 1 'Rate of Interest on Savings Bank Deposit', row 'March 1, 1978'; corroborated by RBI historical account (Credit Policy of March 2, 1978 merged the two 1977 sub-accounts into one)",
+      "dateKind": "exact",
+      "appliesTo": "All banks (RBI-prescribed, all savings deposits)",
+      "note": "RBI source dates this change 'March 2, 1978'; IIT-Bombay table lists 'March 1, 1978' -- one-day discrepancy between two secondary/semi-primary sources, not resolved in this pass; flagged rather than guessed."
+    },
+    {
+      "effectiveFrom": "1979-09-13",
+      "effectiveTo": "1992-04-23",
+      "rate": 5.0,
+      "rateNote": "Declared 5.0% p.a.; effective yield ~4.3% p.a.",
+      "sourceUrl": "http://www.math.iitb.ac.in/~ashish/workshop/TechReport_SBratederegulation.pdf",
+      "sourcePointer": "Table 1, row 'September 13, 1979'",
+      "dateKind": "exact",
+      "appliesTo": "All banks (RBI-prescribed)",
+      "note": null
+    },
+    {
+      "effectiveFrom": "1992-04-24",
+      "effectiveTo": "1993-06-30",
+      "rate": 6.0,
+      "rateNote": "Declared 6.0% p.a. (the highest level the RBI-prescribed savings rate ever reached); effective yield ~5.1% p.a.",
+      "sourceUrl": "http://www.math.iitb.ac.in/~ashish/workshop/TechReport_SBratederegulation.pdf",
+      "sourcePointer": "Table 1, row 'April 24, 1992'",
+      "dateKind": "exact",
+      "appliesTo": "All banks (RBI-prescribed)",
+      "note": null
+    },
+    {
+      "effectiveFrom": "1993-07-01",
+      "effectiveTo": "1994-10-31",
+      "rate": 5.0,
+      "rateNote": "Declared 5.0% p.a.; effective yield ~4.3% p.a.",
+      "sourceUrl": "http://www.math.iitb.ac.in/~ashish/workshop/TechReport_SBratederegulation.pdf",
+      "sourcePointer": "Table 1, row 'July 1, 1993'",
+      "dateKind": "exact",
+      "appliesTo": "All banks (RBI-prescribed)",
+      "note": null
+    },
+    {
+      "effectiveFrom": "1994-11-01",
+      "effectiveTo": "1999-12-31",
+      "rate": 4.5,
+      "rateNote": "Declared 4.5% p.a.; effective yield ~3.8% p.a. (IIT-Bombay note states this level held 'November 1, 1994 through March 31, 2000')",
+      "sourceUrl": "http://www.math.iitb.ac.in/~ashish/workshop/TechReport_SBratederegulation.pdf",
+      "sourcePointer": "Table 1, row 'November 1, 1994'; paragraph 6 ('3.8% during November 1, 1994 through March 31, 2000')",
+      "dateKind": "exact",
+      "appliesTo": "All banks (RBI-prescribed)",
+      "note": null
+    },
+    {
+      "effectiveFrom": "2000-04-01",
+      "effectiveTo": "2003-03-01",
+      "rate": 4.0,
+      "rateNote": "Declared 4.0% p.a.; effective yield ~3.4% p.a.",
+      "sourceUrl": "http://www.math.iitb.ac.in/~ashish/workshop/TechReport_SBratederegulation.pdf",
+      "sourcePointer": "Table 1, row 'April 1, 2000'",
+      "dateKind": "exact",
+      "appliesTo": "All banks (RBI-prescribed)",
+      "note": "RBI's own 2002 Monetary & Credit Policy statement (Dr. Bimal Jalan, 29 Apr 2002) independently corroborates '4.0% per annum... yield works out to 3.4% per annum' for this period."
+    },
+    {
+      "effectiveFrom": "2003-03-02",
+      "effectiveTo": "2010-03-31",
+      "rate": 3.5,
+      "rateNote": "Declared 3.5% p.a.; effective yield ~3.0% p.a. until the interest-calculation method changed on 2010-04-01 (see next row)",
+      "sourceUrl": "https://www.rbi.org.in/commonman/Upload/English/Notification/PDFs/78403.pdf",
+      "sourcePointer": "RBI Master Circular on Interest Rates on Rupee Deposits: 'the savings bank interest rate is currently fixed at 3.5% per annum, which is unchanged from March 1, 2003' (multiple editions repeat this); IIT-Bombay Table 1 dates the change 'March 2, 2003' and states '3.0% during March 2, 2003 through March 31, 2010'",
+      "dateKind": "exact",
+      "appliesTo": "All banks (RBI-prescribed)",
+      "note": "Two sources differ by one day on the exact date (RBI Master Circular text says 'March 1, 2003'; IIT-Bombay says 'March 2, 2003') -- flagged, not resolved."
+    },
+    {
+      "effectiveFrom": "2010-04-01",
+      "effectiveTo": "2011-05-02",
+      "rate": 3.5,
+      "rateNote": "Rate unchanged at 3.5% p.a., but interest now calculated on a DAILY PRODUCT basis (RBI circular, effective April 1, 2010) instead of the old 10th-to-month-end minimum-balance method, so the effective yield rose to the full declared 3.5%",
+      "sourceUrl": "https://www.rbi.org.in/commonperson/English/Scripts/Notification.aspx?Id=587",
+      "sourcePointer": "RBI Master Circular on Interest Rates on Rupee Deposits, paragraph on savings deposit interest calculation: 'payment of interest on savings bank accounts by scheduled commercial banks would be calculated on a daily product basis with effect from April 1, 2010'",
+      "dateKind": "exact",
+      "appliesTo": "All banks (RBI-prescribed)",
+      "note": "See milestones.json for this rule change; this row captures only the rate LEVEL (unchanged) at the moment the calculation method changed."
+    },
+    {
+      "effectiveFrom": "2011-05-03",
+      "effectiveTo": "2011-10-24",
+      "rate": 4.0,
+      "rateNote": "Declared and effective 4.0% p.a. (daily-product method already in force)",
+      "sourceUrl": "https://rbi.org.in/Scripts/NotificationUser.aspx?Id=6779",
+      "sourcePointer": "RBI Notification DBOD.Dir.BC.89/13.03.00/2010-11 dated May 3, 2011 (raising savings rate to 4%), referenced in the Oct 25, 2011 deregulation circular DBOD.Dir.BC.42/13.03.00/2011-12",
+      "dateKind": "exact",
+      "appliesTo": "All banks (RBI-prescribed); last uniform RBI-mandated savings rate for resident domestic deposits",
+      "note": "This was the RBI-prescribed savings rate in force at the moment of deregulation on Oct 25, 2011."
+    },
+    {
+      "effectiveFrom": "2011-10-25",
+      "effectiveTo": null,
+      "rate": null,
+      "rateNote": "DEREGULATED for resident-Indian domestic savings deposits: banks free to set their own rate, subject to (i) uniform rate up to Rs 1 lakh balance and (ii) optional differential rate(s) above Rs 1 lakh, with no discrimination between similar deposits accepted the same day.",
+      "sourceUrl": "https://rbi.org.in/Scripts/NotificationUser.aspx?Id=6779",
+      "sourcePointer": "RBI Notification DBOD.Dir.BC.42/13.03.00/2011-12 and Directive DBOD.Dir.BC.41/13.03.00/2011-12, both dated October 25, 2011, 'Deregulation of Savings Bank Deposit Interest Rate - Guidelines'",
+      "dateKind": "exact",
+      "appliesTo": "Resident Indian domestic savings deposits, all scheduled commercial banks (excl. RRBs, which got an identical circular RPCD.CO.RCB.BC.Dir.No.25/07.38.01/2011-12 same day; RRBs' own circular is dated Dec 26, 2011 but the rule itself is effective Oct 25, 2011)",
+      "note": "From this date, the RBI no longer prescribes a single savings rate for resident domestic accounts. NRE savings deposits remained regulated at 4% until deregulated effective November 25, 2011 (per Urban Co-op Bank Master Circular Annex) or December 16, 2011 (per Commercial Bank NRE/NRO-specific circular DBOD.Dir.BC.64/13.03.00/2011-12 dated Dec 16, 2011) -- sources for commercial banks vs UCBs give different NRE deregulation dates; NRO savings deregulated effective December 28, 2011 for commercial banks. This date discrepancy for NRE (Nov 25 vs Dec 16, 2011) is flagged, not resolved, in this pass."
+    }
+  ]
+}

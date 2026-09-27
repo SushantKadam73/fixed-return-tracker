@@ -1,0 +1,136 @@
+{
+  "description": "Registry of every source used to build the scheme rate-history files in this directory, with format and automation guidance for keeping them current.",
+  "asOfDate": "2026-09-27",
+  "sources": [
+    {
+      "publisher": "National Savings Institute (NSI), Dept. of Economic Affairs, Ministry of Finance",
+      "domain": "nsiindia.gov.in",
+      "sourceType": "primary",
+      "urls": [
+        "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132",
+        "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=135",
+        "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=178",
+        "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=179",
+        "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=180",
+        "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=181",
+        "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+        "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=77"
+      ],
+      "format": "HTML tables (ASPX pages, no API)",
+      "covers": "Master quarterly rate table (Id_Pk=132) for all small-savings schemes since FY2011-12; per-scheme 'Since Inception' tables for PPF(178)/SSY(179)/KVP(180)/SCSS(181)/NSC-VIII(182); pre-2016 detail (135); POMIS 1987 rules (77)",
+      "automation": "Poll Id_Pk=132 quarterly (it appends a new 4-column block each FY) plus the five per-scheme inception pages, which are updated less predictably (sometimes lag 1-2 quarters behind the current date). No API; parse the rendered HTML table. In this research environment direct curl/requests to nsiindia.gov.in returned HTTP 502 for every attempt (likely WAF/anti-bot on the hosting CDN) -- all NSI content here was retrieved via Exa's cached/live crawl instead. A production scraper should test from its own egress IP and may need a real browser/headless-Chrome fetch or a residential IP if the 502 persists.",
+      "reliability": "Highest -- treat as ground truth when available; cross-check against DEA's own OMs where possible since NSI pages are sometimes a quarter or two stale relative to the very latest OM."
+    },
+    {
+      "publisher": "Department of Economic Affairs (DEA), Budget Division, Ministry of Finance",
+      "domain": "dea.gov.in",
+      "sourceType": "primary",
+      "urls": [
+        "https://dea.gov.in/budget-division/475",
+        "https://dea.gov.in/documents-orders-notices-dea"
+      ],
+      "format": "HTML listing page linking to PDF Office Memoranda (OMs) and Resolutions",
+      "covers": "The actual quarterly small-savings-rate OMs (F.No.1/4/2019-NS) and the quarterly GPF-rate Resolutions -- the primary legal instrument behind every quarterly rate in this dataset since Apr 2016",
+      "automation": "Poll this listing page in the last few days of March/June/September/December (OMs are typically dated the last day of the outgoing quarter, e.g. 30 June for the Jul-Sep OM, 31 Dec for the Jan-Mar OM). Each entry links a PDF; diff the listing for new rows rather than re-parsing all PDFs each time.",
+      "reliability": "Highest -- this is the origin document that every other source (NSI, India Post SB Orders, news coverage) restates."
+    },
+    {
+      "publisher": "Reserve Bank of India (RBI)",
+      "domain": "rbi.org.in",
+      "sourceType": "primary",
+      "urls": [
+        "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63065 (and sibling prid= values for each half-year since 50009)"
+      ],
+      "format": "HTML press release, one per half-year reset",
+      "covers": "FRSB 2020 (T) coupon for each half-year since launch (Jul 2020)",
+      "automation": "RBI publishes a new press release on/around 1 Jan and 1 Jul every year confirming the FRSB coupon (= NSC rate + 35bps); poll RBI's press release RSS/listing around those dates, or simply compute coupon = latest NSC rate (from DEA/NSI) + 0.35% two days after each DEA quarterly OM covering Jan or Jul.",
+      "reliability": "Highest for FRSB; also the primary source for the SCSS 2004 launch notification (rbi.org.in/commonperson .../Notification.aspx?Id=231)."
+    },
+    {
+      "publisher": "Employees' Provident Fund Organisation (EPFO) / Ministry of Labour & Employment / PIB",
+      "domain": "epfindia.gov.in, pib.gov.in, pmvbry.epfindia.gov.in",
+      "sourceType": "primary",
+      "urls": [
+        "https://www.epfindia.gov.in/site_docs/PDFs/MiscPDFs/InterestRate_OnPFAccumulationsSince1952.pdf (returned HTTP 403 in this research pass -- likely moved or bot-blocked; needs periodic re-check)",
+        "https://www.epfindia.gov.in/site_docs/PDFs/Circulars/Y2025-2026/DeclarationOfROI_2024_25.pdf",
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2234502",
+        "https://pmvbry.epfindia.gov.in/faq-epfo/"
+      ],
+      "format": "PDF circulars; PIB HTML press releases",
+      "covers": "Annual EPF rate declaration/ratification (CBT recommendation -> Finance Ministry concurrence -> EPFO circular)",
+      "automation": "Watch for the annual CBT meeting press release (PIB, usually Feb-Mar) for the recommended rate, then the Finance Ministry ratification (news coverage/EPFO circular, often 2-4 months later, historically as late as June) for the rate that actually gets credited. The two dates can span different calendar years for the same FY's rate.",
+      "reliability": "Highest for recent years (2016-17 onward spot-checked here); the pre-2016 master table PDF could not be independently re-fetched in this pass -- see gaps in epf.json."
+    },
+    {
+      "publisher": "India Post / Department of Posts",
+      "domain": "indiapost.gov.in",
+      "sourceType": "primary",
+      "urls": [
+        "https://indiapost.gov.in/Financial/pages/content/post-office-saving-schemes.aspx",
+        "https://www.indiapost.gov.in/VAS/DOP_RTI/SBOrders2016.pdf"
+      ],
+      "format": "HTML current-rates page; PDF Savings Bank (SB) Orders circulating each DEA OM to post offices",
+      "covers": "Current quarter's rates for every post-office-operated scheme (POSB/RD/TD/MIS/SCSS/NSC/KVP/PPF/SSY, formerly MSSC); SB Orders are the operational circular chain that mirrors each DEA OM",
+      "automation": "Scrape the current-rates page each quarter (it is typically updated within a few days of the DEA OM); SB Orders are also mirrored promptly by StaffNews.in and similar postal-staff blogs, useful as a fast secondary confirmation.",
+      "reliability": "High; operationally authoritative for what post offices actually apply, always traceable back to a DEA OM."
+    },
+    {
+      "publisher": "e-Gazette of India / Ministry of Finance (DEA) notifications (G.S.R.)",
+      "domain": "egazette.gov.in (via mirrors: igecorner.com, govtschemes.in, utilities.cept.gov.in)",
+      "sourceType": "primary",
+      "urls": [
+        "https://www.igecorner.com/wp-content/uploads/2023/04/ECE_7730_SB.pdf (MSSC launch, G.S.R.237(E) dated 31.03.2023)",
+        "http://www.nsiindia.gov.in/writereaddata/SchemeRules/SukanyaSamriddhiAccountSchemeRule.pdf (SSY Scheme 2019, G.S.R.914(E)/G.S.R.288(E))"
+      ],
+      "format": "PDF Gazette notification text",
+      "covers": "The actual legal Scheme Rules for MSSC and SSY, including their interest paragraphs -- the strongest possible primary source when locatable",
+      "automation": "Search egazette.gov.in directly when a new scheme launches or an existing Scheme's rules are amended; mirrors on postal-staff blogs (staffnews.in, igecorner.com, potoolsblog.in) are usually faster to appear and easier to fetch than the Gazette site itself.",
+      "reliability": "Highest possible -- this is the actual law."
+    },
+    {
+      "publisher": "Comptroller & Auditor General of India (C&AG)",
+      "domain": "cag.gov.in",
+      "sourceType": "secondary",
+      "urls": [
+        "https://cag.gov.in/uploads/media/GPF-RATE-OF-INTEREST-0628f61212363c4-72864301.pdf"
+      ],
+      "format": "PDF (one-page compiled table)",
+      "covers": "GPF rate 1956-2022",
+      "automation": "One-off historical reference; will not be updated for future quarters. Use DEA's own GPF resolutions (dea.gov.in/budget-division/475) for anything after 2021-22.",
+      "reliability": "Government body but a compiled secondary table, not the origin resolution text; treated as secondary in this dataset and cross-checked against individual DEA GPF resolutions where found."
+    },
+    {
+      "publisher": "Bank-compiled circulars (Punjab National Bank)",
+      "domain": "pnbindia.in, pnb.bank.in",
+      "sourceType": "secondary",
+      "urls": [
+        "https://www.pnbindia.in/downloadprocess.aspx?fid=xPD0h+HpP%2FAYGMOFOSNpRQ%3D%3D",
+        "https://pnb.bank.in/downloadprocess.aspx?fid=R+9u0PI13fpBDE9ics9SIQ%3D%3D"
+      ],
+      "format": "PDF/HTML circular reproducing PPF/SSY/SCSS rate tables for staff reference",
+      "covers": "Independent cross-check for PPF, SSY and SCSS rate histories",
+      "automation": "Not needed for automation (bank circulars lag and are for staff reference); useful only as an occasional cross-check.",
+      "reliability": "Secondary; used only to corroborate NSI figures, never as sole source."
+    },
+    {
+      "publisher": "Postal-staff / personal-finance blogs and news outlets (leads and cross-checks only)",
+      "domain": "potoolsblog.in, saposts.com, staffnews.in, stableinvestor.com, karvitt.drankitgupta.com, bankbazaar.com, apoliticaldigitalconsulting.com, dataful.in, 7thpaycommissionnews.in, financialexpress.com, economictimes.indiatimes.com, timesofindia.indiatimes.com, ies.gov.in (Arthapedia), en.wikipedia.org, knowyourbrokerage.in, apnaplan.com, smartpaisa.in, indiagraphs.com",
+      "sourceType": "secondary",
+      "urls": [
+        "see individual crossCheckUrl fields throughout the *.json files for the specific pages used"
+      ],
+      "format": "Mixed HTML",
+      "covers": "Pre-2016 rate history for Post Office TD/RD/SB (1968-1987, where no primary NSI table was found), NSC IX issue, KVP doubling-period tables, EPF 1952-2015, GPF pre-1986, current-quarter news confirmations",
+      "automation": "Not suitable as a primary automation source (unofficial, occasionally inconsistent with each other -- see the specific disagreements flagged in po_td_1y.json, scss.json, ppf.json notes). Useful as fast leads pointing to which primary document to fetch, and as a secondary check when a primary source is temporarily unreachable (as nsiindia.gov.in was throughout this research pass).",
+      "reliability": "Secondary only; every numeric claim sourced solely from this tier is flagged sourceType:'secondary' in the scheme files, and gaps.json-equivalent arrays note where no primary confirmation could be found."
+    }
+  ],
+  "generalAutomationNotes": [
+    "Small-savings schemes (PPF, SSY, SCSS, NSC, KVP, POMIS, POTD x4, PORD, POSB) are all reset together by a single DEA Office Memorandum each quarter, published at dea.gov.in/budget-division/475 a few days before/around each quarter-start (roughly 30 Mar, 30 Jun, 30 Sep, 31 Dec). Build one scraper for that listing page and fan the resulting rate table out to all eleven scheme files at once.",
+    "GPF gets its OWN separate DEA Resolution each quarter (also at dea.gov.in/budget-division/475) that has, without exception in this research, been numerically identical to the PPF rate for the same period since 1986. Still fetch it separately since the two documents are legally distinct.",
+    "EPF/VPF is declared once a year (not quarterly), with a multi-month lag between CBT recommendation and Finance Ministry ratification/crediting -- track via PIB press releases (CBT meeting, usually Feb-Mar) and EPFO circulars (ratification, timing varies).",
+    "FRSB 2020(T) is fully mechanical: coupon = NSC rate (most recent DEA OM) + 0.35%, reset 1 Jan/1 Jul; can be computed the moment the relevant quarter's NSC rate is known, then confirmed against RBI's own half-yearly press release.",
+    "MSSC is closed to new deposits (since 2025-04-01) -- no further automation needed except a one-time check for whether Government reopens/relaunches it.",
+    "As of this research date (2026-09-27), the Q3 FY2026-27 (Oct-Dec 2026) small-savings OM and its GPF-Resolution twin have NOT yet been published; based on the pattern of every prior quarter (OM dated the last day of the outgoing quarter), expect publication around 2026-09-30."
+  ]
+}

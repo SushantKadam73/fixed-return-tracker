@@ -1,0 +1,346 @@
+{
+  "$schemaNote": "Each row is one dated regulatory milestone/rule change. 'category' groups related rows (comma-separated when a single circular covers more than one topic). dateKind is 'exact' unless explicitly marked otherwise.",
+  "currentFrameworkSummary": "As of 2026-09-27, the operative rulebook for commercial banks is the 'Reserve Bank of India (Commercial Banks - Interest Rate on Deposits) Directions, 2025' (RBI/DOR/2025-26/153, dated Nov 28, 2025), as amended by three 2026 amendments (Jun 17, Jul 30 [[Second Amendment]], Aug 25 [[Third Amendment]]). Small Finance Banks have a parallel, near-identical Directions, 2025 (RBI/DOR/2025-26/184) with its own parallel 2026 amendments. Both are Master-Direction-style consolidated rulebooks, viewable in full (continuously updated) at the sourceUrl of the respective Nov 28, 2025 row.",
+  "milestones": [
+    {
+      "date": "1964-02-01",
+      "dateKind": "uncertain_needs_verification",
+      "title": "RBI empowered to regulate deposit-acceptance activities of NON-BANKING institutions (new Chapter IIIB of RBI Act) -- NOTE: this is NOT the same as RBI prescribing commercial-BANK deposit rates; included here only because it is the one 1964-dated RBI action found in this pass.",
+      "category": "origin_pre_history",
+      "circularNo": null,
+      "sourceUrl": "https://www.rbi.org.in/history/Brief_Chro1960to1971.html",
+      "sourcePointer": "RBI 'Brief History - Chronology of Events - 1960 to 1971', entry '1 Feb 1964'",
+      "description": "The task brief suggested RBI began prescribing bank deposit rates 'around 1964', with rates before that set by inter-bank agreement. This specific 1964 action found in RBI's own chronology concerns non-banking companies, not commercial banks' deposit rates. The commercial-bank deposit-rate-prescription origin story was NOT independently confirmed in this pass -- RBI History Volume II (1951-1967), chapter 11 'Regulating Banks and Deposit Institutions' (https://www.rbi.org.in/scripts/rhvol-2.aspx) is the most likely primary source and should be read directly in a follow-up pass before asserting a specific origin date."
+    },
+    {
+      "date": "1985-04-01",
+      "dateKind": "exact",
+      "title": "Banks allowed to set own rates (within an 8% ceiling) for term deposits of 15 days to 1 year",
+      "category": "term_deposit_deregulation_step",
+      "circularNo": null,
+      "sourceUrl": "https://www.rbi.org.in/Scripts/bs_viewcontent.aspx?Id=2344",
+      "sourcePointer": "RBI 'Deregulation of Savings Bank Deposit Interest Rate - Guidelines', Box 1 'Deregulation of Deposit Interest Rates in India - A Historical Account'",
+      "description": "First deregulation attempt for short-tenor domestic term deposits; withdrawn one month later after a price war (see next row)."
+    },
+    {
+      "date": "1985-05-01",
+      "dateKind": "exact",
+      "title": "Freedom to set rates within the 8% ceiling (from April 1985) WITHDRAWN after banks converged on a flat 8% rate for all maturities from 15 days, causing a shift out of current/savings accounts.",
+      "category": "term_deposit_deregulation_step",
+      "circularNo": null,
+      "sourceUrl": "https://www.rbi.org.in/Scripts/bs_viewcontent.aspx?Id=2344",
+      "sourcePointer": "Same source as above, Box 1",
+      "description": "Deposit-rate deregulation process paused; resumed in April 1992 (next row)."
+    },
+    {
+      "date": "1992-04-01",
+      "dateKind": "exact",
+      "title": "Maturity-wise ceilings replaced by a single ceiling rate of 13% p.a. for all domestic term deposits above 46 days; banks free to fix own rate within that ceiling for 46 days-3yrs+",
+      "category": "term_deposit_deregulation_step",
+      "circularNo": null,
+      "sourceUrl": "http://www.dea.gov.in/files/other_reports_documents/annex1.pdf",
+      "sourcePointer": "Dept. of Economic Affairs, 'Annex 1: Sequence of Interest Rate Liberalisation 1992-93 to 1997-98' (secondary/GoI source); corroborated by RBI's own Box 1 account",
+      "description": "Second and lasting phase of term-deposit deregulation begins."
+    },
+    {
+      "date": "1994-11-01",
+      "dateKind": "exact",
+      "title": "Ceiling rate for domestic term deposits above 46 days brought down to 10% p.a.",
+      "category": "term_deposit_deregulation_step",
+      "circularNo": null,
+      "sourceUrl": "https://www.rbi.org.in/Scripts/bs_viewcontent.aspx?Id=2344",
+      "sourcePointer": "RBI Box 1 historical account",
+      "description": null
+    },
+    {
+      "date": "1995-04-01",
+      "dateKind": "exact",
+      "title": "Ceiling rate raised to 12% p.a.",
+      "category": "term_deposit_deregulation_step",
+      "circularNo": null,
+      "sourceUrl": "https://www.rbi.org.in/Scripts/bs_viewcontent.aspx?Id=2344",
+      "sourcePointer": "RBI Box 1 historical account",
+      "description": null
+    },
+    {
+      "date": "1995-10-01",
+      "dateKind": "exact",
+      "title": "Banks given freedom to fix their own interest rates on domestic term deposits with maturity OVER 2 years; a ceiling continued for 46 days-2 years.",
+      "category": "term_deposit_deregulation_step",
+      "circularNo": null,
+      "sourceUrl": "https://www.rbi.org.in/Scripts/bs_viewcontent.aspx?Id=2344",
+      "sourcePointer": "RBI Box 1 historical account",
+      "description": null
+    },
+    {
+      "date": "1996-07-01",
+      "dateKind": "exact",
+      "title": "Minimum period of domestic term deposits reduced from 46 to 30 days; banks given freedom to fix own rates for maturity OVER 1 year (extending the Oct-1995 freedom).",
+      "category": "term_deposit_deregulation_step",
+      "circularNo": "DBOD.No.Dir.BC.90/13.01.01/96",
+      "sourceUrl": "https://www.rbi.org.in/circulars/circject/download98b/DBOD.No.Dir.BC.%2036_13.03.00_98.htm",
+      "sourcePointer": "Referenced in DBOD.No.Dir.BC.36/13.03.00/98 (dated Apr 1998): 'In terms of Circular DBOD.No.Dir.BC.90/13.01.01/96 dated July 1, 1996 the minimum period of domestic term deposits was reduced from 46 days to 30 days.' Some secondary sources (India Economic Survey 1996-97) give the effective date as 'July 2, 1996' rather than July 1 -- one-day discrepancy flagged, not resolved.",
+      "description": null
+    },
+    {
+      "date": "1996-10-21",
+      "dateKind": "exact",
+      "title": "Ceiling on the still-regulated 30-days-to-1-year bucket reduced from 11% to 10% p.a.",
+      "category": "term_deposit_deregulation_step",
+      "circularNo": null,
+      "sourceUrl": "https://www.indiabudget.gov.in/budget_archive/es96-97/CHAPTER3.HTM",
+      "sourcePointer": "GoI Economic Survey 1996-97, Chapter 3, para 34 (secondary source)",
+      "description": null
+    },
+    {
+      "date": "1997-03-15",
+      "dateKind": "exact",
+      "title": "Circular fixing the premature-withdrawal penalty structure while rates were still regulated: interest paid at the lower of (a) the rate for the period actually held or (b) the contracted rate, LESS a 1% penalty.",
+      "category": "premature_withdrawal_rule",
+      "circularNo": "DBOD.No.Dir.BC.22/13.01.05/97",
+      "sourceUrl": "https://www.rbi.org.in/circulars/circject/download98b/DBOD.No.Dir.BC.%2036_13.03.00_98.htm",
+      "sourcePointer": "Referenced in DBOD.No.Dir.BC.36/13.03.00/98 (Apr 1998), which relaxed this rule (see row below)",
+      "description": null
+    },
+    {
+      "date": "1997-04-16",
+      "dateKind": "exact",
+      "title": "Interest rate on the remaining regulated bucket (30 days to 1 year) linked to the Bank Rate minus 200 basis points, instead of a flat administered ceiling.",
+      "category": "term_deposit_deregulation_step",
+      "circularNo": null,
+      "sourceUrl": "https://www.rbi.org.in/Scripts/bs_viewcontent.aspx?Id=2344",
+      "sourcePointer": "RBI Box 1 historical account",
+      "description": null
+    },
+    {
+      "date": "1997-10-22",
+      "dateKind": "exact",
+      "title": "FULL DEREGULATION of domestic term deposit interest rates: banks free to fix their own rates on domestic term deposits of all maturities, with prior Board/ALCO approval; Bank-Rate linkage removed.",
+      "category": "term_deposit_deregulation_step",
+      "circularNo": null,
+      "sourceUrl": "https://www.rbi.org.in/commonman/english/Scripts/Notification.aspx?Id=1066",
+      "sourcePointer": "RBI Master Circular on Interest Rates on Rupee Deposits: 'With effect from October 22, 1997, RBI has given the freedom to commercial banks to fix their own interest rates on domestic term deposits of various maturities with the prior approval of their respective Board of Directors/Asset Liability Management Committee (ALCO).'",
+      "description": "This is the headline 'deregulation date' for domestic term deposits. Savings deposits remained regulated until Oct 25, 2011 (see savings-rate rows)."
+    },
+    {
+      "date": "1998-04-29",
+      "dateKind": "exact",
+      "title": "Minimum maturity of domestic term deposits further reduced from 30 to 15 days; banks permitted to set their OWN penal rate for premature withdrawal (replacing the fixed 1%-penalty rule of Mar 1997); banks permitted to offer differential interest rates for deposits >= Rs 15 lakh of the same maturity (uniform rate still required below Rs 15 lakh).",
+      "category": "term_deposit_deregulation_step,premature_withdrawal_rule,bulk_deposit_definition",
+      "circularNo": "DBOD.No.Dir.BC.34/13.03.00/98 (base) / DBOD.No.Dir.BC.36/13.03.00/98 (text referenced)",
+      "sourceUrl": "https://www.rbi.org.in/circulars/circject/download98b/DBOD.No.Dir.BC.%2036_13.03.00_98.htm",
+      "sourcePointer": "Circular text: 'It has now been decided to further reduce the minimum period of maturity of domestic term deposits from 30 days to 15 days... permit banks to determine their own penal interest rates for premature withdrawal... permit banks at their discretion to offer differential rates of interest on domestic term deposits of the same maturity... will apply to domestic term deposits of Rs. 15 lakhs and above.'",
+      "description": "First appearance of the Rs 15-lakh 'bulk deposit' threshold for differential pricing; this pre-dates the formal 'Bulk Deposit' defined term introduced in the 2016 Master Direction."
+    },
+    {
+      "date": "2004-11-01",
+      "dateKind": "exact",
+      "title": "Minimum tenor of domestic/NRO term deposits BELOW Rs 15 lakh reduced from 15 days to 7 days (deposits of Rs 15 lakh+ already had a 7-day minimum since 1998).",
+      "category": "term_deposit_deregulation_step",
+      "circularNo": null,
+      "sourceUrl": "https://www.rbi.org.in/commonman/english/Scripts/Notification.aspx?Id=1066",
+      "sourcePointer": "RBI Master Circular on Interest Rates on Rupee Deposits, para on minimum tenor",
+      "description": null
+    },
+    {
+      "date": "2006-07-28",
+      "dateKind": "exact",
+      "title": "Government of India notifies the 'Bank Term Deposit Scheme, 2006' (5-year tax-saver FD under Sec 80C); RBI subsequently clarifies banks may NOT pay a differential/higher rate on these deposits versus ordinary deposits of similar tenure.",
+      "category": "rule_carve_out",
+      "circularNo": "GoI Notification No. 203/2006",
+      "sourceUrl": "https://www.rbi.org.in/scripts/BS_ViewMasCirculardetails.aspx?id=7378",
+      "sourcePointer": "RBI Master Circular clause: 'it will not be in order for banks to offer higher/differential rate of interest... on deposit schemes framed by them on the basis of the Bank Term Deposit Scheme, 2006.'",
+      "description": "This carve-out is still present verbatim in the 2025 Directions (para 10(2) proviso)."
+    },
+    {
+      "date": "2010-04-01",
+      "dateKind": "exact",
+      "title": "Interest on savings bank accounts to be calculated on a DAILY PRODUCT basis (replacing the old method: minimum balance between the 10th and last day of each calendar month).",
+      "category": "savings_rate_rule",
+      "circularNo": null,
+      "sourceUrl": "https://www.rbi.org.in/commonperson/English/Scripts/Notification.aspx?Id=587",
+      "sourcePointer": "RBI Master Circular on Interest Rates on Rupee Deposits, para on savings-deposit interest calculation, referencing the 2009-10 Annual Policy Statement announcement",
+      "description": "This is the change the task brief asked to verify; confirmed at April 1, 2010 across multiple RBI Master Circular editions."
+    },
+    {
+      "date": "2011-05-03",
+      "dateKind": "exact",
+      "title": "Savings bank deposit rate (still RBI-prescribed) raised from 3.5% to 4.0% p.a.",
+      "category": "savings_rate_rule",
+      "circularNo": "DBOD.Dir.BC.89 & 90/13.03.00/2010-11",
+      "sourceUrl": "https://rbi.org.in/Scripts/NotificationUser.aspx?Id=6779",
+      "sourcePointer": "Referenced in the Oct 25, 2011 deregulation circular DBOD.Dir.BC.42/13.03.00/2011-12: 'Please refer to our Directive DBOD.Dir.BC.89/13.03.00/2010-11 dated May 3, 2011'",
+      "description": null
+    },
+    {
+      "date": "2011-10-25",
+      "dateKind": "exact",
+      "title": "SAVINGS BANK DEPOSIT RATE DEREGULATED for resident-Indian domestic accounts: banks free to set their own rate, subject to (i) a uniform rate up to Rs 1 lakh balance, and (ii) optional differential rate(s) above Rs 1 lakh (no discrimination between similar deposits accepted on the same date).",
+      "category": "savings_rate_deregulation",
+      "circularNo": "DBOD.Dir.BC.42/13.03.00/2011-12 (guidelines) / DBOD.Dir.BC.41/13.03.00/2011-12 (directive)",
+      "sourceUrl": "https://rbi.org.in/Scripts/NotificationUser.aspx?Id=6779",
+      "sourcePointer": "RBI Notification 'Deregulation of Savings Bank Deposit Interest Rate - Guidelines', dated Oct 25, 2011, announced same day as the Second Quarter Review of Monetary Policy 2011-12",
+      "description": "Headline savings-deposit deregulation date requested in the task brief -- CONFIRMED as October 25, 2011. NRE/NRO savings deposits remained regulated at 4% slightly longer (deregulated Nov/Dec 2011, exact date varies by bank category -- see savings_rate_history.json note)."
+    },
+    {
+      "date": "2012-01-25",
+      "dateKind": "exact",
+      "title": "Clarification: the uniform-vs-differential Rs 1 lakh savings-rate rule (Oct 2011) applies on END-OF-DAY BALANCE, not average or minimum balance.",
+      "category": "savings_rate_rule",
+      "circularNo": "DBOD.Dir.BC.75/13.03.00/2011-12",
+      "sourceUrl": "https://taxguru.in/rbi/deregulation-of-savings-bank-deposit-interest-rate-guidelines-dboddirbc-75130300201112.html",
+      "sourcePointer": "Circular text (secondary reproduction; original RBI page not independently re-fetched in this pass -- verify against rbi.org.in before publishing): 'banks are required to apply the uniform rate set by them on end-of-day balance up to Rs. 1 lakh and for any end-of-day balance exceeding Rs.1 lakh, banks may apply the differential rate(s)'",
+      "description": null
+    },
+    {
+      "date": "2013-04-01",
+      "dateKind": "exact",
+      "title": "Banks given discretion to disallow premature withdrawal on BULK deposits (Rs 1 crore and above) from ALL depositors, including individuals and HUFs -- previously (since ~1998-2001) banks could only disallow premature withdrawal for large deposits held by NON-individual/non-HUF entities. Rs 1 crore also became the differential-pricing 'single term deposit' threshold, replacing the Rs 15 lakh threshold set in 1998.",
+      "category": "non_callable_deposit_threshold,bulk_deposit_definition",
+      "circularNo": null,
+      "sourceUrl": "https://www.rbi.org.in/scripts/BS_ViewMasCirculardetails.aspx?id=8137",
+      "sourcePointer": "RBI Master Circular on Interest Rates on Rupee Deposits (2013-14 edition): 'Prior to April 1, 2013, the bank had discretion to disallow premature withdrawal of large deposits held by entities other than individuals and HUFs... With effect from April 1, 2013, banks will have the discretion to disallow premature withdrawal... in respect of bulk deposit of Rupees one crore and above of all depositors, including deposits of individuals and HUFs.'",
+      "description": null
+    },
+    {
+      "date": "2015-04-16",
+      "dateKind": "exact",
+      "title": "New 'non-callable' term-deposit category formalised: banks may offer differential rates for deposits WITH vs WITHOUT premature-withdrawal facility, PROVIDED all individual/HUF deposits of Rs 15 lakh and below retain premature-withdrawal facility (i.e. the individual-protection threshold reverts from the blanket Rs 1 crore of 2013 down to Rs 15 lakh).",
+      "category": "non_callable_deposit_threshold",
+      "circularNo": null,
+      "sourceUrl": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=9867&Mode=0",
+      "sourcePointer": "RBI Notification: 'With effect from April 16, 2015 banks have been allowed the discretion to offer differential interest rates based on whether the term deposits are with or without-premature-withdrawal-facility... All term deposits of individuals (held singly or jointly) of Rs.15 lakh and below should, necessarily, have premature withdrawal facility.'",
+      "description": "This Rs 15 lakh 'non-callable' threshold is carried into the 2016 Master Direction and stays until Oct 2023 (next row)."
+    },
+    {
+      "date": "2023-10-26",
+      "dateKind": "exact",
+      "title": "Minimum amount for offering NON-CALLABLE term deposits raised from Rs 15 lakh to Rs 1 crore (i.e. individual/HUF deposits up to Rs 1 crore must retain premature-withdrawal facility); extended to NRE/NRO deposits. SEPARATELY, same-day: bulk-deposit threshold for Regional Rural Banks raised from Rs 15 lakh to Rs 1 crore.",
+      "category": "non_callable_deposit_threshold,bulk_deposit_definition",
+      "circularNo": "RBI/2023-24/74 (non-callable) and RBI/2023-24/75 DoR.SPE.REC.50/13.03.00/2023-2024 (RRB bulk deposit)",
+      "sourceUrl": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12555&Mode=0",
+      "sourcePointer": "RBI Notification: 'the minimum amount for offering non-callable TDs may be increased from Rupees fifteen lakh to Rupees one crore... these instructions shall also be applicable for... (NRE) / ...(NRO) Deposits.' Applicable to all commercial banks and co-operative banks.",
+      "description": "Current threshold (Rs 1 crore) as reflected in the Nov 2025 Directions, para 10(3)."
+    },
+    {
+      "date": "2016-03-03",
+      "dateKind": "exact",
+      "title": "First formal 'Bulk Deposit' DEFINED TERM introduced (Master Direction - RBI (Interest Rate on Deposits) Directions, 2016): Rs 1 crore and above for Scheduled Commercial Banks (excl. RRBs); Rs 15 lakh and above for RRBs.",
+      "category": "bulk_deposit_definition",
+      "circularNo": "DBR.Dir.No.84/13.03.00/2015-16",
+      "sourceUrl": "https://corporatelawreporter.com/master-direction-reserve-bank-of-india-interest-rate-on-deposits-directions-2016/",
+      "sourcePointer": "Master Direction text, para 3(a)(i): '\"Bulk Deposit\" means: i. Single Rupee term deposits of Rupees one crore and above for Scheduled Commercial Banks other than Regional Rural banks ii. Single Rupee term deposits of Rupees fifteen lakhs and above for RRBs.' (RBI primary copy of this exact 2016-vintage wording not independently re-fetched in this pass -- corporatelawreporter.com reproduction used; flagged as secondary.)",
+      "description": "This consolidated/renamed the Rs 1 crore differential-pricing threshold already in effect since April 1, 2013 (see row above) as a defined term."
+    },
+    {
+      "date": "2019-02-22",
+      "dateKind": "exact",
+      "title": "'Bulk Deposit' threshold for Scheduled Commercial Banks (excl. RRBs) and Small Finance Banks raised from Rs 1 crore to Rs 2 crore.",
+      "category": "bulk_deposit_definition",
+      "circularNo": null,
+      "sourceUrl": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11481&Mode=0",
+      "sourcePointer": "RBI Notification 'Review of Instructions on Bulk Deposit (Amended)': 'it has been decided to revise the definition of \"bulk deposits\"... Single Rupee term deposits of Rupees two crore and above for Scheduled commercial Banks (excluding Regional Rural banks) and Small Finance Banks.'",
+      "description": null
+    },
+    {
+      "date": "2023-10-26",
+      "dateKind": "exact",
+      "title": "'Bulk Deposit' threshold for Regional Rural Banks raised from Rs 15 lakh to Rs 1 crore (see combined entry above with the non-callable threshold change, same date/circular family).",
+      "category": "bulk_deposit_definition",
+      "circularNo": "RBI/2023-24/75 DoR.SPE.REC.50/13.03.00/2023-2024",
+      "sourceUrl": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12556&Mode=0",
+      "sourcePointer": "RBI Notification: 'it has been decided to enhance the bulk deposit limit for Regional Rural Banks... would now mean Single Rupee term deposits of Rupees one crore and above.'",
+      "description": null
+    },
+    {
+      "date": "2024-06-07",
+      "dateKind": "exact",
+      "title": "'Bulk Deposit' threshold for Scheduled Commercial Banks (excl. RRBs) and Small Finance Banks raised from Rs 2 crore to Rs 3 crore; Local Area Banks aligned with RRBs at Rs 1 crore.",
+      "category": "bulk_deposit_definition",
+      "circularNo": "DOR.SPE.REC.No.24/13.03.00/2024-25",
+      "sourceUrl": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12690&Mode=0",
+      "sourcePointer": "RBI Notification 'Amendment to Master Direction - RBI (Interest Rate on Deposits) Directions, 2016': '\"Bulk Deposit\" means: i. Single Rupee term deposits of Rupees three crore and above for Scheduled Commercial Banks (excluding Regional Rural Banks) and Small Finance Banks. ii. Single Rupee term deposits of Rupees one crore and above for Regional Rural Banks and Local Area Banks.'",
+      "description": "This Rs 3 crore threshold (SCB/SFB) / Rs 1 crore (RRB/LAB) is the level carried into the Nov 2025 Directions and remains current as of Sep 2026."
+    },
+    {
+      "date": "2001-04-19",
+      "dateKind": "exact",
+      "title": "Explicit RBI permission (in the general non-discrimination clause) for banks to run fixed-deposit schemes specifically for SENIOR CITIZENS at higher/fixed rates versus normal deposits of any size -- carved out as an exception alongside the Rs-15-lakh bulk-deposit exception.",
+      "category": "senior_citizen_differential",
+      "circularNo": null,
+      "sourceUrl": "https://www.rbi.org.in/commonman/english/scripts/Notification.aspx?Id=82",
+      "sourcePointer": "RBI Directive (in partial modification of DBOD No. Dir. BC. 46/13.03.00/2000-2001): '...except in respect of fixed deposit schemes specifically for senior citizens offering higher and fixed rates of interest as compared to normal deposits of any size and single term deposits of Rs. 15 lakh and above...'",
+      "description": "Earliest explicit RBI text found in this pass naming a senior-citizen carve-out; an even earlier origin may exist in 1990s circulars not located in this pass -- treat 2001-04-19 as 'earliest CONFIRMED', not necessarily the true origin."
+    },
+    {
+      "date": "2025-11-28",
+      "dateKind": "exact",
+      "title": "Senior-citizen differential-rate permission and the parallel 'retired staff who are also senior citizens' stacking rule are restated in the current Directions (paras 13-14): banks MAY, at discretion, run senior-citizen-only term deposit schemes at higher/fixed rates of ANY size, EXCEPT this benefit cannot be given on a deposit standing in the name of an HUF (even if the Karta is a senior citizen).",
+      "category": "senior_citizen_differential",
+      "circularNo": "RBI/DOR/2025-26/153",
+      "sourceUrl": "https://www.rbi.org.in/scripts/BS_ViewMasDirections.aspx?id=13157",
+      "sourcePointer": "Reserve Bank of India (Commercial Banks - Interest Rate on Deposits) Directions, 2025, paras 13-14",
+      "description": null
+    },
+    {
+      "date": "2025-04-01",
+      "dateKind": "exact",
+      "title": "RBI issues a single comprehensive 'Master Direction - Reserve Bank of India (Interest Rate on Deposits) Directions, 2025' consolidating the 2016 Master Directions for ALL bank types into one document.",
+      "category": "current_directions",
+      "circularNo": "RBI/2025-26/134 DOR.SOG(SPE).REC.8/13.03.00/2025-26",
+      "sourceUrl": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12825",
+      "sourcePointer": "RBI Notification, 'Master Direction - Reserve Bank of India (Interest Rate on Deposits) Directions, 2025'",
+      "description": "Short-lived: superseded seven months later when RBI split this single document back out into bank-category-specific Directions (next row) -- the April 2025 version should be treated as an interim/consolidated step, not the current rulebook."
+    },
+    {
+      "date": "2025-11-28",
+      "dateKind": "exact",
+      "title": "RBI replaces the April-2025 consolidated Direction with SEPARATE category-specific Directions, 2025 for each bank type, effective immediately: Commercial Banks (RBI/DOR/2025-26/153), Small Finance Banks (RBI/DOR/2025-26/184), and equivalents for Payments Banks, Local Area Banks, RRBs, and Co-operative Banks (UCB/Rural). All repeal prior instructions as of this date.",
+      "category": "current_directions",
+      "circularNo": "RBI/DOR/2025-26/153 (Commercial Banks); RBI/DOR/2025-26/184 (Small Finance Banks)",
+      "sourceUrl": "https://www.rbi.org.in/scripts/BS_ViewMasDirections.aspx?id=13157",
+      "sourcePointer": "'Reserve Bank of India (Commercial Banks - Interest Rate on Deposits) Directions, 2025', para A.1-2 and Chapter VII para 45 (repeal clause referencing circular DOR.RRC.REC.302/33-01-010/2025-26 dated Nov 28, 2025)",
+      "description": "THIS is the current rulebook referenced throughout this research (as amended by the 2026 amendments below). Commercial Banks Directions structure: Ch.I Preliminary, Ch.II General Guidelines (para 7), Ch.III Domestic Rupee Deposits (paras 8-15: current a/c, savings, term deposits + 3 permitted variance reasons, additional interest for staff/senior-citizens, overdue, floating-rate), Ch.IV Non-Resident Rupee Deposits (paras 26-29), Ch.V Foreign Currency Deposits (paras 31-40), Ch.VI Prohibitions/Exemptions, Ch.VII Repeal. Small Finance Banks Directions, 2025 mirror this structure (paras renumbered from 6)."
+    },
+    {
+      "date": "2026-06-05",
+      "dateKind": "exact",
+      "title": "RBI publishes DRAFT 'Reserve Bank of India (Interest Rate on Deposits) Amendment Directions, 2026' for public comment (deadline June 20, 2026): proposed to (a) give banks freedom to price bulk-deposit rates using LCR run-off rates, and (b) require rates be strictly as disclosed on the website, incl. a proposed 10 am, before-business-day disclosure timing for bulk deposits.",
+      "category": "current_directions_2026_amendment",
+      "circularNo": null,
+      "sourceUrl": "https://www.rbi.org.in/scripts/bs_viewcontent.aspx?Id=5056",
+      "sourcePointer": "RBI draft notification text (via RBI 'Draft Directions' page)",
+      "description": "Draft stage only -- see the finalised June 17 and July 30, 2026 Amendment Directions below for what was actually adopted (the final 10:00-10:10am bulk-deposit rule and the 'before commencement of business day' wording for non-bulk deposits were refined between draft and final)."
+    },
+    {
+      "date": "2026-06-17",
+      "dateKind": "exact",
+      "title": "'Amendment Directions, 2026' (first 2026 amendment) for Commercial Banks and Small Finance Banks: TEMPORARILY withdraws (i) the rule that NRE/NRO rates can't exceed comparable domestic rates, for fresh NRE deposits of 3-year-plus tenor, and (ii) the FCNR(B) rate ceiling for 3-5 year tenors -- both until Sep 30, 2026 (later shortened, see Aug 25, 2026 row).",
+      "category": "current_directions_2026_amendment",
+      "circularNo": "RBI/2026-27/138 DOR.SOG(SPE).REC.117/13.03.00/2026-27 (Commercial Banks)",
+      "sourceUrl": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=13509&Mode=0",
+      "sourcePointer": "RBI Notification 'Reserve Bank of India (Commercial Banks - Interest Rate on Deposits) Amendment Directions, 2026'",
+      "description": "Purpose (per RBI): encourage inflows of longer-tenor NRE/FCNR(B) deposits. This is a TEMPORARY relaxation, not a permanent rule change."
+    },
+    {
+      "date": "2026-07-30",
+      "dateKind": "exact",
+      "title": "SECOND AMENDMENT DIRECTIONS, 2026 (the one specifically flagged in the task brief) issued for Commercial Banks, Small Finance Banks, Regional Rural Banks, Local Area Banks, and Urban Co-operative Banks (Payments Banks got a non-numbered 'Amendment Directions, 2026'); EFFECTIVE OCTOBER 1, 2026. Two substantive changes: (1) rates on ALL deposits including bulk deposits must strictly follow the schedule pre-disclosed on the bank's website, and bulk-deposit rates specifically must be posted on the website by 10:00 am (grace period to 10:10 am) every business day; (2) banks gain freedom to set differential bulk-deposit rates based on the LCR (Liquidity Coverage Ratio) run-off rate applicable to that deposit/funding category.",
+      "category": "current_directions_2026_amendment",
+      "circularNo": "RBI/2026-27/214 DOR.SOG(SPE).REC.176/13.03.00/2026-27 (Commercial Banks)",
+      "sourceUrl": "https://rbi.org.in/scripts/NotificationUser.aspx?Id=13656&Mode=0",
+      "sourcePointer": "RBI Notification 'Reserve Bank of India (Commercial Banks - Interest Rate on Deposits) Second Amendment Directions, 2026', paras 4-5, substituting Chapter II para 7(2)-(3) and inserting new para 10(4) / 27(3)(iv)",
+      "description": "TASK-SPECIFIED MILESTONE, CONFIRMED. Exact clause: 'Interest rates payable on deposits, including bulk deposits, shall be strictly as per the schedule of interest rates disclosed in advance on the bank's website. However, interest rates payable on bulk deposits shall be disclosed on the bank's website at 10:00 am with a grace time of 10 minutes, latest by 10:10 am, on each business day.' Explicitly framed by RBI (per the linked 'Statement on Feedback' Annex, PR78130072026_A.pdf saved to raw/) as a response to a bulk-deposit pricing controversy (HDFC Bank / MSRDC 'marketing spend' allegations) and bank requests for LCR-linked pricing flexibility."
+    },
+    {
+      "date": "2026-08-25",
+      "dateKind": "exact",
+      "title": "THIRD AMENDMENT DIRECTIONS, 2026: shortens the temporary NRE/FCNR(B) relaxation introduced June 17, 2026 -- end date brought forward from September 30, 2026 to August 31, 2026 -- for Commercial Banks, Small Finance Banks, Local Area Banks, Regional Rural Banks, and Urban/Rural Co-operative Banks (six parallel notifications issued same day).",
+      "category": "current_directions_2026_amendment",
+      "circularNo": "RBI/2026-27/243 DOR.SOG(SPE).REC.211/13.03.00/2026-27 (Commercial Banks)",
+      "sourceUrl": "https://www.rbi.org.in/Scripts/NotificationUser.aspx/scripts/NotificationUser.aspx?Id=13685&Mode=0",
+      "sourcePointer": "RBI Notification 'Reserve Bank of India (Commercial Banks - Interest Rate on Deposits) Third Amendment Directions, 2026'",
+      "description": "Purely a date-shortening technical amendment; no new substantive rule."
+    }
+  ]
+}

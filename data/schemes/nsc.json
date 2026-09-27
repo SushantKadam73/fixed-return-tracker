@@ -1,0 +1,197 @@
+{
+  "scheme": "nsc",
+  "name": "National Savings Certificate (NSC), primarily VIII Issue",
+  "category": "small_savings",
+  "checkedAt": "2026-09-27",
+  "conventions": {
+    "compounding": "Annual compounding; interest accrues but only paid out at maturity (not TDS-deducted en route, taxable each year on accrual basis except final year)",
+    "tenure": "5 years (VIII issue, for purchases from 1 Dec 2011); was 6 years before that",
+    "administeredBy": "DEA / National Savings Institute; India Post and authorised banks",
+    "currentQuarter": {
+      "period": "2026-07-01 to 2026-09-30 (Q2 FY2026-27)",
+      "rate": 7.7,
+      "sourceUrl": "https://dea.gov.in/budget-division/475",
+      "sourceType": "primary",
+      "nextAnnouncement": "Q3 FY2026-27 (Oct-Dec 2026) not yet announced as of 2026-09-27; expect DEA OM ~2026-09-30."
+    }
+  },
+  "periods": [
+    {
+      "effectiveFrom": "1989-05-08",
+      "effectiveTo": "1998-12-31",
+      "rate": 12.0,
+      "note": "NSC VIII Issue; maturity 6 years.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://stableinvestor.com/2022/10/nsc-interest-rate-history.html"
+    },
+    {
+      "effectiveFrom": "1999-01-01",
+      "effectiveTo": "2000-01-14",
+      "rate": 11.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://stableinvestor.com/2022/10/nsc-interest-rate-history.html"
+    },
+    {
+      "effectiveFrom": "2000-01-15",
+      "effectiveTo": "2001-02-28",
+      "rate": 11.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://stableinvestor.com/2022/10/nsc-interest-rate-history.html"
+    },
+    {
+      "effectiveFrom": "2001-03-01",
+      "effectiveTo": "2002-02-28",
+      "rate": 9.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://stableinvestor.com/2022/10/nsc-interest-rate-history.html"
+    },
+    {
+      "effectiveFrom": "2002-03-01",
+      "effectiveTo": "2003-02-28",
+      "rate": 9.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://stableinvestor.com/2022/10/nsc-interest-rate-history.html"
+    },
+    {
+      "effectiveFrom": "2003-03-01",
+      "effectiveTo": "2011-11-30",
+      "rate": 8.0,
+      "note": "Maturity still 6 years for certificates bought up to 30 Nov 2011.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://karvitt.drankitgupta.com/banking/ponsc"
+    },
+    {
+      "effectiveFrom": "2011-12-01",
+      "effectiveTo": "2012-03-31",
+      "rate": 8.4,
+      "note": "Maturity shortened to 5 years for certificates bought from 1 Dec 2011.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://karvitt.drankitgupta.com/banking/ponsc"
+    },
+    {
+      "effectiveFrom": "2012-04-01",
+      "effectiveTo": "2013-03-31",
+      "rate": 8.6,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://karvitt.drankitgupta.com/banking/ponsc"
+    },
+    {
+      "effectiveFrom": "2013-04-01",
+      "effectiveTo": "2016-03-31",
+      "rate": 8.5,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://karvitt.drankitgupta.com/banking/ponsc"
+    },
+    {
+      "effectiveFrom": "2016-04-01",
+      "effectiveTo": "2016-09-30",
+      "rate": 8.1,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2016-10-01",
+      "effectiveTo": "2017-03-31",
+      "rate": 8.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2017-04-01",
+      "effectiveTo": "2017-06-30",
+      "rate": 7.9,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2017-07-01",
+      "effectiveTo": "2017-12-31",
+      "rate": 7.8,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2018-01-01",
+      "effectiveTo": "2018-09-30",
+      "rate": 7.6,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2018-10-01",
+      "effectiveTo": "2019-06-30",
+      "rate": 8.0,
+      "note": "NSI's own table breaks this into two identical-rate sub-rows (Oct-Dec18 and Jan-Jun19), both 8.00 -- merged here.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2019-07-01",
+      "effectiveTo": "2020-03-31",
+      "rate": 7.9,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2020-04-01",
+      "effectiveTo": "2022-12-31",
+      "rate": 6.8,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2023-01-01",
+      "effectiveTo": "2023-03-31",
+      "rate": 7.0,
+      "note": null,
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132"
+    },
+    {
+      "effectiveFrom": "2023-04-01",
+      "effectiveTo": "2026-09-30",
+      "rate": 7.7,
+      "note": "NSI page reads 'TO 30-06-2026' (last refresh); continuation through Q2 FY2026-27 confirmed by TOI/ET reporting of 30.06.2026 DEA OM.",
+      "sourceUrl": "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=182",
+      "evidence": "primary",
+      "crossCheckUrl": "https://timesofindia.indiatimes.com/business/india-business/latest-small-savings-schemes-interest-rates-post-office-q2-fy-2026-2027-ppf-nsc-sukanya-samriddhi-yojana-time-deposit-scss-monthly-income-account-kisan-vikas-patra/articleshow/132090744.cms"
+    }
+  ],
+  "gaps": [
+    "NSC IX Issue (10-year tenure, higher rate) ran alongside VIII issue from 2011-12-01 to its discontinuation 2015-12-20 -- rates were 8.7% (Dec11-Mar12), 8.9% (FY2012-13), 8.8% (FY2013-14 to 19-Dec-2015), sourced from secondary compilations (karvitt, pkac.in accrued-interest tables) cross-checking each other; not found on a dedicated NSI 'since inception' page in this pass, so recorded here as a note rather than as VIII-issue periods.",
+    "Earlier NSC issues (I through VII, spanning roughly the 1950s-1988) are not covered: no primary or secondary rate table for these was located in this research pass. Recorded as an open gap.",
+    "NSC VI/VII discontinuation dates not verified."
+  ],
+  "notes": "NSC IX issue (2011-2015): 8.7% to 8.9% p.a., compounded half-yearly, 10-year tenure; discontinued 2015-12-20 per Government notification (see karvitt.drankitgupta.com and pkac.in cross-checks). VIII issue is the only NSC variant sold today."
+}

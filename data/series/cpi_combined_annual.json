@@ -1,0 +1,74 @@
+{
+ "key": "cpi_combined_annual",
+ "checkedAt": "2026-09-27",
+ "name": "CPI Combined (All-India), fiscal-year average, base 2012=100",
+ "unit": "index (2012=100)",
+ "frequency": "fiscal_year",
+ "publisher": "MoSPI (via RBI Handbook of Statistics)",
+ "sourceUrl": "https://rbidocs.rbi.org.in/rdocs/Publications/PDFs/0HSIE31072026042B2753EC8F4B9EA7081AF75B56AA20.PDF",
+ "notes": [
+  "Monthly base-2012 index for Jan 2013–Mar 2024 will be filled by the CPI collector (MoSPI API was unavailable during research)."
+ ],
+ "points": [
+  [
+   "2011-12",
+   93.3
+  ],
+  [
+   "2012-13",
+   102.5
+  ],
+  [
+   "2013-14",
+   112.2
+  ],
+  [
+   "2014-15",
+   118.9
+  ],
+  [
+   "2015-16",
+   124.7
+  ],
+  [
+   "2016-17",
+   130.3
+  ],
+  [
+   "2017-18",
+   135.0
+  ],
+  [
+   "2018-19",
+   139.6
+  ],
+  [
+   "2019-20",
+   146.3
+  ],
+  [
+   "2020-21",
+   155.3
+  ],
+  [
+   "2021-22",
+   163.8
+  ],
+  [
+   "2022-23",
+   174.7
+  ],
+  [
+   "2023-24",
+   184.1
+  ],
+  [
+   "2024-25",
+   192.6
+  ],
+  [
+   "2025-26",
+   103.5
+  ]
+ ]
+}
