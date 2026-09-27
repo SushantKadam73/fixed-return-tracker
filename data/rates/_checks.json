@@ -216,6 +216,34 @@
   "consecutiveFailures": 0,
   "lastError": null
  },
+ "idbi-bank:fd": {
+  "lastAttemptAt": "2026-09-27T10:02:28.211Z",
+  "lastSuccessAt": null,
+  "lastChangeAt": null,
+  "consecutiveFailures": 1,
+  "lastError": "fetch: HTTP 502"
+ },
+ "idbi-bank:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T10:03:14.890Z",
+  "lastSuccessAt": null,
+  "lastChangeAt": null,
+  "consecutiveFailures": 1,
+  "lastError": "fetch: HTTP 502"
+ },
+ "idbi-bank:rd": {
+  "lastAttemptAt": "2026-09-27T10:02:43.909Z",
+  "lastSuccessAt": null,
+  "lastChangeAt": null,
+  "consecutiveFailures": 1,
+  "lastError": "fetch: HTTP 502"
+ },
+ "idbi-bank:savings": {
+  "lastAttemptAt": "2026-09-27T10:02:59.460Z",
+  "lastSuccessAt": null,
+  "lastChangeAt": null,
+  "consecutiveFailures": 1,
+  "lastError": "fetch: HTTP 502"
+ },
  "idfc-first-bank:fd": {
   "lastAttemptAt": "2026-09-27T09:40:02.275Z",
   "lastSuccessAt": "2026-09-27T09:40:02.275Z",
@@ -363,6 +391,34 @@
   "consecutiveFailures": 0,
   "lastError": null
  },
+ "rbl-bank:fd": {
+  "lastAttemptAt": "2026-09-27T09:55:27.020Z",
+  "lastSuccessAt": "2026-09-27T09:55:27.020Z",
+  "lastChangeAt": "2026-09-27T09:55:27.020Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "rbl-bank:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T09:55:32.269Z",
+  "lastSuccessAt": "2026-09-27T09:55:32.269Z",
+  "lastChangeAt": "2026-09-27T09:55:32.269Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "rbl-bank:rd": {
+  "lastAttemptAt": "2026-09-27T09:55:29.132Z",
+  "lastSuccessAt": "2026-09-27T09:55:29.132Z",
+  "lastChangeAt": "2026-09-27T09:55:29.132Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "rbl-bank:savings": {
+  "lastAttemptAt": "2026-09-27T09:55:28.186Z",
+  "lastSuccessAt": "2026-09-27T09:55:28.186Z",
+  "lastChangeAt": "2026-09-27T09:55:28.186Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
  "sbi:fd": {
   "lastAttemptAt": "2026-09-27T09:38:21.207Z",
   "lastSuccessAt": "2026-09-27T09:38:21.207Z",
@@ -426,12 +482,54 @@
   "consecutiveFailures": 0,
   "lastError": null
  },
+ "south-indian-bank:fd": {
+  "lastAttemptAt": "2026-09-27T09:55:35.687Z",
+  "lastSuccessAt": "2026-09-27T09:55:35.687Z",
+  "lastChangeAt": "2026-09-27T09:55:35.687Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "south-indian-bank:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T09:55:37.534Z",
+  "lastSuccessAt": "2026-09-27T09:55:37.534Z",
+  "lastChangeAt": null,
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "south-indian-bank:savings": {
+  "lastAttemptAt": "2026-09-27T09:55:36.195Z",
+  "lastSuccessAt": "2026-09-27T09:55:36.195Z",
+  "lastChangeAt": "2026-09-27T09:55:36.195Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
  "suryoday-sfb:savings": {
   "lastAttemptAt": "2026-09-27T09:38:35.033Z",
   "lastSuccessAt": null,
   "lastChangeAt": null,
   "consecutiveFailures": 2,
   "lastError": "fetch: HTTP 502"
+ },
+ "tamilnad-mercantile-bank:fd": {
+  "lastAttemptAt": "2026-09-27T09:55:41.914Z",
+  "lastSuccessAt": "2026-09-27T09:55:41.914Z",
+  "lastChangeAt": "2026-09-27T09:55:41.914Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "tamilnad-mercantile-bank:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T09:55:45.362Z",
+  "lastSuccessAt": "2026-09-27T09:55:45.362Z",
+  "lastChangeAt": "2026-09-27T09:55:45.362Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "tamilnad-mercantile-bank:savings": {
+  "lastAttemptAt": "2026-09-27T09:55:44.696Z",
+  "lastSuccessAt": "2026-09-27T09:55:44.696Z",
+  "lastChangeAt": "2026-09-27T09:55:44.696Z",
+  "consecutiveFailures": 0,
+  "lastError": null
  },
  "uco-bank:fd": {
   "lastAttemptAt": "2026-09-27T09:39:38.901Z",
@@ -528,6 +626,34 @@
   "lastAttemptAt": "2026-09-27T09:39:00.887Z",
   "lastSuccessAt": "2026-09-27T09:39:00.887Z",
   "lastChangeAt": "2026-09-27T08:43:39.183Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "yes-bank:fd": {
+  "lastAttemptAt": "2026-09-27T10:04:11.037Z",
+  "lastSuccessAt": "2026-09-27T10:04:11.037Z",
+  "lastChangeAt": "2026-09-27T10:04:11.037Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "yes-bank:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T10:04:15.478Z",
+  "lastSuccessAt": "2026-09-27T10:04:15.478Z",
+  "lastChangeAt": "2026-09-27T10:04:15.478Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "yes-bank:rd": {
+  "lastAttemptAt": "2026-09-27T10:04:13.233Z",
+  "lastSuccessAt": "2026-09-27T10:04:13.233Z",
+  "lastChangeAt": "2026-09-27T10:04:13.233Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "yes-bank:savings": {
+  "lastAttemptAt": "2026-09-27T10:04:13.677Z",
+  "lastSuccessAt": "2026-09-27T10:04:13.677Z",
+  "lastChangeAt": "2026-09-27T10:04:13.677Z",
   "consecutiveFailures": 0,
   "lastError": null
  }

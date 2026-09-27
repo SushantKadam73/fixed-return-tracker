@@ -1,0 +1,48 @@
+{
+ "bankSlug": "rbl-bank",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "rbl-bank",
+   "product": "savings",
+   "effectiveFrom": "2026-06-18",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.rbl.bank.in/interest-rates",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 500001,
+     "rate": 3,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 500001,
+     "balanceMax": 1000001,
+     "rate": 5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000001,
+     "balanceMax": 75000001,
+     "rate": 6,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 75000001,
+     "balanceMax": null,
+     "rate": 5.5,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "incremental",
+   "notes": [
+    "Bank states: \"The Savings Account interest rate is calculated using a progressive slab method\" — each slice of the balance earns its own slab's rate.",
+    "Interest is calculated daily and credited monthly (changed from quarterly on 1 May 2025); leap years use 366 days."
+   ],
+   "contentHash": "fd3089442e1ee3ee"
+  }
+ ]
+}

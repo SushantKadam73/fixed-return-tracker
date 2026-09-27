@@ -14,11 +14,11 @@
 import { hash64 } from "../../lib/hash";
 import { todayIST } from "../../lib/format";
 import type { RateCard } from "../../lib/domain";
-import { fetchDoc } from "./fetch";
+import { fetchDoc, PLAIN_BROWSER_UA } from "./fetch";
 import { adapters, loadSources } from "./registry";
 import { buildSnapshots } from "./snapshots";
 import { loadChecks, saveChecks, storeLiveCard, storeTerms } from "./store";
-import type { ProductTerms, Runner, SourceDef } from "./types";
+import type { FetchInit, ProductTerms, Runner, SourceDef } from "./types";
 
 interface Args {
   sources: string[];
@@ -77,9 +77,12 @@ async function runSource(src: SourceDef, args: Args, checks: ReturnType<typeof l
     return { source: src.key, status: "error", detail: message.slice(0, 160) };
   };
 
+  // Per-source User-Agent override, applied to the page and to any related document the adapter fetches.
+  const withUa = (init?: FetchInit): FetchInit | undefined =>
+    src.userAgent === "browser" ? { ...init, headers: { "user-agent": PLAIN_BROWSER_UA, ...init?.headers } } : init;
   let doc;
   try {
-    doc = await fetchDoc(src.url, src.format);
+    doc = await fetchDoc(src.url, src.format, 3, withUa());
   } catch (e) {
     return fail(`fetch: ${(e as Error).message}`, (e as { status?: number }).status);
   }
@@ -87,7 +90,7 @@ async function runSource(src: SourceDef, args: Args, checks: ReturnType<typeof l
   let terms: ProductTerms[] = [];
   const today = todayIST(now);
   try {
-    const out = await adapter({ source: src, doc, today, fetch: (url, format, init) => fetchDoc(url, format ?? "html", 3, init) });
+    const out = await adapter({ source: src, doc, today, fetch: (url, format, init) => fetchDoc(url, format ?? "html", 3, withUa(init)) });
     terms = out.terms ?? [];
     // A pre-announced change (effective date in the future) must not become "current" early.
     // It is picked up automatically once its effective date arrives, because the page still shows it.

@@ -19,6 +19,8 @@ export interface SourceDef {
   cadence: "daily" | "bulk_daily" | "weekly" | "monthly" | "quarterly";
   active: boolean;
   robotsAllowed?: boolean;
+  /** "browser" sends a plain browser User-Agent instead of our identifying one (see fetch.ts). */
+  userAgent?: "default" | "browser";
   termsNote?: string;
   notes?: string;
 }

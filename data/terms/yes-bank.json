@@ -1,0 +1,29 @@
+{
+ "bankSlug": "yes-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "Varies by tenure (see the card); bank states: \"Senior Citizen rates are applicable only for Domestic\" [deposits] — not NRE/NRO",
+    "prematurePenalty": "0.75% for tenure ≤181 days, 1.00% for ≥182 days on deposits <₹5 crore (w.e.f. 3 Nov 2023); flat 0.25% on deposits ≥₹5 crore; nil for senior citizens booked/renewed on/after 16 May 2022 and for staff on/after 10 May 2021",
+    "other": [
+     "Interest for a monthly payout option is discounted from the standard rate."
+    ]
+   },
+   "sourceKey": "yes-bank:fd",
+   "sourceUrl": "https://www.yes.bank.in/sites/web/content/published/api/v1.1/assets/CONT13C66A7E18434B48BC40248F6202F4A4/native/allratesandcharges_pdf.pdf",
+   "recordedOn": "2026-09-27",
+   "contentHash": "97ccdf88939eb8d7"
+  },
+  "fd_bulk": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "prematurePenalty": "0.75% (≤181 days) / 1.00% (≥182 days) on deposits <₹5cr (w.e.f. 3 Nov 2023); flat 0.25% for ≥₹5cr; not applicable to senior citizens"
+   },
+   "sourceKey": "yes-bank:fd_bulk",
+   "sourceUrl": "https://www.yes.bank.in/sites/web/content/published/api/v1.1/assets/CONTA391B2F09BF64C72BF6C2CD073F98131/native/bulk_fixed_deposit_interest_rates_v1_pdf.pdf",
+   "recordedOn": "2026-09-27",
+   "contentHash": "37e342fe11df8f1e"
+  }
+ }
+}

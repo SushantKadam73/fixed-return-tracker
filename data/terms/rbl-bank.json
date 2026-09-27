@@ -1,0 +1,20 @@
+{
+ "bankSlug": "rbl-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.50% p.a. (60 to below 80 years); not applicable to NRE/NRO deposits",
+    "superSeniorPremium": "+0.75% p.a. (80 years and above); exempt from the premature-withdrawal penalty; not applicable to NRE/NRO deposits",
+    "prematurePenalty": "1% on the rate applicable for the actual holding period; senior and super senior citizens are exempt",
+    "other": [
+     "Fixed deposits booked as 'premature withdrawal not allowed' cannot be withdrawn early except by government/regulatory/legal order or on death of the depositor."
+    ]
+   },
+   "sourceKey": "rbl-bank:fd",
+   "sourceUrl": "https://www.rbl.bank.in/interest-rates",
+   "recordedOn": "2026-09-27",
+   "contentHash": "5edd14dccf97af40"
+  }
+ }
+}

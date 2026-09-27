@@ -1,0 +1,21 @@
+{
+ "bankSlug": "tamilnad-mercantile-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.50% p.a. over General Public",
+    "superSeniorPremium": "+0.60% p.a. over General Public (+0.10% over Senior Citizen)",
+    "other": [
+     "Bank states: \"Additional rate of interest payable on term deposits to Senior Citizens and Super Senior Citizens shall not apply to NRO Term Deposits\"",
+     "Bank states: \"Additional rate of interest payable on term deposits to Senior Citizens and Super Senior Citizens shall not apply for the period less than one year\"",
+     "No percentage premature-closure penalty is quantified for retail domestic/NRO deposits on this page (only 'Premature closure permitted, subject to applicable penalty'); NRE deposits are explicitly 1%, and bulk deposits (≥₹3 crore) explicitly have no penalty after 7 days."
+    ]
+   },
+   "sourceKey": "tamilnad-mercantile-bank:fd",
+   "sourceUrl": "https://www.tmb.bank.in/personal/deposits/tmb-basic-fixed-deposit-account",
+   "recordedOn": "2026-09-27",
+   "contentHash": "c8c1010cc90293f7"
+  }
+ }
+}

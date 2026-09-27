@@ -379,6 +379,34 @@
    "to": "2025-10-01"
   },
   {
+   "bankSlug": "rbl-bank",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-09-08",
+   "to": "2026-09-08"
+  },
+  {
+   "bankSlug": "rbl-bank",
+   "product": "fd_bulk",
+   "cards": 1,
+   "from": "2026-09-25",
+   "to": "2026-09-25"
+  },
+  {
+   "bankSlug": "rbl-bank",
+   "product": "rd",
+   "cards": 1,
+   "from": "2026-09-08",
+   "to": "2026-09-08"
+  },
+  {
+   "bankSlug": "rbl-bank",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-06-18",
+   "to": "2026-06-18"
+  },
+  {
    "bankSlug": "sbi",
    "product": "fd",
    "cards": 92,
@@ -454,6 +482,41 @@
    "cards": 5,
    "from": "2024-12-19",
    "to": "2025-12-05"
+  },
+  {
+   "bankSlug": "south-indian-bank",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-06-19",
+   "to": "2026-06-19"
+  },
+  {
+   "bankSlug": "south-indian-bank",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-04-21",
+   "to": "2026-04-21"
+  },
+  {
+   "bankSlug": "tamilnad-mercantile-bank",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-04-10",
+   "to": "2026-04-10"
+  },
+  {
+   "bankSlug": "tamilnad-mercantile-bank",
+   "product": "fd_bulk",
+   "cards": 1,
+   "from": "2026-09-25",
+   "to": "2026-09-25"
+  },
+  {
+   "bankSlug": "tamilnad-mercantile-bank",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-09-27",
+   "to": "2026-09-27"
   },
   {
    "bankSlug": "uco-bank",
@@ -573,6 +636,34 @@
    "cards": 1,
    "from": "2026-07-01",
    "to": "2026-07-01"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-06-02",
+   "to": "2026-06-02"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "product": "fd_bulk",
+   "cards": 1,
+   "from": "2026-06-02",
+   "to": "2026-06-02"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "product": "rd",
+   "cards": 1,
+   "from": "2026-06-02",
+   "to": "2026-06-02"
+  },
+  {
+   "bankSlug": "yes-bank",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-04-07",
+   "to": "2026-04-07"
   }
  ]
 }

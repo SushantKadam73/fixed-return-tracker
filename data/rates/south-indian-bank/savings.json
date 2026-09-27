@@ -1,0 +1,47 @@
+{
+ "bankSlug": "south-indian-bank",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "south-indian-bank",
+   "product": "savings",
+   "effectiveFrom": "2026-04-21",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.southindianbank.bank.in/quick-links/interest-rates/deposits",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 10000000,
+     "rate": 2.25,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 10000000,
+     "balanceMax": 50000000,
+     "rate": 2.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 50000000,
+     "balanceMax": 250000000,
+     "rate": 4.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 250000000,
+     "balanceMax": null,
+     "rate": 6,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "notes": [
+    "Page states the rate 'on' each end-of-day-balance band without saying whether the whole balance or only the slice within the band earns that rate, so slabMethod is left unknown rather than guessed."
+   ],
+   "contentHash": "19537c6e8f79f70d"
+  }
+ ]
+}

@@ -5,6 +5,12 @@
  */
 import type { FetchedDoc, FetchInit, SourceFormat } from "./types";
 
+/**
+ * Plain browser User-Agent without our identifying token, for the few official sites whose
+ * firewall silently drops unknown client tokens (opted into per source with userAgent: "browser",
+ * always with the reason in the source's notes).
+ */
+export const PLAIN_BROWSER_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36 FixedReturnTracker/1.0 (+https://github.com/SushantKadam73/fixed-return-tracker)";
 

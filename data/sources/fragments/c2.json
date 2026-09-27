@@ -1,0 +1,278 @@
+{
+  "sources": [
+    {
+      "key": "rbl-bank:fd",
+      "bankSlug": "rbl-bank",
+      "products": [
+        "fd"
+      ],
+      "url": "https://www.rbl.bank.in/interest-rates",
+      "format": "html",
+      "runner": "github",
+      "adapter": "rbl-bank.fd",
+      "cadence": "daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Verified against a live fetch on 2026-09-27 (HTTP 200): 51 rows, effective 2026-09-08. Despite the tab UI, the whole page is server-rendered -- every tab's table (Savings, FD callable, FD non-callable, RD) is plain HTML in one document; the ≥₹3 crore Bulk FD card is only linked from this page as separate daily-treasury PDFs (see rbl-bank:fd_bulk_callable / _noncallable below). Includes the 'Tax Savings Fixed Deposits (60 months)' row, read by hand since its duration sits inside parentheses."
+    },
+    {
+      "key": "rbl-bank:savings",
+      "bankSlug": "rbl-bank",
+      "products": [
+        "savings"
+      ],
+      "url": "https://www.rbl.bank.in/interest-rates",
+      "format": "html",
+      "runner": "github",
+      "adapter": "rbl-bank.savings",
+      "cadence": "daily",
+      "active": true,
+      "robotsAllowed": true,
+      "termsNote": "Bank states: \"The Savings Account interest rate is calculated using a progressive slab method\" -- slabMethod: incremental.",
+      "notes": "Verified against a live fetch on 2026-09-27: 4 slabs, effective 2026-06-18. Same combined interest-rates.aspx page as rbl-bank:fd."
+    },
+    {
+      "key": "rbl-bank:rd",
+      "bankSlug": "rbl-bank",
+      "products": [
+        "rd"
+      ],
+      "url": "https://www.rbl.bank.in/interest-rates",
+      "format": "html",
+      "runner": "github",
+      "adapter": "rbl-bank.rd",
+      "cadence": "daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Verified against a live fetch on 2026-09-27: 22 rows (Domestic + Senior Citizen + NRE + NRO), effective 2026-09-08. Read directly from the bank's own Recurring/Smart Recurring Deposit table on the same combined page, not derived from the FD card."
+    },
+    {
+      "key": "rbl-bank:fd_bulk",
+      "bankSlug": "rbl-bank",
+      "products": [
+        "fd_bulk"
+      ],
+      "url": "https://webassets.rbl.bank.in/document/pdfs/callable-bulk-fd-rates.pdf",
+      "format": "pdf",
+      "runner": "github",
+      "adapter": "rbl-bank.bulk",
+      "cadence": "bulk_daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "One card from the bank's two daily bulk PDFs: this callable PDF plus the non-callable PDF (https://webassets.rbl.bank.in/document/pdfs/non-callable-bulk-fd-rates.pdf) fetched in the same run, so the two never overwrite each other. Verified against a live fetch on 2026-09-27: 391 rows, effective (the PDF's own 'Valid for' date) 2026-09-25. A daily treasury card with 17 irregular ≥₹3 crore amount tiers redrawn each trading day; the file name itself is stable (no date in the URL). webassets.rbl.bank.in's robots.txt disallows /pdfs/ and /document/10-01-2025/ specifically, neither of which covers this /document/pdfs/... path."
+    },
+    {
+      "key": "south-indian-bank:fd",
+      "bankSlug": "south-indian-bank",
+      "products": [
+        "fd"
+      ],
+      "url": "https://www.southindianbank.bank.in/quick-links/interest-rates/deposits",
+      "format": "html",
+      "runner": "github",
+      "adapter": "south-indian-bank.fd",
+      "cadence": "daily",
+      "active": true,
+      "robotsAllowed": true,
+      "termsNote": "Senior premium +0.50pp across all tenures, capped below ₹3 crore -- bank states: \"No additional interest will be paid to Senior citizen for deposits of Rs.3.00 Crore and above.\"",
+      "notes": "Verified against a live fetch on 2026-09-27: 42 rows, effective 2026-06-19. Includes the ₹1-3 crore non-callable card and the 'Tax Gain (5 Years)' row (read by hand). No recurring-deposit rate table or 'RD = FD' statement was found anywhere on this page, nor on the bank's separate 'Term Deposits' product-listing page or a guessed dedicated RD URL (both checked 2026-09-27, RD appears only as a marketing blurb with a blank 'Rate of Interest' field on the account-opening PDF form) -- RD rates are not published on the official site, so no rd source/adapter exists for this bank."
+    },
+    {
+      "key": "south-indian-bank:savings",
+      "bankSlug": "south-indian-bank",
+      "products": [
+        "savings"
+      ],
+      "url": "https://www.southindianbank.bank.in/quick-links/interest-rates/deposits",
+      "format": "html",
+      "runner": "github",
+      "adapter": "south-indian-bank.savings",
+      "cadence": "daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Verified against a live fetch on 2026-09-27: 4 slabs, effective 2026-04-21. slabMethod left unknown -- the page states the rate 'on' each balance band without saying whether the whole balance or only the slice within the band earns it."
+    },
+    {
+      "key": "south-indian-bank:fd_bulk",
+      "bankSlug": "south-indian-bank",
+      "products": [
+        "fd_bulk"
+      ],
+      "url": "https://www.southindianbank.bank.in/quick-links/interest-rates/deposits",
+      "format": "html",
+      "runner": "github",
+      "adapter": "south-indian-bank.bulk",
+      "cadence": "bulk_daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Verified against a live fetch on 2026-09-27: 175 rows, effective 2026-09-28 (as printed on the page -- a forward-dated revision). Callable + non-callable resident term deposits ≥₹3 crore, 7 amount tiers as columns; no senior-citizen column above ₹3 crore."
+    },
+    {
+      "key": "tamilnad-mercantile-bank:fd",
+      "bankSlug": "tamilnad-mercantile-bank",
+      "products": [
+        "fd"
+      ],
+      "url": "https://www.tmb.bank.in/personal/deposits/tmb-basic-fixed-deposit-account",
+      "format": "html",
+      "runner": "github",
+      "adapter": "tamilnad-mercantile-bank.fd",
+      "cadence": "daily",
+      "active": true,
+      "robotsAllowed": true,
+      "termsNote": "Senior +0.50pp, Super Senior +0.60pp over General; bank states neither addition applies to NRO deposits or to tenures under one year.",
+      "notes": "Verified against a live fetch on 2026-09-27: 67 rows, effective 2026-04-10. General/Senior/Super Senior x Callable/Non-Callable (non-callable from ₹1 crore), plus the 456-day and 567-day 'TMB Special Deposit scheme' rows. The bank's own separate 'Maturity Value Chart' page (https://www.tmb.bank.in/maturity-value-chart, checked live 2026-09-27) publishes per-tenure rates only for the minors-only 'Kids RD' scheme and the flat-rate 'Navarathnamala Deposit Scheme' -- neither is this Basic RD product, and the Basic RD product page itself (fixture: basic_rd_account.html) has no rate table of its own and no 'RD = FD' statement, so RD rates are not published on the official site for the plain recurring-deposit product and no rd source/adapter exists for this bank."
+    },
+    {
+      "key": "tamilnad-mercantile-bank:savings",
+      "bankSlug": "tamilnad-mercantile-bank",
+      "products": [
+        "savings"
+      ],
+      "url": "https://www.tmb.bank.in/personal/deposits/tmb-basic-fixed-deposit-account",
+      "format": "html",
+      "runner": "github",
+      "adapter": "tamilnad-mercantile-bank.savings",
+      "cadence": "daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Verified against a live fetch on 2026-09-27: 8 slabs, no effective-date text printed for this table (unlike the FD and bulk tables on the same page). slabMethod left unknown."
+    },
+    {
+      "key": "tamilnad-mercantile-bank:fd_bulk",
+      "bankSlug": "tamilnad-mercantile-bank",
+      "products": [
+        "fd_bulk"
+      ],
+      "url": "https://www.tmb.bank.in/personal/deposits/tmb-basic-fixed-deposit-account",
+      "format": "html",
+      "runner": "github",
+      "adapter": "tamilnad-mercantile-bank.bulk",
+      "cadence": "bulk_daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Verified against a live fetch on 2026-09-27: 175 rows, effective 2026-09-25. Bulk Domestic/NRO/NRE term deposits ≥₹3 crore, 7 amount tiers x Callable/Non-Callable; no senior-citizen column."
+    },
+    {
+      "key": "yes-bank:fd",
+      "bankSlug": "yes-bank",
+      "products": [
+        "fd"
+      ],
+      "url": "https://www.yes.bank.in/sites/web/content/published/api/v1.1/assets/CONT13C66A7E18434B48BC40248F6202F4A4/native/allratesandcharges_pdf.pdf",
+      "format": "pdf",
+      "runner": "github",
+      "adapter": "yes-bank.fd",
+      "cadence": "daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Uses a plain browser User-Agent: yes.bank.in silently drops requests carrying this project's identifying client token (they hang until timeout) while answering identical requests with a plain browser UA in under a second (checked 27 Sep 2026). Confirmed live and current on 2026-09-27: a fresh direct download of this exact PDF (207,966 bytes, HTTP 200) fed through the real adapter produced 36 rows effective 2026-06-02, matching the checked-in fixture exactly. Caveat found while confirming: this project's own fetchDoc -- specifically its self-identifying User-Agent string (contains 'FixedReturnTracker/1.0 (+https://github.com/...)') -- reliably hangs to a DOMException timeout against this URL from this sandbox, while the identical request with an ordinary browser User-Agent (no other header changed) succeeds in under a second, repeatedly; this looks like a stealth anti-bot rule keyed on the UA string rather than a general site outage (the previous engineer's own notes already flagged this bank's PDFs as slow to download). Not yet known whether GitHub Actions' UA/IP is treated the same way -- worth reconfirming there rather than assuming it behaves identically to this sandbox.",
+      "userAgent": "browser"
+    },
+    {
+      "key": "yes-bank:rd",
+      "bankSlug": "yes-bank",
+      "products": [
+        "rd"
+      ],
+      "url": "https://www.yes.bank.in/sites/web/content/published/api/v1.1/assets/CONT13C66A7E18434B48BC40248F6202F4A4/native/allratesandcharges_pdf.pdf",
+      "format": "pdf",
+      "runner": "github",
+      "adapter": "yes-bank.rd",
+      "cadence": "daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Uses a plain browser User-Agent: yes.bank.in silently drops requests carrying this project's identifying client token (they hang until timeout) while answering identical requests with a plain browser UA in under a second (checked 27 Sep 2026). Confirmed live and current on 2026-09-27 (see yes-bank:fd for the same-PDF live-fetch caveat): 26 rows effective 2026-06-02, matching the fixture. Read from the bank's own explicit Resident Recurring Deposit table (General + Senior Citizen), not derived from the FD card.",
+      "userAgent": "browser"
+    },
+    {
+      "key": "yes-bank:savings",
+      "bankSlug": "yes-bank",
+      "products": [
+        "savings"
+      ],
+      "url": "https://www.yes.bank.in/sites/web/content/published/api/v1.1/assets/CONT13C66A7E18434B48BC40248F6202F4A4/native/allratesandcharges_pdf.pdf",
+      "format": "pdf",
+      "runner": "github",
+      "adapter": "yes-bank.savings",
+      "cadence": "daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Uses a plain browser User-Agent: yes.bank.in silently drops requests carrying this project's identifying client token (they hang until timeout) while answering identical requests with a plain browser UA in under a second (checked 27 Sep 2026). Confirmed live and current on 2026-09-27 (see yes-bank:fd for the same-PDF live-fetch caveat): 3 slabs effective 2026-04-07, matching the fixture. slabMethod: incremental -- bank states interest is calculated 'on incremental balances in each Interest Rate Slab'. Top slab stops at ₹100 crore (bank asks larger customers to contact the branch/RM directly).",
+      "userAgent": "browser"
+    },
+    {
+      "key": "yes-bank:fd_bulk",
+      "bankSlug": "yes-bank",
+      "products": [
+        "fd_bulk"
+      ],
+      "url": "https://www.yes.bank.in/sites/web/content/published/api/v1.1/assets/CONTA391B2F09BF64C72BF6C2CD073F98131/native/bulk_fixed_deposit_interest_rates_v1_pdf.pdf",
+      "format": "pdf",
+      "runner": "github",
+      "adapter": "yes-bank.bulk",
+      "cadence": "bulk_daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Uses a plain browser User-Agent: yes.bank.in silently drops requests carrying this project's identifying client token (they hang until timeout) while answering identical requests with a plain browser UA in under a second (checked 27 Sep 2026). Confirmed live and current on 2026-09-27: a fresh direct download of this exact PDF (219,795 bytes, HTTP 200) fed through the real adapter produced 252 rows effective 2026-06-02, matching the fixture (same fetchDoc-User-Agent caveat as yes-bank:fd). Covers only ₹3 crore to below ₹5 crore (3 amount sub-tiers x Callable/Non-Callable x Non-Senior/Senior); above ₹5 crore the bank negotiates bilaterally and publishes no card rate.",
+      "userAgent": "browser"
+    },
+    {
+      "key": "idbi-bank:fd",
+      "bankSlug": "idbi-bank",
+      "products": [
+        "fd"
+      ],
+      "url": "https://www.idbi.bank.in/interest-rates.aspx",
+      "format": "html",
+      "runner": "github",
+      "adapter": "idbi-bank.fd",
+      "cadence": "daily",
+      "active": true,
+      "notes": "www.idbibank.in and www.idbi.bank.in both returned HTTP 502 to every direct-fetch attempt from this sandbox on 2026-09-27 (two domain aliases, a first pass and a brief polite retry ~20 minutes later); the platform's browser tool also could not hold a stable session for this page in this run (repeated cross-session content bleed). Built and tested instead from a genuine copy of the same official page via the Internet Archive Wayback Machine: https://web.archive.org/web/20260730071451id_/https://www.idbi.bank.in/interest-rates.aspx (captured 2026-07-30, the most recent HTTP-200 capture found via the CDX API on 2026-09-27). Covers the retail (<₹3 crore) General/Senior Citizen slabs plus the Tax Saving FD (5yr), Vasundhara Green Deposit (1111 days) and Aarogya Fixed Deposit (370 days, general-only) named schemes read from the same table, and (best-effort, not required) the promotional Utsav FD / IDBI Chiranjeevi Super Senior Citizen FD 555/700-day buckets, which the bank's own page said were 'extended up to Sept 30, 2026' as of the archived copy -- may have lapsed by the time this runs; the adapter warns rather than fails if that specific pair of tables is gone. GitHub Actions runs from a different network and may reach the live page directly; robots.txt could not be checked from this sandbox either (also 502; an Internet Archive capture of it returned an inconclusive redirect)."
+    },
+    {
+      "key": "idbi-bank:rd",
+      "bankSlug": "idbi-bank",
+      "products": [
+        "rd"
+      ],
+      "url": "https://www.idbi.bank.in/interest-rates.aspx",
+      "format": "html",
+      "runner": "github",
+      "adapter": "idbi-bank.rd",
+      "cadence": "daily",
+      "active": true,
+      "notes": "Same 502-from-this-sandbox / Wayback-snapshot situation as idbi-bank:fd (2026-07-30 capture). Read directly from the bank's own 'Systematic Savings Plan (SSP/SSP Plus)' table (7 maturity slabs, General + Senior Citizen), not derived from the FD card -- IDBI's sibling NRI interest-rate page (idbi.bank.in/nri-interest-rates.aspx) names this exact product 'Systematic Savings Plan- (Rebranding of Recurring Deposit)', confirming SSP is IDBI's own RD product under a new name."
+    },
+    {
+      "key": "idbi-bank:savings",
+      "bankSlug": "idbi-bank",
+      "products": [
+        "savings"
+      ],
+      "url": "https://www.idbi.bank.in/interest-rates.aspx",
+      "format": "html",
+      "runner": "github",
+      "adapter": "idbi-bank.savings",
+      "cadence": "daily",
+      "active": true,
+      "termsNote": "Slabs above ₹500 crore are MIBOR-linked (e.g. \"MIBOR + 101 bps p.a.\") with no fixed percentage printed and are excluded.",
+      "notes": "Same 502-from-this-sandbox / Wayback-snapshot situation as idbi-bank:fd. 5 fixed-rate slabs (up to ₹500 crore); slabMethod left unknown (the page only states a whole-balance method for the excluded MIBOR-linked slabs above ₹500 crore, not for these)."
+    },
+    {
+      "key": "idbi-bank:fd_bulk",
+      "bankSlug": "idbi-bank",
+      "products": [
+        "fd_bulk"
+      ],
+      "url": "https://www.idbi.bank.in/interest-rates.aspx",
+      "format": "html",
+      "runner": "github",
+      "adapter": "idbi-bank.bulk",
+      "cadence": "bulk_daily",
+      "active": true,
+      "notes": "Same 502-from-this-sandbox / Wayback-snapshot situation as idbi-bank:fd. Non-Callable + Callable 'Bulk Term Deposits (BTD)' tables, ≥₹3 crore, 7 amount tiers as columns (154 rows in the fixture, effective 2026-07-29 per the tables' own header row -- almost certainly stale by the time GitHub Actions fetches this daily; that is expected and fine for a bulk_daily source). No senior-citizen column. A separate floating-rate 'RBI Repo link' / 'MIBOR link' Bulk Term Deposit table for amounts above the top BTD tier is not included (no fixed percentage printed)."
+    }
+  ]
+}

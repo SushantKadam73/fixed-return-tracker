@@ -1,0 +1,21 @@
+{
+ "bankSlug": "south-indian-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.50% p.a. (all tenures, resident individuals only)",
+    "seniorPremiumCap": "Below ₹3 crore — bank states: \"No additional interest will be paid to Senior citizen for deposits of Rs.3.00 Crore and above\"",
+    "prematurePenalty": "1% for all tenors and all deposit amounts on premature withdrawal/reinvestment of retail rupee term deposits (incl. NRE & RD), effective 26 March 2026 (supersedes the earlier 0.50%/<₹5 lakh, 1%/≥₹5 lakh rule)",
+    "other": [
+     "No additional interest is paid to senior citizens on NRE term deposits.",
+     "No interest is paid if a deposit is closed within one year."
+    ]
+   },
+   "sourceKey": "south-indian-bank:fd",
+   "sourceUrl": "https://www.southindianbank.bank.in/quick-links/interest-rates/deposits",
+   "recordedOn": "2026-09-27",
+   "contentHash": "8facea787ed95821"
+  }
+ }
+}
