@@ -40,7 +40,8 @@ Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · Convex · Recharts �
 | `components/` | Shared UI pieces |
 | `lib/` | Domain types, formatting (₹ lakh/crore, IST), tenure buckets, calculators, validation |
 | `convex/` | Database schema, ingestion, summaries, monitoring, scheduled jobs |
-| `collectors/` | Bank-page adapters and the runner used by GitHub Actions |
+| `collectors/` | Bank-page adapters, macro/scheme collectors and the runners used by GitHub Actions |
+| `backfill/` | One-off history rebuilds: banks' own archives and Internet Archive copies of their rate pages |
 | `data/` | Committed datasets (bank master list, histories, snapshots) |
 | `scripts/` | Build and maintenance scripts |
 | `ops/workflows/` | GitHub Actions workflows to copy into `.github/workflows/` |
@@ -62,7 +63,41 @@ npx convex dev      # optional: connect your own Convex dev deployment
 
 1. **Convex** — create a project at [dashboard.convex.dev](https://dashboard.convex.dev), then in *Settings → Deploy keys* create a **Production deploy key**. In *Settings → Environment variables* add `INGEST_SECRET`, `REVALIDATE_SECRET` and `SITE_REVALIDATE_URL` (see `.env.example`).
 2. **Vercel** — import this repo at [vercel.com/new](https://vercel.com/new). Add `CONVEX_DEPLOY_KEY` and `REVALIDATE_SECRET` as environment variables. The build command in `vercel.json` deploys Convex and the site together.
-3. **GitHub Actions** — copy the files in `ops/workflows/` into `.github/workflows/` (GitHub web UI → *Add file*), and add the repository secrets `CONVEX_SITE_URL` and `INGEST_SECRET`.
+3. **GitHub Actions** — copy the files in `ops/workflows/` into `.github/workflows/` (GitHub web UI → *Add file*), add the repository secrets `CONVEX_SITE_URL` and `INGEST_SECRET`, and allow the workflow to commit data (*Settings → Actions → General → Workflow permissions → Read and write*).
+4. **Optional watchdog token** — to let Convex restart the collector if GitHub ever pauses its schedule, create a fine-grained token for this repository with *Actions: read and write* and set it in Convex as `GITHUB_DISPATCH_TOKEN`.
+
+## Operations runbook
+
+### What runs when (IST)
+
+| Time | Where | Job |
+| --- | --- | --- |
+| 03:30 daily | Convex | Trim the fetch log (60 days kept) |
+| 05:30 daily | Convex | Import reviewed datasets from the repo (banks, lineage, schemes, source registry) |
+| 05:45 daily | Convex | Import macro series and rate files; unchanged files are skipped by content hash, and only banks with changed files are re-summarised |
+| 07:00 daily | GitHub Actions | Read every official bank rate page, validate, store changes in `data/rates`, rebuild `data/snapshots` (including the coverage report), post to Convex, commit |
+| 09:00 daily | Convex | Flag sources with no successful read for 3 days (daily cadence) as stale and open alerts |
+| 09:30 daily | Convex | Watchdog: if the 07:00 run did not report in, open an alert and (with `GITHUB_DISPATCH_TOKEN`) restart the workflow |
+| 10:20 Mon–Sat | GitHub Actions | Re-read bulk-deposit pages (RBI requires banks to post bulk rates by 10:10 AM each business day) |
+
+### When something breaks
+
+- **A bank page changed layout.** The adapter throws instead of guessing, the last good card stays on the site, the source shows as failing on `/status`, and after 3 days it is flagged stale. Fix: update `collectors/src/adapters/<bank>.ts`, refresh its fixture (`collectors/fixtures/<bank>/`), run `npx vitest run collectors/tests/adapters/<bank>.test.ts`, then try it live with `npx tsx collectors/scripts/try-adapter.ts <group module> <adapter> <bank> <url>` (stores nothing).
+- **A site blocks the runner.** The fetcher recognises challenge pages (Cloudflare, Radware/ShieldSquare, Akamai, captchas) and reports "blocked by …" rather than a parse error. Try `format: "browser"` (headless Chromium on Actions) or `runner: "vps"` for that source in `data/sources/sources.json`; if nothing works, set `active: false` with a note. The last good card stays visible with its "Last checked" date, so readers can see how old it is, and `/status` lists the source as inactive.
+- **Implausible data** (rate outside 0.01–15 %, table shrank by half, jumps over 2 points, conflicting rows) is rejected by `lib/validate.ts` and never replaces the last good card.
+- **Future-dated cards** (a bank announces rates effective next week) are held until their effective date.
+
+### Adding or re-registering a bank source
+
+1. Write or adjust the adapter in `collectors/src/adapters/` and register it in the group module listed in `collectors/src/adapters/index.ts`.
+2. Add the source to `data/sources/sources.json` (`key`, `bankSlug`, `products`, `url`, `format`, `runner`, `adapter`, `cadence`, `active`, `notes`).
+3. Run it once with `npx tsx collectors/src/run.ts --bank <slug> --no-post` and commit the resulting `data/rates` files.
+
+### Rebuilding history
+
+- Each bank's own archives: scripts in `backfill/*-archive.ts` (see `backfill/README.md`).
+- Internet Archive copies of banks' official pages: `npx tsx backfill/wayback/run.ts --group <group> --bank <slug> --out <staging dir>`; review, then `npx tsx backfill/merge-staged.ts --from <staging dir>`. Requests are rate-limited across all processes and cached outside the repo.
+- Coverage (earliest evidence and gaps per bank and product) is recomputed on every collector run into `data/snapshots/coverage.json` and shown at `/coverage` and on each bank page.
 
 ## Data principles
 
