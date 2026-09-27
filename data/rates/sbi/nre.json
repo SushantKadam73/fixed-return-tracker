@@ -1,0 +1,61 @@
+{
+ "bankSlug": "sbi",
+ "product": "nre",
+ "cards": [
+  {
+   "bankSlug": "sbi",
+   "product": "nre",
+   "effectiveFrom": "1998-05-01",
+   "observedAt": "2026-09-27",
+   "observedFrom": "1998-12-03",
+   "observedTo": "1998-12-03",
+   "sourceType": "web_archive",
+   "sourceUrl": "statebankofindia.com/interest.htm",
+   "archiveUrl": "https://web.archive.org/web/19981203055836id_/http://www.statebankofindia.com:80/interest.htm",
+   "confidence": "medium",
+   "rows": [
+    {
+     "tenureMinDays": 183,
+     "tenureMaxDays": 364,
+     "tenureLabel": "6 months to less than 1 year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "nre",
+     "callable": null,
+     "payout": null,
+     "rate": 8
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "1 year to less than 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "nre",
+     "callable": null,
+     "payout": null,
+     "rate": 10.5
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "nre",
+     "callable": null,
+     "payout": null,
+     "rate": 11.5
+    }
+   ],
+   "notes": [
+    "Reconstructed from Internet Archive copies of the bank's official page captured 1998-12-03 to 1998-12-03.",
+    "Same 1998-12-03 capture, the page's separate '3.NRE RUPEE DEPOSITS' table, w.e.f. 01 May 1998."
+   ],
+   "contentHash": "fa1829e27a99cf37"
+  }
+ ]
+}

@@ -5,6 +5,543 @@
   {
    "bankSlug": "sbi",
    "product": "fd",
+   "effectiveFrom": "1998-05-01",
+   "observedAt": "2026-09-27",
+   "observedFrom": "1998-12-03",
+   "observedTo": "1998-12-03",
+   "sourceType": "web_archive",
+   "sourceUrl": "statebankofindia.com/interest.htm",
+   "archiveUrl": "https://web.archive.org/web/19981203055836id_/http://www.statebankofindia.com:80/interest.htm",
+   "confidence": "medium",
+   "rows": [
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days and upto 45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 179,
+     "tenureLabel": "46 days and upto 179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 364,
+     "tenureLabel": "180 days to less than 1 year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 year to less than 2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 10
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 years to less than 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 10.5
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 11.5
+    }
+   ],
+   "notes": [
+    "Reconstructed from Internet Archive copies of the bank's official page captured 1998-12-03 to 1998-12-03.",
+    "Earliest SBI web capture found (Wayback has exactly one snapshot of this URL, 1998-12-03). Page's own '4.RESIDENT AND NRO DEPOSITS' table, w.e.f. 01 May 1998. The generic table reader would misread this page (it stops at the first parseable table, which is the NRE one, and hardcodes residency 'resident'), so a custom parser reads the page's own section headings instead -- see backfill/wayback/parsers/psb-a.ts."
+   ],
+   "contentHash": "a940899f7d7dacae"
+  },
+  {
+   "bankSlug": "sbi",
+   "product": "fd",
+   "effectiveFrom": "2000-09-12",
+   "observedAt": "2026-09-27",
+   "observedFrom": "2001-02-15",
+   "observedTo": "2001-02-15",
+   "sourceType": "web_archive",
+   "sourceUrl": "statebankofindia.com/statebank/sbinew/termdeposit.htm",
+   "archiveUrl": "https://web.archive.org/web/20010215221957id_/http://www.statebankofindia.com:80/statebank/sbinew/termdeposit.htm",
+   "confidence": "medium",
+   "rows": [
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days and upto 45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 179,
+     "tenureLabel": "46 days and upto 179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.25
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 364,
+     "tenureLabel": "180 days to less than 1 year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 year to less than 2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8.5
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 years to less than 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 9
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 10
+    }
+   ],
+   "notes": [
+    "Reconstructed from Internet Archive copies of the bank's official page captured 2001-02-15 to 2001-02-15.",
+    "Wayback has exactly one snapshot of this URL, 2001-02-15. Page's own table, headed 'Effective from 12th Sept. 2000'; the generic reader parses the rows fine but cannot read that date on its own (abbreviated month with a trailing period) -- see sbi/2001-product-page in backfill/wayback/parsers/psb-a.ts."
+   ],
+   "contentHash": "9842d17a7956b3a7"
+  },
+  {
+   "bankSlug": "sbi",
+   "product": "fd",
+   "effectiveFrom": "2003-01-13",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://im.rediff.com/money/2003/jan/09sbi.htm",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 year to less than 2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.75
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 years to less than 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.25
+    }
+   ],
+   "notes": [
+    "Rediff (PTI), 9 Jan 2003, \"SBI cuts rates for longer end deposits\": SBI cut rates 25bps on the maturities above, effective 13 Jan 2003.",
+    "The article also states short tenors (7-14, 15-45, 46-179 days, 180 days to less than 1 year) and NRE deposits were left unchanged, but does not print their rate, so they are not stored here.",
+    "The article states senior citizens (deposits of 1 year and above) get a differential of 50 basis points over the applicable general rate, but does not print the resulting senior rate itself, so no senior row is added."
+   ],
+   "contentHash": "66473022fdc2ed54"
+  },
+  {
+   "bankSlug": "sbi",
+   "product": "fd",
+   "effectiveFrom": "2003-05-05",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://im.rediff.com/money/2003/may/05bob.htm",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 7,
+     "tenureMaxDays": 14,
+     "tenureLabel": "7 days to 14 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 year to less than 2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.5
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 years to less than 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.75
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 year to less than 2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 years to less than 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.25
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.5
+    }
+   ],
+   "notes": [
+    "Rediff (Reuters), 5 May 2003, \"Bank of Baroda to cut lending rate by 25 bps\": reports SBI cut lending and domestic deposit rates by 0.25pp 'with effect from Monday' (5 May 2003), giving the 7-14 day and 1yr+ rows above plus explicit senior-citizen rates for the three 1yr+ buckets."
+   ],
+   "contentHash": "d06012fef3445fc1"
+  },
+  {
+   "bankSlug": "sbi",
+   "product": "fd",
+   "effectiveFrom": "2003-11-10",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://www.rediff.com/business/report/sbi/20031108.htm?print=true",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 7,
+     "tenureMaxDays": 14,
+     "tenureLabel": "7 days to 14 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4
+    },
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days to 45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.5
+    }
+   ],
+   "notes": [
+    "Rediff, 8 Nov 2003, \"SBI to cut deposit rates\": 7-14 days continues unchanged at 4%; 15-45 days cut 25bps to 4%; 'rates on all other deposits' (unspecified buckets) cut 50bps, with only the 3-years-and-above result (5.5%, from 6%) printed. Effective 10 Nov 2003.",
+    "The article notes SBI had last revised rates on 5 May 2003 (matches the card above) and had not followed an August repo-rate cut before this revision."
+   ],
+   "contentHash": "64b0199d8ba30982"
+  },
+  {
+   "bankSlug": "sbi",
+   "product": "fd",
+   "effectiveFrom": "2004-01-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "http://im.rediff.com/money/2003/dec/29sbi.htm?zcc=rl",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days to 45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 179,
+     "tenureLabel": "46 days to 179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.5
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 364,
+     "tenureLabel": "180 days to less than 1 year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.75
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "1 year to less than 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.25
+    }
+   ],
+   "notes": [
+    "Rediff (PTI), 29 Dec 2003, \"SBI fixes BPLR, cuts rate on term deposits\", effective 1 Jan 2004. The article's lead sentence frames the 0.25pp cut as applying to '2 years to less than 3 years and 3 years and above' specifically, but its own numbers sentence states the revised rate for '1 year to less than 3 years' is 5% and for '3 years and above' is 5.25% -- i.e. the 1-2yr and 2-3yr buckets read as having been merged into one 1-3yr bucket by this point. The numbers sentence (quoted verbatim as the tenureLabel here) is what is stored; the apparent bucket-count inconsistency in the article's own framing is flagged here, not resolved."
+   ],
+   "contentHash": "c0aae7ef88eb9019"
+  },
+  {
+   "bankSlug": "sbi",
+   "product": "fd",
+   "effectiveFrom": "2007-12-17",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://timesofindia.indiatimes.com/business/india-business/sbi-cuts-deposit-rates-by-0-25/articleshow/2618111.cms",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days to 45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.75
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 270,
+     "tenureLabel": "46 days to 270 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.25
+    },
+    {
+     "tenureMinDays": 271,
+     "tenureMaxDays": 364,
+     "tenureLabel": "271 days to less than 1 year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.5
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 years to less than 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8.25
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years to 10 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8.5
+    }
+   ],
+   "notes": [
+    "Times of India (TNN), 13 Dec 2007, \"SBI cuts deposit rates by 0.25%\", effective 17 Dec 2007. 2-3yr and 3-10yr rates were retained (not cut) at the values printed.",
+    "SUSPICIOUS SOURCE DATA, reported not fixed: the article's own text is internally inconsistent for the 1-year-plus short buckets -- it says most maturities were cut 0.25% 'except a period of one year to 549 days, where it hiked rates by an identical amount', then separately states 'term deposit in between one year-550 days would come down to 8.5%' AND 'One year-549 days fixed deposit rate would rise by 0.25% to 8.25%' for what read like two overlapping-but-different tenor buckets. Neither of these two rows is stored here; only the unambiguous rows above are."
+   ],
+   "contentHash": "2bde6671f867213d"
+  },
+  {
+   "bankSlug": "sbi",
+   "product": "fd",
    "effectiveFrom": "2008-01-04",
    "observedAt": "2026-09-27",
    "sourceType": "bank_archive",

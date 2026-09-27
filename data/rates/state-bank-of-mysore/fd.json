@@ -1,0 +1,387 @@
+{
+ "bankSlug": "state-bank-of-mysore",
+ "product": "fd",
+ "cards": [
+  {
+   "bankSlug": "state-bank-of-mysore",
+   "product": "fd",
+   "effectiveFrom": "2003-10-20",
+   "observedAt": "2026-09-27",
+   "observedFrom": "2003-10-27",
+   "observedTo": "2003-10-27",
+   "sourceType": "web_archive",
+   "sourceUrl": "mysorebank.com/int_rates.htm",
+   "archiveUrl": "https://web.archive.org/web/20031027085616id_/http://mysorebank.com:80/int_rates.htm",
+   "confidence": "medium",
+   "rows": [
+    {
+     "tenureMinDays": 7,
+     "tenureMaxDays": 14,
+     "tenureLabel": "7 days to 14 days *",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 3.5
+    },
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 29,
+     "tenureLabel": "15 days to 29 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4
+    },
+    {
+     "tenureMinDays": 30,
+     "tenureMaxDays": 45,
+     "tenureLabel": "30 days to 45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46 days to 90 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.5
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91 days to 179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.75
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 360,
+     "tenureLabel": "180 days to 360 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 year & above but less than 2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.5
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 years & above but less than 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.75
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years & above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6
+    }
+   ],
+   "notes": [
+    "Reconstructed from Internet Archive copies of the bank's official page captured 2003-10-27 to 2003-10-27.",
+    "State Bank of Mysore's own 'Interest Rates on Domestic Term Deposits' table, 8 monthly captures 2003-10-27..2004-12-12 with several distinct digests (rates actually change across them). Generic table reader handles this page's own '(wef DD/MM/YYYY)' dates and rows without a custom parser. The page also has NRE savings, NRE term, FCNR and RFC sections further down (not domestic, and FCNR/RFC have no matching Product value / no currency dimension in RateRow) -- not pursued in this pass."
+   ],
+   "contentHash": "c175eff5b9796916"
+  },
+  {
+   "bankSlug": "state-bank-of-mysore",
+   "product": "fd",
+   "effectiveFrom": "2003-12-15",
+   "observedAt": "2026-09-27",
+   "observedFrom": "2003-12-20",
+   "observedTo": "2004-10-14",
+   "sourceType": "web_archive",
+   "sourceUrl": "mysorebank.com/int_rates.htm",
+   "archiveUrl": "https://web.archive.org/web/20031220212338id_/http://www.mysorebank.com:80/int_rates.htm",
+   "confidence": "medium",
+   "rows": [
+    {
+     "tenureMinDays": 7,
+     "tenureMaxDays": 14,
+     "tenureLabel": "7 days to 14 days *",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 3.5
+    },
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 29,
+     "tenureLabel": "15 days to 29 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4
+    },
+    {
+     "tenureMinDays": 30,
+     "tenureMaxDays": 45,
+     "tenureLabel": "30 days to 45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46 days to 90 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.5
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91 days to 179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.75
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 360,
+     "tenureLabel": "180 days to 360 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 year & above but less than 2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.25
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 years & above but less than 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.5
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years & above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.75
+    }
+   ],
+   "notes": [
+    "Reconstructed from Internet Archive copies of the bank's official page captured 2003-12-20 to 2004-10-14.",
+    "State Bank of Mysore's own 'Interest Rates on Domestic Term Deposits' table, 8 monthly captures 2003-10-27..2004-12-12 with several distinct digests (rates actually change across them). Generic table reader handles this page's own '(wef DD/MM/YYYY)' dates and rows without a custom parser. The page also has NRE savings, NRE term, FCNR and RFC sections further down (not domestic, and FCNR/RFC have no matching Product value / no currency dimension in RateRow) -- not pursued in this pass."
+   ],
+   "contentHash": "49c423046b071a29"
+  },
+  {
+   "bankSlug": "state-bank-of-mysore",
+   "product": "fd",
+   "effectiveFrom": "2004-12-01",
+   "observedAt": "2026-09-27",
+   "observedFrom": "2004-12-12",
+   "observedTo": "2005-04-04",
+   "sourceType": "web_archive",
+   "sourceUrl": "mysorebank.com/int_rates.htm",
+   "archiveUrl": "https://web.archive.org/web/20041212143324id_/http://www.mysorebank.com:80/int_rates.htm",
+   "confidence": "medium",
+   "rows": [
+    {
+     "tenureMinDays": 7,
+     "tenureMaxDays": 14,
+     "tenureLabel": "7 days to 14 days *",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4
+    },
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 29,
+     "tenureLabel": "15 days to 29 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.25
+    },
+    {
+     "tenureMinDays": 30,
+     "tenureMaxDays": 45,
+     "tenureLabel": "30 days to 45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.25
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46 days to 90 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.75
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91 days to 179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 364,
+     "tenureLabel": "180 days to less than 1 year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.25
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 year & above but less than 2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.5
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 years & above but less than 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.75
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years & above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6
+    }
+   ],
+   "notes": [
+    "Reconstructed from Internet Archive copies of the bank's official page captured 2004-12-12 to 2005-04-04.",
+    "State Bank of Mysore's own 'Interest Rates on Domestic Term Deposits' table, 8 monthly captures 2003-10-27..2004-12-12 with several distinct digests (rates actually change across them). Generic table reader handles this page's own '(wef DD/MM/YYYY)' dates and rows without a custom parser. The page also has NRE savings, NRE term, FCNR and RFC sections further down (not domestic, and FCNR/RFC have no matching Product value / no currency dimension in RateRow) -- not pursued in this pass."
+   ],
+   "contentHash": "2ba6bd975f9df995"
+  }
+ ]
+}

@@ -1,0 +1,97 @@
+{
+ "bankSlug": "sbi",
+ "product": "nro",
+ "cards": [
+  {
+   "bankSlug": "sbi",
+   "product": "nro",
+   "effectiveFrom": "1998-05-01",
+   "observedAt": "2026-09-27",
+   "observedFrom": "1998-12-03",
+   "observedTo": "1998-12-03",
+   "sourceType": "web_archive",
+   "sourceUrl": "statebankofindia.com/interest.htm",
+   "archiveUrl": "https://web.archive.org/web/19981203055836id_/http://www.statebankofindia.com:80/interest.htm",
+   "confidence": "medium",
+   "rows": [
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days and upto 45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "nro",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 179,
+     "tenureLabel": "46 days and upto 179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "nro",
+     "callable": null,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 364,
+     "tenureLabel": "180 days to less than 1 year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "nro",
+     "callable": null,
+     "payout": null,
+     "rate": 8
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 year to less than 2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "nro",
+     "callable": null,
+     "payout": null,
+     "rate": 10
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 years to less than 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "nro",
+     "callable": null,
+     "payout": null,
+     "rate": 10.5
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "nro",
+     "callable": null,
+     "payout": null,
+     "rate": 11.5
+    }
+   ],
+   "notes": [
+    "Reconstructed from Internet Archive copies of the bank's official page captured 1998-12-03 to 1998-12-03.",
+    "Same 1998-12-03 capture and table as the fd target above; the page states 'RESIDENT AND NRO DEPOSITS' carry one shared rate schedule, so the identical rows are also stored tagged residency nro."
+   ],
+   "contentHash": "c9d3a9733cbe44d4"
+  }
+ ]
+}

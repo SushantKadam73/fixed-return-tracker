@@ -5,6 +5,97 @@
   {
    "bankSlug": "sbi",
    "product": "rd",
+   "effectiveFrom": "2000-09-12",
+   "observedAt": "2026-09-27",
+   "observedFrom": "2001-02-15",
+   "observedTo": "2001-02-15",
+   "sourceType": "web_archive",
+   "sourceUrl": "statebankofindia.com/statebank/sbinew/termdeposit.htm",
+   "archiveUrl": "https://web.archive.org/web/20010215221957id_/http://www.statebankofindia.com:80/statebank/sbinew/termdeposit.htm",
+   "confidence": "medium",
+   "rows": [
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days and upto 45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 179,
+     "tenureLabel": "46 days and upto 179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.25
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 364,
+     "tenureLabel": "180 days to less than 1 year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 year to less than 2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8.5
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 years to less than 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 9
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 10
+    }
+   ],
+   "notes": [
+    "Reconstructed from Internet Archive copies of the bank's official page captured 2001-02-15 to 2001-02-15.",
+    "Same 2001-02-15 capture and table as the fd target above. SBI's own Recurring Deposit page from the same capture (statebankofindia.com/statebank/sbinew/recurrdeposits.htm) states plainly: 'earn interest on the whole amount at Term deposit rates' -- i.e. the bank's own stated policy is that RD tracks the TDR schedule, so these identical rows are also stored as SBI's RD rates for this date."
+   ],
+   "contentHash": "9842d17a7956b3a7"
+  },
+  {
+   "bankSlug": "sbi",
+   "product": "rd",
    "effectiveFrom": "2025-12-15",
    "observedAt": "2026-09-27",
    "sourceType": "bank_official",

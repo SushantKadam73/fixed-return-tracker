@@ -5,6 +5,69 @@
   {
    "bankSlug": "canara-bank",
    "product": "fd_bulk",
+   "effectiveFrom": "2013-12-03",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://www.business-standard.com/article/finance/canara-bank-cuts-term-deposit-rates-113120300111_1.html",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 61,
+     "tenureMaxDays": 90,
+     "tenureLabel": "61 days to 90 days",
+     "amountMin": 10000000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7.75
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 120,
+     "tenureLabel": "91 days to 120 days",
+     "amountMin": 10000000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8.5
+    },
+    {
+     "tenureMinDays": 121,
+     "tenureMaxDays": 179,
+     "tenureLabel": "121 days to 179 days",
+     "amountMin": 10000000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8.75
+    },
+    {
+     "tenureMinDays": 366,
+     "tenureMaxDays": 729,
+     "tenureLabel": "above 1 year to less than 2 years",
+     "amountMin": 10000000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 9
+    }
+   ],
+   "notes": [
+    "Business Standard, 3 Dec 2013, \"Canara Bank cuts term deposit rates\": cuts to domestic and NRO term deposits of Rs 1 crore and above, effective that Tuesday (3 Dec 2013). The article also states senior citizens get an additional 0.50% on domestic term deposits generally, but does not print the resulting rate for these buckets, so no senior row is added."
+   ],
+   "contentHash": "e4cb007dc7d4788f"
+  },
+  {
+   "bankSlug": "canara-bank",
+   "product": "fd_bulk",
    "effectiveFrom": "2026-09-25",
    "observedAt": "2026-09-27",
    "sourceType": "bank_official",

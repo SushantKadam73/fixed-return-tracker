@@ -5,6 +5,71 @@
   {
    "bankSlug": "bank-of-maharashtra",
    "product": "fd",
+   "effectiveFrom": "2010-12-15",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://www.ndtv.com/pune-news/bank-of-maharashtra-hikes-interest-rates-442163",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46 days to 90 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 181,
+     "tenureMaxDays": 270,
+     "tenureLabel": "181 days to 270 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7.25
+    },
+    {
+     "tenureMinDays": 366,
+     "tenureMaxDays": 1825,
+     "tenureLabel": "over 1 year to 5 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8.3
+    },
+    {
+     "tenureMinDays": 1826,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "over 5 years to 10 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8
+    }
+   ],
+   "notes": [
+    "NDTV, 16 Dec 2010, \"Bank of Maharashtra hikes interest rates\": revision effective 15 Dec 2010, increases of 50-125bps across maturity bands; over 5yr-10yr rate explicitly stated as up 50bps from 7.50% to 8.00%.",
+    "SUSPICIOUS SOURCE DATA, reported not fixed: the article states a single rate (8.30%) for the whole 'over 1 year to 5 years' span, which is unusually coarse for an Indian bank's retail FD card (normally split into 1-2yr/2-3yr/3-5yr buckets with different rates) -- this may be the reporter's simplification of a table that actually had several buckets at 8.30%, but the article gives no finer breakdown, so it is stored exactly as printed rather than guessing a breakdown.",
+    "The article also states a separate 'Bank Term Deposit Scheme' rate rose from 7.50% to 8.30%, but does not state that scheme's tenor, so it is not stored as a row. Senior citizens are stated to get a further 50bps on deposits of 91 days and above, but no resulting senior rate is printed, so no senior row is added."
+   ],
+   "contentHash": "d0c4ab8ffcfdb578"
+  },
+  {
+   "bankSlug": "bank-of-maharashtra",
+   "product": "fd",
    "effectiveFrom": "2026-09-14",
    "observedAt": "2026-09-27",
    "sourceType": "bank_official",

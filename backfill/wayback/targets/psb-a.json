@@ -32,18 +32,69 @@
    "url": "statebankofindia.com/interest.htm",
    "product": "fd",
    "amountMax": null,
-   "from": "1998",
+   "from": "1996",
    "to": "2001",
-   "note": "1990s SBI resident-deposit rate table (history pilot)"
+   "parser": "sbi/1998-multi-section",
+   "note": "Earliest SBI web capture found (Wayback has exactly one snapshot of this URL, 1998-12-03). Page's own '4.RESIDENT AND NRO DEPOSITS' table, w.e.f. 01 May 1998. The generic table reader would misread this page (it stops at the first parseable table, which is the NRE one, and hardcodes residency 'resident'), so a custom parser reads the page's own section headings instead -- see backfill/wayback/parsers/psb-a.ts."
   },
   {
-   "bankSlug": "bank-of-maharashtra",
-   "url": "https://bankofmaharashtra.in/blogs/competitive-interest-rate-for-new-vehicles",
+   "bankSlug": "sbi",
+   "url": "statebankofindia.com/interest.htm",
+   "product": "nro",
+   "amountMax": null,
+   "from": "1996",
+   "to": "2001",
+   "parser": "sbi/1998-multi-section",
+   "note": "Same 1998-12-03 capture and table as the fd target above; the page states 'RESIDENT AND NRO DEPOSITS' carry one shared rate schedule, so the identical rows are also stored tagged residency nro."
+  },
+  {
+   "bankSlug": "sbi",
+   "url": "statebankofindia.com/interest.htm",
+   "product": "nre",
+   "amountMax": null,
+   "from": "1996",
+   "to": "2001",
+   "parser": "sbi/1998-multi-section",
+   "note": "Same 1998-12-03 capture, the page's separate '3.NRE RUPEE DEPOSITS' table, w.e.f. 01 May 1998."
+  },
+  {
+   "bankSlug": "sbi",
+   "url": "statebankofindia.com/statebank/sbinew/termdeposit.htm",
    "product": "fd",
    "amountMax": null,
-   "from": "2024",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "1999",
+   "to": "2002",
+   "parser": "sbi/2001-product-page",
+   "note": "Wayback has exactly one snapshot of this URL, 2001-02-15. Page's own table, headed 'Effective from 12th Sept. 2000'; the generic reader parses the rows fine but cannot read that date on its own (abbreviated month with a trailing period) -- see sbi/2001-product-page in backfill/wayback/parsers/psb-a.ts."
+  },
+  {
+   "bankSlug": "sbi",
+   "url": "statebankofindia.com/statebank/sbinew/termdeposit.htm",
+   "product": "rd",
+   "amountMax": null,
+   "from": "1999",
+   "to": "2002",
+   "parser": "sbi/2001-product-page",
+   "note": "Same 2001-02-15 capture and table as the fd target above. SBI's own Recurring Deposit page from the same capture (statebankofindia.com/statebank/sbinew/recurrdeposits.htm) states plainly: 'earn interest on the whole amount at Term deposit rates' -- i.e. the bank's own stated policy is that RD tracks the TDR schedule, so these identical rows are also stored as SBI's RD rates for this date."
+  },
+  {
+   "bankSlug": "state-bank-of-mysore",
+   "url": "mysorebank.com/int_rates.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2003",
+   "to": "2005",
+   "note": "State Bank of Mysore's own 'Interest Rates on Domestic Term Deposits' table, 8 monthly captures 2003-10-27..2004-12-12 with several distinct digests (rates actually change across them). Generic table reader handles this page's own '(wef DD/MM/YYYY)' dates and rows without a custom parser. The page also has NRE savings, NRE term, FCNR and RFC sections further down (not domestic, and FCNR/RFC have no matching Product value / no currency dimension in RateRow) -- not pursued in this pass."
+  },
+  {
+   "bankSlug": "state-bank-of-patiala",
+   "url": "sbp.co.in/interestrate.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2003",
+   "to": "2005",
+   "parser": "state-bank-of-patiala/2003-portal",
+   "note": "State Bank of Patiala's own 'Interest Rates on Deposits' table, 5 monthly captures 2003-04-14..2004-12-05 (a same-URL uppercase variant sbp.co.in/INTERESTRATE.HTM has 4 more captures interleaved across the same span, not pursued separately in this pass). This table splits rates by deposit amount (below/above Rs 15 lakh) plus a third derived-yield column -- see state-bank-of-patiala/2003-portal in backfill/wayback/parsers/psb-a.ts. The same page also carries housing-loan/PLR/agriculture-advance *lending* rates further down, out of scope here."
   }
  ]
 }

@@ -246,7 +246,15 @@ export default async function BankPage({ params }: PageProps<"/banks/[slug]">) {
                           <td className="py-1.5 pr-4"><SourceBadge sourceType={v.sourceType} /></td>
                           <td className="py-1.5 pr-4">
                             <a className="text-accent hover:underline" href={v.archiveUrl ?? v.sourceUrl} target="_blank" rel="noopener noreferrer">
-                              {v.archiveUrl ? "archived copy" : "official page"}
+                              {v.archiveUrl
+                                ? "archived copy"
+                                : v.sourceType === "press"
+                                  ? "news report"
+                                  : v.sourceType === "exchange_filing"
+                                    ? "filing"
+                                    : v.sourceType === "rbi_publication" || v.sourceType === "government"
+                                      ? "document"
+                                      : "official page"}
                             </a>
                           </td>
                         </tr>

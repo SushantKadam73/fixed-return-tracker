@@ -5,6 +5,118 @@
   {
    "bankSlug": "central-bank-of-india",
    "product": "fd",
+   "effectiveFrom": "1999-01-18",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://us.rediff.com/money/1999/jan/14bank.htm",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 29,
+     "tenureLabel": "15 days to 29 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 30,
+     "tenureMaxDays": 60,
+     "tenureLabel": "30 days to 60 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 61,
+     "tenureMaxDays": 90,
+     "tenureLabel": "61 days to 90 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91 days to 179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 365,
+     "tenureLabel": "180 days to 1 year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 9
+    },
+    {
+     "tenureMinDays": 366,
+     "tenureMaxDays": 730,
+     "tenureLabel": "over 1 year to 2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 10
+    },
+    {
+     "tenureMinDays": 731,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "over 2 years to 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 10.5
+    },
+    {
+     "tenureMinDays": 1096,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "over 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 11.5
+    }
+   ],
+   "notes": [
+    "Rediff, 14 Jan 1999, \"Central Bank of India revises term deposit rates\": full domestic term-deposit schedule, effective 18 Jan 1999 -- the earliest bank-specific domestic deposit rate found for any bank in this group. Tenure labels are transcribed with digits in place of the article's spelled-out numbers ('over three years' -> 'over 3 years') -- a mechanical transcription, not a value change; the day-count buckets (15-29, 30-60, 61-90, 91-179 days) are exactly as printed.",
+    "The article states there is no change to the (unspecified) additional interest rate on single large deposits of Rs 15 lakh and above, so this table's applicability to amounts above that threshold is unclear; amountMin/amountMax are left at their defaults (0/null) rather than assuming a Rs 15 lakh cap the article does not explicitly place on these particular numbers."
+   ],
+   "contentHash": "2f5e0f4c631f1d72"
+  },
+  {
+   "bankSlug": "central-bank-of-india",
+   "product": "fd",
    "effectiveFrom": "2026-08-10",
    "observedAt": "2026-09-27",
    "sourceType": "bank_official",

@@ -5,6 +5,303 @@
   {
    "bankSlug": "bank-of-baroda",
    "product": "fd",
+   "effectiveFrom": "2002-07-23",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://www.business-standard.com/article/finance/boi-bob-cut-deposit-rates-102072501041_1.html",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days to 45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.25
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46 days to 90 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.5
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 180,
+     "tenureLabel": "91 days to 180 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 181,
+     "tenureMaxDays": 364,
+     "tenureLabel": "181 days to less than 1 year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.5
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 730,
+     "tenureLabel": "1 year to 2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "2 years to 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7.25
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7.5
+    }
+   ],
+   "notes": [
+    "Business Standard, first published 25 Jul 2002 (dateline reports the cut as already effective 23 Jul 2002 for BoB), \"Boi, Bob Cut Deposit Rates\": BoB pared rates 25-50bps across all buckets except 181 days-<1yr (unchanged, printed as such)."
+   ],
+   "contentHash": "9593f30d80f269c3"
+  },
+  {
+   "bankSlug": "bank-of-baroda",
+   "product": "fd",
+   "effectiveFrom": "2003-03-10",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://timesofindia.indiatimes.com/business/india-business/bank-of-baroda-cuts-deposit-rates-by-0-25-0-75-pc/articleshow/39253200.cms",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days to 45 days",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.5
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46 days to 90 days",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.75
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 180,
+     "tenureLabel": "91 days to 180 days",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 181,
+     "tenureMaxDays": 365,
+     "tenureLabel": "181 days to 1 year",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "1 year to 3 years",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.25
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.5
+    }
+   ],
+   "notes": [
+    "Times of India (PTI), 4 Mar 2003, \"Bank of Baroda cuts deposit rates by 0.25-0.75 pc\", effective 10 Mar 2003, for deposits up to Rs 15 lakh. The article states deposits of Rs 15 lakh and above get the same buckets at +0.25pp, but does not print those resulting rates, so no separate >=15L row is added."
+   ],
+   "contentHash": "e392f89e8791dba6"
+  },
+  {
+   "bankSlug": "bank-of-baroda",
+   "product": "fd",
+   "effectiveFrom": "2004-11-16",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://im.rediff.com/money/2004/nov/11perfin2.htm",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 7,
+     "tenureMaxDays": 14,
+     "tenureLabel": "7 days to 14 days",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 3.25
+    },
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days to 45 days",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.25
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46 days to 90 days",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.5
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 180,
+     "tenureLabel": "91 days to 180 days",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.75
+    },
+    {
+     "tenureMinDays": 181,
+     "tenureMaxDays": 364,
+     "tenureLabel": "181 days to less than 1 year",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 year to less than 2 years",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.25
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 years to less than 3 years",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.5
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.75
+    }
+   ],
+   "notes": [
+    "Rediff (BS Banking Bureau), 11 Nov 2004, \"More banks hike deposit rates\", effective 16 Nov 2004, for deposits up to Rs 15 lakh (explicitly stated)."
+   ],
+   "contentHash": "1bb54fba42ef516a"
+  },
+  {
+   "bankSlug": "bank-of-baroda",
+   "product": "fd",
    "effectiveFrom": "2026-06-12",
    "observedAt": "2026-09-27",
    "sourceType": "bank_official",

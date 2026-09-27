@@ -46,8 +46,14 @@ export function productSummary(product: Product, cards: StoredCard[], current: S
   const versions = sorted
     .map((c, i) => ({
       ...cardMeta(c),
-      // A version without its own end date ends the day before the next dated revision.
-      validTo: c.validTo ?? (c.effectiveFrom && sorted[i + 1]?.effectiveFrom ? dayBefore(sorted[i + 1].effectiveFrom as string) : null),
+      // A version without its own end date ends the day before the next dated revision — but only
+      // for complete revision lists (the bank's live page and its own archive). A press report or a
+      // single archived page shows when rates applied, not how long they lasted.
+      validTo:
+        c.validTo ??
+        ((c.sourceType === "bank_official" || c.sourceType === "bank_archive") && c.effectiveFrom && sorted[i + 1]?.effectiveFrom
+          ? dayBefore(sorted[i + 1].effectiveFrom as string)
+          : null),
       isCurrent: c === current,
       general: product === "savings" ? null : keyRates(c.rows, "general"),
       senior: product === "savings" ? null : keyRates(c.rows, "senior"),

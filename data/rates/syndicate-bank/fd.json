@@ -1,0 +1,45 @@
+{
+ "bankSlug": "syndicate-bank",
+ "product": "fd",
+ "cards": [
+  {
+   "bankSlug": "syndicate-bank",
+   "product": "fd",
+   "effectiveFrom": "2007-08-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://www.financialexpress.com/archive/boi-canara-syndicate-cut-interest-on-deposits/207832/",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 400,
+     "tenureMaxDays": 499,
+     "tenureLabel": "400 days to 499 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8.9
+    },
+    {
+     "tenureMinDays": 500,
+     "tenureMaxDays": 729,
+     "tenureLabel": "500 days to less than 2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 9
+    }
+   ],
+   "notes": [
+    "Financial Express, 1 Aug 2007 (same article as the Bank of India/Canara Bank cards above): Syndicate Bank revised its domestic term deposit rates for tenors of 400 days to less than 2 years downwards, effective 1 Aug 2007 -- from 9.5% to 8.9% (400-499 days) and from 9.6% to 9% (500 days to less than 2 years)."
+   ],
+   "contentHash": "4cb31ca84ccbfac9"
+  }
+ ]
+}

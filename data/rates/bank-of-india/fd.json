@@ -1,0 +1,243 @@
+{
+ "bankSlug": "bank-of-india",
+ "product": "fd",
+ "cards": [
+  {
+   "bankSlug": "bank-of-india",
+   "product": "fd",
+   "effectiveFrom": "2002-08-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://www.business-standard.com/article/finance/boi-bob-cut-deposit-rates-102072501041_1.html",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days to 45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46 days to 90 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.6
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91 days to 179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.75
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 364,
+     "tenureLabel": "180 days to less than 1 year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.75
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 730,
+     "tenureLabel": "1 year to 2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7.25
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "2 years to 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7.5
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 1825,
+     "tenureLabel": "3 years to 5 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8
+    },
+    {
+     "tenureMinDays": 1825,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "5 years and above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8.25
+    }
+   ],
+   "notes": [
+    "Business Standard, first published 25 Jul 2002 (BoI's own cut effective 1 Aug 2002 per the article), \"Boi, Bob Cut Deposit Rates\": BoI cut 40-75bps on 3 short-end buckets; the article's own full-table sentence also gives the 15-45 day and 1yr+ buckets, taken here as the resulting schedule from 1 Aug 2002."
+   ],
+   "contentHash": "a893c48e4dac5300"
+  },
+  {
+   "bankSlug": "bank-of-india",
+   "product": "fd",
+   "effectiveFrom": "2004-11-10",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://im.rediff.com/money/2004/nov/11perfin2.htm",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 7,
+     "tenureMaxDays": 14,
+     "tenureLabel": "7 days to 14 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 3.5
+    },
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 45,
+     "tenureLabel": "15 days to 45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.5
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 364,
+     "tenureLabel": "46 days to 364 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 year to less than 2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.25
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 years to less than 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.25
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 1824,
+     "tenureLabel": "3 years to less than 5 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.5
+    },
+    {
+     "tenureMinDays": 1825,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "5 years and above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.75
+    }
+   ],
+   "notes": [
+    "Rediff (BS Banking Bureau), 11 Nov 2004, \"More banks hike deposit rates\": BoI raised rates 'across the board from Wednesday' (article published Thursday 11 Nov 2004, so 'Wednesday' = 10 Nov 2004). The former separate 46-179/180-364 day buckets (4.50%/4.75%) were merged into one 46-364 day bucket at 5.00% per this article; 2yr-<3yr is printed as unchanged at 5.25%."
+   ],
+   "contentHash": "0ba05a3f84395fa7"
+  },
+  {
+   "bankSlug": "bank-of-india",
+   "product": "fd",
+   "effectiveFrom": "2007-08-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://www.financialexpress.com/archive/boi-canara-syndicate-cut-interest-on-deposits/207832/",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 365,
+     "tenureLabel": "1 year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 9
+    }
+   ],
+   "notes": [
+    "Financial Express (Banking Bureau), 1 Aug 2007, \"BoI, Canara, Syndicate cut interest on deposits\": BoI's one-year deposit rate cut 50bps to 9% (from 9.5%) with immediate effect, responding to that quarter's RBI policy review. Only this one tenor is given for BoI in the article."
+   ],
+   "contentHash": "1fe7d8ea535f9049"
+  }
+ ]
+}
