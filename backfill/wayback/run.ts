@@ -80,7 +80,7 @@ async function parseCapture(t: Target, c: Capture): Promise<Omit<Eval, "idx">> {
   if (t.parser && !parse) throw new Error(`unknown parser "${t.parser}" (register it in backfill/wayback/parsers/<group>.ts)`);
   let res: GenericResult;
   try {
-    res = parse ? await parse(html, t) : readTermTables(html, { amountMax: t.amountMax ?? null });
+    res = parse ? await parse(html, t) : readTermTables(html, { amountMax: t.amountMax ?? null, product: t.product });
   } catch (e) {
     return { hash: null, result: null, archiveUrl, error: `parse ${(e as Error).message}` };
   }
@@ -134,7 +134,7 @@ async function runTarget(t: Target) {
     }
   }
 
-  type Group = { hash: string; rows: RateRow[]; effectiveFrom: string | null; first: string; last: string; archiveUrl: string };
+  type Group = { hash: string; rows: RateRow[]; effectiveFrom: string | null; first: string; last: string; archiveUrl: string; heading?: string };
   const groups: Group[] = [];
   const skipped: string[] = [];
   let parsed = 0;
@@ -150,7 +150,7 @@ async function runTarget(t: Target) {
       prev.last = date;
       prev.effectiveFrom = prev.effectiveFrom ?? ev.result.effectiveFrom;
     } else {
-      groups.push({ hash: ev.hash, rows: ev.result.rows, effectiveFrom: ev.result.effectiveFrom, first: date, last: date, archiveUrl: ev.archiveUrl });
+      groups.push({ hash: ev.hash, rows: ev.result.rows, effectiveFrom: ev.result.effectiveFrom, first: date, last: date, archiveUrl: ev.archiveUrl, heading: ev.result.context });
     }
   }
 
@@ -168,7 +168,11 @@ async function runTarget(t: Target) {
     archiveUrl: g.archiveUrl,
     confidence: g.effectiveFrom && g.effectiveFrom <= g.first ? "medium" : "low",
     rows: g.rows,
-    notes: [`Reconstructed from Internet Archive copies of the bank's official page captured ${g.first} to ${g.last}.`, ...(t.note ? [t.note] : [])],
+    notes: [
+      `Reconstructed from Internet Archive copies of the bank's official page captured ${g.first} to ${g.last}.`,
+      ...(g.heading ? [`Table read: the one headed "${g.heading.slice(-100)}".`] : []),
+      ...(t.note ? [t.note] : []),
+    ],
   }));
 
   let stored = 0;

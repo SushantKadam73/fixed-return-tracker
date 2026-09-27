@@ -22,6 +22,8 @@ export interface GenericResult {
   effectiveFrom: string | null;
   tablesRead: number;
   skipped: string[];
+  /** Heading text just above the table that was read (recorded in the card notes for review). */
+  context?: string;
 }
 
 /**
