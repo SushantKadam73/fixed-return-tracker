@@ -20,4 +20,7 @@ crons.daily("import committed datasets", { hourUTC: 0, minuteUTC: 0 }, internal.
 // 05:45 IST daily — pull macro series and stored rate files (incl. reconstructed history) from the repo.
 crons.daily("import series and rate history", { hourUTC: 0, minuteUTC: 15 }, internal.seed.importSeriesAndRates, {});
 
+// 09:30 IST daily — make sure the 07:00 IST collector run reported in; restart it if not.
+crons.daily("collector watchdog", { hourUTC: 4, minuteUTC: 0 }, internal.watchdog.collectorWatchdog);
+
 export default crons;

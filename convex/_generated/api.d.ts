@@ -18,6 +18,7 @@ import type * as public_ from "../public.js";
 import type * as seed from "../seed.js";
 import type * as summaries from "../summaries.js";
 import type * as validators from "../validators.js";
+import type * as watchdog from "../watchdog.js";
 
   /**
    * A utility for referencing Convex functions in your app's API.
@@ -37,6 +38,7 @@ import type * as validators from "../validators.js";
 "seed": typeof seed,
 "summaries": typeof summaries,
 "validators": typeof validators,
+"watchdog": typeof watchdog,
   }>;
   export declare const api: FilterApi<typeof fullApi, FunctionReference<any, "public">>;
   export declare const internal: FilterApi<typeof fullApi, FunctionReference<any, "internal">>;
