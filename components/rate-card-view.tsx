@@ -9,7 +9,13 @@ import { formatINRCompact, formatRate } from "@/lib/format";
 export function TermRateTable({ rows }: { rows: RateRow[] }) {
   const resident = rows.filter((r) => r.residency === "resident");
   const minAmount = Math.min(...resident.map((r) => r.amountMin));
-  const retail = resident.filter((r) => r.amountMin === minAmount && r.callable !== false);
+  const band = resident.filter((r) => r.amountMin === minAmount && r.callable !== false);
+  // Show one payout variant: cumulative (or unspecified) first, then quarterly payout; monthly-payout
+  // rates are slightly lower and would otherwise overwrite the headline rate for the same tenure.
+  const payoutRank = (p: RateRow["payout"]) => (p === null || p === undefined || p === "cumulative" ? 0 : p === "quarterly" ? 1 : 2);
+  const bestRank = Math.min(...band.map((r) => payoutRank(r.payout)));
+  const retail = band.filter((r) => payoutRank(r.payout) === bestRank);
+  const otherPayouts = [...new Set(band.filter((r) => payoutRank(r.payout) !== bestRank).map((r) => r.payout))].filter(Boolean);
   const slabs = new Map<string, { label: string; min: number; max: number; special: boolean; scheme?: string; general?: number; senior?: number; superSenior?: number }>();
   for (const r of retail) {
     const key = `${r.tenureMinDays}-${r.tenureMaxDays}-${r.schemeName ?? ""}`;
@@ -21,7 +27,7 @@ export function TermRateTable({ rows }: { rows: RateRow[] }) {
   }
   const list = [...slabs.values()].sort((a, b) => a.min - b.min || a.max - b.max);
   const hasSuper = list.some((s) => s.superSenior !== undefined);
-  const band = retail[0];
+  const first = retail[0];
   return (
     <div className="space-y-2">
       <div className="scroll-x rounded-lg border border-border">
@@ -39,7 +45,9 @@ export function TermRateTable({ rows }: { rows: RateRow[] }) {
               <tr key={`${s.min}-${s.max}-${s.scheme ?? ""}`} className="border-t border-border">
                 <td className="px-4 py-2">
                   {s.label}
-                  {s.special ? <span className="ml-2 text-xs text-accent">special{s.scheme ? ` · ${s.scheme}` : ""}</span> : null}
+                  {s.special || s.scheme ? (
+                    <span className="ml-2 text-xs text-accent">{[s.special ? "special" : null, s.scheme ?? null].filter(Boolean).join(" · ")}</span>
+                  ) : null}
                 </td>
                 <td className="num px-4 py-2">{s.general !== undefined ? formatRate(s.general) : <span className="text-muted italic">—</span>}</td>
                 <td className="num px-4 py-2">{s.senior !== undefined ? formatRate(s.senior) : <span className="text-muted italic">—</span>}</td>
@@ -49,15 +57,16 @@ export function TermRateTable({ rows }: { rows: RateRow[] }) {
           </tbody>
         </table>
       </div>
-      {band ? (
+      {first ? (
         <p className="text-xs text-muted">
           Resident deposits{" "}
-          {band.amountMin === 0
-            ? band.amountMax !== null
-              ? `below ${formatINRCompact(band.amountMax)}`
+          {first.amountMin === 0
+            ? first.amountMax !== null
+              ? `below ${formatINRCompact(first.amountMax)}`
               : "of any amount"
-            : `from ${formatINRCompact(band.amountMin)}${band.amountMax !== null ? ` to below ${formatINRCompact(band.amountMax)}` : ""}`}
-          . “—” means the bank does not publish that rate.
+            : `from ${formatINRCompact(first.amountMin)}${first.amountMax !== null ? ` to below ${formatINRCompact(first.amountMax)}` : ""}`}
+          {first.payout === "quarterly" ? ", interest paid quarterly" : ""}. “—” means the bank does not publish that rate.
+          {otherPayouts.length > 0 ? ` The bank also publishes separate ${otherPayouts.join(" and ")}-payout rates, which are slightly lower.` : ""}
         </p>
       ) : null}
     </div>

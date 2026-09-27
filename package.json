@@ -11,7 +11,8 @@
     "test": "vitest run",
     "codegen": "node scripts/convex-codegen-offline.mjs",
     "convex:dev": "convex dev",
-    "convex:deploy": "convex deploy"
+    "convex:deploy": "convex deploy",
+    "audit:rates": "tsx collectors/src/audit.ts"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
@@ -37,5 +38,5 @@
     "typescript": "^5",
     "vitest": "^5.0.2"
   },
-  "description": "Fixed Return Tracker — FD, RD and savings rates of Indian banks with full history, small-savings schemes, EPF/PPF/NPS, inflation and the real value of money."
+  "description": "Fixed Return Tracker \u2014 FD, RD and savings rates of Indian banks with full history, small-savings schemes, EPF/PPF/NPS, inflation and the real value of money."
 }
