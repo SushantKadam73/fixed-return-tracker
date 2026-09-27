@@ -36,8 +36,15 @@ export function parseDate(text: string): string | null {
   const t = cleanText(text).toLowerCase().replace(/(\d)(st|nd|rd|th)\b/g, "$1");
   let m = /(\d{1,2})[./-](\d{1,2})[./-](\d{2,4})/.exec(t);
   if (m) return iso(Number(m[3]), Number(m[2]), Number(m[1]));
-  m = /(\d{1,2})[\s-]+([a-z]{3,9})[\s,-]+(\d{4})/.exec(t);
-  if (m && MONTHS[m[2]]) return iso(Number(m[3]), MONTHS[m[2]], Number(m[1]));
+  // Day-month-year, e.g. "15-Dec-2025" or an apostrophe year like "01 Oct '26" / "1st Oct'26"
+  // (its ordinal suffix is already stripped above). The "(?!\d)" guards the 2-digit branch
+  // against a *4*-digit year that merely happens to follow a decorative apostrophe (e.g. "4th
+  // Feb '2018"), which would otherwise be misread as its first two digits, "20". A two-digit
+  // year here always resolves to 20xx (see `iso`); an implausible result is filtered out
+  // downstream by findEffectiveDate's own horizon check, so no extra plausibility logic belongs
+  // here.
+  m = /(\d{1,2})[\s-]+([a-z]{3,9})(?:[\s-]*['’]\s*(\d{2})(?!\d)|[\s,-]+(\d{4}))/.exec(t);
+  if (m && MONTHS[m[2]]) return iso(Number(m[3] ?? m[4]), MONTHS[m[2]], Number(m[1]));
   m = /([a-z]{3,9})\s+(\d{1,2}),?\s+(\d{4})/.exec(t);
   if (m && MONTHS[m[1]]) return iso(Number(m[3]), MONTHS[m[1]], Number(m[2]));
   m = /(\d{4})-(\d{2})-(\d{2})/.exec(t);

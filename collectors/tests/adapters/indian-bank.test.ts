@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { indianBankBulk, indianBankFd, indianBankSavings } from "../../src/adapters/indian-bank";
+import { indianBankBulk, indianBankFd, indianBankSavings, indianBankTaxSaver } from "../../src/adapters/indian-bank";
 import { validateCard, hasErrors } from "../../../lib/validate";
 import { ctxFromFixture } from "../helpers";
 
@@ -57,6 +57,23 @@ describe("Indian Bank adapter", () => {
       [true, 7.5, 3 * CRORE, 5 * CRORE],
       [false, 7.5, 3 * CRORE, 5 * CRORE],
     ]);
+  });
+
+  it('derives tax_saver from the retail card\'s "5 year" row, general-public only, per the page\'s own rate-parity statement', async () => {
+    const out = await indianBankTaxSaver(ctxFromFixture({ key: "indian-bank:tax_saver", bankSlug: "indian-bank", url }, "indian-bank/deposit_rates.html"));
+    const taxSaver = out.cards[0];
+    expect(taxSaver.product).toBe("tax_saver");
+    expect(taxSaver.effectiveFrom).toBe("2026-08-04");
+    expect(hasErrors(validateCard(taxSaver))).toBe(false);
+    expect(taxSaver.rows).toHaveLength(1);
+    expect(taxSaver.rows[0]).toMatchObject({ tenureMinDays: 1825, tenureMaxDays: 1825, rate: 6.0, customer: "general", amountMin: 0, amountMax: null });
+    expect(taxSaver.notes?.some((n) => /ib tax saver scheme/i.test(n))).toBe(true);
+  });
+
+  it("throws if the page no longer states the tax-saver rate-parity rule", async () => {
+    const ctx = ctxFromFixture({ key: "indian-bank:tax_saver", bankSlug: "indian-bank", url }, "indian-bank/deposit_rates.html");
+    ctx.doc.text = ctx.doc.text.replace(/IB Tax Saver Scheme/g, "IB Deposit Scheme");
+    await expect(indianBankTaxSaver(ctx)).rejects.toThrow(/ib tax saver scheme/i);
   });
 
   it("reads savings slabs", async () => {

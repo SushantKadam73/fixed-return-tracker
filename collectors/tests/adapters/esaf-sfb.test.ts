@@ -10,22 +10,23 @@ describe("ESAF SFB adapter", () => {
   it("reads the resident term-deposit card (general + senior) and derives RD from it", async () => {
     const out = await esafSfbFd(ctxFromFixture({ key: "esaf-sfb:fd", bankSlug: "esaf-sfb", url }, "esaf-sfb/interest_rates.html"));
     const fd = out.cards.find((c) => c.product === "fd")!;
-    expect(fd.effectiveFrom).toBe("2026-05-01");
+    expect(fd.effectiveFrom).toBe("2026-08-17");
     expect(hasErrors(validateCard(fd))).toBe(false);
-    expect(fd.rows).toHaveLength(22); // 11 tenure rows × general + senior
+    expect(fd.rows).toHaveLength(26); // 13 tenure rows × general + senior
 
     const g = { amount: 50_000, customer: "general" as const };
     const s = { amount: 50_000, customer: "senior" as const };
     expect(rateForTenure(fd.rows, 10, g)?.rate).toBe(2.75);
     expect(rateForTenure(fd.rows, 501, g)?.rate).toBe(7.5); // named point tenure, local peak
     expect(rateForTenure(fd.rows, 501, s)?.rate).toBe(8);
+    expect(rateForTenure(fd.rows, 800, g)?.rate).toBe(8); // second local peak, another point tenure
     expect(rateForTenure(fd.rows, 3000, s)?.rate).toBe(6.25);
 
     const rd = out.cards.find((c) => c.product === "rd")!;
     expect(hasErrors(validateCard(rd))).toBe(false);
     expect(rd.notes?.some((n) => /derived/i.test(n))).toBe(true);
     expect(rd.rows.every((r) => !r.special)).toBe(true);
-    expect(rateForTenure(rd.rows, 365, g)?.rate).toBe(4.75);
+    expect(rateForTenure(rd.rows, 365, g)?.rate).toBe(6.0);
   });
 
   it("reads the savings slabs (incremental, gap-free bands)", async () => {

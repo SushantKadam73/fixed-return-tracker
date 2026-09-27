@@ -1,0 +1,177 @@
+{
+ "bankSlug": "federal-bank",
+ "product": "rd",
+ "cards": [
+  {
+   "bankSlug": "federal-bank",
+   "product": "rd",
+   "effectiveFrom": "2026-08-17",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.federal.bank.in/deposit-rate",
+   "confidence": "high",
+   "rows": [
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 365,
+     "tenureLabel": "1 year",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.25,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 365,
+     "tenureLabel": "1 year",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.75,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 366,
+     "tenureMaxDays": 455,
+     "tenureLabel": "Above 1 year to less than 15 Months",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.4,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 366,
+     "tenureMaxDays": 455,
+     "tenureLabel": "Above 1 year to less than 15 Months",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.9,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 457,
+     "tenureMaxDays": 730,
+     "tenureLabel": "Above 15 Months to 24 Months",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.4,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 457,
+     "tenureMaxDays": 730,
+     "tenureLabel": "Above 15 Months to 24 Months",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.9,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 731,
+     "tenureMaxDays": 1459,
+     "tenureLabel": "Above 24 months to less than 48 months",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.5,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 731,
+     "tenureMaxDays": 1459,
+     "tenureLabel": "Above 24 months to less than 48 months",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 1460,
+     "tenureMaxDays": 1460,
+     "tenureLabel": "48 months",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.7,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 1460,
+     "tenureMaxDays": 1460,
+     "tenureLabel": "48 months",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.2,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 1461,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "Above 48 months to 10 years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.4,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 1461,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "Above 48 months to 10 years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.9,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    }
+   ],
+   "notes": [
+    "RD rates derived from the FD card because the bank states: \"Resident Term Deposits interest rates are also applicable to Resident Cash Certificate, Federal Savings Fund, Federal Tax Savings Deposits and NRO Fixed Deposits.\""
+   ],
+   "contentHash": "20cdc3a4a977cc25"
+  }
+ ]
+}

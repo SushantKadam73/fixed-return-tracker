@@ -3,14 +3,18 @@
  * Page: interest-rates hub (Resident Term Deposits + Savings Bank Accounts on one page).
  *
  * IMPORTANT — sandbox access: every path on esaf.bank.in (and the esafbank.com redirect) returns
- * an Akamai "Access Denied" 403 from this build environment. The fixture used to build and test
- * this adapter is a *reconstruction*: the header/row text is copied verbatim from a search-engine
- * cache of this exact official URL (not an aggregator's rewrite of the numbers), but the actual
- * `<table>` markup could not be inspected, so it's a plain, reasonable HTML table with the real
- * text. The live source stays `active: true` (see data/sources/fragments/d1.json) with a note —
- * GitHub Actions or the VPS may reach the real page where this sandbox can't; re-verify the
- * table structure the first time that happens, since a genuinely different layout would still be
- * caught safely (the adapter throws rather than silently guessing).
+ * an Akamai "Access Denied" 403 to a plain `fetch`/curl from this build environment (re-confirmed
+ * 2026-09-27); `format` stays "html" (this sandbox's own block is not evidence GitHub Actions'
+ * or the VPS's egress is blocked the same way — Akamai's WAF decisions are IP/network dependent).
+ * The fixture WAS a reconstruction (header/row text copied from a search-engine cache, real
+ * numbers but guessed markup) for a previous pass; this pass replaced it with a genuine capture —
+ * a real, JS-executing headless-browser session reached the actual page (Akamai's block did not
+ * hold against a real browser, same pattern seen elsewhere in this project for Cloudflare/Radware
+ * WAFs) and the exact live `<table>` markup for both tables was read from that session, not
+ * reconstructed. The live retail ladder turned out to have 13 tenure rows (not 11) and a newer
+ * date (17/08/2026, not 01/05/2026) than the old cache-based guess had assumed — a real change on
+ * the bank's side since that reconstruction, now corrected; the savings table's own numbers were
+ * already byte-for-byte identical between the two, so only the retail table actually changed here.
  *
  * Quirks:
  *  - The resident term-deposit table's header cell literally reads

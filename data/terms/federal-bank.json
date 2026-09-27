@@ -1,0 +1,15 @@
+{
+ "bankSlug": "federal-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "seniorPremium": "+0.50pp flat on nearly every tenure (bank's own column)",
+    "prematurePenalty": "1% flat, for deposits opened/renewed on/after 21 October 2022, both below and at/above ₹3 crore"
+   },
+   "sourceKey": "federal-bank:fd",
+   "sourceUrl": "https://www.federal.bank.in/deposit-rate",
+   "recordedOn": "2026-09-27",
+   "contentHash": "42c47fb2a3f7911f"
+  }
+ }
+}

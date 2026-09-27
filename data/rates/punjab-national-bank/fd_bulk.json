@@ -16,7 +16,7 @@
      "tenureMaxDays": 14,
      "tenureLabel": "7 days to 14 days",
      "amountMin": 30000000,
-     "amountMax": 100000000,
+     "amountMax": 100000001,
      "customer": "general",
      "residency": "resident",
      "callable": true,
@@ -89,7 +89,7 @@
      "tenureMaxDays": 270,
      "tenureLabel": "180 days to 270 Days",
      "amountMin": 30000000,
-     "amountMax": 100000000,
+     "amountMax": 100000001,
      "customer": "general",
      "residency": "resident",
      "callable": true,
@@ -138,7 +138,7 @@
      "tenureMaxDays": 365,
      "tenureLabel": "1 Year",
      "amountMin": 30000000,
-     "amountMax": 100000000,
+     "amountMax": 100000001,
      "customer": "general",
      "residency": "resident",
      "callable": true,
@@ -212,7 +212,7 @@
      "tenureMaxDays": 1095,
      "tenureLabel": ">2 Years to 3 Years",
      "amountMin": 30000000,
-     "amountMax": 100000000,
+     "amountMax": 100000001,
      "customer": "general",
      "residency": "resident",
      "callable": true,
@@ -261,7 +261,7 @@
      "tenureMaxDays": 3650,
      "tenureLabel": ">5 Years to 10 Years",
      "amountMin": 30000000,
-     "amountMax": 100000000,
+     "amountMax": 100000001,
      "customer": "general",
      "residency": "resident",
      "callable": true,
@@ -1358,7 +1358,7 @@
     "Rows above ₹10 crore cover only the callable table from the bulk-deposit PDF; the PDF's Non-Callable >₹10cr table and its NRE column are not read because unpdf's text extraction does not keep their tenure labels aligned with their rates (see file header).",
     "The >₹10 crore PDF band is dated 2026-09-27 in the document text."
    ],
-   "contentHash": "ad5f2fa3fd6a5325"
+   "contentHash": "df9bbf5ed9e860c4"
   }
  ]
 }

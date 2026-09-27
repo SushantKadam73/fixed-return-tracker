@@ -1,0 +1,16 @@
+{
+ "bankSlug": "karur-vysya-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "prematurePenalty": "Penalty of 1% from the applicable rate of interest (up to ₹3 crore)",
+    "rdRules": "RD rates equal the FD card rate for the same tenure (bank's own policy statement); no differential pricing by instalment amount."
+   },
+   "sourceKey": "karur-vysya-bank:fd",
+   "sourceUrl": "https://www.kvb.bank.in/manager/api/v1/nro-deposit-rates",
+   "recordedOn": "2026-09-27",
+   "contentHash": "083afb782ae40a42"
+  }
+ }
+}

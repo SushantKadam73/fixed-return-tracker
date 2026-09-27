@@ -6,6 +6,7 @@
  *  - "less than X" / "below X" / "upto but excluding" → X − 1 day.
  *  - "above X" / "more than X" / "over X" / "> X" → X + 1 day.
  *  - "X and above" / "X & above" → X (inclusive).
+ *  - "upto X" / "up to X" on its own (no lower bound stated) → 1 day to X, inclusive of X.
  *  - A single duration ("444 days", "5 years") is a point tenure: min = max.
  *  - "1 year 1 day" = 366; "15 months 1 day" = 457.
  * Returns null when the label cannot be read with confidence — adapters must then fail
@@ -25,7 +26,7 @@ type Unit = "d" | "m" | "y";
 function unitOf(word: string): Unit | null {
   const w = word.toLowerCase();
   if (/^(d|day|days)$/.test(w)) return "d";
-  if (/^(m|mo|mon|mnth|mnths|month|months)$/.test(w)) return "m";
+  if (/^(m|mo|mos|mon|mth|mths|mnth|mnths|month|months)$/.test(w)) return "m";
   if (/^(y|yr|yrs|year|years)$/.test(w)) return "y";
   return null;
 }
@@ -57,6 +58,13 @@ function parseDuration(text: string, inheritUnit?: Unit | null): { days: number;
 const LESS = /(?:\b(?:less than|below|upto but less than|under)\b|<)\s*/;
 const ABOVE = /(?:\b(?:above|more than|over|exceeding|beyond)\b|>)\s*/;
 const OPEN_END = /\b(and above|and more|onwards|and over)\b/;
+const BARE_UPTO = /\bupto\b/;
+
+// "1 year <= tenure < 2 years" / "185 days <= T <= 1 year": two comparison operators around a
+// placeholder word (or nothing), each independently strict (<) or inclusive (<=/≤). There is no
+// "to"-like word to split on here, so this whole shape is matched up front, before the generic
+// splitters below (which all rely on finding a "to"-like word) ever run.
+const CHAIN = /^(\d+(?:\.\d+)?\s*[a-z]*)\s*(<=|≤|<)\s*[a-z]*(?:\s+[a-z]+)*\s*(<=|≤|<)\s*(\d+(?:\.\d+)?\s*[a-z]+)$/;
 
 export function parseTenure(label: string): TenureRange | null {
   let t = label
@@ -71,10 +79,23 @@ export function parseTenure(label: string): TenureRange | null {
   if (!t) return null;
   t = t.replace(/\bup ?to\b/g, "upto").replace(/\bupto and including\b/g, "upto");
 
+  const chain = CHAIN.exec(t);
+  if (chain) {
+    const hi = parseDuration(chain[4]);
+    if (!hi) return null;
+    const lo = parseDuration(chain[1], hi.unit);
+    if (!lo) return null;
+    const minDays = chain[2] === "<" ? lo.days + 1 : lo.days;
+    const maxDays = chain[3] === "<" ? hi.days - 1 : hi.days;
+    if (maxDays < minDays) return null;
+    return clamp({ minDays, maxDays, point: false });
+  }
+
   // Split into lower and upper bounds.
   let lower = t;
   let upper: string | null = null;
-  const splitters = [/\s+to\s+/, /\s*-\s*(?=\d|less|below|upto|under)/, /\s+upto\s+/, /\s+and\s+(?=less|below|upto|under)/, /\s+but\s+/, /\s+till\s+/];
+  // Last resort: "3 years and above less than 5 years" (no "to"/"but") splits before "less than N".
+  const splitters = [/\s+to\s+/, /\s*-\s*(?=\d|less|below|upto|under)/, /\s+upto\s+/, /\s+and\s+(?=less|below|upto|under)/, /\s+but\s+/, /\s+till\s+/, /\s+(?=(?:less than|below|under)\s+\d)/];
   for (const s of splitters) {
     const m = t.split(s);
     if (m.length === 2 && /\d/.test(m[0]) && /\d/.test(m[1])) {
@@ -97,6 +118,7 @@ export function parseTenure(label: string): TenureRange | null {
     if (andAbove) return clamp({ minDays: d.days, maxDays: MAX_DAYS, point: false });
     if (lowerExclusive) return clamp({ minDays: d.days + 1, maxDays: MAX_DAYS, point: false });
     if (LESS.test(lower)) return clamp({ minDays: 1, maxDays: d.days - 1, point: false });
+    if (BARE_UPTO.test(lower)) return clamp({ minDays: 1, maxDays: d.days, point: false });
     return clamp({ minDays: d.days, maxDays: d.days, point: true });
   }
 

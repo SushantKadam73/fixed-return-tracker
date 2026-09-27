@@ -12,10 +12,9 @@
    "confidence": "high",
    "rows": [
     {
-     "tenureMinDays": 183,
+     "tenureMinDays": 1,
      "tenureMaxDays": 183,
      "tenureLabel": "Upto 6 Months",
-     "special": true,
      "amountMin": 0,
      "amountMax": 30000000,
      "customer": "general",
@@ -25,10 +24,9 @@
      "rate": 4
     },
     {
-     "tenureMinDays": 183,
+     "tenureMinDays": 1,
      "tenureMaxDays": 183,
      "tenureLabel": "Upto 6 Months",
-     "special": true,
      "amountMin": 0,
      "amountMax": 30000000,
      "customer": "senior",
@@ -263,9 +261,10 @@
     }
    ],
    "notes": [
-    "RD rates are Utkarsh's own recurring-deposit card, not derived from the FD card — the two tables use different tenure buckets and rates."
+    "RD rates are Utkarsh's own recurring-deposit card, not derived from the FD card — the two tables use different tenure buckets and rates.",
+    "Row boundaries re-read on 27 Sep 2026 after a parser correction (inclusive 'up to' amounts, 'upto N days' ranges); the rates themselves are unchanged."
    ],
-   "contentHash": "3625c245a55f9ae6"
+   "contentHash": "92e8384a3d4bfb6c"
   }
  ]
 }

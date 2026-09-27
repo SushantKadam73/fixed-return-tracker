@@ -54,9 +54,13 @@ describe("Indian Overseas Bank adapter", () => {
     const savings = out.cards[0];
     expect(savings.effectiveFrom).toBe("2026-09-15");
     expect(hasErrors(validateCard(savings))).toBe(false);
+    // The middle slab's own label is "Above Rs. 1 lakh and upto Rs. 2000 Crore" -- "upto" written
+    // as one word is an inclusive upper bound (shared parseAmountBand convention, same as spaced
+    // "up to"), so its balanceMax sits one rupee past 2000 Crore, exactly abutting the next
+    // slab's own "Above Rs. 2000 Crore" (exclusive) lower bound with no gap and no overlap.
     expect(savings.savingsSlabs).toEqual([
       { balanceMin: 0, balanceMax: 1_00_001, rate: 2.5, residency: "resident" },
-      { balanceMin: 1_00_001, balanceMax: 2000 * CRORE, rate: 2.2, residency: "resident", note: expect.stringContaining("Repo Rate") },
+      { balanceMin: 1_00_001, balanceMax: 2000 * CRORE + 1, rate: 2.2, residency: "resident", note: expect.stringContaining("Repo Rate") },
       { balanceMin: 2000 * CRORE + 1, balanceMax: null, rate: 6.6, residency: "resident", note: expect.stringContaining("Repo Rate") },
     ]);
   });

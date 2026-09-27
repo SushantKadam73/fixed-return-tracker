@@ -1,31 +1,22 @@
-<!--
-  RECONSTRUCTED test fixture — NOT captured directly by this project's fetcher.
-  suryoday.bank.in (and the legacy suryodaybank.com) returned HTTP 502 on every path tried from
-  this sandbox, across two rounds ~20 minutes apart (looks like a WAF/CDN block on this
-  environment's egress, not a real outage — a search engine's crawler reaches the site fine).
-  The savings table below is copied verbatim, cell for cell, from a search-engine cache of this
-  exact official URL (https://suryoday.bank.in/rate-of-interest/, "Savings Accounts" tab, which
-  is the default/active tab and the one rendered in the cache) — not an aggregator's rewrite.
-  The FD and RD tabs on the same hub page only ever exposed a tenure-selector *widget*'s default
-  selection (one tenure's rate), never the full table, in every cache and live attempt tried, so
-  they are not covered by this adapter — see the run report. Re-verify markup once GitHub
-  Actions/a VPS reaches the live page.
--->
+<!-- trimmed test fixture; captured live via a real headless-browser session on 2026-09-27 (see file header note in suryoday-sfb.ts) — genuine <table> and caption markup for both the "Savings Accounts" tab (replacing the earlier search-engine-cache reconstruction) and the "Fixed Deposits" tab (only reachable after clicking that tab; not present in this page's HTML otherwise) -->
 <html><body>
 <main>
 <h2>Rate Of Interest</h2>
 <h3>Savings Accounts</h3>
-<p>Important: The below mentioned rates are effective from May 01, 2026</p>
-<table>
-<tr><td>Daily Closing Balance Slabs (Domestic/NRE/NRO)</td><td>% rate per annum*</td></tr>
+<div>Important: The below mentioned rates are effective from August 01, 2026</div>
+<div>
+<table class="w-[100%]"><tr><th>Daily Closing Balance Slabs (Domestic/NRE/NRO)</th><th>% rate per annum*</th></tr>
 <tr><td>Up to and including Rs. 1 Lakh</td><td>2.50%</td></tr>
 <tr><td>Above Rs. 1 Lakh up to &amp; including Rs. 5 Lakh</td><td>2.50%</td></tr>
-<tr><td>Above Rs. 5 Lakh up to &amp; including Rs. 10 Lakh</td><td>5.50%</td></tr>
-<tr><td>Above Rs. 10 Lakh up to &amp; including Rs 25 Lakh</td><td>6.50%</td></tr>
-<tr><td>Above Rs. 25 Lakh up to &amp; including Rs. 5 Crore</td><td>7.50%</td></tr>
-<tr><td>Above Rs. 5 Crore up to &amp; including Rs. 25 Crore</td><td>7.60%</td></tr>
+<tr><td>Above Rs. 5 Lakh up to &amp; including Rs. 10 Lakh</td><td>3.50%</td></tr>
+<tr><td>Above Rs. 10 Lakh up to &amp; including Rs 30 Lakh</td><td>5.50%</td></tr>
+<tr><td>Above Rs. 30 Lakh up to &amp; including Rs. 50 Lakh</td><td>7.00%</td></tr>
+<tr><td>Above Rs. 50 Lakh up to &amp; including Rs. 2 Crore</td><td>7.50%</td></tr>
+<tr><td>Above Rs. 2 Crore up to &amp; including Rs. 5 Crore</td><td>7.50%</td></tr>
+<tr><td>Above Rs. 5 Crore up to &amp; including Rs. 25 Crore</td><td>7.60%Highest</td></tr>
 <tr><td>Above Rs. 25 Crore</td><td>Contact Branch</td></tr>
 </table>
+</div>
 <p>Note:</p>
 <ul>
 <li>*Rates are subject to change at the sole discretion of Suryoday Bank</li>
@@ -33,5 +24,30 @@
 <li>Slab rates are applicable on the incremental amount based on the daily closing balance in the Savings Account.</li>
 <li>Interest payout will be made on a monthly basis on the first day of the calendar month.</li>
 </ul>
+<h3>Fixed Deposits</h3>
+<div>Important: Rate for amount &lt; 3 Crore. The below mentioned Rates and T&amp;C are effective from September 24, 2026</div>
+<div>
+<table>
+<tr><th>Period</th><th>Interest Rate (Per Annum)</th><th>Annualised Yield (%)</th><th>Senior Citizen Rate (Per Annum)</th><th>Annualised Yield (%)</th></tr>
+<tr><td>7 Days to 14 Days</td><td>4.00%</td><td>4.00%</td><td>4.15%</td><td>4.15%</td></tr>
+<tr><td>15 Days to 45 Days</td><td>4.25%</td><td>4.25%</td><td>4.40%</td><td>4.40%</td></tr>
+<tr><td>46 Days to 90 Days</td><td>4.50%</td><td>4.50%</td><td>4.65%</td><td>4.65%</td></tr>
+<tr><td>91 Days to 6 Months</td><td>5.00%</td><td>5.00%</td><td>5.15%</td><td>5.15%</td></tr>
+<tr><td>6 Month 1 Day</td><td>6.50%</td><td>6.66%</td><td>6.65%</td><td>6.82%</td></tr>
+<tr><td>Above 6 Month 1 Day to 9 Months</td><td>5.50%</td><td>5.61%</td><td>5.65%</td><td>5.77%</td></tr>
+<tr><td>Above 9 Months to less than 1 Year</td><td>6.00%</td><td>6.14%</td><td>6.15%</td><td>6.29%</td></tr>
+<tr><td>1 Year*</td><td>7.25%</td><td>7.45%</td><td>7.40%</td><td>7.61%</td></tr>
+<tr><td>Above 1 Year to Less than 18 Months</td><td>7.25%</td><td>7.45%</td><td>7.40%</td><td>7.61%</td></tr>
+<tr><td>18 Months</td><td>7.80%</td><td>8.03%</td><td>7.95%</td><td>8.19%</td></tr>
+<tr><td>Above 18 Months to 2 Years</td><td>7.25%</td><td>7.45%</td><td>7.40%</td><td>7.61%</td></tr>
+<tr><td>Above 2 Years to less than 30 Months</td><td>7.25%</td><td>7.45%</td><td>7.40%</td><td>7.61%</td></tr>
+<tr><td>30 Months</td><td>8.10%</td><td>8.35%</td><td>8.25%</td><td>8.51%</td></tr>
+<tr><td>Above 30 Months to 3 Years</td><td>7.25%</td><td>7.45%</td><td>7.40%</td><td>7.61%</td></tr>
+<tr><td>Above 3 Years to less than 5 Years</td><td>6.75%</td><td>6.92%</td><td>6.90%</td><td>7.08%</td></tr>
+<tr><td>5 Years</td><td>8.25%Highest</td><td>8.51%</td><td>8.50%Highest</td><td>8.77%</td></tr>
+<tr><td>Above 5 Years to 10 Years</td><td>7.25%</td><td>7.45%</td><td>7.40%</td><td>7.61%</td></tr>
+</table>
+</div>
+<p>*Premature withdrawal of Cumulative Payout Fixed Deposits booked for 1-year tenure will not attract any penalty charges.</p>
 </main>
 </body></html>

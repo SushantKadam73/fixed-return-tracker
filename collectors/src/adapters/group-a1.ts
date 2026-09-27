@@ -10,8 +10,8 @@ import type { Adapter } from "../types";
 import { bankOfBarodaBulk, bankOfBarodaFd, bankOfBarodaSavings, bankOfBarodaTaxSaver } from "./bank-of-baroda";
 import { bankOfMaharashtraBulk, bankOfMaharashtraFd, bankOfMaharashtraSavings } from "./bank-of-maharashtra";
 import { canaraBankBulk, canaraBankFd, canaraBankSavings } from "./canara-bank";
-import { centralBankOfIndiaBulk, centralBankOfIndiaFd, centralBankOfIndiaSavings } from "./central-bank-of-india";
-import { indianBankBulk, indianBankFd, indianBankSavings } from "./indian-bank";
+import { centralBankOfIndiaBulk, centralBankOfIndiaFd, centralBankOfIndiaSavings, centralBankOfIndiaTaxSaver } from "./central-bank-of-india";
+import { indianBankBulk, indianBankFd, indianBankSavings, indianBankTaxSaver } from "./indian-bank";
 
 export const adapters: Record<string, Adapter> = {
   "bank-of-baroda.fd": bankOfBarodaFd,
@@ -30,8 +30,10 @@ export const adapters: Record<string, Adapter> = {
   "central-bank-of-india.fd": centralBankOfIndiaFd,
   "central-bank-of-india.bulk": centralBankOfIndiaBulk,
   "central-bank-of-india.savings": centralBankOfIndiaSavings,
+  "central-bank-of-india.tax_saver": centralBankOfIndiaTaxSaver,
 
   "indian-bank.fd": indianBankFd,
   "indian-bank.bulk": indianBankBulk,
   "indian-bank.savings": indianBankSavings,
+  "indian-bank.tax_saver": indianBankTaxSaver,
 };

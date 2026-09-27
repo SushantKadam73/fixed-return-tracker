@@ -1,0 +1,47 @@
+{
+ "bankSlug": "central-bank-of-india",
+ "product": "tax_saver",
+ "cards": [
+  {
+   "bankSlug": "central-bank-of-india",
+   "product": "tax_saver",
+   "effectiveFrom": "2026-08-10",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://centralbank.bank.in/en/cent-tax-saving-deposit",
+   "confidence": "high",
+   "rows": [
+    {
+     "tenureMinDays": 1825,
+     "tenureMaxDays": 1825,
+     "tenureLabel": "5 years (Cent Tax Saving Deposit)",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 1825,
+     "tenureMaxDays": 1825,
+     "tenureLabel": "5 years (Cent Tax Saving Deposit)",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.5
+    }
+   ],
+   "notes": [
+    "Bank's own \"Cent Tax Saving Deposit\" page: \"The rate of interest to be applied to Cent tax Savings Deposit Scheme will be in accordance with the interest rate on domestic term deposits (upto Rs. 15 lacs) applicable to the five-year term.\" Derived from the retail FD table's \"5 years & above upto 10 years\" row — the band that starts at exactly 5 years, the tenure this scheme's Section 80C lock-in actually uses — read from https://centralbank.bank.in/en/interest-rates-on-deposit, not from a separately-published tax-saver table.",
+    "The retail table publishes only one <₹3 crore band with no ₹15 lakh sub-split, so the page's own \"(upto Rs. 15 lacs)\" qualifier does not change which number applies.",
+    "Maximum investment ₹1,50,000 per PAN per financial year (Section 80C); premature withdrawal and loan/overdraft against this deposit are not allowed, per the scheme's own page."
+   ],
+   "contentHash": "591b0721efb83479"
+  }
+ ]
+}

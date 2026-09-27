@@ -20,7 +20,7 @@
     },
     {
      "balanceMin": 10000001,
-     "balanceMax": 1000000000,
+     "balanceMax": 1000000001,
      "rate": 2.6,
      "residency": "resident"
     },
@@ -32,7 +32,7 @@
     }
    ],
    "slabMethod": "unknown",
-   "contentHash": "f28da22522dc8d7b"
+   "contentHash": "3672e0f7f836a232"
   }
  ]
 }

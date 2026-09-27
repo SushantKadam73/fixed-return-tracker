@@ -20,7 +20,7 @@
     },
     {
      "balanceMin": 100001,
-     "balanceMax": 20000000000,
+     "balanceMax": 20000000001,
      "rate": 2.2,
      "residency": "resident",
      "note": "Above Rs. 1 lakh and upto Rs. 2000 Crore (Linked to Repo Rate)"
@@ -34,7 +34,10 @@
     }
    ],
    "slabMethod": "whole",
-   "contentHash": "3f300e680a5057dd"
+   "contentHash": "7efea6345b9ec0e7",
+   "notes": [
+    "Row boundaries re-read on 27 Sep 2026 after a parser correction (inclusive 'up to' amounts, 'upto N days' ranges); the rates themselves are unchanged."
+   ]
   }
  ]
 }

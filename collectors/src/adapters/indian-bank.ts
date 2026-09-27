@@ -37,10 +37,23 @@
  * "similarly" applies to Recurring Deposit accounts for a 6-120 month band — evidence RD has its
  * own card, not evidence that its base rate equals the FD card rate — and no RD rate table or an
  * explicit "RD = FD" statement appears anywhere on the page. So, per collectors/README.md, RD
- * stays uncovered here rather than derived. (Separately, the page DOES explicitly state "The
- * rate of interest on domestic term deposit is also applicable to IB Tax Saver Scheme and
- * Capital Gains Scheme Type B (Term Deposits) 1988 Scheme" — a genuine tax_saver gap this pass
- * did not add an adapter for, since it was out of this pass's scope; flagged for a follow-up.)
+ * stays uncovered here rather than derived.
+ *
+ * tax_saver: the page's own "IMPORTANT" notes state "The rate of interest on domestic term
+ * deposit is also applicable to IB Tax Saver Scheme and Capital Gains Scheme Type B (Term
+ * Deposits) 1988 Scheme" — an explicit rate-parity statement, not a separately-published
+ * tax-saver table (the bank does not have one on this page). `indianBankTaxSaver` derives a
+ * card from the retail table's own dedicated "5 year" row — the exact point tenure the Section
+ * 80C tax-saver scheme's 5-year lock-in uses (not the "3 years to less than 5 years" or "Above 5
+ * years" ranges either side of it, which are different, ordinary FD bands). No senior-citizen
+ * figure exists for that exact tenure on this page (only the four named schemes get their own
+ * Senior/Super-Senior rows), so the derived card is General-Public-only, correctly reflecting
+ * "not published" rather than guessing a premium. `amountMax` is left null rather than kept at
+ * the retail table's own "<₹3 crore" band: a tax-saver deposit is capped at ₹1,50,000 per
+ * PAN per financial year by law, so the bank's deposit-amount band doesn't describe it (same
+ * reasoning bank-of-baroda.ts's own tax_saver adapter uses for its amount band). The Capital
+ * Gains Scheme named in the same sentence is a different product (no `tax_saver`-shaped output
+ * for it) and is not represented here.
  *
  * No senior-citizen rows on the main retail table: it only has "Existing"/"Revised" columns
  * (both General Public), with the senior-citizen premium (+0.50%, capped at ₹100 crore per
@@ -250,5 +263,44 @@ export const indianBankSavings: Adapter = async (ctx) => {
   if (slabs.length === 0) throw new AdapterError("indian-bank: no savings slabs found");
   return {
     cards: [makeCard(ctx, "savings", [], { effectiveFrom, savingsSlabs: slabs, slabMethod: "unknown", notes: ["Credited quarterly (last day of June, September, December, March), per the bank's page."] })],
+  };
+};
+
+/** The page's own statement tying the tax-saver scheme's rate to the domestic term-deposit
+ * card (see file header) — checked so this card throws instead of silently guessing if the
+ * bank ever removes or reword this note. */
+const TAX_SAVER_STATEMENT = /rate of interest on domestic term deposit is also applicable to\s+ib tax saver scheme/i;
+const TAX_SAVER_DAYS = 5 * 365; // Section 80C 5-year lock-in — matches the retail table's own "5 year" point-tenure row.
+
+/** tax_saver: derived from the retail FD table's "5 year" row (see file header) — not read from
+ * a separately-published tax-saver table, because the bank does not have one on this page. */
+export const indianBankTaxSaver: Adapter = async (ctx) => {
+  const grids = extractTables(ctx.doc.text);
+  const retail = requireGrid(grids, isRetail, "retail <3cr table");
+  const effectiveFrom = parseDate(retail.rows[2]?.[2] ?? "");
+  if (!effectiveFrom) throw new AdapterError("indian-bank: retail effective date not found");
+
+  if (!TAX_SAVER_STATEMENT.test(pageText(ctx.doc.text))) {
+    throw new AdapterError('indian-bank: the page no longer states that the domestic term-deposit rate also applies to the IB Tax Saver Scheme');
+  }
+
+  const rows = retailRows(retail)
+    .filter((r) => r.tenureMinDays === TAX_SAVER_DAYS && r.tenureMaxDays === TAX_SAVER_DAYS && !r.schemeName)
+    // Amount band left null (not the retail table's own "<₹3 crore"): a tax-saver deposit is
+    // capped at ₹1,50,000 per PAN per financial year by law, not by a bank-stated deposit band.
+    .map((r) => ({ ...r, amountMin: 0, amountMax: null }));
+  if (rows.length === 0) throw new AdapterError('indian-bank: no 5-year point-tenure row found on the retail table to derive the tax-saver rate from');
+
+  return {
+    cards: [
+      makeCard(ctx, "tax_saver", rows, {
+        effectiveFrom,
+        notes: [
+          'Bank\'s own page: "The rate of interest on domestic term deposit is also applicable to IB Tax Saver Scheme and Capital Gains Scheme Type B (Term Deposits) 1988 Scheme." Derived from the FD card\'s 5-year ("5 year") row — the tenure the tax-saver scheme (Section 80C, 5-year lock-in) actually uses — not from a separately-published tax-saver table.',
+          "No senior-citizen figure is published for this exact tenure (only the four named schemes elsewhere on this page get their own Senior/Super-Senior rows), so this card is General-Public-only rather than a guessed premium.",
+          "The Capital Gains Scheme Type B (Term Deposits) 1988 Scheme named in the same statement is a different product and is not represented in this card.",
+        ],
+      }),
+    ],
   };
 };

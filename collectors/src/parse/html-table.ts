@@ -26,9 +26,14 @@ function precedingContext($: cheerio.CheerioAPI, table: Element): string {
   const texts: string[] = [];
   let node: AnyNode | null = table;
   // Walk backwards through previous siblings (and up to parents) collecting a little text.
+  // A bare text node with real content stops the search too — an effective date is sometimes
+  // written as plain text just above a table ("w.e.f. 16.06.2026", not inside any tag) — but a
+  // whitespace-only text node (the layout indentation between two tags, extremely common) is
+  // skipped over in the same step, just like a comment, so it doesn't burn through the hop
+  // budget one node at a time before reaching the next real content.
   for (let hops = 0; node && hops < 12 && texts.join(" ").length < 300; hops++) {
     let prev: AnyNode | null = (node as Element).prev ?? null;
-    while (prev && prev.type !== "tag") prev = prev.prev ?? null;
+    while (prev && prev.type !== "tag" && !(prev.type === "text" && cleanText($(prev).text()) !== "")) prev = prev.prev ?? null;
     if (prev) {
       const t = cleanText($(prev).text());
       if (t && $(prev).find("table").length === 0) texts.unshift(t.slice(-300));

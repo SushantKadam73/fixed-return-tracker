@@ -24,10 +24,28 @@
  * The CENT Green Deposit table separately prints two different dates for its General Public
  * (10.12.2025) and Senior Citizen (10.09.2025) columns — also as printed, not a parsing
  * artifact — so the card uses the General Public date and notes the Senior Citizen one.
+ *
+ * tax_saver: this page links a separate "Cent Tax Saving Deposit" scheme page (nav entry
+ * "/en/cent-tax-saving-deposit"). That page does not publish its own number; its own "Rate of
+ * Interest" heading says: "The rate of interest to be applied to Cent tax Savings Deposit
+ * Scheme will be in accordance with the interest rate on domestic term deposits (upto Rs. 15
+ * lacs) applicable to the five-year term" — a rate-parity statement, not a table. Because that
+ * statement lives on a different page from the rate table it points at, `centralBankOfIndiaTaxSaver`
+ * is registered against the *tax-saver page itself* (so it re-checks that statement is still
+ * there on every run, throwing if it changes) and fetches this retail rates page via `ctx.fetch`
+ * to read the actual number. The scheme's fixed 5-year tenure lands exactly on this retail
+ * ladder's own tenure-band boundary: "5 years & above upto 10 years" is the one row whose range
+ * starts at exactly 1825 days, so that row (both General Public and Senior Citizen — the
+ * tax-saver page does not exclude senior citizens the way Indian Bank's equivalent does) is
+ * reduced to a single point tenure at 1825 days rather than kept as the 5-10 year band a saver
+ * could otherwise pick freely within. The "(upto Rs. 15 lacs)" qualifier does not correspond to
+ * any actual sub-band on this page (the whole <3cr band is priced as one row), so it changes
+ * nothing about which number applies; `amountMax` is left null rather than the retail row's own
+ * <3cr band, since by law the scheme is capped at ₹1,50,000 per PAN per financial year.
  */
 import type { RateRow, SavingsSlab } from "../../../lib/domain";
 import { cleanText, parseDate, parseRate } from "../parse/common";
-import { extractTables, type Grid } from "../parse/html-table";
+import { extractTables, pageText, type Grid } from "../parse/html-table";
 import { parseAmountBand } from "../parse/amount";
 import { parseTenure } from "../parse/tenure";
 import { parseTermTable, type ColumnSpec } from "../parse/term-table";
@@ -204,4 +222,48 @@ export const centralBankOfIndiaSavings: Adapter = async (ctx) => {
   });
   if (slabs.length === 0) throw new AdapterError("central-bank-of-india: no savings slabs found");
   return { cards: [makeCard(ctx, "savings", [], { effectiveFrom, savingsSlabs: slabs, slabMethod: "unknown" })] };
+};
+
+/** The retail rates page this card's number is read from (see file header) — not the source
+ * `ctx` fetches, since the tax-saver page's own rate-parity statement is what this adapter's
+ * own source registration re-checks each run. */
+const RATES_PAGE_URL = "https://centralbank.bank.in/en/interest-rates-on-deposit";
+const TAX_SAVER_STATEMENT = /cent tax saving?s? deposit scheme will be in accordance with the interest rate on domestic term deposits/i;
+const TAX_SAVER_FIVE_YEAR_TERM = /five[\s-]year term/i;
+const TAX_SAVER_DAYS = 5 * 365; // 1825 days — Section 80C 5-year lock-in.
+
+/** tax_saver: derived from the retail FD table's "5 years & above upto 10 years" row (see file
+ * header) — reduced to the single 5-year point tenure the scheme actually uses, not read from a
+ * separately-published tax-saver table (the bank does not have one). */
+export const centralBankOfIndiaTaxSaver: Adapter = async (ctx) => {
+  const text = pageText(ctx.doc.text);
+  if (!TAX_SAVER_STATEMENT.test(text) || !TAX_SAVER_FIVE_YEAR_TERM.test(text)) {
+    throw new AdapterError("central-bank-of-india: the Cent Tax Saving Deposit page no longer states that its rate follows the domestic term deposit rate for the five-year term");
+  }
+
+  const mainDoc = await ctx.fetch(RATES_PAGE_URL, "html");
+  const grids = extractTables(mainDoc.text);
+  const retail = requireGrid(grids, isRetailBelow3Cr, "retail <3cr table");
+  const effectiveFrom = rateColumnDate(retail);
+  if (!effectiveFrom) throw new AdapterError("central-bank-of-india: retail effective date not found (for tax-saver derivation)");
+
+  const rows: RateRow[] = generalSeniorRows(retail, 0, 3 * CRORE, true)
+    .filter((r) => r.tenureMinDays === TAX_SAVER_DAYS)
+    .map((r) => ({ ...r, tenureMinDays: TAX_SAVER_DAYS, tenureMaxDays: TAX_SAVER_DAYS, tenureLabel: "5 years (Cent Tax Saving Deposit)", amountMin: 0, amountMax: null }));
+  if (rows.length === 0) {
+    throw new AdapterError('central-bank-of-india: no retail row starting at exactly 5 years ("5 years & above upto 10 years") found on the rates page to derive the tax-saver rate from');
+  }
+
+  return {
+    cards: [
+      makeCard(ctx, "tax_saver", rows, {
+        effectiveFrom,
+        notes: [
+          `Bank's own "Cent Tax Saving Deposit" page: "The rate of interest to be applied to Cent tax Savings Deposit Scheme will be in accordance with the interest rate on domestic term deposits (upto Rs. 15 lacs) applicable to the five-year term." Derived from the retail FD table's "5 years & above upto 10 years" row — the band that starts at exactly 5 years, the tenure this scheme's Section 80C lock-in actually uses — read from ${RATES_PAGE_URL}, not from a separately-published tax-saver table.`,
+          "The retail table publishes only one <₹3 crore band with no ₹15 lakh sub-split, so the page's own \"(upto Rs. 15 lacs)\" qualifier does not change which number applies.",
+          "Maximum investment ₹1,50,000 per PAN per financial year (Section 80C); premature withdrawal and loan/overdraft against this deposit are not allowed, per the scheme's own page.",
+        ],
+      }),
+    ],
+  };
 };

@@ -154,23 +154,30 @@
   "lastError": null
  },
  "central-bank-of-india:fd": {
-  "lastAttemptAt": "2026-09-27T09:40:25.927Z",
-  "lastSuccessAt": "2026-09-27T09:40:25.927Z",
+  "lastAttemptAt": "2026-09-27T10:51:37.860Z",
+  "lastSuccessAt": "2026-09-27T10:51:37.860Z",
   "lastChangeAt": "2026-09-27T09:34:56.109Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "central-bank-of-india:fd_bulk": {
-  "lastAttemptAt": "2026-09-27T09:40:27.346Z",
-  "lastSuccessAt": "2026-09-27T09:40:27.346Z",
-  "lastChangeAt": "2026-09-27T09:34:57.509Z",
+  "lastAttemptAt": "2026-09-27T10:51:40.319Z",
+  "lastSuccessAt": "2026-09-27T10:51:40.319Z",
+  "lastChangeAt": "2026-09-27T10:51:40.319Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "central-bank-of-india:savings": {
-  "lastAttemptAt": "2026-09-27T09:40:27.914Z",
-  "lastSuccessAt": "2026-09-27T09:40:27.914Z",
+  "lastAttemptAt": "2026-09-27T10:51:40.679Z",
+  "lastSuccessAt": "2026-09-27T10:51:40.679Z",
   "lastChangeAt": "2026-09-27T09:34:59.058Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "central-bank-of-india:tax_saver": {
+  "lastAttemptAt": "2026-09-27T10:51:42.130Z",
+  "lastSuccessAt": "2026-09-27T10:51:42.130Z",
+  "lastChangeAt": "2026-09-27T10:51:42.130Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
@@ -287,18 +294,18 @@
   "lastError": "fetch: HTTP 403"
  },
  "federal-bank:fd": {
-  "lastAttemptAt": "2026-09-27T09:39:45.523Z",
-  "lastSuccessAt": null,
-  "lastChangeAt": null,
-  "consecutiveFailures": 4,
-  "lastError": "fetch: blocked by Radware/ShieldSquare bot protection"
+  "lastAttemptAt": "2026-09-27T10:54:48.710Z",
+  "lastSuccessAt": "2026-09-27T10:54:48.710Z",
+  "lastChangeAt": "2026-09-27T10:54:48.710Z",
+  "consecutiveFailures": 0,
+  "lastError": null
  },
  "federal-bank:savings": {
-  "lastAttemptAt": "2026-09-27T09:39:46.516Z",
-  "lastSuccessAt": null,
-  "lastChangeAt": null,
-  "consecutiveFailures": 4,
-  "lastError": "fetch: blocked by Radware/ShieldSquare bot protection"
+  "lastAttemptAt": "2026-09-27T10:54:50.491Z",
+  "lastSuccessAt": "2026-09-27T10:54:50.491Z",
+  "lastChangeAt": "2026-09-27T10:54:50.491Z",
+  "consecutiveFailures": 0,
+  "lastError": null
  },
  "hdfc-bank:fd": {
   "lastAttemptAt": "2026-09-27T09:39:47.359Z",
@@ -486,6 +493,27 @@
   "lastAttemptAt": "2026-09-27T09:47:52.058Z",
   "lastSuccessAt": "2026-09-27T09:47:52.058Z",
   "lastChangeAt": "2026-09-27T09:47:52.058Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "karur-vysya-bank:fd": {
+  "lastAttemptAt": "2026-09-27T10:51:33.169Z",
+  "lastSuccessAt": "2026-09-27T10:51:33.169Z",
+  "lastChangeAt": "2026-09-27T10:51:33.169Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "karur-vysya-bank:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T10:51:34.498Z",
+  "lastSuccessAt": "2026-09-27T10:51:34.498Z",
+  "lastChangeAt": "2026-09-27T10:51:34.498Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "karur-vysya-bank:savings": {
+  "lastAttemptAt": "2026-09-27T10:51:35.063Z",
+  "lastSuccessAt": "2026-09-27T10:51:35.063Z",
+  "lastChangeAt": "2026-09-27T10:51:35.063Z",
   "consecutiveFailures": 0,
   "lastError": null
  },

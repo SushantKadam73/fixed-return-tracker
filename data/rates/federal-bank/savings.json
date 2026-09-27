@@ -1,0 +1,47 @@
+{
+ "bankSlug": "federal-bank",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "federal-bank",
+   "product": "savings",
+   "effectiveFrom": "2026-07-16",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.federal.bank.in/savings-rate",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 100001,
+     "rate": 2.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 100001,
+     "balanceMax": 100000000,
+     "rate": 2.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 100000000,
+     "balanceMax": 500000000,
+     "rate": 4,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 2000000000,
+     "balanceMax": null,
+     "rate": 2.5,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "notes": [
+    "Slab(s) skipped rather than guessed because their published sub-rates don't reconcile with the slab's own balance range (the bank's own page repeats a \"for balance less than ₹10Cr\" sub-clause inside this slab even though the slab itself starts at ₹50Cr — looks like a copy-paste leftover on the bank's site, not a fetch/parsing issue on our side): ₹50Cr to less than ₹200Cr."
+   ],
+   "contentHash": "fe4b5b0056731e99"
+  }
+ ]
+}

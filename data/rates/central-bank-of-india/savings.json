@@ -20,31 +20,31 @@
     },
     {
      "balanceMin": 100000001,
-     "balanceMax": 1000000000,
+     "balanceMax": 1000000001,
      "rate": 2.5,
      "residency": "resident"
     },
     {
      "balanceMin": 1000000001,
-     "balanceMax": 2500000000,
+     "balanceMax": 2500000001,
      "rate": 2.5,
      "residency": "resident"
     },
     {
      "balanceMin": 2500000001,
-     "balanceMax": 5000000000,
+     "balanceMax": 5000000001,
      "rate": 3,
      "residency": "resident"
     },
     {
      "balanceMin": 5000000001,
-     "balanceMax": 10000000000,
+     "balanceMax": 10000000001,
      "rate": 3.5,
      "residency": "resident"
     },
     {
      "balanceMin": 10000000001,
-     "balanceMax": 20000000000,
+     "balanceMax": 20000000001,
      "rate": 4.5,
      "residency": "resident"
     },
@@ -56,7 +56,7 @@
     }
    ],
    "slabMethod": "unknown",
-   "contentHash": "e8ae57097d48f0a4"
+   "contentHash": "08350d0981925a37"
   }
  ]
 }

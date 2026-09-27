@@ -197,6 +197,13 @@
    "to": "2026-05-10"
   },
   {
+   "bankSlug": "central-bank-of-india",
+   "product": "tax_saver",
+   "cards": 1,
+   "from": "2026-08-10",
+   "to": "2026-08-10"
+  },
+  {
    "bankSlug": "city-union-bank",
    "product": "fd",
    "cards": 1,
@@ -293,6 +300,27 @@
    "cards": 14,
    "from": "2017-03-20",
    "to": "2025-05-01"
+  },
+  {
+   "bankSlug": "federal-bank",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-08-17",
+   "to": "2026-08-17"
+  },
+  {
+   "bankSlug": "federal-bank",
+   "product": "rd",
+   "cards": 1,
+   "from": "2026-08-17",
+   "to": "2026-08-17"
+  },
+  {
+   "bankSlug": "federal-bank",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-07-16",
+   "to": "2026-07-16"
   },
   {
    "bankSlug": "hdfc-bank",
@@ -468,6 +496,34 @@
    "cards": 1,
    "from": "2026-04-01",
    "to": "2026-04-01"
+  },
+  {
+   "bankSlug": "karur-vysya-bank",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-06-08",
+   "to": "2026-06-08"
+  },
+  {
+   "bankSlug": "karur-vysya-bank",
+   "product": "fd_bulk",
+   "cards": 1,
+   "from": "2026-09-27",
+   "to": "2026-09-27"
+  },
+  {
+   "bankSlug": "karur-vysya-bank",
+   "product": "rd",
+   "cards": 1,
+   "from": "2026-06-08",
+   "to": "2026-06-08"
+  },
+  {
+   "bankSlug": "karur-vysya-bank",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-01-15",
+   "to": "2026-01-15"
   },
   {
    "bankSlug": "nainital-bank",

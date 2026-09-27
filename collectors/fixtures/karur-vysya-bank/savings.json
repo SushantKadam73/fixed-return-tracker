@@ -1,0 +1,51 @@
+{
+  "data": {
+    "description": "Kindly contact the nearest branch",
+    "wef_date": "2026-01-14T18:30:00.000000Z",
+    "content_above_table": "Rates of Interest on Savings Account (w.e.f. 15.01.2026) are listed below:",
+    "interest_rates": {
+      "columns": {
+        "slab": "Slab",
+        "interest_rate": "Rate of Interest"
+      },
+      "values": [
+        {
+          "slab": "EOD balance upto Rs.1 Lakh",
+          "interest_rate": "2.00"
+        },
+        {
+          "slab": "EOD balance above Rs.1 Lakh to Rs. 5 Lakhs",
+          "interest_rate": "2.00"
+        },
+        {
+          "slab": "EOD balance Rs.5 Lakh up to less than Rs.10 Lakh",
+          "interest_rate": "2.50"
+        },
+        {
+          "slab": "EOD balance Rs.10 Lakh up to less than Rs.1 Crore",
+          "interest_rate": "3.00"
+        },
+        {
+          "slab": "EOD Balance Rs.1Crore to less than Rs.50 Crore",
+          "interest_rate": "3.25"
+        },
+        {
+          "slab": "EOD Balance Rs.50 Crore to less than Rs.100 Crore",
+          "interest_rate": "5.00"
+        },
+        {
+          "slab": "EOD Balance Rs.100Crore to less than Rs.150 Crore",
+          "interest_rate": "5.00"
+        },
+        {
+          "slab": "EOD Balance Rs.150 Crore to less than Rs.250 Crore",
+          "interest_rate": "5.00"
+        },
+        {
+          "slab": "EOD Balance Rs.250 Crore and above",
+          "interest_rate": "6.75"
+        }
+      ]
+    }
+  }
+}

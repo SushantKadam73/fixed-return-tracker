@@ -154,12 +154,12 @@
     "rd"
    ],
    "url": "https://www.esaf.bank.in/interest-rates/",
-   "format": "html",
+   "format": "browser",
    "runner": "github",
    "adapter": "esaf-sfb.fd",
    "cadence": "daily",
    "active": true,
-   "notes": "esaf.bank.in (and the esafbank.com redirect) returned an Akamai 403 on every path from the build sandbox, incl. robots.txt, so robotsAllowed could not be checked. The adapter was built and tested against a fixture reconstructed from a search-engine cache of this exact URL (real header/row text, reasonable table markup — the live tag structure couldn't be inspected). Kept active because GitHub Actions/the VPS may reach the page where this sandbox can't; re-verify the table markup on the first live run. The page states RD rates equal the FD card's, so the RD card is derived via deriveRdFromFd and returned alongside the FD card by the same adapter (no separate 'esaf-sfb.rd' entry needed). No bulk (≥₹3cr) page was found."
+   "notes": "Headless-browser source: plain HTTP gets an Akamai 403 / HTTP 502 from the build sandbox, while a real browser session reached the genuine page on 27 Sep 2026 (fixture captured that way). esaf.bank.in (and the esafbank.com redirect) still returns an Akamai 403 to a plain fetch/curl from this sandbox (re-confirmed 2026-09-27, incl. robots.txt, so robotsAllowed still can't be checked) -- format stays 'html' since this sandbox's own block is not evidence GitHub Actions/the VPS are blocked the same way. This pass replaced the previous search-engine-cache RECONSTRUCTION (real text, guessed markup) with a genuine capture: a real, JS-executing headless-browser session reached the actual page (Akamai's block did not hold against a real browser) and read the exact live <table> markup. The retail ladder turned out to have grown to 13 tenure rows (was 11) with a newer date (17/08/2026, was 01/05/2026) -- a real change on the bank's side since the old reconstruction, now corrected. The page still states RD rates equal the FD card's, so RD is still derived via deriveRdFromFd. No bulk (>=Rs3cr) page was found."
   },
   {
    "key": "esaf-sfb:savings",
@@ -168,12 +168,12 @@
     "savings"
    ],
    "url": "https://www.esaf.bank.in/interest-rates/",
-   "format": "html",
+   "format": "browser",
    "runner": "github",
    "adapter": "esaf-sfb.savings",
    "cadence": "daily",
    "active": true,
-   "notes": "Same access situation and reconstructed fixture as esaf-sfb:fd (see its notes). Every slab label restates \"for incremental amount above Rs. X\", so slabMethod is incremental."
+   "notes": "Headless-browser source: plain HTTP gets an Akamai 403 / HTTP 502 from the build sandbox, while a real browser session reached the genuine page on 27 Sep 2026 (fixture captured that way). Same access situation as esaf-sfb:fd (see its notes). The savings table's own genuine markup, read the same way this pass, turned out to carry byte-identical labels/rates/date (01 June 2026) to the previous search-engine-cache reconstruction -- so only the fixture's provenance changed here (guess -> genuine capture), not any number. Every slab label restates 'for incremental amount above Rs. X', so slabMethod is incremental."
   },
   {
    "key": "suryoday-sfb:savings",
@@ -182,12 +182,12 @@
     "savings"
    ],
    "url": "https://suryoday.bank.in/rate-of-interest/",
-   "format": "html",
+   "format": "browser",
    "runner": "github",
    "adapter": "suryoday-sfb.savings",
    "cadence": "daily",
    "active": true,
-   "notes": "Both suryoday.bank.in and the legacy suryodaybank.com returned HTTP 502 on every path from the build sandbox (incl. robots.txt) across two rounds ~20 minutes apart — looks like a WAF/CDN block on this sandbox's egress, not a real outage. The adapter was built and tested against a fixture reconstructed from a search-engine cache of this exact URL's \"Savings Accounts\" tab (real header/row text). Kept active for GitHub Actions/the VPS to try; re-verify markup on the first live run. FD and RD are NOT covered by any adapter here: every fetch or cache of the FD/RD product pages, and of this hub's other tabs, only ever showed a tenure-selector widget's single default-selected rate, never the full tenure table, on both domains — nothing safe to parse without guessing the other tenures."
+   "notes": "Headless-browser source: plain HTTP gets an Akamai 403 / HTTP 502 from the build sandbox, while a real browser session reached the genuine page on 27 Sep 2026 (fixture captured that way). Both suryoday.bank.in and the legacy suryodaybank.com still return HTTP 502 to a plain fetch/curl from this sandbox on every path (re-confirmed 2026-09-27) -- format stays 'html' since this sandbox's own block is not evidence GitHub Actions/the VPS are blocked the same way. This pass replaced the previous search-engine-cache RECONSTRUCTION with a genuine capture (a real, JS-executing headless-browser session reached the actual page). The savings ladder had moved since that reconstruction -- now 9 balance slabs (was 7), several boundaries changed (e.g. the Rs.10-30 lakh band, previously Rs.10-25 lakh), one new top rate (7.60%, printed with a 'Highest' marketing badge glued onto the number -- stripped before parsing, same fix DCB's adapter uses locally), effective 2026-08-01 (was 2026-05-01) -- a real change on the bank's side, now corrected, not a capture error. FD is NOT covered by this source (see the new, inactive suryoday-sfb:fd entry below) even though a genuine FD table now exists in this same adapter file: it is reachable only via a client-side tab click this project's fetchers cannot perform."
   },
   {
    "key": "ujjivan-sfb:fd",
@@ -661,9 +661,9 @@
    "format": "browser",
    "runner": "github",
    "adapter": "bank-of-india.fd",
-   "active": false,
+   "active": true,
    "cadence": "daily",
-   "notes": "Both bankofindia.bank.in and the legacy bankofindia.co.in return HTTP 403 to every automated client tried (bankofindia.co.in 403s even on its plain homepage; bankofindia.bank.in additionally serves a Cloudflare 'checking your browser' interstitial) — confirmed on two attempts per domain with a browser User-Agent on 2026-09-27, and independently via Exa's own web-crawler cache hitting the identical challenge page. No genuine live HTML or JSON endpoint could be found anywhere. The adapter was written and tested against a Wayback Machine snapshot of the bank's own page (captured 2025-07-09), per the brief's rule that a cache of the bank's OWN page may be used to build/test a parser but never as the live source — kept inactive until a browser-capable runner (GitHub Actions or a VPS with Playwright) can confirm it against a real render. The archived copy only exposed the general-public rate; a SENIOR CITIZEN tab referenced in the same page's markup was not present as static HTML."
+   "notes": "Flipped to active: a plain fetch (curl/undici) still gets bankofindia.bank.in's Cloudflare 'Just a moment...' interstitial (and a bare 403 from the legacy bankofindia.co.in), unchanged -- but a real, JS-executing headless-browser session (2026-09-27) reached the genuine page with NO reCAPTCHA or other manual challenge (Cloudflare's own JS check resolved on its own), landing on the real page (title 'Rupee Term Deposit Interest Rate for Domestic/NRO - BOI', 11 real tables). This adapter, UNCHANGED, was re-tested directly against that live table's genuine markup and produced 15 valid FD rows + 15 valid bulk rows (effective 2026-05-18), matching this adapter's original Wayback-built expectations row-for-row -- exactly the 'browser-capable runner can confirm it against a real render' condition the previous pass was waiting on. Two caveats, both already handled safely by this adapter's existing throw-rather-than-guess design: (1) Cloudflare's bot-scoring is known to vary by requesting network/IP, so GitHub Actions may still be challenged even though this session wasn't -- if so the adapter throws (no table on a challenge page) rather than mis-reading one; (2) the live page now also carries a Senior Citizen ladder, a 'Green Deposit Scheme (Harit Jama Yojana)' special tenure, and expanded Rs 10-25cr/Rs 25cr+ bulk tiers, none of which this adapter reads yet (not present in the 2025-07-09 archived snapshot it was built from) -- flagged as a follow-up gap, not a guess. See bank-of-india.ts file header for full detail."
   },
   {
    "key": "federal-bank:fd",
@@ -679,7 +679,7 @@
    "cadence": "daily",
    "active": true,
    "robotsAllowed": true,
-   "notes": "A plain curl (even with a full browser User-Agent) reliably gets a Radware/ShieldSquare 'Captcha Page' from every www.federal.bank.in URL, but this project's own fetchDoc (Node fetch/undici) reached the real page repeatedly while building and live-checking this adapter on 2026-09-27 -- likely a TLS/HTTP client fingerprint difference, not an absolute block. Fixture is a genuine trim of that live response. No bulk (>=Rs 3 crore) source is listed: the 'HVD Web Interest' PDF's href IS discoverable on this page, but fetching that specific document (a different /documents/10180/<folderId>/... path than the one that works) returns Radware's block page even via fetchDoc -- a gap to retry from GitHub Actions/VPS, not a guess."
+   "notes": "A plain curl (even with a full browser User-Agent) reliably gets a Radware/ShieldSquare 'Captcha Page' from every www.federal.bank.in URL, but this project's own fetchDoc (Node fetch/undici) reached the real page repeatedly while building and live-checking this adapter -- likely a TLS/HTTP client fingerprint difference, not an absolute block. Fixture is a genuine trim of that live response. No bulk (>=Rs 3 crore) source is listed: the 'HVD Web Interest' PDF's href IS discoverable on this page, but fetching that specific document (a different /documents/10180/<folderId>/... path than the one that works) returns Radware's block page even via fetchDoc -- a gap to retry from GitHub Actions/VPS, not a guess. Re-checked this pass (2026-09-27): both the callable ('HVD- Web Interest 24.09.2026.pdf') and non-callable ('HVD NW Web Interest 23.09.2026.pdf') PDFs under that same folder id are still Radware-blocked via fetchDoc (unpdf throws 'Invalid PDF structure', i.e. an HTML block page came back with a .pdf extension), even though the main deposit-rate page and a DIFFERENT PDF folder id both fetch cleanly via the same client -- no plain-HTTP alternative found for this specific document; still a gap, not a guess."
   },
   {
    "key": "federal-bank:savings",
@@ -1143,7 +1143,7 @@
    "adapter": "jk-bank.fd",
    "cadence": "daily",
    "active": true,
-   "notes": "jkb.bank.in (and the legacy jkbank.com) cannot be reached from this sandbox at all: a direct fetch times out (curl, 45s, no response) and a real headless browser gets a network-level chrome-error://chromewebdata/ on the same URL, so this is a connectivity failure, not a captcha/WAF block -- robots.txt itself could not be fetched either, so robotsAllowed is left unset rather than guessed. Per the project's rule for unreachable pages, the fixture is a genuine copy from the Internet Archive's unmodified snapshot (https://web.archive.org/web/20260415043804id_/https://jkb.bank.in/interest-rates, captured 2026-04-15) instead of a live fetch or browser capture -- so this fixture, and the rates read from it, are already about 5.5 months stale relative to today by the nature of being an archived copy of a page this sandbox cannot reach. GitHub Actions or a VPS on a different network path may reach the live page and get current rates. Covers the domestic/NRO/NRE retail ladder below Rs 3 crore plus a single-tenure (888 days) non-callable Rs 1-3 crore tier that sits on the same page with its own, earlier 'w.e.f' date. Senior citizen (+0.50%), super senior (+0.25% further) and staff (+1%) premiums are stated only as additive text, never as their own numeric column, so no senior/super-senior/staff RateRow is produced -- recorded in `terms` instead. No RD source: no recurring-deposit table or FD-rate-parity statement is on this page or findable elsewhere on the site this session -- RD rates are not published on the official site."
+   "notes": "jkb.bank.in (and the legacy jkbank.com) cannot be reached from this sandbox at all: a direct fetch times out (curl, 45s, no response) and a real headless browser gets a network-level chrome-error://chromewebdata/ on the same URL, so this is a connectivity failure, not a captcha/WAF block -- robots.txt itself could not be fetched either, so robotsAllowed is left unset rather than guessed. Per the project's rule for unreachable pages, the fixture is a genuine copy from the Internet Archive's unmodified snapshot (https://web.archive.org/web/20260415043804id_/https://jkb.bank.in/interest-rates, captured 2026-04-15) instead of a live fetch or browser capture -- so this fixture, and the rates read from it, are already stale relative to today by the nature of being an archived copy of a page this sandbox cannot reach. GitHub Actions or a VPS on a different network path may reach the live page and get current rates. Covers the domestic/NRO/NRE retail ladder below Rs 3 crore plus a single-tenure (888 days) non-callable Rs 1-3 crore tier that sits on the same page with its own, earlier 'w.e.f' date. Senior citizen (+0.50%), super senior (+0.25% further) and staff (+1%) premiums are stated only as additive text, never as their own numeric column, so no senior/super-senior/staff RateRow is produced -- recorded in `terms` instead. No RD source: no recurring-deposit table or FD-rate-parity statement is on this page or findable elsewhere on the site this session -- RD rates are not published on the official site. Re-checked this pass (2026-09-27): re-confirmed the same chrome-error timeout live, and additionally found (via search-engine indexing, not a live crawl of jkbank.com itself) a specific candidate alternative -- a 'Rates at a Quick Glance' PDF at jkbank.com/pdfs/notice/ -- but that path also timed out on a direct fetch (curl, 20s, no response), same as every other jkbank.com path; no reachable alternative found."
   },
   {
    "key": "jk-bank:fd_bulk",
@@ -1226,14 +1226,14 @@
     "fd",
     "rd"
    ],
-   "url": "https://www.kvb.bank.in/interest-rates/resident-nro-deposits",
-   "format": "browser",
+   "url": "https://www.kvb.bank.in/manager/api/v1/nro-deposit-rates",
+   "format": "json",
    "runner": "github",
    "adapter": "karur-vysya-bank.fd",
    "cadence": "daily",
    "active": true,
    "robotsAllowed": true,
-   "notes": "robots.txt checked: 'User-agent: *' with no Disallow lines at all. A plain fetch of this URL returns HTTP 200 but the rate tables are empty shells filled in by client-side JS (confirmed again on 2026-09-27, 0 <table> elements in the raw HTML) -- format is 'browser' because of that JS rendering, not a captcha/WAF (Incapsula's bot-check script tag is present on the page but did not block a plain fetch of the shell HTML itself). A real headless browser renders the tables; verified against a live browser fetch on 2026-09-27. Separately discovered (but NOT switched to, kept as a note for a future pass): this page's own script (assets/javascript/nro-deposit-rates.js) calls a plain, unauthenticated public JSON endpoint (https://www.kvb.bank.in/manager/api/v1/nro-deposit-rates?request_for[]=domestic_term_interest_rates&request_for[]=senior_citizen_interest_rates&request_for[]=flexi_term_interest_rates) that returns the exact same figures without needing a browser at all -- a more robust 'format: json' adapter could be built directly against it later. That same JSON also carries a 'flexi_term_interest_rates' table (a single '300 days' / 3.25% row) that is requested by this page's own JS but was not present in the rendered DOM when the fixture was captured -- a known gap, not a guess. RD: derived from the FD card via `deriveRdFromFd` because KVB's own 'Policy on Deposits' PDF states RD rates equal the FD card rate for the same tenure with no differential pricing by instalment amount (quoted in the adapter's notes). Residency: the page's own, server-rendered <h1>title 'Resident / NRO Deposits' (present before the JS-filled tables even load) is the bank's own statement that the one published general-public rate column applies to Resident AND NRO alike, so general-public (and Green Deposits) rows are produced twice, once per residency, from that one number -- not two independently-sourced figures. The senior-citizen table is excluded from this (its own text: 'Senior Citizen rates are not applicable to NRI'), so senior rows stay Resident only. 'For KVB - Tax Shield Deposits' and 'Rainbow Deposits (RBFD)' are listed in the same table without a tenure band of their own, so they are not included as rows."
+   "notes": "Switched from a headless-browser render of https://www.kvb.bank.in/interest-rates/resident-nro-deposits to the plain, unauthenticated JSON API that page's own script (assets/javascript/nro-deposit-rates.js) calls to fill its tables -- verified live on 2026-09-27 that this endpoint returns HTTP 200 with Content-Type application/json (no Incapsula challenge) and byte-identical content whether or not the page's own request_for[] query parameter is sent, so no query string is used here. robots.txt is 'User-agent: *' with no Disallow lines at all, so /manager/api/v1/* is covered by the same robotsAllowed:true as the page itself. Same semantics as before: the API's own 'title' field ('Resident / NRO Deposits') is checked every run and the adapter throws if it changes, confirming the one published general-public rate applies to Resident and NRO alike (rows produced twice); senior-citizen rows stay Resident-only (bank's own 'not applicable to NRI' note); RD is derived via deriveRdFromFd from KVB's Policy on Deposits rate-parity statement. NEW: the API's own 'flexi_term_interest_rates' block (a single 300-day/3.25% row, clearly labelled by its own request_for key and column headers) is now included as a Flexi Term Deposit row -- this table is requested by the page's own JS but was never present in the rendered DOM the previous headless-browser build read, so it was a known gap before, not a guess now that the JSON exposes it directly."
   },
   {
    "key": "karur-vysya-bank:fd_bulk",
@@ -1241,15 +1241,15 @@
    "products": [
     "fd_bulk"
    ],
-   "url": "https://www.kvb.bank.in/interest-rates/bulk-term-deposit-rates",
-   "format": "browser",
+   "url": "https://www.kvb.bank.in/manager/api/v1/bulk-deposit-rates",
+   "format": "json",
    "runner": "github",
    "adapter": "karur-vysya-bank.bulk",
    "cadence": "bulk_daily",
    "active": true,
    "robotsAllowed": true,
    "termsNote": "No senior-citizen premium is published for bulk deposits on this page -- general public only.",
-   "notes": "Same client-rendered-JS situation as karur-vysya-bank:fd (see its notes; format 'browser' for the same reason, not a captcha/WAF). Verified against a live browser fetch on 2026-09-27; six amount tiers (Rs 2cr-<5cr through Rs 100cr+ -- the tier the page LABELS 'Rs. 3 Cr. to < Rs. 5 Cr.' in its rendered header uses the internal field name 'rupees_2_to_5_crore' in this page's own JSON API, a legacy naming mismatch on the bank's side; the rendered label is what is used here), each with a premature-withdrawal-allowed and a not-allowed rate. This page's own 'effective from' date is filled in to the day it is loaded (bulk/Treasury rates are set daily per KVB's policy), so it will normally equal the day the collector runs -- confirmed live on 2026-09-27, the page read exactly that day's date. Same plain public JSON endpoint discovery as the fd source above applies here too (https://www.kvb.bank.in/manager/api/v1/bulk-deposit-rates) -- not switched to for this pass."
+   "notes": "Switched from a headless-browser render of https://www.kvb.bank.in/interest-rates/bulk-term-deposit-rates to the plain, unauthenticated JSON API that page's own script (assets/javascript/bulk-term-deposit-rates.js) calls -- verified live on 2026-09-27 (HTTP 200, application/json). The tier the page's rendered header LABELS 'Rs. 3 Cr. to < Rs. 5 Cr.' still uses the JSON's own legacy field-name prefix 'rupees_2_to_5_crore_...' (confirmed by matching the bulk-term-deposit-rates.js source, which hardcodes that header text and reads this exact field into it) -- the rendered boundary is used, not the field's internal name. A further field pair, 'rupees_25_crore_and_above_premature_withdrawal_[not_]allowed', is always '-' in the API response and is not referenced by the page's own rendering JS either; not read. This page's own 'effective from' date is filled in by the API to the day it is requested (bulk/Treasury rates are set daily), so it will normally equal the day the collector runs -- confirmed live on 2026-09-27, matching that day's date exactly."
   },
   {
    "key": "karur-vysya-bank:savings",
@@ -1257,14 +1257,14 @@
    "products": [
     "savings"
    ],
-   "url": "https://www.kvb.bank.in/interest-rates/interest-rate-for-saving-account",
-   "format": "browser",
+   "url": "https://www.kvb.bank.in/manager/api/v1/savings-interest-rates",
+   "format": "json",
    "runner": "github",
    "adapter": "karur-vysya-bank.savings",
    "cadence": "daily",
    "active": true,
    "robotsAllowed": true,
-   "notes": "Same client-rendered-JS situation as karur-vysya-bank:fd (see its notes). Verified against a live browser fetch on 2026-09-27; nine EOD-balance slabs. The page does not state whether slabs are whole-balance or incremental, so slabMethod is 'unknown'. Same plain public JSON endpoint discovery applies here too (https://www.kvb.bank.in/manager/api/v1/savings-interest-rates) -- not switched to for this pass."
+   "notes": "Switched from a headless-browser render of https://www.kvb.bank.in/interest-rates/interest-rate-for-saving-account to the plain, unauthenticated JSON API that page's own script (assets/javascript/interest-rate-savings-account.js) calls -- verified live on 2026-09-27 (HTTP 200, application/json, 9 slabs). The effective date is read from this endpoint's own human-readable 'content_above_table' sentence, not its 'wef_date' field: unlike the other two KVB endpoints, this one's wef_date is a full ISO datetime ('2026-01-14T18:30:00.000000Z') whose 'YYYY-MM-DD' shape can be misread by the shared day-first date parser if fed to it directly (it would find '26-01-14' inside '2026-01-14...' and read that as 2014-01-26) -- reading the prose sentence instead sidesteps this and keeps one code path for all three KVB endpoints. The page does not state whether slabs are whole-balance or incremental, so slabMethod stays 'unknown'."
   },
   {
    "key": "kotak-mahindra-bank:fd",
@@ -1279,7 +1279,7 @@
    "cadence": "daily",
    "active": true,
    "robotsAllowed": true,
-   "notes": "robots.txt checked: allows crawlers generally, and explicitly allows GPTBot/ClaudeBot/PerplexityBot/bingbot by name; /en/rates/interest-rates.html is not under any Disallow path. kotak.com redirects to kotak.bank.in (confirmed live via browser navigation on 2026-09-27) -- kotak.bank.in is the canonical URL registered here. Both domains return HTTP 403 to a plain fetch from this sandbox with a Cloudflare bot-management challenge cookie (__cf_bm) even though robots.txt allows it, so format is 'browser'; a real headless browser is NOT blocked. Re-verified live on 2026-09-27: the page's own 'Fixed Deposits Interest Rates for Domestic/ NRO / NRE effective from 23rd Sep 2026' caption and the 7-14 day retail rate cells (2.75% general / 3.25% senior) are byte-for-byte identical to the tested fixture -- no rate drift. One page also carries the bulk, RD and savings tables used by the other kotak-mahindra-bank.* adapters below."
+   "notes": "robots.txt checked: allows crawlers generally, and explicitly allows GPTBot/ClaudeBot/PerplexityBot/bingbot by name; /en/rates/interest-rates.html is not under any Disallow path. kotak.com redirects to kotak.bank.in -- kotak.bank.in is the canonical URL registered here. Both domains return HTTP 403 to a plain fetch from this sandbox with a Cloudflare bot-management challenge cookie (__cf_bm) even though robots.txt allows it, so format is 'browser'; a real headless browser is NOT blocked. This pass found the page's own underlying data source -- it loads its tables via same-origin <script src> calls to www.kotak.bank.in/bank/mailers/intrates/get_all_variable_data_latest.php?section=<NRO_Term_Deposit|NRO_Term_Deposit_1cr|NRO_PW_NA_Term_Deposit_1cr|Recurring_Deposit|...> -- but that endpoint is behind the SAME Cloudflare bot-management check as the page itself (confirmed HTTP 403 via both curl and this project's own fetchDoc/undici, unlike some other banks in this project where the two clients differ), so it is not a genuine plain-HTTP alternative and format stays 'browser'. One page also carries the bulk, RD and savings tables used by the other kotak-mahindra-bank.* adapters below."
   },
   {
    "key": "kotak-mahindra-bank:fd_bulk",
@@ -1922,6 +1922,48 @@
    "robotsAllowed": true,
    "termsNote": "The page does not say whether a slab's rate applies to the whole balance or only the incremental portion, so slabMethod is 'unknown'.",
    "notes": "Domestic slabs; the same table's own 'B. Non Resident' rows (NRO and NRE) publish identical rates, not duplicated as separate cards here. The table restates the whole ladder as one row per newly-unlocked column; only the last (fullest) domestic row is read. Verified against a live fetch (2026-09-27, 8 slabs, effective 2026-07-01)."
+  },
+  {
+   "key": "indian-bank:tax_saver",
+   "bankSlug": "indian-bank",
+   "products": [
+    "tax_saver"
+   ],
+   "url": "https://indianbank.bank.in/en/deposit-rates",
+   "format": "browser",
+   "runner": "github",
+   "adapter": "indian-bank.tax_saver",
+   "cadence": "daily",
+   "active": true,
+   "notes": "New source: the same page as indian-bank:fd/fd_bulk/savings (same F5 BIG-IP JS-challenge situation -- format 'browser' for the same reason, see indian-bank.ts). The page's own 'IMPORTANT' notes state: \"The rate of interest on domestic term deposit is also applicable to IB Tax Saver Scheme and Capital Gains Scheme Type B (Term Deposits) 1988 Scheme\" -- checked every run, throws if that statement disappears. Derived from the retail FD table's own dedicated '5 year' point-tenure row (Section 80C's 5-year lock-in), not a separately-published tax-saver table (the bank does not have one here). General-public only: no senior-citizen figure is published for that exact tenure on this page. amountMax left null (not the retail table's own <3cr band): a tax-saver deposit is capped at Rs 1,50,000 per PAN per financial year by law. The Capital Gains Scheme named in the same sentence is a different product and is not represented by this card. Live-verified 2026-09-27 via a real browser session: effective 2026-08-04, rate 6.00% general, matching the tested fixture exactly."
+  },
+  {
+   "key": "central-bank-of-india:tax_saver",
+   "bankSlug": "central-bank-of-india",
+   "products": [
+    "tax_saver"
+   ],
+   "url": "https://centralbank.bank.in/en/cent-tax-saving-deposit",
+   "format": "html",
+   "runner": "github",
+   "adapter": "central-bank-of-india.tax_saver",
+   "cadence": "daily",
+   "active": true,
+   "notes": "New source. This is the 'Cent Tax Saving Deposit' page linked from centralbank.bank.in/en/interest-rates-on-deposit's own nav ('/en/cent-tax-saving-deposit'), registered as its OWN source (rather than under the interest-rates-on-deposit URL) so this card's own registration re-checks, every run, that this specific page still states its rate-parity rule -- confirmed live 2026-09-27, HTTP 200, no WAF issue on this specific path (robots.txt on this domain returns 403 even though real content pages fetch fine, same situation already noted on central-bank-of-india:fd, so robotsAllowed is left unset here too). This page's own 'Rate of Interest' heading states: \"The rate of interest to be applied to Cent tax Savings Deposit Scheme will be in accordance with the interest rate on domestic term deposits (upto Rs. 15 lacs) applicable to the five-year term\" -- a rate-parity statement, not a table, so the adapter uses `ctx.fetch` to separately read the actual number from centralbank.bank.in/en/interest-rates-on-deposit (the same page central-bank-of-india:fd reads) each run. The scheme's fixed 5-year tenure lands on that ladder's own 'Above 5 years upto 10 years'-style row (whichever row starts at exactly 1825 days), reduced to a single 1825-day point tenure rather than kept as the wider band a saver could otherwise pick within; both General Public and Senior Citizen rows are included (this scheme's own page does not exclude senior citizens, unlike Indian Bank's equivalent). The page's own '(upto Rs. 15 lacs)' qualifier does not correspond to any actual sub-band on the retail table (one <3cr band only), so it changes nothing about which number applies; amountMax left null rather than the retail row's own <3cr band, since the scheme is capped at Rs 1,50,000 per PAN per financial year by law. Live-verified 2026-09-27: effective 2026-08-10, rates 6.00% general / 6.50% senior."
+  },
+  {
+   "key": "suryoday-sfb:fd",
+   "bankSlug": "suryoday-sfb",
+   "products": [
+    "fd"
+   ],
+   "url": "https://suryoday.bank.in/rate-of-interest/",
+   "format": "browser",
+   "runner": "github",
+   "adapter": "suryoday-sfb.fd",
+   "cadence": "daily",
+   "active": false,
+   "notes": "New adapter (suryodaySfbFd in suryoday-sfb.ts), written and unit-tested against a genuine capture, but registered INACTIVE deliberately: the 'Fixed Deposits' tab's table (a full 17-tenure ladder, General + Senior Citizen, <Rs3cr, confirmed live 2026-09-27, effective 2026-09-24) does not exist anywhere in this page's HTML -- hidden or otherwise -- until that tab is actually clicked; confirmed directly (document.documentElement.outerHTML contains none of its distinctive text on a freshly loaded page, before any click). That is a genuine client-side interaction that neither a plain fetch nor this project's own format:'browser' fetcher can produce (collectors/src/fetch.ts's browserFetch only does page.goto + page.content(), no click step) -- registering this active would fail every single run (it would just read the same default Savings tab a plain fetch already reads, or throw when that doesn't match this adapter's own table selector). Left inactive and ready for whenever fetch.ts gains a click/interaction step for browser-format sources -- out of this pass's scope (collectors/src/fetch.ts is off-limits). No bulk (>=Rs3cr) tab or toggle was found on this hub. Recurring Deposits has its own tab too but was not captured this pass."
   }
  ]
 }

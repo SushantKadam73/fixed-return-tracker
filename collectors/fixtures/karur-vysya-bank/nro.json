@@ -1,0 +1,185 @@
+{
+  "data": {
+    "title": "Resident / NRO Deposits",
+    "description": "<p><strong>Penal Interest on pre-closure of deposits:</strong></p> <ul><li>Up to Rs. 3&nbsp;Crores of deposit – Penalty of 1% from applicable ROI.</li> <li>Above Rs. 3&nbsp;Crores of deposit – Pre-closure Penalty norms applicable.</li></ul> <p>Interest will be calculated at the rate applicable for the period the deposit has actually remained with the bank. The rates are subject to change without notice.</p>",
+    "senior_citizen_deposits_description": "<ul><li>Senior Citizen rates are not applicable to NRI.</li></ul>",
+    "general_description": "<p>Kindly contact the nearest branch for deposits above Rs. 3&nbsp;Crores.</p>",
+    "content_above_table": "Rates of Interest on domestic deposits w.e.f. 08.06.2026.",
+    "wef_date": "08.06.2026",
+    "domestic_term_interest_rates": {
+      "columns": {
+        "time_bucket": "Time Bucket",
+        "revised_rate": "Revised Rate (Less than Rs. 3 Crores) (w.e.f. 08.06.2026)",
+        "annualised_interest_yield": "Annualised Interest Yield (per annum)"
+      },
+      "values": [
+        {
+          "time_bucket": "7 Days to 14 days ",
+          "revised_rate": "4.00%",
+          "annualised_interest_yield": "4.06%"
+        },
+        {
+          "time_bucket": "15 Days to 30 days ",
+          "revised_rate": "4.00%",
+          "annualised_interest_yield": "4.06%"
+        },
+        {
+          "time_bucket": "31 Days to 45 days ",
+          "revised_rate": "4.50%",
+          "annualised_interest_yield": "4.58%"
+        },
+        {
+          "time_bucket": "46 Days to 90 days ",
+          "revised_rate": "4.75%",
+          "annualised_interest_yield": "4.84%"
+        },
+        {
+          "time_bucket": "91 Days to 120 Days  ",
+          "revised_rate": "5.75%",
+          "annualised_interest_yield": "5.88%"
+        },
+        {
+          "time_bucket": "121 Days to 180 Days",
+          "revised_rate": "6.00%",
+          "annualised_interest_yield": "6.14%"
+        },
+        {
+          "time_bucket": "181 Days to 270 days ",
+          "revised_rate": "6.25%",
+          "annualised_interest_yield": "6.40%"
+        },
+        {
+          "time_bucket": "271 Days to 332 days",
+          "revised_rate": "6.40%",
+          "annualised_interest_yield": "6.56%"
+        },
+        {
+          "time_bucket": "333 Days",
+          "revised_rate": "7.00%",
+          "annualised_interest_yield": "7.19%"
+        },
+        {
+          "time_bucket": "334 Days to less than 1 year ",
+          "revised_rate": "6.40%",
+          "annualised_interest_yield": "6.56%"
+        },
+        {
+          "time_bucket": "1 Year to up to 399 Days",
+          "revised_rate": "6.55%",
+          "annualised_interest_yield": "6.71%"
+        },
+        {
+          "time_bucket": "400 Days",
+          "revised_rate": "7.20%",
+          "annualised_interest_yield": "7.40%"
+        },
+        {
+          "time_bucket": "401 Days up to 2 Years",
+          "revised_rate": "6.55%",
+          "annualised_interest_yield": "6.71%"
+        },
+        {
+          "time_bucket": "Above 2 years up to 3 years",
+          "revised_rate": "6.55%",
+          "annualised_interest_yield": "6.71%"
+        },
+        {
+          "time_bucket": "Above 3 years up to 5 years",
+          "revised_rate": "6.55%",
+          "annualised_interest_yield": "6.71%"
+        },
+        {
+          "time_bucket": "Above 5 years ",
+          "revised_rate": "6.25%",
+          "annualised_interest_yield": "6.40%"
+        },
+        {
+          "time_bucket": "For KVB - Tax Shield Deposits ",
+          "revised_rate": "6.55%",
+          "annualised_interest_yield": "6.71%"
+        },
+        {
+          "time_bucket": "Rainbow Deposits (RBFD)",
+          "revised_rate": "4.75%",
+          "annualised_interest_yield": "4.84%"
+        },
+        {
+          "time_bucket": "Green Deposits (2345 days)",
+          "revised_rate": "6.25%",
+          "annualised_interest_yield": "6.40%"
+        }
+      ]
+    },
+    "flexi_term_interest_rates": {
+      "columns": {
+        "time_bucket": "Time Bucket",
+        "revised_rate": "Revised Rate (w.e.f. 08.06.2026)"
+      },
+      "values": [
+        {
+          "time_bucket": "300 days",
+          "revised_rate": "3.25%"
+        }
+      ]
+    },
+    "senior_citizen_interest_rates": {
+      "columns": {
+        "time_bucket": "Time Bucket",
+        "revised_rate": "Revised Rate (w.e.f. 08.06.2026)",
+        "annualised_interest_yield": "Annualised Interest Yield (per annum)"
+      },
+      "values": [
+        {
+          "time_bucket": "333 Days",
+          "revised_rate": "7.50%",
+          "annualised_interest_yield": "7.71%"
+        },
+        {
+          "time_bucket": "1 Year to up to 399 Days",
+          "revised_rate": "7.05%",
+          "annualised_interest_yield": "7.24%"
+        },
+        {
+          "time_bucket": "400 Days",
+          "revised_rate": "7.70%",
+          "annualised_interest_yield": "7.93%"
+        },
+        {
+          "time_bucket": "401 Days up to 2 Years",
+          "revised_rate": "7.05%",
+          "annualised_interest_yield": "7.24%"
+        },
+        {
+          "time_bucket": "Above 2 years up to 3 years",
+          "revised_rate": "7.05%",
+          "annualised_interest_yield": "7.24%"
+        },
+        {
+          "time_bucket": "Above 3 years up to 5 years",
+          "revised_rate": "7.05%",
+          "annualised_interest_yield": "7.24%"
+        },
+        {
+          "time_bucket": "Above 5 years ",
+          "revised_rate": "6.75%",
+          "annualised_interest_yield": "6.92%"
+        },
+        {
+          "time_bucket": "For KVB - Tax Shield Deposits ",
+          "revised_rate": "7.05%",
+          "annualised_interest_yield": "7.24%"
+        },
+        {
+          "time_bucket": "Rainbow Deposits (RBFD)",
+          "revised_rate": "4.75%",
+          "annualised_interest_yield": "4.84%"
+        },
+        {
+          "time_bucket": "Green Deposits (2345 days)",
+          "revised_rate": "6.75%",
+          "annualised_interest_yield": "6.92%"
+        }
+      ]
+    }
+  }
+}

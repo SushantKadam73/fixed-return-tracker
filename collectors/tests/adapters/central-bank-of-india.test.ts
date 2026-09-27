@@ -1,10 +1,28 @@
+import { readFileSync } from "node:fs";
+import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { centralBankOfIndiaBulk, centralBankOfIndiaFd, centralBankOfIndiaSavings } from "../../src/adapters/central-bank-of-india";
+import { centralBankOfIndiaBulk, centralBankOfIndiaFd, centralBankOfIndiaSavings, centralBankOfIndiaTaxSaver } from "../../src/adapters/central-bank-of-india";
 import { validateCard, hasErrors } from "../../../lib/validate";
 import { ctxFromFixture } from "../helpers";
+import type { AdapterContext, FetchedDoc } from "../../src/types";
 
 const CRORE = 1e7;
 const url = "https://centralbank.bank.in/en/interest-rates-on-deposit";
+const taxSaverUrl = "https://centralbank.bank.in/en/cent-tax-saving-deposit";
+const FIXTURES = path.join(__dirname, "..", "..", "fixtures");
+
+/** The tax-saver page's own statement points at the retail rates page for the actual number
+ * (see file header); the test context serves that page through `ctx.fetch`. */
+function taxSaverCtx(): AdapterContext {
+  const base = ctxFromFixture({ key: "central-bank-of-india:tax_saver", bankSlug: "central-bank-of-india", url: taxSaverUrl }, "central-bank-of-india/cent_tax_saving_deposit.html");
+  return {
+    ...base,
+    fetch: async (fetchUrl): Promise<FetchedDoc> => {
+      if (!fetchUrl.includes("interest-rates-on-deposit")) throw new Error(`unexpected fetch in test: ${fetchUrl}`);
+      return { url: fetchUrl, finalUrl: fetchUrl, status: 200, contentType: "text/html", text: readFileSync(path.join(FIXTURES, "central-bank-of-india/interest_rates.html"), "utf8"), fetchedAt: Date.now() };
+    },
+  };
+}
 
 describe("Central Bank of India adapter", () => {
   it("reads the retail card: General/Senior x <3cr, plus 333/444/555-day and CENT Green/Floating named schemes", async () => {
@@ -52,6 +70,32 @@ describe("Central Bank of India adapter", () => {
     expect(midBand?.rate).toBe(6.1);
     const topBand = bulk.rows.find((r) => r.tenureMinDays === 7 && r.amountMax === null);
     expect(topBand?.rate).toBe(4.25);
+  });
+
+  it('derives tax_saver from the retail card\'s "5 years & above upto 10 years" row, reduced to a single 5-year point tenure, per the linked Cent Tax Saving Deposit page\'s rate-parity statement', async () => {
+    const out = await centralBankOfIndiaTaxSaver(taxSaverCtx());
+    const taxSaver = out.cards[0];
+    expect(taxSaver.product).toBe("tax_saver");
+    expect(taxSaver.effectiveFrom).toBe("2026-08-10");
+    expect(hasErrors(validateCard(taxSaver))).toBe(false);
+    expect(taxSaver.rows).toHaveLength(2); // general + senior
+    for (const row of taxSaver.rows) {
+      expect(row.tenureMinDays).toBe(1825);
+      expect(row.tenureMaxDays).toBe(1825);
+      expect(row.amountMin).toBe(0);
+      expect(row.amountMax).toBeNull();
+    }
+    const general = taxSaver.rows.find((r) => r.customer === "general");
+    const senior = taxSaver.rows.find((r) => r.customer === "senior");
+    expect(general?.rate).toBe(6.0);
+    expect(senior?.rate).toBe(6.5);
+    expect(taxSaver.notes?.some((n) => /cent tax saving deposit/i.test(n))).toBe(true);
+  });
+
+  it("throws if the Cent Tax Saving Deposit page no longer states its rate-parity rule", async () => {
+    const ctx = taxSaverCtx();
+    ctx.doc.text = ctx.doc.text.replace("five-year term", "current term");
+    await expect(centralBankOfIndiaTaxSaver(ctx)).rejects.toThrow(/no longer states/i);
   });
 
   it("reads savings slabs (Revised column only)", async () => {

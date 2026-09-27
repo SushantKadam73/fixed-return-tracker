@@ -246,12 +246,16 @@ export const importProductCards = internalMutation({
 /**
  * After a rate file's cards are imported: remove historical cards the repo no longer has (e.g. a
  * re-run backfill replaced them) so Convex mirrors the repo, and mark the newest bank-website card
- * current. Live cards are never removed here — the collector posts them directly.
+ * current. A live card is removed only when the repo holds a different card for the same date
+ * (corrected in place); otherwise live cards stay, since the collector also posts them directly.
  */
 export const finalizeProductCards = internalMutation({
   args: { bankSlug: v.string(), product: productValidator, keys: v.array(v.string()) },
   handler: async (ctx, a) => {
     const keep = new Set(a.keys);
+    // Dates the repo file has cards for: a live card missing from the file but sharing a date with
+    // one that is present was corrected in place in the repo (e.g. a parser fix), so it goes too.
+    const keptDates = new Set(a.keys.map((k) => k.slice(k.indexOf("|") + 1)));
     const all = await ctx.db
       .query("rateCards")
       .withIndex("by_bank_product_effective", (q) => q.eq("bankSlug", a.bankSlug).eq("product", a.product))
@@ -259,8 +263,9 @@ export const finalizeProductCards = internalMutation({
     let removed = 0;
     const remaining = [];
     for (const c of all) {
-      const key = `${c.contentHash}|${c.effectiveFrom ?? c.observedFrom ?? c.observedAt}`;
-      if (c.sourceType !== "bank_official" && !keep.has(key)) {
+      const date = c.effectiveFrom ?? c.observedFrom ?? c.observedAt;
+      const key = `${c.contentHash}|${date}`;
+      if (!keep.has(key) && (c.sourceType !== "bank_official" || keptDates.has(date))) {
         await ctx.db.delete(c._id);
         removed++;
       } else remaining.push(c);
