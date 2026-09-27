@@ -1,0 +1,77 @@
+{
+ "bankSlug": "dcb-bank",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "dcb-bank",
+   "product": "savings",
+   "effectiveFrom": "2026-03-06",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.dcb.bank.in/rates/savings-account-interest-rates",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 100001,
+     "rate": 1.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 100001,
+     "balanceMax": 500000,
+     "rate": 2.25,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 500000,
+     "balanceMax": 1000000,
+     "rate": 3.75,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000000,
+     "balanceMax": 2500000,
+     "rate": 5.75,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 2500000,
+     "balanceMax": 5000000,
+     "rate": 6.85,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 5000000,
+     "balanceMax": 20000000,
+     "rate": 6.7,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 20000000,
+     "balanceMax": 100000000,
+     "rate": 6.6,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 100000000,
+     "balanceMax": 3000000000,
+     "rate": 6,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 3000000000,
+     "balanceMax": null,
+     "rate": 5.5,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "incremental",
+   "notes": [
+    "Bank's own T&C: \"Rates mentioned are applicable for the incremental balances that are present corresponding to the amount slabs mentioned.\""
+   ],
+   "contentHash": "33f4fd4e9c0341bb"
+  }
+ ]
+}

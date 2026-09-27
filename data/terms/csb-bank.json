@@ -1,0 +1,25 @@
+{
+ "bankSlug": "csb-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "Bank states the senior-citizen premium on resident term deposits (see the page's notes list, not a table) — check the current figure on the page as it has changed before (0.15% -> 0.25% p.a. in one revision seen this session); this adapter reads the printed senior table rather than adding a premium itself.",
+    "prematurePenalty": "1% below the card rate for the period held, or the contracted rate, whichever is lower (bank's own wording); non-callable rows cannot be withdrawn before maturity at all."
+   },
+   "sourceKey": "csb-bank:fd",
+   "sourceUrl": "https://www.csb.bank.in/interest-rates",
+   "recordedOn": "2026-09-27",
+   "contentHash": "40dfdf3b3f32c942"
+  },
+  "fd_bulk": {
+   "terms": {
+    "bulkThreshold": 30000000
+   },
+   "sourceKey": "csb-bank:fd_bulk",
+   "sourceUrl": "https://www.csb.bank.in/interest-rates",
+   "recordedOn": "2026-09-27",
+   "contentHash": "7c7d469e62b6cb77"
+  }
+ }
+}

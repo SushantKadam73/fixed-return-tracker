@@ -1,0 +1,65 @@
+1) INTEREST RATES (P.A.) ON DOMESTIC CALLABLE (RESIDENT) BULK DEPOSITS (W.E.F.28.09.2026)
+Slab Deposit Tenor
+Rs 3 Crore to
+less than Rs
+5 Crore
+Rs 5 Crore to
+less than Rs
+10 Crore
+Rs 10 crore to
+less than Rs
+25 Crore
+Rs 25 crore to
+less than Rs
+50 Crore
+Rs 50 Crore
+to less than
+Rs 100
+Crore
+Rs 100 Crore &
+Above
+(Rate of Interest p.a.)
+1 7 days to 14 days 4.50% 4.60% 4.70% 6.00% 6.00% 6.00%
+2 15 days to less than 1 Month 4.80% 4.90% 5.00% 6.25% 6.25% 6.25%
+3 1 Month to less than 2 Months 4.90% 5.00% 5.10% 5.20% 5.30% 6.50%
+4 2 Months to less than 3 Months 5.00% 5.10% 5.20% 6.80% 6.90% 6.50%
+5 3 Months to less than 4 Months 5.05% 5.15% 5.25% 6.25% 5.45% 7.25%
+6 4 Months to less than 6 Months 5.10% 5.20% 6.92% 5.40% 5.50% 5.60%
+7 6 Months to 9 Months 5.20% 5.30% 6.92% 5.50% 5.60% 5.70%
+8 Above 9 Months to less than 12 months 5.40% 5.50% 6.80% 6.80% 5.80% 5.90%
+9 12 Months to 15 Months 5.90% 5.90% 5.90% 7.40% 7.50% 6.00%
+10 Above 15 months to 120 Months 5.00% 5.10% 5.20% 5.30% 5.40% 5.50%
+2) INTEREST RATES (P.A.) ON NON-CALLABLE DOMESTIC (RESIDENT) BULK DEPOSITS (W.E.F.28.09.2026)
+Slab Deposit Tenor
+Rs 3 Crore to
+less than Rs
+5 Crore
+Rs 5 Crore to
+less than Rs
+10 Crore
+Rs 10 crore
+to less than
+Rs 25 Crore
+Rs 25 crore to
+less than Rs
+50 Crore
+Rs 50 Crore
+to less
+than Rs
+100 Crore
+Rs 100 Crore
+to less
+than Rs
+200 Crore
+Rs.200
+Crore &
+Above
+(Rate of Interest p.a.)
+1 1 Months 15 days to less than 2 Months 5.50% 5.60% 5.70% 5.80% 5.90% 6.60% 6.60%
+2 2 Months to less than 3 Months 6.00% 6.10% 6.20% 6.85% 6.95% 6.60% 7.40%
+3 3 Months to less than 4 Months 6.50% 6.60% 6.70% 6.80% 6.90% 7.30% 7.30%
+4 4 Months to less than 6 Months 6.75% 7.00% 7.50% 7.05% 7.60% 7.85% 7.25%
+5 6 Months to 9 Months 6.80% 6.90% 7.40% 7.10% 7.20% 7.30% 7.40%
+6 Above 9 Months to less than 12 months 7.00% 7.10% 7.20% 7.30% 7.40% 7.50% 7.50%
+7 12 Months to 15 Months 7.40% 7.50% 7.70% 8.00% 8.00% 8.00% 8.00%
+8 Above 15 months to 120 Months 5.40% 5.50% 5.60% 5.70% 5.80% 6.00% 6.00%

@@ -1,0 +1,27 @@
+{
+ "bankSlug": "dhanlaxmi-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.5pp for domestic term deposits of 365 days and above (bank's own footnote, not a printed column)."
+   },
+   "sourceKey": "dhanlaxmi-bank:fd",
+   "sourceUrl": "https://www.dhan.bank.in/interest-rates/",
+   "recordedOn": "2026-09-27",
+   "contentHash": "9ae7d0751ffa07e1"
+  },
+  "fd_bulk": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "other": [
+     "Bulk-deposit acceptance is subject to the Treasury Department's view of the bank's liquidity position (bank's own note)."
+    ]
+   },
+   "sourceKey": "dhanlaxmi-bank:fd_bulk",
+   "sourceUrl": "https://www.dhan.bank.in/interest-rates/",
+   "recordedOn": "2026-09-27",
+   "contentHash": "4a64499bf91050c9"
+  }
+ }
+}

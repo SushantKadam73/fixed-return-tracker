@@ -1,0 +1,18 @@
+{
+ "data": {
+  "data": [
+   {
+    "nid": "691",
+    "title": "Resident Savings Bank Account",
+    "rate_details": [
+     {
+      "pid": "1559",
+      "title": "Resident Savings Bank Account Interest Rates",
+      "subtitle": "(with effect from March 06th, 2026)",
+      "details": "<table><thead><tr><th>Balance Range (₹)</th><th>Interest Rate (% p.a.)</th></tr></thead><tbody><tr><td>On balances up to 1 lakh in the account</td><td>1.50%</td></tr><tr><td>On balances above 1 lakh to less than 5 lakh in the account</td><td>2.25%</td></tr><tr><td>On balances from 5 lakh to less than 10 lakh in the account</td><td>3.75%</td></tr><tr><td>On balances from 10 lakh to less than 25 lakh in the account</td><td>5.75%</td></tr><tr><td>On balances from 25 lakh to less than 50 lakh in the account</td><td>6.85%</td></tr><tr><td>On balances from 50 lakh to less than 2 Crore</td><td>6.70%</td></tr><tr><td>On balances from 2 Crore to less than 10 Crore</td><td>6.60%</td></tr><tr><td>On balances from 10 Crore to less than 300 Crore</td><td>6.00%</td></tr><tr><td>On balances from 300 crore and above</td><td>5.50%</td></tr></tbody></table><h3>Important Terms and Conditions</h3><ul><li>Interest will be calculated daily based on end of day clear balance in the account and will be paid quarterly.</li><li>Rates mentioned are applicable for the incremental balances that are present corresponding to the amount slabs mentioned.</li><li>These interest rates are applicable to resident, NRE and NRO savings accounts, and subject to change without prior notice.</li><li>Additional interest to be charged on overdrawn amounts for Savings Bank Account and Current Accounts. The Bank will levy interest @ 2% per month (monthly basis) on overdrawn balances for the period any Savings or Current account remains overdrawn.</li></ul>"
+     }
+    ]
+   }
+  ]
+ }
+}

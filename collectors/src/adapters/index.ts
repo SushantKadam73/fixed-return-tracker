@@ -5,6 +5,7 @@
 import type { Adapter } from "../types";
 import { adapters as a1 } from "./group-a1";
 import { adapters as a2 } from "./group-a2";
+import { adapters as b1 } from "./group-b1";
 import { adapters as b2 } from "./group-b2";
 import { adapters as c1 } from "./group-c1";
 import { adapters as c2 } from "./group-c2";
@@ -14,6 +15,7 @@ import { adapters as d2 } from "./group-d2";
 export const groupAdapters: Record<string, Adapter> = {
   ...a1,
   ...a2,
+  ...b1,
   ...b2,
   ...c1,
   ...c2,

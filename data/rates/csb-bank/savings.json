@@ -1,0 +1,77 @@
+{
+ "bankSlug": "csb-bank",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "csb-bank",
+   "product": "savings",
+   "effectiveFrom": "2026-09-05",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.csb.bank.in/interest-rates",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 100001,
+     "rate": 2.1,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 100001,
+     "balanceMax": 2500001,
+     "rate": 2.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 2500001,
+     "balanceMax": 5000001,
+     "rate": 3,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 5000001,
+     "balanceMax": 50000001,
+     "rate": 3.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 50000001,
+     "balanceMax": 250000001,
+     "rate": 4.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 250000001,
+     "balanceMax": 500000001,
+     "rate": 5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 500000001,
+     "balanceMax": 1000000001,
+     "rate": 5.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000000001,
+     "balanceMax": 3000000001,
+     "rate": 7,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 3000000001,
+     "balanceMax": null,
+     "rate": 7.4,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "incremental",
+   "notes": [
+    "Bank's own wording is stacked \"for amount above X & up to Y\" clauses per slab, confirming incremental application."
+   ],
+   "contentHash": "b0499ebb90ec6731"
+  }
+ ]
+}

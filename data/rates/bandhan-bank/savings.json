@@ -1,0 +1,95 @@
+{
+ "bankSlug": "bandhan-bank",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "bandhan-bank",
+   "product": "savings",
+   "effectiveFrom": "2026-08-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://bandhan.bank.in/rates-charges",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 100001,
+     "rate": 2.7,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 100001,
+     "balanceMax": 500001,
+     "rate": 2.7,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 500001,
+     "balanceMax": 1000001,
+     "rate": 4.85,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000001,
+     "balanceMax": 5000001,
+     "rate": 5.35,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 5000001,
+     "balanceMax": 50000001,
+     "rate": 5.55,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 50000001,
+     "balanceMax": 500000001,
+     "rate": 6,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 500000001,
+     "balanceMax": 2500000001,
+     "rate": 6,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 2500000001,
+     "balanceMax": 5000000001,
+     "rate": 6.15,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 5000000001,
+     "balanceMax": 7500000001,
+     "rate": 7.35,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 7500000001,
+     "balanceMax": 10000000001,
+     "rate": 7.35,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 10000000001,
+     "balanceMax": 15000000001,
+     "rate": 7.35,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 15000000001,
+     "balanceMax": null,
+     "rate": 6.15,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "incremental",
+   "notes": [
+    "Incremental up to ₹250 crore EOD balance (bank's own wording: \"incremental balance over and above ...\"). At/above ₹250 crore EOD balance a single flat rate applies to the entire balance above ₹1 lakh (bank's wording: \"the remaining balance over ₹1 lakh\"), which is a whole-balance mechanism, not incremental with the lower slabs — the card-level slabMethod below reflects the dominant (lower) part of the ladder."
+   ],
+   "contentHash": "86a918d98c18d448"
+  }
+ ]
+}

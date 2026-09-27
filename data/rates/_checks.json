@@ -20,6 +20,55 @@
   "consecutiveFailures": 0,
   "lastError": null
  },
+ "axis-bank:fd": {
+  "lastAttemptAt": "2026-09-27T10:05:30.796Z",
+  "lastSuccessAt": "2026-09-27T10:05:30.796Z",
+  "lastChangeAt": "2026-09-27T10:05:30.796Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "axis-bank:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T10:05:32.740Z",
+  "lastSuccessAt": "2026-09-27T10:05:32.740Z",
+  "lastChangeAt": "2026-09-27T10:05:32.740Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "axis-bank:rd": {
+  "lastAttemptAt": "2026-09-27T10:05:35.490Z",
+  "lastSuccessAt": "2026-09-27T10:05:35.490Z",
+  "lastChangeAt": "2026-09-27T10:05:35.490Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "axis-bank:savings": {
+  "lastAttemptAt": "2026-09-27T10:05:37.192Z",
+  "lastSuccessAt": "2026-09-27T10:05:37.192Z",
+  "lastChangeAt": "2026-09-27T10:05:37.192Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "bandhan-bank:fd": {
+  "lastAttemptAt": "2026-09-27T10:05:39.547Z",
+  "lastSuccessAt": "2026-09-27T10:05:39.547Z",
+  "lastChangeAt": "2026-09-27T10:05:39.547Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "bandhan-bank:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T10:05:41.140Z",
+  "lastSuccessAt": "2026-09-27T10:05:41.140Z",
+  "lastChangeAt": "2026-09-27T10:05:41.140Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "bandhan-bank:savings": {
+  "lastAttemptAt": "2026-09-27T10:05:42.069Z",
+  "lastSuccessAt": "2026-09-27T10:05:42.069Z",
+  "lastChangeAt": "2026-09-27T10:05:42.069Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
  "bank-of-baroda:fd": {
   "lastAttemptAt": "2026-09-27T09:40:10.279Z",
   "lastSuccessAt": "2026-09-27T09:40:10.279Z",
@@ -122,6 +171,90 @@
   "lastAttemptAt": "2026-09-27T09:40:27.914Z",
   "lastSuccessAt": "2026-09-27T09:40:27.914Z",
   "lastChangeAt": "2026-09-27T09:34:59.058Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "city-union-bank:fd": {
+  "lastAttemptAt": "2026-09-27T10:05:51.525Z",
+  "lastSuccessAt": "2026-09-27T10:05:51.525Z",
+  "lastChangeAt": "2026-09-27T10:05:51.525Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "city-union-bank:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T10:05:54.009Z",
+  "lastSuccessAt": "2026-09-27T10:05:54.009Z",
+  "lastChangeAt": "2026-09-27T10:05:54.009Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "city-union-bank:savings": {
+  "lastAttemptAt": "2026-09-27T10:05:56.223Z",
+  "lastSuccessAt": "2026-09-27T10:05:56.223Z",
+  "lastChangeAt": "2026-09-27T10:05:56.223Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "csb-bank:fd": {
+  "lastAttemptAt": "2026-09-27T10:05:44.706Z",
+  "lastSuccessAt": "2026-09-27T10:05:44.706Z",
+  "lastChangeAt": "2026-09-27T10:05:44.706Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "csb-bank:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T10:05:46.434Z",
+  "lastSuccessAt": "2026-09-27T10:05:46.434Z",
+  "lastChangeAt": null,
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "csb-bank:savings": {
+  "lastAttemptAt": "2026-09-27T10:05:49.476Z",
+  "lastSuccessAt": "2026-09-27T10:05:49.476Z",
+  "lastChangeAt": "2026-09-27T10:05:49.476Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "dcb-bank:fd": {
+  "lastAttemptAt": "2026-09-27T10:05:58.080Z",
+  "lastSuccessAt": "2026-09-27T10:05:58.080Z",
+  "lastChangeAt": "2026-09-27T10:05:58.080Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "dcb-bank:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T10:06:01.735Z",
+  "lastSuccessAt": "2026-09-27T10:06:01.735Z",
+  "lastChangeAt": "2026-09-27T10:06:01.735Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "dcb-bank:savings": {
+  "lastAttemptAt": "2026-09-27T10:06:06.271Z",
+  "lastSuccessAt": "2026-09-27T10:06:06.271Z",
+  "lastChangeAt": "2026-09-27T10:06:06.271Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "dhanlaxmi-bank:fd": {
+  "lastAttemptAt": "2026-09-27T10:06:11.478Z",
+  "lastSuccessAt": "2026-09-27T10:06:11.478Z",
+  "lastChangeAt": "2026-09-27T10:06:11.478Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "dhanlaxmi-bank:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T10:06:13.233Z",
+  "lastSuccessAt": "2026-09-27T10:06:13.233Z",
+  "lastChangeAt": "2026-09-27T10:06:13.233Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "dhanlaxmi-bank:savings": {
+  "lastAttemptAt": "2026-09-27T10:06:15.055Z",
+  "lastSuccessAt": "2026-09-27T10:06:15.055Z",
+  "lastChangeAt": "2026-09-27T10:06:15.055Z",
   "consecutiveFailures": 0,
   "lastError": null
  },

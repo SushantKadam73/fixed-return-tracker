@@ -1,0 +1,17 @@
+{
+ "bankSlug": "city-union-bank",
+ "products": {
+  "fd_bulk": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "other": [
+     "Bulk deposits are accepted only with prior permission from the bank's Treasury Department (bank's own note)."
+    ]
+   },
+   "sourceKey": "city-union-bank:fd_bulk",
+   "sourceUrl": "https://www.cityunionbank.bank.in/deposit-interest-rate",
+   "recordedOn": "2026-09-27",
+   "contentHash": "a9fdc505e58409f3"
+  }
+ }
+}

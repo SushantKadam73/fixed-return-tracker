@@ -1,0 +1,16 @@
+{
+ "bankSlug": "axis-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 50000000,
+    "seniorPremium": "Varies by tenure, commonly +0.50 percentage points (see notes)",
+    "prematurePenalty": "Bank may, at its discretion, disallow premature withdrawal of deposits of ₹5 crore and above held by entities other than individuals/HUF (PDF footnote); standard premature-withdrawal penalty rate is not printed on this page."
+   },
+   "sourceKey": "axis-bank:fd",
+   "sourceUrl": "https://www.axis.bank.in/deposits/fixed-deposits/fd-interest-rates",
+   "recordedOn": "2026-09-27",
+   "contentHash": "a93f16e31a7f5f4d"
+  }
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "bankSlug": "axis-bank",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "axis-bank",
+   "product": "savings",
+   "effectiveFrom": "2026-04-03",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.axis.bank.in/accounts/savings-account/savings-account-interest-rate",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 20000000000,
+     "rate": 2.5,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "notes": [
+    "\"₹2,000 Crores and above\" earns \"Overnight MIBOR + 1.01%\" — a floating/formula rate, not a fixed number, so it is not published here as a slab."
+   ],
+   "contentHash": "f20157f8eb97fe28"
+  }
+ ]
+}

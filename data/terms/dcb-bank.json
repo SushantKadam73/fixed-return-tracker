@@ -1,0 +1,28 @@
+{
+ "bankSlug": "dcb-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "Printed as its own 'Senior Citizens' column (age 60-<70), separate from 'Senior Citizens Plus' (age 70+) — not a flat add-on.",
+    "prematurePenalty": "Deposit Amount Penal Interest Less than ₹ 3 crore 0.5% ₹ 3 crore and above 2.0% No interest is payable on Deposits of less than INR 3 crore if closed before completion of 7 days. No interest is payable on Deposits of INR 3 crore and above if closed before completion of 7 days. No interest is payable on NRE Fixed Deposits if closed before completion of one year"
+   },
+   "sourceKey": "dcb-bank:fd",
+   "sourceUrl": "https://www.dcb.bank.in/rates/fixed-deposit-interest-rate",
+   "recordedOn": "2026-09-27",
+   "contentHash": "e1d843a6d26475d9"
+  },
+  "fd_bulk": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "other": [
+     "₹10 crore-<₹20 crore is not published as its own band on this page."
+    ]
+   },
+   "sourceKey": "dcb-bank:fd_bulk",
+   "sourceUrl": "https://www.dcb.bank.in/rates/fixed-deposit-interest-rate",
+   "recordedOn": "2026-09-27",
+   "contentHash": "cbac2bab06af0a61"
+  }
+ }
+}
