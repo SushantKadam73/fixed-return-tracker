@@ -1,0 +1,42 @@
+Please Note:
+1. Acceptance of Bulk Deposit is at the discretion of the Bank.
+2. Above rates are applicable for the specified date and are liable to change from time to time.
+3. Depositors should ascertain the rates and prevailing terms and conditions of the deposits at the time of placement of FD25-Sep-2026
+Tenor Buckets >= 3 Cr. to < 5 Cr >= 5 Cr. to < 20 Cr >= 20 Cr. to < 50 Cr >= 50 Cr
+7 Days to 14 Days 4.80 4.85 4.90 4.90
+15 Days to 30 Days 5.00 5.05 5.10 5.10
+31 Days to 45 Days 5.50 5.55 5.60 5.60
+46 Days to 60 Days 5.60 5.65 5.70 5.70
+61 Days to 90 Days 6.10 6.15 6.20 6.20
+91 Days to 120 Days 6.85 6.90 6.95 6.95
+121 Days to 150 Days 6.90 6.95 7.00 7.00
+151 Days to 180 Days 7.00 7.05 7.10 7.10
+181 Days to 270 Days 7.20 7.25 7.30 7.30
+271 Days to 360 Days 7.40 7.45 7.50 7.50
+361 Days to 13 M 7.55 7.60 7.65 7.65
+13 M 1 D to 15 M 7.60 7.65 7.70 7.70
+15 M 1 D - 18 M 7.60 7.65 7.70 7.70
+18 M 1 D - 24 M 7.10 7.15 7.20 7.20
+24 M 1 D - 36 M 6.60 6.65 6.70 6.70
+36 M 1 D – 48 M 6.60 6.65 6.70 6.70
+48 M 1 D – 60 M 6.60 6.65 6.70 6.70
+Tenor Buckets >= 3 Cr. to < 5 Cr >= 5 Cr. to < 20 Cr >= 20 Cr. to < 50 Cr >= 50 Cr
+7 Days to 14 Days 4.90 4.95 5.00 5.00
+15 Days to 30 Days 5.10 5.15 5.20 5.20
+31 Days to 45 Days 5.60 5.65 5.70 5.70
+46 Days to 60 Days 5.70 5.75 5.80 5.80
+61 Days to 90 Days 6.20 6.25 6.30 6.30
+91 Days to 120 Days 6.95 7.00 7.05 7.05
+121 Days to 150 Days 7.00 7.05 7.10 7.10
+151 Days to 180 Days 7.10 7.15 7.20 7.20
+181 Days to 270 Days 7.30 7.35 7.45 7.40
+271 Days to 360 Days 7.50 7.55 7.60 7.60
+361 Days to 13 M 7.70 8.15 8.30 7.80
+13 M 1 D to 15 M 8.00 8.15 8.20 7.85
+15 M 1 D – 18 M 7.95 8.15 8.20 7.95
+18 M 1 D - 24 M 7.35 7.40 7.45 7.45
+24 M 1 D - 36 M 6.85 6.90 6.95 6.95
+36 M 1 D – 48 M 6.85 6.90 6.95 6.95
+48 M 1 D – 60 M 6.85 6.90 6.95 6.95
+Callable Deposit (Premature withdrawal permitted)
+Non-Callable Deposit (No premature withdrawal permitted)

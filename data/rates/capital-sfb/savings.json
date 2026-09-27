@@ -1,0 +1,51 @@
+{
+ "bankSlug": "capital-sfb",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "capital-sfb",
+   "product": "savings",
+   "effectiveFrom": null,
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.capital.bank.in/interest-rates/savings-bank-account",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": null,
+     "rate": 3.1,
+     "residency": "resident",
+     "note": "Savings Bank Account"
+    },
+    {
+     "balanceMin": 0,
+     "balanceMax": null,
+     "rate": 3.1,
+     "residency": "resident",
+     "note": "Basic Savings Bank Account (Suvidha Bachat)"
+    },
+    {
+     "balanceMin": 0,
+     "balanceMax": null,
+     "rate": 3.1,
+     "residency": "nro",
+     "note": "NRO"
+    },
+    {
+     "balanceMin": 0,
+     "balanceMax": null,
+     "rate": 3.1,
+     "residency": "nre",
+     "note": "NRE"
+    }
+   ],
+   "slabMethod": "whole",
+   "notes": [
+    "Single flat rate for every account variant shown (Savings Bank Account, Basic/Suvidha Bachat, NRO, NRE) — no balance slabs are published."
+   ],
+   "contentHash": "133fc0dfef9710d7"
+  }
+ ]
+}

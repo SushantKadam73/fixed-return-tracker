@@ -1,0 +1,232 @@
+{
+ "bankSlug": "ujjivan-sfb",
+ "product": "fd",
+ "cards": [
+  {
+   "bankSlug": "ujjivan-sfb",
+   "product": "fd",
+   "effectiveFrom": "2026-09-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.ujjivansfb.bank.in/interest-rates",
+   "confidence": "high",
+   "rows": [
+    {
+     "tenureMinDays": 7,
+     "tenureMaxDays": 29,
+     "tenureLabel": "7 days to 29 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 3.5
+    },
+    {
+     "tenureMinDays": 30,
+     "tenureMaxDays": 89,
+     "tenureLabel": "30 days to 89 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 4.15
+    },
+    {
+     "tenureMinDays": 90,
+     "tenureMaxDays": 179,
+     "tenureLabel": "90 days to 179 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 4.65
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 180,
+     "tenureLabel": "180 days",
+     "special": true,
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 183,
+     "tenureMaxDays": 364,
+     "tenureLabel": "6 months to < 1 year",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5.5
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 Year to < 2 years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.25
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 730,
+     "tenureLabel": "2 Years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.55
+    },
+    {
+     "tenureMinDays": 731,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "2 Year 1 day - 3 Year",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.25
+    },
+    {
+     "tenureMinDays": 1096,
+     "tenureMaxDays": 1278,
+     "tenureLabel": "3 Year 1 Day – 3 year 6 months",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.8
+    },
+    {
+     "tenureMinDays": 1279,
+     "tenureMaxDays": 1825,
+     "tenureLabel": ">3 Year 6 months- 5 Years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.2
+    },
+    {
+     "tenureMinDays": 1826,
+     "tenureMaxDays": 1826,
+     "tenureLabel": "5 years 1 day",
+     "special": true,
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.3
+    },
+    {
+     "tenureMinDays": 1827,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "5 Years 2 Days - 10 Years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.5
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 Year to < 2 years",
+     "amountMin": 10000001,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": false,
+     "payout": null,
+     "rate": 7.35,
+     "note": "Platina FD: non-callable, ₹1 crore–<₹3 crore; no senior-citizen addition on this product (bank's own text)"
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 730,
+     "tenureLabel": "2 Years",
+     "amountMin": 10000001,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": false,
+     "payout": null,
+     "rate": 7.65,
+     "note": "Platina FD: non-callable, ₹1 crore–<₹3 crore; no senior-citizen addition on this product (bank's own text)"
+    },
+    {
+     "tenureMinDays": 731,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "2 Year 1 day - 3 Year",
+     "amountMin": 10000001,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": false,
+     "payout": null,
+     "rate": 7.35,
+     "note": "Platina FD: non-callable, ₹1 crore–<₹3 crore; no senior-citizen addition on this product (bank's own text)"
+    },
+    {
+     "tenureMinDays": 1096,
+     "tenureMaxDays": 1278,
+     "tenureLabel": "3 Year 1 Day – 3 year 6 months",
+     "amountMin": 10000001,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": false,
+     "payout": null,
+     "rate": 7.9,
+     "note": "Platina FD: non-callable, ₹1 crore–<₹3 crore; no senior-citizen addition on this product (bank's own text)"
+    },
+    {
+     "tenureMinDays": 1279,
+     "tenureMaxDays": 1825,
+     "tenureLabel": ">3 Year 6 months- 5 Years",
+     "amountMin": 10000001,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": false,
+     "payout": null,
+     "rate": 7.3,
+     "note": "Platina FD: non-callable, ₹1 crore–<₹3 crore; no senior-citizen addition on this product (bank's own text)"
+    }
+   ],
+   "notes": [
+    "Domestic FD: resident senior citizens get +0.50% p.a. on every tenure, printed as a line inside the rate table rather than its own column — not published as separate per-tenure numbers, so no senior rows are added here."
+   ],
+   "contentHash": "11ad92f9fb167a12"
+  }
+ ]
+}

@@ -1,6 +1,55 @@
 {
  "files": [
   {
+   "bankSlug": "au-sfb",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-09-01",
+   "to": "2026-09-01"
+  },
+  {
+   "bankSlug": "au-sfb",
+   "product": "rd",
+   "cards": 1,
+   "from": "2026-09-01",
+   "to": "2026-09-01"
+  },
+  {
+   "bankSlug": "au-sfb",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-04-23",
+   "to": "2026-04-23"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-06-30",
+   "to": "2026-06-30"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-09-27",
+   "to": "2026-09-27"
+  },
+  {
+   "bankSlug": "equitas-sfb",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-06-16",
+   "to": "2026-06-16"
+  },
+  {
+   "bankSlug": "equitas-sfb",
+   "product": "rd",
+   "cards": 1,
+   "from": "2026-06-10",
+   "to": "2026-06-10"
+  },
+  {
    "bankSlug": "hdfc-bank",
    "product": "fd",
    "cards": 81,
@@ -48,6 +97,34 @@
    "cards": 10,
    "from": "2000-04-01",
    "to": "2025-06-15"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-09-01",
+   "to": "2026-09-01"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "product": "fd_bulk",
+   "cards": 1,
+   "from": "2026-09-25",
+   "to": "2026-09-25"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "product": "rd",
+   "cards": 1,
+   "from": "2026-09-01",
+   "to": "2026-09-01"
+  },
+  {
+   "bankSlug": "ujjivan-sfb",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-06-05",
+   "to": "2026-06-05"
   }
  ]
 }

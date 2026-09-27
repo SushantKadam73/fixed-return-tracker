@@ -1,0 +1,105 @@
+{
+ "bankSlug": "ujjivan-sfb",
+ "product": "rd",
+ "cards": [
+  {
+   "bankSlug": "ujjivan-sfb",
+   "product": "rd",
+   "effectiveFrom": "2026-09-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.ujjivansfb.bank.in/interest-rates",
+   "confidence": "high",
+   "rows": [
+    {
+     "tenureMinDays": 183,
+     "tenureMaxDays": 274,
+     "tenureLabel": "6-9 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5.5
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 639,
+     "tenureLabel": "12-21 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.25
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 730,
+     "tenureLabel": "24 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.55
+    },
+    {
+     "tenureMinDays": 821,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "27-36 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.25
+    },
+    {
+     "tenureMinDays": 1186,
+     "tenureMaxDays": 1278,
+     "tenureLabel": "39-42 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.8
+    },
+    {
+     "tenureMinDays": 1369,
+     "tenureMaxDays": 1825,
+     "tenureLabel": "45-60 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.2
+    },
+    {
+     "tenureMinDays": 1916,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "63-120 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.5
+    }
+   ],
+   "notes": [
+    "This is Ujjivan's own dedicated RD table (not derived from the FD card). Resident senior citizens (as primary holder) get +0.50% p.a. over this rate per the bank's text below the table; not printed as a column, so not published as separate rows."
+   ],
+   "contentHash": "a33523a8fac1ceac"
+  }
+ ]
+}

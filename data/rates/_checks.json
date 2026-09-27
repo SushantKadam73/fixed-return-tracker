@@ -1,4 +1,67 @@
 {
+ "au-sfb:fd": {
+  "lastAttemptAt": "2026-09-27T08:41:12.056Z",
+  "lastSuccessAt": "2026-09-27T08:41:12.056Z",
+  "lastChangeAt": "2026-09-27T08:41:12.056Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "au-sfb:rd": {
+  "lastAttemptAt": "2026-09-27T08:41:12.351Z",
+  "lastSuccessAt": "2026-09-27T08:41:12.351Z",
+  "lastChangeAt": "2026-09-27T08:41:12.351Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "au-sfb:savings": {
+  "lastAttemptAt": "2026-09-27T08:41:13.695Z",
+  "lastSuccessAt": "2026-09-27T08:41:13.695Z",
+  "lastChangeAt": "2026-09-27T08:41:13.695Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "capital-sfb:fd": {
+  "lastAttemptAt": "2026-09-27T08:41:16.851Z",
+  "lastSuccessAt": "2026-09-27T08:41:16.851Z",
+  "lastChangeAt": "2026-09-27T08:41:16.851Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "capital-sfb:savings": {
+  "lastAttemptAt": "2026-09-27T08:41:17.793Z",
+  "lastSuccessAt": "2026-09-27T08:41:17.793Z",
+  "lastChangeAt": "2026-09-27T08:41:17.793Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "equitas-sfb:fd": {
+  "lastAttemptAt": "2026-09-27T08:41:19.396Z",
+  "lastSuccessAt": "2026-09-27T08:41:19.396Z",
+  "lastChangeAt": "2026-09-27T08:41:19.396Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "equitas-sfb:rd": {
+  "lastAttemptAt": "2026-09-27T08:41:21.444Z",
+  "lastSuccessAt": "2026-09-27T08:41:21.444Z",
+  "lastChangeAt": "2026-09-27T08:41:21.444Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "esaf-sfb:fd": {
+  "lastAttemptAt": "2026-09-27T08:41:22.536Z",
+  "lastSuccessAt": null,
+  "lastChangeAt": null,
+  "consecutiveFailures": 1,
+  "lastError": "fetch: HTTP 403"
+ },
+ "esaf-sfb:savings": {
+  "lastAttemptAt": "2026-09-27T08:41:22.616Z",
+  "lastSuccessAt": null,
+  "lastChangeAt": null,
+  "consecutiveFailures": 1,
+  "lastError": "fetch: HTTP 403"
+ },
  "sbi:fd": {
   "lastAttemptAt": "2026-09-27T07:57:06.107Z",
   "lastSuccessAt": "2026-09-27T07:57:06.107Z",
@@ -17,6 +80,41 @@
   "lastAttemptAt": "2026-09-27T07:57:09.701Z",
   "lastSuccessAt": "2026-09-27T07:57:09.701Z",
   "lastChangeAt": "2026-09-27T07:57:09.701Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "suryoday-sfb:savings": {
+  "lastAttemptAt": "2026-09-27T08:41:24.676Z",
+  "lastSuccessAt": null,
+  "lastChangeAt": null,
+  "consecutiveFailures": 1,
+  "lastError": "fetch: HTTP 502"
+ },
+ "ujjivan-sfb:bulk": {
+  "lastAttemptAt": "2026-09-27T08:41:44.641Z",
+  "lastSuccessAt": "2026-09-27T08:41:44.641Z",
+  "lastChangeAt": "2026-09-27T08:41:44.641Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "ujjivan-sfb:fd": {
+  "lastAttemptAt": "2026-09-27T08:41:41.334Z",
+  "lastSuccessAt": "2026-09-27T08:41:41.334Z",
+  "lastChangeAt": "2026-09-27T08:41:41.334Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "ujjivan-sfb:rd": {
+  "lastAttemptAt": "2026-09-27T08:41:42.521Z",
+  "lastSuccessAt": "2026-09-27T08:41:42.521Z",
+  "lastChangeAt": "2026-09-27T08:41:42.521Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "ujjivan-sfb:savings": {
+  "lastAttemptAt": "2026-09-27T08:41:43.414Z",
+  "lastSuccessAt": "2026-09-27T08:41:43.414Z",
+  "lastChangeAt": "2026-09-27T08:41:43.414Z",
   "consecutiveFailures": 0,
   "lastError": null
  }

@@ -1,0 +1,71 @@
+{
+ "bankSlug": "au-sfb",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "au-sfb",
+   "product": "savings",
+   "effectiveFrom": "2026-04-23",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.au.bank.in/interest-rates/savings-account-interest-rates",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 100000,
+     "rate": 2.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 100000,
+     "balanceMax": 300000,
+     "rate": 2.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 300000,
+     "balanceMax": 500000,
+     "rate": 2.75,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 500000,
+     "balanceMax": 1000000,
+     "rate": 3.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000000,
+     "balanceMax": 250000000,
+     "rate": 6.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 250000000,
+     "balanceMax": 1000000000,
+     "rate": 6.75,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000000000,
+     "balanceMax": 7500000000,
+     "rate": 4,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 7500000000,
+     "balanceMax": null,
+     "rate": 4,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "incremental",
+   "notes": [
+    "A slab change is pre-announced for 2026-10-01 (see the second card from this same fetch); until then these are the rates in force."
+   ],
+   "contentHash": "b7bf1076130c7c14"
+  }
+ ]
+}

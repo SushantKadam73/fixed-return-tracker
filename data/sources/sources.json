@@ -1,8 +1,253 @@
 {
-  "note": "Official pages read by the collectors. adapter = name in collectors/src/registry.ts. runner = where it runs.",
-  "sources": [
-    { "key": "sbi:fd", "bankSlug": "sbi", "products": ["fd", "rd"], "url": "https://sbi.bank.in/web/interest-rates/deposit-rates/retail-domestic-term-deposits", "format": "html", "runner": "github", "adapter": "sbi.retail", "cadence": "daily", "active": true },
-    { "key": "sbi:fd_bulk", "bankSlug": "sbi", "products": ["fd_bulk"], "url": "https://sbi.bank.in/web/interest-rates/deposit-rates/domestic-bulk-term-deposits", "format": "html", "runner": "github", "adapter": "sbi.bulk", "cadence": "bulk_daily", "active": true },
-    { "key": "sbi:savings", "bankSlug": "sbi", "products": ["savings"], "url": "https://sbi.bank.in/web/interest-rates/savings-bank-deposits", "format": "html", "runner": "github", "adapter": "sbi.savings", "cadence": "daily", "active": true }
-  ]
+ "note": "Official pages read by the collectors. adapter = name in collectors/src/registry.ts. runner = where it runs.",
+ "sources": [
+  {
+   "key": "sbi:fd",
+   "bankSlug": "sbi",
+   "products": [
+    "fd",
+    "rd"
+   ],
+   "url": "https://sbi.bank.in/web/interest-rates/deposit-rates/retail-domestic-term-deposits",
+   "format": "html",
+   "runner": "github",
+   "adapter": "sbi.retail",
+   "cadence": "daily",
+   "active": true
+  },
+  {
+   "key": "sbi:fd_bulk",
+   "bankSlug": "sbi",
+   "products": [
+    "fd_bulk"
+   ],
+   "url": "https://sbi.bank.in/web/interest-rates/deposit-rates/domestic-bulk-term-deposits",
+   "format": "html",
+   "runner": "github",
+   "adapter": "sbi.bulk",
+   "cadence": "bulk_daily",
+   "active": true
+  },
+  {
+   "key": "sbi:savings",
+   "bankSlug": "sbi",
+   "products": [
+    "savings"
+   ],
+   "url": "https://sbi.bank.in/web/interest-rates/savings-bank-deposits",
+   "format": "html",
+   "runner": "github",
+   "adapter": "sbi.savings",
+   "cadence": "daily",
+   "active": true
+  },
+  {
+   "key": "au-sfb:fd",
+   "bankSlug": "au-sfb",
+   "products": [
+    "fd"
+   ],
+   "url": "https://www.au.bank.in/interest-rates/fixed-deposit-interest-rates",
+   "format": "html",
+   "runner": "github",
+   "adapter": "au-sfb.fd",
+   "cadence": "daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "Covers callable retail FD (general + senior, each read off its own table's own date), non-callable ₹1,00,01,000–<₹3cr, and the discounted monthly-payout variant. No public bulk (≥₹3cr) page — the page says to contact a branch for interbank deposit rates."
+  },
+  {
+   "key": "au-sfb:rd",
+   "bankSlug": "au-sfb",
+   "products": [
+    "rd"
+   ],
+   "url": "https://www.au.bank.in/interest-rates/recurring-deposits-interest-rates",
+   "format": "html",
+   "runner": "github",
+   "adapter": "au-sfb.rd",
+   "cadence": "daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "Explicit RD table (general + senior), not derived from the FD card — its own numbers differ from FD's."
+  },
+  {
+   "key": "au-sfb:savings",
+   "bankSlug": "au-sfb",
+   "products": [
+    "savings"
+   ],
+   "url": "https://www.au.bank.in/interest-rates/savings-account-interest-rates",
+   "format": "html",
+   "runner": "github",
+   "adapter": "au-sfb.savings",
+   "cadence": "daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "Page pre-announces a slab change effective 2026-10-01 in a second table column. The adapter publishes the slabs in force today (dated 2026-04-23) as the current card, and additionally returns the pre-announced slabs as a second card dated 2026-10-01 with a note — do not activate that second card before its date."
+  },
+  {
+   "key": "capital-sfb:fd",
+   "bankSlug": "capital-sfb",
+   "products": [
+    "fd"
+   ],
+   "url": "https://www.capital.bank.in/interest-rates/callable-domestic-term-deposit",
+   "format": "html",
+   "runner": "github",
+   "adapter": "capital-sfb.fd",
+   "cadence": "daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "General and senior are two separate single-column tables, each with its own plain-slab section and a \"Special category\" section of named peak tenures (12/400/600/900 days). No bulk (≥₹3cr) page was found; only the callable retail card is published."
+  },
+  {
+   "key": "capital-sfb:savings",
+   "bankSlug": "capital-sfb",
+   "products": [
+    "savings"
+   ],
+   "url": "https://www.capital.bank.in/interest-rates/savings-bank-account",
+   "format": "html",
+   "runner": "github",
+   "adapter": "capital-sfb.savings",
+   "cadence": "daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "Single flat 3.10% rate for Savings Bank Account, Basic/Suvidha Bachat, NRO and NRE alike — no balance slabs, and the page prints no effective date for this table."
+  },
+  {
+   "key": "equitas-sfb:fd",
+   "bankSlug": "equitas-sfb",
+   "products": [
+    "fd"
+   ],
+   "url": "https://equitas.bank.in/personal-banking/save/fixed-deposits/fixed-deposit/",
+   "format": "html",
+   "runner": "github",
+   "adapter": "equitas-sfb.fd",
+   "cadence": "daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "Rates are rendered as <div>/<p> rows, not <table> — the adapter has its own div-grid reader for this page. Includes the 8.00% \"Equitas Maxima FD\" named point tenure (36 months 1 day). Senior citizens get a flat +0.50% (all tenures, not NRE/NRO) stated only as page text, not its own column, so no senior rows are published. No numeric savings-slab table or public bulk (≥₹3cr) page was found this pass."
+  },
+  {
+   "key": "equitas-sfb:rd",
+   "bankSlug": "equitas-sfb",
+   "products": [
+    "rd"
+   ],
+   "url": "https://equitas.bank.in/personal-banking/save/fixed-deposits/recurring-deposits/",
+   "format": "html",
+   "runner": "github",
+   "adapter": "equitas-sfb.rd",
+   "cadence": "daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "Equitas's own dedicated RD table (same div-grid layout), not derived from the FD card."
+  },
+  {
+   "key": "esaf-sfb:fd",
+   "bankSlug": "esaf-sfb",
+   "products": [
+    "fd",
+    "rd"
+   ],
+   "url": "https://www.esaf.bank.in/interest-rates/",
+   "format": "html",
+   "runner": "github",
+   "adapter": "esaf-sfb.fd",
+   "cadence": "daily",
+   "active": true,
+   "notes": "esaf.bank.in (and the esafbank.com redirect) returned an Akamai 403 on every path from the build sandbox, incl. robots.txt, so robotsAllowed could not be checked. The adapter was built and tested against a fixture reconstructed from a search-engine cache of this exact URL (real header/row text, reasonable table markup — the live tag structure couldn't be inspected). Kept active because GitHub Actions/the VPS may reach the page where this sandbox can't; re-verify the table markup on the first live run. The page states RD rates equal the FD card's, so the RD card is derived via deriveRdFromFd and returned alongside the FD card by the same adapter (no separate 'esaf-sfb.rd' entry needed). No bulk (≥₹3cr) page was found."
+  },
+  {
+   "key": "esaf-sfb:savings",
+   "bankSlug": "esaf-sfb",
+   "products": [
+    "savings"
+   ],
+   "url": "https://www.esaf.bank.in/interest-rates/",
+   "format": "html",
+   "runner": "github",
+   "adapter": "esaf-sfb.savings",
+   "cadence": "daily",
+   "active": true,
+   "notes": "Same access situation and reconstructed fixture as esaf-sfb:fd (see its notes). Every slab label restates \"for incremental amount above Rs. X\", so slabMethod is incremental."
+  },
+  {
+   "key": "suryoday-sfb:savings",
+   "bankSlug": "suryoday-sfb",
+   "products": [
+    "savings"
+   ],
+   "url": "https://suryoday.bank.in/rate-of-interest/",
+   "format": "html",
+   "runner": "github",
+   "adapter": "suryoday-sfb.savings",
+   "cadence": "daily",
+   "active": true,
+   "notes": "Both suryoday.bank.in and the legacy suryodaybank.com returned HTTP 502 on every path from the build sandbox (incl. robots.txt) across two rounds ~20 minutes apart — looks like a WAF/CDN block on this sandbox's egress, not a real outage. The adapter was built and tested against a fixture reconstructed from a search-engine cache of this exact URL's \"Savings Accounts\" tab (real header/row text). Kept active for GitHub Actions/the VPS to try; re-verify markup on the first live run. FD and RD are NOT covered by any adapter here: every fetch or cache of the FD/RD product pages, and of this hub's other tabs, only ever showed a tenure-selector widget's single default-selected rate, never the full tenure table, on both domains — nothing safe to parse without guessing the other tenures."
+  },
+  {
+   "key": "ujjivan-sfb:fd",
+   "bankSlug": "ujjivan-sfb",
+   "products": [
+    "fd"
+   ],
+   "url": "https://www.ujjivansfb.bank.in/interest-rates",
+   "format": "html",
+   "runner": "github",
+   "adapter": "ujjivan-sfb.fd",
+   "cadence": "daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "One hub page renders every product as its own dated tab panel; the adapter scopes to each panel by its stable id so a date never leaks across products. Covers Domestic FD (general) and Platina FD (non-callable ₹1cr–<₹3cr, folded into the same 'fd' product). The legacy ujjivansfb.in domain times out on every attempt — always use the .bank.in domain. NRO/NRE/Tax Saver panels on the same page are out of scope for this pass."
+  },
+  {
+   "key": "ujjivan-sfb:rd",
+   "bankSlug": "ujjivan-sfb",
+   "products": [
+    "rd"
+   ],
+   "url": "https://www.ujjivansfb.bank.in/interest-rates",
+   "format": "html",
+   "runner": "github",
+   "adapter": "ujjivan-sfb.rd",
+   "cadence": "daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "Ujjivan's own dedicated RD panel/table, not derived from the FD card."
+  },
+  {
+   "key": "ujjivan-sfb:savings",
+   "bankSlug": "ujjivan-sfb",
+   "products": [
+    "savings"
+   ],
+   "url": "https://www.ujjivansfb.bank.in/interest-rates",
+   "format": "html",
+   "runner": "github",
+   "adapter": "ujjivan-sfb.savings",
+   "cadence": "daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "Savings panel is dated separately from FD/RD on the same page (05 Jun 2026 vs 01 Sep 2026 when this was built) — read independently per panel, never assumed equal."
+  },
+  {
+   "key": "ujjivan-sfb:bulk",
+   "bankSlug": "ujjivan-sfb",
+   "products": [
+    "fd_bulk"
+   ],
+   "url": "https://www.ujjivansfb.bank.in/interest-rates",
+   "format": "html",
+   "runner": "github",
+   "adapter": "ujjivan-sfb.bulk",
+   "cadence": "bulk_daily",
+   "active": true,
+   "robotsAllowed": true,
+   "notes": "The actual bulk (≥₹3cr) rates live in a separately-dated PDF whose filename embeds the publish date and changes often; the adapter discovers the current link from the stable hub page's own \"Bulk Deposit Rates\" panel on every run (via ctx.fetch) rather than hard-coding a dated URL. Publishes both Callable and Non-Callable rows across 4 amount bands (≥3cr–<5cr, ≥5cr–<20cr, ≥20cr–<50cr, ≥50cr)."
+  }
+ ]
 }

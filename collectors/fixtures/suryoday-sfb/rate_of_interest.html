@@ -1,0 +1,37 @@
+<!--
+  RECONSTRUCTED test fixture — NOT captured directly by this project's fetcher.
+  suryoday.bank.in (and the legacy suryodaybank.com) returned HTTP 502 on every path tried from
+  this sandbox, across two rounds ~20 minutes apart (looks like a WAF/CDN block on this
+  environment's egress, not a real outage — a search engine's crawler reaches the site fine).
+  The savings table below is copied verbatim, cell for cell, from a search-engine cache of this
+  exact official URL (https://suryoday.bank.in/rate-of-interest/, "Savings Accounts" tab, which
+  is the default/active tab and the one rendered in the cache) — not an aggregator's rewrite.
+  The FD and RD tabs on the same hub page only ever exposed a tenure-selector *widget*'s default
+  selection (one tenure's rate), never the full table, in every cache and live attempt tried, so
+  they are not covered by this adapter — see the run report. Re-verify markup once GitHub
+  Actions/a VPS reaches the live page.
+-->
+<html><body>
+<main>
+<h2>Rate Of Interest</h2>
+<h3>Savings Accounts</h3>
+<p>Important: The below mentioned rates are effective from May 01, 2026</p>
+<table>
+<tr><td>Daily Closing Balance Slabs (Domestic/NRE/NRO)</td><td>% rate per annum*</td></tr>
+<tr><td>Up to and including Rs. 1 Lakh</td><td>2.50%</td></tr>
+<tr><td>Above Rs. 1 Lakh up to &amp; including Rs. 5 Lakh</td><td>2.50%</td></tr>
+<tr><td>Above Rs. 5 Lakh up to &amp; including Rs. 10 Lakh</td><td>5.50%</td></tr>
+<tr><td>Above Rs. 10 Lakh up to &amp; including Rs 25 Lakh</td><td>6.50%</td></tr>
+<tr><td>Above Rs. 25 Lakh up to &amp; including Rs. 5 Crore</td><td>7.50%</td></tr>
+<tr><td>Above Rs. 5 Crore up to &amp; including Rs. 25 Crore</td><td>7.60%</td></tr>
+<tr><td>Above Rs. 25 Crore</td><td>Contact Branch</td></tr>
+</table>
+<p>Note:</p>
+<ul>
+<li>*Rates are subject to change at the sole discretion of Suryoday Bank</li>
+<li>Interest will be calculated on the daily closing balance in the Savings Account, as per extant guidelines from the Reserve Bank of India.</li>
+<li>Slab rates are applicable on the incremental amount based on the daily closing balance in the Savings Account.</li>
+<li>Interest payout will be made on a monthly basis on the first day of the calendar month.</li>
+</ul>
+</main>
+</body></html>

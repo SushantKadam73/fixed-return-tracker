@@ -1,0 +1,53 @@
+{
+ "bankSlug": "ujjivan-sfb",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "ujjivan-sfb",
+   "product": "savings",
+   "effectiveFrom": "2026-06-05",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.ujjivansfb.bank.in/interest-rates",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 300001,
+     "rate": 2.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 300001,
+     "balanceMax": 500001,
+     "rate": 3,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 500001,
+     "balanceMax": 2500001,
+     "rate": 6.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 2500001,
+     "balanceMax": 250000001,
+     "rate": 6.75,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 250000001,
+     "balanceMax": null,
+     "rate": 7.15,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "incremental",
+   "notes": [
+    "The bank's downloadable rate-card PDF states these rates apply to domestic and non-resident (NRO/NRE) savings accounts alike; this page doesn't repeat that distinction, so only resident slabs are published here."
+   ],
+   "contentHash": "d65f5cf1746a3f96"
+  }
+ ]
+}

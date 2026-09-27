@@ -84,9 +84,14 @@ async function runSource(src: SourceDef, args: Args, checks: ReturnType<typeof l
     return fail(`fetch: ${(e as Error).message}`, (e as { status?: number }).status);
   }
   let cards: RateCard[];
+  const today = todayIST(now);
   try {
-    const out = await adapter({ source: src, doc, today: todayIST(now), fetch: (url, format) => fetchDoc(url, format ?? "html") });
-    cards = out.cards;
+    const out = await adapter({ source: src, doc, today, fetch: (url, format) => fetchDoc(url, format ?? "html") });
+    // A pre-announced change (effective date in the future) must not become "current" early.
+    // It is picked up automatically once its effective date arrives, because the page still shows it.
+    const future = out.cards.filter((c) => c.effectiveFrom !== null && c.effectiveFrom > today);
+    for (const c of future) console.log(`  holding ${c.bankSlug} ${c.product} card effective ${c.effectiveFrom} until it takes effect`);
+    cards = out.cards.filter((c) => !(c.effectiveFrom !== null && c.effectiveFrom > today));
   } catch (e) {
     return fail(`adapter: ${(e as Error).message}`, doc.status);
   }

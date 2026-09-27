@@ -1,0 +1,158 @@
+{
+ "bankSlug": "equitas-sfb",
+ "product": "rd",
+ "cards": [
+  {
+   "bankSlug": "equitas-sfb",
+   "product": "rd",
+   "effectiveFrom": "2026-06-10",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://equitas.bank.in/personal-banking/save/fixed-deposits/recurring-deposits/",
+   "confidence": "high",
+   "rows": [
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 365,
+     "tenureLabel": "12 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.1
+    },
+    {
+     "tenureMinDays": 456,
+     "tenureMaxDays": 456,
+     "tenureLabel": "15 Months",
+     "special": true,
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.1
+    },
+    {
+     "tenureMinDays": 548,
+     "tenureMaxDays": 548,
+     "tenureLabel": "18 Months",
+     "special": true,
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.1
+    },
+    {
+     "tenureMinDays": 639,
+     "tenureMaxDays": 639,
+     "tenureLabel": "21 Months",
+     "special": true,
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 730,
+     "tenureLabel": "24 Months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7
+    },
+    {
+     "tenureMinDays": 913,
+     "tenureMaxDays": 913,
+     "tenureLabel": "30 Months",
+     "special": true,
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.1
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "36 Months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.1
+    },
+    {
+     "tenureMinDays": 1460,
+     "tenureMaxDays": 1460,
+     "tenureLabel": "48 Months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7
+    },
+    {
+     "tenureMinDays": 1825,
+     "tenureMaxDays": 1825,
+     "tenureLabel": "60 Months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7
+    },
+    {
+     "tenureMinDays": 2738,
+     "tenureMaxDays": 2738,
+     "tenureLabel": "90 Months",
+     "special": true,
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7
+    },
+    {
+     "tenureMinDays": 3650,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "120 Months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7
+    }
+   ],
+   "notes": [
+    "This is Equitas's own dedicated RD table (not derived from the FD card). Resident senior citizens get +0.5% p.a. from 12 months onwards per page text; not printed as a column, so not published as separate rows."
+   ],
+   "contentHash": "e89819f41a3a07e0"
+  }
+ ]
+}

@@ -160,7 +160,9 @@ export const recordSourceResult = internalMutation({
 
     let changed = false;
     let rejected = false;
+    const today = new Date(a.fetchedAt + 5.5 * 3600_000).toISOString().slice(0, 10); // IST date of the read
     for (const card of a.cards) {
+      if (card.effectiveFrom && card.effectiveFrom > today) continue; // scheduled change: not current yet
       const result = await upsertCard(ctx, card, { makeCurrent: true });
       if (result === "inserted") changed = true;
       if (result === "rejected") rejected = true;
