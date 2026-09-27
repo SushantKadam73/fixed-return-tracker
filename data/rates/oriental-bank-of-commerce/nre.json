@@ -1,0 +1,69 @@
+{
+ "bankSlug": "oriental-bank-of-commerce",
+ "product": "nre",
+ "cards": [
+  {
+   "bankSlug": "oriental-bank-of-commerce",
+   "product": "nre",
+   "effectiveFrom": "2002-08-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://zeenews.india.com/home/oriental-bank-revises-interest-rates_51606.html/amp",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 183,
+     "tenureMaxDays": 364,
+     "tenureLabel": "6 months to less than 1 year",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "nre",
+     "callable": null,
+     "payout": null,
+     "rate": 6.5
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 year to less than 2 years",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "nre",
+     "callable": null,
+     "payout": null,
+     "rate": 7
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 years to less than 3 years",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "nre",
+     "callable": null,
+     "payout": null,
+     "rate": 7.25
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "nre",
+     "callable": null,
+     "payout": null,
+     "rate": 7.75
+    }
+   ],
+   "notes": [
+    "Same source as the resident fd card for the same date; only the amount band stated for these four rows is 'less than Rs 15 lakh' -- no NRE rate for Rs 15 lakh and above is given by this report."
+   ],
+   "contentHash": "367ef1dcd050be4c"
+  }
+ ]
+}

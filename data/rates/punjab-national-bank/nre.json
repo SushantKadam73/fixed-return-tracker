@@ -1,0 +1,57 @@
+{
+ "bankSlug": "punjab-national-bank",
+ "product": "nre",
+ "cards": [
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "nre",
+   "effectiveFrom": "2002-11-07",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://timesofindia.indiatimes.com/business/india-business/pnb-slashes-term-deposit-rates/articleshow/27465624.cms",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 183,
+     "tenureMaxDays": 364,
+     "tenureLabel": "6 months to less than 1 year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "nre",
+     "callable": null,
+     "payout": null,
+     "rate": 5.75
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "1 year to less than 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "nre",
+     "callable": null,
+     "payout": null,
+     "rate": 6.5
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "nre",
+     "callable": null,
+     "payout": null,
+     "rate": 6.75
+    }
+   ],
+   "notes": [
+    "Partial snapshot: only the tenors this wire report names, not a full rate card."
+   ],
+   "contentHash": "6bb0eb6ab5ea54ab"
+  }
+ ]
+}

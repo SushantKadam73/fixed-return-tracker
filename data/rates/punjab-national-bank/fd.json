@@ -5,6 +5,208 @@
   {
    "bankSlug": "punjab-national-bank",
    "product": "fd",
+   "effectiveFrom": "1998-05-08",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://www.business-standard.com/article/specials/pnb-announces-single-reduced-plr-198051601119_1.html",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 29,
+     "tenureLabel": "15-29 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 30,
+     "tenureMaxDays": 45,
+     "tenureLabel": "30-45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.5
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46-90 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91-179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7
+    }
+   ],
+   "notes": [
+    "Partial snapshot: only the tenors this wire report names, not a full rate card.",
+    "PNB's own web archive (pnbindia.in) has no captures before 2009; this fills part of the 1998-2009 gap with dated press evidence -- see backfill/notes/psb-b.md."
+   ],
+   "contentHash": "634e345840fbc859"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "fd",
+   "effectiveFrom": "2000-08-16",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://www.business-standard.com/article/specials/punjab-national-bank-hikes-rates-on-term-deposit-100081701036_1.html",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 730,
+     "tenureLabel": "1-2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8.5
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "2-3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 9
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "3 years and above",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 10
+    }
+   ],
+   "notes": [
+    "Partial snapshot: the report states rates for one year and above only rose, and that 'rates for deposits of shorter duration have, however, remained unchanged' -- shorter tenors are deliberately not recorded here (their unchanged value is not stated by this report, only that they didn't move)."
+   ],
+   "contentHash": "09ba57cf8e1ed387"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "fd",
+   "effectiveFrom": "2002-11-07",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://timesofindia.indiatimes.com/business/india-business/pnb-slashes-term-deposit-rates/articleshow/27465624.cms",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 1096,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "over 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.75
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "1-3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.5
+    },
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 29,
+     "tenureLabel": "15-29 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4.5
+    },
+    {
+     "tenureMinDays": 30,
+     "tenureMaxDays": 45,
+     "tenureLabel": "30-45 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.25
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91-179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.5
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 365,
+     "tenureLabel": "180-365 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.75
+    }
+   ],
+   "notes": [
+    "Partial snapshot: only the tenors this wire report names, not a full rate card."
+   ],
+   "contentHash": "640df7ebddc53b3b"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "fd",
    "effectiveFrom": "2026-06-01",
    "observedAt": "2026-09-27",
    "sourceType": "bank_official",

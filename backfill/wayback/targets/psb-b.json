@@ -21,237 +21,620 @@
  "targets": [
   {
    "bankSlug": "indian-bank",
-   "url": "https://www.indianbank.in/departments/deposit-rates/",
-   "product": "fd",
+   "url": "indianbank.in/prefdeprate_29122008.htm",
+   "product": "fd_bulk",
    "amountMax": null,
-   "from": "2019",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "parser": "indian-bank/amount-tiered-table",
+   "from": "2008",
+   "to": "2009",
+   "note": "single capture, actually titled 'Interest Rates for Deposits of above Rs 5.00 Crore' despite the misleading filename -- a bulk table with one amount-tier column, not a preferential-customer page"
   },
   {
    "bankSlug": "indian-bank",
-   "url": "https://www.indianbank.in/departments/deposit-rates/lib/REM-unit-polyfill/js/rem.min.js",
-   "product": "fd",
+   "url": "www.indianbank.in/pdrates.htm",
+   "product": "fd_bulk",
    "amountMax": null,
-   "from": "2019",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "parser": "indian-bank/amount-tiered-table",
+   "from": "2009",
+   "to": "2010",
+   "note": "same 'above Rs 5 Crore' bulk table shape as prefdeprate_29122008.htm, Word-generated HTML"
   },
   {
    "bankSlug": "indian-bank",
-   "url": "https://www.indianbank.in/departments/deposit-rates/lib/selectivizr/selectivizr.js",
+   "url": "www.indianbank.in/rate_deposit_domestic.php",
    "product": "fd",
    "amountMax": null,
-   "from": "2019",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "parser": "indian-bank/amount-tiered-table",
+   "from": "2009",
+   "to": "2011",
+   "note": "the real domestic-FD rate table (2009-2010): two amount-tier columns, 'Less than Rs.15 lakhs' / 'Rs.15 lakhs to less than Rs.1 Crore', no senior column -- replaces 'deposits.php', which turned out to be only a product-directory menu page with no rates in it"
   },
   {
    "bankSlug": "indian-bank",
-   "url": "https://www.indianbank.in/departments/interest-rate-for-agri-products/",
-   "product": "fd",
+   "url": "www.indianbank.in/rate_deposit_domestic.php",
+   "product": "fd_bulk",
    "amountMax": null,
-   "from": "2025",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "parser": "indian-bank/amount-tiered-table",
+   "from": "2009",
+   "to": "2011",
+   "note": "the same page's second table, 'Rs.1 Crore to Rs.5 Crores' -- a bulk tier, stored as a separate fd_bulk card from the fd target above"
   },
   {
    "bankSlug": "indian-bank",
-   "url": "https://www.indianbank.in/departments/interest-rates-for-deposits-of-above-rs-5-00crore/",
-   "product": "fd",
-   "amountMax": null,
-   "from": "2020",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "indian-bank",
-   "url": "https://www.indianbank.in/departments/interest-rates-for-small-savings-schemes/",
+   "url": "indianbank.in/rate_sb.php",
    "product": "savings",
    "amountMax": null,
-   "from": "2024",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "2009",
+   "to": "2014",
+   "note": "savings-bank rate page 2009-2013; generic run.ts pipeline cannot emit savingsSlabs (rows-only) -- kept as a lead for a bespoke savings-from-archive script, not run via run.ts"
   },
   {
    "bankSlug": "indian-bank",
-   "url": "https://www.indianbank.in/departments/rfc-term-deposit-rates/",
-   "product": "fd",
-   "amountMax": null,
-   "from": "2024",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "indian-bank",
-   "url": "https://www.indianbank.in/departments/wp-content-uploads-2019-12-rural-banking-department-interest-rates-pdf/",
-   "product": "fd",
-   "amountMax": null,
-   "from": "2022",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "indian-bank",
-   "url": "https://indianbank.in/deposit-rates-2/",
-   "product": "fd",
-   "amountMax": null,
-   "from": "2024",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "indian-bank",
-   "url": "https://www.indianbank.in/HI/departments/deposit-rates/",
+   "url": "www.indianbank.in/departments/deposit-rates/",
    "product": "fd",
    "amountMax": null,
    "from": "2019",
+   "to": "2023",
+   "note": "verified real page via CDX discover; WordPress-era deposit-rates page"
+  },
+  {
+   "bankSlug": "indian-bank",
+   "url": "indianbank.in/deposit-rates-2/",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2023",
    "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "note": "successor slug after site restructure"
   },
   {
    "bankSlug": "indian-overseas-bank",
-   "url": "http://www.iob.in:80/1Retail-credit-interest-rates1",
+   "url": "iob.in/irate.asp",
    "product": "fd",
    "amountMax": null,
-   "from": "2017",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "parser": "indian-overseas-bank/amount-tiered-table",
+   "from": "2006",
+   "to": "2007",
+   "note": "earliest IOB rate page found, 2006; two amount-tier columns ('...up to Rs.15 lakh' / 'Int.rate for >Rs.15 lakh') that the generic reader both misfiles as plain 'general' rows since neither header contains a skip-word, producing false conflicting_rows"
   },
   {
    "bankSlug": "indian-overseas-bank",
-   "url": "https://iob.in/@@uploads/CEDocuments/@@uploads/CEDocuments/Retail-credit-interest-rates",
+   "url": "www.iob.in/termdeposit.htm",
    "product": "fd",
    "amountMax": null,
-   "from": "2022",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "2008",
+   "to": "2009",
+   "note": "2008-era term-deposit page; 'deposit.htm' from the same capture turned out to be a 'MISCELLANEOUS DEPOSIT SCHEMES' page with no rate table"
   },
   {
    "bankSlug": "indian-overseas-bank",
-   "url": "https://iob.in/@@uploads/CEDocuments/Retail-credit-interest-rates",
+   "url": "www.iob.in/fixed_deposit.aspx",
    "product": "fd",
    "amountMax": null,
-   "from": "2022",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "2012",
+   "to": "2016",
+   "note": "ASPX-era FD page"
   },
   {
    "bankSlug": "indian-overseas-bank",
-   "url": "https://iob.in/@@uploads/CEDocuments/upload/CEDocuments/Retail-credit-interest-rates",
-   "product": "fd",
-   "amountMax": null,
-   "from": "2022",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
-  },
-  {
-   "bankSlug": "punjab-national-bank",
-   "url": "http://pnbindia.in/en/ui/depositinterestrates.aspx",
+   "url": "iob.in/rates_at_a_glance.aspx",
    "product": "fd",
    "amountMax": null,
    "from": "2016",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "to": "2017",
+   "note": "combined rates hub, 2016"
   },
   {
-   "bankSlug": "punjab-national-bank",
-   "url": "http://www.pnbindia.in:80/en/ui/interest-rates.aspx",
+   "bankSlug": "indian-overseas-bank",
+   "url": "iob.in/Retail-credit-interest-rates",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2024",
+   "note": "long-running retail+bulk FD page, predecessor of the current iob.bank.in page; supersedes the earlier '1Retail-credit-interest-rates1' and @@uploads/CEDocuments variants from the Phase 1 survey"
+  },
+  {
+   "bankSlug": "indian-overseas-bank",
+   "url": "www.iob.in/saving.aspx",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2012",
+   "to": "2018",
+   "note": "savings page lead; generic run.ts pipeline is rows-only and cannot emit savingsSlabs -- kept as a lead for a bespoke savings-from-archive script"
+  },
+  {
+   "bankSlug": "indian-overseas-bank",
+   "url": "iob.in/Regular-savings-bank",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2024",
+   "note": "savings page lead, 26 monthly captures 2019-2024; same run.ts limitation as above -- savings needs a bespoke script"
+  },
+  {
+   "bankSlug": "indian-overseas-bank",
+   "url": "iob.in/Recurring-deposit",
+   "product": "rd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2024",
+   "note": "RD page lead"
+  },
+  {
+   "bankSlug": "punjab-and-sind-bank",
+   "url": "www.psbindia.com/interest.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2002",
+   "to": "2003",
+   "note": "earliest PSB rate page found, 2002"
+  },
+  {
+   "bankSlug": "punjab-and-sind-bank",
+   "url": "www.psbindia.com/deposit.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2003",
+   "to": "2004",
+   "note": "2003-era deposit page"
+  },
+  {
+   "bankSlug": "punjab-and-sind-bank",
+   "url": "www.psbindia.com/interestdom.php",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2006",
+   "to": "2011",
+   "note": "first generation of the 'interestdom' page that PSB still uses today (content/interestdom); domain/path changed several times since, see the following targets for the same lineage"
+  },
+  {
+   "bankSlug": "punjab-and-sind-bank",
+   "url": "psbindia.com/Final/interestdom.php",
    "product": "fd",
    "amountMax": null,
    "from": "2011",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "to": "2012",
+   "note": "same interestdom lineage, 'Final' path variant"
   },
   {
-   "bankSlug": "punjab-national-bank",
-   "url": "http://www.pnbindia.in:80/english_web/c_interestrates.aspx",
+   "bankSlug": "punjab-and-sind-bank",
+   "url": "psbindia.com/interestdom_Cir.php",
    "product": "fd",
    "amountMax": null,
-   "from": "2009",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "2012",
+   "to": "2019",
+   "note": "same interestdom lineage, '_Cir' path variant"
   },
   {
-   "bankSlug": "punjab-national-bank",
-   "url": "http://pnbindia.in:80/english_web/c_interestrates.htm",
+   "bankSlug": "punjab-and-sind-bank",
+   "url": "psbindia.com/content/interestdom",
    "product": "fd",
    "amountMax": null,
-   "from": "2009",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "2019",
+   "to": "2021",
+   "note": "same interestdom lineage, current-style 'content/' path, still on psbindia.com"
   },
   {
-   "bankSlug": "punjab-national-bank",
-   "url": "http://pnbindia.in/english_web/english_web/c_interestrates.aspx",
+   "bankSlug": "punjab-and-sind-bank",
+   "url": "punjabandsindbank.co.in/content/interestdom",
    "product": "fd",
    "amountMax": null,
-   "from": "2010",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "2021",
+   "to": "2024",
+   "note": "same interestdom lineage after the domain moved to punjabandsindbank.co.in (current live page is on punjabandsind.bank.in, already bank_official)"
+  },
+  {
+   "bankSlug": "punjab-and-sind-bank",
+   "url": "punjabandsindbank.co.in/module/bulk-deposit-rates",
+   "product": "fd_bulk",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2024",
+   "note": "bulk-deposit page found on both psbindia.com (2019) and punjabandsindbank.co.in (2024); the current adapter registers no fd_bulk product for this bank, so this may be new coverage"
   },
   {
    "bankSlug": "punjab-national-bank",
-   "url": "http://pnbindia.in:80/hn/ui/depositinterestrates.aspx",
+   "url": "pnbindia.in/en/ui/interest-rates.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2011",
+   "to": "2013",
+   "note": "verified real page via CDX discover (kept from Phase 1 survey)"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "url": "pnbindia.in/en/ui/depositinterestrates.aspx",
    "product": "fd",
    "amountMax": null,
    "from": "2013",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "to": "2017",
+   "note": "verified real page via CDX discover (kept from Phase 1 survey)"
   },
   {
-   "bankSlug": "union-bank-of-india",
-   "url": "https://www.unionbankofindia.co.in/english/interest-rate.aspx",
+   "bankSlug": "punjab-national-bank",
+   "url": "www.pnbindia.in/view-interest-rates.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2017",
+   "to": "2018",
+   "note": "successor page, 2017"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "url": "www.pnbindia.in/rate-of-interest.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2020",
+   "to": "2023",
+   "note": "successor page, 2020-2022"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "url": "www.pnbindia.in/interest-rates-bulk-deposit.html",
+   "product": "fd_bulk",
+   "amountMax": null,
+   "from": "2018",
+   "to": "2023",
+   "note": "bulk-deposit page, long-running 2018-2023, predecessor of the current pnb.bank.in bulk page"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "url": "www.pnbindia.in/recurring-deposit-scheme.html",
+   "product": "rd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2021",
+   "note": "RD page lead"
+  },
+  {
+   "bankSlug": "uco-bank",
+   "url": "www.ucobank.com/interest.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "1999",
+   "to": "2000",
+   "note": "earliest capture found in this whole group: 1999-01-29, just after the Oct-1997 deregulation"
+  },
+  {
+   "bankSlug": "uco-bank",
+   "url": "www.ucobank.com/asps/interest.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2001",
+   "to": "2002",
+   "note": "2001-era rate page"
+  },
+  {
+   "bankSlug": "uco-bank",
+   "url": "ucobank.com/deposit.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2003",
+   "to": "2004",
+   "note": "2003-era deposit page"
+  },
+  {
+   "bankSlug": "uco-bank",
+   "url": "www.ucobank.com/fixed_deposit.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2006",
+   "to": "2009",
+   "note": "2006-era FD page"
+  },
+  {
+   "bankSlug": "uco-bank",
+   "url": "www.ucobank.com/deposit_schemes.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2009",
+   "to": "2013",
+   "note": "2009-era deposit schemes page"
+  },
+  {
+   "bankSlug": "uco-bank",
+   "url": "ucobank.com/interest-rates/domestic-term-deposits.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2013",
+   "to": "2017",
+   "note": "ASPX-era domestic term deposit page"
+  },
+  {
+   "bankSlug": "uco-bank",
+   "url": "www.ucobank.com/english/fixed-deposit.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2018",
+   "to": "2021",
+   "note": "successor ASPX-era page"
+  },
+  {
+   "bankSlug": "uco-bank",
+   "url": "www.ucobank.com/english/interest-rate-deposit-account.aspx",
    "product": "fd",
    "amountMax": null,
    "from": "2021",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "to": "2024",
+   "note": "successor page, 2021-2023"
   },
   {
-   "bankSlug": "union-bank-of-india",
-   "url": "https://www.unionbankofindia.co.in/English/interest-rate.aspx",
-   "product": "fd",
+   "bankSlug": "uco-bank",
+   "url": "www.ucobank.com/english/saving-account.aspx",
+   "product": "savings",
    "amountMax": null,
    "from": "2021",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "to": "2024",
+   "note": "savings page lead; generic run.ts pipeline is rows-only and cannot emit savingsSlabs -- kept as a lead for a bespoke savings-from-archive script"
+  },
+  {
+   "bankSlug": "uco-bank",
+   "url": "www.ucobank.com/english/recurring-deposit.aspx",
+   "product": "rd",
+   "amountMax": null,
+   "from": "2021",
+   "to": "2024",
+   "note": "RD page lead"
   },
   {
    "bankSlug": "union-bank-of-india",
-   "url": "https://www.unionbankofindia.co.in/browser.htm?aspxerrorpath=/english/interest_rate.aspx",
+   "url": "unionbankofindia.co.in/interestrate.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2007",
+   "to": "2013",
+   "note": "earliest Union Bank rate page found, 2007"
+  },
+  {
+   "bankSlug": "union-bank-of-india",
+   "url": "www.unionbankofindia.co.in/corpweblive/interest_rate.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2015",
+   "to": "2018",
+   "note": "2015-2016-era rate page"
+  },
+  {
+   "bankSlug": "union-bank-of-india",
+   "url": "www.unionbankofindia.co.in/english/interest-rate.aspx",
    "product": "fd",
    "amountMax": null,
    "from": "2019",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "to": "2023",
+   "note": "verified real long-running page via CDX discover, 2019-2023 (kept from Phase 1 survey, dropped the duplicate-case and browser.htm?aspxerrorpath= variants which are error redirects, not real captures)"
   },
   {
    "bankSlug": "union-bank-of-india",
-   "url": "https://www.unionbankofindia.co.in/browser.htm?aspxerrorpath=/Hindi/interest-rate.aspx",
+   "url": "www.unionbankofindia.co.in/english/saving-bank-account.aspx",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2023",
+   "note": "savings page lead; generic run.ts pipeline is rows-only and cannot emit savingsSlabs -- kept as a lead for a bespoke savings-from-archive script"
+  },
+  {
+   "bankSlug": "union-bank-of-india",
+   "url": "www.unionbankofindia.co.in/english/personal-recurring-deposit-scheme.aspx",
+   "product": "rd",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2023",
+   "note": "RD page lead"
+  },
+  {
+   "bankSlug": "union-bank-of-india",
+   "url": "www.unionbankofindia.co.in/english/interestrates-bulkdeposit.aspx",
+   "product": "fd_bulk",
+   "amountMax": null,
+   "from": "2019",
+   "to": "2023",
+   "note": "bulk-deposit page lead"
+  },
+  {
+   "bankSlug": "allahabad-bank",
+   "url": "www.allahabadbank.com/interest.htm",
    "product": "fd",
    "amountMax": null,
-   "from": "2022",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "from": "1998",
+   "to": "1999",
+   "note": "earliest capture found for any predecessor in this group: 1998-12-03, right at the start of the deregulated era"
   },
   {
-   "bankSlug": "union-bank-of-india",
-   "url": "https://www.unionbankofindia.co.in/browser.htm?aspxerrorpath=/hindi/interestrateHindi.aspx",
+   "bankSlug": "allahabad-bank",
+   "url": "www.allahabadbank.com/fixed_deposit.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2001",
+   "to": "2002",
+   "note": "2001-era FD page"
+  },
+  {
+   "bankSlug": "allahabad-bank",
+   "url": "www.allahabadbank.com/depositschemes.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2002",
+   "to": "2007",
+   "note": "2002-era deposit schemes page"
+  },
+  {
+   "bankSlug": "allahabad-bank",
+   "url": "www.allahabadbank.com/termdeposit.asp",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2010",
+   "to": "2012",
+   "note": "2010-era term-deposit page"
+  },
+  {
+   "bankSlug": "allahabad-bank",
+   "url": "www.allahabadbank.in/english/rate_of_interest.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2014",
+   "to": "2018",
+   "note": "ASPX-era page on the .in domain"
+  },
+  {
+   "bankSlug": "allahabad-bank",
+   "url": "www.allahabadbank.in/Dep_rate.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2018",
+   "to": "2020",
+   "note": "successor page, 2018-2019, until the 2020 merger into Indian Bank"
+  },
+  {
+   "bankSlug": "allahabad-bank",
+   "url": "www.allahabadbank.com/savings_acc.htm",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2001",
+   "to": "2002",
+   "note": "savings page lead, 2001; generic run.ts pipeline is rows-only and cannot emit savingsSlabs -- kept as a lead for a bespoke savings-from-archive script"
+  },
+  {
+   "bankSlug": "allahabad-bank",
+   "url": "www.allahabadbank.com/recur_deposit.htm",
+   "product": "rd",
+   "amountMax": null,
+   "from": "2001",
+   "to": "2002",
+   "note": "RD page lead, 2001"
+  },
+  {
+   "bankSlug": "oriental-bank-of-commerce",
+   "url": "www.obcindia.co.in/content/interest-rate-on-domestic-and-nro-deposits",
    "product": "fd",
    "amountMax": null,
    "from": "2019",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "to": "2021",
+   "note": "only FD rate table found on OBC's own domain; the domain has no earlier keyword-matching captures before 2019 in this pass (see gap log) even though OBC operated back to 1980"
   },
   {
-   "bankSlug": "union-bank-of-india",
-   "url": "https://www.unionbankofindia.co.in/browser.htm?aspxerrorpath=/interest_rate.aspx",
-   "product": "fd",
+   "bankSlug": "oriental-bank-of-commerce",
+   "url": "www.obcindia.co.in/content/deposit-saving-account-misc",
+   "product": "savings",
    "amountMax": null,
    "from": "2019",
-   "to": "2026",
-   "note": "candidate from Phase 1 survey; verify layout"
+   "to": "2021",
+   "note": "savings page lead; generic run.ts pipeline is rows-only and cannot emit savingsSlabs -- kept as a lead for a bespoke savings-from-archive script"
+  },
+  {
+   "bankSlug": "united-bank-of-india",
+   "url": "www.unitedbankofindia.com/Interest_Rates/interest_rates.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2001",
+   "to": "2002",
+   "note": "earliest United Bank of India rate page found, 2001"
+  },
+  {
+   "bankSlug": "united-bank-of-india",
+   "url": "www.unitedbankofindia.com/interestrates.asp",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2007",
+   "to": "2011",
+   "note": "2007-era rate page"
+  },
+  {
+   "bankSlug": "united-bank-of-india",
+   "url": "www.unitedbankofindia.com/english/rates.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2014",
+   "to": "2016",
+   "note": "ASPX-era rates hub, 2014"
+  },
+  {
+   "bankSlug": "united-bank-of-india",
+   "url": "unitedbankofindia.com/english/ratesdeposit.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2016",
+   "to": "2020",
+   "note": "successor page, 2016 onward"
+  },
+  {
+   "bankSlug": "united-bank-of-india",
+   "url": "www.unitedbankofindia.com/deposit-schemes.asp",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2007",
+   "to": "2011",
+   "note": "combined deposit-schemes page including savings; generic run.ts pipeline is rows-only and cannot emit savingsSlabs -- kept as a lead for a bespoke savings-from-archive script"
+  },
+  {
+   "bankSlug": "andhra-bank",
+   "url": "andhrabank.in/english/interestrate.aspx",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2016",
+   "to": "2020",
+   "note": "only FD rate page found on Andhra Bank's own domain in this pass; earlier eras only turned up image files (interestrates.gif from 2007, 2010) suggesting a rate page existed but was not captured as HTML -- see gap log"
+  },
+  {
+   "bankSlug": "corporation-bank",
+   "url": "www.corpbank.com/interestrate.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "1998",
+   "to": "1999",
+   "note": "1998-12-02 capture -- second-earliest bank website snapshot found in this whole group"
+  },
+  {
+   "bankSlug": "corporation-bank",
+   "url": "www.corpbank.com/deposites.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "1999",
+   "to": "2000",
+   "note": "1999-era deposit page (sic: 'deposites')"
+  },
+  {
+   "bankSlug": "corporation-bank",
+   "url": "corpbank.com/Rates/rates.htm",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2000",
+   "to": "2001",
+   "note": "2000-era rates page"
+  },
+  {
+   "bankSlug": "corporation-bank",
+   "url": "www.corpbank.com/term_deposits.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2001",
+   "to": "2002",
+   "note": "2001-era term-deposit page"
+  },
+  {
+   "bankSlug": "corporation-bank",
+   "url": "www.corpbank.com/rates_deposit_rate",
+   "product": "fd",
+   "amountMax": null,
+   "from": "2013",
+   "to": "2017",
+   "note": "Drupal-era deposit-rate page, 2013-2017"
+  },
+  {
+   "bankSlug": "corporation-bank",
+   "url": "www.corpbank.com/savings_bank.html",
+   "product": "savings",
+   "amountMax": null,
+   "from": "2001",
+   "to": "2002",
+   "note": "savings page lead, 2001; generic run.ts pipeline is rows-only and cannot emit savingsSlabs -- kept as a lead for a bespoke savings-from-archive script"
+  },
+  {
+   "bankSlug": "global-trust-bank",
+   "url": "www.globaltrustbank.com/rates.html",
+   "product": "fd",
+   "amountMax": null,
+   "from": "1997",
+   "to": "1998",
+   "note": "1997-06-01 capture -- earliest bank website snapshot found in this whole group, from BEFORE the 22 Oct 1997 deregulation. The domain (gtbindia.com, guessed from the research brief) turned out to belong to an unrelated 'Gulf Travel Bureau'; the real GTB domain, globaltrustbank.com, was found via Exa search of GTB's own 1998 annual report footer"
   }
  ]
 }

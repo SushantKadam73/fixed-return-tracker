@@ -365,10 +365,17 @@
    "to": "2026-09-01"
   },
   {
+   "bankSlug": "indian-bank",
+   "product": "fd",
+   "cards": 3,
+   "from": "2009-08-07",
+   "to": "2010-10-01"
+  },
+  {
    "bankSlug": "indian-overseas-bank",
    "product": "fd",
-   "cards": 1,
-   "from": "2026-05-15",
+   "cards": 3,
+   "from": "2006-04-10",
    "to": "2026-05-15"
   },
   {
@@ -470,6 +477,20 @@
    "to": "2026-01-10"
   },
   {
+   "bankSlug": "oriental-bank-of-commerce",
+   "product": "fd",
+   "cards": 4,
+   "from": "2002-08-01",
+   "to": "2012-04-16"
+  },
+  {
+   "bankSlug": "oriental-bank-of-commerce",
+   "product": "nre",
+   "cards": 1,
+   "from": "2002-08-01",
+   "to": "2002-08-01"
+  },
+  {
    "bankSlug": "punjab-and-sind-bank",
    "product": "fd",
    "cards": 1,
@@ -493,8 +514,8 @@
   {
    "bankSlug": "punjab-national-bank",
    "product": "fd",
-   "cards": 1,
-   "from": "2026-06-01",
+   "cards": 4,
+   "from": "1998-05-08",
    "to": "2026-06-01"
   },
   {
@@ -503,6 +524,13 @@
    "cards": 1,
    "from": "2026-03-14",
    "to": "2026-03-14"
+  },
+  {
+   "bankSlug": "punjab-national-bank",
+   "product": "nre",
+   "cards": 1,
+   "from": "2002-11-07",
+   "to": "2002-11-07"
   },
   {
    "bankSlug": "punjab-national-bank",

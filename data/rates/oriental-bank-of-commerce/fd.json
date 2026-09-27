@@ -1,0 +1,374 @@
+{
+ "bankSlug": "oriental-bank-of-commerce",
+ "product": "fd",
+ "cards": [
+  {
+   "bankSlug": "oriental-bank-of-commerce",
+   "product": "fd",
+   "effectiveFrom": "2002-08-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://zeenews.india.com/home/oriental-bank-revises-interest-rates_51606.html/amp",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 7,
+     "tenureMaxDays": 14,
+     "tenureLabel": "7 to 14 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 4
+    },
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 30,
+     "tenureLabel": "15 to 30 days",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 31,
+     "tenureMaxDays": 45,
+     "tenureLabel": "31 to 45 days",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.25
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46 to 90 days",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.75
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91 to 179 days",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 364,
+     "tenureLabel": "180 days to less than 1 year",
+     "amountMin": 0,
+     "amountMax": 1500000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.5
+    },
+    {
+     "tenureMinDays": 15,
+     "tenureMaxDays": 30,
+     "tenureLabel": "15 to 30 days",
+     "amountMin": 1500000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.25
+    },
+    {
+     "tenureMinDays": 31,
+     "tenureMaxDays": 45,
+     "tenureLabel": "31 to 45 days",
+     "amountMin": 1500000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.5
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46 to 90 days",
+     "amountMin": 1500000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91 to 179 days",
+     "amountMin": 1500000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.25
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 364,
+     "tenureLabel": "180 days to less than 1 year",
+     "amountMin": 1500000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.75
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 729,
+     "tenureLabel": "1 year to less than 2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7,
+     "note": "Article does not state whether the Rs 15 lakh senior-amount split (stated only for 15-day-to-180-day tenors) also applies here; recorded amount-unqualified."
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 years to less than 3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7.25,
+     "note": "Article does not state whether the Rs 15 lakh senior-amount split (stated only for 15-day-to-180-day tenors) also applies here; recorded amount-unqualified."
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "3 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7.5
+    }
+   ],
+   "notes": [
+    "Transcribed from a dated wire report of OBC's own rate revision, not the bank's own page (OBC's own domain has no archived deposit-rate page from this era) -- see backfill/notes/psb-b.md."
+   ],
+   "contentHash": "984c1fc5304e107f"
+  },
+  {
+   "bankSlug": "oriental-bank-of-commerce",
+   "product": "fd",
+   "effectiveFrom": null,
+   "observedAt": "2026-09-27",
+   "observedFrom": "2009-03-30",
+   "observedTo": "2009-03-30",
+   "sourceType": "press",
+   "sourceUrl": "https://timesofindia.indiatimes.com/business/india-business/oriental-bank-of-commerce-likely-to-cut-deposit-rates/articleshow/4335132.cms",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 365,
+     "tenureLabel": "1 year",
+     "amountMin": 0,
+     "amountMax": 10000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8.25
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 365,
+     "tenureLabel": "1 year",
+     "amountMin": 10000000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7.5
+    }
+   ],
+   "notes": [
+    "No stated effective-from date -- the article reports the rate 'at present' on 2009-03-30, not a dated revision, so effectiveFrom is left null and observedFrom/observedTo record the article's own date instead.",
+    "The article's own reported 50-bps cut 'tomorrow' is a proposal under discussion at the time of writing ('we will take a call... tomorrow'), not a confirmed rate, and is deliberately not recorded."
+   ],
+   "contentHash": "69754a7cac95df4f"
+  },
+  {
+   "bankSlug": "oriental-bank-of-commerce",
+   "product": "fd",
+   "effectiveFrom": "2010-08-05",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://www.business-standard.com/article/finance/oriental-bank-raises-lending-deposit-rates-110080900179_1.html",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 7,
+     "tenureMaxDays": 14,
+     "tenureLabel": "7-14 days",
+     "amountMin": 10000000,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 2.5,
+     "note": "Article: 'deposits should be over Rs 1 crore' for this specific rate."
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 179,
+     "tenureLabel": "91 to 179 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 5.5
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 269,
+     "tenureLabel": "180 to 269 days",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 270,
+     "tenureMaxDays": 365,
+     "tenureLabel": "270 days to 1 year",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 6.25
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 1825,
+     "tenureLabel": "3-5 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7.25
+    },
+    {
+     "tenureMinDays": 1825,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "5-10 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7.5
+    },
+    {
+     "tenureMinDays": 1000,
+     "tenureMaxDays": 1000,
+     "tenureLabel": "1000 days",
+     "special": true,
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 7.5
+    }
+   ],
+   "notes": [
+    "Partial snapshot: the article reports only the tenors it names as revised, not a full rate card -- other tenors current on 2010-08-05 are not recorded here (gap, not zero)."
+   ],
+   "contentHash": "70437e1be3fa7333"
+  },
+  {
+   "bankSlug": "oriental-bank-of-commerce",
+   "product": "fd",
+   "effectiveFrom": "2012-04-16",
+   "observedAt": "2026-09-27",
+   "sourceType": "press",
+   "sourceUrl": "https://www.thehindubusinessline.com/money-and-banking/Oriental-Bank-cuts-FD-interest-rates-by-up-to-0.5/article20421779.ece",
+   "confidence": "low",
+   "rows": [
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 730,
+     "tenureLabel": "1-2 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 9.5
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46-90 days",
+     "amountMin": 1500000,
+     "amountMax": 10000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": null,
+     "payout": null,
+     "rate": 8.5
+    }
+   ],
+   "notes": [
+    "Partial snapshot: only the two revised tenors the article names, not a full rate card.",
+    "Article also reports the senior-citizen premium rising from 0.5% to 0.6% over the card rate on this date -- a policy change, not a per-row rate, so not recorded as a row."
+   ],
+   "contentHash": "fd97baf6bc9a69e8"
+  }
+ ]
+}

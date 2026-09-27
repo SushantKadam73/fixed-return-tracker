@@ -115,6 +115,33 @@ can't be read, the affected row/card is skipped and logged to stdout, not filled
     guess — the numbers and comparisons themselves are untouched).
 - **Re-run**: `npx tsx backfill/pnb-savings-archive.ts`
 
+## 6. Indian Bank — savings account (`indian-bank` / `savings`)
+
+- **Script**: `indian-bank-savings-wayback.ts`. Not a bank-own-archive script like 1-5 above:
+  Indian Bank publishes no historical file or inline tab archive for savings, so this reads
+  Internet Archive captures of its live `rate_sb.php` page directly via `wayback/cdx.ts`'s
+  `monthlyCaptures`/`snapshot` (same helpers `wayback/explore.ts`/`run.ts` use, so it shares
+  their rate limit/cache) rather than `wayback/run.ts` itself, which can only build
+  tenure-keyed `RateRow[]` cards and has no way to set `savingsSlabs`.
+- **URL**: `indianbank.in/rate_sb.php`.
+- **Coverage**: 2009-2014, one flat rate per capture (no balance tiers found in this range —
+  Indian Bank had still not introduced balance-tiered savings rates as of the last capture read,
+  a genuine finding, not a parsing gap).
+- **Re-run**: `npx tsx backfill/indian-bank-savings-wayback.ts`
+
+## 7-8. Oriental Bank of Commerce / Punjab National Bank — dated press revisions (`press`)
+
+- **Scripts**: `oriental-bank-of-commerce-press-archive.ts`, `punjab-national-bank-press-archive.ts`.
+  Not archive scripts at all — both banks have long gaps in their own web-archive coverage (OBC's
+  domain has almost nothing before 2019; PNB's before 2009), so these hardcode a handful of dated
+  rate snapshots transcribed from third-party news wire reports found via Exa search, each citing
+  its own article URL. `sourceType: "press"`, `confidence: "low"` throughout, per the project
+  convention — a secondary source, and several of the cards are explicitly partial (only the
+  tenors a given article names, not a full rate card for that date).
+- **Coverage**: OBC `fd`/`nre` 2002, 2009, 2010, 2012; PNB `fd`/`nre` 1998, 2000, 2002.
+- **Re-run**: `npx tsx backfill/oriental-bank-of-commerce-press-archive.ts` /
+  `npx tsx backfill/punjab-national-bank-press-archive.ts`
+
 ## Not attempted
 
 Per the research notes (`/agent/workspace/research/history/history_summary.md` and
