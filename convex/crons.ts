@@ -18,6 +18,6 @@ crons.daily("prune fetch log", { hourUTC: 22, minuteUTC: 0 }, internal.monitor.p
 crons.daily("import committed datasets", { hourUTC: 0, minuteUTC: 0 }, internal.seed.importAll);
 
 // 05:45 IST daily — pull macro series and stored rate files (incl. reconstructed history) from the repo.
-crons.daily("import series and rate history", { hourUTC: 0, minuteUTC: 15 }, internal.seed.importSeriesAndRates);
+crons.daily("import series and rate history", { hourUTC: 0, minuteUTC: 15 }, internal.seed.importSeriesAndRates, {});
 
 export default crons;

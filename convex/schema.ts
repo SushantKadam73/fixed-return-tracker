@@ -166,6 +166,13 @@ export default defineSchema({
     status: v.optional(v.union(v.literal("provisional"), v.literal("final"))),
   }).index("by_series_date", ["series", "date"]),
 
+  /** Dataset files last imported from the repo, by content hash (unchanged files are skipped). */
+  importState: defineTable({
+    path: v.string(),
+    hash: v.string(),
+    importedAt: v.number(),
+  }).index("by_path", ["path"]),
+
   /** Pre-computed read models for the website (one document per key). */
   summaries: defineTable({
     key: v.string(),

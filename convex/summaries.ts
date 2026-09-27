@@ -162,3 +162,14 @@ export const refreshAllBanks = internalMutation({
     await ctx.scheduler.runAfter(banks.length * 200 + 500, internal.summaries.refreshDirectory, {});
   },
 });
+
+/** Refresh the summaries of just these banks (after an import changed their files), then the directory. */
+export const refreshBanks = internalMutation({
+  args: { slugs: v.array(v.string()) },
+  handler: async (ctx, { slugs }) => {
+    for (const [i, bankSlug] of slugs.entries()) {
+      await ctx.scheduler.runAfter(i * 200, internal.summaries.refreshBank, { bankSlug });
+    }
+    await ctx.scheduler.runAfter(slugs.length * 200 + 500, internal.summaries.refreshDirectory, {});
+  },
+});

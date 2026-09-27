@@ -6,18 +6,38 @@
  * bank lineage, scheme histories, macro series and reconstructed rate history.
  */
 import { v } from "convex/values";
-import { internalAction, internalMutation } from "./_generated/server";
+import { internalAction, internalMutation, internalQuery } from "./_generated/server";
 import { internal } from "./_generated/api";
+import { hash64 } from "../lib/hash";
 import { product as productValidator, storedCard } from "./validators";
 
 const DEFAULT_BASE = "https://raw.githubusercontent.com/SushantKadam73/fixed-return-tracker/main/data";
 const base = () => process.env.DATASET_BASE_URL ?? DEFAULT_BASE;
 
-async function getJson<T>(path: string): Promise<T> {
+async function getText(path: string): Promise<string> {
   const res = await fetch(`${base()}/${path}`, { headers: { "cache-control": "no-cache" } });
   if (!res.ok) throw new Error(`${path}: HTTP ${res.status}`);
-  return (await res.json()) as T;
+  return await res.text();
 }
+
+async function getJson<T>(path: string): Promise<T> {
+  return JSON.parse(await getText(path)) as T;
+}
+
+/** Content hashes of the dataset files imported last time. */
+export const importStates = internalQuery({
+  args: {},
+  handler: async (ctx) => (await ctx.db.query("importState").collect()).map((r) => ({ path: r.path, hash: r.hash })),
+});
+
+export const setImportState = internalMutation({
+  args: { path: v.string(), hash: v.string() },
+  handler: async (ctx, { path, hash }) => {
+    const row = await ctx.db.query("importState").withIndex("by_path", (q) => q.eq("path", path)).first();
+    if (row) await ctx.db.patch(row._id, { hash, importedAt: Date.now() });
+    else await ctx.db.insert("importState", { path, hash, importedAt: Date.now() });
+  },
+});
 
 type BankFile = {
   banks: Array<{
@@ -219,18 +239,39 @@ export const importProductCards = internalMutation({
       });
       inserted++;
     }
-    // Make the newest bank-website card current (collector posts keep it fresh afterwards).
+    return { inserted };
+  },
+});
+
+/**
+ * After a rate file's cards are imported: remove historical cards the repo no longer has (e.g. a
+ * re-run backfill replaced them) so Convex mirrors the repo, and mark the newest bank-website card
+ * current. Live cards are never removed here — the collector posts them directly.
+ */
+export const finalizeProductCards = internalMutation({
+  args: { bankSlug: v.string(), product: productValidator, keys: v.array(v.string()) },
+  handler: async (ctx, a) => {
+    const keep = new Set(a.keys);
     const all = await ctx.db
       .query("rateCards")
       .withIndex("by_bank_product_effective", (q) => q.eq("bankSlug", a.bankSlug).eq("product", a.product))
       .collect();
-    const live = all.filter((c) => c.sourceType === "bank_official").sort((x, y) => (x.effectiveFrom ?? x.observedAt).localeCompare(y.effectiveFrom ?? y.observedAt));
-    const newest = live.at(-1);
+    let removed = 0;
+    const remaining = [];
     for (const c of all) {
+      const key = `${c.contentHash}|${c.effectiveFrom ?? c.observedFrom ?? c.observedAt}`;
+      if (c.sourceType !== "bank_official" && !keep.has(key)) {
+        await ctx.db.delete(c._id);
+        removed++;
+      } else remaining.push(c);
+    }
+    const live = remaining.filter((c) => c.sourceType === "bank_official").sort((x, y) => (x.effectiveFrom ?? x.observedAt).localeCompare(y.effectiveFrom ?? y.observedAt));
+    const newest = live.at(-1);
+    for (const c of remaining) {
       const shouldBe = newest !== undefined && c._id === newest._id;
       if (c.isCurrent !== shouldBe) await ctx.db.patch(c._id, { isCurrent: shouldBe });
     }
-    return { inserted };
+    return { removed };
   },
 });
 
@@ -238,13 +279,24 @@ type SeriesFile = { key: string; name: string; unit: string; frequency: string; 
 
 /** Import every committed series and every stored rate file, then refresh summaries. */
 export const importSeriesAndRates = internalAction({
-  args: {},
-  handler: async (ctx) => {
+  args: { force: v.optional(v.boolean()) },
+  handler: async (ctx, { force }) => {
+    // Files whose content hash matches the last import are skipped entirely, so a quiet day costs
+    // almost no database I/O (the free tier allows 1 GB a month) however much history accumulates.
+    const known = new Map((await ctx.runQuery(internal.seed.importStates, {})).map((r) => [r.path, r.hash]));
     const idx = await getJson<{ series: Array<{ key: string }> }>("series/_index.json");
     const freq = new Set(["daily", "monthly", "quarterly", "annual", "fiscal_year", "event"]);
     let seriesCount = 0;
+    let skipped = 0;
     for (const { key } of idx.series) {
-      const s = await getJson<SeriesFile>(`series/${key}.json`);
+      const path = `series/${key}.json`;
+      const text = await getText(path);
+      const hash = hash64(text);
+      if (!force && known.get(path) === hash) {
+        skipped++;
+        continue;
+      }
+      const s = JSON.parse(text) as SeriesFile;
       const points = s.points.filter((p) => typeof p[1] === "number").map((p) => ({ date: String(p[0]), value: p[1] as number }));
       for (let i = 0; i < points.length; i += 500) {
         await ctx.runMutation(internal.seed.upsertSeries, {
@@ -257,13 +309,23 @@ export const importSeriesAndRates = internalAction({
           points: points.slice(i, i + 500),
         });
       }
+      await ctx.runMutation(internal.seed.setImportState, { path, hash });
       seriesCount++;
     }
     let files = 0;
+    let removed = 0;
+    const changedBanks = new Set<string>();
     try {
       const rates = await getJson<{ files: Array<{ bankSlug: string; product: string }> }>("rates/_index.json");
       for (const f of rates.files) {
-        const pf = await getJson<{ bankSlug: string; product: string; cards: Array<Record<string, unknown>> }>(`rates/${f.bankSlug}/${f.product}.json`);
+        const path = `rates/${f.bankSlug}/${f.product}.json`;
+        const text = await getText(path);
+        const hash = hash64(text);
+        if (!force && known.get(path) === hash) {
+          skipped++;
+          continue;
+        }
+        const pf = JSON.parse(text) as { bankSlug: string; product: string; cards: Array<Record<string, unknown> & { contentHash: string; effectiveFrom?: string | null; observedFrom?: string | null; observedAt: string }> };
         for (let i = 0; i < pf.cards.length; i += 40) {
           await ctx.runMutation(internal.seed.importProductCards, {
             bankSlug: pf.bankSlug,
@@ -271,12 +333,18 @@ export const importSeriesAndRates = internalAction({
             cards: pf.cards.slice(i, i + 40) as never,
           });
         }
+        const keys = pf.cards.map((c) => `${c.contentHash}|${c.effectiveFrom ?? c.observedFrom ?? c.observedAt}`);
+        const r = await ctx.runMutation(internal.seed.finalizeProductCards, { bankSlug: pf.bankSlug, product: pf.product as "fd", keys });
+        removed += r.removed;
+        await ctx.runMutation(internal.seed.setImportState, { path, hash });
+        changedBanks.add(pf.bankSlug);
         files++;
       }
     } catch (e) {
       console.warn(`rate files not imported: ${(e as Error).message}`);
     }
-    await ctx.runMutation(internal.summaries.refreshAllBanks, {});
-    return { series: seriesCount, rateFiles: files };
+    if (force) await ctx.runMutation(internal.summaries.refreshAllBanks, {});
+    else if (changedBanks.size > 0) await ctx.runMutation(internal.summaries.refreshBanks, { slugs: [...changedBanks] });
+    return { series: seriesCount, rateFiles: files, removedCards: removed, unchangedFiles: skipped, banksRefreshed: force ? "all" : changedBanks.size };
   },
 });
