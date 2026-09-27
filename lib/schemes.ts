@@ -94,10 +94,16 @@ export type SchemeStatus =
 /** Status of a scheme's rate today (IST). */
 export function schemeStatus(s: Scheme, today = todayIST()): SchemeStatus {
   const sorted = [...s.periods].sort((a, b) => a.from.localeCompare(b.from));
-  const latest = sorted[sorted.length - 1];
-  if (!latest) return { kind: "awaiting", lastRate: null, lastPeriodEnd: "" };
+  if (sorted.length === 0) return { kind: "awaiting", lastRate: null, lastPeriodEnd: "" };
+  // A quarter/half-year is sometimes notified a few days before it actually takes effect
+  // (e.g. small-savings rates for Oct-Dec are announced around 30 Sept); ignore any period
+  // whose own `from` is still in the future so it isn't shown as "current" early — it becomes
+  // current on its own once `today` reaches it, with no code change needed here.
+  const inEffect = sorted.filter((p) => p.from <= today);
+  const latest = inEffect.at(-1) ?? sorted[0];
   if (s.key === "mssc" && latest.to && latest.to < today) return { kind: "closed", lastRate: latest.rate, closedOn: latest.to };
   if (latest.to && latest.to < today) return { kind: "awaiting", lastRate: latest.rate, lastPeriodEnd: latest.to };
+  if (inEffect.length === 0) return { kind: "awaiting", lastRate: null, lastPeriodEnd: "" }; // every period is still future-dated
   return { kind: "current", rate: latest.rate, maturityMonths: latest.maturityMonths, since: latest.from, until: latest.to };
 }
 

@@ -1,0 +1,104 @@
+<!-- trimmed test fixture: genuine excerpt of https://labourbureau.gov.in/ (the banner
+     highlight box, the CPI-IW and CPI-AL/RL "General Index" widgets, and the recent-uploads
+     ticker's press-note links), captured live on 2026-09-27. Unlike the mechanical
+     collectors/scripts/trim-fixture.ts output (which strips every attribute and is fine for
+     bank rate tables), this keeps class/href/title verbatim because the parser needs them:
+     the two "General Index" widgets share the exact same "cpiwDataAreaBox" class and are
+     told apart only by the preceding heading text, and the press-note URL only exists as a
+     real href. Values, hrefs and titles below are exactly as published; the huge inline SVG
+     maps, the 30+ state/centre tables and unrelated announcements are dropped. -->
+<html><body>
+
+<div class="bannerBottomSection">
+  <div class="col-lg-4 bannerBottomBox">
+    <div class="col">
+      <span class="resentFontPanel">153.2</span>
+      CPI(IW) for July-2026
+    </div>
+  </div>
+</div>
+
+<div class="scroll-container" id="scrollContainer">
+  <div class="scroll-content" id="scrollContent">
+    <ul>
+      <li>
+        <a target="_blank" title="Press Note CPI- IW for July 2026 (BASE YEAR: 2016=100)"
+           href="https://labourbureau.gov.in/uploads/public/notice/Press-Release-CPI-IWJuly2026Epdf-7ef701ec271f4a2f7868db7fb8bf00b7.pdf"
+           class="resentFontPanel"><i class="fa fa-circle" aria-hidden="true"></i><span class="resentFontPanel">Press Note CPI- IW for July 2026 (BASE YEAR: 2016=100)1.03 MB</span></a>
+      </li>
+      <li>
+        <a target="_blank" title="CPI(IW) Monthly Index Letter July-2026"
+           href="https://labourbureau.gov.in/uploads/public/notice/MILJuly2026Epdf-5ef4fa459416002320cc1d9dadfad650.pdf"
+           class="resentFontPanel"><i class="fa fa-circle" aria-hidden="true"></i><span class="resentFontPanel">CPI(IW) Monthly Index Letter July-2026707.45 KB</span></a>
+      </li>
+      <li>
+        <a target="_blank" title="Press Note CPI- AL/RL for August 2026 (BASE YEAR: 2019=100)"
+           href="https://labourbureau.gov.in/uploads/public/notice/PressReleaseEnpdf-4ce9584262ea96bc9f06c5dff00d975f.pdf"
+           class="resentFontPanel"><i class="fa fa-circle" aria-hidden="true"></i><span class="resentFontPanel">Press Note CPI- AL/RL for August 2026 (BASE YEAR: 2019=100)419.43 KB</span></a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="mapSectionArea">
+  <div class="container">
+    <div class="row">
+
+      <!-- left map area -->
+      <div class="col-lg-6">
+        <h4>CPI-IW [General Index (Base Year 2016 = 100)]</h4>
+        <div class="cpiwDataArea">
+          <button id="showCpiwData">All India Index</button>
+          <div class="cpiwDataAreaBox">
+            <!-- Header Row -->
+            <div class="row">
+              <div class="col-sm-6 col py-1"><strong>Month</strong></div>
+              <div class="col-sm-6 col py-1 text-right"><strong>Index</strong></div>
+            </div>
+            <hr>
+            <!-- Data Rows -->
+            <div class="row">
+              <div class="col-sm-6 col py-1">Jun-2026</div>
+              <div class="col-sm-6 col py-1 text-right">151.9</div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col py-1">Jul-2026</div>
+              <div class="col-sm-6 col py-1 text-right">153.2</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- right map area: same "cpiwDataAreaBox" class, different scheme (3 cols, not 2) -->
+      <div class="col-lg-6">
+        <h4>CPI-AL/RL [General Index (Base Year 2019 = 100)] </h4>
+        <div class="cpiwDataArea alrlBtn">
+          <button id="showCpiwData">All India Index</button>
+          <div class="cpiwDataAreaBox">
+            <!-- Header Row -->
+            <div class="row">
+              <div class="col-sm-4 col py-1"><strong>Month</strong></div>
+              <div class="col-sm-4 col py-1 text-right"><strong>AL Index</strong></div>
+              <div class="col-sm-4 col py-1 text-right"><strong>RL Index</strong></div>
+            </div>
+            <hr>
+            <!-- Data Rows -->
+            <div class="row">
+              <div class="col-sm-4 col py-1">Jul-2026</div>
+              <div class="col-sm-4 col py-1 text-right">141.65</div>
+              <div class="col-sm-4 col py-1 text-right">141.46</div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4 col py-1">Aug-2026</div>
+              <div class="col-sm-4 col py-1 text-right">143.40</div>
+              <div class="col-sm-4 col py-1 text-right">143.20</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body></html>

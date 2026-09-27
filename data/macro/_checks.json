@@ -1,0 +1,65 @@
+{
+ "cpi-combined": {
+  "lastAttemptAt": "2026-09-27T09:42:05.410Z",
+  "lastSuccessAt": "2026-09-27T09:42:05.410Z",
+  "lastChangeAt": null,
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "cpi-iw": {
+  "lastAttemptAt": "2026-09-27T09:42:03.242Z",
+  "lastSuccessAt": "2026-09-27T09:42:03.242Z",
+  "lastChangeAt": "2026-09-27T09:42:03.242Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "epf": {
+  "lastAttemptAt": "2026-09-27T09:42:01.591Z",
+  "lastSuccessAt": null,
+  "lastChangeAt": null,
+  "consecutiveFailures": 1,
+  "lastError": "EPFO circulars and PIB were both unreachable this run."
+ },
+ "frsb": {
+  "lastAttemptAt": "2026-09-27T09:42:03.242Z",
+  "lastSuccessAt": "2026-09-27T09:42:03.242Z",
+  "lastChangeAt": null,
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "gpf": {
+  "lastAttemptAt": "2026-09-27T09:42:03.241Z",
+  "lastSuccessAt": "2026-09-27T09:42:03.241Z",
+  "lastChangeAt": null,
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "nps-nav": {
+  "lastAttemptAt": "2026-09-27T09:42:22.445Z",
+  "lastSuccessAt": "2026-09-27T09:42:22.445Z",
+  "lastChangeAt": null,
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "rbi-bank-list": {
+  "lastAttemptAt": "2026-09-27T09:42:32.418Z",
+  "lastSuccessAt": "2026-09-27T09:42:32.418Z",
+  "lastChangeAt": null,
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "rbi-rates": {
+  "lastAttemptAt": "2026-09-27T09:42:21.542Z",
+  "lastSuccessAt": "2026-09-27T09:42:21.542Z",
+  "lastChangeAt": null,
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "small-savings": {
+  "lastAttemptAt": "2026-09-27T09:42:01.588Z",
+  "lastSuccessAt": "2026-09-27T09:42:01.588Z",
+  "lastChangeAt": null,
+  "consecutiveFailures": 0,
+  "lastError": null
+ }
+}

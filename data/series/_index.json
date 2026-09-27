@@ -28,13 +28,13 @@
    "frequency": "monthly",
    "publisher": "Labour Bureau, Ministry of Labour & Employment",
    "from": "1968-08",
-   "to": "2026-05",
-   "count": 683
+   "to": "2026-07",
+   "count": 685
   },
   {
    "key": "gold_mumbai_annual",
    "name": "Gold price, Mumbai (standard gold), fiscal-year average",
-   "unit": "\u20b9 per 10 grams",
+   "unit": "₹ per 10 grams",
    "frequency": "fiscal_year",
    "publisher": "RBI Handbook of Statistics",
    "from": "1972-73",
@@ -54,7 +54,7 @@
   {
    "key": "percapita_nni_annual",
    "name": "Per-capita net national income at current prices",
-   "unit": "\u20b9 per person per year",
+   "unit": "₹ per person per year",
    "frequency": "fiscal_year",
    "publisher": "NSO/MoSPI (Economic Survey table 1.1)",
    "from": "1950-51",
@@ -173,8 +173,8 @@
   },
   {
    "key": "usdinr_annual",
-   "name": "Rupee\u2013US dollar exchange rate, fiscal-year average",
-   "unit": "\u20b9 per US$",
+   "name": "Rupee–US dollar exchange rate, fiscal-year average",
+   "unit": "₹ per US$",
    "frequency": "fiscal_year",
    "publisher": "RBI Handbook of Statistics",
    "from": "1976-77",

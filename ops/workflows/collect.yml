@@ -1,6 +1,8 @@
 # Copy to .github/workflows/collect.yml
-# Reads every bank's official rate page, stores changes in data/rates, updates data/snapshots,
-# reports to Convex, and commits the data changes back to the repo (an auditable history).
+# Reads every bank's official rate page, stores changes in data/rates (and deposit terms in
+# data/terms), updates data/snapshots, reports to Convex; once a day also refreshes Government
+# scheme rates, EPF, CPI inflation, NPS NAVs, RBI policy rates and RBI's bank list; then commits
+# all data changes back to the repo (an auditable history).
 name: Collect rates
 
 on:
@@ -10,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       scope:
-        description: "all | bulk | <bank-slug>"
+        description: "all | bulk | macro | <bank-slug>"
         default: "all"
 
 permissions:
@@ -35,7 +37,8 @@ jobs:
         run: |
           npm install --no-save playwright@1
           npx playwright install --with-deps chromium
-      - name: Run collectors
+      - name: Run bank collectors
+        if: inputs.scope != 'macro'
         env:
           CONVEX_SITE_URL: ${{ secrets.CONVEX_SITE_URL }}
           INGEST_SECRET: ${{ secrets.INGEST_SECRET }}
@@ -49,11 +52,19 @@ jobs:
           else
             npx tsx collectors/src/run.ts
           fi
+      - name: Run scheme, inflation, NPS and RBI collectors
+        # Daily run and manual "all"/"macro" runs only (not the 10:20 bulk-rate run). A failing
+        # government site never blocks the bank data from being committed.
+        if: ${{ !cancelled() && github.event.schedule != '50 4 * * 1-6' && (github.event_name == 'schedule' || inputs.scope == 'all' || inputs.scope == 'macro') }}
+        continue-on-error: true
+        run: npx tsx collectors/src/run-macro.ts
       - name: Commit data changes
+        # Also after a failed step: everything stored was validated first, so partial progress is kept.
+        if: ${{ !cancelled() }}
         run: |
           git config user.name "fixed-return-tracker-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/rates data/snapshots
+          git add -A data
           if git diff --cached --quiet; then
             echo "No rate changes."
           else

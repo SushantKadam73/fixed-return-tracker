@@ -75,7 +75,8 @@ npx convex dev      # optional: connect your own Convex dev deployment
 | 03:30 daily | Convex | Trim the fetch log (60 days kept) |
 | 05:30 daily | Convex | Import reviewed datasets from the repo (banks, lineage, schemes, source registry) |
 | 05:45 daily | Convex | Import macro series and rate files; unchanged files are skipped by content hash, and only banks with changed files are re-summarised |
-| 07:00 daily | GitHub Actions | Read every official bank rate page, validate, store changes in `data/rates`, rebuild `data/snapshots` (including the coverage report), post to Convex, commit |
+| 07:00 daily | GitHub Actions | Read every official bank rate page, validate, store changes in `data/rates` and deposit terms in `data/terms`, rebuild `data/snapshots` (including the coverage report), post to Convex |
+| 07:00 daily (same run) | GitHub Actions | Scheme rates (small savings, GPF, FRSB), EPF, CPI-IW and CPI Combined, NPS NAVs, RBI policy rates and RBI's bank list (`collectors/src/run-macro.ts`; see `collectors/README.md`), then commit every `data/` change |
 | 09:00 daily | Convex | Flag sources with no successful read for 3 days (daily cadence) as stale and open alerts |
 | 09:30 daily | Convex | Watchdog: if the 07:00 run did not report in, open an alert and (with `GITHUB_DISPATCH_TOKEN`) restart the workflow |
 | 10:20 Mon–Sat | GitHub Actions | Re-read bulk-deposit pages (RBI requires banks to post bulk rates by 10:10 AM each business day) |
