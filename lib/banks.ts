@@ -2,6 +2,7 @@
  * Bank master list (from the committed dataset) and helpers for lineage.
  */
 import "server-only";
+import type { BankCoverage } from "./coverage";
 import { readDataset } from "./data";
 
 export type BankGroupKey = "sbi_nationalised" | "private" | "sfb" | "payments";
@@ -75,4 +76,10 @@ export function formatFounded(value: string | null): string {
   }
   const d = new Date(`${value}T12:00:00+05:30`);
   return Number.isNaN(d.getTime()) ? value : d.toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+}
+
+/** History coverage report for every bank and predecessor (built by the collectors into data/snapshots/coverage.json). */
+export async function getCoverage(): Promise<{ generatedOn: string | null; banks: BankCoverage[] }> {
+  const d = await readDataset<{ payload: { generatedOn: string; banks: BankCoverage[] } }>("snapshots/coverage.json");
+  return { generatedOn: d?.payload.generatedOn ?? null, banks: d?.payload.banks ?? [] };
 }

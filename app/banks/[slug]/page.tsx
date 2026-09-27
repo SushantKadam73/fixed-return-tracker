@@ -2,12 +2,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { RateHistoryChart } from "@/components/charts/rate-history-chart";
+import { CoverageDetails } from "@/components/coverage-view";
 import { SavingsSlabTable, TermRateTable } from "@/components/rate-card-view";
 import { AsOf, Badge, Card, Notice, PageHeader, Section, SourceBadge } from "@/components/ui";
-import { GROUP_LABELS, formatFounded, getBankMaster, lineageOf } from "@/lib/banks";
+import { GROUP_LABELS, formatFounded, getBankMaster, getCoverage, lineageOf } from "@/lib/banks";
+import type { BankCoverage } from "@/lib/coverage";
 import { getFreshness, getSummary } from "@/lib/data";
 import type { RateRow, SavingsSlab } from "@/lib/domain";
 import { formatDateIST } from "@/lib/format";
+import { getSeries } from "@/lib/series";
 
 type CardMeta = {
   effectiveFrom: string | null;
@@ -25,6 +28,7 @@ type ProductSummary = {
   versions: Array<CardMeta & { isCurrent: boolean; general: Record<string, number | null> | null; senior: Record<string, number | null> | null; baseSavingsRate: number | null }>;
 };
 type BankSummary = { products: Record<string, ProductSummary> };
+type RangePoint = [string, number | null, number | null, string];
 
 const PRODUCT_LABELS: Record<string, string> = {
   fd: "Fixed deposits",
@@ -37,30 +41,92 @@ const PRODUCT_LABELS: Record<string, string> = {
 };
 
 export async function generateStaticParams() {
-  const { banks } = await getBankMaster();
-  return banks.map((b) => ({ slug: b.slug }));
+  const { banks, predecessors } = await getBankMaster();
+  return [...banks.map((b) => ({ slug: b.slug })), ...predecessors.map((p) => ({ slug: p.slug }))];
 }
 
 export async function generateMetadata({ params }: PageProps<"/banks/[slug]">): Promise<Metadata> {
   const { slug } = await params;
-  const { banks } = await getBankMaster();
+  const { banks, predecessors } = await getBankMaster();
   const bank = banks.find((b) => b.slug === slug);
-  return bank
-    ? { title: `${bank.name} FD, RD and savings interest rates with history`, description: `Current and historical deposit rates of ${bank.name}, with sources and merger history.` }
-    : {};
+  if (bank) return { title: `${bank.name} FD, RD and savings interest rates with history`, description: `Current and historical deposit rates of ${bank.name}, with sources and merger history.` };
+  const pred = predecessors.find((p) => p.slug === slug);
+  return pred ? { title: `${pred.name} — historical deposit rates`, description: `Recorded deposit-rate history of ${pred.name}, which merged into another bank, with sources.` } : {};
 }
 
 function historyPoints(versions: ProductSummary["versions"], pick: (v: ProductSummary["versions"][number]) => number | null) {
   return versions.map((v) => ({ date: v.effectiveFrom ?? v.observedFrom ?? v.observedAt, value: pick(v) }));
 }
 
+/** RBI-prescribed rates for the years this bank existed before deregulation (system-wide rates, not bank-specific). */
+async function RegulatedEra({ name, regulated }: { name: string; regulated: BankCoverage["regulated"] }) {
+  const [td13, td35, td5, sav] = await Promise.all([
+    getSeries<RangePoint>("rbi_td_1_3y"),
+    getSeries<RangePoint>("rbi_td_3_5y"),
+    getSeries<RangePoint>("rbi_td_5y_plus"),
+    getSeries<[string, number | null, string | null]>("rbi_savings_rate"),
+  ]);
+  const td = regulated.termDeposits;
+  const sb = regulated.savings;
+  const inTd = (d: string) => !!td && (!td.from || d >= td.from) && d <= td.to;
+  const upper = (s: typeof td13) => (s?.points ?? []).filter(([d]) => inTd(d)).map(([d, , hi]) => ({ date: d, value: hi }));
+  const tdSeries = [
+    { key: "a", label: "1–3 years", color: "var(--accent)", points: upper(td13) },
+    { key: "b", label: "3–5 years", color: "#6d8fd8", points: upper(td35) },
+    { key: "c", label: "Above 5 years", color: "#d9822b", points: upper(td5) },
+  ].filter((s) => s.points.length > 0);
+
+  // Savings: a step series; start it at the founding date with the rate then in force.
+  const savPts = (sav?.points ?? []).map(([d, r]) => ({ date: d, value: r }));
+  let sbPoints: Array<{ date: string; value: number | null }> = [];
+  if (sb) {
+    const before = sb.from ? savPts.filter((p) => p.date <= sb.from!).at(-1) : undefined;
+    sbPoints = [...(before && sb.from ? [{ date: sb.from, value: before.value }] : []), ...savPts.filter((p) => (!sb.from || p.date > sb.from) && p.date <= sb.to)];
+  }
+  if (tdSeries.length === 0 && sbPoints.length === 0) return null;
+
+  return (
+    <Section
+      title="Before deregulation: rates set by RBI"
+      description={`RBI prescribed deposit rates for all banks, ${name} included, until 22 Oct 1997 for term deposits and until 25 Oct 2011 for savings accounts. These are the system-wide rates for the years ${name} existed then; they are not ${name}'s own rate cards.`}
+    >
+      <div className="grid gap-4 lg:grid-cols-2">
+        {tdSeries.length > 0 ? (
+          <Card>
+            <p className="mb-2 text-sm font-medium">Term deposits (as at 31 March, upper end of RBI&apos;s range)</p>
+            <RateHistoryChart series={tdSeries} height={240} />
+          </Card>
+        ) : null}
+        {sbPoints.length > 0 ? (
+          <Card>
+            <p className="mb-2 text-sm font-medium">Savings account</p>
+            <RateHistoryChart series={[{ key: "s", label: "Savings rate (RBI-prescribed)", color: "var(--accent)", points: sbPoints }]} height={240} />
+          </Card>
+        ) : null}
+      </div>
+      <p className="mt-2 text-xs text-muted">
+        RBI data before 1970-71 (term deposits) and 1977 (savings) was not found, so earlier years are not shown. Details and sources on the{" "}
+        <Link href="/history" className="text-accent hover:underline">
+          history page
+        </Link>
+        .
+      </p>
+    </Section>
+  );
+}
+
 export default async function BankPage({ params }: PageProps<"/banks/[slug]">) {
   const { slug } = await params;
   const { banks, predecessors } = await getBankMaster();
   const bank = banks.find((b) => b.slug === slug);
-  if (!bank) notFound();
-  const summary = await getSummary<BankSummary>(`bank:${slug}`);
-  const fresh = (await getFreshness())[slug] ?? {};
+  const pred = bank ? undefined : predecessors.find((p) => p.slug === slug);
+  if (!bank && !pred) notFound();
+  const name = bank?.name ?? pred!.name;
+  const shortName = bank?.shortName ?? pred!.name;
+  const successor = pred ? (banks.find((b) => b.slug === pred.mergedInto) ?? predecessors.find((p) => p.slug === pred.mergedInto)) : undefined;
+  const [summary, freshAll, coverageAll] = await Promise.all([getSummary<BankSummary>(`bank:${slug}`), getFreshness(), getCoverage()]);
+  const fresh = freshAll[slug] ?? {};
+  const coverage = coverageAll.banks.find((c) => c.slug === slug) ?? null;
   const products = summary?.payload?.products ?? {};
   const lineage = lineageOf(slug, predecessors);
 
@@ -71,24 +137,38 @@ export default async function BankPage({ params }: PageProps<"/banks/[slug]">) {
           ← All banks
         </Link>
       </p>
-      <PageHeader title={bank.name}>
+      <PageHeader title={name}>
         <div className="flex flex-wrap items-center gap-2 text-sm text-muted">
-          <Badge tone="accent">{GROUP_LABELS[bank.group]}</Badge>
-          <span>Founded {formatFounded(bank.founded)}</span>
-          {bank.hq ? <span>· {bank.hq}</span> : null}
-          {bank.website ? (
+          {bank ? <Badge tone="accent">{GROUP_LABELS[bank.group]}</Badge> : <Badge>{pred!.relation === "merged" ? "merged bank" : "former name"}</Badge>}
+          <span>Founded {formatFounded(bank?.founded ?? pred!.founded)}</span>
+          {pred ? (
+            <span>
+              · {pred.relation === "merged" ? "merged into" : "renamed or converted to"}{" "}
+              {successor ? (
+                <Link href={`/banks/${successor.slug}`} className="text-accent hover:underline">
+                  {successor.name}
+                </Link>
+              ) : (
+                pred.mergedInto
+              )}
+              {pred.mergedOn ? ` on ${formatDateIST(pred.mergedOn)}` : ""}
+            </span>
+          ) : null}
+          {bank?.hq ? <span>· {bank.hq}</span> : null}
+          {bank?.website ? (
             <a className="text-accent hover:underline" href={`https://${bank.website}`} target="_blank" rel="noopener noreferrer">
               · {bank.website}
             </a>
           ) : null}
-          {bank.tracking === "deferred" ? <Badge>tracked in a later release</Badge> : null}
+          {bank?.tracking === "deferred" ? <Badge>tracked in a later release</Badge> : null}
         </div>
       </PageHeader>
 
       {Object.keys(products).length === 0 ? (
         <Notice>
-          Rates for {bank.shortName} appear here once the daily collector has read the bank&apos;s official rate pages. Nothing is shown
-          until it has been read from the bank&apos;s own website.
+          {bank
+            ? `Rates for ${shortName} appear here once the daily collector has read the bank's official rate pages. Nothing is shown until it has been read from the bank's own website.`
+            : `No rate cards of ${name} itself have been recorded yet. Its history is rebuilt from archived copies of its own website and other dated sources; anything not found stays "not reported".`}
         </Notice>
       ) : null}
 
@@ -112,9 +192,9 @@ export default async function BankPage({ params }: PageProps<"/banks/[slug]">) {
                   <AsOf date={(fresh[product] ?? c.observedAt).slice(0, 10)} label="Last checked" />
                 </div>
               </Card>
-            ) : (
+            ) : bank ? (
               <Notice>Current rates from the bank&apos;s live page are not in yet (the daily collector adds them once it can read the page). The history below comes from the recorded sources shown.</Notice>
-            )}
+            ) : null}
             {p.versions.length > 1 ? (
               <Card className="mt-4">
                 <p className="mb-2 text-sm font-medium">History</p>
@@ -177,6 +257,22 @@ export default async function BankPage({ params }: PageProps<"/banks/[slug]">) {
         );
       })}
 
+      {coverage ? <RegulatedEra name={shortName} regulated={coverage.regulated} /> : null}
+
+      {coverage ? (
+        <Section
+          title="History coverage"
+          description={`How far back ${shortName}'s own rates are recorded, what they rest on, and the periods with no evidence yet.`}
+        >
+          <CoverageDetails coverage={coverage} />
+          <p className="mt-2 text-xs text-muted">
+            <Link href="/coverage" className="text-accent hover:underline">
+              Coverage for all banks →
+            </Link>
+          </p>
+        </Section>
+      ) : null}
+
       <Section title="Lineage" description="Banks that merged into or were renamed as this bank. Their own historical rates are kept under their names.">
         {lineage.length === 0 ? (
           <p className="text-sm text-muted">No mergers recorded.</p>
@@ -184,7 +280,9 @@ export default async function BankPage({ params }: PageProps<"/banks/[slug]">) {
           <ul className="space-y-2 text-sm">
             {lineage.map((p) => (
               <li key={p.slug} style={{ paddingLeft: `${p.depth * 1.25}rem` }}>
-                <span className="font-medium">{p.name}</span>{" "}
+                <Link href={`/banks/${p.slug}`} className="font-medium hover:text-accent">
+                  {p.name}
+                </Link>{" "}
                 <span className="text-muted">
                   {p.relation === "merged" ? "merged" : "renamed/converted"}
                   {p.mergedOn ? ` on ${formatDateIST(p.mergedOn)}` : ""}
@@ -201,7 +299,18 @@ export default async function BankPage({ params }: PageProps<"/banks/[slug]">) {
         )}
       </Section>
 
-      {bank.history.length > 0 ? (
+      {pred?.notes ? (
+        <Section title="About">
+          <p className="text-sm text-muted">{pred.notes}</p>
+          {pred.evidenceUrl ? (
+            <a className="text-xs text-accent hover:underline" href={pred.evidenceUrl} target="_blank" rel="noopener noreferrer">
+              source
+            </a>
+          ) : null}
+        </Section>
+      ) : null}
+
+      {bank && bank.history.length > 0 ? (
         <Section title="Timeline">
           <ol className="space-y-2 border-l border-border pl-4 text-sm">
             {bank.history.map((h, i) => (

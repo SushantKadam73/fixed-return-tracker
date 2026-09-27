@@ -70,6 +70,11 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link className="hover:text-text" href="/coverage">
+                History coverage
+              </Link>
+            </li>
+            <li>
               <Link className="hover:text-text" href="/status">
                 Data status
               </Link>
