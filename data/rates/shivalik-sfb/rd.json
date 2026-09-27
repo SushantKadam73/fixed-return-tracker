@@ -1,0 +1,189 @@
+{
+ "bankSlug": "shivalik-sfb",
+ "product": "rd",
+ "cards": [
+  {
+   "bankSlug": "shivalik-sfb",
+   "product": "rd",
+   "effectiveFrom": "2026-09-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://shivalik.bank.in/interest-rate",
+   "confidence": "high",
+   "rows": [
+    {
+     "tenureMinDays": 183,
+     "tenureMaxDays": 243,
+     "tenureLabel": "6 months to 8 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 183,
+     "tenureMaxDays": 243,
+     "tenureLabel": "6 months to 8 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.25
+    },
+    {
+     "tenureMinDays": 274,
+     "tenureMaxDays": 365,
+     "tenureLabel": "9 months to 12 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 274,
+     "tenureMaxDays": 365,
+     "tenureLabel": "9 months to 12 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.25
+    },
+    {
+     "tenureMinDays": 395,
+     "tenureMaxDays": 517,
+     "tenureLabel": "13 months to 17 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.75
+    },
+    {
+     "tenureMinDays": 395,
+     "tenureMaxDays": 517,
+     "tenureLabel": "13 months to 17 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7
+    },
+    {
+     "tenureMinDays": 548,
+     "tenureMaxDays": 700,
+     "tenureLabel": "18 months to 23 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.5
+    },
+    {
+     "tenureMinDays": 548,
+     "tenureMaxDays": 700,
+     "tenureLabel": "18 months to 23 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.75
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 821,
+     "tenureLabel": "24 months to 27 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 8
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 821,
+     "tenureLabel": "24 months to 27 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 8.25
+    },
+    {
+     "tenureMinDays": 852,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "28 months to 36 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.5
+    },
+    {
+     "tenureMinDays": 852,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "28 months to 36 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7.75
+    },
+    {
+     "tenureMinDays": 1125,
+     "tenureMaxDays": 1825,
+     "tenureLabel": "37 months to 60 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.25
+    },
+    {
+     "tenureMinDays": 1125,
+     "tenureMaxDays": 1825,
+     "tenureLabel": "37 months to 60 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.5
+    }
+   ],
+   "notes": [
+    "RD is the bank's own recurring-deposit card (different tenure buckets from FD), not derived from it."
+   ],
+   "contentHash": "4127e95e61125edd"
+  }
+ ]
+}

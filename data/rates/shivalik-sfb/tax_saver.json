@@ -1,0 +1,45 @@
+{
+ "bankSlug": "shivalik-sfb",
+ "product": "tax_saver",
+ "cards": [
+  {
+   "bankSlug": "shivalik-sfb",
+   "product": "tax_saver",
+   "effectiveFrom": "2026-09-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://shivalik.bank.in/interest-rate",
+   "confidence": "high",
+   "rows": [
+    {
+     "tenureMinDays": 1825,
+     "tenureMaxDays": 1825,
+     "tenureLabel": "Tax saver FD 5 Years (60 months)",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.25
+    },
+    {
+     "tenureMinDays": 1825,
+     "tenureMaxDays": 1825,
+     "tenureLabel": "Tax saver FD 5 Years (60 months)",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.5
+    }
+   ],
+   "notes": [
+    "5-year (60-month) lock-in row from the same FD table; max ₹1,50,000 per PAN per financial year (u/s 80C)."
+   ],
+   "contentHash": "c8ef796b1729a5d0"
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "bankSlug": "shivalik-sfb",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "shivalik-sfb",
+   "product": "savings",
+   "effectiveFrom": "2026-07-13",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://shivalik.bank.in/interest-rate",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 100001,
+     "rate": 2.5,
+     "residency": "resident",
+     "note": "Up to 1 Lacs"
+    },
+    {
+     "balanceMin": 100001,
+     "balanceMax": 500001,
+     "rate": 3.25,
+     "residency": "resident",
+     "note": "Above 1 Lac to 5 Lacs"
+    },
+    {
+     "balanceMin": 500001,
+     "balanceMax": 1000001,
+     "rate": 3.5,
+     "residency": "resident",
+     "note": "Above 5 Lacs to 10 Lacs"
+    },
+    {
+     "balanceMin": 1000001,
+     "balanceMax": 100000001,
+     "rate": 7,
+     "residency": "resident",
+     "note": "Above 10 Lacs to 10 Crore"
+    }
+   ],
+   "slabMethod": "incremental",
+   "notes": [
+    "Above ₹10 crore: bank says 'please contact the nearest branch' — no published rate."
+   ],
+   "contentHash": "8ec01292d603f1bc"
+  }
+ ]
+}

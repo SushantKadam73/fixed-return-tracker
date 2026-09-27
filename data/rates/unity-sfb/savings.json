@@ -1,0 +1,44 @@
+{
+ "bankSlug": "unity-sfb",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "unity-sfb",
+   "product": "savings",
+   "effectiveFrom": "2025-08-19",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://unity.bank.in/docs/policies/website-disclosure-effective-02-july-2026.pdf",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 100001,
+     "rate": 4.5,
+     "residency": "resident",
+     "note": "Upto 1 lakh"
+    },
+    {
+     "balanceMin": 100001,
+     "balanceMax": 1000001,
+     "rate": 6,
+     "residency": "resident",
+     "note": ">1 lakh-10 lakh"
+    },
+    {
+     "balanceMin": 1000001,
+     "balanceMax": null,
+     "rate": 7,
+     "residency": "resident",
+     "note": ">10 lakh"
+    }
+   ],
+   "slabMethod": "unknown",
+   "notes": [
+    "The disclosure PDF gives per-slab rates but does not say whether each slab applies to the whole balance or only the incremental portion — recorded as 'unknown', not guessed."
+   ],
+   "contentHash": "08b457250264ceca"
+  }
+ ]
+}

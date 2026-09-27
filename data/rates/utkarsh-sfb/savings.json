@@ -1,0 +1,93 @@
+{
+ "bankSlug": "utkarsh-sfb",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "utkarsh-sfb",
+   "product": "savings",
+   "effectiveFrom": "2026-07-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.utkarsh.bank.in/personal/savings-account/standard-savings-account",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 100001,
+     "rate": 2.75,
+     "residency": "resident",
+     "note": "Balance Upto ₹ 1 Lakh"
+    },
+    {
+     "balanceMin": 100001,
+     "balanceMax": 300001,
+     "rate": 3.5,
+     "residency": "resident",
+     "note": "Incremental balance above₹ 1 Lakh upto ₹3 Lakhs"
+    },
+    {
+     "balanceMin": 300001,
+     "balanceMax": 500001,
+     "rate": 4.25,
+     "residency": "resident",
+     "note": "Incremental balance above₹ 3 Lakh upto ₹5 Lakhs"
+    },
+    {
+     "balanceMin": 500001,
+     "balanceMax": 1000001,
+     "rate": 5.5,
+     "residency": "resident",
+     "note": "Incremental balance above₹ 5 Lakhs upto ₹10 Lakhs"
+    },
+    {
+     "balanceMin": 1000001,
+     "balanceMax": 5000001,
+     "rate": 7,
+     "residency": "resident",
+     "note": "Incremental balance above₹ 10 Lakhs upto ₹50 Lakhs"
+    },
+    {
+     "balanceMin": 5000001,
+     "balanceMax": 100000001,
+     "rate": 7.25,
+     "residency": "resident",
+     "note": "Incremental balance above₹ 50 Lakhs upto ₹10 Crore"
+    },
+    {
+     "balanceMin": 100000001,
+     "balanceMax": 1000000001,
+     "rate": 7.5,
+     "residency": "resident",
+     "note": "Incremental balance above₹ 10 Crore upto ₹100 Crore"
+    },
+    {
+     "balanceMin": 1000000001,
+     "balanceMax": 2500000001,
+     "rate": 8,
+     "residency": "resident",
+     "note": "Incremental balance above₹ 100 Crore upto ₹250 Crore"
+    },
+    {
+     "balanceMin": 2500000001,
+     "balanceMax": 5000000001,
+     "rate": 8.25,
+     "residency": "resident",
+     "note": "Incremental balance above₹ 250 Crore upto ₹500 Crore"
+    },
+    {
+     "balanceMin": 5000000001,
+     "balanceMax": null,
+     "rate": 8,
+     "residency": "resident",
+     "note": "Incremental balance above ₹ 500 Crore"
+    }
+   ],
+   "slabMethod": "incremental",
+   "notes": [
+    "Page states: 'No Additional Interest Rate for Senior Citizen.'"
+   ],
+   "contentHash": "d4142365dc969f6b"
+  }
+ ]
+}

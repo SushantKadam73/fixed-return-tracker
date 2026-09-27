@@ -1,0 +1,123 @@
+{
+ "bankSlug": "slice-sfb",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "slice-sfb",
+   "product": "savings",
+   "effectiveFrom": "2024-12-19",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://slice.bank.in/documents/imp/previous_interest_rates.pdf",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": null,
+     "rate": 6.5,
+     "residency": "resident",
+     "note": "Flat rate = 100% of the RBI repo rate at the time."
+    }
+   ],
+   "slabMethod": "whole",
+   "notes": [
+    "From the bank's own \"Previous Interest Rates\" archive PDF."
+   ],
+   "contentHash": "97bca0d7a9ea3dfb"
+  },
+  {
+   "bankSlug": "slice-sfb",
+   "product": "savings",
+   "effectiveFrom": "2025-02-08",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://slice.bank.in/documents/imp/previous_interest_rates.pdf",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": null,
+     "rate": 6.25,
+     "residency": "resident",
+     "note": "Flat rate = 100% of the RBI repo rate at the time."
+    }
+   ],
+   "slabMethod": "whole",
+   "notes": [
+    "From the bank's own \"Previous Interest Rates\" archive PDF."
+   ],
+   "contentHash": "6f90b459fca8cf04"
+  },
+  {
+   "bankSlug": "slice-sfb",
+   "product": "savings",
+   "effectiveFrom": "2025-04-10",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://slice.bank.in/documents/imp/previous_interest_rates.pdf",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": null,
+     "rate": 6,
+     "residency": "resident",
+     "note": "Flat rate = 100% of the RBI repo rate at the time."
+    }
+   ],
+   "slabMethod": "whole",
+   "notes": [
+    "From the bank's own \"Previous Interest Rates\" archive PDF."
+   ],
+   "contentHash": "03b8483e8c75abff"
+  },
+  {
+   "bankSlug": "slice-sfb",
+   "product": "savings",
+   "effectiveFrom": "2025-06-06",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://slice.bank.in/documents/imp/previous_interest_rates.pdf",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": null,
+     "rate": 5.5,
+     "residency": "resident",
+     "note": "Flat rate = 100% of the RBI repo rate at the time."
+    }
+   ],
+   "slabMethod": "whole",
+   "notes": [
+    "From the bank's own \"Previous Interest Rates\" archive PDF."
+   ],
+   "contentHash": "7aae304b4fd40efd"
+  },
+  {
+   "bankSlug": "slice-sfb",
+   "product": "savings",
+   "effectiveFrom": "2025-12-05",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://slice.bank.in/documents/imp/interest-rates.pdf",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": null,
+     "rate": 5.25,
+     "residency": "resident",
+     "note": "Flat rate = 100% of the RBI repo rate at the time, paid daily; not slabbed by balance."
+    }
+   ],
+   "slabMethod": "whole",
+   "contentHash": "115acab18309a5f8"
+  }
+ ]
+}

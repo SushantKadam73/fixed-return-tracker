@@ -1,0 +1,65 @@
+{
+ "bankSlug": "jana-sfb",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "jana-sfb",
+   "product": "savings",
+   "effectiveFrom": "2026-05-07",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.jana.bank.in/interest-rates/",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 100001,
+     "rate": 2.5,
+     "residency": "resident",
+     "note": "Up to Rs. 1 Lakh"
+    },
+    {
+     "balanceMin": 100001,
+     "balanceMax": 500001,
+     "rate": 3.5,
+     "residency": "resident",
+     "note": "More than Rs. 1 Lakh and Up to Rs. 5 Lakhs"
+    },
+    {
+     "balanceMin": 500001,
+     "balanceMax": 1000001,
+     "rate": 4.5,
+     "residency": "resident",
+     "note": "More than Rs. 5 Lakhs and Up to Rs. 10 Lakhs"
+    },
+    {
+     "balanceMin": 1000001,
+     "balanceMax": 5000001,
+     "rate": 6.75,
+     "residency": "resident",
+     "note": "More than Rs. 10 Lakhs and Up to Rs. 50 Lakhs"
+    },
+    {
+     "balanceMin": 5000001,
+     "balanceMax": 100000001,
+     "rate": 7,
+     "residency": "resident",
+     "note": "More than Rs. 50 Lakhs and Up to Rs. 10 Crores"
+    },
+    {
+     "balanceMin": 100000001,
+     "balanceMax": 200000001,
+     "rate": 7,
+     "residency": "resident",
+     "note": "More than Rs. 10 Crores and Up to Rs. 20 Crores"
+    }
+   ],
+   "slabMethod": "incremental",
+   "notes": [
+    "Above ₹20 crore: 'Contact Branch' — no published rate."
+   ],
+   "contentHash": "b6ba8881fa539751"
+  }
+ ]
+}

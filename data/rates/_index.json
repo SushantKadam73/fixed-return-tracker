@@ -64,6 +64,34 @@
    "to": "2025-06-24"
   },
   {
+   "bankSlug": "jana-sfb",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-09-25",
+   "to": "2026-09-25"
+  },
+  {
+   "bankSlug": "jana-sfb",
+   "product": "fd_bulk",
+   "cards": 1,
+   "from": "2026-09-25",
+   "to": "2026-09-25"
+  },
+  {
+   "bankSlug": "jana-sfb",
+   "product": "rd",
+   "cards": 1,
+   "from": "2026-09-25",
+   "to": "2026-09-25"
+  },
+  {
+   "bankSlug": "jana-sfb",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-05-07",
+   "to": "2026-05-07"
+  },
+  {
    "bankSlug": "punjab-national-bank",
    "product": "savings",
    "cards": 17,
@@ -99,6 +127,55 @@
    "to": "2025-06-15"
   },
   {
+   "bankSlug": "shivalik-sfb",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-09-01",
+   "to": "2026-09-01"
+  },
+  {
+   "bankSlug": "shivalik-sfb",
+   "product": "rd",
+   "cards": 1,
+   "from": "2026-09-01",
+   "to": "2026-09-01"
+  },
+  {
+   "bankSlug": "shivalik-sfb",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-07-13",
+   "to": "2026-07-13"
+  },
+  {
+   "bankSlug": "shivalik-sfb",
+   "product": "tax_saver",
+   "cards": 1,
+   "from": "2026-09-01",
+   "to": "2026-09-01"
+  },
+  {
+   "bankSlug": "slice-sfb",
+   "product": "fd",
+   "cards": 8,
+   "from": "2024-10-27",
+   "to": "2026-08-19"
+  },
+  {
+   "bankSlug": "slice-sfb",
+   "product": "rd",
+   "cards": 1,
+   "from": "2026-08-18",
+   "to": "2026-08-18"
+  },
+  {
+   "bankSlug": "slice-sfb",
+   "product": "savings",
+   "cards": 5,
+   "from": "2024-12-19",
+   "to": "2025-12-05"
+  },
+  {
    "bankSlug": "ujjivan-sfb",
    "product": "fd",
    "cards": 1,
@@ -125,6 +202,48 @@
    "cards": 1,
    "from": "2026-06-05",
    "to": "2026-06-05"
+  },
+  {
+   "bankSlug": "unity-sfb",
+   "product": "fd",
+   "cards": 2,
+   "from": "2026-02-09",
+   "to": "2026-06-11"
+  },
+  {
+   "bankSlug": "unity-sfb",
+   "product": "fd_bulk",
+   "cards": 2,
+   "from": "2026-04-13",
+   "to": "2026-07-02"
+  },
+  {
+   "bankSlug": "unity-sfb",
+   "product": "savings",
+   "cards": 1,
+   "from": "2025-08-19",
+   "to": "2025-08-19"
+  },
+  {
+   "bankSlug": "utkarsh-sfb",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-05-05",
+   "to": "2026-05-05"
+  },
+  {
+   "bankSlug": "utkarsh-sfb",
+   "product": "rd",
+   "cards": 1,
+   "from": "2026-05-05",
+   "to": "2026-05-05"
+  },
+  {
+   "bankSlug": "utkarsh-sfb",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-07-01",
+   "to": "2026-07-01"
   }
  ]
 }

@@ -62,6 +62,34 @@
   "consecutiveFailures": 1,
   "lastError": "fetch: HTTP 403"
  },
+ "jana-sfb:bulk": {
+  "lastAttemptAt": "2026-09-27T08:43:47.376Z",
+  "lastSuccessAt": "2026-09-27T08:43:47.376Z",
+  "lastChangeAt": "2026-09-27T08:43:47.376Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "jana-sfb:fd": {
+  "lastAttemptAt": "2026-09-27T08:43:46.008Z",
+  "lastSuccessAt": "2026-09-27T08:43:46.008Z",
+  "lastChangeAt": "2026-09-27T08:43:46.008Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "jana-sfb:rd": {
+  "lastAttemptAt": "2026-09-27T08:43:48.681Z",
+  "lastSuccessAt": "2026-09-27T08:43:48.681Z",
+  "lastChangeAt": "2026-09-27T08:43:48.681Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "jana-sfb:savings": {
+  "lastAttemptAt": "2026-09-27T08:43:49.864Z",
+  "lastSuccessAt": "2026-09-27T08:43:49.864Z",
+  "lastChangeAt": "2026-09-27T08:43:49.864Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
  "sbi:fd": {
   "lastAttemptAt": "2026-09-27T07:57:06.107Z",
   "lastSuccessAt": "2026-09-27T07:57:06.107Z",
@@ -80,6 +108,48 @@
   "lastAttemptAt": "2026-09-27T07:57:09.701Z",
   "lastSuccessAt": "2026-09-27T07:57:09.701Z",
   "lastChangeAt": "2026-09-27T07:57:09.701Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "shivalik-sfb:fd": {
+  "lastAttemptAt": "2026-09-27T08:43:51.870Z",
+  "lastSuccessAt": "2026-09-27T08:43:51.870Z",
+  "lastChangeAt": "2026-09-27T08:43:51.870Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "shivalik-sfb:rd": {
+  "lastAttemptAt": "2026-09-27T08:43:52.956Z",
+  "lastSuccessAt": "2026-09-27T08:43:52.956Z",
+  "lastChangeAt": "2026-09-27T08:43:52.956Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "shivalik-sfb:savings": {
+  "lastAttemptAt": "2026-09-27T08:43:53.723Z",
+  "lastSuccessAt": "2026-09-27T08:43:53.723Z",
+  "lastChangeAt": "2026-09-27T08:43:53.723Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "slice-sfb:fd": {
+  "lastAttemptAt": "2026-09-27T08:43:41.880Z",
+  "lastSuccessAt": "2026-09-27T08:43:41.880Z",
+  "lastChangeAt": "2026-09-27T08:43:41.880Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "slice-sfb:rd": {
+  "lastAttemptAt": "2026-09-27T08:43:42.891Z",
+  "lastSuccessAt": "2026-09-27T08:43:42.891Z",
+  "lastChangeAt": "2026-09-27T08:43:42.891Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "slice-sfb:savings": {
+  "lastAttemptAt": "2026-09-27T08:43:44.812Z",
+  "lastSuccessAt": "2026-09-27T08:43:44.812Z",
+  "lastChangeAt": "2026-09-27T08:43:44.812Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
@@ -115,6 +185,48 @@
   "lastAttemptAt": "2026-09-27T08:41:43.414Z",
   "lastSuccessAt": "2026-09-27T08:41:43.414Z",
   "lastChangeAt": "2026-09-27T08:41:43.414Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "unity-sfb:bulk": {
+  "lastAttemptAt": "2026-09-27T08:43:59.576Z",
+  "lastSuccessAt": "2026-09-27T08:43:59.576Z",
+  "lastChangeAt": "2026-09-27T08:43:59.576Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "unity-sfb:fd": {
+  "lastAttemptAt": "2026-09-27T08:43:56.020Z",
+  "lastSuccessAt": "2026-09-27T08:43:56.020Z",
+  "lastChangeAt": "2026-09-27T08:43:56.020Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "unity-sfb:savings": {
+  "lastAttemptAt": "2026-09-27T08:44:02.838Z",
+  "lastSuccessAt": "2026-09-27T08:44:02.838Z",
+  "lastChangeAt": "2026-09-27T08:44:02.838Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "utkarsh-sfb:fd": {
+  "lastAttemptAt": "2026-09-27T08:43:36.060Z",
+  "lastSuccessAt": "2026-09-27T08:43:36.060Z",
+  "lastChangeAt": "2026-09-27T08:43:36.060Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "utkarsh-sfb:rd": {
+  "lastAttemptAt": "2026-09-27T08:43:37.782Z",
+  "lastSuccessAt": "2026-09-27T08:43:37.782Z",
+  "lastChangeAt": "2026-09-27T08:43:37.782Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "utkarsh-sfb:savings": {
+  "lastAttemptAt": "2026-09-27T08:43:39.183Z",
+  "lastSuccessAt": "2026-09-27T08:43:39.183Z",
+  "lastChangeAt": "2026-09-27T08:43:39.183Z",
   "consecutiveFailures": 0,
   "lastError": null
  }
