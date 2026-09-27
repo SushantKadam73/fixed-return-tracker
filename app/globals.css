@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+/* Dark mode follows the `.dark` class set by next-themes (user toggle, defaulting to system). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #ffffff;
+  --surface: #f6f7f9;
+  --surface-2: #eef0f3;
+  --border: #e3e6eb;
+  --text: #0e1726;
+  --muted: #5a6475;
+  --accent: #0f6b64;
+  --accent-soft: #e3f2f0;
+  --positive: #157a3c;
+  --negative: #b42318;
+  --warning: #a15c07;
+  --focus: #0f6b64;
+}
+
+.dark {
+  --bg: #0b0e13;
+  --surface: #11161e;
+  --surface-2: #171d27;
+  --border: #242c38;
+  --text: #e7eaf0;
+  --muted: #98a2b3;
+  --accent: #3cc9b6;
+  --accent-soft: #10302d;
+  --positive: #4ade80;
+  --negative: #f97066;
+  --warning: #fbbf24;
+  --focus: #3cc9b6;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-positive: var(--positive);
+  --color-negative: var(--negative);
+  --color-warning: var(--warning);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+html {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+/* Numbers line up in tables and cards. */
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Thin, unobtrusive scrollbars for wide tables. */
+.scroll-x {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
