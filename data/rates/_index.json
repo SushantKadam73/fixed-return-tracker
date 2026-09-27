@@ -3,15 +3,15 @@
   {
    "bankSlug": "au-sfb",
    "product": "fd",
-   "cards": 1,
-   "from": "2026-09-01",
+   "cards": 8,
+   "from": "2019-08-07",
    "to": "2026-09-01"
   },
   {
    "bankSlug": "au-sfb",
    "product": "rd",
-   "cards": 1,
-   "from": "2026-09-01",
+   "cards": 8,
+   "from": "2020-12-02",
    "to": "2026-09-01"
   },
   {
@@ -164,15 +164,15 @@
   {
    "bankSlug": "capital-sfb",
    "product": "fd",
-   "cards": 1,
-   "from": "2026-06-30",
+   "cards": 11,
+   "from": "2020-10-06",
    "to": "2026-06-30"
   },
   {
    "bankSlug": "capital-sfb",
    "product": "savings",
-   "cards": 1,
-   "from": "2026-09-27",
+   "cards": 4,
+   "from": "2024-04-08",
    "to": "2026-09-27"
   },
   {
@@ -286,6 +286,13 @@
    "cards": 1,
    "from": "2026-06-10",
    "to": "2026-06-10"
+  },
+  {
+   "bankSlug": "esaf-sfb",
+   "product": "fd",
+   "cards": 14,
+   "from": "2017-03-20",
+   "to": "2025-05-01"
   },
   {
    "bankSlug": "hdfc-bank",
@@ -416,8 +423,8 @@
   {
    "bankSlug": "jana-sfb",
    "product": "fd",
-   "cards": 1,
-   "from": "2026-09-25",
+   "cards": 5,
+   "from": "2019-08-26",
    "to": "2026-09-25"
   },
   {
@@ -489,6 +496,13 @@
    "cards": 1,
    "from": "2002-08-01",
    "to": "2002-08-01"
+  },
+  {
+   "bankSlug": "pmc-bank",
+   "product": "fd",
+   "cards": 26,
+   "from": "2003-01-12",
+   "to": "2019-09-13"
   },
   {
    "bankSlug": "punjab-and-sind-bank",
@@ -612,8 +626,8 @@
   {
    "bankSlug": "shivalik-sfb",
    "product": "fd",
-   "cards": 1,
-   "from": "2026-09-01",
+   "cards": 9,
+   "from": "2023-03-02",
    "to": "2026-09-01"
   },
   {
@@ -647,8 +661,8 @@
   {
    "bankSlug": "slice-sfb",
    "product": "rd",
-   "cards": 1,
-   "from": "2026-08-18",
+   "cards": 3,
+   "from": "2020-09-01",
    "to": "2026-08-18"
   },
   {
@@ -794,29 +808,29 @@
   {
    "bankSlug": "unity-sfb",
    "product": "fd",
-   "cards": 2,
-   "from": "2026-02-09",
+   "cards": 6,
+   "from": "2022-07-06",
    "to": "2026-06-11"
   },
   {
    "bankSlug": "unity-sfb",
    "product": "fd_bulk",
-   "cards": 2,
-   "from": "2026-04-13",
+   "cards": 3,
+   "from": "2022-09-26",
    "to": "2026-07-02"
   },
   {
    "bankSlug": "unity-sfb",
    "product": "savings",
-   "cards": 1,
-   "from": "2025-08-19",
+   "cards": 3,
+   "from": "2022-01-22",
    "to": "2025-08-19"
   },
   {
    "bankSlug": "utkarsh-sfb",
    "product": "fd",
-   "cards": 1,
-   "from": "2026-05-05",
+   "cards": 4,
+   "from": "2023-08-21",
    "to": "2026-05-05"
   },
   {

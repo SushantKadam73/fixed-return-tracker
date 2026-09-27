@@ -7,6 +7,87 @@
    "product": "savings",
    "effectiveFrom": null,
    "observedAt": "2026-09-27",
+   "observedFrom": "2024-04-08",
+   "observedTo": "2025-04-29",
+   "sourceType": "web_archive",
+   "sourceUrl": "https://www.capitalbank.co.in/interest-rates/savings-bank-account",
+   "archiveUrl": "https://web.archive.org/web/20240408193710id_/https://www.capitalbank.co.in/interest-rates/savings-bank-account",
+   "confidence": "medium",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": null,
+     "rate": 3.5,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "whole",
+   "notes": [
+    "Reconstructed from Internet Archive copies of the bank's official page captured 2024-04-08 to 2025-04-29.",
+    "The page states one flat rate for every account type (Domestic Savings, Basic Savings/Suvidha Bachat, NRO, NRE) in every capture checked -- not a balance-tiered slab table."
+   ],
+   "contentHash": "a59356994d6de5f7"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "product": "savings",
+   "effectiveFrom": null,
+   "observedAt": "2026-09-27",
+   "observedFrom": "2025-05-19",
+   "observedTo": "2025-05-19",
+   "sourceType": "web_archive",
+   "sourceUrl": "https://www.capitalbank.co.in/interest-rates/savings-bank-account",
+   "archiveUrl": "https://web.archive.org/web/20250519015108id_/https://www.capitalbank.co.in/interest-rates/savings-bank-account",
+   "confidence": "medium",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": null,
+     "rate": 3.35,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "whole",
+   "notes": [
+    "Reconstructed from Internet Archive copies of the bank's official page captured 2025-05-19 to 2025-05-19.",
+    "The page states one flat rate for every account type (Domestic Savings, Basic Savings/Suvidha Bachat, NRO, NRE) in every capture checked -- not a balance-tiered slab table."
+   ],
+   "contentHash": "ff43a775ff1a562c"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "product": "savings",
+   "effectiveFrom": null,
+   "observedAt": "2026-09-27",
+   "observedFrom": "2025-08-07",
+   "observedTo": "2025-08-07",
+   "sourceType": "web_archive",
+   "sourceUrl": "https://www.capitalbank.co.in/interest-rates/savings-bank-account",
+   "archiveUrl": "https://web.archive.org/web/20250807061847id_/https://www.capitalbank.co.in/interest-rates/savings-bank-account",
+   "confidence": "medium",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": null,
+     "rate": 3.25,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "whole",
+   "notes": [
+    "Reconstructed from Internet Archive copies of the bank's official page captured 2025-08-07 to 2025-08-07.",
+    "The page states one flat rate for every account type (Domestic Savings, Basic Savings/Suvidha Bachat, NRO, NRE) in every capture checked -- not a balance-tiered slab table."
+   ],
+   "contentHash": "030ffa71ee5861a9"
+  },
+  {
+   "bankSlug": "capital-sfb",
+   "product": "savings",
+   "effectiveFrom": null,
+   "observedAt": "2026-09-27",
    "sourceType": "bank_official",
    "sourceUrl": "https://www.capital.bank.in/interest-rates/savings-bank-account",
    "confidence": "high",

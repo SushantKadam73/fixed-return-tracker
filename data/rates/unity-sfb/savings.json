@@ -5,6 +5,77 @@
   {
    "bankSlug": "unity-sfb",
    "product": "savings",
+   "effectiveFrom": "2022-01-22",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://theunitybank.com/docs/newsroom/press-release-fd-rate-increase.pdf",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 100000,
+     "rate": 6,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 100000,
+     "balanceMax": null,
+     "rate": 7,
+     "residency": "resident",
+     "note": "One merged 7.00% cell spans every balance tier above ₹1 lakh (>1L-5L, >5L-50L, >50L-10cr, >10cr) in the source table -- flat above ₹1 lakh, not tiered."
+    }
+   ],
+   "slabMethod": "unknown",
+   "notes": [
+    "Restated identically (same 'revised from January 22, 2022' wording) in three separate press releases dated 26 Sep 2022, 15 Feb 2023 and 13 Oct 2023 -- treated as a single flat structure valid across that whole span, EXCEPT that a dedicated 24 Jun 2023 release (see the 2023-06-24 card) announced a tiered replacement partway through it. The 13 Oct 2023 release still shows this flat structure, six months after that tiered announcement -- likely stale boilerplate, not a genuine reversion, but not verified either way."
+   ],
+   "contentHash": "c2bcd1e355e261d0"
+  },
+  {
+   "bankSlug": "unity-sfb",
+   "product": "savings",
+   "effectiveFrom": "2023-06-24",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_archive",
+   "sourceUrl": "https://theunitybank.com/docs/newsroom/press-release-unity-bank-savings-june-2024.pdf",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 100000,
+     "rate": 6,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 100000,
+     "balanceMax": 500000,
+     "rate": 7.25,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 500000,
+     "balanceMax": 5000000,
+     "rate": 7.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 5000000,
+     "balanceMax": null,
+     "rate": 7.75,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "notes": [
+    "Dedicated subject of this press release (headlined 'Unity Bank Enhances Interest Rates on Savings Accounts', dated 24 Jun 2023) -- see the 2022-01-22 card's note for the contradiction with a later release."
+   ],
+   "contentHash": "d3b8c57f6cb4558d"
+  },
+  {
+   "bankSlug": "unity-sfb",
+   "product": "savings",
    "effectiveFrom": "2025-08-19",
    "observedAt": "2026-09-27",
    "sourceType": "bank_official",
