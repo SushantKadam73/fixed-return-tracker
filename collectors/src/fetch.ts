@@ -19,6 +19,20 @@ async function politeWait(url: string, gapMs = 1500) {
   lastHit.set(host, Date.now());
 }
 
+/** Bot-protection interstitials that return HTTP 200 but no real content. */
+export function detectChallenge(html: string): string | null {
+  const head = html.slice(0, 20_000).toLowerCase();
+  const markers: Array<[RegExp, string]> = [
+    [/shieldsquare|radware|perfdrive/, "Radware/ShieldSquare bot protection"],
+    [/cf-challenge|cf_chl_|challenge-platform|just a moment\.\.\./, "Cloudflare challenge"],
+    [/<title>\s*access denied\s*<\/title>|errors\.edgesuite\.net/, "Akamai access denied"],
+    [/h-captcha|hcaptcha\.com|g-recaptcha|recaptcha\/api/, "captcha"],
+  ];
+  if (html.length > 40_000) return null; // real rate pages are large; challenge pages are small
+  for (const [re, label] of markers) if (re.test(head)) return label;
+  return null;
+}
+
 export class FetchError extends Error {
   constructor(message: string, readonly status?: number) {
     super(message);
@@ -73,6 +87,10 @@ export async function fetchDoc(url: string, format: SourceFormat = "html", attem
       }
       const isPdf = format === "pdf" || contentType.includes("pdf");
       const text = isPdf ? await pdfToText(await res.arrayBuffer()) : await res.text();
+      if (!isPdf) {
+        const challenge = detectChallenge(text);
+        if (challenge) throw Object.assign(new FetchError(`blocked by ${challenge}`, res.status), { final: true });
+      }
       return { url, finalUrl: res.url, status: res.status, contentType, text, fetchedAt: Date.now() };
     } catch (e) {
       lastErr = e;

@@ -1,0 +1,26 @@
+{
+ "bankSlug": "icici-bank",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "icici-bank",
+   "product": "savings",
+   "effectiveFrom": "2025-06-26",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.icici.bank.in/personal-banking/accounts/savings-account/interest-rates",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": null,
+     "rate": 2.5,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "whole",
+   "contentHash": "d17023e84dc97c9c"
+  }
+ ]
+}

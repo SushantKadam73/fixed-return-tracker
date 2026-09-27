@@ -1,0 +1,141 @@
+{
+ "bankSlug": "idfc-first-bank",
+ "product": "rd",
+ "cards": [
+  {
+   "bankSlug": "idfc-first-bank",
+   "product": "rd",
+   "effectiveFrom": "2026-09-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.idfcfirst.bank.in/content/dam/idfcfirstbank/interest-rate/Interest-Rates-on-Retail-Deposits-1st-September-2026.pdf",
+   "confidence": "high",
+   "rows": [
+    {
+     "tenureMinDays": 183,
+     "tenureMaxDays": 183,
+     "tenureLabel": "6 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "customer": "general",
+     "rate": 6.5
+    },
+    {
+     "tenureMinDays": 183,
+     "tenureMaxDays": 183,
+     "tenureLabel": "6 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "customer": "senior",
+     "rate": 6.75
+    },
+    {
+     "tenureMinDays": 274,
+     "tenureMaxDays": 274,
+     "tenureLabel": "9 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "customer": "general",
+     "rate": 6.5
+    },
+    {
+     "tenureMinDays": 274,
+     "tenureMaxDays": 274,
+     "tenureLabel": "9 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "customer": "senior",
+     "rate": 6.75
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 365,
+     "tenureLabel": "12 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "customer": "general",
+     "rate": 6.5
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 365,
+     "tenureLabel": "12 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "customer": "senior",
+     "rate": 6.75
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 730,
+     "tenureLabel": "24 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "customer": "general",
+     "rate": 7.1
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 730,
+     "tenureLabel": "24 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "customer": "senior",
+     "rate": 7.35
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "36 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "customer": "general",
+     "rate": 7.1
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "36 months",
+     "amountMin": 0,
+     "amountMax": null,
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "customer": "senior",
+     "rate": 7.35
+    }
+   ],
+   "notes": [
+    "Read from the bank's own explicit RD table (not derived from the FD card); since 3 May 2025 IDFC FIRST only books RD in 6/9/12/24/36-month tenors."
+   ],
+   "contentHash": "8ff496a61c9392a8"
+  }
+ ]
+}

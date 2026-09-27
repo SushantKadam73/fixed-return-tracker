@@ -1,0 +1,26 @@
+Interest Rates on Savings Deposits
+Savings Account Rate (Domestic, NRE & NRO)
+Interest payable on Savings account will be calculated on a progressive basis, as per the table in the rate
+slabs described below. Interest is credited monthly in your savings account.
+For description of “progressive” with examples, please refer to notes after the table.
+Effective from 1st September 2026:
+Balance (Rupees) Rate of Interest (% p.a.,
+Progressive)
+Up to ₹3 lakh 2.50
+Above ₹3 lakh up to ₹25 lakh 7.00
+Above ₹25 lakh up to ₹5 crore 6.25
+Above ₹5 crore 5.00
+For Example:
+1. In case your account balance with us is Rs. 25,000, the interest payable to you will be 2.50 % p.a. on
+the entire Rs. 25,000.
+2. In case your account balance with us is Rs. 10 lakhs, the interest payable to you will be 2.50% p.a. on
+Rs. 3 lakhs and 7.00% p.a. on remaining Rs. 7 lakhs.
+Open your account seamlessly with IDFC FIRST Bank
+Important Notes:
+• As per Reserve Bank of India directives, Savings Bank account interest will be calculated on daily end of
+day balances at the rate of interest as specified by IDFC FIRST Bank from time to time. The periodicity of
+payment of interest on Savings Bank account is on a monthly basis. Interest will be calculated on
+progressive balances in each Interest Rate Slab as applicable.
+• The Interest calculated is rounded up to the nearest rupee and calculation of interest is basis 365 days
+for the period falling in a non-leap (financial) year and 366 days for the period falling in a leap
+(financial) year.

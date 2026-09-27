@@ -1,0 +1,14 @@
+<!-- Hand-trimmed test fixture (not run through trim-fixture.ts, which strips all attributes
+     except rowspan/colspan — this page's rate table is rendered client-side from a JSON API
+     named only in the data-api attribute below, so that attribute must survive trimming).
+     Two genuine excerpts from the live fd-interest-rates page, captured 2026-09-27:
+     (1) the FD calculator widget's data-api attribute, which names the JSON endpoint;
+     (2) the server-rendered heading that carries the table's effective date. -->
+<html>
+<body>
+<article id="fixed-deposit-calculator" data-component="fd-calculator" data-name="FdCalculator" class="fd-calc-gen fd-calculator calc_comp cmp-card" data-api="/content/dam/icicibank-revamp/deposits/fixed-deposits/json/fd-interest-rate.json"></article>
+<div id="interest-rates-table-all">
+  <h2>ICICI Bank FD Interest Rate for general and senior citizens(w.e.f. from September 25, 2026)</h2>
+</div>
+</body>
+</html>

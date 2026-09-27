@@ -1,0 +1,47 @@
+{
+ "bankSlug": "idfc-first-bank",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "idfc-first-bank",
+   "product": "savings",
+   "effectiveFrom": "2026-09-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.idfcfirst.bank.in/content/dam/idfcfirstbank/interest-rate/Interest-rates-on-Savings-Deposits-wef1st-Sep-2026.pdf",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 300001,
+     "rate": 2.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 300001,
+     "balanceMax": 2500001,
+     "rate": 7,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 2500001,
+     "balanceMax": 50000001,
+     "rate": 6.25,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 50000001,
+     "balanceMax": null,
+     "rate": 5,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "incremental",
+   "notes": [
+    "The bank calls this 'progressive', not 'incremental', but its own worked example (Rs 10 lakh balance: 2.50% on the first Rs 3 lakh, 7.00% on the remaining Rs 7 lakh) is exactly the domain model's 'incremental' method."
+   ],
+   "contentHash": "bbb15090c8a34280"
+  }
+ ]
+}

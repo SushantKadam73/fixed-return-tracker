@@ -52,16 +52,79 @@
   {
    "bankSlug": "hdfc-bank",
    "product": "fd",
-   "cards": 81,
+   "cards": 82,
    "from": "2010-07-30",
-   "to": "2026-03-06"
+   "to": "2026-08-19"
+  },
+  {
+   "bankSlug": "hdfc-bank",
+   "product": "fd_bulk",
+   "cards": 1,
+   "from": "2026-03-07",
+   "to": "2026-03-07"
+  },
+  {
+   "bankSlug": "hdfc-bank",
+   "product": "rd",
+   "cards": 1,
+   "from": "2026-08-19",
+   "to": "2026-08-19"
   },
   {
    "bankSlug": "hdfc-bank",
    "product": "savings",
-   "cards": 11,
+   "cards": 12,
    "from": "2003-03-01",
    "to": "2025-06-24"
+  },
+  {
+   "bankSlug": "icici-bank",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-09-25",
+   "to": "2026-09-25"
+  },
+  {
+   "bankSlug": "icici-bank",
+   "product": "rd",
+   "cards": 1,
+   "from": "2025-12-29",
+   "to": "2025-12-29"
+  },
+  {
+   "bankSlug": "icici-bank",
+   "product": "savings",
+   "cards": 1,
+   "from": "2025-06-26",
+   "to": "2025-06-26"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-09-01",
+   "to": "2026-09-01"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "product": "fd_bulk",
+   "cards": 1,
+   "from": "2026-09-09",
+   "to": "2026-09-09"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "product": "rd",
+   "cards": 1,
+   "from": "2026-09-01",
+   "to": "2026-09-01"
+  },
+  {
+   "bankSlug": "idfc-first-bank",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-09-01",
+   "to": "2026-09-01"
   },
   {
    "bankSlug": "indian-overseas-bank",
@@ -83,6 +146,27 @@
    "cards": 1,
    "from": "2026-09-15",
    "to": "2026-09-15"
+  },
+  {
+   "bankSlug": "indusind-bank",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-07-24",
+   "to": "2026-07-24"
+  },
+  {
+   "bankSlug": "indusind-bank",
+   "product": "fd_bulk",
+   "cards": 1,
+   "from": "2025-09-25",
+   "to": "2025-09-25"
+  },
+  {
+   "bankSlug": "indusind-bank",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-03-01",
+   "to": "2026-03-01"
   },
   {
    "bankSlug": "jana-sfb",

@@ -1,0 +1,188 @@
+{
+  "data_fd": [
+    {
+      "tenure": "7d-15d",
+      "amount": {
+        "500-20000000": {
+          "general": 4.50,
+          "senior": 5.00
+        }
+      }
+    },
+    {
+      "tenure": "15d-30d",
+      "amount": {
+        "500-20000000": {
+          "general": 4.50,
+          "senior": 5.00
+        }
+      }
+    },
+    {
+      "tenure": "30d-46d",
+      "amount": {
+        "500-20000000": {
+          "general": 4.50,
+          "senior": 5.00
+        }
+      }
+    },
+    {
+      "tenure": "46d-61d",
+      "amount": {
+        "500-20000000": {
+          "general": 4.50,
+          "senior": 5.00
+        }
+      }
+    },
+    {
+      "tenure": "61d-91d",
+      "amount": {
+        "500-20000000": {
+          "general": 4.50,
+          "senior": 5.00
+        }
+      }
+    },
+    {
+      "tenure": "91d-121d",
+      "amount": {
+        "500-20000000": {
+          "general": 4.50,
+          "senior": 5.00
+        }
+      }
+    },
+    {
+      "tenure": "121d-151d",
+      "amount": {
+        "500-20000000": {
+          "general": 4.50,
+          "senior": 5.00
+        }
+      }
+    },
+    {
+      "tenure": "151d-183d",
+      "amount": {
+        "500-20000000": {
+          "general": 4.50,
+          "senior": 5.00
+        }
+      }
+    },
+    {
+      "tenure": "183d-211d",
+      "amount": {
+        "500-20000000": {
+          "general": 4.50,
+          "senior": 5.00
+        }
+      }
+    },
+    {
+      "tenure": "211d-271d",
+      "amount": {
+        "500-20000000": {
+          "general": 5.50,
+          "senior": 6.00
+        }
+      }
+    },
+    {
+      "tenure": "271d-290d",
+      "amount": {
+        "500-20000000": {
+          "general": 5.50,
+          "senior": 6.00
+        }
+      }
+    },
+    {
+      "tenure": "290d-365d",
+      "amount": {
+        "500-20000000": {
+          "general": 5.50,
+          "senior": 6.00
+        }
+      }
+    },
+    {
+      "tenure": "365d-390d",
+      "amount": {
+        "500-20000000": {
+          "general": 6.25,
+          "senior": 6.75
+        }
+      }
+    },
+    {
+      "tenure": "390d-455d",
+      "amount": {
+        "500-20000000": {
+          "general": 6.25,
+          "senior": 6.75
+        }
+      }
+    },
+    {
+      "tenure": "455d-545d",
+      "amount": {
+        "500-20000000": {
+          "general": 6.25,
+          "senior": 6.75
+        }
+      }
+    },
+{
+      "tenure": "820d-1096d",
+      "amount": {
+        "500-20000000": {
+          "general": 6.45,
+          "senior": 6.95
+        }
+      }
+    }, 
+
+    {
+      "tenure": "1096d-1826d",
+      "amount": {
+        "500-20000000": {
+          "general": 6.50,
+          "senior": 7.10
+        }
+      }
+    },
+    
+    {
+      "tenure": "545d-732d",
+      "amount": {
+        "500-20000000": {
+           "general": 6.30,
+          "senior":  6.80
+        }
+      }
+    },    
+    {
+      "tenure": "732d-820d",
+      "amount": {
+        "500-20000000": {
+          "general":  6.45,
+          "senior": 6.95
+        }
+      }
+    }, 
+  
+  
+    {
+      "tenure": "1826d-3654d",
+      "amount": {
+        "500-20000000": {
+          "general": 6.50,
+          "senior": 7.00
+        }
+      }
+    }
+  ]
+}
