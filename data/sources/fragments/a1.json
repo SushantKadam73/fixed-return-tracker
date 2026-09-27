@@ -1,0 +1,210 @@
+{
+  "sources": [
+    {
+      "key": "bank-of-baroda:fd",
+      "bankSlug": "bank-of-baroda",
+      "products": ["fd"],
+      "url": "https://bankofbaroda.bank.in/interest-rate-and-service-charges/deposits-interest-rates/fixed-deposits-callable-and-non-callable-upto-ten-crores",
+      "format": "html",
+      "runner": "github",
+      "adapter": "bank-of-baroda.fd",
+      "cadence": "daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Verified against a live fetch (2026-09-27): 69 rows, effective 2026-06-12, matching the fixture exactly. Covers callable <₹3cr and non-callable ₹1-3cr (General/Senior/Super Senior), including the 271-364 day range, the bob Square Drive (444d) and bob Golden Goal (555d) named schemes. The open-ended 'Above 10 years (MACAD only)' row is dropped (no stated upper bound) rather than guessed, noted on the card. No RD source: checked live on 2026-09-27 against the bob SDP scheme page, the bob Lakhpati/Millionaire/Crorepati/Flexible RD scheme pages, and the RD index page's own FAQ (which just points back to this same Deposits Interest Rates page, which has no Recurring Deposit tab at all) — none carries a rate table or an 'RD = FD' statement, so RD rates are not published on the official site."
+    },
+    {
+      "key": "bank-of-baroda:fd_bulk",
+      "bankSlug": "bank-of-baroda",
+      "products": ["fd_bulk"],
+      "url": "https://bankofbaroda.bank.in/interest-rate-and-service-charges/deposits-interest-rates/fixed-deposits-callable-and-non-callable-upto-ten-crores",
+      "format": "html",
+      "runner": "github",
+      "adapter": "bank-of-baroda.bulk",
+      "cadence": "bulk_daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Verified against a live fetch (2026-09-27): 261 rows, effective 2026-09-26, matching the fixture (which only reaches 133 rows because network is disabled in tests). The adapter merges the ₹3-10cr table on this page with the separate 'above ₹10 crore' page (fetched internally via ctx.fetch, https://bankofbaroda.bank.in/interest-rate-and-service-charges/deposits-interest-rates/fixed-deposits-callable-and-non-callable-above-ten-crores) into one fd_bulk card; if that second fetch fails the card still ships with ₹3-10cr rows plus a warning rather than failing outright."
+    },
+    {
+      "key": "bank-of-baroda:savings",
+      "bankSlug": "bank-of-baroda",
+      "products": ["savings"],
+      "url": "https://bankofbaroda.bank.in/interest-rate-and-service-charges/deposits-interest-rates/savings-bank-deposits",
+      "format": "html",
+      "runner": "github",
+      "adapter": "bank-of-baroda.savings",
+      "cadence": "daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Verified against a live fetch (2026-09-27): 10 slabs, effective 2025-08-22, matching the fixture exactly. Slab method left 'unknown': the page states each slab's rate without saying whether it applies to the whole balance or incrementally."
+    },
+    {
+      "key": "bank-of-baroda:tax_saver",
+      "bankSlug": "bank-of-baroda",
+      "products": ["tax_saver"],
+      "url": "https://bankofbaroda.bank.in/interest-rate-and-service-charges/deposits-interest-rates/fixed-deposits-tax-saving",
+      "format": "html",
+      "runner": "github",
+      "adapter": "bank-of-baroda.tax_saver",
+      "cadence": "daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "New adapter added this pass (the fixture already existed but was not registered). Own accordion tab on the same Deposits Interest Rates page template as fd/savings, publishing only the statutory 5-year (60-month) lock-in tenure for General/Senior/Super Senior. Verified against a live fetch (2026-09-27): 3 rows, effective 2026-05-15, matching the fixture exactly. No amount band is printed (tax-saver deposits are capped by the ₹1.5 lakh/PAN/FY Section 80C limit, not a bulk-deposit band), so amountMax is left null. The page's raw markup also contains an 'Above 5 years to up to 10 years' row wrapped in an HTML comment (confirmed on the live page), i.e. not rendered/published, so it is correctly excluded rather than guessed."
+    },
+
+    {
+      "key": "bank-of-maharashtra:fd",
+      "bankSlug": "bank-of-maharashtra",
+      "products": ["fd", "rd"],
+      "url": "https://bankofmaharashtra.bank.in/domestic-term-deposits",
+      "format": "html",
+      "runner": "github",
+      "adapter": "bank-of-maharashtra.fd",
+      "cadence": "daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Verified against a live fetch (2026-09-27): fd 14 rows effective 2026-09-14, matching the fixture exactly. The legacy bankofmaharashtra.in domain 502s on every path (decommissioned) — bankofmaharashtra.bank.in is the only working domain. General-public rates only: the page states the senior premium (+0.50%, 91+ days, deposits up to ₹5 crore) as plain text, not a printed column, so no per-row senior rate is invented. RD is derived from this same card with deriveRdFromFd because the bank states: \"Interest rates offered on Recurring Term Deposits will be same as the interest rates applicable to Term Deposits.\" (quoted in the card's own notes)."
+    },
+    {
+      "key": "bank-of-maharashtra:fd_bulk",
+      "bankSlug": "bank-of-maharashtra",
+      "products": ["fd_bulk"],
+      "url": "https://bankofmaharashtra.bank.in/domestic-term-deposits",
+      "format": "html",
+      "runner": "github",
+      "adapter": "bank-of-maharashtra.bulk",
+      "cadence": "bulk_daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Verified against a live fetch (2026-09-27): 73 rows, effective 2026-09-14, matching the fixture exactly. Same page as the retail source: one 'Domestic Term Deposits' page carries retail and bulk together as amount-banded columns split across three HTML tables (regular <3cr/3-10cr, >10-100cr/100-400cr/>400cr, and a third table for the 400-day and 1777-day Green Deposit special tenures at the same amount bands); every ≥₹3cr column from all three goes into this card."
+    },
+    {
+      "key": "bank-of-maharashtra:savings",
+      "bankSlug": "bank-of-maharashtra",
+      "products": ["savings"],
+      "url": "https://bankofmaharashtra.bank.in/interest-rates",
+      "format": "html",
+      "runner": "github",
+      "adapter": "bank-of-maharashtra.savings",
+      "cadence": "daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Verified against a live fetch (2026-09-27): 3 slabs, effective 2025-09-01, matching the fixture exactly. Reads only the 'Revised' rate column, ignoring the older 'Existing' column printed alongside it. Slab method left 'unknown': the page does not say whole-balance vs incremental."
+    },
+
+    {
+      "key": "canara-bank:fd",
+      "bankSlug": "canara-bank",
+      "products": ["fd", "rd"],
+      "url": "https://www.canarabank.bank.in/term-deposits-rate-of-interest-p.a.",
+      "format": "html",
+      "runner": "github",
+      "adapter": "canara-bank.fd",
+      "cadence": "daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Verified against a live fetch (2026-09-27): fd 45 rows effective 2026-03-17, matching the fixture exactly (canarabank.com redirects to www.canarabank.bank.in, confirmed via a 301 on /robots.txt). One page carries domestic retail <3cr (General/Senior x Callable/Non-Callable, incl. the 444/555-day named tenures), the Canara Retail Green Deposits (1111/2222/3333 days) and the bulk ≥3cr slabs together; this source reads the retail portion. RD is derived from this same card with deriveRdFromFd because the bank's Recurring Deposit page states: \"As applicable to term deposits of various tenures prevailing from time to time.\" (quoted in the card's own notes)."
+    },
+    {
+      "key": "canara-bank:fd_bulk",
+      "bankSlug": "canara-bank",
+      "products": ["fd_bulk"],
+      "url": "https://www.canarabank.bank.in/term-deposits-rate-of-interest-p.a.",
+      "format": "html",
+      "runner": "github",
+      "adapter": "canara-bank.bulk",
+      "cadence": "bulk_daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Verified against a live fetch (2026-09-27): 231 rows, effective 2026-09-25, matching the fixture exactly. Same page as the retail source: ₹3cr-1000cr+ amount-band slabs (callable + non-callable) plus the separate Bulk Green Deposits table (1111/2222/3333 days, ≥₹3cr, callable + non-callable)."
+    },
+    {
+      "key": "canara-bank:savings",
+      "bankSlug": "canara-bank",
+      "products": ["savings"],
+      "url": "https://www.canarabank.bank.in/domestic/nro/nre-savings-bank-deposits",
+      "format": "html",
+      "runner": "github",
+      "adapter": "canara-bank.savings",
+      "cadence": "daily",
+      "active": true,
+      "robotsAllowed": true,
+      "notes": "Verified against a live fetch (2026-09-27): 10 slabs, effective 2026-09-05, matching the fixture exactly. Slab method left 'unknown': the page does not say whole-balance vs incremental."
+    },
+
+    {
+      "key": "central-bank-of-india:fd",
+      "bankSlug": "central-bank-of-india",
+      "products": ["fd"],
+      "url": "https://centralbank.bank.in/en/interest-rates-on-deposit",
+      "format": "html",
+      "runner": "github",
+      "adapter": "central-bank-of-india.fd",
+      "cadence": "daily",
+      "active": true,
+      "notes": "Live-verified (2026-09-27): 46 rows, effective 2026-08-10, matching the fixture exactly. Covers <3cr General/Senior plus the 333/444/555-day and CENT Green/Floating named schemes. No RD source: this page only names 'Recurring Deposit Scheme' as a nav link (and separately links to a 'Cent Tax Saving Deposit' page not otherwise fetched) — it never states RD rates equal term-deposit rates, so RD rates are not published on the official site rather than derived. robots.txt itself returns 403 on this domain (confirmed twice) even though the real content pages fetch fine with HTTP 200, so robotsAllowed is left unset rather than guessed."
+    },
+    {
+      "key": "central-bank-of-india:fd_bulk",
+      "bankSlug": "central-bank-of-india",
+      "products": ["fd_bulk"],
+      "url": "https://centralbank.bank.in/en/interest-rates-on-deposit",
+      "format": "html",
+      "runner": "github",
+      "adapter": "central-bank-of-india.bulk",
+      "cadence": "bulk_daily",
+      "active": true,
+      "notes": "Live-verified (2026-09-27): 42 rows, effectiveFrom null, matching the fixture exactly — the bank's own page prints both the ₹3-10cr table's header as 'Rates w.e.f.' and the >₹10cr table's header as 'Revised Rate (w.e.f. )' with the date left blank in both cases (confirmed on the live page, not a parsing gap), so the card correctly reports 'not stated' rather than guessing a date. robots.txt returns 403 on this domain; see the :fd source's note."
+    },
+    {
+      "key": "central-bank-of-india:savings",
+      "bankSlug": "central-bank-of-india",
+      "products": ["savings"],
+      "url": "https://centralbank.bank.in/en/interest-rates-on-deposit",
+      "format": "html",
+      "runner": "github",
+      "adapter": "central-bank-of-india.savings",
+      "cadence": "daily",
+      "active": true,
+      "notes": "Live-verified (2026-09-27): 7 slabs, effective 2026-05-10, matching the fixture exactly. Slab method left 'unknown': the page does not say whole-balance vs incremental. robots.txt returns 403 on this domain; see the :fd source's note."
+    },
+
+    {
+      "key": "indian-bank:fd",
+      "bankSlug": "indian-bank",
+      "products": ["fd"],
+      "url": "https://indianbank.bank.in/en/deposit-rates",
+      "format": "browser",
+      "runner": "github",
+      "adapter": "indian-bank.fd",
+      "cadence": "daily",
+      "active": true,
+      "notes": "URL corrected this pass: the legacy www.indianbank.in domain 502s on every path (decommissioned); on indianbank.bank.in itself the old '/departments/deposit-rates/' path is now a dead end (302s to a path that then 502s) — the current canonical page is '/en/deposit-rates' (confirmed via a real browser session landing there with the matching title 'Deposit Rates - Maximize Your Savings - Indian Bank', and via an Internet Archive id_ snapshot of exactly that URL dated 2026-09-17). format is 'browser' because this exact page sits behind an F5 BIG-IP ('TSPD') bot-defense layer: plain HTTP from this sandbox (curl and this project's own fetchDoc, with or without a same-origin Referer header, and with a full realistic browser header set) always gets either a flat 502 or a small obfuscated-JS challenge page, never the real table markup, whereas a real browser session and the Internet Archive crawler both reached the genuine page — so a headless browser (Playwright, as GitHub Actions/VPS already run for other 'browser' sources) should render it. The fixture was captured live on 2026-09-27: its retail-table date (04.08.2026) and rates (e.g. 1 year = 6.10%, IND Supreme 2.0/300d = 6.20%) independently match the Internet Archive snapshot exactly. No RD source: the page's senior-citizen rule text says the same senior addition 'similarly' extends to Recurring Deposit accounts for a 6-120 month band, which is evidence RD has its own card, not evidence its base rate equals the FD card rate — no RD rate table or an explicit 'RD = FD' statement appears anywhere on the page, so RD rates are not published on the official site. Separately (not implemented this pass, flagged for follow-up): the page explicitly states \"The rate of interest on domestic term deposit is also applicable to IB Tax Saver Scheme and Capital Gains Scheme Type B (Term Deposits) 1988 Scheme\" — a genuine tax_saver-from-FD gap."
+    },
+    {
+      "key": "indian-bank:fd_bulk",
+      "bankSlug": "indian-bank",
+      "products": ["fd_bulk"],
+      "url": "https://indianbank.bank.in/en/deposit-rates",
+      "format": "browser",
+      "runner": "github",
+      "adapter": "indian-bank.bulk",
+      "cadence": "bulk_daily",
+      "active": true,
+      "notes": "Same page/URL correction and JS-challenge finding as the :fd source above. The fixture's bulk-table date (25.09.2026) could not be independently re-confirmed live this pass (blocked from this sandbox as described above); the one available Internet Archive snapshot (2026-09-17) shows an earlier bulk revision dated 01.04.2026 instead, which only shows the archive predates the fixture's revision, not that the fixture is wrong — bulk/wholesale rates move far more often than retail, and this group's other banks also revised bulk rates around the same few days (Canara Bank: 2026-09-25, Bank of Baroda: 2026-09-26, both independently live-verified this pass), consistent with a genuine 2026-09-25 revision here too. Flagging this as the one figure in this group not re-verified against a second independent source — worth a direct check once the page is reachable (e.g. from GitHub Actions) or via a fresh Archive snapshot."
+    },
+    {
+      "key": "indian-bank:savings",
+      "bankSlug": "indian-bank",
+      "products": ["savings"],
+      "url": "https://indianbank.bank.in/en/deposit-rates",
+      "format": "browser",
+      "runner": "github",
+      "adapter": "indian-bank.savings",
+      "cadence": "daily",
+      "active": true,
+      "notes": "Same page/URL correction and JS-challenge finding as the :fd source above. Verified against the Internet Archive snapshot (2026-09-17): 4 slabs, effective 2026-07-04, matching the fixture exactly (first slab up to ₹10 lakh at 2.50%). Slab method left 'unknown': the page does not say whole-balance vs incremental. Credited quarterly (last day of June/September/December/March) per the bank's own page text."
+    }
+  ]
+}

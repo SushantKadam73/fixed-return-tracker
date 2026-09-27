@@ -20,6 +20,76 @@
   "consecutiveFailures": 0,
   "lastError": null
  },
+ "bank-of-baroda:fd": {
+  "lastAttemptAt": "2026-09-27T09:34:32.488Z",
+  "lastSuccessAt": "2026-09-27T09:34:32.488Z",
+  "lastChangeAt": "2026-09-27T09:34:32.488Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "bank-of-baroda:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T09:34:37.284Z",
+  "lastSuccessAt": "2026-09-27T09:34:37.284Z",
+  "lastChangeAt": "2026-09-27T09:34:37.284Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "bank-of-baroda:savings": {
+  "lastAttemptAt": "2026-09-27T09:34:39.818Z",
+  "lastSuccessAt": "2026-09-27T09:34:39.818Z",
+  "lastChangeAt": "2026-09-27T09:34:39.818Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "bank-of-baroda:tax_saver": {
+  "lastAttemptAt": "2026-09-27T09:34:41.369Z",
+  "lastSuccessAt": "2026-09-27T09:34:41.369Z",
+  "lastChangeAt": "2026-09-27T09:34:41.369Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "bank-of-maharashtra:fd": {
+  "lastAttemptAt": "2026-09-27T09:34:44.292Z",
+  "lastSuccessAt": "2026-09-27T09:34:44.292Z",
+  "lastChangeAt": "2026-09-27T09:34:44.292Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "bank-of-maharashtra:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T09:34:46.544Z",
+  "lastSuccessAt": "2026-09-27T09:34:46.544Z",
+  "lastChangeAt": "2026-09-27T09:34:46.544Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "bank-of-maharashtra:savings": {
+  "lastAttemptAt": "2026-09-27T09:34:47.101Z",
+  "lastSuccessAt": "2026-09-27T09:34:47.101Z",
+  "lastChangeAt": "2026-09-27T09:34:47.101Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "canara-bank:fd": {
+  "lastAttemptAt": "2026-09-27T09:34:51.236Z",
+  "lastSuccessAt": "2026-09-27T09:34:51.236Z",
+  "lastChangeAt": "2026-09-27T09:34:51.236Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "canara-bank:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T09:34:53.239Z",
+  "lastSuccessAt": "2026-09-27T09:34:53.239Z",
+  "lastChangeAt": "2026-09-27T09:34:53.239Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "canara-bank:savings": {
+  "lastAttemptAt": "2026-09-27T09:34:53.768Z",
+  "lastSuccessAt": "2026-09-27T09:34:53.768Z",
+  "lastChangeAt": "2026-09-27T09:34:53.768Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
  "capital-sfb:fd": {
   "lastAttemptAt": "2026-09-27T08:41:16.851Z",
   "lastSuccessAt": "2026-09-27T08:41:16.851Z",
@@ -31,6 +101,27 @@
   "lastAttemptAt": "2026-09-27T08:41:17.793Z",
   "lastSuccessAt": "2026-09-27T08:41:17.793Z",
   "lastChangeAt": "2026-09-27T08:41:17.793Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "central-bank-of-india:fd": {
+  "lastAttemptAt": "2026-09-27T09:34:56.109Z",
+  "lastSuccessAt": "2026-09-27T09:34:56.109Z",
+  "lastChangeAt": "2026-09-27T09:34:56.109Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "central-bank-of-india:fd_bulk": {
+  "lastAttemptAt": "2026-09-27T09:34:57.509Z",
+  "lastSuccessAt": "2026-09-27T09:34:57.509Z",
+  "lastChangeAt": "2026-09-27T09:34:57.509Z",
+  "consecutiveFailures": 0,
+  "lastError": null
+ },
+ "central-bank-of-india:savings": {
+  "lastAttemptAt": "2026-09-27T09:34:59.058Z",
+  "lastSuccessAt": "2026-09-27T09:34:59.058Z",
+  "lastChangeAt": "2026-09-27T09:34:59.058Z",
   "consecutiveFailures": 0,
   "lastError": null
  },

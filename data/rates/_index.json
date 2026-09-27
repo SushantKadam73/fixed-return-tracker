@@ -22,6 +22,90 @@
    "to": "2026-04-23"
   },
   {
+   "bankSlug": "bank-of-baroda",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-06-12",
+   "to": "2026-06-12"
+  },
+  {
+   "bankSlug": "bank-of-baroda",
+   "product": "fd_bulk",
+   "cards": 1,
+   "from": "2026-09-26",
+   "to": "2026-09-26"
+  },
+  {
+   "bankSlug": "bank-of-baroda",
+   "product": "savings",
+   "cards": 1,
+   "from": "2025-08-22",
+   "to": "2025-08-22"
+  },
+  {
+   "bankSlug": "bank-of-baroda",
+   "product": "tax_saver",
+   "cards": 1,
+   "from": "2026-05-15",
+   "to": "2026-05-15"
+  },
+  {
+   "bankSlug": "bank-of-maharashtra",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-09-14",
+   "to": "2026-09-14"
+  },
+  {
+   "bankSlug": "bank-of-maharashtra",
+   "product": "fd_bulk",
+   "cards": 1,
+   "from": "2026-09-14",
+   "to": "2026-09-14"
+  },
+  {
+   "bankSlug": "bank-of-maharashtra",
+   "product": "rd",
+   "cards": 1,
+   "from": "2026-09-14",
+   "to": "2026-09-14"
+  },
+  {
+   "bankSlug": "bank-of-maharashtra",
+   "product": "savings",
+   "cards": 1,
+   "from": "2025-09-01",
+   "to": "2025-09-01"
+  },
+  {
+   "bankSlug": "canara-bank",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-03-17",
+   "to": "2026-03-17"
+  },
+  {
+   "bankSlug": "canara-bank",
+   "product": "fd_bulk",
+   "cards": 1,
+   "from": "2026-09-25",
+   "to": "2026-09-25"
+  },
+  {
+   "bankSlug": "canara-bank",
+   "product": "rd",
+   "cards": 1,
+   "from": "2026-03-17",
+   "to": "2026-03-17"
+  },
+  {
+   "bankSlug": "canara-bank",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-09-05",
+   "to": "2026-09-05"
+  },
+  {
    "bankSlug": "capital-sfb",
    "product": "fd",
    "cards": 1,
@@ -34,6 +118,27 @@
    "cards": 1,
    "from": "2026-09-27",
    "to": "2026-09-27"
+  },
+  {
+   "bankSlug": "central-bank-of-india",
+   "product": "fd",
+   "cards": 1,
+   "from": "2026-08-10",
+   "to": "2026-08-10"
+  },
+  {
+   "bankSlug": "central-bank-of-india",
+   "product": "fd_bulk",
+   "cards": 1,
+   "from": "2026-09-27",
+   "to": "2026-09-27"
+  },
+  {
+   "bankSlug": "central-bank-of-india",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-05-10",
+   "to": "2026-05-10"
   },
   {
    "bankSlug": "equitas-sfb",

@@ -1,0 +1,57 @@
+{
+ "bankSlug": "bank-of-baroda",
+ "product": "tax_saver",
+ "cards": [
+  {
+   "bankSlug": "bank-of-baroda",
+   "product": "tax_saver",
+   "effectiveFrom": "2026-05-15",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://bankofbaroda.bank.in/interest-rate-and-service-charges/deposits-interest-rates/fixed-deposits-tax-saving",
+   "confidence": "high",
+   "rows": [
+    {
+     "tenureMinDays": 1825,
+     "tenureMaxDays": 1825,
+     "tenureLabel": "For 5 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.3
+    },
+    {
+     "tenureMinDays": 1825,
+     "tenureMaxDays": 1825,
+     "tenureLabel": "For 5 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.9
+    },
+    {
+     "tenureMinDays": 1825,
+     "tenureMaxDays": 1825,
+     "tenureLabel": "For 5 years",
+     "amountMin": 0,
+     "amountMax": null,
+     "customer": "super_senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 7
+    }
+   ],
+   "notes": [
+    "Statutory 5-year (60-month) lock-in Tax Saving FD (Section 80C); max ₹1,50,000 per PAN per financial year. The bank's page markup also contains an 'Above 5 years to up to 10 years' row wrapped in an HTML comment (not rendered), so only the 5-year row is published."
+   ],
+   "contentHash": "4ae2a7dc11a836d1"
+  }
+ ]
+}

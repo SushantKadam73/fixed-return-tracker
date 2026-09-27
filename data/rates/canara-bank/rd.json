@@ -1,0 +1,203 @@
+{
+ "bankSlug": "canara-bank",
+ "product": "rd",
+ "cards": [
+  {
+   "bankSlug": "canara-bank",
+   "product": "rd",
+   "effectiveFrom": "2026-03-17",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://www.canarabank.bank.in/term-deposits-rate-of-interest-p.a.",
+   "confidence": "high",
+   "rows": [
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 269,
+     "tenureLabel": "180 Days to 269 Days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5.25,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 269,
+     "tenureLabel": "180 Days to 269 Days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5.75,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 270,
+     "tenureMaxDays": 364,
+     "tenureLabel": "270 Days to less than 1 Year",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5.5,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 270,
+     "tenureMaxDays": 364,
+     "tenureLabel": "270 Days to less than 1 Year",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 456,
+     "tenureLabel": "1 Year & above to 1 year 3 months Only (Except 444 days)",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.25,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 456,
+     "tenureLabel": "1 Year & above to 1 year 3 months Only (Except 444 days)",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.75,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 457,
+     "tenureMaxDays": 729,
+     "tenureLabel": "Above 1 Year 3 months to less than 2 Years (Except 555 days)",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.25,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 457,
+     "tenureMaxDays": 729,
+     "tenureLabel": "Above 1 Year 3 months to less than 2 Years (Except 555 days)",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.75,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 Years & above to less than 3 Years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.25,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "2 Years & above to less than 3 Years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.75,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 1824,
+     "tenureLabel": "3 Years & above to less than 5 Years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.25,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 1824,
+     "tenureLabel": "3 Years & above to less than 5 Years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.75,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 1825,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "5 Years & above to 10 Years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.25,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 1825,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "5 Years & above to 10 Years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.75,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    }
+   ],
+   "notes": [
+    "RD rates derived from the FD card because the bank states: \"Canara Bank Recurring Deposit — Interest Rate: \"As applicable to term deposits of various tenures prevailing from time to time.\"\""
+   ],
+   "contentHash": "8366f1b7a4540d34"
+  }
+ ]
+}

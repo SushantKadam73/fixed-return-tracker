@@ -1,0 +1,189 @@
+{
+ "bankSlug": "bank-of-maharashtra",
+ "product": "fd",
+ "cards": [
+  {
+   "bankSlug": "bank-of-maharashtra",
+   "product": "fd",
+   "effectiveFrom": "2026-09-14",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://bankofmaharashtra.bank.in/domestic-term-deposits",
+   "confidence": "high",
+   "rows": [
+    {
+     "tenureMinDays": 400,
+     "tenureMaxDays": 400,
+     "tenureLabel": "400 days",
+     "special": true,
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.65
+    },
+    {
+     "tenureMinDays": 1777,
+     "tenureMaxDays": 1777,
+     "tenureLabel": "1777 days (Green Deposit)",
+     "special": true,
+     "schemeName": "Green Deposit",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.05
+    },
+    {
+     "tenureMinDays": 7,
+     "tenureMaxDays": 30,
+     "tenureLabel": "7- 30 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 2.6
+    },
+    {
+     "tenureMinDays": 31,
+     "tenureMaxDays": 45,
+     "tenureLabel": "31-45 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 2.75
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46-90 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 3.75
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 119,
+     "tenureLabel": "91-119 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 4
+    },
+    {
+     "tenureMinDays": 120,
+     "tenureMaxDays": 180,
+     "tenureLabel": "120-180 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 4.75
+    },
+    {
+     "tenureMinDays": 181,
+     "tenureMaxDays": 270,
+     "tenureLabel": "181 - 270 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 271,
+     "tenureMaxDays": 364,
+     "tenureLabel": "271 - 364 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5.25
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 365,
+     "tenureLabel": "365 days/ One Year",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.4
+    },
+    {
+     "tenureMinDays": 366,
+     "tenureMaxDays": 730,
+     "tenureLabel": "Above 1 year to 2 years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.15
+    },
+    {
+     "tenureMinDays": 731,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "Above 2 years to 3 years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5.25
+    },
+    {
+     "tenureMinDays": 1096,
+     "tenureMaxDays": 1825,
+     "tenureLabel": "Above 3 years to 5 years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 1826,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "Above 5 years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5
+    }
+   ],
+   "contentHash": "5bc94f4ad63164cd"
+  }
+ ]
+}

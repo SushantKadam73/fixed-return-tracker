@@ -1,0 +1,38 @@
+{
+ "bankSlug": "bank-of-maharashtra",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "bank-of-maharashtra",
+   "product": "savings",
+   "effectiveFrom": "2025-09-01",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://bankofmaharashtra.bank.in/interest-rates",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": 10000001,
+     "rate": 2.5,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 10000001,
+     "balanceMax": 1000000000,
+     "rate": 2.6,
+     "residency": "resident"
+    },
+    {
+     "balanceMin": 1000000001,
+     "balanceMax": null,
+     "rate": 2.75,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "f28da22522dc8d7b"
+  }
+ ]
+}

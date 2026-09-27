@@ -1,0 +1,125 @@
+{
+ "bankSlug": "bank-of-maharashtra",
+ "product": "rd",
+ "cards": [
+  {
+   "bankSlug": "bank-of-maharashtra",
+   "product": "rd",
+   "effectiveFrom": "2026-09-14",
+   "observedAt": "2026-09-27",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://bankofmaharashtra.bank.in/domestic-term-deposits",
+   "confidence": "high",
+   "rows": [
+    {
+     "tenureMinDays": 180,
+     "tenureMaxDays": 180,
+     "tenureLabel": "120-180 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 4.75,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 181,
+     "tenureMaxDays": 270,
+     "tenureLabel": "181 - 270 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 271,
+     "tenureMaxDays": 364,
+     "tenureLabel": "271 - 364 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5.25,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 365,
+     "tenureLabel": "365 days/ One Year",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.4,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 366,
+     "tenureMaxDays": 730,
+     "tenureLabel": "Above 1 year to 2 years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.15,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 731,
+     "tenureMaxDays": 1095,
+     "tenureLabel": "Above 2 years to 3 years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5.25,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 1096,
+     "tenureMaxDays": 1825,
+     "tenureLabel": "Above 3 years to 5 years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    },
+    {
+     "tenureMinDays": 1826,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "Above 5 years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5,
+     "note": "Same as the FD card rate for this tenure (bank statement)"
+    }
+   ],
+   "notes": [
+    "RD rates derived from the FD card because the bank states: \"Bank of Maharashtra: Interest rates offered on Recurring Term Deposits will be same as the interest rates applicable to Term Deposits.\""
+   ],
+   "contentHash": "362cb7a03618ae1a"
+  }
+ ]
+}
