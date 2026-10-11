@@ -54,6 +54,7 @@ export const confidence = v.union(v.literal("high"), v.literal("medium"), v.lite
 export const slabMethod = v.union(v.literal("whole"), v.literal("incremental"), v.literal("unknown"));
 
 export const rateRow = v.object({
+  effectiveFrom: v.optional(v.union(v.string(), v.null())),
   tenureMinDays: v.number(),
   tenureMaxDays: v.number(),
   tenureLabel: v.string(),

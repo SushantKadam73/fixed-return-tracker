@@ -8,7 +8,7 @@
  * so every write happens in one audited place and `--dry-run` can report without touching
  * the repo.
  */
-import type { FetchedDoc, SourceFormat } from "../types";
+import type { FetchedDoc, FetchInit, SourceFormat } from "../types";
 
 export type Evidence = "primary" | "secondary";
 
@@ -69,7 +69,17 @@ export interface BanksWatchChange {
   removals: Array<{ group: string; name: string }>;
 }
 
-export type Change = SchemePeriodChange | SeriesPointChange | NpsRowsChange | BanksWatchChange;
+export interface MacroObservationChange {
+  kind: "macro_observation";
+  seriesKey: string;
+  value: number;
+  observedAt: string;
+  sourceUrl: string;
+  sourceAsAt: string | null;
+  effectiveFrom: null;
+}
+
+export type Change = MacroObservationChange | SchemePeriodChange | SeriesPointChange | NpsRowsChange | BanksWatchChange;
 
 export interface TaskResult {
   task: string;
@@ -87,7 +97,7 @@ export interface TaskResult {
 export interface MacroTaskContext {
   today: string; // YYYY-MM-DD, IST
   root: string; // repo root (data/ lives at <root>/data)
-  fetch: (url: string, format?: SourceFormat) => Promise<FetchedDoc>;
+  fetch: (url: string, format?: SourceFormat, init?: FetchInit) => Promise<FetchedDoc>;
 }
 
 export type MacroTask = (ctx: MacroTaskContext) => Promise<TaskResult>;

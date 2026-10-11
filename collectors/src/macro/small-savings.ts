@@ -7,7 +7,7 @@ import { extractTables } from "../parse/html-table";
 import { parseDate, parseRate } from "../parse/common";
 import type { MacroTaskContext, SchemePeriodChange, TaskResult } from "./types";
 import { lastSchemePeriod } from "./store";
-import { daysBetween, nextQuarter, quarterOf } from "./dates";
+import { daysBetween, nextQuarter, noticeCoversQuarter, quarterOf } from "./dates";
 import { matchSchemeKey, parseNsiMasterTable, type SmallSavingsScheme } from "./nsi-table";
 
 export const NSI_URL = "https://www.nsiindia.gov.in/InternalPage.aspx?Id_Pk=132";
@@ -83,7 +83,7 @@ export async function run(ctx: MacroTaskContext): Promise<TaskResult> {
     return result;
   }
 
-  const perScheme = new Map<SmallSavingsScheme, { rate: number | null; maturityMonths: number | null }>();
+  const perScheme = new Map<SmallSavingsScheme, { rate: number | null; maturityMonths: number | null; sourceUrl: string }>();
   let usedUrl: string | undefined;
   const evidence = "primary" as const;
 
@@ -91,9 +91,8 @@ export async function run(ctx: MacroTaskContext): Promise<TaskResult> {
   try {
     const doc = await ctx.fetch(NSI_URL);
     result.sourcesTried.push({ url: NSI_URL, ok: true, status: doc.status });
-    result.ok = true;
     const rows = parseNsiMasterTable(doc.text).filter((r) => r.start === target.start);
-    for (const r of rows) perScheme.set(r.scheme, { rate: r.rate, maturityMonths: r.maturityMonths });
+    for (const r of rows) perScheme.set(r.scheme, { rate: r.rate, maturityMonths: r.maturityMonths, sourceUrl: NSI_URL });
     if (rows.length > 0) usedUrl = NSI_URL;
   } catch (e) {
     result.sourcesTried.push({ url: NSI_URL, ok: false, status: (e as { status?: number }).status, error: (e as Error).message });
@@ -104,18 +103,18 @@ export async function run(ctx: MacroTaskContext): Promise<TaskResult> {
     try {
       const listing = await ctx.fetch(DEA_LISTING_URL);
       result.sourcesTried.push({ url: DEA_LISTING_URL, ok: true, status: listing.status });
-      result.ok = true;
-      const omUrl = findLatestOmLink(listing.text);
+      const omLink = findLatestOmLink(listing.text);
+      const omUrl = omLink ? new URL(omLink, DEA_LISTING_URL).toString() : null;
       if (omUrl) {
         const om = await ctx.fetch(omUrl, "pdf");
         result.sourcesTried.push({ url: omUrl, ok: true, status: om.status });
-        if (isUnchangedNotice(om.text)) {
+        if (isUnchangedNotice(om.text) && noticeCoversQuarter(om.text, target.start, target.end)) {
           for (const scheme of SCHEMES) {
             if (perScheme.has(scheme)) continue;
             const lastP = lastSchemePeriod(ctx.root, scheme);
             if (!lastP) continue;
             const carriedMonths = /doubling period\s*(\d+)\s*months/i.exec(lastP.note ?? "")?.[1];
-            perScheme.set(scheme, { rate: lastP.rate, maturityMonths: carriedMonths ? Number(carriedMonths) : null });
+            perScheme.set(scheme, { rate: lastP.rate, maturityMonths: carriedMonths ? Number(carriedMonths) : null, sourceUrl: omUrl });
           }
           if (!usedUrl) usedUrl = omUrl;
         } else {
@@ -134,10 +133,9 @@ export async function run(ctx: MacroTaskContext): Promise<TaskResult> {
     try {
       const doc = await ctx.fetch(INDIA_POST_URL);
       result.sourcesTried.push({ url: INDIA_POST_URL, ok: true, status: doc.status });
-      result.ok = true;
       const parsed = parseIndiaPostRateTable(doc.text);
-      if (parsed && parsed.start === target.start) {
-        for (const r of parsed.rates) if (!perScheme.has(r.scheme)) perScheme.set(r.scheme, { rate: r.rate, maturityMonths: r.maturityMonths });
+      if (parsed && parsed.start === target.start && parsed.end === target.end) {
+        for (const r of parsed.rates) if (!perScheme.has(r.scheme)) perScheme.set(r.scheme, { rate: r.rate, maturityMonths: r.maturityMonths, sourceUrl: INDIA_POST_URL });
         if (!usedUrl) usedUrl = INDIA_POST_URL;
       }
     } catch (e) {
@@ -146,19 +144,24 @@ export async function run(ctx: MacroTaskContext): Promise<TaskResult> {
   }
 
   if (perScheme.size === 0) {
-    if (!result.ok) result.error = "Every source (NSI, DEA, India Post) failed to fetch.";
-    else result.warnings.push(`No source confirmed rates for ${target.start} to ${target.end} yet.`);
+    result.error = `No source confirmed rates for ${target.start} to ${target.end}.`;
     return result;
   }
 
-  for (const [scheme, { rate, maturityMonths }] of perScheme) {
+  result.ok = perScheme.size === SCHEMES.length;
+  if (!result.ok) {
+    result.error = `Only ${perScheme.size}/${SCHEMES.length} scheme rates verified for the target quarter; incomplete batch retained for investigation.`;
+    return result;
+  }
+
+  for (const [scheme, { rate, maturityMonths, sourceUrl }] of perScheme) {
     const lastP = lastSchemePeriod(ctx.root, scheme);
-    let note = noteFor(target, usedUrl === NSI_URL ? "NSI master table" : usedUrl === INDIA_POST_URL ? "India Post" : "DEA OM", rate === (lastP?.rate ?? undefined));
+    let note = noteFor(target, sourceUrl === NSI_URL ? "NSI master table" : sourceUrl === INDIA_POST_URL ? "India Post" : "DEA OM", rate === (lastP?.rate ?? undefined));
     if (scheme === "kvp" && maturityMonths) note = `Doubling period ${maturityMonths} months. ${note}`;
     const change: SchemePeriodChange = {
       kind: "scheme_period",
       scheme,
-      period: { effectiveFrom: target.start, effectiveTo: target.end, rate, note, sourceUrl: usedUrl ?? NSI_URL, evidence, crossCheckUrl: null },
+      period: { effectiveFrom: target.start, effectiveTo: target.end, rate, note, sourceUrl, evidence, crossCheckUrl: null },
     };
     result.changes.push(change);
   }

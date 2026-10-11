@@ -23,6 +23,41 @@ http.route({
   handler: httpAction(async () => json({ ok: true, at: new Date().toISOString() })),
 });
 
+http.route({
+  path: "/bootstrap",
+  method: "POST",
+  handler: httpAction(async (ctx, req) => {
+    if (!authorised(req)) return json({ error: "unauthorised" }, 401);
+    const result = await ctx.runAction(internal.seed.importAll, {});
+    return json({ ok: true, ...result });
+  }),
+});
+
+http.route({
+  path: "/sync",
+  method: "POST",
+  handler: httpAction(async (ctx, req) => {
+    if (!authorised(req)) return json({ error: "unauthorised" }, 401);
+    const body = await req.json();
+    if (body.revision !== undefined && !/^[a-f0-9]{40}$/.test(body.revision)) return json({ error: "Invalid dataset commit" }, 400);
+    const result = await ctx.runAction(internal.seed.importSeriesAndRates, { revision: body.revision });
+    await ctx.scheduler.runAfter(30_000, internal.notify.revalidateSite, {});
+    return json({ ok: result.errors.length === 0, ...result }, result.errors.length ? 503 : 200);
+  }),
+});
+
+http.route({
+  path: "/macro-status",
+  method: "POST",
+  handler: httpAction(async (ctx, req) => {
+    if (!authorised(req)) return json({ error: "unauthorised" }, 401);
+    const body = await req.json();
+    return json(await ctx.runMutation(internal.monitor.recordMacroStatus, {
+      receiptId: body.receiptId, checks: body.checks, observations: body.observations, fetchedAt: body.fetchedAt,
+    }));
+  }),
+});
+
 /** One source's collection result: { sourceKey, fetchedAt, httpStatus?, contentHash?, error?, cards: [] } */
 http.route({
   path: "/ingest",
@@ -31,6 +66,7 @@ http.route({
     if (!authorised(req)) return json({ error: "unauthorised" }, 401);
     const body = await req.json();
     const result = await ctx.runMutation(internal.ingest.recordSourceResult, {
+      receiptId: body.receiptId,
       sourceKey: body.sourceKey,
       fetchedAt: body.fetchedAt ?? Date.now(),
       httpStatus: body.httpStatus,
@@ -38,7 +74,7 @@ http.route({
       error: body.error,
       cards: body.cards ?? [],
     });
-    return json(result);
+    return json(result, result.outcome === "rejected" ? 422 : 200);
   }),
 });
 
@@ -62,6 +98,7 @@ http.route({
     if (!authorised(req)) return json({ error: "unauthorised" }, 401);
     const body = await req.json().catch(() => ({}));
     await ctx.runMutation(internal.monitor.recordRun, {
+      receiptId: body.receiptId,
       job: String(body.job ?? "collect"),
       runner: String(body.runner ?? "github"),
       startedAt: Number(body.startedAt ?? Date.now()),

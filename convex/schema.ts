@@ -25,6 +25,8 @@ import {
 } from "./validators";
 
 export default defineSchema({
+  deliveryReceipts: defineTable({ key: v.string(), acceptedAt: v.number(), result: v.any() })
+    .index("by_key", ["key"]).index("by_time", ["acceptedAt"]),
   /** Every bank the tracker knows about, including merged predecessors (for lineage). */
   banks: defineTable({
     slug: v.string(),
@@ -163,6 +165,7 @@ export default defineSchema({
     series: v.string(),
     date: v.string(),
     value: v.number(),
+    metadata: v.optional(v.any()),
     status: v.optional(v.union(v.literal("provisional"), v.literal("final"))),
   }).index("by_series_date", ["series", "date"]),
 

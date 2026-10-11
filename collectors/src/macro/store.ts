@@ -216,7 +216,7 @@ export function readSeriesFile(root: string, key: string): SeriesFile | null {
   return readJson<SeriesFile>(seriesFilePath(root, key));
 }
 
-/** Appends a point/textual row; returns false if that exact date already exists (never overwrites). */
+/** Preserve dated revisions while allowing an official period to be corrected. */
 export function applySeriesPoint(root: string, change: SeriesPointChange): boolean {
   const file = seriesFilePath(root, change.seriesKey);
   const raw = rawTextOf(file);
@@ -237,12 +237,19 @@ export function applySeriesPoint(root: string, change: SeriesPointChange): boole
     isTrailingAppend = f.textual.at(-1) === row;
   } else {
     const date = String(change.point[0]);
-    if (f.points.some((p) => String(p[0]) === date)) return false;
-    f.points.push(change.point);
+    const previous = f.points.findIndex((point) => String(point[0]) === date);
+    if (previous >= 0) {
+      if (JSON.stringify(f.points[previous]) === JSON.stringify(change.point)) return false;
+      const revisions = path.join(macroDir(root), "revisions.json");
+      const log = readJson<Array<{ series: string; date: string; before: unknown[]; after: unknown[]; revisedAt: string }>>(revisions) ?? [];
+      log.push({ series: change.seriesKey, date, before: f.points[previous], after: change.point, revisedAt: new Date().toISOString() });
+      writeJson(revisions, log, 1);
+      f.points[previous] = change.point;
+    } else f.points.push(change.point);
     f.points.sort((a, b) => String(a[0]).localeCompare(String(b[0])));
     arrayKey = "points";
     addedItem = change.point;
-    isTrailingAppend = f.points.at(-1) === change.point;
+    isTrailingAppend = previous < 0 && f.points.at(-1) === change.point;
   }
 
   let addedNote: string | null = null;

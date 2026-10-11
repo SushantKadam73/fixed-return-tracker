@@ -4,7 +4,7 @@
  * bulk term deposits (₹3 crore and above), savings bank deposits.
  */
 import type { RateRow } from "../../../lib/domain";
-import { cleanText, parseDate, parseRate } from "../parse/common";
+import { cleanText, findEffectiveDate, parseDate, parseRate } from "../parse/common";
 import { extractTables, pageText } from "../parse/html-table";
 import { parseTermTable } from "../parse/term-table";
 import type { Adapter } from "../types";
@@ -71,18 +71,45 @@ export const sbiRetail: Adapter = async (ctx) => {
 
 export const sbiBulk: Adapter = async (ctx) => {
   const grids = extractTables(ctx.doc.text);
-  const card = requireGrid(grids, (g) => /tenor/i.test(headerText(g, 1)) && REVISED_PUBLIC.test(headerText(g, 1)), "bulk card");
-  const effectiveFrom = headerEffectiveDate(card, REVISED_PUBLIC);
-  const rows = parseTermTable(card, {
-    columns: [
-      { header: REVISED_PUBLIC, customer: "general" },
-      { header: REVISED_SENIOR, customer: "senior" },
-    ],
-    amountMin: 3 * CRORE,
-    amountMax: null,
-    callable: true,
-  });
-  return { cards: [makeCard(ctx, "fd_bulk", rows, { effectiveFrom })] };
+  const old = grids.find((grid) => /tenor/i.test(headerText(grid, 1)) && REVISED_PUBLIC.test(headerText(grid, 1)));
+  if (old) {
+    const effectiveFrom = headerEffectiveDate(old, REVISED_PUBLIC);
+    return { cards: [makeCard(ctx, "fd_bulk", parseTermTable(old, {
+      columns: [{ header: REVISED_PUBLIC, customer: "general" }, { header: REVISED_SENIOR, customer: "senior" }],
+      amountMin: 3 * CRORE, amountMax: null, callable: true,
+    }), { effectiveFrom })] };
+  }
+  // SBI now publishes distinct amount/withdrawal grids, each with its own date.
+  const rows: RateRow[] = [];
+  const dates: string[] = [];
+  for (const grid of grids) {
+    const heading = [...grid.context.matchAll(/Interest Rates on Domestic Bulk Term Deposits/gi)].at(-1);
+    const caption = heading ? grid.context.slice(heading.index + heading[0].length) : null;
+    if (!caption || !/tenor/i.test(headerText(grid, 2))) continue;
+    const date = findEffectiveDate(caption);
+    if (!date) throw new AdapterError("SBI bulk table has no stated effective date");
+    dates.push(date);
+    if (/Rs\.?\s*3 Crores to 25 Crores/i.test(caption)) {
+      const callable = !/non-callable/i.test(caption);
+      const parsed = parseTermTable(grid, { columns: [{ header: /^Public$/i, customer: "general" }, { header: /senior citizen/i, customer: "senior" }], amountMin: 3 * CRORE, amountMax: 25 * CRORE + 1, callable });
+      rows.push(...parsed.map((row) => ({ ...row, effectiveFrom: date })));
+    } else {
+      const band = /above\s*₹?\s*(25|60|100)\s*Cr(?:\s*to\s*(60|100)\s*Cr)?/i.exec(caption);
+      if (!band) throw new AdapterError("Unrecognized SBI bulk amount band");
+      const amountMin = Number(band[1]) * CRORE + 1;
+      const amountMax = band[2] ? Number(band[2]) * CRORE + 1 : null;
+      if (!/callable deposits/i.test(grid.rows[0]?.[0] ?? "") || !/non-callable deposits/i.test(grid.rows[0]?.[3] ?? "")) throw new AdapterError("SBI bulk withdrawal columns changed");
+      for (const [columns, callable] of [[[0, 1], true], [[3, 4], false]] as const) {
+        for (const [column, customer] of [[columns[0], "general"], [columns[1], "non_individual"]] as const) {
+          const mapped = { ...grid, rows: [["Tenors", "Rate"], ...grid.rows.slice(2).map((row) => [row[2], row[column]])] };
+          const parsed = parseTermTable(mapped, { columns: [{ header: /^Rate$/, customer }], headerRows: 1, amountMin, amountMax, callable });
+          rows.push(...parsed.map((row) => ({ ...row, effectiveFrom: date })));
+        }
+      }
+    }
+  }
+  if (!rows.length) throw new AdapterError("SBI bulk rate grids not found");
+  return { cards: [makeCard(ctx, "fd_bulk", rows, { effectiveFrom: dates.sort().at(-1) ?? null, notes: ["Amount bands and withdrawal options are published separately. Each row retains its own effective date. Financial-institution columns are marked non-individual; their exact institution eligibility must be confirmed with SBI."] })] };
 };
 
 export const sbiSavings: Adapter = async (ctx) => {

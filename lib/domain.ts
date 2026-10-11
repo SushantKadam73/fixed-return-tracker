@@ -51,6 +51,7 @@ export type Confidence = "high" | "medium" | "low";
  * Amounts are in rupees; `amountMax` null means "no upper limit".
  */
 export interface RateRow {
+  effectiveFrom?: string | null; // row-specific date when the source revises bands separately
   tenureMinDays: number;
   tenureMaxDays: number;
   tenureLabel: string; // exactly as the bank wrote it, e.g. "1 year to less than 2 years"

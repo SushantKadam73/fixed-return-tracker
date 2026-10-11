@@ -10,17 +10,19 @@ import { v } from "convex/values";
 import { internalMutation, type MutationCtx } from "./_generated/server";
 import { internal } from "./_generated/api";
 import type { Doc } from "./_generated/dataModel";
-import { FIXED_DURATIONS, rateForTenure } from "../lib/tenure";
-import type { Product, RateRow } from "../lib/domain";
+import { productSummary, currentEntry, type StoredCard } from "../lib/summary-build";
+import { currentOfficialCard } from "../lib/current-card";
+import { todayIST } from "../lib/format";
+import type { Product } from "../lib/domain";
 
 const PRODUCTS: Product[] = ["fd", "fd_bulk", "rd", "savings", "nre", "nro", "fcnr", "tax_saver"];
-const RETAIL_REFERENCE_AMOUNT = 1_00_000; // ₹1 lakh: reference amount for key-rate history lines
 
 async function putSummary(ctx: MutationCtx, key: string, payload: unknown) {
   const existing = await ctx.db
     .query("summaries")
     .withIndex("by_key", (q) => q.eq("key", key))
     .first();
+  if (existing && JSON.stringify(existing.payload) === JSON.stringify(payload)) return;
   if (existing) await ctx.db.patch(existing._id, { payload, updatedAt: Date.now() });
   else await ctx.db.insert("summaries", { key, payload, updatedAt: Date.now() });
 }
@@ -30,28 +32,6 @@ async function getSummary(ctx: MutationCtx, key: string): Promise<Doc<"summaries
     .query("summaries")
     .withIndex("by_key", (q) => q.eq("key", key))
     .first();
-}
-
-function keyRates(rows: RateRow[], customer: "general" | "senior") {
-  const out: Record<string, number | null> = {};
-  for (const d of FIXED_DURATIONS) {
-    out[d.key] = rateForTenure(rows, d.days, { amount: RETAIL_REFERENCE_AMOUNT, customer })?.rate ?? null;
-  }
-  return out;
-}
-
-function cardMeta(c: Doc<"rateCards">) {
-  return {
-    effectiveFrom: c.effectiveFrom ?? null,
-    validTo: c.validTo ?? null,
-    observedAt: c.observedAt,
-    observedFrom: c.observedFrom ?? null,
-    observedTo: c.observedTo ?? null,
-    sourceType: c.sourceType,
-    sourceUrl: c.sourceUrl,
-    archiveUrl: c.archiveUrl ?? null,
-    confidence: c.confidence,
-  };
 }
 
 async function buildBank(ctx: MutationCtx, bankSlug: string) {
@@ -67,27 +47,11 @@ async function buildBank(ctx: MutationCtx, bankSlug: string) {
       .withIndex("by_bank_product_effective", (q) => q.eq("bankSlug", bankSlug).eq("product", product))
       .collect();
     if (cards.length === 0) continue;
-    const current = cards.find((c) => c.isCurrent) ?? null;
+    const current = currentOfficialCard(cards, todayIST());
     currentByProduct[product] = current;
-    const sortKey = (c: Doc<"rateCards">) => c.effectiveFrom ?? c.observedFrom ?? c.observedAt;
-    const versions = [...cards]
-      .sort((a, b) => sortKey(a).localeCompare(sortKey(b)))
-      .map((c) => ({
-        ...cardMeta(c),
-        isCurrent: c.isCurrent,
-        general: product === "savings" ? null : keyRates(c.rows, "general"),
-        senior: product === "savings" ? null : keyRates(c.rows, "senior"),
-        baseSavingsRate:
-          product === "savings" && c.savingsSlabs && c.savingsSlabs.length > 0
-            ? [...c.savingsSlabs].sort((a, b) => a.balanceMin - b.balanceMin)[0].rate
-            : null,
-      }));
-    products[product] = {
-      current: current
-        ? { ...cardMeta(current), rows: current.rows, savingsSlabs: current.savingsSlabs ?? null, slabMethod: current.slabMethod ?? null, notes: current.notes ?? [] }
-        : null,
-      versions,
-    };
+    const normalized = cards.map((card): StoredCard => ({ ...card, effectiveFrom: card.effectiveFrom ?? null }));
+    const selected = normalized.find((card) => card.contentHash === current?.contentHash && card.observedAt === current.observedAt) ?? null;
+    products[product] = productSummary(product, normalized, selected);
   }
   const terms = await ctx.db
     .query("productTerms")
@@ -98,30 +62,39 @@ async function buildBank(ctx: MutationCtx, bankSlug: string) {
 
 /** Rebuild one bank's summary and its entries in the per-product current tables. */
 export const refreshBank = internalMutation({
-  args: { bankSlug: v.string() },
-  handler: async (ctx, { bankSlug }) => {
+  args: { bankSlug: v.string(), changedProducts: v.optional(v.array(v.string())) },
+  handler: async (ctx, { bankSlug, changedProducts }) => {
     const built = await buildBank(ctx, bankSlug);
     const { currentByProduct, ...payload } = built;
     await putSummary(ctx, `bank:${bankSlug}`, payload);
     for (const product of PRODUCTS) {
-      const key = `current:${product}`;
+      if (changedProducts && !changedProducts.includes(product)) continue;
+      const rootKey = `current:${product}`;
+      // Bulk cards contain thousands of rows; split by RBI group before reaching Convex's document cap.
+      const partitions = ["sbi_nationalised", "private", "sfb"].map((group) => `${rootKey}:${group}`);
+      if (product === "fd_bulk") {
+        const previous = await getSummary(ctx, rootKey);
+        const legacy = (previous?.payload as { banks?: Record<string, { group?: string }> } | undefined)?.banks;
+        if (legacy) for (const partition of partitions) {
+          const group = partition.slice(rootKey.length + 1);
+          const migrated = Object.fromEntries(Object.entries(legacy).filter(([, entry]) => (entry.group ?? "private") === group));
+          await putSummary(ctx, partition, { banks: migrated });
+        }
+      }
+      const key = product === "fd_bulk" ? `${rootKey}:${built.bank?.group ?? "private"}` : rootKey;
       const existing = await getSummary(ctx, key);
       const banks = { ...((existing?.payload as { banks?: Record<string, unknown> } | undefined)?.banks ?? {}) };
       const card = currentByProduct[product];
       if (card && built.bank) {
-        banks[bankSlug] = {
-          name: built.bank.name,
-          shortName: built.bank.shortName,
-          group: built.bank.group,
-          ...cardMeta(card),
-          rows: card.rows,
-          savingsSlabs: card.savingsSlabs ?? null,
-          slabMethod: card.slabMethod ?? null,
-        };
+        if (built.bank.status === "active" && built.bank.tracking === "tracked") banks[bankSlug] = currentEntry(built.bank, { ...card, effectiveFrom: card.effectiveFrom ?? null });
+        else delete banks[bankSlug];
       } else {
         delete banks[bankSlug];
       }
-      if (existing || card) await putSummary(ctx, key, { banks });
+      if (existing || card) {
+        await putSummary(ctx, key, { banks });
+        if (product === "fd_bulk") await putSummary(ctx, rootKey, { partitions });
+      }
     }
   },
 });

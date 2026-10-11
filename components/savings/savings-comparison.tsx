@@ -28,8 +28,7 @@ export function SavingsComparison({ banks, postOfficeRate }: { banks: BankSaving
         .filter((b) => group === "all" || b.group === group)
         .map((b) => {
           const slabs = b.slabs.filter((s) => s.residency === "resident");
-          // For "unknown" we show the whole-balance reading but flag it.
-          const method: SlabMethod = b.method === "unknown" ? "whole" : b.method;
+          const method = b.method;
           return { bank: b, rate: savingsBlendedRate(balance, slabs, method), interest: savingsYearInterest(balance, slabs, method) };
         })
         .sort((a, b) => (b.interest ?? -1) - (a.interest ?? -1)),
@@ -88,7 +87,7 @@ export function SavingsComparison({ banks, postOfficeRate }: { banks: BankSaving
                 <td className="num px-4 py-2.5">{formatRate(r.rate)}</td>
                 <td className="px-4 py-2.5 text-muted">
                   {METHOD_LABEL[r.bank.method]}
-                  {r.bank.method === "unknown" ? <span title="The bank does not say; figures assume the whole-balance reading"> *</span> : null}
+                  {r.bank.method === "unknown" ? <span title="The bank does not say; No estimate is calculated until the bank’s slab rule is verified"> *</span> : null}
                 </td>
                 <td className="num px-4 py-2.5 whitespace-nowrap">
                   <a href={r.bank.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
@@ -101,8 +100,8 @@ export function SavingsComparison({ banks, postOfficeRate }: { banks: BankSaving
         </table>
       </div>
       <p className="text-xs text-muted">
-        Interest is calculated on the daily balance and credited quarterly (monthly at some banks); a steady balance is assumed. “Slice by slice” means each part of
-        the balance earns its own slab&apos;s rate. * The bank does not state its slab rule; the whole-balance reading is shown.
+        Estimates assume a steady balance and quarterly crediting; actual credit timing varies by bank. “Slice by slice” means each part of
+        the balance earns its own slab&apos;s rate. * The slab rule is unverified, so no return estimate or numeric ranking is provided.
       </p>
     </div>
   );

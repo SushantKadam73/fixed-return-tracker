@@ -10,6 +10,6 @@ export async function POST(request: Request) {
   if (!secret || request.headers.get("authorization") !== `Bearer ${secret}`) {
     return Response.json({ error: "unauthorised" }, { status: 401 });
   }
-  revalidateTag(DATA_TAG, "max");
+  revalidateTag(DATA_TAG, { expire: 0 });
   return Response.json({ revalidated: true, at: new Date().toISOString() });
 }

@@ -1,0 +1,10 @@
+[Unit]
+Description=Check Fixed Return Tracker scheduler every six hours
+
+[Timer]
+OnCalendar=*-*-* 00,06,12,18:25:00 UTC
+Persistent=true
+RandomizedDelaySec=300
+
+[Install]
+WantedBy=timers.target

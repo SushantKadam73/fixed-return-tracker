@@ -10,7 +10,7 @@
  *    (e.g. 444 days), the result says so, because the saver must pick exactly that tenure.
  *  - A bucket with no matching slab is "not offered", never zero.
  */
-import type { CustomerType, RateRow, Residency } from "./domain";
+import type { CustomerType, Payout, RateRow, Residency } from "./domain";
 
 export const DAYS_PER_YEAR = 365;
 
@@ -62,16 +62,20 @@ export interface RowFilter {
   amount: number; // deposit amount in rupees
   customer: CustomerType;
   residency?: Residency;
+  asOf?: string;
+  payout?: Payout;
   callable?: boolean | null; // undefined = accept any; true = only callable; false = only non-callable
 }
 
 /** Does this published row apply to the depositor described by the filter? */
 export function rowMatches(row: RateRow, f: RowFilter): boolean {
+  if (f.asOf && row.effectiveFrom && row.effectiveFrom > f.asOf) return false;
   if (row.customer !== f.customer) return false;
   if ((f.residency ?? "resident") !== row.residency) return false;
   if (f.amount < row.amountMin) return false;
   if (row.amountMax !== null && f.amount >= row.amountMax) return false;
-  if (f.callable !== undefined && f.callable !== null && row.callable !== null && row.callable !== f.callable) return false;
+  if (f.callable !== undefined && f.callable !== null && row.callable !== f.callable) return false;
+  if (f.payout !== undefined && row.payout !== f.payout) return false;
   return true;
 }
 

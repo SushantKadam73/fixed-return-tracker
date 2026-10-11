@@ -23,7 +23,10 @@ export const lastRunAt = internalQuery({
       .query("jobRuns")
       .withIndex("by_job_time", (q) => q.eq("job", job))
       .order("desc")
+      .filter((q) => q.or(q.eq(q.field("status"), "ok"), q.eq(q.field("status"), "partial")))
       .first();
+    // A partial source pass still proves the scheduler ran; source/partial alerts stay open.
+    // Failed publications and bulk/recovery receipts do not satisfy this daily heartbeat.
     return run?.startedAt ?? null;
   },
 });
@@ -45,7 +48,7 @@ export const clear = internalMutation({
 export const collectorWatchdog = internalAction({
   args: {},
   handler: async (ctx) => {
-    const last = await ctx.runQuery(internal.watchdog.lastRunAt, { job: "collect" });
+    const last = await ctx.runQuery(internal.watchdog.lastRunAt, { job: "collect:daily" });
     if (last && Date.now() - last <= 26 * HOUR) {
       await ctx.runMutation(internal.watchdog.clear, {});
       return { overdue: false };

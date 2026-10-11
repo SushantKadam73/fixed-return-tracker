@@ -1,6 +1,6 @@
 /** Macro series from the committed datasets (data/series). */
 import "server-only";
-import { readDataset } from "./data";
+import { getSummary, readDataset } from "./data";
 
 export interface SeriesFile<P = [string, number]> {
   key: string;
@@ -15,7 +15,7 @@ export interface SeriesFile<P = [string, number]> {
 }
 
 export async function getSeries<P = [string, number]>(key: string): Promise<SeriesFile<P> | null> {
-  return readDataset<SeriesFile<P>>(`series/${key}.json`);
+  return (await getSummary<SeriesFile<P>>(`series:${key}`))?.payload ?? readDataset<SeriesFile<P>>(`series/${key}.json`);
 }
 
 /** "2023-24" style fiscal year that contains a YYYY-MM month (Indian FY runs April–March). */

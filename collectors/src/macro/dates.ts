@@ -1,4 +1,12 @@
 /** Date/quarter/fiscal-year helpers shared by the macro tasks. All dates are YYYY-MM-DD. */
+import { cleanText, parseDate } from "../parse/common";
+
+/** A dated notice must explicitly name both bounds of the quarter it confirms. */
+export function noticeCoversQuarter(text: string, start: string, end: string): boolean {
+  const dates = [...cleanText(text).matchAll(/\b\d{1,2}(?:st|nd|rd|th)?[\s.-]+[A-Za-z]+[\s,.-]+\d{4}\b|\b\d{1,2}[./-]\d{1,2}[./-]\d{4}\b/g)];
+  const found = new Set(dates.map((match) => parseDate(match[0])));
+  return found.has(start) && found.has(end);
+}
 
 export function pad2(n: number): string {
   return String(n).padStart(2, "0");

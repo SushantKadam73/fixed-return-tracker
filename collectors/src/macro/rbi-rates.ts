@@ -7,15 +7,16 @@
  */
 import { extractTables } from "../parse/html-table";
 import { parseDate, cleanText } from "../parse/common";
-import type { MacroTaskContext, SeriesPointChange, TaskResult } from "./types";
+import type { MacroTaskContext, MacroObservationChange, TaskResult } from "./types";
 import { readSeriesFile } from "./store";
 
 export const RBI_HOME_URL = "https://www.rbi.org.in/";
 
-export type RbiRateKey = "repo" | "sdf" | "msf" | "bank_rate" | "crr" | "slr" | "usdinr";
+export type RbiRateKey = "repo" | "reverse_repo" | "sdf" | "msf" | "bank_rate" | "crr" | "slr" | "usdinr";
 
 export const SERIES_FOR: Record<Exclude<RbiRateKey, "usdinr">, string> = {
   repo: "rbi_repo_rate",
+  reverse_repo: "rbi_reverse_repo_rate",
   sdf: "rbi_sdf_rate",
   msf: "rbi_msf_rate",
   bank_rate: "rbi_bank_rate",
@@ -25,6 +26,7 @@ export const SERIES_FOR: Record<Exclude<RbiRateKey, "usdinr">, string> = {
 
 const LABELS: Array<[RegExp, RbiRateKey]> = [
   [/policy\s*repo\s*rate/i, "repo"],
+  [/reverse\s*repo\s*rate/i, "reverse_repo"],
   [/standing\s*deposit\s*facility/i, "sdf"],
   [/marginal\s*standing\s*facility/i, "msf"],
   [/^bank\s*rate$/i, "bank_rate"],
@@ -74,8 +76,12 @@ export async function run(ctx: MacroTaskContext): Promise<TaskResult> {
   try {
     const doc = await ctx.fetch(RBI_HOME_URL);
     result.sourcesTried.push({ url: RBI_HOME_URL, ok: true, status: doc.status });
-    result.ok = true;
     const { asAt, values } = parseRbiCurrentRates(doc.text);
+    const required = ["repo", "sdf", "msf", "bank_rate", "crr", "slr"] as const;
+    const missing = required.filter((key) => values[key] === undefined);
+    if (missing.length) throw new Error(`Incomplete RBI rate box: missing ${missing.join(", ")}`);
+    if (required.some((key) => !Number.isFinite(values[key]) || values[key]! < 0 || values[key]! > 40)) throw new Error("Implausible RBI policy value");
+    result.ok = true;
     result.usedSourceUrl = RBI_HOME_URL;
     if (values.usdinr !== undefined) result.warnings.push(`INR/USD reference on the homepage: ${values.usdinr} (as at ${asAt ?? "unknown date"}); no daily USD/INR series file exists in data/series to append to (usdinr_annual.json is a fiscal-year average) — reported for visibility only.`);
 
@@ -91,19 +97,15 @@ export async function run(ctx: MacroTaskContext): Promise<TaskResult> {
         result.warnings.push(`data/series/${seriesKey}.json not found.`);
         continue;
       }
-      const lastPoint = series.points.at(-1);
-      const lastValue = lastPoint ? Number(lastPoint[1]) : null;
-      if (lastValue !== null && Math.abs(lastValue - value) < 1e-9) continue; // unchanged
-      const effectiveDate = asAt ?? ctx.today;
-      const appendNote = asAt
-        ? undefined
-        : `${effectiveDate}: dated with the collector run date — neither an MPC-stated effective date nor the homepage's "As at" date could be located this run.`;
-      const change: SeriesPointChange = { kind: "series_point", seriesKey, target: "points", point: [effectiveDate, value], appendNote };
+      // Homepage timestamps are observation dates, not evidence of a policy's effective date.
+      const change: MacroObservationChange = { kind: "macro_observation", seriesKey, value, observedAt: ctx.today, sourceAsAt: asAt, sourceUrl: RBI_HOME_URL, effectiveFrom: null };
       result.changes.push(change);
     }
   } catch (e) {
     result.sourcesTried.push({ url: RBI_HOME_URL, ok: false, status: (e as { status?: number }).status, error: (e as Error).message });
-    result.error = `rbi.org.in unreachable: ${(e as Error).message}`;
+    result.ok = false;
+    result.changes = [];
+    result.error = `RBI collection failed: ${(e as Error).message}`;
   }
   return result;
 }

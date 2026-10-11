@@ -21,6 +21,7 @@ export interface SourceDef {
   robotsAllowed?: boolean;
   /** "browser" sends a plain browser User-Agent instead of our identifying one (see fetch.ts). */
   userAgent?: "default" | "browser";
+  browser?: { clickText?: string; waitForSelector?: string };
   termsNote?: string;
   notes?: string;
 }
@@ -57,6 +58,7 @@ export interface ProductTerms {
  * "BFF" proxy route) — never for third-party/aggregator calls.
  */
 export interface FetchInit {
+  browser?: { clickText?: string; waitForSelector?: string };
   method?: "GET" | "POST";
   body?: string;
   headers?: Record<string, string>;

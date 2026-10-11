@@ -9,6 +9,7 @@ const NAV = [
   { href: "/compare", label: "Compare" },
   { href: "/real-value", label: "Real value" },
   { href: "/history", label: "History" },
+  { href: "/economy", label: "RBI & inflation" },
   { href: "/calculators", label: "Calculators" },
   { href: "/retirement", label: "Retirement" },
 ];
@@ -64,6 +65,7 @@ export function SiteFooter() {
         <div className="space-y-2">
           <p className="font-medium text-text">Data</p>
           <ul className="space-y-1">
+            <li><Link className="hover:text-text" href="/data">Download data & feeds</Link></li>
             <li>
               <Link className="hover:text-text" href="/methodology">
                 Methodology &amp; sources

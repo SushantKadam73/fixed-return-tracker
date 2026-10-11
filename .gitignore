@@ -43,3 +43,7 @@ next-env.d.ts
 
 # local research scratch (never committed: raw copies of bank pages stay private)
 /private/
+
+# Private conditional-response cache; raw source content never enters Git
+/.collector-cache/
+/.collector-lock

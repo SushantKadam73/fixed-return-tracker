@@ -85,7 +85,7 @@ export function rdMaturity(monthlyInstalment: number, ratePct: number, months: n
 
 /** Interest rate that applies to a balance under the bank's slab method, as a blended % p.a. */
 export function savingsBlendedRate(balance: number, slabs: SavingsSlab[], method: SlabMethod): number | null {
-  if (balance <= 0 || slabs.length === 0) return null;
+  if (!Number.isFinite(balance) || balance <= 0 || slabs.length === 0 || method === "unknown") return null;
   const sorted = [...slabs].sort((a, b) => a.balanceMin - b.balanceMin);
   if (method === "incremental") {
     let interest = 0;
@@ -96,7 +96,7 @@ export function savingsBlendedRate(balance: number, slabs: SavingsSlab[], method
     }
     return (interest / balance) * 100;
   }
-  // "whole" (and "unknown", shown with a caveat): the slab containing the balance applies to all of it.
+  // Whole-balance method: the containing slab applies to the entire balance.
   const slab = sorted.find((s) => balance >= s.balanceMin && (s.balanceMax === null || balance < s.balanceMax));
   return slab ? slab.rate : null;
 }

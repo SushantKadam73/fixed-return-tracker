@@ -40,7 +40,7 @@ export function DepositComparison({ fd, rd, today }: { fd: BankRates[]; rd: Bank
   const bucket = TENURE_BUCKETS.find((b) => b.key === bucketKey) ?? TENURE_BUCKETS[5];
 
   const results = useMemo(() => {
-    const filter = { amount, customer, callable: includeNonCallable ? undefined : true } as const;
+    const filter = { amount, customer, asOf: today, callable: includeNonCallable ? undefined : true } as const;
     return banks
       .filter((b) => group === "all" || b.group === group)
       .map((b) => {
@@ -52,7 +52,7 @@ export function DepositComparison({ fd, rd, today }: { fd: BankRates[]; rd: Bank
         return { bank: b, rate: row?.rate ?? null, label: row?.tenureLabel ?? null, specific: row ? row.tenureMinDays === row.tenureMaxDays : false, scheme: row?.schemeName ?? null, nonCallable: row?.callable === false };
       })
       .sort((a, b) => (b.rate ?? -1) - (a.rate ?? -1) || a.bank.name.localeCompare(b.bank.name));
-  }, [banks, amount, customer, normalise, bucket, tenureDays, group, includeNonCallable]);
+  }, [banks, amount, customer, normalise, bucket, tenureDays, group, includeNonCallable, today]);
 
   const offered = results.filter((r) => r.rate !== null);
   const missing = results.filter((r) => r.rate === null);
@@ -120,7 +120,7 @@ export function DepositComparison({ fd, rd, today }: { fd: BankRates[]; rd: Bank
         )}
         <label className="flex items-center gap-2 text-sm text-muted">
           <input type="checkbox" checked={includeNonCallable} onChange={(e) => setIncludeNonCallable(e.target.checked)} className="h-4 w-4 accent-[var(--accent)]" />
-          Include non-callable deposits (no premature withdrawal; usually ₹1 crore and above)
+          Include non-callable deposits and unverified withdrawal terms
         </label>
       </div>
 

@@ -71,8 +71,8 @@ function rateColumnDate(g: Grid): string | null {
 }
 
 const isSavings = (g: Grid) => (g.rows[0] ?? []).some((c) => /revised rates? w\.?e\.?f/i.test(c));
-const isRetailBelow3Cr = (g: Grid) => (g.rows[0] ?? []).some((c) => /less than rs\.?\s*3 crore/i.test(c));
-const isBulk3To10Cr = (g: Grid) => (g.rows[0] ?? []).some((c) => /3\s*cr.*10\s*cr/i.test(c));
+const isRetailBelow3Cr = (g: Grid) => /Deposit Interest Rates.*less than.*3 Crore/i.test(g.context) || (g.rows[0] ?? []).some((c) => /less than rs\.?\s*3 crore/i.test(c));
+const isBulk3To10Cr = (g: Grid) => /Bulk Deposit Interest Rates.*3 Crore to.*10 Crore/i.test(g.context) || (g.rows[0] ?? []).some((c) => /3\s*cr.*10\s*cr/i.test(c));
 const isBulkAbove10Cr = (g: Grid) => /above ₹?10 crore/i.test(g.context);
 const isCallable333 = (g: Grid) => (g.rows[0]?.[0] ?? "") === "Callable" && (g.rows[2]?.[0] ?? "").includes("333");
 const isNonCallable333 = (g: Grid) => /non-callable/i.test(g.rows[0]?.[0] ?? "") && (g.rows[2]?.[0] ?? "").includes("333");
@@ -171,9 +171,11 @@ export const centralBankOfIndiaBulk: Adapter = async (ctx) => {
   const effectiveFrom = rateColumnDate(midBand);
 
   const rows = [...generalSeniorRows(midBand, 3 * CRORE, 10 * CRORE, true)];
-  const bandHeaders = highBand.rows[2]?.slice(1) ?? [];
+  const headerIndex = highBand.rows.findIndex((row) => row.slice(1).some((cell) => /above.*10\s*crore/i.test(cell)));
+  if (headerIndex < 0) throw new AdapterError("Bulk amount-band headers not found");
+  const bandHeaders = highBand.rows[headerIndex].slice(1);
   const bands = bandHeaders.map((h) => parseAmountBand(h));
-  for (const row of highBand.rows.slice(3)) {
+  for (const row of highBand.rows.slice(headerIndex + 1)) {
     const label = cleanText(row[0] ?? "");
     if (!label) continue;
     const tenure = parseTenure(label);
@@ -209,12 +211,12 @@ export const centralBankOfIndiaBulk: Adapter = async (ctx) => {
 export const centralBankOfIndiaSavings: Adapter = async (ctx) => {
   const grids = extractTables(ctx.doc.text);
   const g = requireGrid(grids, isSavings, "savings slab table");
-  const effectiveFrom = parseDate(g.rows[0]?.[3] ?? "");
+  const effectiveFrom = rateColumnDate(g);
   if (!effectiveFrom) throw new AdapterError("central-bank-of-india: savings effective date not found");
 
   const slabs: SavingsSlab[] = g.rows.slice(1).map((r) => {
     const label = cleanText(r[0] ?? "");
-    const rate = parseRate(r[3] ?? "");
+    const rate = parseRate(r.length === 2 ? r[1] : r[3] ?? "");
     if (rate === null) throw new AdapterError(`central-bank-of-india: cannot read savings rate for slab "${label}"`);
     const band = parseAmountBand(label);
     if (!band) throw new AdapterError(`central-bank-of-india: cannot read savings balance slab "${label}"`);
