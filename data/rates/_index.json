@@ -80,9 +80,9 @@
   {
    "bankSlug": "bank-of-baroda",
    "product": "fd_bulk",
-   "cards": 2,
+   "cards": 3,
    "from": "2002-09-16",
-   "to": "2026-09-26"
+   "to": "2026-10-06"
   },
   {
    "bankSlug": "bank-of-baroda",
@@ -157,9 +157,9 @@
   {
    "bankSlug": "canara-bank",
    "product": "fd_bulk",
-   "cards": 2,
+   "cards": 3,
    "from": "2013-12-03",
-   "to": "2026-09-25"
+   "to": "2026-10-09"
   },
   {
    "bankSlug": "canara-bank",
@@ -325,16 +325,16 @@
   {
    "bankSlug": "federal-bank",
    "product": "fd",
-   "cards": 1,
+   "cards": 2,
    "from": "2026-08-17",
-   "to": "2026-08-17"
+   "to": "2026-09-29"
   },
   {
    "bankSlug": "federal-bank",
    "product": "rd",
-   "cards": 1,
+   "cards": 2,
    "from": "2026-08-17",
-   "to": "2026-08-17"
+   "to": "2026-09-29"
   },
   {
    "bankSlug": "federal-bank",
@@ -374,9 +374,9 @@
   {
    "bankSlug": "icici-bank",
    "product": "fd",
-   "cards": 1,
+   "cards": 2,
    "from": "2026-09-25",
-   "to": "2026-09-25"
+   "to": "2026-10-09"
   },
   {
    "bankSlug": "icici-bank",
@@ -444,9 +444,9 @@
   {
    "bankSlug": "indian-overseas-bank",
    "product": "savings",
-   "cards": 1,
+   "cards": 2,
    "from": "2026-09-15",
-   "to": "2026-09-15"
+   "to": "2026-10-08"
   },
   {
    "bankSlug": "indusind-bank",
@@ -479,9 +479,9 @@
   {
    "bankSlug": "jana-sfb",
    "product": "fd",
-   "cards": 5,
+   "cards": 6,
    "from": "2019-08-26",
-   "to": "2026-09-25"
+   "to": "2026-09-29"
   },
   {
    "bankSlug": "jana-sfb",
@@ -493,9 +493,9 @@
   {
    "bankSlug": "jana-sfb",
    "product": "rd",
-   "cards": 1,
+   "cards": 2,
    "from": "2026-09-25",
-   "to": "2026-09-25"
+   "to": "2026-10-10"
   },
   {
    "bankSlug": "jana-sfb",
@@ -507,9 +507,23 @@
   {
    "bankSlug": "jk-bank",
    "product": "fd",
-   "cards": 8,
+   "cards": 9,
    "from": "2016-10-10",
-   "to": "2020-10-11"
+   "to": "2026-10-08"
+  },
+  {
+   "bankSlug": "jk-bank",
+   "product": "fd_bulk",
+   "cards": 1,
+   "from": "2026-10-08",
+   "to": "2026-10-08"
+  },
+  {
+   "bankSlug": "jk-bank",
+   "product": "savings",
+   "cards": 1,
+   "from": "2026-08-01",
+   "to": "2026-08-01"
   },
   {
    "bankSlug": "karnataka-bank",
@@ -542,9 +556,9 @@
   {
    "bankSlug": "karur-vysya-bank",
    "product": "fd_bulk",
-   "cards": 2,
+   "cards": 3,
    "from": "2020-05-28",
-   "to": "2026-09-27"
+   "to": "2026-10-09"
   },
   {
    "bankSlug": "karur-vysya-bank",
@@ -647,30 +661,30 @@
   {
    "bankSlug": "rbl-bank",
    "product": "fd",
-   "cards": 7,
+   "cards": 8,
    "from": "2024-01-01",
-   "to": "2026-09-08"
+   "to": "2026-10-01"
   },
   {
    "bankSlug": "rbl-bank",
    "product": "fd_bulk",
-   "cards": 1,
+   "cards": 2,
    "from": "2026-09-25",
-   "to": "2026-09-25"
+   "to": "2026-10-09"
   },
   {
    "bankSlug": "rbl-bank",
    "product": "rd",
-   "cards": 1,
+   "cards": 2,
    "from": "2026-09-08",
-   "to": "2026-09-08"
+   "to": "2026-10-01"
   },
   {
    "bankSlug": "rbl-bank",
    "product": "savings",
-   "cards": 1,
+   "cards": 2,
    "from": "2026-06-18",
-   "to": "2026-06-18"
+   "to": "2026-10-01"
   },
   {
    "bankSlug": "sbi",
@@ -682,9 +696,9 @@
   {
    "bankSlug": "sbi",
    "product": "fd_bulk",
-   "cards": 1,
+   "cards": 2,
    "from": "2026-08-15",
-   "to": "2026-08-15"
+   "to": "2026-10-08"
   },
   {
    "bankSlug": "sbi",
@@ -772,6 +786,13 @@
   },
   {
    "bankSlug": "south-indian-bank",
+   "product": "fd_bulk",
+   "cards": 1,
+   "from": "2026-10-09",
+   "to": "2026-10-09"
+  },
+  {
+   "bankSlug": "south-indian-bank",
    "product": "savings",
    "cards": 8,
    "from": "2011-05-03",
@@ -822,9 +843,9 @@
   {
    "bankSlug": "tamilnad-mercantile-bank",
    "product": "fd_bulk",
-   "cards": 1,
+   "cards": 2,
    "from": "2026-09-25",
-   "to": "2026-09-25"
+   "to": "2026-10-09"
   },
   {
    "bankSlug": "tamilnad-mercantile-bank",
@@ -843,9 +864,9 @@
   {
    "bankSlug": "uco-bank",
    "product": "fd_bulk",
-   "cards": 1,
+   "cards": 2,
    "from": "2026-09-27",
-   "to": "2026-09-27"
+   "to": "2026-10-08"
   },
   {
    "bankSlug": "uco-bank",

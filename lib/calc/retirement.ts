@@ -71,6 +71,9 @@ function finishYear(rows: YearRow[], fy: string, contributed: number, interest: 
  */
 export function simulatePPF(o: { start: string; end: string; monthly: number; aprilLumpSum?: number; periods: RatePeriod[]; futureRate: number; opening?: number }): SimResult {
   const rows: YearRow[] = [];
+  if (!Number.isFinite(o.monthly) || o.monthly < 0 || !Number.isFinite(o.aprilLumpSum ?? 0) || (o.aprilLumpSum ?? 0) < 0) {
+    return { rows, contributed: 0, interest: 0, balance: o.opening ?? 0, gap: "PPF contributions must be non-negative and no more than ₹1.5 lakh per financial year", usedAssumption: false };
+  }
   let balance = o.opening ?? 0;
   let yearInterest = 0;
   let yearContrib = 0;
@@ -84,6 +87,7 @@ export function simulatePPF(o: { start: string; end: string; monthly: number; ap
     const isApril = month.endsWith("-04");
     let deposit = o.monthly;
     if (isApril && o.aprilLumpSum) deposit += o.aprilLumpSum;
+    if (yearContrib + deposit > 150_000) return { rows, contributed: totalContrib, interest: totalInterest, balance, gap: `PPF contributions exceed ₹1.5 lakh in FY ${fyOf(month)}`, usedAssumption };
     balance += deposit;
     yearContrib += deposit;
     totalContrib += deposit;
@@ -92,7 +96,7 @@ export function simulatePPF(o: { start: string; end: string; monthly: number; ap
     usedAssumption ||= assumed;
     notes.add(assumed ? `assumed ${rate.toFixed(2)}%` : `${rate.toFixed(2)}%`);
     yearInterest += (balance * rate) / 1200;
-    const endOfFy = month.endsWith("-03") || i === n;
+    const endOfFy = month.endsWith("-03");
     if (endOfFy) {
       const credited = Math.round(yearInterest); // PPF interest is rounded to the rupee when credited
       balance += credited;
@@ -103,6 +107,7 @@ export function simulatePPF(o: { start: string; end: string; monthly: number; ap
       notes = new Set();
     }
   }
+  if (yearContrib > 0 || yearInterest > 0) finishYear(rows, fyOf(o.end), yearContrib, 0, balance, notes);
   return { rows, contributed: totalContrib, interest: totalInterest, balance, gap: null, usedAssumption };
 }
 

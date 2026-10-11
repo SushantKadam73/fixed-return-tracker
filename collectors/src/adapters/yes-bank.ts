@@ -178,6 +178,7 @@ function parseYesSlab(label: string): { min: number; max: number | null } {
   const nums = amountsIn(t);
   if (nums.length === 0) throw new AdapterError(`unrecognised savings slab label "${label}"`);
   if (/^up to/.test(t.trim())) return { min: 0, max: nums[0] + 1 };
+  if (nums.length === 1 && /and above/.test(t)) return { min: nums[0], max: null };
   if (nums.length < 2) throw new AdapterError(`unrecognised savings slab label "${label}"`);
   return { min: /and above/.test(t) ? nums[0] : nums[0] + 1, max: nums[1] };
 }
@@ -202,7 +203,7 @@ export const yesSavings: Adapter = async (ctx) => {
     slabMethod: "incremental",
     notes: [
       'Bank states: "Interest will be calculated on incremental balances in each Interest Rate Slab at applicable rates" — each slice of the balance earns its own slab\'s rate.',
-      "For balances of ₹100 crore and above the bank asks customers to contact the branch/Relationship Manager directly; no card rate is published for that band, so the top slab here stops at ₹100 crore rather than being left open-ended.",
+      "The top balance slab is included only when the PDF publishes a numeric rate; branch-negotiated rates are not inferred.",
       "The bank also offers separate MIBOR-linked and Repo-linked savings variants (floating rates, not a fixed % card) which are not represented in this slab table.",
     ],
   });

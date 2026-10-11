@@ -6,7 +6,7 @@ const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://fixed-return-tracker.v
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { banks, predecessors } = await getBankMaster();
-  const pages = ["", "/deposits", "/savings", "/banks", "/schemes", "/compare", "/real-value", "/history", "/calculators", "/retirement", "/methodology", "/status", "/coverage"];
+  const pages = ["", "/deposits", "/savings", "/banks", "/schemes", "/compare", "/real-value", "/history", "/calculators", "/retirement", "/methodology", "/status", "/coverage", "/data", "/economy"];
   return [
     ...pages.map((p) => ({ url: `${BASE}${p}`, changeFrequency: "daily" as const })),
     ...banks.map((b) => ({ url: `${BASE}/banks/${b.slug}`, changeFrequency: "daily" as const })),

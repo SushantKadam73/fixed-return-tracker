@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-27",
+  "checkedAt": "2026-10-11",
   "sourceUrl": "https://www.rbi.org.in/commonman/english/scripts/BanksInIndia.aspx",
   "note": "Automated diff of RBI's Banks-in-India page against data/banks/banks.json by (normalised) name. Never applied automatically — review and edit banks.json by hand.",
   "additions": [],

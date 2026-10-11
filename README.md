@@ -44,7 +44,8 @@ Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · Convex · Recharts �
 | `backfill/` | One-off history rebuilds: banks' own archives and Internet Archive copies of their rate pages |
 | `data/` | Committed datasets (bank master list, histories, snapshots) |
 | `scripts/` | Build and maintenance scripts |
-| `ops/workflows/` | GitHub Actions workflows to copy into `.github/workflows/` |
+| `.github/workflows/` | Active collection and CI workflows |
+| `ops/vps/` | Optional independent scheduler watchdog |
 | `tests/` | Unit tests |
 
 ## Local development
@@ -63,8 +64,12 @@ npx convex dev      # optional: connect your own Convex dev deployment
 
 1. **Convex** — create a project at [dashboard.convex.dev](https://dashboard.convex.dev), then in *Settings → Deploy keys* create a **Production deploy key**. In *Settings → Environment variables* add `INGEST_SECRET`, `REVALIDATE_SECRET` and `SITE_REVALIDATE_URL` (see `.env.example`).
 2. **Vercel** — import this repo at [vercel.com/new](https://vercel.com/new). Add `CONVEX_DEPLOY_KEY` and `REVALIDATE_SECRET` as environment variables. The build command in `vercel.json` deploys Convex and the site together.
-3. **GitHub Actions** — copy the files in `ops/workflows/` into `.github/workflows/` (GitHub web UI → *Add file*), add the repository secrets `CONVEX_SITE_URL` and `INGEST_SECRET`, and allow the workflow to commit data (*Settings → Actions → General → Workflow permissions → Read and write*).
+3. **GitHub Actions** — the workflows are installed under `.github/workflows/`; add the repository secrets `CONVEX_SITE_URL` and `INGEST_SECRET`, and allow the workflow to commit data (*Settings → Actions → General → Workflow permissions → Read and write*).
 4. **Optional watchdog token** — to let Convex restart the collector if GitHub ever pauses its schedule, create a fine-grained token for this repository with *Actions: read and write* and set it in Convex as `GITHUB_DISPATCH_TOKEN`.
+
+## Current implementation and activation
+
+See [activation runbook](docs/operations/activation.md) and [implementation status](docs/plans/implementation-status.md). Production collection requires the updated Convex functions to be deployed before the first Actions run. Downloads and feeds identify their accepted release. TinyFish is disabled and uses no quota.
 
 ## Operations runbook
 
@@ -75,11 +80,11 @@ npx convex dev      # optional: connect your own Convex dev deployment
 | 03:30 daily | Convex | Trim the fetch log (60 days kept) |
 | 05:30 daily | Convex | Import reviewed datasets from the repo (banks, lineage, schemes, source registry) |
 | 05:45 daily | Convex | Import macro series and rate files; unchanged files are skipped by content hash, and only banks with changed files are re-summarised |
-| 07:00 daily | GitHub Actions | Read every official bank rate page, validate, store changes in `data/rates` and deposit terms in `data/terms`, rebuild `data/snapshots` (including the coverage report), post to Convex |
-| 07:00 daily (same run) | GitHub Actions | Scheme rates (small savings, GPF, FRSB), EPF, CPI-IW and CPI Combined, NPS NAVs, RBI policy rates and RBI's bank list (`collectors/src/run-macro.ts`; see `collectors/README.md`), then commit every `data/` change |
+| 06:17 daily | GitHub Actions | Read every official bank rate page, validate, store changes in `data/rates` and deposit terms in `data/terms`, rebuild `data/snapshots` (including the coverage report), post to Convex |
+| 06:17 daily (same run) | GitHub Actions | Scheme rates (small savings, GPF, FRSB), EPF, CPI-IW and CPI Combined, NPS NAVs, RBI policy rates and RBI's bank list (`collectors/src/run-macro.ts`; see `collectors/README.md`), then commit every `data/` change |
 | 09:00 daily | Convex | Flag sources with no successful read for 3 days (daily cadence) as stale and open alerts |
-| 09:30 daily | Convex | Watchdog: if the 07:00 run did not report in, open an alert and (with `GITHUB_DISPATCH_TOKEN`) restart the workflow |
-| 10:20 Mon–Sat | GitHub Actions | Re-read bulk-deposit pages (RBI requires banks to post bulk rates by 10:10 AM each business day) |
+| 09:30 daily | Convex | Watchdog: if the 06:17 run did not report in, open an alert and (with `GITHUB_DISPATCH_TOKEN`) restart the workflow |
+| 12:43 daily | GitHub Actions | Retry failed/overdue bank sources; preserve accepted progress and pending deliveries |
 
 ### When something breaks
 

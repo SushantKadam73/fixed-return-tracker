@@ -5,6 +5,9 @@
  * re-running only applies changes. The repo stays the reviewable source of truth for
  * bank lineage, scheme histories, macro series and reconstructed rate history.
  */
+import { currentOfficialCard } from "../lib/current-card";
+import { todayIST } from "../lib/format";
+import { hasErrors, validateCard } from "../lib/validate";
 import { v } from "convex/values";
 import { internalAction, internalMutation, internalQuery } from "./_generated/server";
 import { internal } from "./_generated/api";
@@ -14,14 +17,15 @@ import { product as productValidator, storedCard } from "./validators";
 const DEFAULT_BASE = "https://raw.githubusercontent.com/SushantKadam73/fixed-return-tracker/main/data";
 const base = () => process.env.DATASET_BASE_URL ?? DEFAULT_BASE;
 
-async function getText(path: string): Promise<string> {
-  const res = await fetch(`${base()}/${path}`, { headers: { "cache-control": "no-cache" } });
+async function getText(path: string, revision?: string): Promise<string> {
+  const origin = revision ? `https://raw.githubusercontent.com/SushantKadam73/fixed-return-tracker/${revision}/data` : base();
+  const res = await fetch(`${origin}/${path}`, { headers: { "cache-control": "no-cache" }, signal: AbortSignal.timeout(30_000) });
   if (!res.ok) throw new Error(`${path}: HTTP ${res.status}`);
   return await res.text();
 }
 
-async function getJson<T>(path: string): Promise<T> {
-  return JSON.parse(await getText(path)) as T;
+async function getJson<T>(path: string, revision?: string): Promise<T> {
+  return JSON.parse(await getText(path, revision)) as T;
 }
 
 /** Content hashes of the dataset files imported last time. */
@@ -36,6 +40,16 @@ export const setImportState = internalMutation({
     const row = await ctx.db.query("importState").withIndex("by_path", (q) => q.eq("path", path)).first();
     if (row) await ctx.db.patch(row._id, { hash, importedAt: Date.now() });
     else await ctx.db.insert("importState", { path, hash, importedAt: Date.now() });
+  },
+});
+
+export const publishSeriesDataset = internalMutation({
+  args: { key: v.string(), dataset: v.any() },
+  handler: async (ctx, { key, dataset }) => {
+    const existing = await ctx.db.query("summaries").withIndex("by_key", (q) => q.eq("key", `series:${key}`)).first();
+    if (existing && JSON.stringify(existing.payload) === JSON.stringify(dataset)) return;
+    if (existing) await ctx.db.patch(existing._id, { payload: dataset, updatedAt: Date.now() });
+    else await ctx.db.insert("summaries", { key: `series:${key}`, payload: dataset, updatedAt: Date.now() });
   },
 });
 
@@ -60,9 +74,10 @@ type SchemeFile = {
 const clean = <T extends object>(o: T) => Object.fromEntries(Object.entries(o).filter(([, val]) => val !== null && val !== undefined)) as T;
 
 export const importAll = internalAction({
-  args: {},
-  handler: async (ctx) => {
-    const banks = await getJson<BankFile>("banks/banks.json");
+  args: { revision: v.optional(v.string()) },
+  handler: async (ctx, { revision }) => {
+    if (revision && !/^[a-f0-9]{40}$/.test(revision)) throw new Error("Invalid dataset commit");
+    const banks = await getJson<BankFile>("banks/banks.json", revision);
     for (const b of banks.banks) {
       await ctx.runMutation(internal.ingest.upsertBank, clean({
         slug: b.slug, name: b.name, shortName: b.shortName, group: b.group, status: "active" as const,
@@ -86,10 +101,10 @@ export const importAll = internalAction({
       }));
     }
 
-    const index = await getJson<{ schemes: Array<{ scheme: string }> }>("schemes/_index.json");
+    const index = await getJson<{ schemes: Array<{ scheme: string }> }>("schemes/_index.json", revision);
     let schemeRows = 0;
     for (const { scheme } of index.schemes) {
-      const s = await getJson<SchemeFile>(`schemes/${scheme}.json`);
+      const s = await getJson<SchemeFile>(`schemes/${scheme}.json`, revision);
       await ctx.runMutation(internal.seed.upsertScheme, {
         key: s.scheme, name: s.name, category: s.category,
         conventions: s.conventions ? Object.entries(s.conventions).map(([k, val]) => `${k}: ${val}`) : [],
@@ -102,7 +117,7 @@ export const importAll = internalAction({
       schemeRows += s.periods.length;
     }
     // Source registry (official pages the collectors read).
-    const reg = await getJson<{ sources: Array<{ key: string; bankSlug: string; products: string[]; url: string; format: string; runner: string; adapter: string; cadence: string; active: boolean; robotsAllowed?: boolean; termsNote?: string }> }>("sources/sources.json");
+    const reg = await getJson<{ sources: Array<{ key: string; bankSlug: string; products: string[]; url: string; format: string; runner: string; adapter: string; cadence: string; active: boolean; robotsAllowed?: boolean; termsNote?: string }> }>("sources/sources.json", revision);
     for (const s of reg.sources) {
       await ctx.runMutation(internal.ingest.upsertSource, clean({
         key: s.key, bankSlug: s.bankSlug, kind: "bank_page" as const, products: s.products, url: s.url, format: s.format,
@@ -138,14 +153,15 @@ export const upsertScheme = internalMutation({
   },
   handler: async (ctx, a) => {
     const existing = await ctx.db.query("schemes").withIndex("by_key", (q) => q.eq("key", a.key)).first();
-    if (existing) await ctx.db.patch(existing._id, { name: a.name, category: a.category, conventions: a.conventions });
-    else await ctx.db.insert("schemes", { key: a.key, name: a.name, category: a.category, conventions: a.conventions });
+    const meta = { name: a.name, category: a.category, conventions: a.conventions };
+    if (existing && Object.entries(meta).some(([key, value]) => JSON.stringify(existing[key as keyof typeof existing]) !== JSON.stringify(value))) await ctx.db.patch(existing._id, meta);
+    else if (!existing) await ctx.db.insert("schemes", { key: a.key, ...meta });
     const rows = await ctx.db.query("schemeRates").withIndex("by_scheme_from", (q) => q.eq("scheme", a.key)).collect();
     const byFrom = new Map(rows.map((r) => [r.effectiveFrom, r]));
     for (const p of a.periods) {
       const row = byFrom.get(p.effectiveFrom);
-      if (row) await ctx.db.patch(row._id, p);
-      else await ctx.db.insert("schemeRates", { scheme: a.key, ...p });
+      if (row && Object.entries(p).some(([key, value]) => JSON.stringify(row[key as keyof typeof row]) !== JSON.stringify(value))) await ctx.db.patch(row._id, p);
+      else if (!row) await ctx.db.insert("schemeRates", { scheme: a.key, ...p });
     }
   },
 });
@@ -164,6 +180,7 @@ export const refreshSchemesSummary = internalMutation({
       });
     }
     const existing = await ctx.db.query("summaries").withIndex("by_key", (q) => q.eq("key", "schemes")).first();
+    if (existing && JSON.stringify(existing.payload) === JSON.stringify({ schemes: out })) return;
     if (existing) await ctx.db.patch(existing._id, { payload: { schemes: out }, updatedAt: Date.now() });
     else await ctx.db.insert("summaries", { key: "schemes", payload: { schemes: out }, updatedAt: Date.now() });
   },
@@ -171,7 +188,7 @@ export const refreshSchemesSummary = internalMutation({
 
 // ── Macro series and repo rate files ─────────────────────────────────────────
 
-const seriesPoint = v.object({ date: v.string(), value: v.number() });
+const seriesPoint = v.object({ date: v.string(), value: v.number(), metadata: v.optional(v.any()) });
 
 /** Upsert a series' metadata and points (matched on date). */
 export const upsertSeries = internalMutation({
@@ -195,10 +212,10 @@ export const upsertSeries = internalMutation({
     for (const p of a.points) {
       const row = byDate.get(p.date);
       if (!row) {
-        await ctx.db.insert("seriesPoints", { series: a.key, date: p.date, value: p.value });
+        await ctx.db.insert("seriesPoints", { series: a.key, date: p.date, value: p.value, metadata: p.metadata });
         inserted++;
-      } else if (row.value !== p.value) {
-        await ctx.db.patch(row._id, { value: p.value });
+      } else if (row.value !== p.value || JSON.stringify(row.metadata) !== JSON.stringify(p.metadata)) {
+        await ctx.db.patch(row._id, { value: p.value, metadata: p.metadata });
       }
     }
     return { inserted };
@@ -214,10 +231,18 @@ export const importProductCards = internalMutation({
       .withIndex("by_bank_product_effective", (q) => q.eq("bankSlug", a.bankSlug).eq("product", a.product))
       .collect();
     const key = (hash: string, date: string | null | undefined) => `${hash}|${date ?? ""}`;
-    const have = new Set(existing.map((c) => key(c.contentHash, c.effectiveFrom ?? c.observedFrom ?? c.observedAt)));
+    const have = new Map(existing.map((c) => [key(c.contentHash, c.effectiveFrom ?? c.observedFrom ?? c.observedAt), c]));
+    const current = currentOfficialCard(existing, todayIST());
     let inserted = 0;
     for (const c of a.cards) {
-      if (have.has(key(c.contentHash, c.effectiveFrom ?? c.observedFrom ?? c.observedAt))) continue;
+      const prior = have.get(key(c.contentHash, c.effectiveFrom ?? c.observedFrom ?? c.observedAt));
+      const advancesCurrent = !prior && c.sourceType === "bank_official" && current && (c.effectiveFrom ?? c.observedAt) >= (current.effectiveFrom ?? current.observedAt);
+      if (c.bankSlug !== a.bankSlug || c.product !== a.product || hasErrors(validateCard(c, advancesCurrent ? current : null))) throw new Error("Invalid imported rate card; current live validation applies to imported official revisions");
+      if (prior) {
+        const correction = { validTo: c.validTo ?? undefined, observedFrom: c.observedFrom ?? undefined, observedTo: c.observedTo ?? undefined, confidence: c.confidence, sourceUrl: c.sourceUrl, archiveUrl: c.archiveUrl ?? undefined, notes: c.notes, rows: c.rows, savingsSlabs: c.savingsSlabs, slabMethod: c.slabMethod };
+        if (Object.entries(correction).some(([field, value]) => JSON.stringify(prior[field as keyof typeof prior]) !== JSON.stringify(value))) await ctx.db.patch(prior._id, correction);
+        continue;
+      }
       await ctx.db.insert("rateCards", {
         bankSlug: c.bankSlug,
         product: c.product,
@@ -250,7 +275,7 @@ export const importProductCards = internalMutation({
  * (corrected in place); otherwise live cards stay, since the collector also posts them directly.
  */
 export const finalizeProductCards = internalMutation({
-  args: { bankSlug: v.string(), product: productValidator, keys: v.array(v.string()) },
+  args: { bankSlug: v.string(), product: productValidator, keys: v.array(v.string()), observedThrough: v.optional(v.string()) },
   handler: async (ctx, a) => {
     const keep = new Set(a.keys);
     // Dates the repo file has cards for: a live card missing from the file but sharing a date with
@@ -265,15 +290,15 @@ export const finalizeProductCards = internalMutation({
     for (const c of all) {
       const date = c.effectiveFrom ?? c.observedFrom ?? c.observedAt;
       const key = `${c.contentHash}|${date}`;
-      if (!keep.has(key) && (c.sourceType !== "bank_official" || keptDates.has(date))) {
+      if (!keep.has(key) && (c.sourceType !== "bank_official" || (keptDates.has(date) && c.observedAt <= (a.observedThrough ?? "")))) {
         await ctx.db.delete(c._id);
         removed++;
       } else remaining.push(c);
     }
     const live = remaining.filter((c) => c.sourceType === "bank_official").sort((x, y) => (x.effectiveFrom ?? x.observedAt).localeCompare(y.effectiveFrom ?? y.observedAt));
-    const newest = live.at(-1);
+    const newest = currentOfficialCard(live, todayIST());
     for (const c of remaining) {
-      const shouldBe = newest !== undefined && c._id === newest._id;
+      const shouldBe = newest !== null && c._id === newest._id;
       if (c.isCurrent !== shouldBe) await ctx.db.patch(c._id, { isCurrent: shouldBe });
     }
     return { removed };
@@ -313,25 +338,28 @@ type SeriesFile = { key: string; name: string; unit: string; frequency: string; 
 
 /** Import every committed series and every stored rate file, then refresh summaries. */
 export const importSeriesAndRates = internalAction({
-  args: { force: v.optional(v.boolean()) },
-  handler: async (ctx, { force }) => {
+  args: { force: v.optional(v.boolean()), revision: v.optional(v.string()) },
+  handler: async (ctx, { force, revision }) => {
+    if (revision && !/^[a-f0-9]{40}$/.test(revision)) throw new Error("Invalid dataset commit");
+    // Import scheme changes and registry metadata from the same accepted revision as its exports.
+    await ctx.runAction(internal.seed.importAll, { revision });
     // Files whose content hash matches the last import are skipped entirely, so a quiet day costs
     // almost no database I/O (the free tier allows 1 GB a month) however much history accumulates.
     const known = new Map((await ctx.runQuery(internal.seed.importStates, {})).map((r) => [r.path, r.hash]));
-    const idx = await getJson<{ series: Array<{ key: string }> }>("series/_index.json");
+    const idx = await getJson<{ series: Array<{ key: string }> }>("series/_index.json", revision);
     const freq = new Set(["daily", "monthly", "quarterly", "annual", "fiscal_year", "event"]);
     let seriesCount = 0;
     let skipped = 0;
     for (const { key } of idx.series) {
       const path = `series/${key}.json`;
-      const text = await getText(path);
+      const text = await getText(path, revision);
       const hash = hash64(text);
-      if (!force && known.get(path) === hash) {
+      if (!force && known.get(path) === hash && known.get(`${path}:summary`) === hash) {
         skipped++;
         continue;
       }
       const s = JSON.parse(text) as SeriesFile;
-      const points = s.points.filter((p) => typeof p[1] === "number").map((p) => ({ date: String(p[0]), value: p[1] as number }));
+      const points = s.points.filter((p) => typeof p[1] === "number" && Number.isFinite(p[1])).map((p) => ({ date: String(p[0]), value: p[1] as number, metadata: p.length > 2 ? p.slice(2) : undefined }));
       for (let i = 0; i < points.length; i += 500) {
         await ctx.runMutation(internal.seed.upsertSeries, {
           key: s.key,
@@ -343,19 +371,23 @@ export const importSeriesAndRates = internalAction({
           points: points.slice(i, i + 500),
         });
       }
+      await ctx.runMutation(internal.seed.publishSeriesDataset, { key: s.key, dataset: s });
       await ctx.runMutation(internal.seed.setImportState, { path, hash });
+      await ctx.runMutation(internal.seed.setImportState, { path: `${path}:summary`, hash });
       seriesCount++;
     }
     let files = 0;
     let removed = 0;
+    const errors: string[] = [];
     const changedBanks = new Set<string>();
+    const pendingStates: Array<{ path: string; hash: string }> = [];
     try {
-      const rates = await getJson<{ files: Array<{ bankSlug: string; product: string }> }>("rates/_index.json");
+      const rates = await getJson<{ files: Array<{ bankSlug: string; product: string }> }>("rates/_index.json", revision);
       for (const f of rates.files) {
         const path = `rates/${f.bankSlug}/${f.product}.json`;
-        const text = await getText(path);
+        const text = await getText(path, revision);
         const hash = hash64(text);
-        if (!force && known.get(path) === hash) {
+        if (!force && known.get(path) === hash && known.get(`${path}:summary`) === hash) {
           skipped++;
           continue;
         }
@@ -368,37 +400,60 @@ export const importSeriesAndRates = internalAction({
           });
         }
         const keys = pf.cards.map((c) => `${c.contentHash}|${c.effectiveFrom ?? c.observedFrom ?? c.observedAt}`);
-        const r = await ctx.runMutation(internal.seed.finalizeProductCards, { bankSlug: pf.bankSlug, product: pf.product as "fd", keys });
+        const observedThrough = pf.cards.filter((card) => card.sourceType === "bank_official").map((card) => card.observedAt).sort().at(-1);
+        const r = await ctx.runMutation(internal.seed.finalizeProductCards, { bankSlug: pf.bankSlug, product: pf.product as "fd", keys, observedThrough });
         removed += r.removed;
-        await ctx.runMutation(internal.seed.setImportState, { path, hash });
+        pendingStates.push({ path, hash });
         changedBanks.add(pf.bankSlug);
         files++;
       }
     } catch (e) {
-      console.warn(`rate files not imported: ${(e as Error).message}`);
+      errors.push(`Rate import: ${(e as Error).message}`);
     }
     // Deposit terms per bank (senior premium, penalties, minimums...).
     try {
-      const tidx = await getJson<{ banks: string[] }>("terms/_index.json");
+      const tidx = await getJson<{ banks: string[] }>("terms/_index.json", revision);
       for (const bankSlug of tidx.banks) {
         const path = `terms/${bankSlug}.json`;
-        const text = await getText(path);
+        const text = await getText(path, revision);
         const hash = hash64(text);
-        if (!force && known.get(path) === hash) {
+        if (!force && known.get(path) === hash && known.get(`${path}:summary`) === hash) {
           skipped++;
           continue;
         }
         const tf = JSON.parse(text) as { products: Record<string, { terms: Record<string, unknown>; sourceUrl: string; recordedOn: string }> };
         const entries = Object.entries(tf.products).map(([product, e]) => ({ product: product as "fd", observedAt: e.recordedOn, sourceUrl: e.sourceUrl, terms: e.terms as never }));
         await ctx.runMutation(internal.seed.upsertTerms, { bankSlug, entries });
-        await ctx.runMutation(internal.seed.setImportState, { path, hash });
+        pendingStates.push({ path, hash });
         changedBanks.add(bankSlug);
       }
     } catch (e) {
-      console.warn(`terms not imported: ${(e as Error).message}`);
+      errors.push(`Terms import: ${(e as Error).message}`);
     }
-    if (force) await ctx.runMutation(internal.summaries.refreshAllBanks, {});
-    else if (changedBanks.size > 0) await ctx.runMutation(internal.summaries.refreshBanks, { slugs: [...changedBanks] });
-    return { series: seriesCount, rateFiles: files, removedCards: removed, unchangedFiles: skipped, banksRefreshed: force ? "all" : changedBanks.size };
+    if (changedBanks.size > 0) {
+      for (const bankSlug of changedBanks) await ctx.runMutation(internal.summaries.refreshBank, { bankSlug });
+      await ctx.runMutation(internal.summaries.refreshDirectory, {});
+    }
+    // A failed summary rebuild leaves completion markers absent, so retry cannot skip the work.
+    for (const state of pendingStates) {
+      await ctx.runMutation(internal.seed.setImportState, state);
+      await ctx.runMutation(internal.seed.setImportState, { path: `${state.path}:summary`, hash: state.hash });
+    }
+    if (revision && errors.length === 0 && !force) {
+      const manifest = await getJson<{ releaseId: string; generatedAt: string; downloads: unknown[] }>("exports/manifest.json", revision);
+      await ctx.runMutation(internal.seed.publishRelease, { manifest, revision });
+    }
+    return { series: seriesCount, rateFiles: files, removedCards: removed, unchangedFiles: skipped, banksRefreshed: force ? "all" : changedBanks.size, errors };
+  },
+});
+
+export const publishRelease = internalMutation({
+  args: { manifest: v.any(), revision: v.string() },
+  handler: async (ctx, { manifest, revision }) => {
+    if (!/^[a-f0-9]{40}$/.test(revision) || !/^[a-f0-9]{64}$/.test(manifest.releaseId ?? "")) throw new Error("Invalid release manifest");
+    const row = await ctx.db.query("summaries").withIndex("by_key", (q) => q.eq("key", "release:manifest")).first();
+    const data = { payload: { ...manifest, revision }, updatedAt: Date.now() };
+    if (row) await ctx.db.patch(row._id, data);
+    else await ctx.db.insert("summaries", { key: "release:manifest", ...data });
   },
 });

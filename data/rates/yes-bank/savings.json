@@ -6,7 +6,7 @@
    "bankSlug": "yes-bank",
    "product": "savings",
    "effectiveFrom": "2026-04-07",
-   "observedAt": "2026-09-27",
+   "observedAt": "2026-10-11",
    "sourceType": "bank_official",
    "sourceUrl": "https://www.yes.bank.in/sites/web/content/published/api/v1.1/assets/CONT13C66A7E18434B48BC40248F6202F4A4/native/allratesandcharges_pdf.pdf",
    "confidence": "high",
@@ -29,15 +29,21 @@
      "balanceMax": 1000000000,
      "rate": 3.5,
      "residency": "resident"
+    },
+    {
+     "balanceMin": 1000000000,
+     "balanceMax": null,
+     "rate": 7,
+     "residency": "resident"
     }
    ],
    "slabMethod": "incremental",
    "notes": [
     "Bank states: \"Interest will be calculated on incremental balances in each Interest Rate Slab at applicable rates\" — each slice of the balance earns its own slab's rate.",
-    "For balances of ₹100 crore and above the bank asks customers to contact the branch/Relationship Manager directly; no card rate is published for that band, so the top slab here stops at ₹100 crore rather than being left open-ended.",
+    "The top balance slab is included only when the PDF publishes a numeric rate; branch-negotiated rates are not inferred.",
     "The bank also offers separate MIBOR-linked and Repo-linked savings variants (floating rates, not a fixed % card) which are not represented in this slab table."
    ],
-   "contentHash": "3c432c859e633c7f"
+   "contentHash": "7dcd1151229ea576"
   }
  ]
 }

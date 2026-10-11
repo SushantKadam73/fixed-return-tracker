@@ -5,6 +5,7 @@
  */
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import { currentOfficialCard } from "../../lib/current-card";
 import { bankCoverage, type BankCoverage } from "../../lib/coverage";
 import type { Product } from "../../lib/domain";
 import { todayIST } from "../../lib/format";
@@ -56,7 +57,7 @@ export function buildSnapshots(root: string) {
     const pred = preds.get(pf.bankSlug);
     if (!bank && !pred) continue;
     const live = pf.cards.filter((c) => c.sourceType === "bank_official");
-    const latest: StoredCard | null = live.at(-1) ?? null;
+    const latest = bank ? currentOfficialCard(live, todayIST()) : null;
     const products = byBank.get(pf.bankSlug) ?? {};
     products[pf.product] = productSummary(pf.product, pf.cards, latest);
     byBank.set(pf.bankSlug, products);

@@ -1,65 +1,65 @@
 {
  "cpi-combined": {
-  "lastAttemptAt": "2026-09-27T09:42:05.410Z",
+  "lastAttemptAt": "2026-10-11T18:01:58.242Z",
   "lastSuccessAt": "2026-09-27T09:42:05.410Z",
   "lastChangeAt": null,
-  "consecutiveFailures": 0,
-  "lastError": null
+  "consecutiveFailures": 1,
+  "lastError": "MoSPI CPI collection failed: Unexpected token '<', \"<!doctype \"... is not valid JSON"
  },
  "cpi-iw": {
-  "lastAttemptAt": "2026-09-27T09:42:03.242Z",
+  "lastAttemptAt": "2026-10-11T18:01:54.072Z",
   "lastSuccessAt": "2026-09-27T09:42:03.242Z",
   "lastChangeAt": "2026-09-27T09:42:03.242Z",
-  "consecutiveFailures": 0,
-  "lastError": null
+  "consecutiveFailures": 1,
+  "lastError": "Labour Bureau homepage unreachable: HTTP 403"
  },
  "epf": {
-  "lastAttemptAt": "2026-09-27T09:42:01.591Z",
+  "lastAttemptAt": "2026-10-11T18:01:36.689Z",
   "lastSuccessAt": null,
   "lastChangeAt": null,
-  "consecutiveFailures": 1,
+  "consecutiveFailures": 2,
   "lastError": "EPFO circulars and PIB were both unreachable this run."
  },
  "frsb": {
-  "lastAttemptAt": "2026-09-27T09:42:03.242Z",
-  "lastSuccessAt": "2026-09-27T09:42:03.242Z",
+  "lastAttemptAt": "2026-10-11T18:01:54.071Z",
+  "lastSuccessAt": "2026-10-11T18:01:54.071Z",
   "lastChangeAt": null,
   "consecutiveFailures": 0,
   "lastError": null
  },
  "gpf": {
-  "lastAttemptAt": "2026-09-27T09:42:03.241Z",
-  "lastSuccessAt": "2026-09-27T09:42:03.241Z",
+  "lastAttemptAt": "2026-10-11T18:21:27.567Z",
+  "lastSuccessAt": "2026-10-11T18:01:54.070Z",
   "lastChangeAt": null,
-  "consecutiveFailures": 0,
-  "lastError": null
+  "consecutiveFailures": 1,
+  "lastError": "The separately notified GPF resolution is unverified; last good history retained."
  },
  "nps-nav": {
-  "lastAttemptAt": "2026-09-27T09:42:22.445Z",
+  "lastAttemptAt": "2026-10-11T18:02:02.591Z",
   "lastSuccessAt": "2026-09-27T09:42:22.445Z",
   "lastChangeAt": null,
-  "consecutiveFailures": 0,
-  "lastError": null
+  "consecutiveFailures": 1,
+  "lastError": "Every NPS Trust request failed this run."
  },
  "rbi-bank-list": {
-  "lastAttemptAt": "2026-09-27T09:42:32.418Z",
-  "lastSuccessAt": "2026-09-27T09:42:32.418Z",
+  "lastAttemptAt": "2026-10-11T18:02:34.722Z",
+  "lastSuccessAt": "2026-10-11T18:02:34.722Z",
   "lastChangeAt": null,
   "consecutiveFailures": 0,
   "lastError": null
  },
  "rbi-rates": {
-  "lastAttemptAt": "2026-09-27T09:42:21.542Z",
-  "lastSuccessAt": "2026-09-27T09:42:21.542Z",
-  "lastChangeAt": null,
+  "lastAttemptAt": "2026-10-11T18:02:01.046Z",
+  "lastSuccessAt": "2026-10-11T18:02:01.046Z",
+  "lastChangeAt": "2026-10-11T18:02:01.046Z",
   "consecutiveFailures": 0,
   "lastError": null
  },
  "small-savings": {
-  "lastAttemptAt": "2026-09-27T09:42:01.588Z",
+  "lastAttemptAt": "2026-10-11T18:01:12.249Z",
   "lastSuccessAt": "2026-09-27T09:42:01.588Z",
   "lastChangeAt": null,
-  "consecutiveFailures": 0,
-  "lastError": null
+  "consecutiveFailures": 1,
+  "lastError": "Every source (NSI, DEA, India Post) failed to fetch."
  }
 }

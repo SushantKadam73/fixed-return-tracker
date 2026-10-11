@@ -1,0 +1,20 @@
+{
+ "bankSlug": "jk-bank",
+ "products": {
+  "fd": {
+   "terms": {
+    "bulkThreshold": 30000000,
+    "seniorPremium": "+0.50% p.a. across all maturities (not on NRE/NRO deposits)",
+    "superSeniorPremium": "+0.25% over the senior rate for 80+ (not on NRE/NRO deposits)",
+    "other": [
+     "Staff: +1% p.a. across all maturities (not on NRE/NRO deposits)."
+    ],
+    "rdRules": "RD rates not published on the official site."
+   },
+   "sourceKey": "jk-bank:fd",
+   "sourceUrl": "https://jkb.bank.in/interest-rates",
+   "recordedOn": "2026-10-11",
+   "contentHash": "ac9d0e2f5b0a6c45"
+  }
+ }
+}

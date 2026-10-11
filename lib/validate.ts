@@ -19,7 +19,10 @@ export const TENURE_MAX_DAYS = 3660; // 10 years + leap days
 /** Stable string for hashing: sorted rows with fixed key order. */
 export function canonicalRows(card: Pick<RateCard, "rows" | "savingsSlabs" | "slabMethod">): string {
   const rows = [...card.rows]
-    .map((r) => [r.tenureMinDays, r.tenureMaxDays, r.customer, r.residency, r.amountMin, r.amountMax, r.callable, r.payout ?? null, r.rate, r.schemeName ?? null])
+    .map((r) => {
+      const row = [r.tenureMinDays, r.tenureMaxDays, r.customer, r.residency, r.amountMin, r.amountMax, r.callable, r.payout ?? null, r.rate, r.schemeName ?? null];
+      return r.effectiveFrom ? [...row, r.effectiveFrom] : row;
+    })
     .sort((a, b) => JSON.stringify(a).localeCompare(JSON.stringify(b)));
   const slabs = [...(card.savingsSlabs ?? [])]
     .map((s) => [s.balanceMin, s.balanceMax, s.residency, s.rate])
@@ -31,10 +34,19 @@ function rowKey(r: RateRow): string {
   return [r.tenureMinDays, r.tenureMaxDays, r.customer, r.residency, r.amountMin, r.amountMax, r.callable, r.payout ?? null, r.schemeName ?? null].join("|");
 }
 
-export function validateCard(card: RateCard, previous?: Pick<RateCard, "rows" | "savingsSlabs"> | null): ValidationIssue[] {
+export function validateCard(card: RateCard & { validTo?: string | null }, previous?: Pick<RateCard, "rows" | "savingsSlabs"> | null): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
   const err = (code: string, message: string) => issues.push({ level: "error", code, message });
   const warn = (code: string, message: string) => issues.push({ level: "warning", code, message });
+
+  for (const date of [card.effectiveFrom, card.validTo, card.observedAt, card.observedFrom, card.observedTo, ...card.rows.map((row) => row.effectiveFrom)]) {
+    if (date != null && (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !Number.isFinite(Date.parse(`${date}T00:00:00Z`)) || new Date(`${date}T00:00:00Z`).toISOString().slice(0, 10) !== date)) {
+      err("invalid_date", `invalid calendar date ${date}`);
+    }
+  }
+  if (card.effectiveFrom && card.validTo && card.validTo < card.effectiveFrom) err("invalid_period", "rate card ends before its effective date");
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(card.bankSlug)) err("invalid_bank", "invalid bank identifier");
+  if (!/^https?:\/\//.test(card.sourceUrl)) err("invalid_source", "source URL must be HTTP(S)");
 
   const isSavings = card.product === ("savings" as Product);
   if (isSavings) {
@@ -48,11 +60,14 @@ export function validateCard(card: RateCard, previous?: Pick<RateCard, "rows" | 
     if (!(r.tenureMinDays >= 1 && r.tenureMaxDays >= r.tenureMinDays && r.tenureMaxDays <= TENURE_MAX_DAYS)) {
       err("tenure_range", `invalid tenure ${r.tenureMinDays}–${r.tenureMaxDays} days (${r.tenureLabel})`);
     }
-    if (r.amountMax !== null && r.amountMax <= r.amountMin) err("amount_range", `invalid amount band ${r.amountMin}–${r.amountMax}`);
+    if (!Number.isFinite(r.amountMin) || r.amountMin < 0 || (r.amountMax !== null && (!Number.isFinite(r.amountMax) || r.amountMax <= r.amountMin))) err("amount_range", `invalid amount band ${r.amountMin}–${r.amountMax}`);
   }
   for (const s of card.savingsSlabs ?? []) {
     if (!(s.rate >= 0 && s.rate <= RATE_MAX)) err("rate_range", `savings rate ${s.rate} outside 0–${RATE_MAX}%`);
-    if (s.balanceMax !== null && s.balanceMax <= s.balanceMin) err("slab_range", `invalid slab ${s.balanceMin}–${s.balanceMax}`);
+    if (!Number.isFinite(s.balanceMin) || s.balanceMin < 0 || (s.balanceMax !== null && (!Number.isFinite(s.balanceMax) || s.balanceMax <= s.balanceMin))) err("slab_range", `invalid slab ${s.balanceMin}–${s.balanceMax}`);
+  }
+  if (isSavings && previous?.savingsSlabs?.length && (card.savingsSlabs?.length ?? 0) < previous.savingsSlabs.length * 0.5) {
+    err("slab_count_drop", "savings balance slabs dropped by more than half");
   }
 
   // Duplicate keys with different rates mean the parser mixed up columns.

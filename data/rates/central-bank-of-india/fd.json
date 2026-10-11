@@ -542,9 +542,9 @@
    "bankSlug": "central-bank-of-india",
    "product": "fd",
    "effectiveFrom": "2026-08-10",
-   "observedAt": "2026-09-27",
+   "observedAt": "2026-10-11",
    "sourceType": "bank_official",
-   "sourceUrl": "https://centralbank.bank.in/en/interest-rates-on-deposit",
+   "sourceUrl": "https://centralbank.bank.in/en/domestic-term-deposit-interest-rate-per-annum",
    "confidence": "high",
    "rows": [
     {
@@ -896,6 +896,62 @@
      "tenureMaxDays": 444,
      "tenureLabel": "444 days",
      "special": true,
+     "schemeName": "Central 333 Days Special Deposit",
+     "amountMin": 10000001,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": false,
+     "payout": null,
+     "rate": 6.85
+    },
+    {
+     "tenureMinDays": 444,
+     "tenureMaxDays": 444,
+     "tenureLabel": "444 days",
+     "special": true,
+     "schemeName": "Central 333 Days Special Deposit",
+     "amountMin": 10000001,
+     "amountMax": 30000000,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": false,
+     "payout": null,
+     "rate": 7.35
+    },
+    {
+     "tenureMinDays": 555,
+     "tenureMaxDays": 555,
+     "tenureLabel": "555 days",
+     "special": true,
+     "schemeName": "Central 333 Days Special Deposit",
+     "amountMin": 10000001,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": false,
+     "payout": null,
+     "rate": 6.4
+    },
+    {
+     "tenureMinDays": 555,
+     "tenureMaxDays": 555,
+     "tenureLabel": "555 days",
+     "special": true,
+     "schemeName": "Central 333 Days Special Deposit",
+     "amountMin": 10000001,
+     "amountMax": 30000000,
+     "customer": "senior",
+     "residency": "resident",
+     "callable": false,
+     "payout": null,
+     "rate": 6.9
+    },
+    {
+     "tenureMinDays": 444,
+     "tenureMaxDays": 444,
+     "tenureLabel": "444 days",
+     "special": true,
      "schemeName": "Central 444 Days Special Deposit",
      "amountMin": 0,
      "amountMax": 30000000,
@@ -1142,12 +1198,11 @@
    ],
    "notes": [
     "Central 333 Days Special Deposit (callable) revised w.e.f. 2026-06-10, printed separately from the main retail table's date.",
-    "Central 333 Days Special Deposit (non-callable) revised w.e.f. 2026-06-10, printed separately from the main retail table's date.",
     "Central 555 Days Special Deposit (callable) revised w.e.f. 2025-12-10, printed separately from the main retail table's date.",
     "Central 555 Days Special Deposit (non-callable) revised w.e.f. 2025-12-10, printed separately from the main retail table's date.",
     "CENT Green Deposit: as printed, the General Public rate is dated w.e.f. 2025-12-10 and the Senior Citizen rate w.e.f. 2025-09-10 on the same table."
    ],
-   "contentHash": "d9fdcc962c5f6f2d"
+   "contentHash": "ff332f3791a0b2b4"
   }
  ]
 }

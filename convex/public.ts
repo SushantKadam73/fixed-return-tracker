@@ -61,7 +61,11 @@ export const status = query({
       .query("alerts")
       .withIndex("by_resolved", (q) => q.eq("resolvedAt", undefined))
       .collect();
+    const runs = await ctx.db.query("jobRuns").order("desc").take(20);
+    const macro = await ctx.db.query("summaries").withIndex("by_key", (q) => q.eq("key", "macro:health")).first();
     return {
+      runs: runs.map((run) => ({ job: run.job, status: run.status, startedAt: run.startedAt, finishedAt: run.finishedAt ?? null })),
+      macro: macro?.payload ?? null,
       sources: sources.map((s) => ({
         key: s.key,
         bankSlug: s.bankSlug ?? null,

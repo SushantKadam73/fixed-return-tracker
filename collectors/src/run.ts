@@ -11,13 +11,18 @@
  * Failures never delete data: the last good card stays, the failure is recorded in
  * data/rates/_checks.json and reported to Convex, which raises alerts.
  */
+import { acquireCollectorLease } from "./lease";
+import { enqueue, flushOutbox, pendingDeliveries } from "./delivery";
+import { normaliseCard } from "../../lib/normalise-card";
+import { currentOfficialCard } from "../../lib/current-card";
+import { hasErrors, validateCard } from "../../lib/validate";
 import { hash64 } from "../../lib/hash";
 import { todayIST } from "../../lib/format";
 import type { RateCard } from "../../lib/domain";
-import { fetchDoc, PLAIN_BROWSER_UA } from "./fetch";
+import { closeBrowser, fetchDoc, PLAIN_BROWSER_UA } from "./fetch";
 import { adapters, loadSources } from "./registry";
 import { buildSnapshots } from "./snapshots";
-import { loadChecks, saveChecks, storeLiveCard, storeTerms } from "./store";
+import { loadProduct, loadChecks, saveChecks, storeLiveCard, storeTerms } from "./store";
 import type { FetchInit, ProductTerms, Runner, SourceDef } from "./types";
 
 interface Args {
@@ -27,11 +32,12 @@ interface Args {
   runner: Runner | "all";
   dryRun: boolean;
   post: boolean;
+  retryFailed: boolean;
   root: string;
 }
 
 function parseArgs(argv: string[]): Args {
-  const a: Args = { sources: [], banks: [], cadence: null, runner: "github", dryRun: false, post: true, root: process.cwd() };
+  const a: Args = { sources: [], banks: [], cadence: null, runner: "github", dryRun: false, post: true, retryFailed: false, root: process.cwd() };
   for (let i = 0; i < argv.length; i++) {
     const v = argv[i];
     if (v === "--source") a.sources.push(argv[++i]);
@@ -39,23 +45,11 @@ function parseArgs(argv: string[]): Args {
     else if (v === "--cadence") a.cadence = argv[++i];
     else if (v === "--runner") a.runner = argv[++i] as Args["runner"];
     else if (v === "--dry-run") a.dryRun = true;
+    else if (v === "--retry-failed") a.retryFailed = true;
     else if (v === "--no-post") a.post = false;
     else if (v === "--root") a.root = argv[++i];
   }
   return a;
-}
-
-async function postToConvex(path: string, body: unknown) {
-  const base = process.env.CONVEX_SITE_URL;
-  const secret = process.env.INGEST_SECRET;
-  if (!base || !secret) return { skipped: true };
-  const res = await fetch(`${base.replace(/\/$/, "")}${path}`, {
-    method: "POST",
-    headers: { "content-type": "application/json", authorization: `Bearer ${secret}` },
-    body: JSON.stringify(body),
-    signal: AbortSignal.timeout(60_000),
-  });
-  return { status: res.status, body: await res.text().catch(() => "") };
 }
 
 type Line = { source: string; status: "ok" | "changed" | "rejected" | "error" | "no_adapter"; detail: string };
@@ -73,13 +67,13 @@ async function runSource(src: SourceDef, args: Args, checks: ReturnType<typeof l
     check.consecutiveFailures += 1;
     check.lastError = message.slice(0, 300);
     checks[src.key] = check;
-    if (args.post && !args.dryRun) await postToConvex("/ingest", { sourceKey: src.key, fetchedAt: now.getTime(), httpStatus, error: message, cards: [] }).catch(() => undefined);
+    if (args.post && !args.dryRun) enqueue(args.root, "/ingest", { sourceKey: src.key, fetchedAt: now.getTime(), httpStatus, error: message, cards: [] });
     return { source: src.key, status: "error", detail: message.slice(0, 160) };
   };
 
   // Per-source User-Agent override, applied to the page and to any related document the adapter fetches.
-  const withUa = (init?: FetchInit): FetchInit | undefined =>
-    src.userAgent === "browser" ? { ...init, headers: { "user-agent": PLAIN_BROWSER_UA, ...init?.headers } } : init;
+  const withUa = (init?: FetchInit): FetchInit => ({ ...init, browser: src.browser, headers: { ...(src.userAgent === "browser" ? { "user-agent": PLAIN_BROWSER_UA } : {}), ...init?.headers } });
+  if (src.robotsAllowed === false) return fail("Automated collection is disabled by the source access policy");
   let doc;
   try {
     doc = await fetchDoc(src.url, src.format, 3, withUa());
@@ -96,7 +90,15 @@ async function runSource(src: SourceDef, args: Args, checks: ReturnType<typeof l
     // It is picked up automatically once its effective date arrives, because the page still shows it.
     const future = out.cards.filter((c) => c.effectiveFrom !== null && c.effectiveFrom > today);
     for (const c of future) console.log(`  holding ${c.bankSlug} ${c.product} card effective ${c.effectiveFrom} until it takes effect`);
-    cards = out.cards.filter((c) => !(c.effectiveFrom !== null && c.effectiveFrom > today));
+    cards = out.cards.filter((c) => !(c.effectiveFrom !== null && c.effectiveFrom > today)).map(normaliseCard);
+    if (new Set(cards.map((card) => card.product)).size !== cards.length) throw new Error("Duplicate product cards from one source");
+    if (cards.length === 0) throw new Error("No applicable rate cards; last good data retained.");
+    for (const card of cards) {
+      if (card.bankSlug !== src.bankSlug || !src.products.includes(card.product) || card.sourceType !== "bank_official") throw new Error("Card does not match registered bank/product/source type");
+      const previous = currentOfficialCard(loadProduct(args.root, card.bankSlug, card.product).cards, today);
+      const issues = validateCard(card, previous);
+      if (hasErrors(issues)) throw new Error(issues.filter((issue) => issue.level === "error").map((issue) => issue.message).join("; "));
+    }
   } catch (e) {
     return fail(`adapter: ${(e as Error).message}`, doc.status);
   }
@@ -110,9 +112,7 @@ async function runSource(src: SourceDef, args: Args, checks: ReturnType<typeof l
       if (r.outcome === "rejected") rejected.push(`${card.product}: ${r.issues.filter((i) => i.level === "error").map((i) => i.message).join("; ")}`);
     }
     if (args.post) {
-      await postToConvex("/ingest", { sourceKey: src.key, fetchedAt: now.getTime(), httpStatus: doc.status, contentHash: hash64(doc.text), cards }).catch((e) =>
-        console.warn(`convex post failed for ${src.key}: ${(e as Error).message}`),
-      );
+      enqueue(args.root, "/ingest", { sourceKey: src.key, fetchedAt: now.getTime(), httpStatus: doc.status, contentHash: hash64(doc.text), cards });
     }
   }
   if (rejected.length > 0) return fail(`validation: ${rejected.join(" | ")}`, doc.status);
@@ -127,19 +127,30 @@ async function runSource(src: SourceDef, args: Args, checks: ReturnType<typeof l
   return { source: src.key, status: changed ? "changed" : "ok", detail: `${summary} eff ${cards[0]?.effectiveFrom ?? "?"}` };
 }
 
+let releaseLease: (() => void) | undefined;
+
 async function main() {
   const args = parseArgs(process.argv.slice(2));
+  if (!args.dryRun) releaseLease = acquireCollectorLease(args.root);
   const startedAt = Date.now();
   const all = loadSources(args.root);
+  const checks = loadChecks(args.root);
   const selected = all.filter(
     (s) =>
       s.active &&
       (args.runner === "all" || s.runner === args.runner) &&
       (args.sources.length === 0 || args.sources.includes(s.key)) &&
       (args.banks.length === 0 || args.banks.includes(s.bankSlug)) &&
-      (args.cadence === null || s.cadence === args.cadence),
+      (args.cadence === null || s.cadence === args.cadence) &&
+      (!args.retryFailed || (checks[s.key]?.consecutiveFailures ?? 0) > 0 || !checks[s.key]?.lastSuccessAt || Date.now() - Date.parse(checks[s.key].lastSuccessAt!) > 36 * 3600_000),
   );
-  const checks = loadChecks(args.root);
+  if (selected.length === 0 && args.retryFailed) {
+    if (args.post && !args.dryRun) await flushOutbox(args.root);
+    console.log("No failed or overdue sources require recovery");
+    return;
+  }
+  if (selected.length === 0) throw new Error("No active sources match the requested scope");
+  if (args.post && !args.dryRun) await flushOutbox(args.root);
   const lines: Line[] = [];
   for (const src of selected) {
     const line = await runSource(src, args, checks);
@@ -155,13 +166,18 @@ async function main() {
   const stats = { sources: lines.length, changed: lines.filter((l) => l.status === "changed").length, failed, noAdapter: lines.filter((l) => l.status === "no_adapter").length };
   console.log(JSON.stringify(stats));
   if (args.post && !args.dryRun) {
-    await postToConvex("/run-complete", { job: "collect", runner: args.runner, startedAt, status: failed === 0 ? "ok" : failed === lines.length ? "failed" : "partial", stats }).catch(() => undefined);
+    const job = args.cadence === "bulk_daily" ? "collect:bulk" : args.retryFailed || args.sources.length || args.banks.length ? "collect:recovery" : "collect:daily";
+    const publication = await flushOutbox(args.root);
+    const status = publication.pending || publication.rejected || failed === lines.length ? "failed" : failed || stats.noAdapter ? "partial" : "ok";
+    enqueue(args.root, "/run-complete", { job, runner: args.runner, startedAt, status, stats: { ...stats, ...publication } });
+    const receipt = await flushOutbox(args.root);
+    if (receipt.pending || publication.rejected) process.exitCode = 1;
   }
-  // Exit non-zero only if everything failed, so one broken bank never blocks the others.
-  process.exit(lines.length > 0 && failed === lines.length ? 1 : 0);
+  // Report partial failures to Actions after preserving accepted data and pending deliveries.
+  if (failed > 0 || stats.noAdapter > 0 || (args.post && !args.dryRun && pendingDeliveries(args.root) > 0)) process.exitCode = 1;
 }
 
-main().catch((e) => {
+main().finally(async () => { await closeBrowser(); releaseLease?.(); }).catch((e) => {
   console.error(e);
   process.exit(1);
 });

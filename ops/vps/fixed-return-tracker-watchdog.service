@@ -1,0 +1,16 @@
+[Unit]
+Description=Fixed Return Tracker scheduler recovery
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=tracker
+EnvironmentFile=/etc/fixed-return-tracker/watchdog.env
+Environment=WATCHDOG_STATE=/var/lib/fixed-return-tracker/watchdog.json
+StateDirectory=fixed-return-tracker
+ExecStart=/usr/bin/python3 /opt/fixed-return-tracker/ops/vps/watchdog.py
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true

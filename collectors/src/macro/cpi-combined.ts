@@ -1,12 +1,4 @@
-/**
- * Task `cpi-combined`: CPI Combined (All-India), base 2024=100, monthly, from MoSPI's
- * eSankhyiki API (api.mospi.gov.in). The API requires signup + a 15-minute bearer token
- * (see the official user manual, linked below) and returned HTTP 502 on every endpoint
- * from this sandbox on 2026-09-27 (an upstream outage, not a WAF block — see
- * README.md). This task is implemented against the documented endpoint shape so it
- * starts working the moment the API is back, and fails gracefully (ok:true, zero
- * changes, a warning) rather than treating a 502 as a hard task failure — see run-macro.ts.
- */
+/** CPI Combined: a failed or empty response never advances verification. */
 import type { MacroTaskContext, SeriesPointChange, TaskResult } from "./types";
 import { readSeriesFile } from "./store";
 
@@ -22,15 +14,19 @@ interface MospiCpiRow {
   Series?: string; // "Current_series_2012" | "Back_series_2012" | ...
 }
 
-/** Parses the documented getCPIIndex JSON shape into (month, index) pairs for the Combined sector. */
+/** Accept only explicitly identified Combined observations in the 2024 series. */
 export function parseMospiCpiCombined(json: unknown): Array<{ month: string; value: number }> {
   const rows: MospiCpiRow[] = Array.isArray(json) ? (json as MospiCpiRow[]) : Array.isArray((json as { data?: unknown[] })?.data) ? ((json as { data: MospiCpiRow[] }).data) : [];
   const out: Array<{ month: string; value: number }> = [];
+  const seen = new Map<string, number>();
   for (const r of rows) {
     if (!r || typeof r !== "object") continue; // malformed row (e.g. null) — skip, never throw
-    if (r.Sector !== undefined && r.Sector !== 3) continue; // combined only
-    if (!r.Year || !r.Month || !Number.isFinite(r.Index)) continue;
-    out.push({ month: `${r.Year}-${String(r.Month).padStart(2, "0")}`, value: r.Index });
+    if (r.Sector !== 3 || typeof r.Series !== "string" || !/^Current_series_2024$/i.test(r.Series)) continue;
+    if (!Number.isInteger(r.Year) || !Number.isInteger(r.Month) || r.Month < 1 || r.Month > 12 || !Number.isFinite(r.Index) || r.Index <= 0) continue;
+    const month = `${r.Year}-${String(r.Month).padStart(2, "0")}`;
+    if (seen.has(month) && seen.get(month) !== r.Index) throw new Error(`Conflicting MoSPI observations for ${month}`);
+    if (!seen.has(month)) out.push({ month, value: r.Index });
+    seen.set(month, r.Index);
   }
   return out;
 }
@@ -39,7 +35,7 @@ async function mospiLogin(ctx: MacroTaskContext): Promise<string | null> {
   const email = process.env.MOSPI_API_EMAIL;
   const password = process.env.MOSPI_API_PASSWORD;
   if (!email || !password) return null; // no credentials configured — see README "known gaps"
-  const doc = await ctx.fetch(`${MOSPI_LOGIN_URL}?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`, "json");
+  const doc = await ctx.fetch(MOSPI_LOGIN_URL, "json", { method: "POST", body: JSON.stringify({ email, password }) });
   try {
     const body = JSON.parse(doc.text) as { token?: string };
     return body.token ?? null;
@@ -55,7 +51,7 @@ export async function run(ctx: MacroTaskContext): Promise<TaskResult> {
     result.error = "data/series/cpi_combined_monthly_2024base.json not found";
     return result;
   }
-  const known = new Set(series.points.map((p) => String(p[0])));
+  const known = new Map(series.points.map((p) => [String(p[0]), Number(p[1])]));
 
   let token: string | null = null;
   try {
@@ -69,11 +65,13 @@ export async function run(ctx: MacroTaskContext): Promise<TaskResult> {
 
   const url = `${MOSPI_CPI_INDEX_URL}?Series=Current_series_2024&Format=JSON`;
   try {
-    const doc = await ctx.fetch(token ? `${url}` : url, "json");
+    const doc = await ctx.fetch(url, "json", token ? { headers: { authorization: `Bearer ${token}` } } : undefined);
     result.sourcesTried.push({ url, ok: true, status: doc.status });
-    result.ok = true;
     const json = JSON.parse(doc.text);
-    const rows = parseMospiCpiCombined(json).filter((r) => !known.has(r.month));
+    const parsed = parseMospiCpiCombined(json);
+    if (parsed.length === 0) throw new Error("MoSPI response contained no valid CPI Combined 2024-base observations");
+    result.ok = true;
+    const rows = parsed.filter((r) => known.get(r.month) !== r.value && r.month <= ctx.today.slice(0, 7));
     for (const r of rows) {
       const change: SeriesPointChange = { kind: "series_point", seriesKey: "cpi_combined_monthly_2024base", target: "points", point: [r.month, r.value] };
       result.changes.push(change);
@@ -82,10 +80,8 @@ export async function run(ctx: MacroTaskContext): Promise<TaskResult> {
     if (rows.length === 0) result.warnings.push("MoSPI API reachable but returned no new months.");
   } catch (e) {
     result.sourcesTried.push({ url, ok: false, status: (e as { status?: number }).status, error: (e as Error).message });
-    if (!result.ok) {
-      result.ok = true; // a down upstream API is not a task failure — see run-macro.ts
-      result.warnings.push(`MoSPI API unreachable this run (${(e as Error).message}); this is the documented outage — see README.md.`);
-    }
+    result.ok = false;
+    result.error = `MoSPI CPI collection failed: ${(e as Error).message}`;
   }
   return result;
 }

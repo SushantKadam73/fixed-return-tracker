@@ -1101,6 +1101,193 @@
     "found via discover; consolidated old-site rate table. Prints an outgoing 'Current' and incoming 'Revised' rate side by side around each rate change -- see parser"
    ],
    "contentHash": "42dcb39be7c96ab9"
+  },
+  {
+   "bankSlug": "jk-bank",
+   "product": "fd",
+   "effectiveFrom": "2026-10-08",
+   "observedAt": "2026-10-11",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://jkb.bank.in/interest-rates",
+   "confidence": "high",
+   "rows": [
+    {
+     "tenureMinDays": 7,
+     "tenureMaxDays": 30,
+     "tenureLabel": "7 days to 30 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 3.5
+    },
+    {
+     "tenureMinDays": 31,
+     "tenureMaxDays": 45,
+     "tenureLabel": "31 days to 45 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 3.75
+    },
+    {
+     "tenureMinDays": 46,
+     "tenureMaxDays": 90,
+     "tenureLabel": "46 days to 90 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5
+    },
+    {
+     "tenureMinDays": 91,
+     "tenureMaxDays": 180,
+     "tenureLabel": "91 days to 180 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5.5
+    },
+    {
+     "tenureMinDays": 181,
+     "tenureMaxDays": 270,
+     "tenureLabel": "181 days to 270 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 5.9
+    },
+    {
+     "tenureMinDays": 271,
+     "tenureMaxDays": 364,
+     "tenureLabel": "271 days to less than 1 year",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6
+    },
+    {
+     "tenureMinDays": 365,
+     "tenureMaxDays": 547,
+     "tenureLabel": "1 year to less than 18 months",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.55
+    },
+    {
+     "tenureMinDays": 548,
+     "tenureMaxDays": 729,
+     "tenureLabel": "18 months to less than 2 years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.65
+    },
+    {
+     "tenureMinDays": 730,
+     "tenureMaxDays": 887,
+     "tenureLabel": "2 years to 887 days",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.7
+    },
+    {
+     "tenureMinDays": 888,
+     "tenureMaxDays": 888,
+     "tenureLabel": "888 days",
+     "special": true,
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.75
+    },
+    {
+     "tenureMinDays": 889,
+     "tenureMaxDays": 1094,
+     "tenureLabel": "889 days to less than 3 years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.7
+    },
+    {
+     "tenureMinDays": 1095,
+     "tenureMaxDays": 1824,
+     "tenureLabel": "3 years to less than 5 years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.7
+    },
+    {
+     "tenureMinDays": 1825,
+     "tenureMaxDays": 3650,
+     "tenureLabel": "5 years to 10 years",
+     "amountMin": 0,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": true,
+     "payout": null,
+     "rate": 6.75
+    },
+    {
+     "tenureMinDays": 888,
+     "tenureMaxDays": 888,
+     "tenureLabel": "888 days",
+     "special": true,
+     "amountMin": 10000000,
+     "amountMax": 30000000,
+     "customer": "general",
+     "residency": "resident",
+     "callable": false,
+     "payout": null,
+     "rate": 6.85,
+     "note": "Non-callable (no premature withdrawal). Effective from 2026-10-08 (this tier is revised separately from the rest of this card, which is effective from 2026-10-08)."
+    }
+   ],
+   "notes": [
+    "Senior citizens (60+) get +0.50% p.a. across all maturities; super senior citizens (80+) get a further +0.25% over the senior rate; staff get +1%. None of these premiums are published as numbers, so only the general rate is shown, and none apply to NRE/NRO deposits (bank's own notes).",
+    "RD rates not published on the official site: no recurring-deposit rate table or FD-rate-parity statement appears on this page or elsewhere on jkb.bank.in that could be found this session."
+   ],
+   "contentHash": "6b356f2c78f6cfd4"
   }
  ]
 }

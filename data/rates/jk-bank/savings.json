@@ -1,0 +1,26 @@
+{
+ "bankSlug": "jk-bank",
+ "product": "savings",
+ "cards": [
+  {
+   "bankSlug": "jk-bank",
+   "product": "savings",
+   "effectiveFrom": "2026-08-01",
+   "observedAt": "2026-10-11",
+   "sourceType": "bank_official",
+   "sourceUrl": "https://jkb.bank.in/interest-rates",
+   "confidence": "high",
+   "rows": [],
+   "savingsSlabs": [
+    {
+     "balanceMin": 0,
+     "balanceMax": null,
+     "rate": 2.5,
+     "residency": "resident"
+    }
+   ],
+   "slabMethod": "unknown",
+   "contentHash": "fb87c2ba58d2a422"
+  }
+ ]
+}

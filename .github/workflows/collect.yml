@@ -1,0 +1,84 @@
+name: Collect rates
+on:
+  schedule:
+    - cron: "47 0 * * *" # 06:17 IST
+    - cron: "13 7 * * *" # 12:43 IST: failed/stale source recovery
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: "all | recovery | bulk | macro | bank slug"
+        default: "all"
+permissions:
+  contents: write
+concurrency:
+  group: rate-publication
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      CONVEX_SITE_URL: ${{ secrets.CONVEX_SITE_URL }}
+      INGEST_SECRET: ${{ secrets.INGEST_SECRET }}
+      MOSPI_API_EMAIL: ${{ secrets.MOSPI_API_EMAIL }}
+      MOSPI_API_PASSWORD: ${{ secrets.MOSPI_API_PASSWORD }}
+      COLLECTOR_MAX_RUN_MS: "1800000"
+      SCOPE: ${{ inputs.scope }}
+      SCHEDULE: ${{ github.event.schedule }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Check configuration and seed registry
+        run: npx tsx scripts/pipeline-control.ts bootstrap
+      - name: Install Chromium for registered browser sources
+        if: inputs.scope != 'macro'
+        run: npx playwright install --with-deps chromium
+      - name: Collect bank rates
+        if: inputs.scope != 'macro'
+        run: |
+          if [ "$SCHEDULE" = "13 7 * * *" ] || [ "$SCOPE" = "recovery" ]; then
+            npx tsx collectors/src/run.ts --retry-failed
+          elif [ "$SCOPE" = "bulk" ]; then
+            npx tsx collectors/src/run.ts --cadence bulk_daily
+          elif [ -n "$SCOPE" ] && [ "$SCOPE" != "all" ]; then
+            npx tsx collectors/src/run.ts --bank "$SCOPE"
+          else
+            npx tsx collectors/src/run.ts
+          fi
+      - name: Collect government and RBI data
+        if: ${{ !cancelled() && inputs.scope != 'bulk' && (github.event_name == 'schedule' || inputs.scope == 'all' || inputs.scope == 'macro' || inputs.scope == 'recovery') }}
+        env:
+          COLLECTOR_MAX_RUN_MS: "900000"
+        run: npx tsx collectors/src/run-macro.ts
+      - name: Generate accepted-data release and preserve partial progress
+        if: ${{ !cancelled() }}
+        run: |
+          npx tsx scripts/build-release.ts
+          git config user.name "fixed-return-tracker-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if ! git diff --cached --quiet; then
+            git commit -m "data: accepted rates and health $(TZ=Asia/Kolkata date +%F)"
+          fi
+          git pull --rebase origin main
+          # Rebase can add concurrent facts; exports must describe this exact final tree.
+          npx tsx scripts/build-release.ts
+          git add data
+          if ! git diff --cached --quiet; then
+            git commit -m "data: regenerate release after publication rebase"
+          fi
+          git push origin HEAD:main
+      - name: Import committed macro data and history
+        if: ${{ !cancelled() }}
+        run: DATASET_REVISION=$(git rev-parse HEAD) npx tsx scripts/pipeline-control.ts sync
+      - name: Keep recovery data if Git publication fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: accepted-data-${{ github.run_id }}
+          path: data/
+          retention-days: 3

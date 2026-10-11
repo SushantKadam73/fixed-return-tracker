@@ -1,3 +1,5 @@
+> Current activation: [runbook](../docs/operations/activation.md). Use `--no-post` for local file-only collection. Without that flag, configured publication credentials and acknowledged deliveries are required. Failed submissions remain in `data/pipeline/outbox`; permanent rejections move to quarantine. Partial runs exit nonzero after retaining accepted progress.
+
 # Collectors
 
 Collectors read each bank's official rate page and turn it into **rate cards** (see `lib/domain.ts`).
@@ -52,12 +54,12 @@ Every write is append-only and idempotent by date; nothing here ever edits or de
 | --- | --- | --- |
 | `small-savings` | NSI master table `nsiindia.gov.in/InternalPage.aspx?Id_Pk=132` (HTML) → DEA OM listing `dea.gov.in/budget-division/475` (HTML page linking a PDF) → India Post `indiapost.gov.in/.../post-office-saving-schemes.aspx` (HTML), tried in that order, first to confirm the target quarter wins | `data/schemes/{ppf,ssy,scss,nsc,kvp,pomis,po_td_1y,po_td_2y,po_td_3y,po_td_5y,po_rd,po_sb}.json` |
 | `epf` | EPFO circulars `epfindia.gov.in/site_docs/PDFs/Circulars` (HTML; the domain now redirects to `epfo.gov.in`) → PIB Labour Ministry releases `pib.gov.in/allRel.aspx?menuid=1&min=27` (HTML), first to show a *declaration* (not a CBT recommendation) for a newer FY wins | `data/schemes/epf.json` (`vpf.json` mirrors this at read time in `lib/schemes.ts`, not written separately) |
-| `gpf` | Same DEA listing as `small-savings` for GPF's own resolution PDF; falls back to mechanically mirroring PPF's newly-confirmed rate (documented Finance Ministry practice since 1986) once `ppf.json` covers the quarter GPF needs | `data/schemes/gpf.json` |
+| `gpf` | Same DEA listing as `small-savings` for GPF's own resolution PDF; requires the separately notified GPF resolution; historical parity with PPF is not automatically published | `data/schemes/gpf.json` |
 | `frsb` | None fetched — coupon = NSC rate (from `data/schemes/nsc.json`, itself set by `small-savings`) + 0.35%, per Govt Notification F.No.4(10)-B(W&M)/2020 para 13(ii). (RBI also publishes a confirming press release each half-year at `rbi.org.in`, but there's no safe way to discover that release's exact `prid` without guessing, so it's not fetched — see "Known gaps") | `data/schemes/frsb_2020.json` |
 | `cpi-iw` | Labour Bureau homepage `labourbureau.gov.in/` (HTML) — the "CPI-IW \[General Index]" widget (latest 2 months) plus the "Press Note CPI- IW for `<Month Year>`" link in the recent-uploads ticker, for `sourceUrl` only | `data/series/cpi_iw_chained.json` |
 | `cpi-combined` | MoSPI eSankhyiki API `api.mospi.gov.in/api/getCPIIndex?Series=Current_series_2024&Format=JSON` (JSON; optional bearer token from `api/login` using `MOSPI_API_EMAIL`/`MOSPI_API_PASSWORD` — unauthenticated calls are capped at the first 10 records per the API's own manual) | `data/series/cpi_combined_monthly_2024base.json` |
 | `nps-nav` | NPS Trust `npstrust.org.in/scheme-wise-nav-report-excel?navcatdataxls=PFM001&navyearselxls=all&navsubdataxls=<scheme code>` (tab-separated text, mislabelled `.xls`), once per tracked scheme code | `data/series/nps/{sbi_scheme_e,c,g,a}_tieri.csv` |
-| `rbi-rates` | RBI homepage `rbi.org.in/` (HTML) — the "Current Rates" accordion, bounded by `<!-- CURRENT RATES START/END -->` comments | `data/series/rbi_{repo,sdf,msf,bank,crr,slr}_rate.json` (USD/INR is parsed but only logged — there's no daily FX series file to append a spot rate to) |
+| `rbi-rates` | RBI homepage `rbi.org.in/` (HTML) — the "Current Rates" accordion, bounded by `<!-- CURRENT RATES START/END -->` comments | `data/macro/observations.json` (including reverse repo); dated policy-event histories are retained separately, not overwritten by homepage observation dates |
 | `rbi-bank-list` | RBI "Banks in India" `rbi.org.in/commonman/english/scripts/BanksInIndia.aspx` (HTML) | `data/banks/_watch.json` only — **never** `data/banks/banks.json` itself; additions/removals are for a human to review and apply by hand |
 
 ### Publication calendar / cadence

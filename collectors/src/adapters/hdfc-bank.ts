@@ -150,6 +150,7 @@ export const hdfcRd: Adapter = async (ctx) => {
   if (!latest) throw new AdapterError("no 'Effective From' date found in the RD table");
   rows.forEach((row, i) => {
     const d = dates[Math.floor(i / 2)];
+    if (d) row.effectiveFrom = d;
     if (d && d !== latest) row.note = `Effective from ${d} (this tenure was last revised separately from the rest of the RD table, which is effective from ${latest}).`;
   });
 

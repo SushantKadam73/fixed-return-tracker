@@ -1,6 +1,6 @@
 /**
  * Scheduled jobs (times are UTC; IST = UTC + 5:30).
- * Bank-page collection itself runs on GitHub Actions (see ops/workflows); Convex keeps
+ * Bank-page collection itself runs on GitHub Actions (see .github/workflows); Convex keeps
  * watch over freshness and housekeeping so problems surface even if a runner stops.
  */
 import { cronJobs } from "convex/server";
@@ -15,12 +15,12 @@ crons.daily("check stale sources", { hourUTC: 3, minuteUTC: 30 }, internal.monit
 crons.daily("prune fetch log", { hourUTC: 22, minuteUTC: 0 }, internal.monitor.pruneCaptures);
 
 // 05:30 IST daily — pull reviewed datasets (lineage, schemes, history) from the repo.
-crons.daily("import committed datasets", { hourUTC: 0, minuteUTC: 0 }, internal.seed.importAll);
+crons.daily("import committed datasets", { hourUTC: 0, minuteUTC: 0 }, internal.seed.importAll, {});
 
 // 05:45 IST daily — pull macro series and stored rate files (incl. reconstructed history) from the repo.
 crons.daily("import series and rate history", { hourUTC: 0, minuteUTC: 15 }, internal.seed.importSeriesAndRates, {});
 
-// 09:30 IST daily — make sure the 07:00 IST collector run reported in; restart it if not.
+// 09:30 IST daily — make sure the 06:17 IST collector run reported in; restart it if not.
 crons.daily("collector watchdog", { hourUTC: 4, minuteUTC: 0 }, internal.watchdog.collectorWatchdog);
 
 export default crons;

@@ -11,9 +11,10 @@
  * the last good value stays, the failure is recorded in data/macro/_checks.json — and the
  * process exits non-zero only if every task failed outright (see the per-task README).
  */
+import { enqueue, flushOutbox } from "./delivery";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { fetchDoc } from "./fetch";
+import { closeBrowser, fetchDoc } from "./fetch";
 import { todayIST } from "../../lib/format";
 import type { Change, MacroTask, MacroTaskContext, TaskCheck, TaskResult } from "./macro/types";
 import { applySchemePeriod, applySeriesPoint, applyNpsRows, macroDir, touchSchemeCheckedAt, touchSeriesCheckedAt, updateSchemesIndex, updateSeriesIndex, writeBanksWatch } from "./macro/store";
@@ -43,15 +44,17 @@ const TASKS: Record<string, MacroTask> = {
 interface Args {
   task: string | null;
   dryRun: boolean;
+  post: boolean;
   root: string;
 }
 
 function parseArgs(argv: string[]): Args {
-  const a: Args = { task: null, dryRun: false, root: process.cwd() };
+  const a: Args = { task: null, dryRun: false, post: true, root: process.cwd() };
   for (let i = 0; i < argv.length; i++) {
     const v = argv[i];
     if (v === "--task") a.task = argv[++i];
     else if (v === "--dry-run") a.dryRun = true;
+    else if (v === "--no-post") a.post = false;
     else if (v === "--root") a.root = argv[++i];
   }
   return a;
@@ -75,6 +78,15 @@ function saveChecks(root: string, checks: Record<string, TaskCheck>) {
 /** Applies one proposed change to the repo. Returns true if it actually changed something (vs. an already-known value). */
 function applyChange(root: string, today: string, change: Change): boolean {
   switch (change.kind) {
+    case "macro_observation": {
+      const file = path.join(macroDir(root), "observations.json");
+      const observations = existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) as Record<string, Change> : {};
+      if (JSON.stringify(observations[change.seriesKey]) === JSON.stringify(change)) return false;
+      observations[change.seriesKey] = change;
+      mkdirSync(macroDir(root), { recursive: true });
+      writeFileSync(file, `${JSON.stringify(observations, null, 1)}\n`);
+      return true;
+    }
     case "scheme_period": {
       const applied = applySchemePeriod(root, change);
       if (applied) {
@@ -115,7 +127,7 @@ async function runTask(name: string, task: MacroTask, ctx: MacroTaskContext, dry
   }
 
   let appliedChanges = 0;
-  if (!dryRun) {
+  if (!dryRun && result.ok) {
     for (const change of result.changes) if (applyChange(ctx.root, ctx.today, change)) appliedChanges += 1;
   }
 
@@ -147,9 +159,11 @@ async function main() {
   const ctx: MacroTaskContext = {
     today: todayIST(),
     root: args.root,
-    fetch: (url, format) => fetchDoc(url, format ?? "html"),
+    fetch: (url, format, init) => fetchDoc(url, format ?? "html", 3, init),
   };
 
+  if (args.post && !args.dryRun) await flushOutbox(args.root);
+  const startedAt = Date.now();
   const checks = loadChecks(args.root);
   const lines: string[] = [];
   const results: TaskResult[] = [];
@@ -167,10 +181,18 @@ async function main() {
   const failed = results.filter((r) => !r.ok).length;
   const stats = { tasks: results.length, changed: results.filter((r) => r.changes.length > 0).length, failed, dryRun: args.dryRun };
   console.log(JSON.stringify(stats));
-  process.exit(results.length > 0 && failed === results.length ? 1 : 0);
+  if (args.post && !args.dryRun) {
+    const file = path.join(macroDir(args.root), "observations.json");
+    const observations = existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) as unknown : {};
+    enqueue(args.root, "/macro-status", { checks, observations, fetchedAt: Date.now() });
+    enqueue(args.root, "/run-complete", { job: args.task ? "collect:macro-recovery" : "collect:macro", runner: "github", startedAt, status: failed === results.length ? "failed" : failed ? "partial" : "ok", stats });
+    const delivery = await flushOutbox(args.root);
+    if (delivery.pending || delivery.rejected) process.exitCode = 1;
+  }
+  if (failed > 0) process.exitCode = 1;
 }
 
-main().catch((e) => {
+main().finally(closeBrowser).catch((e) => {
   console.error(e);
   process.exit(1);
 });

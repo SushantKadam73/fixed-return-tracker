@@ -6,6 +6,8 @@
  * becomes the new current card; the old card gets an end date. An invalid or partial card
  * is rejected, the last good card stays current, and an alert is opened.
  */
+import { normaliseCard } from "../lib/normalise-card";
+import { eligibleCurrentCard } from "../lib/current-card";
 import { v } from "convex/values";
 import { internalMutation, type MutationCtx } from "./_generated/server";
 import { internal } from "./_generated/api";
@@ -51,10 +53,11 @@ type CardInput = typeof rateCardInput.type;
 /** Store one card if it is new. Returns what happened. */
 async function upsertCard(
   ctx: MutationCtx,
-  card: CardInput,
+  input: CardInput,
   opts: { makeCurrent: boolean },
 ): Promise<"inserted" | "unchanged" | "rejected"> {
-  const contentHash = hash64(canonicalRows(card as RateCard));
+  const card = normaliseCard(input);
+  const contentHash = hash64(canonicalRows(card));
   const current = opts.makeCurrent
     ? await ctx.db
         .query("rateCards")
@@ -62,7 +65,7 @@ async function upsertCard(
         .first()
     : null;
 
-  if (current && current.contentHash === contentHash) {
+  if (current && current.contentHash === contentHash && (current.effectiveFrom ?? null) === card.effectiveFrom) {
     // Same rates as before. Freshness lives on the source (lastSuccessAt), so the card is not rewritten.
     return "unchanged";
   }
@@ -108,8 +111,11 @@ async function upsertCard(
     notes: card.notes,
   });
   if (current) {
-    const end = card.effectiveFrom ? dayBefore(card.effectiveFrom) : card.observedAt;
-    await ctx.db.patch(current._id, { isCurrent: false, validTo: end });
+    if ((current.effectiveFrom ?? current.observedAt) === (card.effectiveFrom ?? card.observedAt)) await ctx.db.delete(current._id);
+    else {
+      const end = card.effectiveFrom ? dayBefore(card.effectiveFrom) : card.observedAt;
+      await ctx.db.patch(current._id, { isCurrent: false, validTo: end });
+    }
   }
   await resolveAlert(ctx, `card_rejected:${card.bankSlug}:${card.product}`);
   return "inserted";
@@ -118,6 +124,7 @@ async function upsertCard(
 /** Result of one collector run for one source (live collection). */
 export const recordSourceResult = internalMutation({
   args: {
+    receiptId: v.optional(v.string()),
     sourceKey: v.string(),
     fetchedAt: v.number(),
     httpStatus: v.optional(v.number()),
@@ -126,6 +133,16 @@ export const recordSourceResult = internalMutation({
     cards: v.array(rateCardInput),
   },
   handler: async (ctx, a) => {
+    if (a.receiptId) {
+      const receipt = await ctx.db.query("deliveryReceipts").withIndex("by_key", (q) => q.eq("key", a.receiptId!)).first();
+      if (receipt) return receipt.result;
+    }
+    const acknowledge = async (outcome: string) => {
+      const result = { outcome };
+      if (a.receiptId) await ctx.db.insert("deliveryReceipts", { key: a.receiptId, acceptedAt: Date.now(), result });
+      return result;
+    };
+    if (!Number.isFinite(a.fetchedAt) || a.fetchedAt > Date.now() + 300_000) throw new Error("Invalid observation timestamp");
     let source = await ctx.db
       .query("sources")
       .withIndex("by_key", (q) => q.eq("key", a.sourceKey))
@@ -148,23 +165,43 @@ export const recordSourceResult = internalMutation({
       source = (await ctx.db.get(id))!;
     }
 
-    if (a.error) {
-      const failures = source.consecutiveFailures + 1;
-      await ctx.db.patch(source._id, { lastAttemptAt: a.fetchedAt, consecutiveFailures: failures, lastError: a.error.slice(0, 500) });
-      await ctx.db.insert("captures", { sourceKey: a.sourceKey, fetchedAt: a.fetchedAt, httpStatus: a.httpStatus, outcome: "error", message: a.error.slice(0, 500) });
-      if (failures >= FAILURES_BEFORE_ALERT) {
-        await openAlert(ctx, `source_failing:${a.sourceKey}`, "error", `${a.sourceKey} failed ${failures} times in a row: ${a.error.slice(0, 200)}`);
+    if (source.lastAttemptAt && a.fetchedAt < source.lastAttemptAt) return await acknowledge("superseded");
+    const today = new Date(a.fetchedAt + 5.5 * 3600_000).toISOString().slice(0, 10);
+    const applicable = a.cards.filter((card) => eligibleCurrentCard(card, today));
+    let failure = a.error;
+    if (new Set(applicable.map((card) => card.product)).size !== applicable.length) failure = "A source result contains duplicate product cards";
+    if (!failure && applicable.length === 0) failure = "Empty or future-only submission: no current card was verified";
+    if (!failure && a.httpStatus !== undefined && (a.httpStatus < 200 || a.httpStatus >= 300)) failure = "Unsuccessful source HTTP response";
+    // Validate the entire source result before mutating any of its products.
+    if (!failure) for (const input of applicable) {
+      if (input.bankSlug !== source.bankSlug || !source.products.includes(input.product)) {
+        failure = "Card does not match the registered bank/product";
+        break;
       }
-      return { outcome: "error" as const };
+      const current = await ctx.db.query("rateCards").withIndex("by_bank_product_current", (q) => q.eq("bankSlug", input.bankSlug).eq("product", input.product).eq("isCurrent", true)).first();
+      const issues = validateCard(normaliseCard(input), current);
+      if (hasErrors(issues)) { failure = issues.filter((issue) => issue.level === "error").map((issue) => issue.message).join("; "); break; }
+      if (current && (input.effectiveFrom ?? input.observedAt) < (current.effectiveFrom ?? current.observedAt)) {
+        return await acknowledge("superseded");
+      }
+    }
+    if (failure) {
+      const failures = source.consecutiveFailures + 1;
+      await ctx.db.patch(source._id, { lastAttemptAt: a.fetchedAt, consecutiveFailures: failures, lastError: failure.slice(0, 500) });
+      await ctx.db.insert("captures", { sourceKey: a.sourceKey, fetchedAt: a.fetchedAt, httpStatus: a.httpStatus, outcome: "error", message: failure.slice(0, 500) });
+      if (failures >= FAILURES_BEFORE_ALERT) {
+        await openAlert(ctx, `source_failing:${a.sourceKey}`, "error", `${a.sourceKey} failed ${failures} times in a row: ${failure.slice(0, 200)}`);
+      }
+      return await acknowledge(a.error ? "error" : "rejected");
     }
 
     let changed = false;
+    const changedProducts = new Set<string>();
     let rejected = false;
-    const today = new Date(a.fetchedAt + 5.5 * 3600_000).toISOString().slice(0, 10); // IST date of the read
-    for (const card of a.cards) {
+    for (const card of applicable) {
       if (card.effectiveFrom && card.effectiveFrom > today) continue; // scheduled change: not current yet
       const result = await upsertCard(ctx, card, { makeCurrent: true });
-      if (result === "inserted") changed = true;
+      if (result === "inserted") { changed = true; changedProducts.add(card.product); }
       if (result === "rejected") rejected = true;
     }
     const outcome = rejected ? "rejected" : changed ? "new_card" : "unchanged";
@@ -179,9 +216,9 @@ export const recordSourceResult = internalMutation({
     });
     if (!rejected) await resolveAlert(ctx, `source_failing:${a.sourceKey}`);
     if (changed && source.bankSlug) {
-      await ctx.scheduler.runAfter(0, internal.summaries.refreshBank, { bankSlug: source.bankSlug });
+      await ctx.scheduler.runAfter(0, internal.summaries.refreshBank, { bankSlug: source.bankSlug, changedProducts: [...changedProducts] });
     }
-    return { outcome };
+    return await acknowledge(outcome);
   },
 });
 
@@ -217,7 +254,7 @@ export const upsertSource = internalMutation({
       .withIndex("by_key", (q) => q.eq("key", a.key))
       .first();
     if (existing) {
-      await ctx.db.patch(existing._id, a);
+      if (Object.entries(a).some(([key, value]) => JSON.stringify(existing[key as keyof typeof existing]) !== JSON.stringify(value))) await ctx.db.patch(existing._id, a);
       return existing._id;
     }
     return await ctx.db.insert("sources", { ...a, consecutiveFailures: 0 });
@@ -248,7 +285,7 @@ export const upsertBank = internalMutation({
       .withIndex("by_slug", (q) => q.eq("slug", a.slug))
       .first();
     if (existing) {
-      await ctx.db.patch(existing._id, a);
+      if (Object.entries(a).some(([key, value]) => JSON.stringify(existing[key as keyof typeof existing]) !== JSON.stringify(value))) await ctx.db.patch(existing._id, a);
       return existing._id;
     }
     return await ctx.db.insert("banks", a);

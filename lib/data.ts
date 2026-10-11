@@ -13,6 +13,8 @@ import { ConvexHttpClient } from "convex/browser";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { api } from "@/convex/_generated/api";
+import { todayIST } from "./format";
+import { eligibleCurrentCard, type DatedCard } from "./current-card";
 
 export const DATA_TAG = "tracker-data";
 const DAY_SECONDS = 24 * 60 * 60;
@@ -37,6 +39,15 @@ async function fromConvex<T>(key: string): Promise<{ payload: T; updatedAt: numb
 
 type SummaryResult<T> = { payload: T; updatedAt: number | null; origin: "convex" | "snapshot" } | null;
 
+function currentBanks(payload: unknown): Record<string, DatedCard & Record<string, unknown>> {
+  if (!payload || typeof payload !== "object" || !("banks" in payload) || !payload.banks || typeof payload.banks !== "object") return {};
+  return Object.fromEntries(Object.entries(payload.banks).filter(([, value]) => {
+    if (!value || typeof value !== "object" || typeof value.observedAt !== "string" || typeof value.sourceType !== "string") return false;
+    return eligibleCurrentCard(value, todayIST()) &&
+      ((Array.isArray(value.rows) && value.rows.length > 0) || (Array.isArray(value.savingsSlabs) && value.savingsSlabs.length > 0));
+  }));
+}
+
 /**
  * Convex reads are cached (tag-revalidated when Convex reports new data, otherwise daily). The
  * cache key includes the deployment, because Next's data cache outlives deployments and a new
@@ -53,16 +64,61 @@ const cachedConvex = unstable_cache(async (key: string) => fromConvex<unknown>(k
  * Committed snapshots are read directly (cheap, and always the ones shipped with this deployment).
  */
 export async function getSummary<T>(key: string): Promise<SummaryResult<T>> {
+  const snap = await readSnapshot<{ payload: T; updatedAt?: number }>(key);
   if (process.env.NEXT_PUBLIC_CONVEX_URL) {
     try {
-      const live = await cachedConvex(key);
-      if (live) return { payload: live.payload as T, updatedAt: live.updatedAt, origin: "convex" };
+      let live = await cachedConvex(key);
+      if (live && typeof live.payload === "object" && live.payload !== null && "partitions" in live.payload) {
+        const keys = (live.payload as { partitions: unknown }).partitions;
+        if (!Array.isArray(keys) || !keys.every((partition) => typeof partition === "string" && partition.startsWith(`${key}:`)) || keys.length > 8) throw new Error("Invalid summary partitions");
+        const parts = await Promise.all(keys.map((partition) => cachedConvex(partition)));
+        const banks = Object.assign({}, ...parts.map((part) => (part?.payload as { banks?: object } | undefined)?.banks ?? {}));
+        live = { payload: { banks }, updatedAt: live.updatedAt };
+      }
+      if (live && usableSummary(key, live.payload)) {
+        if (key.startsWith("current:") && snap && usableSummary(key, snap.payload)) {
+          const bankMap = currentBanks;
+          const banks = { ...bankMap(snap.payload) };
+          for (const [slug, card] of Object.entries(bankMap(live.payload))) {
+            const date = card.effectiveFrom ?? card.observedAt;
+            if (date <= todayIST() && (!banks[slug] || date >= (banks[slug].effectiveFrom ?? banks[slug].observedAt))) banks[slug] = card;
+          }
+          return { payload: { banks } as T, updatedAt: live.updatedAt, origin: "convex" };
+        }
+        return { payload: (key.startsWith("current:") ? { banks: currentBanks(live.payload) } : live.payload) as T, updatedAt: live.updatedAt, origin: "convex" };
+      }
     } catch {
       /* Convex unreachable: fall back to the committed snapshot */
     }
   }
-  const snap = await readSnapshot<{ payload: T; updatedAt?: number }>(key);
-  return snap ? { payload: snap.payload, updatedAt: snap.updatedAt ?? null, origin: "snapshot" } : null;
+  return snap ? { payload: (key.startsWith("current:") ? { banks: currentBanks(snap.payload) } : snap.payload) as T, updatedAt: snap.updatedAt ?? null, origin: "snapshot" } : null;
+}
+
+function usableSummary(key: string, payload: unknown): boolean {
+  if (!payload || typeof payload !== "object") return false;
+  const value = payload as Record<string, unknown>;
+  if (key === "banks") return Array.isArray(value.banks) && value.banks.length > 0;
+  if (key.startsWith("current:")) {
+    return Object.keys(currentBanks(payload)).length > 0;
+  }
+  if (key.startsWith("bank:")) return !!value.bank && !!value.products && Object.keys(value.products as object).length > 0;
+  return Object.keys(value).length > 0;
+}
+
+export interface LiveStatus {
+  sources: Array<{ key: string; lastAttemptAt: number | null; lastSuccessAt: number | null; lastChangeAt: number | null; consecutiveFailures: number; lastError: string | null }>;
+  alerts: Array<{ key: string; severity: string; message: string; openedAt: number; lastSeenAt: number; count: number }>;
+  runs: Array<{ job: string; status: string; startedAt: number; finishedAt: number | null }>;
+  macro: { checks: Record<string, { lastSuccessAt: string | null; consecutiveFailures: number; lastError: string | null }>; observations: Record<string, { value: number; observedAt: string; sourceUrl: string; effectiveFrom: string | null }> } | null;
+}
+
+const cachedStatus = unstable_cache(async (): Promise<LiveStatus | null> => {
+  const url = process.env.NEXT_PUBLIC_CONVEX_URL;
+  return url ? await new ConvexHttpClient(url).query(api.public.status, {}) : null;
+}, ["tracker-status", DEPLOYMENT], { revalidate: 900, tags: [DATA_TAG] });
+
+export async function getLiveStatus(): Promise<LiveStatus | null> {
+  try { return await cachedStatus(); } catch { return null; }
 }
 
 /** A committed dataset file under /data (bank master list, scheme histories, macro series...). */

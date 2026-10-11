@@ -1,0 +1,1232 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "823f87cf52480d616443ec46791bce7458dcc0638fb8bb4de846784e38c1ca0a",
+  "generatedAt": "2026-10-11T18:27:23.501Z",
+  "rows": 6682,
+  "files": [
+    {
+      "path": "banks/_watch.json",
+      "sha256": "a2cdccfaf4382ad21d4f9102994aacafbd191a72c26a8afdd88a3f2fa10f4e28",
+      "bytes": 435
+    },
+    {
+      "path": "banks/banks.json",
+      "sha256": "d6e4a1e34f97dce9b8c853071895d0a2255c28d39be7d8d7b2e57fee919937da",
+      "bytes": 114878
+    },
+    {
+      "path": "rates/_index.json",
+      "sha256": "5fa263fbc0d62bf873d5a3e4a6702ba9b4672cadb4165b02e6275b2e390f4bbb",
+      "bytes": 18077
+    },
+    {
+      "path": "rates/au-sfb/fd.json",
+      "sha256": "a06f0568f0298b65e87b8e4fa832013f86abc4f50d5c50fd3092ca8b7ed10c58",
+      "bytes": 47312
+    },
+    {
+      "path": "rates/au-sfb/rd.json",
+      "sha256": "c4a01dcdaf51f30b04f6346126230ed3619dfa9372c1b3baa7ad4df2b2d0b796",
+      "bytes": 50420
+    },
+    {
+      "path": "rates/au-sfb/savings.json",
+      "sha256": "250e1516aa81d8b07e855402e0c29a4c8cac42a0a9cfca357241bfe3ba3106f2",
+      "bytes": 1529
+    },
+    {
+      "path": "rates/axis-bank/fd_bulk.json",
+      "sha256": "e6017de18066f02da7518c146be57703af658e7e98970cc39463dcd6b3ac781b",
+      "bytes": 21175
+    },
+    {
+      "path": "rates/axis-bank/fd.json",
+      "sha256": "3ffdc74fdf73eaa15323f32aba5b62b2dab1fb97ba2d626a174ab96aba3ee34e",
+      "bytes": 21072
+    },
+    {
+      "path": "rates/axis-bank/rd.json",
+      "sha256": "f046586145e501a21007a29cb0e2cbeb038ec7f183bed9807268cbff5feb8502",
+      "bytes": 7215
+    },
+    {
+      "path": "rates/axis-bank/savings.json",
+      "sha256": "2bad9065164f24d4f41d385bf625db7440711ca8a08c77ec1b58a4dc6a2cdcfb",
+      "bytes": 750
+    },
+    {
+      "path": "rates/bandhan-bank/fd_bulk.json",
+      "sha256": "7169d342564e10a966ec3bb0695ab20e74e85eeaa508d93be0c10f1cf86743c6",
+      "bytes": 125296
+    },
+    {
+      "path": "rates/bandhan-bank/fd.json",
+      "sha256": "b24ed0b33639fb6dbac11f4bf18a9139f89f02d5d1c97bf1411fe1b0f81b6176",
+      "bytes": 7184
+    },
+    {
+      "path": "rates/bandhan-bank/savings.json",
+      "sha256": "965e1a067a47831bee208a1a2c6437fe19d1ff02eee8fc7d2dec6d093e3ab3e0",
+      "bytes": 2302
+    },
+    {
+      "path": "rates/bank-of-baroda/fd_bulk.json",
+      "sha256": "c8516f7b239f81a406277581a66c7b4736051aa9354331b28294ee288a37dab1",
+      "bytes": 153617
+    },
+    {
+      "path": "rates/bank-of-baroda/fd.json",
+      "sha256": "94fb3dff9b960efc4448eb05865f9261ca90fd6d63f1d703765f6872e75723a7",
+      "bytes": 71092
+    },
+    {
+      "path": "rates/bank-of-baroda/nro.json",
+      "sha256": "cf6a567187f3a083e556ee98300d0634064e4bf63399a2bc1b5e7b37d0e33066",
+      "bytes": 35849
+    },
+    {
+      "path": "rates/bank-of-baroda/savings.json",
+      "sha256": "ade6e5e53c41c8bafa06cee28f06b5a549d5aefd64ad961390391596fb3911eb",
+      "bytes": 1692
+    },
+    {
+      "path": "rates/bank-of-baroda/tax_saver.json",
+      "sha256": "4ea2b98ae1bcb84a7f3fb8412a5ac18488d20af9b722eb0e3afdfaa7cb3224b3",
+      "bytes": 1553
+    },
+    {
+      "path": "rates/bank-of-india/fd_bulk.json",
+      "sha256": "c46ad024f70325dcfcd13601d4e308e126d0e23a5fd5576f0f2cf0d481d5f8f9",
+      "bytes": 7222
+    },
+    {
+      "path": "rates/bank-of-india/fd.json",
+      "sha256": "0573f928ea1c61be67afa97e66596a8cf2d76f3b4b0ca42b50487685c82779c1",
+      "bytes": 20306
+    },
+    {
+      "path": "rates/bank-of-maharashtra/fd_bulk.json",
+      "sha256": "9dd1ffccab1075e25d4df41518a8534248ebc91fdce70fadda9b3e3524783aac",
+      "bytes": 21136
+    },
+    {
+      "path": "rates/bank-of-maharashtra/fd.json",
+      "sha256": "e9f650c8056221e01da28878a4528a44e2e790cb04dddf1ec33eaad3b0378c17",
+      "bytes": 6792
+    },
+    {
+      "path": "rates/bank-of-maharashtra/rd.json",
+      "sha256": "f8b31063655b7bbae8a702c4e74cc935ba184e56926c4d8aece9e6f5f47d6719",
+      "bytes": 3427
+    },
+    {
+      "path": "rates/bank-of-maharashtra/savings.json",
+      "sha256": "839810dc0c567f2eef50b8e8c8743dd967b81335c0dbbb2e82252d44034a45d0",
+      "bytes": 795
+    },
+    {
+      "path": "rates/canara-bank/fd_bulk.json",
+      "sha256": "19b7b82ad1a23ddea1ef3c2d733aef73e5c8e2146385a5f681f3d700debd54e3",
+      "bytes": 139301
+    },
+    {
+      "path": "rates/canara-bank/fd.json",
+      "sha256": "90f3e305d3ac88b7054a311fc62221f2feba31e7252cc5b54d286852d7d76e87",
+      "bytes": 14819
+    },
+    {
+      "path": "rates/canara-bank/rd.json",
+      "sha256": "4ae0c4d8696e8586f5bed95a8915ea694d32249e555b9eeda398e0eed0321165",
+      "bytes": 5811
+    },
+    {
+      "path": "rates/canara-bank/savings.json",
+      "sha256": "a60d044e425043b1ac12e70544bf41903d054d7afdbeee5927d494084a0159ca",
+      "bytes": 1650
+    },
+    {
+      "path": "rates/capital-sfb/fd.json",
+      "sha256": "b5501b510decd952b0192f09586c61221c888edff050280d801b1d0c01629399",
+      "bytes": 42428
+    },
+    {
+      "path": "rates/capital-sfb/savings.json",
+      "sha256": "f3162f6745f5af91292ab84adb33b23dbf96fef12d76c7dd7a905d5eaa58d771",
+      "bytes": 4111
+    },
+    {
+      "path": "rates/central-bank-of-india/fd_bulk.json",
+      "sha256": "17c1e2fb30ef0cba6ed56e422151f43fd44c94297bd6abd9564fdc5f5e0a4ffa",
+      "bytes": 16537
+    },
+    {
+      "path": "rates/central-bank-of-india/fd.json",
+      "sha256": "2784169c070f2944da6811921f34cb1c48a7b0dae7e12faa53ce59ab1906235a",
+      "bytes": 31701
+    },
+    {
+      "path": "rates/central-bank-of-india/savings.json",
+      "sha256": "1f03af85cc046ac926fcab21feaa52a788d29afd0e619292863a99eb3630d60f",
+      "bytes": 1299
+    },
+    {
+      "path": "rates/central-bank-of-india/tax_saver.json",
+      "sha256": "16d23300fa99e17578f846091ed6bbb549016c5f09bd466122a401f263119ca4",
+      "bytes": 1918
+    },
+    {
+      "path": "rates/city-union-bank/fd_bulk.json",
+      "sha256": "e8a3bd7f0ea17c8d5aa07b803aad703af2b9adf49f69b719fcb54e3ef9fd9ffa",
+      "bytes": 49120
+    },
+    {
+      "path": "rates/city-union-bank/fd.json",
+      "sha256": "5c1a72ebfb3572d04fae015c3660e992d7dccddc1155dc43052b6f587514af5e",
+      "bytes": 22702
+    },
+    {
+      "path": "rates/city-union-bank/savings.json",
+      "sha256": "700c445afea415a827d3981c40a14bf77c1fc46bd87f7f0809668ee0a4950e75",
+      "bytes": 1024
+    },
+    {
+      "path": "rates/csb-bank/fd.json",
+      "sha256": "21e54ae272e0cc42e0ad0e0cf26c6eb1be05dea5d4a86c531da916d95f1658b1",
+      "bytes": 7269
+    },
+    {
+      "path": "rates/csb-bank/savings.json",
+      "sha256": "95561343518db84f4b141ced775d2ce55988a119ba40a4556d2ed6064e51fda9",
+      "bytes": 1611
+    },
+    {
+      "path": "rates/dcb-bank/fd_bulk.json",
+      "sha256": "3b885e381670c8528403b517472461ae6737b28635a0597ad553c605d07a1a69",
+      "bytes": 30612
+    },
+    {
+      "path": "rates/dcb-bank/fd.json",
+      "sha256": "5242c33d06af77696e68e102b8e8fac0e97d12ea125ab0fcaab66d4cef01ca61",
+      "bytes": 16665
+    },
+    {
+      "path": "rates/dcb-bank/savings.json",
+      "sha256": "8b162a7f4f8b437797715e5afca4ad0c2c83487a6027d9fe48f0e168c4c6cc39",
+      "bytes": 1654
+    },
+    {
+      "path": "rates/dena-bank/fd.json",
+      "sha256": "4f461f6f2dafdd9d8de7c69362e4e9ec089e9b563c35e949200fdbfdb2fc72b2",
+      "bytes": 4036
+    },
+    {
+      "path": "rates/dhanlaxmi-bank/fd_bulk.json",
+      "sha256": "0938f2bf64ba882215ae33cbb0c2c7c42018b133aae48f3720819ac59cdc9738",
+      "bytes": 27511
+    },
+    {
+      "path": "rates/dhanlaxmi-bank/fd.json",
+      "sha256": "0f90cd31da3b8e54042dd3c82e15fcf7de63c16b0ec1d323a30642c4daf9fac9",
+      "bytes": 9717
+    },
+    {
+      "path": "rates/dhanlaxmi-bank/savings.json",
+      "sha256": "c812f67adc1ddf411230a5e5513f65f10d84f06df4445c06c400dc9e1ab7ece8",
+      "bytes": 1525
+    },
+    {
+      "path": "rates/equitas-sfb/fd.json",
+      "sha256": "31beb9dfeeb453d92e987c69081ada73bb97a22c7f367399bc9aadb8fd059785",
+      "bytes": 7349
+    },
+    {
+      "path": "rates/equitas-sfb/rd.json",
+      "sha256": "790ca76e14f8073138b23fff452e3552e994397af9bf1aabce26121ca0381741",
+      "bytes": 3652
+    },
+    {
+      "path": "rates/esaf-sfb/fd.json",
+      "sha256": "106157166060c97ab7b25fe7b982632834e54003e24d178c35106874a070dfd8",
+      "bytes": 138397
+    },
+    {
+      "path": "rates/federal-bank/fd.json",
+      "sha256": "447bc17018327c1cf4a2f6f076d537275c12287acbc59cffe00158674ed6b43f",
+      "bytes": 24661
+    },
+    {
+      "path": "rates/federal-bank/rd.json",
+      "sha256": "d94e450af7ef3cc2717f60c57b837e504f8ad6cc3f7a67112c9d82817fd6a988",
+      "bytes": 9771
+    },
+    {
+      "path": "rates/federal-bank/savings.json",
+      "sha256": "267f926ca0cc2d5caca9068d1bb81320e0998f201efdebb65aec06642571a19b",
+      "bytes": 1298
+    },
+    {
+      "path": "rates/hdfc-bank/fd_bulk.json",
+      "sha256": "9430b339486836fdaf6a9fd366cdc84e1d9ebe74f38bef594095d32d02d8c7e3",
+      "bytes": 57782
+    },
+    {
+      "path": "rates/hdfc-bank/fd.json",
+      "sha256": "3c611bf222afe8f332ad69aee7b99cb36c1f818f32a27cb9e6d60ab9d31b07bc",
+      "bytes": 478270
+    },
+    {
+      "path": "rates/hdfc-bank/rd.json",
+      "sha256": "2307ae6f592acea3af2e4ac16de71964f14c45ca91260f4676471d2b2e3cfd23",
+      "bytes": 32340
+    },
+    {
+      "path": "rates/hdfc-bank/savings.json",
+      "sha256": "639008813f98289c5b2ceced5fafe59affb08b974b3238075e3247ead1c32e2b",
+      "bytes": 9007
+    },
+    {
+      "path": "rates/icici-bank/fd.json",
+      "sha256": "59b3f13663d8add2c1592959caa8eb98185e27b6be2265404fb3dcd7bdb9737a",
+      "bytes": 12949
+    },
+    {
+      "path": "rates/icici-bank/rd.json",
+      "sha256": "d0ca39e4b2dd014b619c5d4ca2ec10b55aa1cd0bbf461dfe96b2bc09156e4b38",
+      "bytes": 11522
+    },
+    {
+      "path": "rates/icici-bank/savings.json",
+      "sha256": "97ba45eedcb12e3af6548e9f08d42fdcb508a14fc646bb075371e055392a01dc",
+      "bytes": 568
+    },
+    {
+      "path": "rates/idfc-first-bank/fd_bulk.json",
+      "sha256": "9e77705d0d55a58161138e1213a010f5d5b78b37a86bd152e9e66ab2cbc3c048",
+      "bytes": 36763
+    },
+    {
+      "path": "rates/idfc-first-bank/fd.json",
+      "sha256": "ada77d3ca01dd1184eca214aba875fd37f0d4ab05b01baa3fc3fef47e4d411f2",
+      "bytes": 7378
+    },
+    {
+      "path": "rates/idfc-first-bank/rd.json",
+      "sha256": "6f94f3f700ed54c91565801e4d548ea0b95a7484a201ec60828bf3b252f9d66e",
+      "bytes": 3269
+    },
+    {
+      "path": "rates/idfc-first-bank/savings.json",
+      "sha256": "ad2c1bfdde4f1027a9e47cd83abf40710269b5d687bf5d12222b5ea8d5a15b98",
+      "bytes": 1215
+    },
+    {
+      "path": "rates/indian-bank/fd.json",
+      "sha256": "dfe0d49fbf38afdd598320426115e4e5225d60cc1cb66f82b0ec48a447ad15cb",
+      "bytes": 21305
+    },
+    {
+      "path": "rates/indian-overseas-bank/fd_bulk.json",
+      "sha256": "a7ab899ae502fd6b8e899ef37cc605a80ddaa998607459f6f8854870dc5fb1d2",
+      "bytes": 6529
+    },
+    {
+      "path": "rates/indian-overseas-bank/fd.json",
+      "sha256": "6e85535fc4c9a2410df3f3d93e731c03d558c602539a7ecaa98ad5017fcadbba",
+      "bytes": 13203
+    },
+    {
+      "path": "rates/indian-overseas-bank/savings.json",
+      "sha256": "1d1d255cda4750f67dc4bd4904c74630db8b962bdfc41bf4c675f7d0268c02a4",
+      "bytes": 1987
+    },
+    {
+      "path": "rates/indusind-bank/fd_bulk.json",
+      "sha256": "3ba99ed4be7fea91709aa6b679c38e18a6be3e1073705c4a7cffcc5416f1386b",
+      "bytes": 16138
+    },
+    {
+      "path": "rates/indusind-bank/fd.json",
+      "sha256": "5b18edd8177c320b4b16405d5f7018f09d5478a8c9d980d799073cb4fd44cf01",
+      "bytes": 20027
+    },
+    {
+      "path": "rates/indusind-bank/savings.json",
+      "sha256": "93fed7b6a87d0477839190e4b60664d182a715aa7b23b2159f9acbced5087550",
+      "bytes": 1820
+    },
+    {
+      "path": "rates/ing-vysya-bank/fd.json",
+      "sha256": "50446938aac8ba245c46ec442cdd4c8c075be74c2fa356a5075c7b6a72ad47e9",
+      "bytes": 12115
+    },
+    {
+      "path": "rates/jana-sfb/fd_bulk.json",
+      "sha256": "61566402147c1cbe07fc9d0e0d7f5f84b53198296ea4ac24c3600b08c78488ad",
+      "bytes": 20310
+    },
+    {
+      "path": "rates/jana-sfb/fd.json",
+      "sha256": "353bd23f1a09f4585e83e67d654243a1c591493f4339320289b9403df90426a2",
+      "bytes": 45170
+    },
+    {
+      "path": "rates/jana-sfb/rd.json",
+      "sha256": "6474a35e8ae4e59ec8ec6ddb0e4d70faaecaaf3aa61e3ce33beacd28c5aa2442",
+      "bytes": 13093
+    },
+    {
+      "path": "rates/jana-sfb/savings.json",
+      "sha256": "a25c5e2e362b9c16d693346830dec2150d4adf6e3964e59b9568ddb62f0acb1e",
+      "bytes": 1537
+    },
+    {
+      "path": "rates/jk-bank/fd_bulk.json",
+      "sha256": "dfd71797b13e2427aa453fb11e67a4b5acdb8e5b500649198ded56da10ec7306",
+      "bytes": 6487
+    },
+    {
+      "path": "rates/jk-bank/fd.json",
+      "sha256": "a6e099afe95ee8ed8412d853e39b66900e7622bed2b98815cb8a6ab31330752a",
+      "bytes": 33089
+    },
+    {
+      "path": "rates/jk-bank/savings.json",
+      "sha256": "a3fe262ca904bfbb908e394a501ed638c840b362f1d34532927049f0e76bd10b",
+      "bytes": 516
+    },
+    {
+      "path": "rates/karnataka-bank/fd_bulk.json",
+      "sha256": "8a3e5b3c03c397a761367f413fbd2fcee65942695b5b3a35de6f8cb9ced762f8",
+      "bytes": 8922
+    },
+    {
+      "path": "rates/karnataka-bank/fd.json",
+      "sha256": "ab1a3f9eaaa9818e9541cc5ac10a272c3f10d99ea29a915f07c609cd1fddb88d",
+      "bytes": 157262
+    },
+    {
+      "path": "rates/karnataka-bank/savings.json",
+      "sha256": "199dc05ff95955198092e98d919343a3fbd69d2fea0f376f7fbd9c5a9b4da82e",
+      "bytes": 1259
+    },
+    {
+      "path": "rates/karur-vysya-bank/fd_bulk.json",
+      "sha256": "266938c38f85c2d9dd0398846c0d18e2ce20af141ed199673b2c73a32be87c98",
+      "bytes": 137738
+    },
+    {
+      "path": "rates/karur-vysya-bank/fd.json",
+      "sha256": "b3bd4dfb7822653243d78506b5cc8649ccc08310420e3cd6c91ef195c5f7c5f3",
+      "bytes": 13938
+    },
+    {
+      "path": "rates/karur-vysya-bank/rd.json",
+      "sha256": "06e9f3c0f00610d0da3650635f31ae4ce50290176d43dd09e7f04eb1775515dd",
+      "bytes": 9738
+    },
+    {
+      "path": "rates/karur-vysya-bank/savings.json",
+      "sha256": "d0ef21206a8f7f8116e4a7eb7982859d29a34559a922aba63c2d7e5c9bef79e9",
+      "bytes": 2516
+    },
+    {
+      "path": "rates/nainital-bank/fd.json",
+      "sha256": "f73514235cb1029ddb78e22f1b9e7700a398aa99e6dbbf2af205b24933010319",
+      "bytes": 44742
+    },
+    {
+      "path": "rates/nainital-bank/savings.json",
+      "sha256": "72b9ce2f7d43447af64324ec8ad38a2078f957ebfac7cbfc06363f752bbdbe5b",
+      "bytes": 550
+    },
+    {
+      "path": "rates/oriental-bank-of-commerce/fd.json",
+      "sha256": "6fb286242a27307d11b12eaf3c11ece18f1b215abc7949f6cdc45452054a73f6",
+      "bytes": 10019
+    },
+    {
+      "path": "rates/oriental-bank-of-commerce/nre.json",
+      "sha256": "92e6ef974ffc1eaa1fdabae5a3217b89097c90207fe38e168e29c12657d5a44e",
+      "bytes": 1760
+    },
+    {
+      "path": "rates/pmc-bank/fd.json",
+      "sha256": "e870956151e6886795ad9e3435604f60e4a30dcbe0fa74b00548f7120907a5fb",
+      "bytes": 125407
+    },
+    {
+      "path": "rates/punjab-and-sind-bank/fd.json",
+      "sha256": "ae7745242446f80472afa4994d7086b60185accf16c4c1d46c851c2f73dd60db",
+      "bytes": 10968
+    },
+    {
+      "path": "rates/punjab-and-sind-bank/rd.json",
+      "sha256": "9ace86aded60b882b377d4c2ac065a62e798d2e6605f1b9a1f6017610940317f",
+      "bytes": 6212
+    },
+    {
+      "path": "rates/punjab-and-sind-bank/savings.json",
+      "sha256": "51dc4f8c43d4dbee029c0d8de08c33cdc35ece2bd029af9275d72113c0eaca7a",
+      "bytes": 1038
+    },
+    {
+      "path": "rates/punjab-national-bank/fd_bulk.json",
+      "sha256": "76f2ff0b6bb01657e3ac8a6ad72c457a487b6e9870a62cb9a9a24b4a6a4d2d86",
+      "bytes": 32402
+    },
+    {
+      "path": "rates/punjab-national-bank/fd.json",
+      "sha256": "ce526ac559e682f724f789ea7a573895b92930645aac2d655b926ee37ce679f2",
+      "bytes": 43109
+    },
+    {
+      "path": "rates/punjab-national-bank/nre.json",
+      "sha256": "2eb8de3de363440e4b55871f7c64ac5d6a9282493ca40246fd3bd0d58133da3e",
+      "bytes": 1381
+    },
+    {
+      "path": "rates/punjab-national-bank/savings.json",
+      "sha256": "4d0834a8659b07193161c1634f5519765c692a2ec860a0f45e35b7b60807c841",
+      "bytes": 11630
+    },
+    {
+      "path": "rates/rbl-bank/fd_bulk.json",
+      "sha256": "0b8c0bb1e7ab1b683bd656753b9a1ef4dca5dec29995ef3b049b47cfbb2e3e60",
+      "bytes": 449040
+    },
+    {
+      "path": "rates/rbl-bank/fd.json",
+      "sha256": "481b986d7dbea7c253eb648c2eac51561c026b4968210bbc9d0f6fbbc735912a",
+      "bytes": 55857
+    },
+    {
+      "path": "rates/rbl-bank/rd.json",
+      "sha256": "a3c404357a2199a10d85f6bf72c8a27e5e1c815ede34e7f69f92c3c63242f216",
+      "bytes": 12246
+    },
+    {
+      "path": "rates/rbl-bank/savings.json",
+      "sha256": "e3da856ada6d2303f9a190a1421d072ab0204de08d8f946843b9330f4bf460e9",
+      "bytes": 2418
+    },
+    {
+      "path": "rates/sbi/fd_bulk.json",
+      "sha256": "c4eb00fdd978b224e2d45c3452aab79e2567fc96d312c29f7be469428606acd3",
+      "bytes": 74407
+    },
+    {
+      "path": "rates/sbi/fd.json",
+      "sha256": "fcdd25475b19a48e1f2e608fa2ae1350da4aeab9a8491f3ceb85db454139b788",
+      "bytes": 307223
+    },
+    {
+      "path": "rates/sbi/nre.json",
+      "sha256": "102f9795dad4b88b6c4182e7ff4cfff2972fa4bef57317cbafd4f55d51024904",
+      "bytes": 1578
+    },
+    {
+      "path": "rates/sbi/nro.json",
+      "sha256": "793e16474a2bc1c5117dff1994f3a226f78ca085d93b0c09ae9c430f2842c60b",
+      "bytes": 2496
+    },
+    {
+      "path": "rates/sbi/rd.json",
+      "sha256": "c24e171cc196e76c561c25e8057e644bd9ad2e11b8f0916ea191d3c6bbdf01a0",
+      "bytes": 6503
+    },
+    {
+      "path": "rates/sbi/savings.json",
+      "sha256": "617f4111211b56e59ecf1b46f3a490b583c8a5a4e58bb072c8f8e83687268fee",
+      "bytes": 6098
+    },
+    {
+      "path": "rates/shivalik-sfb/fd.json",
+      "sha256": "2851a723514b24816702b9f5eae0d4029f9aafffe1ee12c170f5cdd1b63c571c",
+      "bytes": 49736
+    },
+    {
+      "path": "rates/shivalik-sfb/rd.json",
+      "sha256": "cfce2c15461b453f06fa07cb626e689949dbf2effc08e22d452212271224d4f2",
+      "bytes": 4359
+    },
+    {
+      "path": "rates/shivalik-sfb/savings.json",
+      "sha256": "4574a55c8433836e114055a133eb34825b8653df9856a74855e2edf55975fb9b",
+      "bytes": 1145
+    },
+    {
+      "path": "rates/shivalik-sfb/tax_saver.json",
+      "sha256": "8725706bc80e02159072d2823e4c314bab04be7d545a6e43e8b8cb3ca822ea74",
+      "bytes": 1096
+    },
+    {
+      "path": "rates/slice-sfb/fd.json",
+      "sha256": "f23492389b63b95e6cc2a76cd6fabcaba476f2d8b4bd79fd8ec35b31f40c7d16",
+      "bytes": 165699
+    },
+    {
+      "path": "rates/slice-sfb/rd.json",
+      "sha256": "37b2642af150edc07002a4b9baa9c2957ec1cfc6fd479445e65033f0d062b41d",
+      "bytes": 16212
+    },
+    {
+      "path": "rates/slice-sfb/savings.json",
+      "sha256": "e4126eab0504f268d56852fbbd280a87913ed6c5a8130e66dae842eb8fedbf00",
+      "bytes": 3173
+    },
+    {
+      "path": "rates/south-indian-bank/fd_bulk.json",
+      "sha256": "ebcde22b42226c96f79dd9ed46bbca7eb3e779b665f5d5582477f854542e0e85",
+      "bytes": 50928
+    },
+    {
+      "path": "rates/south-indian-bank/fd.json",
+      "sha256": "7f7580e4983aa87680b394085dc7cea00a8e2410b39ed1e5bb531a6a4aeed98b",
+      "bytes": 295565
+    },
+    {
+      "path": "rates/south-indian-bank/savings.json",
+      "sha256": "b4d77fdaddadee2a895273daa41a4dcdbc2d34d768afe100d16a359a8b5332d0",
+      "bytes": 12127
+    },
+    {
+      "path": "rates/state-bank-of-bikaner-and-jaipur/fd_bulk.json",
+      "sha256": "a31e9df0579924e061497f4d19afc1da32081eb5cafe68497c59e04cbb1956b7",
+      "bytes": 6217
+    },
+    {
+      "path": "rates/state-bank-of-bikaner-and-jaipur/fd.json",
+      "sha256": "04bc78985b1a3b524cba72f5f5f0f53e94cf0fc5255e239acd6b2c40e19d1b9f",
+      "bytes": 11766
+    },
+    {
+      "path": "rates/state-bank-of-mysore/fd.json",
+      "sha256": "4374c862577d80b9db931e6dc13496e50ca0d9eaf5e77bf936d921fd0447d2ef",
+      "bytes": 10822
+    },
+    {
+      "path": "rates/state-bank-of-patiala/fd.json",
+      "sha256": "d2f7659bac7aff6b0a400cc9e5c69e4ffda6ca3024add65fe702dbb9114a92ca",
+      "bytes": 42794
+    },
+    {
+      "path": "rates/syndicate-bank/fd.json",
+      "sha256": "58db46d6e18680e6af9c4fb1ef9738d9a15b4ca73ae6f3a68b8a9cfe89d80e5b",
+      "bytes": 1307
+    },
+    {
+      "path": "rates/tamilnad-mercantile-bank/fd_bulk.json",
+      "sha256": "48228dd5a14a242cb226c5b3daf3e8cc795eaec47b0a3bf56f49d01e4ad6802c",
+      "bytes": 100239
+    },
+    {
+      "path": "rates/tamilnad-mercantile-bank/fd.json",
+      "sha256": "c68c8841a1ea31feb3af0ae0397ff6026d19366ba341457a1f9f4ac9b0901560",
+      "bytes": 70856
+    },
+    {
+      "path": "rates/tamilnad-mercantile-bank/savings.json",
+      "sha256": "52aa7a4ac354247d2e28b3bca28cb8aef31cae326833460491cbc2c02e3ee85c",
+      "bytes": 1660
+    },
+    {
+      "path": "rates/uco-bank/fd_bulk.json",
+      "sha256": "e2dacde57e19c9cb9aaeaf21c000863fac0533089bc04c13d52498e47a4eef6c",
+      "bytes": 61610
+    },
+    {
+      "path": "rates/uco-bank/fd.json",
+      "sha256": "e4a4f17c875db012f0823114a08df2e0e332ea18557e1491d3fdd23e75fdc6e9",
+      "bytes": 7986
+    },
+    {
+      "path": "rates/uco-bank/rd.json",
+      "sha256": "0076dadb3aaa4ae957d3e5712651b47bf7c82037444c7be1753e15f06fe3211b",
+      "bytes": 4447
+    },
+    {
+      "path": "rates/uco-bank/savings.json",
+      "sha256": "10b3323a400ad4f055b01017f161f0b10a4823e453d41f1b1fa645334ca74ab1",
+      "bytes": 657
+    },
+    {
+      "path": "rates/ujjivan-sfb/fd_bulk.json",
+      "sha256": "06fe961ae98109f86487e79e9bdf666b8787163be27a7e01d62622b50cf5c4f1",
+      "bytes": 39220
+    },
+    {
+      "path": "rates/ujjivan-sfb/fd.json",
+      "sha256": "830e18aa455e90243d206a162c7fa36cfe734b935020b68f5fbe6225b0b27cef",
+      "bytes": 6089
+    },
+    {
+      "path": "rates/ujjivan-sfb/rd.json",
+      "sha256": "9f150564d5259cbd71ead63342d02ca13604f6e3a729fc2a24c0bc8b72376518",
+      "bytes": 2514
+    },
+    {
+      "path": "rates/ujjivan-sfb/savings.json",
+      "sha256": "6ebacd5336b5135386bfe8ea674280d1a68cc5a368e793da1d26c2d025e985af",
+      "bytes": 1241
+    },
+    {
+      "path": "rates/union-bank-of-india/fd_bulk.json",
+      "sha256": "b3b91c30e3884005e6df1b24e9b1bda50bb247d09374acc4645cb127c295d764",
+      "bytes": 36207
+    },
+    {
+      "path": "rates/union-bank-of-india/fd.json",
+      "sha256": "534e36f3a10647401ddfb163455425c665e0df7aecdbf277a683ad9c0464fb8b",
+      "bytes": 6610
+    },
+    {
+      "path": "rates/union-bank-of-india/savings.json",
+      "sha256": "191c3819e4bd3951fe28c4f292fea54e08de0a4be16f04abc9c12b5dffe19826",
+      "bytes": 1549
+    },
+    {
+      "path": "rates/unity-sfb/fd_bulk.json",
+      "sha256": "f4f341f9764b2d4754ab540991014b0d7b9438bc6522f2efe8d4163f41eb6a52",
+      "bytes": 237646
+    },
+    {
+      "path": "rates/unity-sfb/fd.json",
+      "sha256": "14b5815a95da46fce8cf649f95130469223c810586da8af0a49da48f86380304",
+      "bytes": 62330
+    },
+    {
+      "path": "rates/unity-sfb/savings.json",
+      "sha256": "ca87e8e665c364412904d4ff4ab38f5b04a00c6806bc2698dcd22ea17437cf03",
+      "bytes": 3477
+    },
+    {
+      "path": "rates/utkarsh-sfb/fd.json",
+      "sha256": "9420e8b29ce16504581d914d489b5ec7359197f1a8e0fcd4236a7945430ba1db",
+      "bytes": 26914
+    },
+    {
+      "path": "rates/utkarsh-sfb/rd.json",
+      "sha256": "93bb78df7cf480bf739cffc8cda81ea628bd5e569a9ded2b78a5a6c60b4c2a1a",
+      "bytes": 6414
+    },
+    {
+      "path": "rates/utkarsh-sfb/savings.json",
+      "sha256": "77ccaa56f24bd050b661596b9b4fd4f01709416e5946ba4dce7b64d0edcbe035",
+      "bytes": 2380
+    },
+    {
+      "path": "rates/vijaya-bank/fd.json",
+      "sha256": "8a592bf871473db3db7b5e5821138bb0c5b5e78faa3b7c54e0db89418a02db95",
+      "bytes": 4479
+    },
+    {
+      "path": "rates/yes-bank/fd_bulk.json",
+      "sha256": "07b7dbbbf8bbd6bb2ed0642131d27cdb5a4044e2cd6615bdf78befbed2d28e36",
+      "bytes": 72057
+    },
+    {
+      "path": "rates/yes-bank/fd.json",
+      "sha256": "97f47ddb00bee84dc32061b6c58f841b5c55332bd9ee88bbd3ffa3ca2c8cc97a",
+      "bytes": 55268
+    },
+    {
+      "path": "rates/yes-bank/rd.json",
+      "sha256": "3f347851c8e7a3b9c49f8876fe9ecdea1ec97579e00c171316ab2918f2a306cf",
+      "bytes": 7823
+    },
+    {
+      "path": "rates/yes-bank/savings.json",
+      "sha256": "90b4608e85823dcd445180aae17e0ff3bce852b0c80b7624244a93d62b32c02f",
+      "bytes": 1467
+    },
+    {
+      "path": "schemes/_index.json",
+      "sha256": "2af8a4d9f362058025adc47527ce8265a11740072dd7975a2b6f46d87794c1fd",
+      "bytes": 3496
+    },
+    {
+      "path": "schemes/_sources.json",
+      "sha256": "8441c2a5f78fe159c477c76fe4abd4ec1da1d065ea732736b3827afbe93dee67",
+      "bytes": 12325
+    },
+    {
+      "path": "schemes/epf.json",
+      "sha256": "97f74467be3eb5a9c408fae1b791c952ab10d74160723712f0b263ce2291a3c9",
+      "bytes": 25788
+    },
+    {
+      "path": "schemes/frsb_2020.json",
+      "sha256": "e9cf35bdb3af92d4a589012f99ed683f4e0e326339f0d91b048fb3ad6c5ca2c2",
+      "bytes": 5614
+    },
+    {
+      "path": "schemes/gpf.json",
+      "sha256": "887fa0ee245d0da225fd517378e543cce9628cfd2604f04551e237adc4c8db56",
+      "bytes": 14818
+    },
+    {
+      "path": "schemes/kvp.json",
+      "sha256": "aa648b9027b22a787a43b2f46685d2e8ad7057c62a4e19ded53edcaecd90cb81",
+      "bytes": 10385
+    },
+    {
+      "path": "schemes/mssc.json",
+      "sha256": "d674c03f6ca6977a2bc7e810420c0c66c9d85bd1addb69dab8544265ee741366",
+      "bytes": 2258
+    },
+    {
+      "path": "schemes/nsc.json",
+      "sha256": "3760be6058216a3bb937015bca0afb94a6d3dd8da56d89c3485351e9c573b5d7",
+      "bytes": 8378
+    },
+    {
+      "path": "schemes/po_rd.json",
+      "sha256": "60b1ad90831c7dfb9cb89714dac4646e8c124056a8675bad763b3f2f6fd959d1",
+      "bytes": 13643
+    },
+    {
+      "path": "schemes/po_sb.json",
+      "sha256": "f9e9cedccfb8c553eadb042d46417b2895deafc44b323d90ff6e697c19eb72b1",
+      "bytes": 2316
+    },
+    {
+      "path": "schemes/po_td_1y.json",
+      "sha256": "bcd6b4cdb6fbfff86576785ca52d10605d060ba09ecc282ead2500701d014eb9",
+      "bytes": 17231
+    },
+    {
+      "path": "schemes/po_td_2y.json",
+      "sha256": "ddc6eafa895ba02a44ff7371443dfb1b47ff6c4dbabd43e3ded86042be79430c",
+      "bytes": 16314
+    },
+    {
+      "path": "schemes/po_td_3y.json",
+      "sha256": "f1122771728c25ad77b2e7d136f80b767b84bbba215d644affe8cb55f8a3a7b3",
+      "bytes": 16317
+    },
+    {
+      "path": "schemes/po_td_5y.json",
+      "sha256": "f71704d85d9cbee0ab5ba852ec7161a22af77ea783730567ae8f4b05cb7a13fd",
+      "bytes": 15968
+    },
+    {
+      "path": "schemes/pomis.json",
+      "sha256": "bb2e1cc1c2d11e9ef89eb28b3c007ccd202a7f162b6d0d50260d2f507f36ef49",
+      "bytes": 9437
+    },
+    {
+      "path": "schemes/ppf.json",
+      "sha256": "d81e7d7c743030d7464344733975be22bd79d3f741a7d3ad6f81b06dc9333930",
+      "bytes": 12708
+    },
+    {
+      "path": "schemes/scss.json",
+      "sha256": "9ae6084e2c931b372b02333ff435bdb42b195ba12ce17411ae4268b6765196b3",
+      "bytes": 7117
+    },
+    {
+      "path": "schemes/ssy.json",
+      "sha256": "c40c9744aeee2bc799f61beb8b6c946aa34770a114fa025ac195bb3ecbcf2cc6",
+      "bytes": 6846
+    },
+    {
+      "path": "schemes/vpf.json",
+      "sha256": "74bb1f6c6a264d44c3bc36203052a36ace633f23c277f9792b05de0ed8962f22",
+      "bytes": 1445
+    },
+    {
+      "path": "series/_index.json",
+      "sha256": "22e740a800e11b9591302d444c408d654092eb62791c0a47d39f14eb17acb689",
+      "bytes": 4752
+    },
+    {
+      "path": "series/cpi_combined_annual.json",
+      "sha256": "2447d6f38977bd002ee8d2a033bf72328164e36413ada9752d9e4bfb3d40e6c5",
+      "bytes": 1011
+    },
+    {
+      "path": "series/cpi_combined_monthly_2024base.json",
+      "sha256": "0499a4e0fb904a538be3def1811ed7c7b443d879ad23856ad47c694486b22e18",
+      "bytes": 1926
+    },
+    {
+      "path": "series/cpi_iw_chained.json",
+      "sha256": "8f4bb2f1718ef709770e0ff01d08e9def11d3fc6fd57073ae4dc80796edbb836",
+      "bytes": 31500
+    },
+    {
+      "path": "series/gold_mumbai_annual.json",
+      "sha256": "e6ae692ab82c9d973867a0922e61c65dffc2fc162a97f8759ac216fb292a6710",
+      "bytes": 2248
+    },
+    {
+      "path": "series/gsec_yield_annual.json",
+      "sha256": "85623f6e653fae4acbf5acce20eda60c10fa93e42420d7fbb6449672b2271da6",
+      "bytes": 1440
+    },
+    {
+      "path": "series/nps/_rules.json",
+      "sha256": "8ecbc212e517ce732f71557c10a1c4016456bc79d795b99184b0d24f590cf04c",
+      "bytes": 27891
+    },
+    {
+      "path": "series/nps/_samples.json",
+      "sha256": "2db80e8b3487ff5558a37827493a567ede9d153cf35a8e2a320fb4415ba22c59",
+      "bytes": 1474
+    },
+    {
+      "path": "series/nps/_sources.json",
+      "sha256": "ffb7efe4145e28e6a6943760d5a53ba3acc75e86abde3c2e2184ea02b0973b5c",
+      "bytes": 24802
+    },
+    {
+      "path": "series/percapita_nni_annual.json",
+      "sha256": "cf1f1a4bfe0968b207967a09b86001a52aa422eb28b4f8af3bb017fcc1c27b6a",
+      "bytes": 2969
+    },
+    {
+      "path": "series/rbi_bank_rate.json",
+      "sha256": "9eea1b94b93780cb655c3b5062414957be947e9584475bc11e456b830e65ba5b",
+      "bytes": 2672
+    },
+    {
+      "path": "series/rbi_crr.json",
+      "sha256": "4e224c569523b6a2b15d0fdd9056a10d94583ca1aa68a4a84aa1228f8460aeab",
+      "bytes": 4758
+    },
+    {
+      "path": "series/rbi_msf_rate.json",
+      "sha256": "0d3a714c36281b7f7be766e052d63f864b16a29abb483039faa1c30c984111b4",
+      "bytes": 1808
+    },
+    {
+      "path": "series/rbi_repo_rate.json",
+      "sha256": "e133a006eebb6eff6d8f4aedff5076f4ce24c3a50c08e5a03b9f9fb80f35e7ef",
+      "bytes": 2263
+    },
+    {
+      "path": "series/rbi_reverse_repo_rate.json",
+      "sha256": "93cb3a138dfe115b9c36b67616b0a664eca7f6a8457c7997560efb7fca7e974e",
+      "bytes": 1816
+    },
+    {
+      "path": "series/rbi_savings_rate.json",
+      "sha256": "91c29ecd99cd857e84c8d4665ca9363bb73bfcc12fa499abc1fce58a4ca4c63f",
+      "bytes": 3647
+    },
+    {
+      "path": "series/rbi_sdf_rate.json",
+      "sha256": "b60e6ee4344b32cd921e86312ef4cce5655b0c96b3e5595eac59bf60bc0a6c61",
+      "bytes": 800
+    },
+    {
+      "path": "series/rbi_slr.json",
+      "sha256": "bba3412148332d0e805cf58a1c36cc92a56c61d1ba1e70a9e94148a728edac10",
+      "bytes": 2464
+    },
+    {
+      "path": "series/rbi_td_1_3y.json",
+      "sha256": "8ee0fe2a477cf02572f791cd8a68722b03b8d1c81e4d18ae64afd4d21dc2bcab",
+      "bytes": 2599
+    },
+    {
+      "path": "series/rbi_td_3_5y.json",
+      "sha256": "4da4b77e18812f11a94fa2f99bcf9066e3c504e9596e31b1d93dc0c6fd23c911",
+      "bytes": 2650
+    },
+    {
+      "path": "series/rbi_td_5y_plus.json",
+      "sha256": "299340b415b6365062fc3a23fa85881716c8531b68a74b129259b0a2f7be1396",
+      "bytes": 2637
+    },
+    {
+      "path": "series/usdinr_annual.json",
+      "sha256": "080c13ebd31aa3ef557ba50db8babbe39444793d019c3ffcf250cca92801e207",
+      "bytes": 2088
+    },
+    {
+      "path": "snapshots/current__fd_bulk.json",
+      "sha256": "173b7b9ad7a5685a2449887dfae3c8eeaac5da3bd001bb27136d021e89cfa619",
+      "bytes": 970705
+    },
+    {
+      "path": "snapshots/current__fd.json",
+      "sha256": "77e8e6621a4ba4ab37472a7a26b1a38406742d02ed26929c36dca6fd73b5c78e",
+      "bytes": 328453
+    },
+    {
+      "path": "snapshots/current__rd.json",
+      "sha256": "f12a248c68a739362509e6a463cd2a4630bb462b8cffc5824d0d900b9edef614",
+      "bytes": 101822
+    },
+    {
+      "path": "snapshots/current__savings.json",
+      "sha256": "ae9aa3ed625ba6c19ccbf714d96ad22397ae2fab680f443cfb3d0be8f9263d94",
+      "bytes": 31543
+    },
+    {
+      "path": "snapshots/current__tax_saver.json",
+      "sha256": "b5740ba924f5875a6bd2a7eb2fbb00652707f3f991da46e25a0ae4422b00ffb4",
+      "bytes": 2688
+    },
+    {
+      "path": "sources/fragments/a1.json",
+      "sha256": "7f3fb87b1e95e5d2673201f72f83381efd60acb16f81dbb08d696ee83f69de7c",
+      "bytes": 15697
+    },
+    {
+      "path": "sources/fragments/a2.json",
+      "sha256": "0d82615790fb7750f2e22f6174bc675f2964ac950b975303fc73bd1d4cc1cfd8",
+      "bytes": 9604
+    },
+    {
+      "path": "sources/fragments/b1.json",
+      "sha256": "7bd8a976a91f701cd8f6da58dc1c3eeb2febac7ef7def1a50fc868a0bc372f03",
+      "bytes": 13707
+    },
+    {
+      "path": "sources/fragments/b2.json",
+      "sha256": "a70ff0e628ea60bc6a73f5233a9337a42fa045c460cc51369001ab3147074108",
+      "bytes": 10797
+    },
+    {
+      "path": "sources/fragments/c1.json",
+      "sha256": "d4968f4c6d8d95f3614d45f086b46abeb32af89df4f29d1a5bab4868e726b0cc",
+      "bytes": 16484
+    },
+    {
+      "path": "sources/fragments/c2.json",
+      "sha256": "21f0e5c986a01721c19879c3f259f86392646ea7c3c8d3473eca0737c8b1306f",
+      "bytes": 17357
+    },
+    {
+      "path": "sources/fragments/d1.json",
+      "sha256": "f878e492224dc03d30a8651fa0a78177564ef8b67f5fcc31f106be989bb3d12c",
+      "bytes": 8391
+    },
+    {
+      "path": "sources/fragments/d2.json",
+      "sha256": "4eb6db9b5cf49d67218281eb0b7af6cbe366e85f0d5d17ff00c0d9fd0fa484ec",
+      "bytes": 9995
+    },
+    {
+      "path": "sources/fragments/fixups.json",
+      "sha256": "10027a112fa12dc161e5cd591738f9d277c7f4057173f16e45d386171023667e",
+      "bytes": 21484
+    },
+    {
+      "path": "sources/sources.json",
+      "sha256": "923ccae4ffbcf7614a13f131cf988bef9f6b3f10319165c53e17b86c93db4df5",
+      "bytes": 108879
+    },
+    {
+      "path": "terms/_index.json",
+      "sha256": "1b5753ed1911155181070abccc49fc0956791e7d083fa8bd281529ae83a18b72",
+      "bytes": 704
+    },
+    {
+      "path": "terms/au-sfb.json",
+      "sha256": "c11f331727625d2eb7a416cecfb74ecdcb07af155828eaadb32022cff8f5d81f",
+      "bytes": 704
+    },
+    {
+      "path": "terms/axis-bank.json",
+      "sha256": "3f6563790e1a37f5674ea38fbc5e6d5f34bbb7b47c1d64c2173c80aaf3822d3c",
+      "bytes": 639
+    },
+    {
+      "path": "terms/bandhan-bank.json",
+      "sha256": "180a34710c96b61221bb191b36d5355fc657769c2ec36401d484411d704137cf",
+      "bytes": 430
+    },
+    {
+      "path": "terms/bank-of-baroda.json",
+      "sha256": "c1349899e6aad9b8ac3d943fbd195fb66648f7b3a498b3ae69c7c334ebcaadf5",
+      "bytes": 1084
+    },
+    {
+      "path": "terms/bank-of-maharashtra.json",
+      "sha256": "16667562862291ec8b74d63f101fd3245c576a2e3dd8de8c76b550dcb2717b20",
+      "bytes": 1082
+    },
+    {
+      "path": "terms/canara-bank.json",
+      "sha256": "e0786e30447d47b86ccd3261decb8a0b84dd36438e95ebe0feb9377da24e81d0",
+      "bytes": 777
+    },
+    {
+      "path": "terms/capital-sfb.json",
+      "sha256": "eab916c1bb2eeed9c41f2d6cbf5671b1c2f98798c452be3cdc49e1986b456033",
+      "bytes": 442
+    },
+    {
+      "path": "terms/central-bank-of-india.json",
+      "sha256": "abbdb9925c6f03ea224e97c4d50fab6fa75c59801d354379e30247c328722510",
+      "bytes": 1128
+    },
+    {
+      "path": "terms/city-union-bank.json",
+      "sha256": "c038105f2855134c8c95338b4098161085e35058198283f500aa4cb77e1a352b",
+      "bytes": 447
+    },
+    {
+      "path": "terms/csb-bank.json",
+      "sha256": "9070090437f0419277072f33c0c30a2cbbcb638deca8b1ef0a308f97f03f9ee8",
+      "bytes": 1032
+    },
+    {
+      "path": "terms/dcb-bank.json",
+      "sha256": "d78a189a5245e16c6fafe03b17901fa804cbd720f8d709e5c76f999af1e3dc66",
+      "bytes": 1185
+    },
+    {
+      "path": "terms/dhanlaxmi-bank.json",
+      "sha256": "dde4b7ee7537510a9461faf5fdc59bd4990a6a4a9a157d5b9393db3e776a7906",
+      "bytes": 797
+    },
+    {
+      "path": "terms/federal-bank.json",
+      "sha256": "ed21b524548f6f8c6ebd0b837a5e94aff7caaf781c0431f12fb7884d60ce44ad",
+      "bytes": 452
+    },
+    {
+      "path": "terms/hdfc-bank.json",
+      "sha256": "68d277ef69b528a43aee2940e3ea435813e18cc47386afdd47c89129e2465bd7",
+      "bytes": 441
+    },
+    {
+      "path": "terms/icici-bank.json",
+      "sha256": "d28ba7887ebb267a79d92889f428334e3bb1042b8016066fbe36ddf9e1ea62be",
+      "bytes": 449
+    },
+    {
+      "path": "terms/idfc-first-bank.json",
+      "sha256": "a5fb4aa60ed365a33f628ee47b974d4e9001d42d26a7b239ad65dc63592da9c9",
+      "bytes": 450
+    },
+    {
+      "path": "terms/indian-overseas-bank.json",
+      "sha256": "96807f43c12e8fae12069cbb8f1595f4a46d1fc8953167690751530aa872032a",
+      "bytes": 529
+    },
+    {
+      "path": "terms/indusind-bank.json",
+      "sha256": "c44ef34954fe3e20e25045b1be85b074760f652f11d8e7c1119fd07d0f21e24b",
+      "bytes": 544
+    },
+    {
+      "path": "terms/jana-sfb.json",
+      "sha256": "26dec08a042007b3daf91003e07e5bd0c12feb8cbbf3fe5bc4f5f49bf6cfe665",
+      "bytes": 1128
+    },
+    {
+      "path": "terms/jk-bank.json",
+      "sha256": "84648cb1c29446b34140c421d4ad7504844cd3c9854059a024bd65dabc40ee37",
+      "bytes": 594
+    },
+    {
+      "path": "terms/karnataka-bank.json",
+      "sha256": "f61f2ad93399677894ccae5877025fa6099bc0e3fb5e3c2e7384d62320ca14ad",
+      "bytes": 756
+    },
+    {
+      "path": "terms/karur-vysya-bank.json",
+      "sha256": "064b7b774fb6bb851c493a0adaa4f8b9cba8a2bf3492cd05decbc6162af49fbc",
+      "bytes": 546
+    },
+    {
+      "path": "terms/nainital-bank.json",
+      "sha256": "667fb6382fdb2f8492fa23c238db37569d2d25e26a47a239abbff2e8cb354fcc",
+      "bytes": 327
+    },
+    {
+      "path": "terms/punjab-and-sind-bank.json",
+      "sha256": "c1d20e80e6a7e1ce4a09ee73b3258b852fb91c308b85c439a6192032c3df44da",
+      "bytes": 569
+    },
+    {
+      "path": "terms/punjab-national-bank.json",
+      "sha256": "2aa7e25ea4700163d1a9db24fa2dfd4ef1bdf33542ae48241a72237e6bf17b9d",
+      "bytes": 412
+    },
+    {
+      "path": "terms/rbl-bank.json",
+      "sha256": "770b35e02fd68b8aed109dc0c724feee345933bab89cbb0d0a14ea3dbcde6e51",
+      "bytes": 824
+    },
+    {
+      "path": "terms/sbi.json",
+      "sha256": "fd927fb64a4df1d2f8b288dd922325fd90da7b7ac7d2ef7b559dbdea5984129b",
+      "bytes": 442
+    },
+    {
+      "path": "terms/shivalik-sfb.json",
+      "sha256": "a633a397f1a751a2bf53afeb839eb214b146d7ec708f157d50659577c2ea14bf",
+      "bytes": 717
+    },
+    {
+      "path": "terms/slice-sfb.json",
+      "sha256": "64ab7f83185d1f89ddf4026a2bc146096679f1c171934e0aa6029b554ce83dbe",
+      "bytes": 380
+    },
+    {
+      "path": "terms/south-indian-bank.json",
+      "sha256": "bcae5e3c6bae0b3defcbdcc97b3ac61ee77c01dd3dfc98e19ff208c2190ad9a0",
+      "bytes": 966
+    },
+    {
+      "path": "terms/tamilnad-mercantile-bank.json",
+      "sha256": "152ad232a73013c765bb6b17858d67f3abaf9a28b81e9e769e8088d56a7857b5",
+      "bytes": 1119
+    },
+    {
+      "path": "terms/uco-bank.json",
+      "sha256": "8fa78a105bfead448ec56c5e9c624dc2c8cc2e4f64bdbe54634b977faebefd97",
+      "bytes": 417
+    },
+    {
+      "path": "terms/ujjivan-sfb.json",
+      "sha256": "7c5f7319804b4fa1978d45273c3cd1d6f6d146ddd5e9736d1d9892bf8fd632fc",
+      "bytes": 861
+    },
+    {
+      "path": "terms/union-bank-of-india.json",
+      "sha256": "ef2161498c6b10fa53ca009541f9f586c80ce89f2079101d2a81f5a7694c3c3a",
+      "bytes": 504
+    },
+    {
+      "path": "terms/unity-sfb.json",
+      "sha256": "8a7ccfdd82011bce7922c63619f9ce8a30fc108a5a417688a682b6ed1d4ab5ed",
+      "bytes": 925
+    },
+    {
+      "path": "terms/utkarsh-sfb.json",
+      "sha256": "7c2b99d7047415986eb94bb2c3aee675412bf1ab23c58f1942d3fa72c30beacf",
+      "bytes": 1044
+    },
+    {
+      "path": "terms/yes-bank.json",
+      "sha256": "00efaf2cf68385b4624527e0ad72aadecbb2151846e15a124f03f733a289ab20",
+      "bytes": 1404
+    }
+  ],
+  "downloads": [
+    {
+      "path": "current.csv",
+      "sha256": "87e78ead49a3fd0f9cb278a2332eb9a02f39ddd157a04993050d445a6416f67b"
+    },
+    {
+      "path": "current.json",
+      "sha256": "75d926ef7564f35a58151c0b0ba8d0d19f5218c2635dd904bfd0d29239761d1c"
+    },
+    {
+      "path": "feed.json",
+      "sha256": "9b11cc8ac7efbe3676e21e29b7b318acce7a655402a18375dc40f8c6f94046dd"
+    },
+    {
+      "path": "feed.xml",
+      "sha256": "9d988b83cad89a5a7e2064c6bd17df61d3e73fcc10df8aa9db36f673a3f204b8"
+    }
+  ],
+  "note": "Release identifies committed facts. Source-check health is separate. Unknown fields are empty, not inferred. Historical gaps remain gaps."
+}

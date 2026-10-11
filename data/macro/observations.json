@@ -1,0 +1,65 @@
+{
+ "rbi_repo_rate": {
+  "kind": "macro_observation",
+  "seriesKey": "rbi_repo_rate",
+  "value": 5.5,
+  "observedAt": "2026-10-11",
+  "sourceAsAt": "2026-10-09",
+  "sourceUrl": "https://www.rbi.org.in/",
+  "effectiveFrom": null
+ },
+ "rbi_reverse_repo_rate": {
+  "kind": "macro_observation",
+  "seriesKey": "rbi_reverse_repo_rate",
+  "value": 3.35,
+  "observedAt": "2026-10-11",
+  "sourceAsAt": "2026-10-09",
+  "sourceUrl": "https://www.rbi.org.in/",
+  "effectiveFrom": null
+ },
+ "rbi_sdf_rate": {
+  "kind": "macro_observation",
+  "seriesKey": "rbi_sdf_rate",
+  "value": 5.25,
+  "observedAt": "2026-10-11",
+  "sourceAsAt": "2026-10-09",
+  "sourceUrl": "https://www.rbi.org.in/",
+  "effectiveFrom": null
+ },
+ "rbi_msf_rate": {
+  "kind": "macro_observation",
+  "seriesKey": "rbi_msf_rate",
+  "value": 5.75,
+  "observedAt": "2026-10-11",
+  "sourceAsAt": "2026-10-09",
+  "sourceUrl": "https://www.rbi.org.in/",
+  "effectiveFrom": null
+ },
+ "rbi_bank_rate": {
+  "kind": "macro_observation",
+  "seriesKey": "rbi_bank_rate",
+  "value": 5.75,
+  "observedAt": "2026-10-11",
+  "sourceAsAt": "2026-10-09",
+  "sourceUrl": "https://www.rbi.org.in/",
+  "effectiveFrom": null
+ },
+ "rbi_crr": {
+  "kind": "macro_observation",
+  "seriesKey": "rbi_crr",
+  "value": 3,
+  "observedAt": "2026-10-11",
+  "sourceAsAt": "2026-10-09",
+  "sourceUrl": "https://www.rbi.org.in/",
+  "effectiveFrom": null
+ },
+ "rbi_slr": {
+  "kind": "macro_observation",
+  "seriesKey": "rbi_slr",
+  "value": 18,
+  "observedAt": "2026-10-11",
+  "sourceAsAt": "2026-10-09",
+  "sourceUrl": "https://www.rbi.org.in/",
+  "effectiveFrom": null
+ }
+}

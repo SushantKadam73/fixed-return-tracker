@@ -93,7 +93,7 @@ export function parseTermTable(grid: Grid, spec: TermTableSpec): RateRow[] {
         amountMax: spec.amountMax,
         customer: c.customer,
         residency: spec.residency ?? "resident",
-        callable: spec.callable ?? true,
+        callable: spec.callable === undefined ? null : spec.callable,
         payout: spec.payout ?? null,
         rate,
       });

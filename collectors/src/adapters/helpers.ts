@@ -56,7 +56,7 @@ export function makeCard(
 export function deriveRdFromFd(fd: RateCard, statement: string, minDays = 180, maxDays = 3650): RateCard {
   const rows = fd.rows
     .filter((r) => r.tenureMaxDays >= minDays && r.tenureMinDays <= maxDays && !r.special && r.callable !== false)
-    .map((r) => ({ ...r, tenureMinDays: Math.max(r.tenureMinDays, minDays), payout: null, note: "Same as the FD card rate for this tenure (bank statement)" }));
+    .map((r) => ({ ...r, tenureMinDays: Math.max(r.tenureMinDays, minDays), tenureMaxDays: Math.min(r.tenureMaxDays, maxDays), payout: null, note: "Same as the FD card rate for this tenure (bank statement)" }));
   return { ...fd, product: "rd", rows, notes: [...(fd.notes ?? []), `RD rates derived from the FD card because the bank states: "${cleanText(statement).slice(0, 200)}"`] };
 }
 
