@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "releaseId": "8f9b6252fcfe613e908bc59e9d9ac0013952e4f2e73d1fca37c5dd534e609e8a",
-  "generatedAt": "2026-10-11T18:09:27.138Z",
+  "releaseId": "823f87cf52480d616443ec46791bce7458dcc0638fb8bb4de846784e38c1ca0a",
+  "generatedAt": "2026-10-11T18:27:23.501Z",
   "rows": 6682,
   "files": [
     {
@@ -16,7 +16,7 @@
     },
     {
       "path": "rates/_index.json",
-      "sha256": "dd495dbf2f17b58a4a28c4e92327bd11e53c492e247391798f96705fb60248ae",
+      "sha256": "5fa263fbc0d62bf873d5a3e4a6702ba9b4672cadb4165b02e6275b2e390f4bbb",
       "bytes": 18077
     },
     {
@@ -161,8 +161,8 @@
     },
     {
       "path": "rates/central-bank-of-india/fd.json",
-      "sha256": "a1cc68edc0e6a33fdaa36be2c09cb6cc1b16a4418b01f888778a06577e368b15",
-      "bytes": 46840
+      "sha256": "2784169c070f2944da6811921f34cb1c48a7b0dae7e12faa53ce59ab1906235a",
+      "bytes": 31701
     },
     {
       "path": "rates/central-bank-of-india/savings.json",
@@ -736,8 +736,8 @@
     },
     {
       "path": "rates/yes-bank/savings.json",
-      "sha256": "64102b94c5067b8b74c2e66c622f4f8e532efea397e5db626c1f3e3fbda57a86",
-      "bytes": 2898
+      "sha256": "90b4608e85823dcd445180aae17e0ff3bce852b0c80b7624244a93d62b32c02f",
+      "bytes": 1467
     },
     {
       "path": "schemes/_index.json",
@@ -1217,15 +1217,15 @@
     },
     {
       "path": "current.json",
-      "sha256": "d4055f92ba57de47a529b485e72fc74d03f337cab9a494d9c9fca997738eab19"
+      "sha256": "75d926ef7564f35a58151c0b0ba8d0d19f5218c2635dd904bfd0d29239761d1c"
     },
     {
       "path": "feed.json",
-      "sha256": "753359e51867177c996031fb634f4ce03f16db717433d816c8b7b2fee2fdf729"
+      "sha256": "9b11cc8ac7efbe3676e21e29b7b318acce7a655402a18375dc40f8c6f94046dd"
     },
     {
       "path": "feed.xml",
-      "sha256": "60023cfa88837da728f86988b0a498c6a10682845bee961631dd2cfe0588700e"
+      "sha256": "9d988b83cad89a5a7e2064c6bd17df61d3e73fcc10df8aa9db36f673a3f204b8"
     }
   ],
   "note": "Release identifies committed facts. Source-check health is separate. Unknown fields are empty, not inferred. Historical gaps remain gaps."

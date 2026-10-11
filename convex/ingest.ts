@@ -111,8 +111,11 @@ async function upsertCard(
     notes: card.notes,
   });
   if (current) {
-    const end = card.effectiveFrom ? dayBefore(card.effectiveFrom) : card.observedAt;
-    await ctx.db.patch(current._id, { isCurrent: false, validTo: end });
+    if ((current.effectiveFrom ?? current.observedAt) === (card.effectiveFrom ?? card.observedAt)) await ctx.db.delete(current._id);
+    else {
+      const end = card.effectiveFrom ? dayBefore(card.effectiveFrom) : card.observedAt;
+      await ctx.db.patch(current._id, { isCurrent: false, validTo: end });
+    }
   }
   await resolveAlert(ctx, `card_rejected:${card.bankSlug}:${card.product}`);
   return "inserted";

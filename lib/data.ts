@@ -14,6 +14,7 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { api } from "@/convex/_generated/api";
 import { todayIST } from "./format";
+import { eligibleCurrentCard, type DatedCard } from "./current-card";
 
 export const DATA_TAG = "tracker-data";
 const DAY_SECONDS = 24 * 60 * 60;
@@ -37,6 +38,15 @@ async function fromConvex<T>(key: string): Promise<{ payload: T; updatedAt: numb
 }
 
 type SummaryResult<T> = { payload: T; updatedAt: number | null; origin: "convex" | "snapshot" } | null;
+
+function currentBanks(payload: unknown): Record<string, DatedCard & Record<string, unknown>> {
+  if (!payload || typeof payload !== "object" || !("banks" in payload) || !payload.banks || typeof payload.banks !== "object") return {};
+  return Object.fromEntries(Object.entries(payload.banks).filter(([, value]) => {
+    if (!value || typeof value !== "object" || typeof value.observedAt !== "string" || typeof value.sourceType !== "string") return false;
+    return eligibleCurrentCard(value, todayIST()) &&
+      ((Array.isArray(value.rows) && value.rows.length > 0) || (Array.isArray(value.savingsSlabs) && value.savingsSlabs.length > 0));
+  }));
+}
 
 /**
  * Convex reads are cached (tag-revalidated when Convex reports new data, otherwise daily). The
@@ -67,7 +77,7 @@ export async function getSummary<T>(key: string): Promise<SummaryResult<T>> {
       }
       if (live && usableSummary(key, live.payload)) {
         if (key.startsWith("current:") && snap && usableSummary(key, snap.payload)) {
-          const bankMap = (value: unknown) => (value as { banks: Record<string, { effectiveFrom?: string | null; observedAt: string }> }).banks;
+          const bankMap = currentBanks;
           const banks = { ...bankMap(snap.payload) };
           for (const [slug, card] of Object.entries(bankMap(live.payload))) {
             const date = card.effectiveFrom ?? card.observedAt;
@@ -75,13 +85,13 @@ export async function getSummary<T>(key: string): Promise<SummaryResult<T>> {
           }
           return { payload: { banks } as T, updatedAt: live.updatedAt, origin: "convex" };
         }
-        return { payload: live.payload as T, updatedAt: live.updatedAt, origin: "convex" };
+        return { payload: (key.startsWith("current:") ? { banks: currentBanks(live.payload) } : live.payload) as T, updatedAt: live.updatedAt, origin: "convex" };
       }
     } catch {
       /* Convex unreachable: fall back to the committed snapshot */
     }
   }
-  return snap ? { payload: snap.payload, updatedAt: snap.updatedAt ?? null, origin: "snapshot" } : null;
+  return snap ? { payload: (key.startsWith("current:") ? { banks: currentBanks(snap.payload) } : snap.payload) as T, updatedAt: snap.updatedAt ?? null, origin: "snapshot" } : null;
 }
 
 function usableSummary(key: string, payload: unknown): boolean {
@@ -89,10 +99,7 @@ function usableSummary(key: string, payload: unknown): boolean {
   const value = payload as Record<string, unknown>;
   if (key === "banks") return Array.isArray(value.banks) && value.banks.length > 0;
   if (key.startsWith("current:")) {
-    if (!value.banks || typeof value.banks !== "object" || Array.isArray(value.banks)) return false;
-    return Object.values(value.banks).some((card) => card && typeof card === "object" &&
-      typeof card.observedAt === "string" && (card.effectiveFrom ?? card.observedAt) <= todayIST() &&
-      (Array.isArray(card.rows) || Array.isArray(card.savingsSlabs)));
+    return Object.keys(currentBanks(payload)).length > 0;
   }
   if (key.startsWith("bank:")) return !!value.bank && !!value.products && Object.keys(value.products as object).length > 0;
   return Object.keys(value).length > 0;

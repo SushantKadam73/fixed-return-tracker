@@ -50,7 +50,7 @@ async function buildBank(ctx: MutationCtx, bankSlug: string) {
     const current = currentOfficialCard(cards, todayIST());
     currentByProduct[product] = current;
     const normalized = cards.map((card): StoredCard => ({ ...card, effectiveFrom: card.effectiveFrom ?? null }));
-    const selected = normalized.find((card) => card.contentHash === current?.contentHash && card.observedAt === current.observedAt) ?? null;
+    const selected = normalized.find((card) => card.contentHash === current?.contentHash && card.observedAt === current.observedAt && card.effectiveFrom === (current.effectiveFrom ?? null)) ?? null;
     products[product] = productSummary(product, normalized, selected);
   }
   const terms = await ctx.db

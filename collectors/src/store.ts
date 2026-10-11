@@ -66,9 +66,15 @@ export function storeLiveCard(root: string, input: RateCard): StoreOutcome {
   const live = pf.cards.filter((c) => c.sourceType === "bank_official");
   const latest = currentOfficialCard(live, todayIST());
   const issues = validateCard(card, latest);
+  if (latest && cardDate(card) < cardDate(latest)) {
+    issues.push({ level: "error", code: "older_live_card", message: "Fetched schedule predates the current accepted schedule; last good card retained." });
+  }
   if (latest && latest.contentHash === contentHash && latest.effectiveFrom === card.effectiveFrom && !hasErrors(issues)) return { outcome: "unchanged", issues: [] };
   if (hasErrors(issues)) return { outcome: "rejected", issues };
-  if (latest && !latest.validTo) latest.validTo = card.effectiveFrom ? dayBefore(card.effectiveFrom) : card.observedAt;
+  if (latest && cardDate(latest) === cardDate(card)) {
+    // Correct a schedule in place; Git retains the prior parse without an impossible date range.
+    pf.cards = pf.cards.filter((prior) => prior.sourceType !== "bank_official" || cardDate(prior) !== cardDate(card));
+  } else if (latest && !latest.validTo) latest.validTo = card.effectiveFrom ? dayBefore(card.effectiveFrom) : card.observedAt;
   pf.cards.push({ ...card, contentHash });
   saveProduct(root, pf);
   return { outcome: "inserted", issues };

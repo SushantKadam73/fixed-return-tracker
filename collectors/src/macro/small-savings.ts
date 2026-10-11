@@ -148,6 +148,15 @@ export async function run(ctx: MacroTaskContext): Promise<TaskResult> {
     return result;
   }
 
+  for (const [scheme, value] of perScheme) {
+    const validRate = typeof value.rate === "number" && Number.isFinite(value.rate) && value.rate > 0 && value.rate <= 15;
+    const validMaturity = scheme === "kvp" && value.rate === null && Number.isInteger(value.maturityMonths) && (value.maturityMonths ?? 0) > 0;
+    if (!validRate && !validMaturity) {
+      result.error = `Unverified numeric rate for ${scheme}; last good quarter retained.`;
+      return result;
+    }
+  }
+
   result.ok = perScheme.size === SCHEMES.length;
   if (!result.ok) {
     result.error = `Only ${perScheme.size}/${SCHEMES.length} scheme rates verified for the target quarter; incomplete batch retained for investigation.`;

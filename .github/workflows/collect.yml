@@ -63,9 +63,15 @@ jobs:
           git add data
           if ! git diff --cached --quiet; then
             git commit -m "data: accepted rates and health $(TZ=Asia/Kolkata date +%F)"
-            git pull --rebase origin main
-            git push origin HEAD:main
           fi
+          git pull --rebase origin main
+          # Rebase can add concurrent facts; exports must describe this exact final tree.
+          npx tsx scripts/build-release.ts
+          git add data
+          if ! git diff --cached --quiet; then
+            git commit -m "data: regenerate release after publication rebase"
+          fi
+          git push origin HEAD:main
       - name: Import committed macro data and history
         if: ${{ !cancelled() }}
         run: DATASET_REVISION=$(git rev-parse HEAD) npx tsx scripts/pipeline-control.ts sync

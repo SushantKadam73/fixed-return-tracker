@@ -34,16 +34,17 @@ function rowKey(r: RateRow): string {
   return [r.tenureMinDays, r.tenureMaxDays, r.customer, r.residency, r.amountMin, r.amountMax, r.callable, r.payout ?? null, r.schemeName ?? null].join("|");
 }
 
-export function validateCard(card: RateCard, previous?: Pick<RateCard, "rows" | "savingsSlabs"> | null): ValidationIssue[] {
+export function validateCard(card: RateCard & { validTo?: string | null }, previous?: Pick<RateCard, "rows" | "savingsSlabs"> | null): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
   const err = (code: string, message: string) => issues.push({ level: "error", code, message });
   const warn = (code: string, message: string) => issues.push({ level: "warning", code, message });
 
-  for (const date of [card.effectiveFrom, card.observedAt, card.observedFrom, card.observedTo, ...card.rows.map((row) => row.effectiveFrom)]) {
+  for (const date of [card.effectiveFrom, card.validTo, card.observedAt, card.observedFrom, card.observedTo, ...card.rows.map((row) => row.effectiveFrom)]) {
     if (date != null && (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !Number.isFinite(Date.parse(`${date}T00:00:00Z`)) || new Date(`${date}T00:00:00Z`).toISOString().slice(0, 10) !== date)) {
       err("invalid_date", `invalid calendar date ${date}`);
     }
   }
+  if (card.effectiveFrom && card.validTo && card.validTo < card.effectiveFrom) err("invalid_period", "rate card ends before its effective date");
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(card.bankSlug)) err("invalid_bank", "invalid bank identifier");
   if (!/^https?:\/\//.test(card.sourceUrl)) err("invalid_source", "source URL must be HTTP(S)");
 

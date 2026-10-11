@@ -74,9 +74,10 @@ type SchemeFile = {
 const clean = <T extends object>(o: T) => Object.fromEntries(Object.entries(o).filter(([, val]) => val !== null && val !== undefined)) as T;
 
 export const importAll = internalAction({
-  args: {},
-  handler: async (ctx) => {
-    const banks = await getJson<BankFile>("banks/banks.json");
+  args: { revision: v.optional(v.string()) },
+  handler: async (ctx, { revision }) => {
+    if (revision && !/^[a-f0-9]{40}$/.test(revision)) throw new Error("Invalid dataset commit");
+    const banks = await getJson<BankFile>("banks/banks.json", revision);
     for (const b of banks.banks) {
       await ctx.runMutation(internal.ingest.upsertBank, clean({
         slug: b.slug, name: b.name, shortName: b.shortName, group: b.group, status: "active" as const,
@@ -100,10 +101,10 @@ export const importAll = internalAction({
       }));
     }
 
-    const index = await getJson<{ schemes: Array<{ scheme: string }> }>("schemes/_index.json");
+    const index = await getJson<{ schemes: Array<{ scheme: string }> }>("schemes/_index.json", revision);
     let schemeRows = 0;
     for (const { scheme } of index.schemes) {
-      const s = await getJson<SchemeFile>(`schemes/${scheme}.json`);
+      const s = await getJson<SchemeFile>(`schemes/${scheme}.json`, revision);
       await ctx.runMutation(internal.seed.upsertScheme, {
         key: s.scheme, name: s.name, category: s.category,
         conventions: s.conventions ? Object.entries(s.conventions).map(([k, val]) => `${k}: ${val}`) : [],
@@ -116,7 +117,7 @@ export const importAll = internalAction({
       schemeRows += s.periods.length;
     }
     // Source registry (official pages the collectors read).
-    const reg = await getJson<{ sources: Array<{ key: string; bankSlug: string; products: string[]; url: string; format: string; runner: string; adapter: string; cadence: string; active: boolean; robotsAllowed?: boolean; termsNote?: string }> }>("sources/sources.json");
+    const reg = await getJson<{ sources: Array<{ key: string; bankSlug: string; products: string[]; url: string; format: string; runner: string; adapter: string; cadence: string; active: boolean; robotsAllowed?: boolean; termsNote?: string }> }>("sources/sources.json", revision);
     for (const s of reg.sources) {
       await ctx.runMutation(internal.ingest.upsertSource, clean({
         key: s.key, bankSlug: s.bankSlug, kind: "bank_page" as const, products: s.products, url: s.url, format: s.format,
@@ -152,14 +153,15 @@ export const upsertScheme = internalMutation({
   },
   handler: async (ctx, a) => {
     const existing = await ctx.db.query("schemes").withIndex("by_key", (q) => q.eq("key", a.key)).first();
-    if (existing) await ctx.db.patch(existing._id, { name: a.name, category: a.category, conventions: a.conventions });
-    else await ctx.db.insert("schemes", { key: a.key, name: a.name, category: a.category, conventions: a.conventions });
+    const meta = { name: a.name, category: a.category, conventions: a.conventions };
+    if (existing && Object.entries(meta).some(([key, value]) => JSON.stringify(existing[key as keyof typeof existing]) !== JSON.stringify(value))) await ctx.db.patch(existing._id, meta);
+    else if (!existing) await ctx.db.insert("schemes", { key: a.key, ...meta });
     const rows = await ctx.db.query("schemeRates").withIndex("by_scheme_from", (q) => q.eq("scheme", a.key)).collect();
     const byFrom = new Map(rows.map((r) => [r.effectiveFrom, r]));
     for (const p of a.periods) {
       const row = byFrom.get(p.effectiveFrom);
-      if (row) await ctx.db.patch(row._id, p);
-      else await ctx.db.insert("schemeRates", { scheme: a.key, ...p });
+      if (row && Object.entries(p).some(([key, value]) => JSON.stringify(row[key as keyof typeof row]) !== JSON.stringify(value))) await ctx.db.patch(row._id, p);
+      else if (!row) await ctx.db.insert("schemeRates", { scheme: a.key, ...p });
     }
   },
 });
@@ -178,6 +180,7 @@ export const refreshSchemesSummary = internalMutation({
       });
     }
     const existing = await ctx.db.query("summaries").withIndex("by_key", (q) => q.eq("key", "schemes")).first();
+    if (existing && JSON.stringify(existing.payload) === JSON.stringify({ schemes: out })) return;
     if (existing) await ctx.db.patch(existing._id, { payload: { schemes: out }, updatedAt: Date.now() });
     else await ctx.db.insert("summaries", { key: "schemes", payload: { schemes: out }, updatedAt: Date.now() });
   },
@@ -229,10 +232,12 @@ export const importProductCards = internalMutation({
       .collect();
     const key = (hash: string, date: string | null | undefined) => `${hash}|${date ?? ""}`;
     const have = new Map(existing.map((c) => [key(c.contentHash, c.effectiveFrom ?? c.observedFrom ?? c.observedAt), c]));
+    const current = currentOfficialCard(existing, todayIST());
     let inserted = 0;
     for (const c of a.cards) {
-      if (c.bankSlug !== a.bankSlug || c.product !== a.product || hasErrors(validateCard(c))) throw new Error("Invalid imported rate card");
       const prior = have.get(key(c.contentHash, c.effectiveFrom ?? c.observedFrom ?? c.observedAt));
+      const advancesCurrent = !prior && c.sourceType === "bank_official" && current && (c.effectiveFrom ?? c.observedAt) >= (current.effectiveFrom ?? current.observedAt);
+      if (c.bankSlug !== a.bankSlug || c.product !== a.product || hasErrors(validateCard(c, advancesCurrent ? current : null))) throw new Error("Invalid imported rate card; current live validation applies to imported official revisions");
       if (prior) {
         const correction = { validTo: c.validTo ?? undefined, observedFrom: c.observedFrom ?? undefined, observedTo: c.observedTo ?? undefined, confidence: c.confidence, sourceUrl: c.sourceUrl, archiveUrl: c.archiveUrl ?? undefined, notes: c.notes, rows: c.rows, savingsSlabs: c.savingsSlabs, slabMethod: c.slabMethod };
         if (Object.entries(correction).some(([field, value]) => JSON.stringify(prior[field as keyof typeof prior]) !== JSON.stringify(value))) await ctx.db.patch(prior._id, correction);
@@ -336,6 +341,8 @@ export const importSeriesAndRates = internalAction({
   args: { force: v.optional(v.boolean()), revision: v.optional(v.string()) },
   handler: async (ctx, { force, revision }) => {
     if (revision && !/^[a-f0-9]{40}$/.test(revision)) throw new Error("Invalid dataset commit");
+    // Import scheme changes and registry metadata from the same accepted revision as its exports.
+    await ctx.runAction(internal.seed.importAll, { revision });
     // Files whose content hash matches the last import are skipped entirely, so a quiet day costs
     // almost no database I/O (the free tier allows 1 GB a month) however much history accumulates.
     const known = new Map((await ctx.runQuery(internal.seed.importStates, {})).map((r) => [r.path, r.hash]));
@@ -373,13 +380,14 @@ export const importSeriesAndRates = internalAction({
     let removed = 0;
     const errors: string[] = [];
     const changedBanks = new Set<string>();
+    const pendingStates: Array<{ path: string; hash: string }> = [];
     try {
       const rates = await getJson<{ files: Array<{ bankSlug: string; product: string }> }>("rates/_index.json", revision);
       for (const f of rates.files) {
         const path = `rates/${f.bankSlug}/${f.product}.json`;
         const text = await getText(path, revision);
         const hash = hash64(text);
-        if (!force && known.get(path) === hash) {
+        if (!force && known.get(path) === hash && known.get(`${path}:summary`) === hash) {
           skipped++;
           continue;
         }
@@ -395,7 +403,7 @@ export const importSeriesAndRates = internalAction({
         const observedThrough = pf.cards.filter((card) => card.sourceType === "bank_official").map((card) => card.observedAt).sort().at(-1);
         const r = await ctx.runMutation(internal.seed.finalizeProductCards, { bankSlug: pf.bankSlug, product: pf.product as "fd", keys, observedThrough });
         removed += r.removed;
-        await ctx.runMutation(internal.seed.setImportState, { path, hash });
+        pendingStates.push({ path, hash });
         changedBanks.add(pf.bankSlug);
         files++;
       }
@@ -409,23 +417,27 @@ export const importSeriesAndRates = internalAction({
         const path = `terms/${bankSlug}.json`;
         const text = await getText(path, revision);
         const hash = hash64(text);
-        if (!force && known.get(path) === hash) {
+        if (!force && known.get(path) === hash && known.get(`${path}:summary`) === hash) {
           skipped++;
           continue;
         }
         const tf = JSON.parse(text) as { products: Record<string, { terms: Record<string, unknown>; sourceUrl: string; recordedOn: string }> };
         const entries = Object.entries(tf.products).map(([product, e]) => ({ product: product as "fd", observedAt: e.recordedOn, sourceUrl: e.sourceUrl, terms: e.terms as never }));
         await ctx.runMutation(internal.seed.upsertTerms, { bankSlug, entries });
-        await ctx.runMutation(internal.seed.setImportState, { path, hash });
+        pendingStates.push({ path, hash });
         changedBanks.add(bankSlug);
       }
     } catch (e) {
       errors.push(`Terms import: ${(e as Error).message}`);
     }
-    if (force) await ctx.runMutation(internal.summaries.refreshAllBanks, {});
-    else if (changedBanks.size > 0) {
+    if (changedBanks.size > 0) {
       for (const bankSlug of changedBanks) await ctx.runMutation(internal.summaries.refreshBank, { bankSlug });
       await ctx.runMutation(internal.summaries.refreshDirectory, {});
+    }
+    // A failed summary rebuild leaves completion markers absent, so retry cannot skip the work.
+    for (const state of pendingStates) {
+      await ctx.runMutation(internal.seed.setImportState, state);
+      await ctx.runMutation(internal.seed.setImportState, { path: `${state.path}:summary`, hash: state.hash });
     }
     if (revision && errors.length === 0 && !force) {
       const manifest = await getJson<{ releaseId: string; generatedAt: string; downloads: unknown[] }>("exports/manifest.json", revision);

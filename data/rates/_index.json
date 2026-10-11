@@ -192,7 +192,7 @@
   {
    "bankSlug": "central-bank-of-india",
    "product": "fd",
-   "cards": 7,
+   "cards": 6,
    "from": "1999-01-18",
    "to": "2026-08-10"
   },
@@ -1004,7 +1004,7 @@
   {
    "bankSlug": "yes-bank",
    "product": "savings",
-   "cards": 2,
+   "cards": 1,
    "from": "2026-04-07",
    "to": "2026-04-07"
   }

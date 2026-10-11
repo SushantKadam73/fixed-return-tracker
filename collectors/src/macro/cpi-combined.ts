@@ -14,16 +14,19 @@ interface MospiCpiRow {
   Series?: string; // "Current_series_2012" | "Back_series_2012" | ...
 }
 
-/** Parses the documented getCPIIndex JSON shape into (month, index) pairs for the Combined sector. */
+/** Accept only explicitly identified Combined observations in the 2024 series. */
 export function parseMospiCpiCombined(json: unknown): Array<{ month: string; value: number }> {
   const rows: MospiCpiRow[] = Array.isArray(json) ? (json as MospiCpiRow[]) : Array.isArray((json as { data?: unknown[] })?.data) ? ((json as { data: MospiCpiRow[] }).data) : [];
   const out: Array<{ month: string; value: number }> = [];
+  const seen = new Map<string, number>();
   for (const r of rows) {
     if (!r || typeof r !== "object") continue; // malformed row (e.g. null) — skip, never throw
-    if (r.Sector !== undefined && r.Sector !== 3) continue; // combined only
+    if (r.Sector !== 3 || typeof r.Series !== "string" || !/^Current_series_2024$/i.test(r.Series)) continue;
     if (!Number.isInteger(r.Year) || !Number.isInteger(r.Month) || r.Month < 1 || r.Month > 12 || !Number.isFinite(r.Index) || r.Index <= 0) continue;
-    if (r.Series && !/2024/.test(r.Series)) continue;
-    out.push({ month: `${r.Year}-${String(r.Month).padStart(2, "0")}`, value: r.Index });
+    const month = `${r.Year}-${String(r.Month).padStart(2, "0")}`;
+    if (seen.has(month) && seen.get(month) !== r.Index) throw new Error(`Conflicting MoSPI observations for ${month}`);
+    if (!seen.has(month)) out.push({ month, value: r.Index });
+    seen.set(month, r.Index);
   }
   return out;
 }
